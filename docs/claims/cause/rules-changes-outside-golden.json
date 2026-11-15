@@ -1,42 +1,32 @@
 {
   "key": "cause/rules-changes-outside-golden",
-  "rev": 8,
-  "value": "Rule fixes after e47bcfcdb6b2777a left golden.txt unchanged: Perfected Strike from limbo, Guardian Mode Shift block, turn-end order (Burn, Combust, Regeneration, Metallicize, Plated Armor, Orichalcum), Feed on kill, Blood for Blood per copy, Rupture on own Burn, Artifact vs Flex. Golden's cover games (golden.rs COVER) cover them; two more (Lagavulin's wake, Pocketwatch) moved it to 32f1971b.",
+  "rev": 10,
+  "value": "Rule fixes after e47bcfcdb6b2777a that left golden.txt unchanged: Perfected Strike from limbo, Guardian Mode Shift block, turn-end order (Burn, Combust, Regeneration, Metallicize, Plated Armor, Orichalcum), Feed on kill, Blood for Blood per copy, Rupture on own Burn, Artifact vs Flex; golden.rs COVER games cover them. Golden has moved since for other rules (32f1971b, d08bc2b7, 334dd4b4).",
   "status": "active",
   "sources": [
     {
       "path": "engine/tests/golden.rs",
-      "sha256": "b6e4a223737733200e7cc2b837a2de123e8d4fe48656a4605aea782ab5364643"
+      "sha256": "acbe9621963f6ab3f8a910470c812b1a7df05be887680cd2e22dd17301065463"
     },
     {
       "path": "engine/tests/data/golden.txt",
-      "sha256": "32f1971b128452c4c74c34a4b56a049527392e3c6a25bc2c397322cff95c6fbf"
+      "sha256": "334dd4b4ef071632fbdd46c20391dc752c17e07c5143c0d1e73c86d509e55f1a"
     },
     {
       "key": "context/rules-version",
-      "rev": 7
+      "rev": 9
     },
     {
       "path": "docs/decisions.md",
-      "anchor": "Rules version moves to cover the 14 Nov rule fixes (on the owner's behalf, 2026-11-14)",
-      "sha256": "d116ccd48411cdb9c546777d79585adfb436a1a1d414a8c8dfc80fdae962cac1"
-    },
-    {
-      "path": "docs/decisions.md",
-      "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
-      "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
-    },
-    {
-      "path": "docs/decisions.md",
-      "anchor": "Rules version moves for Pocketwatch's play count (on the owner's behalf, 2026-11-14)",
-      "sha256": "e00c0296d95284c7135fcc66f43eb41581ac4b1a0b680b439cc5350ea4c4288d"
+      "anchor": "Rules version moves for Row V, the game's caps and Shield Gremlin's Protect (on the owner's behalf, 2026-11-15)",
+      "sha256": "8efc8bd870352a080e8a1026398a4cb15dd13bdc44350803eaf0229c374a5345"
     }
   ],
   "owner": false,
   "pinned": false,
   "note": null,
-  "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
-  "at": "2026-11-14T12:52:31Z @ 1232e778",
+  "by": "curate-cf44b335-65ef-4f93-841c-f4d788c07b73",
+  "at": "2026-11-15T04:58:32+00:00 @ a3a20322",
   "confirms": [],
   "flags": [],
   "history": [
@@ -249,7 +239,71 @@
       "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
       "at": "2026-11-14T12:52:14Z @ 1232e778",
       "until": "2026-11-14T12:52:31Z @ 1232e778"
+    },
+    {
+      "rev": 8,
+      "value": "Rule fixes after e47bcfcdb6b2777a left golden.txt unchanged: Perfected Strike from limbo, Guardian Mode Shift block, turn-end order (Burn, Combust, Regeneration, Metallicize, Plated Armor, Orichalcum), Feed on kill, Blood for Blood per copy, Rupture on own Burn, Artifact vs Flex. Golden's cover games (golden.rs COVER) cover them; two more (Lagavulin's wake, Pocketwatch) moved it to 32f1971b.",
+      "sources": [
+        {
+          "path": "engine/tests/golden.rs",
+          "sha256": "b6e4a223737733200e7cc2b837a2de123e8d4fe48656a4605aea782ab5364643"
+        },
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "32f1971b128452c4c74c34a4b56a049527392e3c6a25bc2c397322cff95c6fbf"
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 7
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves to cover the 14 Nov rule fixes (on the owner's behalf, 2026-11-14)",
+          "sha256": "d116ccd48411cdb9c546777d79585adfb436a1a1d414a8c8dfc80fdae962cac1"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
+          "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Pocketwatch's play count (on the owner's behalf, 2026-11-14)",
+          "sha256": "e00c0296d95284c7135fcc66f43eb41581ac4b1a0b680b439cc5350ea4c4288d"
+        }
+      ],
+      "owner": false,
+      "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+      "at": "2026-11-14T12:52:31Z @ 1232e778",
+      "until": "2026-11-15T03:02:18+00:00 @ 5fadbba0"
+    },
+    {
+      "rev": 9,
+      "value": "Rule fixes after e47bcfcdb6b2777a that left golden.txt unchanged: Perfected Strike from limbo, Guardian Mode Shift block, turn-end order (Burn, Combust, Regeneration, Metallicize, Plated Armor, Orichalcum), Feed on kill, Blood for Blood per copy, Rupture on own Burn, Artifact vs Flex; golden's cover games (golden.rs COVER) cover them. Golden moved since: Lagavulin's wake and Pocketwatch (32f1971b), Fire Breathing (d08bc2b7), Row V (334dd4b4).",
+      "sources": [
+        {
+          "path": "engine/tests/golden.rs",
+          "sha256": "acbe9621963f6ab3f8a910470c812b1a7df05be887680cd2e22dd17301065463"
+        },
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "334dd4b4ef071632fbdd46c20391dc752c17e07c5143c0d1e73c86d509e55f1a"
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 9
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Row V, the game's caps and Shield Gremlin's Protect (on the owner's behalf, 2026-11-15)",
+          "sha256": "c9d5519cb111862ab426547696222b337e8f34c68ddd7b6122d672fdc56229b0"
+        }
+      ],
+      "owner": false,
+      "by": "0978e03c-be4b-40a0-961e-d5c5404c0e70",
+      "at": "2026-11-15T03:02:18+00:00 @ 5fadbba0",
+      "until": "2026-11-15T04:58:32+00:00 @ a3a20322"
     }
   ],
-  "seal": "6008435cbd33b0a039b2cd2320170973a064fbeb40997b4e7c8c002b01571eb1"
+  "seal": "0906df343a0fe4f2cff992e1a54e6d03bf66e506e5f73a4113d362f0cf6b26e1"
 }

@@ -197,3 +197,25 @@ def test_thirteen_powers_view():
     powers = c.view()["player"]["powers"]
     assert len(powers) == 13 and powers["Strength"] == 2, powers
     assert sts.Combat.from_view(c.view(), seed=1, group="hallway").view() == c.view()
+
+
+def test_runic_dome_hidden_move_from_view():
+    """Runic Dome (docs/research/build-plans-2026-11-14/frozen-eye-runic-dome.md):
+    a view's "move_hidden" monster, "moves" then its history, rebuilds
+    with its roll still to come; one that can only be one move is set and
+    shown; the view comes back as an equal fight."""
+    v = sts.Combat(["Strike"] * 5 + ["Defend"] * 4 + ["Bash"], "jaw_worm", seed=1).view()
+    v["player"]["relics"] = [["gen:Runic Dome", 0]]
+    v["monsters"][0]["moves"] = [0, None]  # Chomp used
+    v["monsters"][0]["move_hidden"] = True
+    c = sts.Combat.from_view(v, seed=1, group="hallway")
+    w = c.view()
+    assert w["monsters"][0]["intent_hidden"] == 1 and w["monsters"][0]["moves"] == (0, None), w["monsters"][0]
+    assert sts.Combat.from_view(w, seed=1, group="hallway").view() == w
+    # Cultist after Incantation: Dark Strike only, set and shown.
+    v = sts.Combat(["Strike"] * 5, "cultist", seed=1).view()
+    v["player"]["relics"] = [["gen:Runic Dome", 0]]
+    v["monsters"][0]["moves"] = [0, None]
+    v["monsters"][0]["move_hidden"] = True
+    m = sts.Combat.from_view(v, seed=1, group="hallway").view()["monsters"][0]
+    assert m["moves"] == (1, 0) and "intent_hidden" not in m, m

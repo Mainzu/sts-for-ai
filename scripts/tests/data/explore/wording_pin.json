@@ -1176,6 +1176,30 @@
      "Gain 1 Magnetism."
     ]
    },
+   "Enlightenment": {
+    "head": "Enlightenment · 0 Cost · Skill",
+    "lines": [
+     "Cards in your hand cost at most 1 this turn."
+    ]
+   },
+   "Enlightenment+": {
+    "head": "Enlightenment+ · 0 Cost · Skill",
+    "lines": [
+     "Cards in your hand cost at most 1 this turn and for the rest of combat."
+    ]
+   },
+   "Mayhem": {
+    "head": "Mayhem · 2 Cost · Power",
+    "lines": [
+     "Gain 1 Mayhem."
+    ]
+   },
+   "Mayhem+": {
+    "head": "Mayhem+ · 1 Cost · Power",
+    "lines": [
+     "Gain 1 Mayhem."
+    ]
+   },
    "Ascender's Bane": {
     "head": "Ascender's Bane · Unplayable · Curse",
     "lines": [
@@ -2224,6 +2248,7 @@
      "Shield Bash: Deal 6 damage.",
      "---",
      "How it picks its move, the first rule that holds:",
+     "On its first turn: Protect.",
      "After Shield Bash: Shield Bash.",
      "While another enemy is alive: Protect.",
      "Otherwise: Shield Bash."
@@ -6706,7 +6731,8 @@
     "lines": [
      "The attack damage its owner deals: +1 per stack.",
      "Applying a negative amount of it is a debuff.",
-     "Its amount can go below 0; without this, a negative amount only lowers it, never below 0."
+     "Its amount can go below 0; without this, a negative amount only lowers it, never below 0.",
+     "Its amount stays between -999 and 999."
     ]
    },
    "Dexterity": {
@@ -6714,7 +6740,8 @@
     "lines": [
      "The block its owner gains from cards: +1 per stack.",
      "Applying a negative amount of it is a debuff.",
-     "Its amount can go below 0; without this, a negative amount only lowers it, never below 0."
+     "Its amount can go below 0; without this, a negative amount only lowers it, never below 0.",
+     "Its amount stays between -999 and 999."
     ]
    },
    "Vulnerable": {
@@ -6722,7 +6749,7 @@
     "lines": [
      "The attack damage its owner takes: × 1.5.",
      "At the end of each round: the power loses 1 stack.",
-     "Applied by a monster, it skips the end of the round it lands in."
+     "Applied by a monster after your turn has ended, it skips the end of the round it lands in."
     ]
    },
    "Weak": {
@@ -6787,7 +6814,8 @@
    "Poison": {
     "head": "Poison · Debuff",
     "lines": [
-     "At the start of its owner's turn: its owner loses 1 HP per stack, the power loses 1 stack."
+     "At the start of its owner's turn: its owner loses 1 HP per stack, the power loses 1 stack.",
+     "Its amount stays between -9999 and 9999."
     ]
    },
    "Combust": {
@@ -6902,13 +6930,14 @@
     "lines": [
      "The block its owner gains from cards: × 0.",
      "At the end of each round: the power loses 1 stack.",
-     "Applied by a monster, it skips the end of the round it lands in."
+     "Applied by a monster after your turn has ended, it skips the end of the round it lands in."
     ]
    },
    "Shackled": {
     "head": "Shackled · Buff",
     "lines": [
-     "At the end of its owner's turn: its owner gains 1 Strength per stack, then the power ends."
+     "At the end of its owner's turn: its owner gains 1 Strength per stack, then the power ends.",
+     "Its amount stays between -999 and 999."
     ]
    },
    "Sadistic": {
@@ -6921,6 +6950,12 @@
     "head": "Magnetism · Buff",
     "lines": [
      "At the start of its owner's turn: add 1 random card from the Colorless pool to your hand."
+    ]
+   },
+   "Mayhem": {
+    "head": "Mayhem · Buff",
+    "lines": [
+     "At the start of its owner's turn: play the top 1 card of your draw pile."
     ]
    },
    "FlameBarrier": {
@@ -6964,6 +6999,7 @@
    "FireBreathing": {
     "head": "Fire Breathing · Buff",
     "lines": [
+     "Each time its owner draws a card: deal 1 damage per stack to every opponent of its owner.",
      "Each time its owner draws a card: deal 1 damage per stack to every opponent of its owner."
     ]
    },
@@ -7028,7 +7064,8 @@
     "head": "Plated Armor · Buff",
     "lines": [
      "At the end of its owner's turn: its owner gains 1 Block per stack.",
-     "When its owner loses HP to an attack: the power loses 1 stack."
+     "When its owner loses HP to an attack: the power loses 1 stack.",
+     "Its amount stays between -999 and 999."
     ]
    },
    "Duplication": {
@@ -7950,7 +7987,8 @@
      "Start each fight with 1 Strength.",
      "Strength: The attack damage its owner deals: +1 per stack.",
      "Strength: Applying a negative amount of it is a debuff.",
-     "Strength: Its amount can go below 0; without this, a negative amount only lowers it, never below 0."
+     "Strength: Its amount can go below 0; without this, a negative amount only lowers it, never below 0.",
+     "Strength: Its amount stays between -999 and 999."
     ]
    },
    "Oddly Smooth Stone": {
@@ -7959,7 +7997,8 @@
      "Start each fight with 1 Dexterity.",
      "Dexterity: The block its owner gains from cards: +1 per stack.",
      "Dexterity: Applying a negative amount of it is a debuff.",
-     "Dexterity: Its amount can go below 0; without this, a negative amount only lowers it, never below 0."
+     "Dexterity: Its amount can go below 0; without this, a negative amount only lowers it, never below 0.",
+     "Dexterity: Its amount stays between -999 and 999."
     ]
    },
    "Bronze Scales": {
@@ -8034,7 +8073,8 @@
     "lines": [
      "Start each fight with 4 Plated Armor.",
      "Plated Armor: At the end of its owner's turn: its owner gains 1 Block per stack.",
-     "Plated Armor: When its owner loses HP to an attack: the power loses 1 stack."
+     "Plated Armor: When its owner loses HP to an attack: the power loses 1 stack.",
+     "Plated Armor: Its amount stays between -999 and 999."
     ]
    },
    "Charon's Ashes": {
@@ -8077,6 +8117,7 @@
      "Strength: The attack damage its owner deals: +1 per stack.",
      "Strength: Applying a negative amount of it is a debuff.",
      "Strength: Its amount can go below 0; without this, a negative amount only lowers it, never below 0.",
+     "Strength: Its amount stays between -999 and 999.",
      "Acts only in elite fights."
     ]
    },
@@ -8375,6 +8416,94 @@
     "head": "Runic Pyramid · Boss relic",
     "lines": [
      "Your hand isn't discarded at the end of your turn."
+    ]
+   },
+   "Frozen Eye": {
+    "head": "Frozen Eye · Shop relic",
+    "lines": [
+     "The draw pile's order is shown."
+    ]
+   },
+   "Busted Crown": {
+    "head": "Busted Crown · Boss relic",
+    "lines": [
+     "At the start of your turn: gain 1 energy."
+    ]
+   },
+   "Coffee Dripper": {
+    "head": "Coffee Dripper · Boss relic",
+    "lines": [
+     "At the start of your turn: gain 1 energy."
+    ]
+   },
+   "Cursed Key": {
+    "head": "Cursed Key · Boss relic",
+    "lines": [
+     "At the start of your turn: gain 1 energy."
+    ]
+   },
+   "Ectoplasm": {
+    "head": "Ectoplasm · Boss relic",
+    "lines": [
+     "At the start of your turn: gain 1 energy."
+    ]
+   },
+   "Fusion Hammer": {
+    "head": "Fusion Hammer · Boss relic",
+    "lines": [
+     "At the start of your turn: gain 1 energy."
+    ]
+   },
+   "Sozu": {
+    "head": "Sozu · Boss relic",
+    "lines": [
+     "At the start of your turn: gain 1 energy.",
+     "You can't obtain potions."
+    ]
+   },
+   "Girya": {
+    "head": "Girya · Rare relic",
+    "lines": [
+     "At the start of combat if this relic's counter is 1: gain 1 Strength.",
+     "At the start of combat if this relic's counter is 2: gain 2 Strength.",
+     "At the start of combat if this relic's counter is 3: gain 3 Strength."
+    ]
+   },
+   "Cultist Headpiece": {
+    "head": "Cultist Headpiece · Event relic",
+    "lines": [
+     "No effect in a fight."
+    ]
+   },
+   "Spirit Poop": {
+    "head": "Spirit Poop · Event relic",
+    "lines": [
+     "No effect in a fight."
+    ]
+   },
+   "Bottled Flame": {
+    "head": "Bottled Flame · Uncommon relic",
+    "lines": [
+     "The Attack chosen for it starts each fight in your hand."
+    ]
+   },
+   "Bottled Lightning": {
+    "head": "Bottled Lightning · Uncommon relic",
+    "lines": [
+     "The Skill chosen for it starts each fight in your hand."
+    ]
+   },
+   "Bottled Tornado": {
+    "head": "Bottled Tornado · Uncommon relic",
+    "lines": [
+     "The Power chosen for it starts each fight in your hand."
+    ]
+   },
+   "Runic Dome": {
+    "head": "Runic Dome · Boss relic",
+    "lines": [
+     "At the start of your turn: gain 1 energy.",
+     "Enemy intents are hidden."
     ]
    },
    "Calipers": {
@@ -15645,6 +15774,30 @@
    "source": "pack:act1-colorless",
    "text": "Gain 1 Magnetism."
   },
+  "cards/pack:act1-colorless/Enlightenment": {
+   "name": "Enlightenment",
+   "type": "Skill",
+   "source": "pack:act1-colorless",
+   "text": "Cards in your hand cost at most 1 this turn."
+  },
+  "cards/pack:act1-colorless/Enlightenment+": {
+   "name": "Enlightenment+",
+   "type": "Skill",
+   "source": "pack:act1-colorless",
+   "text": "Cards in your hand cost at most 1 this turn and for the rest of combat."
+  },
+  "cards/pack:act1-colorless/Mayhem": {
+   "name": "Mayhem",
+   "type": "Power",
+   "source": "pack:act1-colorless",
+   "text": "Gain 1 Mayhem."
+  },
+  "cards/pack:act1-colorless/Mayhem+": {
+   "name": "Mayhem+",
+   "type": "Power",
+   "source": "pack:act1-colorless",
+   "text": "Gain 1 Mayhem."
+  },
   "cards/pack:act1-colorless/Ascender's Bane": {
    "name": "Ascender's Bane",
    "cost": "Unplayable",
@@ -18487,19 +18640,19 @@
    "name": "Strength",
    "debuff": "buff",
    "source": "official",
-   "text": "The attack damage its owner deals: +1 per stack. Applying a negative amount of it is a debuff. Its amount can go below 0; without this, a negative amount only lowers it, never below 0."
+   "text": "The attack damage its owner deals: +1 per stack. Applying a negative amount of it is a debuff. Its amount can go below 0; without this, a negative amount only lowers it, never below 0. Its amount stays between -999 and 999."
   },
   "powers/official/Dexterity": {
    "name": "Dexterity",
    "debuff": "buff",
    "source": "official",
-   "text": "The block its owner gains from cards: +1 per stack. Applying a negative amount of it is a debuff. Its amount can go below 0; without this, a negative amount only lowers it, never below 0."
+   "text": "The block its owner gains from cards: +1 per stack. Applying a negative amount of it is a debuff. Its amount can go below 0; without this, a negative amount only lowers it, never below 0. Its amount stays between -999 and 999."
   },
   "powers/official/Vulnerable": {
    "name": "Vulnerable",
    "debuff": "debuff",
    "source": "official",
-   "text": "The attack damage its owner takes: × 1.5. At the end of each round: the power loses 1 stack. Applied by a monster, it skips the end of the round it lands in."
+   "text": "The attack damage its owner takes: × 1.5. At the end of each round: the power loses 1 stack. Applied by a monster after your turn has ended, it skips the end of the round it lands in."
   },
   "powers/official/Weak": {
    "name": "Weak",
@@ -18559,7 +18712,7 @@
    "name": "Poison",
    "debuff": "debuff",
    "source": "official",
-   "text": "At the start of its owner's turn: its owner loses 1 HP per stack, the power loses 1 stack."
+   "text": "At the start of its owner's turn: its owner loses 1 HP per stack, the power loses 1 stack. Its amount stays between -9999 and 9999."
   },
   "powers/official/Combust": {
    "name": "Combust",
@@ -18667,13 +18820,13 @@
    "name": "NoBlock",
    "debuff": "debuff",
    "source": "pack:act1-colorless",
-   "text": "The block its owner gains from cards: × 0. At the end of each round: the power loses 1 stack. Applied by a monster, it skips the end of the round it lands in."
+   "text": "The block its owner gains from cards: × 0. At the end of each round: the power loses 1 stack. Applied by a monster after your turn has ended, it skips the end of the round it lands in."
   },
   "powers/pack:act1-colorless/Shackled": {
    "name": "Shackled",
    "debuff": "buff",
    "source": "pack:act1-colorless",
-   "text": "At the end of its owner's turn: its owner gains 1 Strength per stack, then the power ends."
+   "text": "At the end of its owner's turn: its owner gains 1 Strength per stack, then the power ends. Its amount stays between -999 and 999."
   },
   "powers/pack:act1-colorless/Sadistic": {
    "name": "Sadistic",
@@ -18686,6 +18839,12 @@
    "debuff": "buff",
    "source": "pack:act1-colorless",
    "text": "At the start of its owner's turn: add 1 random card from the Colorless pool to your hand."
+  },
+  "powers/pack:act1-colorless/Mayhem": {
+   "name": "Mayhem",
+   "debuff": "buff",
+   "source": "pack:act1-colorless",
+   "text": "At the start of its owner's turn: play the top 1 card of your draw pile."
   },
   "powers/pack:act1-ironclad/FlameBarrier": {
    "name": "FlameBarrier",
@@ -18727,7 +18886,7 @@
    "name": "FireBreathing",
    "debuff": "buff",
    "source": "pack:act1-ironclad",
-   "text": "Each time its owner draws a card: deal 1 damage per stack to every opponent of its owner."
+   "text": "Each time its owner draws a card: deal 1 damage per stack to every opponent of its owner. Each time its owner draws a card: deal 1 damage per stack to every opponent of its owner."
   },
   "powers/pack:act1-ironclad/Corruption": {
    "name": "Corruption",
@@ -18787,7 +18946,7 @@
    "name": "PlatedArmor",
    "debuff": "buff",
    "source": "pack:act1-potions",
-   "text": "At the end of its owner's turn: its owner gains 1 Block per stack. When its owner loses HP to an attack: the power loses 1 stack."
+   "text": "At the end of its owner's turn: its owner gains 1 Block per stack. When its owner loses HP to an attack: the power loses 1 stack. Its amount stays between -999 and 999."
   },
   "powers/pack:act1-potions/Duplication": {
    "name": "Duplication",
@@ -18799,7 +18958,7 @@
    "name": "PlatedArmor",
    "debuff": "buff",
    "source": "pack:act1-relics",
-   "text": "At the end of its owner's turn: its owner gains 1 Block per stack. When its owner loses HP to an attack: the power loses 1 stack."
+   "text": "At the end of its owner's turn: its owner gains 1 Block per stack. When its owner loses HP to an attack: the power loses 1 stack. Its amount stays between -999 and 999."
   },
   "powers/pack:act1-relics/NextTurnBlock": {
    "name": "NextTurnBlock",
@@ -20240,13 +20399,13 @@
    "name": "Vajra",
    "rarity": "common",
    "source": "pack:act1-relics",
-   "text": "Start each fight with 1 Strength. Strength: The attack damage its owner deals: +1 per stack. Strength: Applying a negative amount of it is a debuff. Strength: Its amount can go below 0; without this, a negative amount only lowers it, never below 0."
+   "text": "Start each fight with 1 Strength. Strength: The attack damage its owner deals: +1 per stack. Strength: Applying a negative amount of it is a debuff. Strength: Its amount can go below 0; without this, a negative amount only lowers it, never below 0. Strength: Its amount stays between -999 and 999."
   },
   "relics/pack:act1-relics/Oddly Smooth Stone": {
    "name": "Oddly Smooth Stone",
    "rarity": "common",
    "source": "pack:act1-relics",
-   "text": "Start each fight with 1 Dexterity. Dexterity: The block its owner gains from cards: +1 per stack. Dexterity: Applying a negative amount of it is a debuff. Dexterity: Its amount can go below 0; without this, a negative amount only lowers it, never below 0."
+   "text": "Start each fight with 1 Dexterity. Dexterity: The block its owner gains from cards: +1 per stack. Dexterity: Applying a negative amount of it is a debuff. Dexterity: Its amount can go below 0; without this, a negative amount only lowers it, never below 0. Dexterity: Its amount stays between -999 and 999."
   },
   "relics/pack:act1-relics/Bronze Scales": {
    "name": "Bronze Scales",
@@ -20312,7 +20471,7 @@
    "name": "Thread and Needle",
    "rarity": "rare",
    "source": "pack:act1-relics",
-   "text": "Start each fight with 4 Plated Armor. Plated Armor: At the end of its owner's turn: its owner gains 1 Block per stack. Plated Armor: When its owner loses HP to an attack: the power loses 1 stack."
+   "text": "Start each fight with 4 Plated Armor. Plated Armor: At the end of its owner's turn: its owner gains 1 Block per stack. Plated Armor: When its owner loses HP to an attack: the power loses 1 stack. Plated Armor: Its amount stays between -999 and 999."
   },
   "relics/pack:act1-relics/Charon's Ashes": {
    "name": "Charon's Ashes",
@@ -20348,7 +20507,7 @@
    "name": "Sling of Courage",
    "rarity": "shop",
    "source": "pack:act1-relics",
-   "text": "Start each fight with 2 Strength. Strength: The attack damage its owner deals: +1 per stack. Strength: Applying a negative amount of it is a debuff. Strength: Its amount can go below 0; without this, a negative amount only lowers it, never below 0. Acts only in elite fights."
+   "text": "Start each fight with 2 Strength. Strength: The attack damage its owner deals: +1 per stack. Strength: Applying a negative amount of it is a debuff. Strength: Its amount can go below 0; without this, a negative amount only lowers it, never below 0. Strength: Its amount stays between -999 and 999. Acts only in elite fights."
   },
   "relics/pack:act1-relics/Clockwork Souvenir": {
    "name": "Clockwork Souvenir",
@@ -20601,6 +20760,90 @@
    "rarity": "boss",
    "source": "pack:act1-relics",
    "text": "Your hand isn't discarded at the end of your turn."
+  },
+  "relics/pack:act1-relics/Frozen Eye": {
+   "name": "Frozen Eye",
+   "rarity": "shop",
+   "source": "pack:act1-relics",
+   "text": "The draw pile's order is shown."
+  },
+  "relics/pack:act1-relics/Busted Crown": {
+   "name": "Busted Crown",
+   "rarity": "boss",
+   "source": "pack:act1-relics",
+   "text": "At the start of your turn: gain 1 energy."
+  },
+  "relics/pack:act1-relics/Coffee Dripper": {
+   "name": "Coffee Dripper",
+   "rarity": "boss",
+   "source": "pack:act1-relics",
+   "text": "At the start of your turn: gain 1 energy."
+  },
+  "relics/pack:act1-relics/Cursed Key": {
+   "name": "Cursed Key",
+   "rarity": "boss",
+   "source": "pack:act1-relics",
+   "text": "At the start of your turn: gain 1 energy."
+  },
+  "relics/pack:act1-relics/Ectoplasm": {
+   "name": "Ectoplasm",
+   "rarity": "boss",
+   "source": "pack:act1-relics",
+   "text": "At the start of your turn: gain 1 energy."
+  },
+  "relics/pack:act1-relics/Fusion Hammer": {
+   "name": "Fusion Hammer",
+   "rarity": "boss",
+   "source": "pack:act1-relics",
+   "text": "At the start of your turn: gain 1 energy."
+  },
+  "relics/pack:act1-relics/Sozu": {
+   "name": "Sozu",
+   "rarity": "boss",
+   "source": "pack:act1-relics",
+   "text": "At the start of your turn: gain 1 energy. You can't obtain potions."
+  },
+  "relics/pack:act1-relics/Girya": {
+   "name": "Girya",
+   "rarity": "rare",
+   "source": "pack:act1-relics",
+   "text": "At the start of combat if this relic's counter is 1: gain 1 Strength. At the start of combat if this relic's counter is 2: gain 2 Strength. At the start of combat if this relic's counter is 3: gain 3 Strength."
+  },
+  "relics/pack:act1-relics/Cultist Headpiece": {
+   "name": "Cultist Headpiece",
+   "rarity": "event",
+   "source": "pack:act1-relics",
+   "text": "No effect in a fight."
+  },
+  "relics/pack:act1-relics/Spirit Poop": {
+   "name": "Spirit Poop",
+   "rarity": "event",
+   "source": "pack:act1-relics",
+   "text": "No effect in a fight."
+  },
+  "relics/pack:act1-relics/Bottled Flame": {
+   "name": "Bottled Flame",
+   "rarity": "uncommon",
+   "source": "pack:act1-relics",
+   "text": "The Attack chosen for it starts each fight in your hand."
+  },
+  "relics/pack:act1-relics/Bottled Lightning": {
+   "name": "Bottled Lightning",
+   "rarity": "uncommon",
+   "source": "pack:act1-relics",
+   "text": "The Skill chosen for it starts each fight in your hand."
+  },
+  "relics/pack:act1-relics/Bottled Tornado": {
+   "name": "Bottled Tornado",
+   "rarity": "uncommon",
+   "source": "pack:act1-relics",
+   "text": "The Power chosen for it starts each fight in your hand."
+  },
+  "relics/pack:act1-relics/Runic Dome": {
+   "name": "Runic Dome",
+   "rarity": "boss",
+   "source": "pack:act1-relics",
+   "text": "At the start of your turn: gain 1 energy. Enemy intents are hidden."
   },
   "relics/pack:act1-relics/Calipers": {
    "name": "Calipers",

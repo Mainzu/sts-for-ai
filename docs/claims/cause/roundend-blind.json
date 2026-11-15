@@ -11,11 +11,11 @@
     },
     {
       "path": "py/src/features.rs",
-      "sha256": "76b0deb2c56dc52114e70e16d81bd78a31f6ec5d4158d036b47c37ff7d62ea11"
+      "sha256": "caed928275b9b1b2c2924f6fbfcbf73785f4798769a230106d6526462417083a"
     },
     {
       "path": "content/powers.json",
-      "sha256": "7a95a139b19b7efc0654dc9c9f507610346290cbe8ce11205a6ec36875a0412c"
+      "sha256": "79cd40fff3443713a2ca0b7d6fe5bae019f577aa79567ec2826750bee0ac1a7b"
     }
   ],
   "owner": false,
@@ -48,6 +48,11 @@
       "by": "24a6e50e-3e7c-42ec-b831-f35d7846c20b",
       "at": "2026-11-14T15:49:57Z @ 418de4d6",
       "note": "navigator: features.rs power_rows skips RoundEnd, power_kind_rows writes it only as opt-in KIND_COUNTDOWN, no net meta has countdown; every RoundEnd hook in content/powers.json and the act1 packs (NoBlock, Duplication added) is ReduceSelf 1"
+    },
+    {
+      "by": "0978e03c-be4b-40a0-961e-d5c5404c0e70",
+      "at": "2026-11-15T02:58:05+00:00 @ 92cf478b",
+      "note": "navigator 2026-11-15: py/src/features.rs (805065dc, 105691e9 era) still writes RoundEnd hooks only as countdown rows (power_kind_rows, line ~1326); Row 1 added card position columns only"
     }
   ],
   "flags": [],
@@ -88,5 +93,5 @@
       "until": "2026-11-13T02:29:07Z @ 3123201a"
     }
   ],
-  "seal": "e337263f362a9161ca577f3b783fcf4b0956342d0e016885f959e3faaf222784"
+  "seal": "140d42764a2a4d63e54b70c6dcc3d1a38b6b3bb69ef626042a41a7d7c6f99853"
 }

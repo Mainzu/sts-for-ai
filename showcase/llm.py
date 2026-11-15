@@ -10,8 +10,8 @@ with the numbers it draws, read from the same data the page loads: data.js,
 tried.js, history.js, stats-data.js, and the literals inside app.js and story.js
 (Node evaluates them, so nothing here is copied by hand).
 
-    python -I showcase/llm.py          # writes showcase/llms.md and llms-full.md
-    python -I showcase/llm.py --check  # exits 1 if either file is stale
+    python showcase/llm.py             # writes showcase/llms.md and llms-full.md
+    python showcase/llm.py --check     # exits 1 if either file is stale
 
 It only reads the showcase files and writes those two files; rerun it after any page edit.
 """
@@ -600,6 +600,7 @@ def build(d, full):
 
 
 if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8")
     d, stale = load(), []
     for full, out in OUTS.items():
         text = build(d, full)
@@ -608,4 +609,4 @@ if __name__ == "__main__":
             continue
         out.write_text(text, encoding="utf-8", newline=chr(10))
         print("wrote %s (%d KB, about %d k tokens)" % (out.relative_to(HERE.parent), len(text.encode()) // 1024, len(text) // 4000))
-    if stale: sys.exit("stale: %s; run python -I showcase/llm.py" % ", ".join(stale))
+    if stale: sys.exit("stale: %s; run python showcase/llm.py" % ", ".join(stale))

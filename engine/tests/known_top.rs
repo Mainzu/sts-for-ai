@@ -262,7 +262,7 @@ fn copies_of_a_floater_share_an_entry() {
         t.add_floater_under(wound);
     }
     assert_eq!(t.floaters().collect::<Vec<_>>(), vec![(wound, 1); 9]);
-    t.push(strike);
+    t.push(strike, false);
     t.add_floater_under(wound);
     assert_eq!(t.pop_head(), strike);
     // Oldest first: the nine, then the newest, now on top.
@@ -333,7 +333,7 @@ fn random_sequences_keep_the_games_odds() {
             } else if let Some(c) = top {
                 log.push(format!("top {}", c.name()));
                 s.draw_mut().add(c, 1);
-                s.top.push(c);
+                s.top.push(c, false);
                 for (p, _) in &mut piles {
                     p.push(c);
                 }

@@ -1,10 +1,11 @@
 {"version": 2,
-"pools": {"Colorless": ["Swift Strike", "Flash of Steel", "Finesse", "Good Instincts", "Dramatic Entrance", "Blind", "Trip", "Panacea", "Purity", "Panic Button", "Discovery", "Jack of All Trades", "Master of Strategy", "Hand of Greed", "Thinking Ahead", "Mind Blast", "Deep Breath", "Apotheosis", "Impatience", "Dark Shackles", "Sadistic Nature", "Madness", "Chrysalis", "Metamorphosis", "Transmutation", "Magnetism"]},
+"pools": {"Colorless": ["Swift Strike", "Flash of Steel", "Finesse", "Good Instincts", "Dramatic Entrance", "Blind", "Trip", "Panacea", "Purity", "Panic Button", "Discovery", "Jack of All Trades", "Master of Strategy", "Hand of Greed", "Thinking Ahead", "Mind Blast", "Deep Breath", "Apotheosis", "Impatience", "Dark Shackles", "Sadistic Nature", "Madness", "Chrysalis", "Metamorphosis", "Transmutation", "Magnetism", "Mayhem", "Enlightenment"]},
 "powers": [
 {"id": "NoBlock", "debuff": true, "skips_first_round": {"from_monster_after_turn_end": true}, "hooks": [{"trigger": "RoundEnd", "condition": "Always", "effects": [{"ReduceSelf": 1}]}], "statics": [{"modifies": "BlockGained", "stage": "Multiply", "amount": 0, "num": 0, "den": 1, "condition": "Always"}]},
 {"id": "Shackled", "cap": 999, "hooks": [{"trigger": "OwnerTurnEnd", "condition": "Always", "effects": [{"Apply": {"power": "Strength", "amount": 1, "target": "Me"}}, "RemoveSelf"]}]},
 {"id": "Sadistic", "hooks": [{"trigger": "OwnerApplied", "condition": "ApplyingDebuff", "effects": [{"PlainDamage": {"amount": 1, "target": "Opponent"}}]}]},
-{"id": "Magnetism", "hooks": [{"trigger": "OwnerTurnStart", "condition": "Always", "effects": [{"MakeRandom": {"pool": "Colorless", "n": 1, "pile": "Hand"}}]}]}
+{"id": "Magnetism", "hooks": [{"trigger": "OwnerTurnStart", "condition": "Always", "effects": [{"MakeRandom": {"pool": "Colorless", "n": 1, "pile": "Hand"}}]}]},
+{"id": "Mayhem", "hooks": [{"trigger": "OwnerTurnStart", "condition": "Always", "effects": [{"PlayTop": {"n": 1, "exhaust": false}}]}]}
 ], "cards": [
 {"id": "Swift Strike", "cost": 0, "type": "Attack", "tags": ["Strike"], "effects": [{"Damage": {"amount": 7, "hits": 1, "target": "Opponent"}}], "upgrade": {"effects.0.Damage.amount": 3}},
 {"id": "Flash of Steel", "cost": 0, "type": "Attack", "effects": [{"Damage": {"amount": 3, "hits": 1, "target": "Opponent"}}, {"Draw": 1}], "upgrade": {"effects.0.Damage.amount": 3}},
@@ -35,6 +36,8 @@
 {"id": "Metamorphosis", "cost": 2, "type": "Skill", "exhaust": true, "effects": [{"MakeRandom": {"pool": "Ironclad", "type": "Attack", "n": 3, "pile": "Draw", "zero_cost": true}}], "upgrade": {"effects.0.MakeRandom.n": 2}},
 {"id": "Transmutation", "cost": -1, "type": "Skill", "exhaust": true, "effects": [{"MakeRandom": {"pool": "Colorless", "n": {"base": 0, "k": 1, "of": "EnergySpent"}, "pile": "Hand", "free": true, "match_level": true}}], "upgrade": {}},
 {"id": "Magnetism", "cost": 2, "type": "Power", "effects": [{"Apply": {"power": "Magnetism", "amount": 1, "target": "Me"}}], "upgrade": {"cost": -1}},
+{"id": "Enlightenment", "cost": 0, "type": "Skill", "effects": [{"CostAtMost": {"cost": 1, "combat": false}}], "upgrade": {"effects.0.CostAtMost.combat": true}},
+{"id": "Mayhem", "cost": 2, "type": "Power", "effects": [{"Apply": {"power": "Mayhem", "amount": 1, "target": "Me"}}], "upgrade": {"cost": -1}},
 {"id": "Ascender's Bane", "cost": -2, "type": "Curse", "ethereal": true, "effects": []},
 {"id": "Clumsy", "cost": -2, "type": "Curse", "ethereal": true, "effects": []},
 {"id": "Curse of the Bell", "cost": -2, "type": "Curse", "effects": []},

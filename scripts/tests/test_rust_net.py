@@ -66,12 +66,12 @@ def test_rust_net_wiring():
     check_wiring("value_ids.pt")
 
 
-def saved_net(mode, hp_loss=False):
+def saved_net(mode, hp_loss=False, act="relu"):
     """A fresh net of one kind, saved by `stsnet.save` and loaded back."""
     feats = sts.Features(mode)
     states = stored_states()[:200]
     ds = stsnet.Dataset.from_batches([feats.encode(states)], np.zeros(len(states), np.float32))
-    model = stsnet.ValueNet(feats.dims, hp_loss=hp_loss)
+    model = stsnet.ValueNet(feats.dims, hp_loss=hp_loss, act=act)
     path = os.path.join(tempfile.mkdtemp(), "m.pt")
     stsnet.save(path, model, stsnet.Normalizer.fit(ds), {"card_repr": mode})
     return stsnet.load(path), states
@@ -83,6 +83,31 @@ def test_saved_nets_load_into_rust():
         got = stsnet.rust_evaluator(model, norm, meta).score(states)
         want = stsnet.Evaluator(model, norm)(stsnet.features_for(meta).encode(states, heuristic=True))
         assert got.shape == (len(states),) and np.abs(got - want).max() < 1e-3, (mode, hp)
+
+
+def test_rust_leaky_net():
+    """A LeakyReLU net scores in Rust as in torch, and its slope matters
+    (read as ReLU, the same weights score differently); SiLU is refused."""
+    (model, norm, meta), _ = saved_net("effects", act="leaky0.1")
+    with torch.no_grad():  # push most units below zero, where the slope acts
+        for name, p in model.named_parameters():
+            if name.endswith("bias") and not name.startswith("head.1"):
+                p.sub_(0.5)
+        model.head[1].weight.mul_(30)
+    states = stored_states()[:400]
+    want = stsnet.Evaluator(model, norm)(stsnet.features_for(meta).encode(states, heuristic=True))
+    got = stsnet.rust_evaluator(model, norm, meta).score(states)
+    assert np.abs(got - want).max() < 1e-3, np.abs(got - want).max()
+    model.act = "relu"
+    as_relu = stsnet.rust_evaluator(model, norm, meta).score(states)
+    assert np.abs(as_relu - want).max() > 1e-2
+    model.act = "silu"
+    try:
+        stsnet.rust_evaluator(model, norm, meta)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("a SiLU net loaded into Rust")
 
 
 def test_rust_hp_net_wiring():

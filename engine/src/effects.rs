@@ -387,6 +387,12 @@ pub enum Effect {
     /// `UpgradeRandomCardAction`); nothing when none can be: a chance event
     /// while two distinct copies (a mark tells copies apart) qualify.
     UpgradeRandom,
+    /// Every card in hand (not X-cost or unplayable) that costs more than
+    /// `cost` this turn costs `cost` this turn (Enlightenment, the game's
+    /// `EnlightenmentAction`: `costForTurn` capped); with `combat`, every
+    /// one whose own cost is above `cost` costs `cost` for the combat too,
+    /// keeping its mark. No chance.
+    CostAtMost { cost: i8, combat: bool },
 }
 
 impl Effect {

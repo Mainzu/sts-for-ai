@@ -7,7 +7,7 @@ use crate::rng::{enumerate, Chance, Rng};
 use crate::effects::Effect;
 use crate::hooks::Replaced;
 use crate::cards::CardId;
-use crate::state::{CombatState, Hand, PileRef, Queued, Run, Stage, Who, HAND_LIMIT};
+use crate::state::{CombatState, Hand, HandMark, PileRef, Queued, Run, Stage, Who, HAND_LIMIT};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum ChanceEvent {
@@ -62,6 +62,56 @@ pub enum ChanceEvent {
     /// `PlainDamage` with `Target::RandomOpponent` (Juggernaut's hit, owed
     /// by its hook).
     PlainHit { amount: i16 },
+    /// Frozen Eye (`RelicRules::sees_draw_order`): the draw pile's cards
+    /// that `Top` doesn't know yet take an order below the known ones,
+    /// every distinct sequence alike (`CardGroup.shuffle` is uniform); at
+    /// the opening shuffle the innate cards go on top first. `then` says
+    /// what waited for it.
+    Order { then: OrderThen },
+    /// Frozen Eye: `card` (in the draw pile, owed its spot) goes under `d`
+    /// known cards, `d` = 1 to the known count alike
+    /// (`CardGroup.addToRandomSpot`: never on top).
+    InsertAt { card: CardId },
+    /// Runic Dome: a card asks whether hidden monster `slot` attacks
+    /// (Spot Weakness's `TargetIntendsAttack`): yes with the summed chance
+    /// of its roll's attacks. The answer is kept (`HIDDEN_CLASS`) and its
+    /// roll is then drawn from the moves of that class.
+    IntentClass { slot: u8 },
+    /// Runic Dome: hidden monster `slot`'s rolled attack amount (louse
+    /// Bite), seen as it first lands: `rolled_attack`'s lo..=hi alike.
+    RolledAmount { slot: u8 },
+}
+
+/// What waits for an `Order` event.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
+pub enum OrderThen {
+    /// Nothing (Deep Breath's shuffle, the opening shuffle).
+    Nothing,
+    /// The rest of a draw that needed the reshuffle: `n` cards off the top.
+    Draw(u8),
+    /// `PlayTop` on the reshuffled pile.
+    TakeTop { exhaust: bool },
+}
+
+/// `n! / prod(k_i!)` for the multiset `sorted` (sorted), in f64.
+fn multinomial(sorted: &[u16]) -> f64 {
+    let mut out = 1.0;
+    let mut run = 0usize;
+    for (i, c) in sorted.iter().enumerate() {
+        run = if i > 0 && sorted[i - 1] == *c { run + 1 } else { 1 };
+        out *= (i + 1) as f64 / run as f64;
+    }
+    out
+}
+
+/// The next distinct permutation of `v` in lexicographic order; `false`
+/// past the last.
+fn next_permutation(v: &mut [u16]) -> bool {
+    let Some(i) = (1..v.len()).rev().find(|&i| v[i - 1] < v[i]) else { return false };
+    let j = (i..v.len()).rev().find(|&j| v[j] > v[i - 1]).expect("a larger element");
+    v.swap(i - 1, j);
+    v[i..].reverse();
+    true
 }
 
 /// Where the draw pile's next card comes from (`CombatState::top_cards`).
@@ -189,9 +239,27 @@ impl CombatState {
         let dist = self.move_distribution(slot);
         if let [(m, _)] = dist[..] {
             self.set_monster_move(slot, m);
+        } else if self.hides_intents() {
+            // Runic Dome: the roll waits until the monster acts (nothing
+            // the player sees before then depends on it), keeping the
+            // allies bit its pattern reads now.
+            let allies = crate::monsters::allies_bit(self, slot);
+            self.intent_hidden[slot] = (self.intent_hidden[slot] & !crate::state::HIDDEN_MASK) | crate::state::HIDDEN_MOVE | if allies { crate::state::HIDDEN_ALLIES } else { 0 };
         } else {
             self.pending = Some(ChanceEvent::MonsterMove { slot: slot as u8 });
         }
+    }
+
+    /// The chance hidden monster `slot`'s roll gives an attack.
+    pub fn attack_chance(&self, slot: usize) -> f64 {
+        let moves = self.monsters[slot].def().moves;
+        self.intent_distribution(slot).iter().filter(|&&(m, _)| moves.get(m as usize).is_some_and(crate::state::is_attack)).map(|x| x.1).sum()
+    }
+
+    /// Monster `slot`'s rolled attack amount is `v`, seen (Runic Dome).
+    pub(crate) fn set_rolled_amount(&mut self, slot: usize, v: i16) {
+        self.monsters[slot].rolled_damage = v;
+        self.intent_hidden[slot] &= !crate::state::HIDDEN_ROLLED;
     }
 
     /// The block the move monster `slot` just ran gives an ally, if any.
@@ -241,100 +309,91 @@ impl CombatState {
         }
     }
 
+    /// The hand's copy classes, as `RandomExhaust` picks from: every card's
+    /// copies by mark (`HandMark`), each with its count.
+    pub(crate) fn exhaust_choices(&self) -> Vec<(CardId, HandMark, u8)> {
+        self.hand.iter().flat_map(|(c, _)| self.hand_classes(c).into_iter().map(move |(m, n)| (c, m, n))).collect()
+    }
+
     /// Exhausts one random card in hand; pauses only while the hand holds
-    /// two distinct cards.
+    /// two distinct copy classes.
     pub(crate) fn request_random_exhaust(&mut self) {
-        let two = {
-            let mut it = self.hand.iter();
-            (it.next(), it.next())
-        };
-        match two {
-            (None, _) => {}
-            (Some((c, _)), None) => self.exhaust_from_hand(c),
+        let choices = self.exhaust_choices();
+        match choices.len() {
+            0 => {}
+            1 => self.exhaust_class(choices[0].0, choices[0].1),
             _ => self.pending = Some(ChanceEvent::RandomExhaust),
         }
     }
 
-    /// The hand cards `ZeroCostRandom` picks from, with the copies of each
-    /// it may pick: copies costing above 0 this turn (unmarked), else, when
-    /// none does, the marked copies of cards costing above 0 (the game's
-    /// `costForTurn > 0`, else `cost > 0`). X-cost and unplayable cards
-    /// never qualify.
-    pub(crate) fn zero_cost_choices(&self) -> Vec<(CardId, u8)> {
-        let costs = |c: CardId| {
+    /// The hand copies `ZeroCostRandom` picks from, by class (`HandMark`)
+    /// with their counts: copies costing above 0 this turn (unmarked or at a
+    /// cost this turn), else, when none does, the copies marked 0 of cards
+    /// costing above 0 (the game's `costForTurn > 0`, else `cost > 0`).
+    /// X-cost and unplayable cards never qualify.
+    pub(crate) fn zero_cost_choices(&self) -> Vec<(CardId, HandMark, u8)> {
+        let (mut turn, mut free) = (Vec::new(), Vec::new());
+        for (c, _) in self.hand.iter() {
             let d = self.binding.def(c);
-            !d.x_cost() && !d.unplayable() && self.unmarked_cost(c) > 0
-        };
-        let all: Vec<(CardId, u8)> = self.hand.iter().filter(|&(c, _)| costs(c)).collect();
-        let turn: Vec<(CardId, u8)> =
-            all.iter().map(|&(c, n)| (c, n - self.free_in_hand.count(c).min(n))).filter(|&(_, n)| n > 0).collect();
-        if turn.is_empty() { all } else { turn }
+            if d.x_cost() || d.unplayable() || self.unmarked_cost(c) <= 0 {
+                continue;
+            }
+            for (m, n) in self.hand_classes(c) {
+                if m == HandMark::Free { free.push((c, m, n)) } else { turn.push((c, m, n)) }
+            }
+        }
+        if turn.is_empty() { free } else { turn }
     }
 
     /// Makes one random qualifying hand card cost 0 for the combat; pauses
-    /// only while two distinct cards qualify.
+    /// only while two distinct copy classes qualify.
     pub(crate) fn request_zero_cost(&mut self) {
         let choices = self.zero_cost_choices();
         match choices.len() {
             0 => {}
-            1 => self.zero_cost(choices[0].0),
+            1 => self.zero_class(choices[0].0, choices[0].1),
             _ => self.pending = Some(ChanceEvent::RandomZeroCost),
         }
     }
 
-    /// One qualifying copy of `c` costs 0 for the combat: a marked copy
-    /// only when every copy is marked (the second tier).
-    fn zero_cost(&mut self, c: CardId) {
-        let marked = self.free_in_hand.count(c) >= self.hand.count(c);
-        self.set_combat_cost(c, 0, marked);
+    /// The hand copies `ZeroCostRandomTurn` picks from, by class with their
+    /// counts: copies costing above 0 this turn, unmarked or at a cost this
+    /// turn (the game's `cost > 0 && costForTurn > 0 && !freeToPlayOnce`),
+    /// with no fallback. X-cost and unplayable cards never qualify.
+    pub(crate) fn free_turn_choices(&self) -> Vec<(CardId, HandMark, u8)> {
+        let mut out = Vec::new();
+        for (c, _) in self.hand.iter() {
+            let d = self.binding.def(c);
+            if d.x_cost() || d.unplayable() || self.unmarked_cost(c) <= 0 {
+                continue;
+            }
+            out.extend(self.hand_classes(c).into_iter().filter(|&(m, _)| m != HandMark::Free).map(|(m, n)| (c, m, n)));
+        }
+        out
     }
 
-    /// The hand cards `ZeroCostRandomTurn` picks from, with the copies of
-    /// each it may pick: unmarked copies costing above 0 this turn (the
-    /// game's `cost > 0 && costForTurn > 0 && !freeToPlayOnce`), with no
-    /// fallback. X-cost and unplayable cards never qualify.
-    pub(crate) fn free_turn_choices(&self) -> Vec<(CardId, u8)> {
-        self.hand
-            .iter()
-            .filter(|&(c, _)| {
-                let d = self.binding.def(c);
-                !d.x_cost() && !d.unplayable() && self.unmarked_cost(c) > 0
-            })
-            .map(|(c, n)| (c, n - self.free_in_hand.count(c).min(n)))
-            .filter(|&(_, n)| n > 0)
-            .collect()
-    }
-
-    /// Marks one random qualifying hand card to cost 0 this turn; pauses
-    /// only while two distinct cards qualify.
+    /// Marks one random qualifying hand copy to cost 0 this turn; pauses
+    /// only while two distinct copy classes qualify.
     pub(crate) fn request_free_turn(&mut self) {
         let choices = self.free_turn_choices();
         match choices.len() {
             0 => {}
-            1 => {
-                self.mark_free_in_hand(choices[0].0);
-            }
+            1 => self.free_class(choices[0].0, choices[0].1),
             _ => self.pending = Some(ChanceEvent::RandomFreeTurn),
         }
     }
 
     /// The hand copies `UpgradeRandom` picks from: each card a general
     /// upgrade can raise (`PickKind::UpgradeFromHand`'s test: not a
-    /// status, not at its max level), its unmarked and its marked copies
-    /// apart (`marked`), with their counts.
-    pub(crate) fn upgrade_choices(&self) -> Vec<(CardId, bool, u8)> {
+    /// status, not at its max level), its copies by class (`HandMark`)
+    /// with their counts.
+    pub(crate) fn upgrade_choices(&self) -> Vec<(CardId, HandMark, u8)> {
         let mut out = Vec::new();
-        for (c, n) in self.hand.iter() {
+        for (c, _) in self.hand.iter() {
             if !crate::registry::general_upgrade(self.binding.def(c)) {
                 continue;
             }
-            let m = self.free_in_hand.count(c).min(n);
-            if n > m {
-                out.push((c, false, n - m));
-            }
-            if m > 0 {
-                out.push((c, true, m));
-            }
+            out.extend(self.hand_classes(c).into_iter().map(|(m, n)| (c, m, n)));
         }
         out
     }
@@ -350,9 +409,21 @@ impl CombatState {
         }
     }
 
-    fn exhaust_from_hand(&mut self, c: CardId) {
-        self.hand_remove(c, 1);
+    /// One copy of `c` of class `mark` is exhausted from the hand.
+    fn exhaust_class(&mut self, c: CardId, mark: HandMark) {
+        self.take_class(c, mark);
         self.exhaust_card(c, 1);
+    }
+
+    /// The class a roll `r` below the choices' total weight lands in.
+    fn class_at(cards: &[(CardId, HandMark, u8)], mut r: u32) -> (CardId, HandMark) {
+        for &(c, m, n) in cards {
+            if r < n as u32 {
+                return (c, m);
+            }
+            r -= n as u32;
+        }
+        unreachable!("weights sum to the total")
     }
 
     /// `amount` non-attack damage on the monster in `slot`, as a
@@ -394,7 +465,7 @@ impl CombatState {
         let Some(n) = self.replaced(Who::Player, Replaced::Draw, n as i16) else { return };
         let n = n.clamp(0, u8::MAX as i16) as u8;
         let k = match self.pending {
-            Some(ChanceEvent::Draw { n: k }) => {
+            Some(ChanceEvent::Draw { n: k }) | Some(ChanceEvent::Order { then: OrderThen::Draw(k) }) => {
                 self.pending = None;
                 k as usize
             }
@@ -415,6 +486,10 @@ impl CombatState {
         }
         let n = (k + n as usize).min(space).min(d + dd);
         if n == 0 {
+            return;
+        }
+        if self.sees_order() {
+            self.draw_ordered(n);
             return;
         }
         if !self.top.is_empty() {
@@ -439,6 +514,10 @@ impl CombatState {
             // PlayTopCardAction's EmptyDeckShuffleAction (`onShuffle`).
             self.fire_shuffled();
             self.piles.move_all(Run::Discard, Run::Draw);
+            if self.sees_order() {
+                self.pending = Some(ChanceEvent::Order { then: OrderThen::TakeTop { exhaust } });
+                return;
+            }
         }
         let cards = self.top_cards();
         if cards.len() == 1 {
@@ -450,6 +529,74 @@ impl CombatState {
             }
         }
         self.pending = Some(ChanceEvent::TakeTop { exhaust });
+    }
+
+    /// Frozen Eye's draw of `n` (at most both piles): the known head, then
+    /// with more to draw the discard pile shuffled in when the draw pile is
+    /// empty, and an `Order` before the rest.
+    fn draw_ordered(&mut self, n: usize) {
+        let head = n.min(self.top.n_known());
+        for _ in 0..head {
+            let c = self.top.known().next().expect("a known head");
+            self.draw_top_one(c, TopPick::Head);
+        }
+        let rest = n - head;
+        if rest > 0 {
+            if self.draw().is_empty() {
+                self.piles.move_all(Run::Discard, Run::Draw);
+            }
+            self.pending = Some(ChanceEvent::Order { then: OrderThen::Draw(rest as u8) });
+        }
+    }
+
+    /// Frozen Eye's owed spot for `c` (`OwedKind::Insert`): with no card
+    /// known it is the pile's only known card, with one it goes under it,
+    /// else `InsertAt` pauses.
+    pub(crate) fn request_insert(&mut self, c: CardId) {
+        match self.top.n_known() {
+            0 => self.top.insert_known(0, c),
+            1 => self.top.insert_known(1, c),
+            _ => self.pending = Some(ChanceEvent::InsertAt { card: c }),
+        }
+    }
+
+    /// The cards an `Order` puts in order (sorted), and the ones it puts
+    /// first in a fixed order (the opening's innate cards, sorted); cards
+    /// owed a spot (`OwedKind::Insert`) are left out.
+    fn order_cards(&self) -> (Vec<u16>, Vec<u16>) {
+        // Known cards, and cards still owed their random spot (they take
+        // it after this order, as the game adds them after the shuffle).
+        let mut known = crate::state::Pile::default();
+        for c in self.top.known() {
+            known.add(c, 1);
+        }
+        for e in self.owed.iter() {
+            if let crate::state::OwedKind::Insert { card } = e.kind {
+                known.add(card, e.n);
+            }
+        }
+        let (mut first, mut rest) = (Vec::new(), Vec::new());
+        let opening = if self.turn == 0 { self.opening_cards() } else { Vec::new() };
+        for (c, k) in self.draw().iter() {
+            let left = k.saturating_sub(known.count(c));
+            let top = opening.iter().find(|x| x.0 == c).map_or(0, |x| x.1).min(left);
+            first.extend(std::iter::repeat_n(c.0, top as usize));
+            rest.extend(std::iter::repeat_n(c.0, (left - top) as usize));
+        }
+        (rest, first)
+    }
+
+    /// The pile in order `perm` (below the known cards and `first`), then
+    /// what waited for it.
+    fn set_order(&mut self, first: &[u16], perm: &[u16], then: OrderThen) {
+        let mut seq: Vec<CardId> = self.top.known().collect();
+        seq.extend(first.iter().chain(perm).map(|&c| CardId(c)));
+        self.top.set_known(&seq);
+        match then {
+            OrderThen::Nothing => {}
+            OrderThen::Draw(n) => self.draw_ordered(n as usize),
+            OrderThen::TakeTop { exhaust } => self.request_take_top(exhaust),
+        }
     }
 
     /// The top card's kinds with integer weights (the chance of each is its
@@ -666,7 +813,7 @@ impl CombatState {
                     .collect()
             }
             ChanceEvent::MonsterMove { slot } => {
-                let dist = self.move_distribution(slot as usize);
+                let dist = self.roll_distribution(slot as usize);
                 if dist.len() > limit {
                     return Some(ChanceOutcomes::Large);
                 }
@@ -821,12 +968,12 @@ impl CombatState {
                 if cards.len() > limit {
                     return Some(ChanceOutcomes::Large);
                 }
-                let total: u32 = cards.iter().map(|&(_, n)| n as u32).sum();
+                let total: u32 = cards.iter().map(|&(_, _, n)| n as u32).sum();
                 cards
                     .into_iter()
-                    .map(|(c, n)| {
+                    .map(|(c, m, n)| {
                         let mut s = base.clone();
-                        s.zero_cost(c);
+                        s.zero_class(c, m);
                         s.run();
                         (n as f64 / total as f64, s)
                     })
@@ -837,12 +984,12 @@ impl CombatState {
                 if cards.len() > limit {
                     return Some(ChanceOutcomes::Large);
                 }
-                let total: u32 = cards.iter().map(|&(_, n)| n as u32).sum();
+                let total: u32 = cards.iter().map(|&(_, _, n)| n as u32).sum();
                 cards
                     .into_iter()
-                    .map(|(c, n)| {
+                    .map(|(c, m, n)| {
                         let mut s = base.clone();
-                        s.mark_free_in_hand(c);
+                        s.free_class(c, m);
                         s.run();
                         (n as f64 / total as f64, s)
                     })
@@ -856,27 +1003,87 @@ impl CombatState {
                 let total: u32 = cards.iter().map(|&(_, _, n)| n as u32).sum();
                 cards
                     .into_iter()
-                    .map(|(c, marked, n)| {
+                    .map(|(c, m, n)| {
                         let mut s = base.clone();
-                        s.upgrade_copy(c, marked);
+                        s.upgrade_copy(c, m);
                         s.run();
                         (n as f64 / total as f64, s)
                     })
                     .collect()
             }
+            ChanceEvent::Order { then } => {
+                let (mut perm, first) = self.order_cards();
+                let count = multinomial(&perm);
+                if count > limit as f64 {
+                    return Some(ChanceOutcomes::Large);
+                }
+                let p = 1.0 / count;
+                let mut v = Vec::with_capacity(count as usize);
+                loop {
+                    let mut s = base.clone();
+                    s.set_order(&first, &perm, then);
+                    s.run();
+                    v.push((p, s));
+                    if !next_permutation(&mut perm) {
+                        break;
+                    }
+                }
+                v
+            }
+            ChanceEvent::IntentClass { slot } => {
+                let p = self.attack_chance(slot as usize);
+                [(p, crate::state::REVEALED_ATTACK), (1.0 - p, crate::state::REVEALED_NO_ATTACK)]
+                    .into_iter()
+                    .map(|(p, bit)| {
+                        let mut s = base.clone();
+                        s.intent_hidden[slot as usize] |= bit;
+                        s.run();
+                        (p, s)
+                    })
+                    .collect()
+            }
+            ChanceEvent::RolledAmount { slot } => {
+                let (lo, hi) = self.monsters[slot as usize].def().rolled_attack.expect("a rolled attack");
+                let n = (hi - lo + 1) as usize;
+                if n > limit {
+                    return Some(ChanceOutcomes::Large);
+                }
+                (lo..=hi)
+                    .map(|v| {
+                        let mut s = base.clone();
+                        s.set_rolled_amount(slot as usize, v);
+                        s.run();
+                        (1.0 / n as f64, s)
+                    })
+                    .collect()
+            }
+            ChanceEvent::InsertAt { card } => {
+                let n = self.top.n_known();
+                if n > limit {
+                    return Some(ChanceOutcomes::Large);
+                }
+                (1..=n)
+                    .map(|d| {
+                        let mut s = base.clone();
+                        s.top.insert_known(d, card);
+                        s.run();
+                        (1.0 / n as f64, s)
+                    })
+                    .collect()
+            }
             ChanceEvent::RandomExhaust => {
-                let cards: Vec<(CardId, u8)> = self.hand.iter().collect();
+                let cards = self.exhaust_choices();
                 if cards.len() > limit {
                     return Some(ChanceOutcomes::Large);
                 }
-                let total = self.hand.len() as f64;
+                let total: u32 = cards.iter().map(|&(_, _, n)| n as u32).sum();
                 cards
                     .into_iter()
-                    .map(|(c, n)| {
+                    .map(|(c, m, n)| {
                         let mut s = base.clone();
-                        s.exhaust_from_hand(c);
+                        s.exhaust_class(c, m);
                         s.run();
-                        (n as f64 / total, s)
+                        (n as f64 / total as f64, s)
                     })
                     .collect()
             }
@@ -919,9 +1126,30 @@ impl CombatState {
             }
             ChanceEvent::MonsterMove { slot } => {
                 let slot = slot as usize;
-                let ai = self.monsters[slot].def().ai;
-                let m = ai(self, slot, rng as &mut dyn Chance);
+                // A roll a card revealed the class of (Runic Dome): from
+                // the moves of that class.
+                let m = if self.intent_hidden[slot] & crate::state::HIDDEN_CLASS != 0 {
+                    let dist = self.roll_distribution(slot);
+                    let r = rng.unit();
+                    let mut acc = 0.0;
+                    dist.iter().find(|&&(_, p)| {
+                        acc += p;
+                        r < acc
+                    }).unwrap_or(dist.last().expect("a move")).0
+                } else {
+                    let ai = self.monsters[slot].def().ai;
+                    ai(self, slot, rng as &mut dyn Chance)
+                };
                 self.set_monster_move(slot, m);
+            }
+            ChanceEvent::IntentClass { slot } => {
+                let bit = if rng.unit() < self.attack_chance(slot as usize) { crate::state::REVEALED_ATTACK } else { crate::state::REVEALED_NO_ATTACK };
+                self.intent_hidden[slot as usize] |= bit;
+            }
+            ChanceEvent::RolledAmount { slot } => {
+                let (lo, hi) = self.monsters[slot as usize].def().rolled_attack.expect("a rolled attack");
+                let v = lo + rng.below((hi - lo + 1) as u32) as i16;
+                self.set_rolled_amount(slot as usize, v);
             }
             ChanceEvent::RandomTarget { amount } => {
                 let living: Vec<usize> = self.living_slots().collect();
@@ -948,52 +1176,27 @@ impl CombatState {
             }
             ChanceEvent::RandomZeroCost => {
                 let cards = self.zero_cost_choices();
-                let mut r = rng.below(cards.iter().map(|&(_, n)| n as u32).sum());
-                let &(c, _) = cards
-                    .iter()
-                    .find(|&&(_, n)| {
-                        if r < n as u32 {
-                            return true;
-                        }
-                        r -= n as u32;
-                        false
-                    })
-                    .expect("weights sum to the total");
-                self.zero_cost(c);
+                let r = rng.below(cards.iter().map(|&(_, _, n)| n as u32).sum());
+                let (c, m) = Self::class_at(&cards, r);
+                self.zero_class(c, m);
             }
             ChanceEvent::RandomFreeTurn => {
                 let cards = self.free_turn_choices();
-                let mut r = rng.below(cards.iter().map(|&(_, n)| n as u32).sum());
-                let &(c, _) = cards
-                    .iter()
-                    .find(|&&(_, n)| {
-                        if r < n as u32 {
-                            return true;
-                        }
-                        r -= n as u32;
-                        false
-                    })
-                    .expect("weights sum to the total");
-                self.mark_free_in_hand(c);
+                let r = rng.below(cards.iter().map(|&(_, _, n)| n as u32).sum());
+                let (c, m) = Self::class_at(&cards, r);
+                self.free_class(c, m);
             }
             ChanceEvent::RandomUpgrade => {
                 let cards = self.upgrade_choices();
-                let mut r = rng.below(cards.iter().map(|&(_, _, n)| n as u32).sum());
-                let &(c, marked, _) = cards
-                    .iter()
-                    .find(|&&(_, _, n)| {
-                        if r < n as u32 {
-                            return true;
-                        }
-                        r -= n as u32;
-                        false
-                    })
-                    .expect("weights sum to the total");
-                self.upgrade_copy(c, marked);
+                let r = rng.below(cards.iter().map(|&(_, _, n)| n as u32).sum());
+                let (c, m) = Self::class_at(&cards, r);
+                self.upgrade_copy(c, m);
             }
             ChanceEvent::RandomExhaust => {
-                let c = self.hand.nth(rng.below(self.hand.len() as u32) as usize);
-                self.exhaust_from_hand(c);
+                let cards = self.exhaust_choices();
+                let r = rng.below(self.hand.len() as u32);
+                let (c, m) = Self::class_at(&cards, r);
+                self.exhaust_class(c, m);
             }
             ChanceEvent::TakeTop { exhaust } => {
                 let (c, pick) = Self::sample_top(&self.top_cards(), rng);
@@ -1013,6 +1216,18 @@ impl CombatState {
                 let cards = crate::registry::pool_cards(&self.binding, pool, ty);
                 let c = cards[rng.below(cards.len() as u32) as usize];
                 self.make_random(c, pile, zero_cost, free, up);
+            }
+            // Fisher-Yates over the cards to order.
+            ChanceEvent::Order { then } => {
+                let (mut perm, first) = self.order_cards();
+                for i in (1..perm.len()).rev() {
+                    perm.swap(i, rng.below(i as u32 + 1) as usize);
+                }
+                self.set_order(&first, &perm, then);
+            }
+            ChanceEvent::InsertAt { card } => {
+                let d = 1 + rng.below(self.top.n_known() as u32) as usize;
+                self.top.insert_known(d, card);
             }
             ChanceEvent::RandomPotion { pool } => {
                 let id = crate::potions::potion_pool(pool).sample(rng);

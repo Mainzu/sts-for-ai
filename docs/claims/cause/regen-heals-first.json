@@ -7,15 +7,15 @@
     {
       "path": "docs/research/real-game-runs.md",
       "anchor": "Bugs the live runs found",
-      "sha256": "d7bf1c42d0fdce346a4437d4d699b5efa184225f6c4d39e64fe17b3ac7205373"
+      "sha256": "38c9b71c80253241ffa37e0b95ddb8759a129884de500ccaab7e5aef16f49a24"
     },
     {
       "path": "content/packs/act1-potions.json",
-      "sha256": "ae84a0a9d236b8001f42aca34689c6f79086ec5ee210a1dd81c7024db76f474c"
+      "sha256": "ce78e131815794cca10acf2aafc7879c1fe1aa2e2852733928a49ccf215a023e"
     },
     {
       "path": "content/packs/act1-relics.json",
-      "sha256": "7f9344d8dca6c8eb55bfdd0d4d1deaede35f257991838a3c6dbeac616d3dc298"
+      "sha256": "043a4f495f2f27c026fc37a99fd5e34bd91c3dcdd9b25d2466824b0c413208d9"
     },
     {
       "path": "engine/tests/turn_end_first.rs",
@@ -32,6 +32,11 @@
       "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
       "at": "2026-11-14T04:43:40Z @ 0ccb0f83",
       "note": "kill-effects 795ff77c touched only check_over/condition_holds (TargetDied), Feed's pack row and an appended condition column; fact still true"
+    },
+    {
+      "by": "curate-cf44b335-65ef-4f93-841c-f4d788c07b73",
+      "at": "2026-11-15T04:57:45+00:00 @ bbcf740c",
+      "note": "acts_first still set on Regen (act1-potions.json) and Orichalcum (act1-relics.json); engine/tests/turn_end_first.rs exists; real-game-runs.md section still describes it"
     }
   ],
   "flags": [],
@@ -56,5 +61,5 @@
       "until": "2026-11-14T01:58:33Z @ cd9a501d"
     }
   ],
-  "seal": "6d36689e17ee3e9b313a8c5f16fec6d12d934724f469a442df8b62103f3dee61"
+  "seal": "074a5f4b1854ac01290987b151dd127231d4239ca45e3fbeab6f4e8b5529f5e5"
 }

@@ -22,6 +22,9 @@ struct Linear {
     b: Vec<f32>,
     n_in: usize,
     n_out: usize,
+    /// The activation's slope below zero: 0 is ReLU, else LeakyReLU
+    /// (`stsnet.ACTS`; set by `Net::new`).
+    slope: f32,
 }
 
 impl Linear {
@@ -37,10 +40,11 @@ impl Linear {
                 t[i * n_out + o] = w[o * n_in + i];
             }
         }
-        Ok(Linear { w: t, b: b.to_vec(), n_in, n_out })
+        Ok(Linear { w: t, b: b.to_vec(), n_in, n_out, slope: 0.0 })
     }
 
-    /// `out = x W^T + b`, then ReLU when `relu`.
+    /// `out = x W^T + b`, then the activation (ReLU, or LeakyReLU with
+    /// `slope`) when `relu`.
     fn apply(&self, x: &[f32], out: &mut [f32], relu: bool) {
         out.copy_from_slice(&self.b);
         for (i, &xi) in x.iter().enumerate() {
@@ -52,9 +56,15 @@ impl Linear {
                 *o += xi * w;
             }
         }
-        if relu {
+        if relu && self.slope == 0.0 {
             for o in out.iter_mut() {
                 *o = o.max(0.0);
+            }
+        } else if relu {
+            for o in out.iter_mut() {
+                if *o < 0.0 {
+                    *o *= self.slope;
+                }
             }
         }
     }
@@ -189,17 +199,19 @@ impl Net {
     /// From a `ValueNet` state dict, the normaliser's `(mean, std)` per key
     /// (`player`, `monsters`, `cards`, `rows`) and the encoder's dimensions
     /// (`player`, `monster`, `card`, `row`), which the weights must fit.
+    /// `slope` is the hidden activation's slope below zero (0: ReLU).
     pub fn new(
         state: &HashMap<String, Tensor>,
         norm: HashMap<String, (Vec<f32>, Vec<f32>)>,
         dims: [usize; 4],
         head_kind: Head,
+        slope: f32,
     ) -> Result<Net, String> {
         let lin = |name: &str| -> Result<Linear, String> {
             let get = |k: String| state.get(&k).ok_or_else(|| format!("state dict has no {k:?}"));
             let (w, shape) = get(format!("{name}.weight"))?;
             let (b, _) = get(format!("{name}.bias"))?;
-            Linear::new(w, shape, b).map_err(|e| format!("{name}: {e}"))
+            Linear::new(w, shape, b).map(|l| Linear { slope, ..l }).map_err(|e| format!("{name}: {e}"))
         };
         let mut norm = norm;
         let mut nrm = |k: &str, dim: usize| -> Result<Norm, String> {

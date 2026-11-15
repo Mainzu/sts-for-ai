@@ -184,7 +184,7 @@ fn relic_keys_guard() {
     // A new relic key needs a read (and words under `relic_rule` when it
     // states a rule): update this list with them.
     assert_eq!(sts_engine::relics::RELIC_KEYS, ["id", "rarity", "powers", "fights", "win_heal", "hooks", "counter", "potion_potency", "potion_slots", "draw_per_turn", "x_bonus",
-        "keeps_energy", "plays_per_turn", "keeps_hand", "heal_scale", "exhaust_save"]);
+        "keeps_energy", "plays_per_turn", "keeps_hand", "heal_scale", "exhaust_save", "sees_draw_order", "hides_intents", "no_potions", "bottles"]);
     let words = sts_engine::registry::element_names().into_iter().find(|(f, _)| *f == "relic_rule").unwrap().1;
     for k in ["fights", "win_heal", "counter", "potion_potency", "potion_slots", "draw_per_turn", "x_bonus", "keeps_energy", "plays_per_turn", "keeps_hand", "heal_scale", "exhaust_save"] {
         assert!(words.contains(&k), "relic_rule {k} has no words");

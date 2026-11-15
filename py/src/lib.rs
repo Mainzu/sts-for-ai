@@ -1,5 +1,5 @@
 //! Python module `sts`: the combat engine, its agents and state features.
-//! See SPEC.md (Python API) and README.md.
+//! See SPEC.md (Python API) and docs/python-api.md.
 
 mod features;
 mod net;
@@ -634,7 +634,16 @@ impl Combat {
             d.set_item("hp", m.hp)?;
             d.set_item("max_hp", m.max_hp)?;
             d.set_item("block", m.block)?;
+            // Runic Dome: a hidden move shows no name and its expected damage.
             match m.intent_def() {
+                Some(_) if s.move_hidden(slot) => {
+                    let i = PyDict::new(py);
+                    i.set_item("name", py.None())?;
+                    i.set_item("damage", intent_damage(s, slot))?;
+                    i.set_item("hits", 0)?;
+                    i.set_item("known", false)?;
+                    d.set_item("intent", i)?;
+                }
                 Some(mv) => {
                     let hits: u32 = s.move_attacks(slot, mv, true).map(|(_, h)| h as u32).sum();
                     let i = PyDict::new(py);
@@ -877,6 +886,10 @@ impl Combat {
             free.set_item(card_name(cid, b), n + 1)?;
         }
         v.set_item("free", free)?;
+        // Cards that cost less than their cost, above 0, this turn (Enlightenment).
+        if !s.turn_costs.is_empty() {
+            v.set_item("turn_costs", s.turn_costs.iter().map(|(c, k)| (card_name(c, b), k)).collect::<Vec<_>>())?;
+        }
         // What the player knows of the draw pile's order (Headbutt):
         // the known cards from the top, and floaters (card, cards above it).
         v.set_item("top", s.top.known().map(|c| card_name(c, b)).collect::<Vec<_>>())?;
@@ -905,6 +918,10 @@ impl Combat {
             d.set_item("moves", (mv(m.moves[0]), mv(m.moves[1])))?;
             d.set_item("rolled_damage", m.rolled_damage)?;
             d.set_item("escaped", m.escaped)?;
+            let slot = ms.len();
+            if s.intent_hidden[slot] != 0 {
+                d.set_item("intent_hidden", s.intent_hidden[slot])?;
+            }
             ms.push(d);
         }
         v.set_item("monsters", ms)?;
@@ -1107,6 +1124,30 @@ impl Combat {
             mon.rolled_damage = get(m, "rolled_damage")?.unwrap_or(mon.rolled_damage);
             mon.escaped = get(m, "escaped")?.unwrap_or(false);
         }
+        // Runic Dome (docs/research/build-plans-2026-11-14/frozen-eye-runic-dome.md):
+        // a hidden move ("move_hidden", "moves" then the history: the move
+        // used last and the one before) rolls when the monster acts, with
+        // "allies_at_roll" (default: another monster lives now); one that
+        // can only be one move is set and shown. "rolled_hidden": a rolled
+        // attack amount not seen yet. "intent_hidden" sets the bits as
+        // `Combat.view` writes them.
+        use sts_engine::state::{HIDDEN_ALLIES, HIDDEN_MOVE, HIDDEN_ROLLED};
+        for (slot, m) in monsters.iter().enumerate() {
+            let mut bits: u8 = get(m, "intent_hidden")?.unwrap_or(0);
+            if get::<bool>(m, "move_hidden")?.unwrap_or(false) {
+                let allies = get::<bool>(m, "allies_at_roll")?.unwrap_or_else(|| s.living_slots().any(|i| i != slot));
+                bits |= HIDDEN_MOVE | if allies { HIDDEN_ALLIES } else { 0 };
+            }
+            if get::<bool>(m, "rolled_hidden")?.unwrap_or(false) {
+                bits |= HIDDEN_ROLLED;
+            }
+            s.intent_hidden[slot] = bits;
+            if bits & HIDDEN_MOVE != 0 {
+                if let [(mv, _)] = s.intent_distribution(slot)[..] {
+                    s.set_monster_move(slot, mv);
+                }
+            }
+        }
         s.turn = get(view, "turn")?.unwrap_or(s.turn);
         s.cards_played_this_turn = get(view, "cards_played_this_turn")?.unwrap_or(0);
         s.start_hp = get(view, "start_hp")?.unwrap_or(hp);
@@ -1122,6 +1163,14 @@ impl Combat {
             let c = *card_ids.get(&name).ok_or_else(|| err(format!("free card {name:?} not in the piles")))?;
             for _ in 0..n {
                 s.free_in_hand.add(c);
+            }
+        }
+        s.turn_costs = Default::default();
+        let costs: Vec<(String, u8)> = pairs(view, "turn_costs")?;
+        for (name, k) in costs {
+            let c = *card_ids.get(&name).ok_or_else(|| err(format!("turn_costs card {name:?} not in the piles")))?;
+            if !s.turn_costs.add(c, k) {
+                return Err(err("turn_costs: a cost of 0 or more marks than a hand holds"));
             }
         }
         s.cost_rolls = Default::default();
@@ -1710,7 +1759,14 @@ impl PyNet {
         } else {
             Head::Score
         };
-        let net = Net::new(&state, norm, enc.layout_dims(), head).map_err(err)?;
+        let slope: f32 = match get("leaky_slope")? {
+            Some(v) if !v.is_none() => v.extract()?,
+            _ => 0.0,
+        };
+        if !(0.0..1.0).contains(&slope) {
+            return Err(err(format!("leaky_slope {slope} is outside [0, 1)")));
+        }
+        let net = Net::new(&state, norm, enc.layout_dims(), head, slope).map_err(err)?;
         if net.n_piles != enc.n_piles() {
             return Err(err(format!("the net's head has {} pile slots, its features {}", net.n_piles, enc.n_piles())));
         }
@@ -3027,7 +3083,7 @@ mod tests {
             .into_iter()
             .map(|(k, d)| (k.to_string(), (vec![0.0; d], vec![10.0; d])))
             .collect();
-        Net::new(&state, norm, enc.layout_dims(), Head::Score).unwrap()
+        Net::new(&state, norm, enc.layout_dims(), Head::Score, 0.0).unwrap()
     }
 
     /// Pummel 2x4 under Weak shows 4 (1 a hit), not the total's 6: shown

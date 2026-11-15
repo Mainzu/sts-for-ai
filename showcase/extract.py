@@ -4,8 +4,8 @@ Reads only files under results/ (no engine, no search), writes showcase/data.js
 (window.SHOWCASE = {...}). Every chart built from it shows one setting, read
 from one set of files; the page's prose quotes its numbers by hand.
 
-    python -I showcase/extract.py            # rewrite showcase/data.js
-    python -I showcase/extract.py --check    # print the numbers the page quotes
+    python showcase/extract.py               # rewrite showcase/data.js
+    python showcase/extract.py --check       # print the numbers the page quotes
 
 Clean-up: data.js is the only file it writes; rerun to regenerate, or delete
 it (the page then has no charts).

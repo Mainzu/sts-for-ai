@@ -313,7 +313,16 @@ def observed(gs, fight):
         mv = {"name": name, "hp": m["current_hp"] if escaped else 0 if gone else m["current_hp"], "max_hp": m["max_hp"],
               "block": m["block"], "powers": powers_of(m.get("powers", []), left, name), "escaped": escaped,
               "game_index": i}
-        if not gone:
+        if not gone and "move_id" not in m and "last_move_id" in m:
+            # Runic Dome: no intent shown, but the moves used last turn and
+            # the one before (CommunicationMod's last_move_id /
+            # second_last_move_id): the history the engine rolls from as the
+            # monster acts (merge sets "move_hidden").
+            moves = game_ids.moves(m["id"])
+            # Each byte's engine ids (several where the engine counts turns:
+            # merge picks by the engine's own history).
+            mv["hidden_moves"] = [moves.get(m.get(k), [None]) if m.get(k) is not None else [None] for k in ("last_move_id", "second_last_move_id")]
+        elif not gone:
             moves = game_ids.moves(m["id"])
             if m.get("move_id") not in moves:
                 raise HandOver("move %s of %s not mapped" % (m.get("move_id"), m["id"]))
@@ -365,6 +374,26 @@ def merge(obs, priors, last_moves, notes):
         m.pop("game_index", None)
         cands = m.pop("candidates", None)
         shown = m.pop("shown_damage", None)
+        hidden_moves = m.pop("hidden_moves", None)
+        if hidden_moves is not None:  # Runic Dome: the roll is still to come
+            last, before = hidden_moves
+            same = [pv["monsters"][i] for pv in priors if i < len(pv["monsters"]) and pv["monsters"][i]["name"] == m["name"]]
+            fit = [pm for pm in same if pm["moves"][0] in last and pm["moves"][1] in before]
+            if fit:
+                m["moves"] = list(fit[0]["moves"])
+            else:
+                if len(last) > 1 or len(before) > 1:
+                    notes.append("slot %d: hidden history %s %s ambiguous, took the first" % (i, last, before))
+                m["moves"] = [last[0], before[0]]
+            m["move_hidden"] = True
+            if same:
+                m["rolled_damage"] = same[0].get("rolled_damage", 0)
+                if same[0].get("intent_hidden", 0) & 16:
+                    m["rolled_hidden"] = True
+                for p in hidden & set(same[0].get("powers", {})):
+                    m["powers"][p] = same[0]["powers"][p]
+                m["just_applied"] = [p for p in same[0].get("just_applied", []) if p in m["powers"]]
+            continue
         if cands is None:  # gone: its hidden parts as the engine last had them
             same = [pv["monsters"][i] for pv in priors if i < len(pv["monsters"]) and pv["monsters"][i]["name"] == m["name"]]
             if same:

@@ -62,7 +62,7 @@ def kb_command(reg):
     rel = os.path.relpath(REGISTRY, ROOT).replace("\\", "/")
     return [sys.executable, "-I", KB, "set", "product/net", f"Product player: {player_string(reg)}.",
             "--from", rel, f"docs/decisions.md#{reg['decision']}", "--pin",
-            "--check", "python -I scripts/product.py player", "--expect", player_string(reg)]
+            "--check", "python scripts/product.py player", "--expect", player_string(reg)]
 
 
 def main():

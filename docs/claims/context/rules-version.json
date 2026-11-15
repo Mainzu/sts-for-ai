@@ -10,25 +10,46 @@
     },
     {
       "path": "scripts/registry.py",
-      "sha256": "0588891dcaf89f6dd8503b94984e65697beb898d08b34150bd3fe1cdc1162aac"
+      "sha256": "2a7f4d8946e48eb8a534884d0ae3b4166d096e948751f9db5ceccfc15bf3aee9"
     },
     {
       "path": "docs/decisions.md",
       "anchor": "Rules version moves for Row V, the game's caps and Shield Gremlin's Protect (on the owner's behalf, 2026-11-15)",
-      "sha256": "c9d5519cb111862ab426547696222b337e8f34c68ddd7b6122d672fdc56229b0"
+      "sha256": "8efc8bd870352a080e8a1026398a4cb15dd13bdc44350803eaf0229c374a5345"
     }
   ],
   "check": {
-    "cmd": ".venv/Scripts/python.exe -I -c \"import sys; sys.path.insert(0, 'scripts'); import registry; print(registry.rules_version())\"",
+    "cmd": ".venv/Scripts/python.exe -c \"import sys; sys.path.insert(0, 'scripts'); import registry; print(registry.rules_version())\"",
     "expect": "334dd4b4ef071632",
     "timeout": 30
   },
   "owner": false,
   "pinned": true,
-  "note": "Row V, C1 caps and Shield Gremlin's Protect landed in 378e2a40 (640 Fungi golden lines and 273 proving lines moved, 4 cover games appended), no SAME_RULES entry",
+  "note": "Row V, C1 caps and Shield Gremlin's Protect landed in 378e2a40 (640 Fungi golden lines and 273 proving lines moved, 4 cover games appended), no SAME_RULES entry. Check runs the venv python without -I (it dropped PYTHON* variables); output unchanged.",
   "by": "b8a9db13-f74c-4d56-b794-25229c64f682",
   "at": "2026-11-14T17:00:14Z @ 5b383266",
-  "confirms": [],
+  "confirms": [
+    {
+      "by": "1a486010-e04b-47f9-af39-5e94867a4af2",
+      "at": "2026-11-15T01:34:08+00:00 @ 9eb76d4f",
+      "note": "check passed: 334dd4b4ef071632"
+    },
+    {
+      "by": "0978e03c-be4b-40a0-961e-d5c5404c0e70",
+      "at": "2026-11-15T02:56:53+00:00 @ 92cf478b",
+      "note": "check passed: 334dd4b4ef071632"
+    },
+    {
+      "by": "cf44b335-65ef-4f93-841c-f4d788c07b73",
+      "at": "2026-11-15T04:57:32+00:00 @ bbcf740c",
+      "note": "check passed: 334dd4b4ef071632"
+    },
+    {
+      "by": "ea69b906-0ef3-444c-8cc3-77db4706d7ae",
+      "at": "2026-11-15T05:20:39+00:00 @ 97721f22",
+      "note": "Row V, C1 caps and Shield Gremlin's Protect landed in 378e2a40 (640 Fungi golden lines and 273 proving lines moved, 4 cover games appended), no SAME_RULES entry. Check runs the venv python without -I (it dropped PYTHON* variables); output unchanged."
+    }
+  ],
   "flags": [],
   "history": [
     {
@@ -211,5 +232,5 @@
       "until": "2026-11-14T17:00:14Z @ 5b383266"
     }
   ],
-  "seal": "ea1cc8cbf341393be576633f2bca5f32aa29ca281ca3d0ac01aa0d403db0b2cd"
+  "seal": "0319085898a08837ec89457f903f061b5f67bb0f503a4225f2514f65e57629a4"
 }

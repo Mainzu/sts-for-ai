@@ -14197,3 +14197,284 @@ Rows 8-14 of the build-plans README come after.
 ## Stall probes, final-round step 2: the win cap goes to the adoption read, the progress term is dropped (on the owner's behalf, 2026-11-15)
 
 Evidence: `docs/research/stall-probes.md`. The win cap (`@wc1`, an unfinished leaf scores at most a win at the HP it can still reach, less 0.001) turns the recorded stalls into kills inside the turn (run 56 floor 14: 9 of 10 cases, plain 1; run 52 floor 5: 3 of 4, plain 0) and stops no kill the plain search took. It goes to the adoption read: one turn deep at A0 on the headline setting against the one-turn control (`--vary price`, `decision/level-pass`); on a pass the product with it two turns deep against the headline control. Alternatives: skip the read and adopt on the probe (a gauntlet stall ends later as a win or a stall, so the headline effect is unknown: no); the cap without the 0.001 margin (ties fall to the lower option index: it took the win in fewer cases). The progress term for backlog 85 (a leaf with no monster HP lost or dead scores c lower) fails the probe's kill-fast rule: run 83 turn 40 still strikes the block at every c from 0.03 to 0.3 (12 damage into 11 block counts as progress), so backlog 85 needs the net input (backlog 81's); the term is not built. A self-play game at the turn cap is labelled a loss (`selfplay.hp_label`), nothing to fix.
+
+## A20 controls now; the win cap read at A20; 85's fallback and 76 (on the owner's behalf, 2026-11-15)
+
+Why: `context/stale-after-row-v` bars comparisons against the one-turn
+controls (Row V moved the Fungi hallways). Job 1016, the lane's @wc1
+adoption read, pairs against `net1029-hpb0.01-tsl1-lcb1-starter-simboss.json`,
+recorded before Row V. It had started when the navigator saw it, so it
+runs on as a descriptive read only, never the adoption read. Step 5's
+precondition holds: F, V (with C1 and Protect), C2 and C3 are on main and
+main's `sts` matches main. `decision/a20-default`
+moves goal 2's ruler to A20 once A20 controls exist.
+
+Decided:
+- Step 5's two controls are queued now without any fix, pinned to
+  105691e9 (rules 334dd4b4): 1017, the one-turn control at A20, and 1019,
+  the product at A20 (first in the queue: it is the critical path, about
+  5.5 h).
+- Step 2c's adoption reads move to A20 and pair against them: 1018 (the
+  10-29 net @wc1 one turn deep, after 1017, `--vary price`, read under
+  `decision/level-pass`); on a level pass the lane worker queues the
+  product with @wc1 two turns deep against 1019's file. A passed arm's file
+  becomes step 7's control with the fix, so no control is recorded twice;
+  on a fail the plain file is the control.
+- Step 6 may queue once seeds-go and 1018 are read: @wc1 is in its
+  self-play and labels if 1018 passes (the product read decides only the
+  product's flags). "The same commit as step 5" means the same rules
+  version with the controls' players unchanged (a new layout's columns
+  leave old nets' inputs byte-identical, 805065dc).
+- The parked A0 re-records (the old parked 1016 and 1017) are retired, as
+  the decision "One lane: the final round" planned once V landed: moved to
+  `jobs/parked/retired/` under new names. A0 headline and cell comparisons
+  on the old files stay barred; a read that needs an A0 control queues
+  the re-record anew.
+- Ids: `jobs.py add` numbers jobs from pending, running and done only
+  (`scripts/jobs.py`, `jid = ...max(nums)`), so the new 1016 and 1017
+  shared ids with the parked files and `cancel 1016` would have found the
+  running job. A small fix for a lane worker: count `parked/` too.
+
+Alternatives: (a) as the charter said, re-record the A0 controls and read
+@wc1 at A0: about 19 thread-h more (A0 one-turn and product re-records,
+then the A20 controls anyway), read on a setting the ruler is leaving;
+(b) read @wc1 against the stale A0 file: barred; (c) leave the queue to
+the lane worker: the CPU sat idle meanwhile (health `cpu` red).
+
+85's fallback: no input joins the final round for it. By the trade-off
+rule, the headline's hard pool (`scripts/gauntlet.py` HARD) holds no
+Gremlin Gang, so a Protect input can gain nothing on the ruler; on the
+pack-monsters headline (`g2-net1029-hpe0.01-two-line-step-starter-simboss-pack-monsters.json`,
+old rules, two turns) Gremlin Gang costs 4.62 HP per fight with 1 death in
+138. The net's monster row holds only `intent_damage`
+(`py/src/features.rs` MONSTER_SCALARS), so a Protect move is invisible to
+it; the research fix folds into backlog 81 as one more past-horizon
+column (the block a monster's pattern gives its allies per turn). The live
+risk (run 83) is the bridge's fight guard 2 (85(b)), a question for the
+real-game sessions, not a lane.
+
+76 (`hpe-leaf-cap`): read on its own product arm beside @wc1's, both
+two turns deep at A20 `--against` 1019's file, if its suffix is coded and
+tested by then (else after the round). Each passes or fails alone under
+`decision/level-pass`, so the reads stay clean (backlog 82's reason); if
+both pass, the product with both is recorded as the A20 headline control.
+The extra CPU (about 10 thread-h) costs little while the CPU sits idle most
+of the day; what limits the round is lane sessions. Alternatives: one
+combined arm (saves a product read on a joint pass, but a cost in one fix
+could hide behind the other's gain); 76's own one-turn probe first (2.4
+thread-h plus an A20 @hpe one-turn file): skipped, the product is the only
+place 76 acts (the one-turn controls price @hpb) and its kill-fast rule
+pairs against 0970's stale file.
+
+Reverse: cancel 1017-1020 while pending; the retired files move back
+under new ids.
+
+## After the big-picture review of 2026-11-15 (on the owner's behalf, 2026-11-15)
+
+The review (`docs/research/big-picture-2026-11-15.md`, run
+`wf_52de7421-501`) had one key claim held by both skeptics: the gate
+statistic pays 1:1 for HP left after the Act 1 boss, which the game heals
+to full at A0 and 75% of the missing HP at A5 and above. The other five
+were overstated in ways the review file states.
+
+Decided:
+- A20 reads report V = clear x (0.75 x max HP + 0.25 x HP left), paired,
+  beside end HP and clears (backlog 90). The owner's level rule
+  (`docs/direction.md`, end HP and clears) and `yardstick/protocol` stay
+  as they are; V is a column, not a bar.
+- Step 7's size is decided from the A20 sd once 1017 and 1018 land: if
+  the SPRT's simulated pass rate at a true +2.5 HP is below 0.7 at n 500,
+  the A20 controls on sequences 500-999 are queued and step 7 reads at n
+  1000. The navigator wakes on 1018 for it.
+- The blind-element audit (backlog 72's first step) joins final-round as
+  optional step 4(c), code only. More row kinds stay off in the round:
+  the round is the one pre-registered run and an untested input could
+  cost it; a learn with them on is the goal-1 base candidate after the
+  round.
+- More heavy slots are not pursued (the skeptics: the CPU was near
+  saturated by work outside the queue; memory, ready work and holds bind).
+  89 (gated chains) and 66's memory items carry throughput.
+
+Alternatives: (a) V as the gate statistic now, in place of end HP:
+refused, the owner's level rule names end HP, and V's verdicts on A20
+files are not yet compared; (b) step 7 at n 1000 now, without the A20 sd:
+about 14 thread-h queued on a guess; (c) the row kinds on in the round,
+as the review's direction 6 preferred: refused for the reason above.
+
+For the owner (only they can decide; listed in the review file): the
+Avoid item for run-level decisions now that most Act 1 content loads;
+adoption reads at product depth (measured about 4x a one-turn sequence);
+machine time for a fixed-seed real-game A20 ladder.
+
+Reverse: strike the V column and the n-1000 rule from the charter; the
+audit is a test and leaves no state.
+
+## Run simulator: our own design, sts_lightspeed a lead, options weighed first (owner, 2026-11-15, provisional)
+
+The prior-art survey (`docs/research/sts-ai-prior-art.md`, framing 1)
+proposed porting sts_lightspeed's out-of-combat code as the first draft of
+the run simulator (map, rewards, shops, Neow, events), checked against the
+jar. The owner prefers not to port it directly: the run simulator is
+designed for this project's needs and improves on sts_lightspeed where it
+can (its authors wrote it by hand, without coding agents), and other
+options that may suit those needs better are weighed before a spec.
+sts_lightspeed stays a lead and a point of comparison; the jar decides
+(`decision/parity-source`).
+
+Provisional until a spec confirms the chosen option: the options and the
+ranking go in `docs/research/sts-ai-prior-art.md` "Run simulator: options".
+
+Alternatives: (a) port sts_lightspeed's out-of-combat code, then check it
+against the jar: against the owner's preference; (b) keep only the
+fixed-shape gauntlet (plus the R2 draft's relics, gold and max HP): no map,
+shop or event model for the run layer to learn on.
+
+Reverse: this entry decides no code; the spec that follows replaces it.
+
+## Run simulator spec confirmed: the decisions it takes (owner, 2026-11-15)
+
+`docs/specs/run-simulator.md` takes these, with the owner's answers in its
+interview; the owner confirmed the spec by queueing it for a build in a new
+session. This confirms the earlier provisional entry "Run simulator: our
+own design, sts_lightspeed a lead, options weighed first":
+
+1. The game's run rules are in Rust (`engine/src/runsim/`, `sts.RunSim`);
+   choosers, drivers, the bridge adapter and reports in Python (the owner:
+   it would end in Rust either way, so no Python interim).
+2. The simulator speaks CommunicationMod: `state()` in the `game_state`
+   shape, `command()` takes its commands, so `real_game_run.py`'s rules
+   drive simulated runs unchanged.
+3. Seed-exact where checkable; rolls the game leaves unseeded and rolls on
+   a stream a fight also uses are checked by distribution.
+4. One quirk switch, `rules = game | consistent`: game copies the jar,
+   bugs included; consistent fixes every listed quirk at once.
+5. Every Ascension level 0-20, tested at A0 and A20 against logged runs.
+6. One spec for all of Act 1. The R2 draft folds in as build steps, agreed with the relics session,
+   which marked it superseded.
+7. Run content in `content/run/*.json`, outside `content/packs/`, so no
+   combat loader or explorer listing reads it and no combat pack's hash
+   changes; relic run parts keyed by relic id; coverage gets a run status.
+8. Fights are handed back to Python; the fight result carries HP, max HP,
+   potions, relic counters and thieves' gold.
+9. A simulated run ends when the Act 1 boss dies, before its rewards.
+10. The boss follows the game's rule for a profile that has seen all three
+    Act 1 bosses; an option names unseen bosses.
+11. Open design risk for steps 0-6: whether the game's numbers can be
+    matched seed for seed, and the shape `state()` shows.
+
+Must stay as they are (the owner): gauntlet reads, the bridge's decisions
+(except opening and logging shops, run rules 6), combat and packs,
+explorer and report output. Out of scope: Acts 2-4 and the boss relic,
+other characters, the run decision maker, moving the headline.
+
+Alternatives: a Python interpreter first (refused: written twice); run
+content as a `run` key on relic entries (needs an `sts` swap before any
+pack carries it); a top-level `run` section in combat packs (hides run
+parts in combat files; changes those packs' hashes); a port of
+sts_lightspeed (the owner's preference against).
+
+Reverse: nothing is built yet; the spec's Status line records progress.
+
+## The A20 ruler takes the pack; its fixed shape saturates; a shape probe before 1018 (on the owner's behalf, 2026-11-15)
+
+Why (`docs/research/a20-ruler-2026-11-15.md`): probe 1020 (backlog 88)
+read against 1017 (300 of 500 sequences) and 1019 (200). The pack's
+hallways cost 14.2 HP per fight with 14.7% deaths beside the base hard
+pool's 8.1 HP and 8.5% in the same file (Gremlin Gang 20.8, 22% deaths),
+against 88's bar of 0.5 HP; in the real game at A20 they cost as much.
+And on the fixed shape the A20 ruler is nearly unwinnable: one turn deep
+0.008 clears (1017), 0.012 with the pack (1020), the product 0.025
+(1019), against the product's 0.55 in the real game at A20 (18 of 33,
+rules 5 with the fight guard). Runs die at elites they reach without a
+rest (first elite at 46 HP, 37% die; second mostly under 30 HP, 64%
+die). Two turns over one reads +0.32 (0.19) HP there (+6.14 at A0), so
+the protocol's +1.5 HP is out of reach for any real change and
+`decision/level-pass` passes nearly anything (mean end HP under 1 HP).
+1018 as queued would be a vacuous level pass.
+
+Decided:
+- The A20 ruler (goal 2's, `decision/a20-default`) takes `--pack
+  content/packs/act1-monsters.json`. The A0 headline and its controls
+  stay as they are.
+- Its shape is set by a probe first, one turn deep at A20 with the pack,
+  pinned 105691e9 like 1017/1019, lane `main`: 1021, the mini-run shape
+  (`--mid-rest 5 --elite-offers 2`, docs/specs/mini-run.md), and 1022, the
+  same with `--elites hp --elite-hp 40`. Read (navigator, woken by both):
+  1021 is the shape if its clears are 0.20 or more; else 1022 if its
+  clears are; the chosen file is the A20 one-turn control. 1021 comes
+  first because the headline keeps no path rule (`decision/no-path-rule`);
+  1022 is the fallback. Neither at 0.20: the navigator decides again
+  (the run simulator's map is the end state; nothing is moved meanwhile).
+- 1018 (@wc1 one turn deep against 1017) waits on 1021 and 1022
+  (`--after`). When a shape is chosen, the final-round lane drops 1018
+  and queues @wc1 on that shape `--against` the chosen file, and
+  re-records the A20 product control on it (about 11 thread-h); 1019 runs
+  on as the fixed shape's product reference (it had started). With no
+  shape chosen, the lane releases 1018 as queued and reads it as
+  descriptive.
+- Every A20 read also reports floors won, paired, beside end HP, clears
+  and V (a column, not a bar): on the fixed shape it is the one number
+  that separates two turns from one (z 5.3 at n 200).
+- The mini-run's earlier reason for staying off the headline ("easy at
+  0.900 clears one turn deep", decisions "Run layer after run-decisions",
+  2026-11-04) was an A0 reason; at A20 the fixed shape is the extreme
+  the other way, so it doesn't bind the A20 ruler.
+
+Alternatives: (a) keep the fixed shape and read step 7 at n 1000: the sd
+is small, the effect is compressed, so more sequences don't restore it;
+(b) gate A20 reads on floors won: powerful, but the owner's level rule
+names end HP and clears; (c) read step 7 at A0 on re-recorded controls:
+against `decision/a20-default`; (d) wait for the run simulator's map
+(`docs/specs/run-simulator.md`): not before step 7; (e) take the pack
+without a shape probe: keeps a ruler no change can pass.
+
+Reverse: two flags on the A20 ruler's command; the base-shape files stay.
+
+## A20 ruler: the shape of probe S2, read by its compression (on the owner's behalf, 2026-11-15)
+
+Why (`docs/research/a20-ruler-2026-11-15.md`, "The shape probes"): neither
+shape probe reached the 0.20 one-turn clears that decisions "The A20 ruler
+takes the pack; its fixed shape saturates; a shape probe before 1018" set.
+S2 (1022: the pack, `--mid-rest 5 --elite-offers 2 --elites hp --elite-hp
+40`) read 0.126 clears, 2.56 HP end HP, 8.33 floors won over 500; S1 (1021,
+the same without the HP-40 rule) 0.05 at 300 of 500, past reaching 0.20. At
+n 500 the fixed shape's two turns over one reads +0.16 (0.14) HP end HP,
++0.014 (0.009) clears and +0.61 (0.08) floors won (1019 against 1017), so it
+stays saturated. Per fight the gauntlet costs what the real game costs at
+A20 (Jaw Worm 9.0 HP gross against 8.8, Gremlin Nob 28.9 against 31.4,
+Sentries 34.8 against 33.8); the gap is the shape: 10 fights before the boss
+against the real game's 8.4 (7.6 hallways, 0.86 elites) with about 17 HP of
+mid-act healing, so runs reach the boss at 44 HP against 67. S2 sits
+closest: 0.78 elite fights per run against the real game's 0.86.
+
+Decided:
+- S2's shape is the A20 ruler for now, and 1022's file its one-turn
+  control (`decision/a20-ruler-shape`). Whether it carries reads is
+  measured, not assumed: the product re-recorded on it (1026, lane
+  final-round, first in the queue; about 9 thread-h) paired against 1022 on
+  all 500 gives two turns over one there. At +1.5 HP or more end HP the
+  shape stays (a strong change can reach the protocol's H1); below +1.5 the
+  navigator decides again, with backlog 93 (`real-fit-shape`) the first
+  option and the run simulator's driver the end state.
+- 1018 (@wc1 against the fixed shape, a read that could not decide) is
+  cancelled; 1025 replaces it on S2's shape against 1022's file, read by
+  the lane under `decision/level-pass` with floors won and V paired beside.
+  A level pass whose floors won is worse at 2 se wakes the navigator
+  before anything builds on it ("Reading results": a pass on a compressed
+  ruler is suspect), without changing the owner's bars.
+- The navigator queued 1025 and 1026 itself, as the previous decision
+  planned for the lane, so the CPU (idle most of the day) runs them
+  between lane sessions. The lane reads 1025 and files the A20 product
+  control from 1026.
+
+Alternatives: (a) keep 0.20 as a hard bar and wait for the run
+simulator's driver (build step 18 of 19): final-round's step 7 is due by
+11-20, before it; (b) a floors-won bar on A20 reads: sensitive (z 7.9 at n
+500), but the owner's level rule names end HP and clears; (c) S1's shape,
+with no path rule: lower (0.05) and further from the real game's elite
+count; (d) build a shape fitted to the real game now (93): code for an
+interim ruler before knowing whether S2 already carries reads; (e) read the
+round at A0: against `decision/a20-default`.
+
+Reverse: the ruler is a set of flags on the read's command; 1017, 1019 and
+1022 stay as files.

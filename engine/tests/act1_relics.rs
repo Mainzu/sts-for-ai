@@ -401,7 +401,7 @@ fn thirteen_relic_powers_bind() {
     load_pack(PACK).unwrap();
     // Toolbox is the colorless pack's, which another test here loads; the
     // ow- relics are owed_work_in_any_hook's.
-    assert_eq!(pack_relic_names().iter().filter(|n| n.as_str() != "gen:Toolbox" && !n.starts_with("gen:ow-")).count(), 80);
+    assert_eq!(pack_relic_names().iter().filter(|n| n.as_str() != "gen:Toolbox" && !n.starts_with("gen:ow-")).count(), 94);
     // 14 relics, each starting the player with a different official buff.
     let powers = ["Strength", "Dexterity", "Thorns", "Artifact", "Ritual", "Metallicize", "Combust", "DemonForm", "Brutality", "Rage",
         "Rupture", "Accuracy", "Enrage", "Burst"];
@@ -2402,4 +2402,705 @@ fn step7_relics_load_with_their_rarity() {
         let pack = format!(r#"{{"version": 2, "relics": [{{"id": "s7bad", "rarity": "shop", "exhaust_save": {bad}}}]}}"#);
         assert!(load_pack(&pack).is_err(), "{bad}");
     }
+}
+
+// Frozen Eye (`relics/FrozenEye`: no hooks; `DrawPilePanel` shows the draw
+// pile in its order): the player knows the whole pile. `CardGroup.shuffle`
+// is uniform (Collections.shuffle), so a shuffle is a chance event over the
+// pile's distinct orders; `CardGroup.addToRandomSpot` puts a card under 1
+// to N cards alike (never on top). docs/research/build-plans-2026-11-14/
+// frozen-eye-runic-dome.md.
+
+/// Card ids by name, pack cards (`gen:`) included.
+fn cards_of(names: &[&str]) -> Vec<CardId> {
+    names.iter().map(|n| bind(&[n]).unwrap().0[0]).collect()
+}
+
+/// A Frozen Eye fight vs Cultist (its second move is Dark Strike, no roll)
+/// with the starter deck and `extra` (bound), an empty hand, `draw` known
+/// in that order and `discard` as given.
+fn eye_fight_with(extra: &[&str], draw: &[&str], discard: &[&str]) -> CombatState {
+    load_pack(include_str!("../../content/packs/act1-ironclad.json")).unwrap();
+    load_pack(include_str!("../../content/packs/act1-colorless.json")).unwrap();
+    let mut s = fight_with(Encounter::Cultist, &deck(extra), 50, &["Frozen Eye"], 11);
+    let d = cards_of(draw);
+    s.hand = Default::default();
+    s.set_draw(sts_engine::state::Pile::from_cards(&d));
+    s.set_discard(sts_engine::state::Pile::from_cards(&cards_of(discard)));
+    s.top = Default::default();
+    s.top.set_known(&d);
+    s
+}
+
+fn eye_fight(draw: &[&str], discard: &[&str]) -> CombatState {
+    eye_fight_with(&["Wild Strike", "Headbutt"], draw, discard)
+}
+
+/// Plays `name` (a bound card, put in hand) at monster 0.
+fn play_named(s: &mut CombatState, name: &str) {
+    let c = CardId::from_name(name).unwrap_or_else(|| {
+        (0..sts_engine::cards::NUM_CARDS as u16).map(CardId).find(|&c| s.binding.is_bound(c) && s.binding.def(c).name == name).expect("a bound card")
+    });
+    s.hand.add(c, 1);
+    s.player.energy = 3;
+    let target = if s.binding.def(c).targeted() { Some(0) } else { None };
+    s.apply_action(Action::Play { card: c, target }).unwrap();
+}
+
+fn eye_listed(s: &CombatState, limit: usize) -> Vec<(f64, CombatState)> {
+    match s.chance_outcomes(limit) {
+        Some(ChanceOutcomes::Listed(v)) => v,
+        o => panic!("listed outcomes, got {o:?}"),
+    }
+}
+
+fn known_is_pile(s: &CombatState) {
+    assert_eq!(s.top.n_known(), s.draw().len(), "the whole pile is known");
+    let mut p = sts_engine::state::Pile::default();
+    for c in s.top.known() {
+        p.add(c, 1);
+    }
+    assert!(p.iter().all(|(c, k)| s.draw().count(c) == k));
+}
+
+const STARTER: [&str; 10] = ["Strike", "Strike", "Strike", "Strike", "Strike", "Defend", "Defend", "Defend", "Defend", "Bash"];
+
+#[test]
+fn frozen_eye_loads_and_knows_the_opening_order() {
+    load_pack(PACK).unwrap();
+    assert_eq!(relic("gen:Frozen Eye").unwrap().rarity, Rarity::Shop);
+    assert!(relic("gen:Frozen Eye").unwrap().rules.sees_draw_order);
+    for seed in 0..5 {
+        let s = fight_with(Encounter::Cultist, &deck(&[]), 50, &["Frozen Eye"], seed);
+        assert_eq!(s.hand.len(), 5);
+        known_is_pile(&s);
+        assert_eq!(s.draw().len(), 5);
+    }
+    // Without it nothing is known.
+    assert!(fight(Encounter::Cultist, &[]).top.is_empty());
+}
+
+#[test]
+fn frozen_eye_reshuffle_is_an_order_over_the_pile() {
+    // Turn 2's draw of 5 finds the draw pile empty: the 10 discarded cards
+    // are shuffled in, and the order is one event: 1260 orders
+    // (10!/(5!4!1!)), merged by what they leave (the hand's multiset and
+    // the other 5 in order) to 111 outcomes.
+    let mut s = eye_fight(&[], &STARTER);
+    s.apply_action(Action::EndTurn).unwrap();
+    assert_eq!(s.pending, Some(ChanceEvent::Order { then: sts_engine::chance::OrderThen::Draw(5) }));
+    assert!(matches!(s.chance_outcomes(1000), Some(ChanceOutcomes::Large)), "1260 orders past a limit of 1000");
+    let v = eye_listed(&s, 2000);
+    assert_eq!(v.len(), 111);
+    assert!((v.iter().map(|x| x.0).sum::<f64>() - 1.0).abs() < 1e-9);
+    let (strike, defend, bash) = (common::card("Strike"), common::card("Defend"), common::card("Bash"));
+    for (p, t) in &v {
+        assert_eq!(t.hand.len(), 5);
+        assert_eq!(t.stage, Stage::PlayerTurn);
+        known_is_pile(t);
+        // The hand's arrangements over the 1260: 5!/(s! d! b!).
+        let f = |n: u8| (1..=n as u32).product::<u32>() as f64;
+        let w = f(5) / (f(t.hand.count(strike)) * f(t.hand.count(defend)) * f(t.hand.count(bash)));
+        assert!((p - w / 1260.0).abs() < 1e-12, "{:?}: {p}", t.hand);
+    }
+    // Sampled: as listed, the whole pile known after.
+    let mut t = s.clone();
+    t.advance(&mut Rng::new(5));
+    assert_eq!(t.hand.len(), 5);
+    known_is_pile(&t);
+    // Turn 3 draws the known 5 with no chance event.
+    let rest: Vec<CardId> = t.top.known().collect();
+    t.apply_action(Action::EndTurn).unwrap();
+    assert_eq!(t.pending, None);
+    let mut want = sts_engine::state::Pile::default();
+    for c in rest {
+        want.add(c, 1);
+    }
+    assert!(want.iter().all(|(c, k)| t.hand.count(c) == k) && t.hand.len() == 5);
+}
+
+#[test]
+fn frozen_eye_partial_draw_orders_the_rest() {
+    // 2 known (Strike, Defend), 8 in discard: the 2 come off the top, then
+    // an order over 8 (280 sequences) with 3 still to draw, merged to 100.
+    let mut s = eye_fight(&["Strike", "Defend"], &["Strike", "Strike", "Strike", "Strike", "Defend", "Defend", "Defend", "Bash"]);
+    s.apply_action(Action::EndTurn).unwrap();
+    assert_eq!(s.pending, Some(ChanceEvent::Order { then: sts_engine::chance::OrderThen::Draw(3) }));
+    assert_eq!(s.hand.len(), 2);
+    let v = eye_listed(&s, 2000);
+    assert_eq!(v.len(), 100);
+    assert!((v.iter().map(|x| x.0).sum::<f64>() - 1.0).abs() < 1e-9);
+    for (_, t) in &v {
+        assert_eq!(t.hand.len(), 5);
+        known_is_pile(t);
+    }
+}
+
+#[test]
+fn frozen_eye_random_spot_is_under_the_top() {
+    let wound = common::card("Wound");
+    // Wild Strike's Wound into [S, D, S, D, B]: under 1 to 5 cards alike.
+    let mut s = eye_fight(&["Strike", "Defend", "Strike", "Defend", "Bash"], &[]);
+    play_named(&mut s, "Wild Strike");
+    assert_eq!(s.pending, Some(ChanceEvent::InsertAt { card: wound }));
+    let v = eye_listed(&s, 100);
+    assert_eq!(v.len(), 5);
+    for (d, (p, t)) in v.iter().enumerate() {
+        assert!((p - 0.2).abs() < 1e-12);
+        let seq: Vec<CardId> = t.top.known().collect();
+        assert_eq!(seq.iter().position(|&c| c == wound), Some(d + 1));
+        known_is_pile(t);
+    }
+    // [S, S]: under 1 or 2, two different piles.
+    let mut s = eye_fight(&["Strike", "Strike"], &[]);
+    play_named(&mut s, "Wild Strike");
+    let v = eye_listed(&s, 100);
+    assert_eq!(v.len(), 2);
+    assert!(v.iter().all(|(p, _)| (p - 0.5).abs() < 1e-12));
+    // [S]: under it, no event; an empty pile: the only card.
+    for (draw, want) in [(&["Strike"][..], vec!["Strike", "Wound"]), (&[][..], vec!["Wound"])] {
+        let mut s = eye_fight(draw, &[]);
+        play_named(&mut s, "Wild Strike");
+        assert_eq!(s.pending, None);
+        assert_eq!(s.top.known().collect::<Vec<_>>(), cards_of(&want));
+    }
+    // Mark of Pain's two Wounds at the fight's start: both known, neither on top.
+    for seed in 0..5 {
+        let s = fight_with(Encounter::Cultist, &deck(&[]), 50, &["Frozen Eye", "Mark of Pain"], seed);
+        known_is_pile(&s);
+        assert_eq!(s.draw().count(wound), 2);
+        assert_ne!(s.top.known().next(), Some(wound));
+    }
+}
+
+#[test]
+fn frozen_eye_deep_breath_and_havoc_order_the_pile() {
+    // Deep Breath: the discard pile shuffled in with the draw pile (3 + 4),
+    // ordered, then 1 drawn off the known top.
+    let mut s = eye_fight_with(&["gen:Deep Breath", "gen:Havoc"], &["Strike", "Defend", "Bash"], &["Strike", "Strike", "Defend", "Defend"]);
+    play_named(&mut s, "gen:Deep Breath");
+    assert_eq!(s.pending, Some(ChanceEvent::Order { then: sts_engine::chance::OrderThen::Nothing }));
+    let v = eye_listed(&s, 1000);
+    // 7!/(3!3!1!) = 140 orders; merged by the card drawn and the other 6 in order.
+    assert!((v.iter().map(|x| x.0).sum::<f64>() - 1.0).abs() < 1e-9);
+    for (_, t) in &v {
+        assert_eq!(t.hand.len(), 1);
+        assert_eq!(t.draw().len(), 6);
+        known_is_pile(t);
+    }
+    assert_eq!(v.len(), 140, "every order leaves a different known pile");
+    // Havoc on an empty draw pile: the discard pile is ordered, then its top is played.
+    let mut s = eye_fight_with(&["gen:Deep Breath", "gen:Havoc"], &[], &["Strike", "Defend"]);
+    play_named(&mut s, "gen:Havoc");
+    assert_eq!(s.pending, Some(ChanceEvent::Order { then: sts_engine::chance::OrderThen::TakeTop { exhaust: true } }));
+    let v = eye_listed(&s, 100);
+    assert_eq!(v.len(), 2);
+    for (_, t) in &v {
+        assert_eq!(t.draw().len(), 1);
+        known_is_pile(t);
+    }
+}
+
+#[test]
+fn frozen_eye_headbutt_and_innate_stay_known() {
+    // Headbutt puts the discard pile's card on top, known with the rest.
+    let mut s = eye_fight(&["Strike", "Defend"], &["Bash"]);
+    play_named(&mut s, "Headbutt");
+    if s.pick().is_some() {
+        s.apply_action(Action::Choose(common::card("Bash"))).unwrap();
+    }
+    assert_eq!(s.top.known().collect::<Vec<_>>(), cards_of(&["Bash", "Strike", "Defend"]));
+    known_is_pile(&s);
+    // An innate card is the known head at the opening, drawn first.
+    for seed in 0..5 {
+        let s = fight_with(Encounter::Cultist, &deck(&["gen:Dramatic Entrance"]), 50, &["Frozen Eye"], seed);
+        assert_eq!(s.hand.len(), 5);
+        assert!(s.hand.iter().any(|(c, _)| s.binding.def(c).name == "gen:Dramatic Entrance"));
+        known_is_pile(&s);
+        assert_eq!(s.draw().len(), 6);
+    }
+}
+
+#[test]
+fn frozen_eye_long_piles_and_codec() {
+    // Past 16 known cards the rest stay known, push and pop alike.
+    let names: Vec<&str> = (0..20).map(|i| if i % 3 == 0 { "Bash" } else if i % 2 == 0 { "Strike" } else { "Defend" }).collect();
+    let s = eye_fight(&names, &[]);
+    assert_eq!(s.top.n_known(), 20);
+    assert_eq!(s.top.known().collect::<Vec<_>>(), cards_of(&names));
+    let back = sts_engine::codec::decode(&sts_engine::codec::encode(&s));
+    assert!(back == s, "20 known round-trip");
+    // A 30-card pile to order against a limit of 16: Large, not listed.
+    let thirty: Vec<&str> = (0..30).map(|i| names[i % 20]).collect();
+    let mut t = eye_fight(&[], &thirty);
+    t.apply_action(Action::EndTurn).unwrap();
+    assert!(matches!(t.chance_outcomes(16), Some(ChanceOutcomes::Large)));
+    let back = sts_engine::codec::decode(&sts_engine::codec::encode(&t));
+    assert!(back == t, "a pending order round-trips");
+    t.advance(&mut Rng::new(3));
+    assert_eq!(t.top.n_known(), 25);
+    known_is_pile(&t);
+    let back = sts_engine::codec::decode(&sts_engine::codec::encode(&t));
+    assert!(back == t, "25 known round-trip");
+    // Draws pop the known head and refill from past 16.
+    let first: Vec<CardId> = t.top.known().take(5).collect();
+    let rest: Vec<CardId> = t.top.known().skip(5).collect();
+    t.apply_action(Action::EndTurn).unwrap();
+    assert_eq!(t.pending, None);
+    assert_eq!(t.top.known().collect::<Vec<_>>(), rest);
+    let mut want = sts_engine::state::Pile::default();
+    for c in first {
+        want.add(c, 1);
+    }
+    assert!(want.iter().all(|(c, k)| t.hand.count(c) >= k));
+    // An owed spot and a pending one round-trip.
+    let mut s = eye_fight(&["Strike", "Defend", "Strike"], &[]);
+    play_named(&mut s, "Wild Strike");
+    let back = sts_engine::codec::decode(&sts_engine::codec::encode(&s));
+    assert!(back == s, "a pending spot round-trips");
+}
+
+#[test]
+fn frozen_eye_whole_fights_keep_the_pile_known() {
+    // Random play through whole fights with cards that put cards in the
+    // draw pile: at every decision the whole pile is known and the state
+    // round-trips the codec.
+    load_pack(include_str!("../../content/packs/act1-ironclad.json")).unwrap();
+    load_pack(include_str!("../../content/packs/act1-colorless.json")).unwrap();
+    let extra = ["Wild Strike", "Headbutt", "gen:Deep Breath", "gen:Havoc", "gen:Reckless Charge", "gen:Warcry", "gen:Dramatic Entrance"];
+    for seed in 0..8 {
+        let mut s = fight_with(Encounter::JawWorm, &deck(&extra), 80, &["Frozen Eye", "Mark of Pain"], seed);
+        let mut rng = Rng::new(seed + 100);
+        let mut steps = 0;
+        while !s.is_over() && steps < 300 {
+            assert!(s.awaiting_action());
+            if s.owed.is_empty() {
+                known_is_pile(&s);
+            }
+            if !s.has_generated() {
+                let back = sts_engine::codec::decode(&sts_engine::codec::encode(&s));
+                assert!(back == s, "seed {seed} step {steps} round-trips");
+            }
+            let a = s.legal_actions();
+            let act = a[rng.below(a.len() as u32) as usize];
+            s.step(act, &mut rng).unwrap();
+            s.advance(&mut rng);
+            steps += 1;
+        }
+    }
+}
+
+#[test]
+fn frozen_eye_opening_order_and_innate_head() {
+    // The opening shuffle (before the fight's start and the opening draw):
+    // 1260 orders of the starter deck, merged to 111 by the opening hand
+    // and the other 5 in order.
+    let mut s = eye_fight(&[], &[]);
+    let deck = cards_of(&STARTER);
+    s.set_draw(sts_engine::state::Pile::from_cards(&deck));
+    s.top = Default::default();
+    s.turn = 0;
+    s.stage = Stage::MonsterRolls { next: sts_engine::state::MAX_MONSTERS as u8 };
+    s.pending = Some(ChanceEvent::Order { then: sts_engine::chance::OrderThen::Nothing });
+    let v = eye_listed(&s, 2000);
+    assert_eq!(v.len(), 111);
+    assert!((v.iter().map(|x| x.0).sum::<f64>() - 1.0).abs() < 1e-9);
+    for (_, t) in &v {
+        assert_eq!((t.turn, t.hand.len(), t.top.n_known()), (1, 5, 5));
+        known_is_pile(t);
+    }
+    // An innate card goes on top of the order, outside it: in every opening hand.
+    let mut s = eye_fight_with(&["gen:Dramatic Entrance"], &[], &[]);
+    let de = (0..sts_engine::cards::NUM_CARDS as u16).map(CardId).find(|&c| s.binding.is_bound(c) && s.binding.def(c).name == "gen:Dramatic Entrance").unwrap();
+    let mut d = deck.clone();
+    d.push(de);
+    s.set_draw(sts_engine::state::Pile::from_cards(&d));
+    s.top = Default::default();
+    s.turn = 0;
+    s.stage = Stage::MonsterRolls { next: sts_engine::state::MAX_MONSTERS as u8 };
+    s.pending = Some(ChanceEvent::Order { then: sts_engine::chance::OrderThen::Nothing });
+    let v = eye_listed(&s, 2000);
+    assert!((v.iter().map(|x| x.0).sum::<f64>() - 1.0).abs() < 1e-9);
+    for (_, t) in &v {
+        assert_eq!(t.hand.count(de), 1);
+        assert_eq!(t.hand.len(), 5);
+        known_is_pile(t);
+    }
+}
+
+#[test]
+fn frozen_eye_owed_spot_waits_out_a_pending_order() {
+    // A card owed its random spot while a reshuffle's order is pending (a
+    // monster's move that adds to the draw pile during a hook's draw): the
+    // order leaves it out, and it takes its spot after.
+    let wound = common::card("Wound");
+    let mut s = eye_fight(&[], &["Strike", "Defend", "Bash"]);
+    s.piles.move_all(sts_engine::state::Run::Discard, sts_engine::state::Run::Draw);
+    s.draw_mut().add(wound, 1);
+    s.owed.push(sts_engine::state::OwedKind::Insert { card: wound }, 1, false);
+    s.pending = Some(ChanceEvent::Order { then: sts_engine::chance::OrderThen::Draw(1) });
+    let v = eye_listed(&s, 100);
+    // 3! orders, merged by the card drawn and the other 2 in order: 6.
+    assert_eq!(v.len(), 6);
+    let mut rng = Rng::new(4);
+    for (_, mut t) in v {
+        t.advance(&mut rng);
+        assert!(t.owed.is_empty());
+        known_is_pile(&t);
+        assert_eq!(t.draw().count(wound), 1);
+        assert_ne!(t.top.known().next(), Some(wound));
+    }
+}
+
+// Runic Dome (`relics/RunicDome`: `onEquip` energyMaster += 1;
+// `AbstractMonster.render`/`renderTip` skip the intent with it). Monsters
+// still roll at their turn's end, but nothing the player sees depends on
+// the roll until the monster acts, so the engine rolls it then, from the
+// history and allies the game rolled with (`CombatState::intent_hidden`).
+// Spot Weakness's check reads the real move: a reveal of its class.
+// docs/research/build-plans-2026-11-14/frozen-eye-runic-dome.md.
+
+fn dome_fight(enc: Encounter, extra: &[&str], relics: &[&str]) -> CombatState {
+    load_pack(include_str!("../../content/packs/act1-ironclad.json")).unwrap();
+    let mut r = vec!["Runic Dome"];
+    r.extend_from_slice(relics);
+    fight_with(enc, &deck(extra), 60, &r, 11)
+}
+
+fn dome_listed(s: &CombatState, limit: usize) -> Vec<(f64, CombatState)> {
+    match s.chance_outcomes(limit) {
+        Some(ChanceOutcomes::Listed(v)) => v,
+        o => panic!("listed outcomes, got {o:?}"),
+    }
+}
+
+/// Ends the turn and stops at the first chance event (none sampled).
+fn end_turn_paused(s: &mut CombatState) {
+    s.apply_action(Action::EndTurn).unwrap();
+}
+
+#[test]
+fn runic_dome_loads_and_gives_energy() {
+    load_pack(PACK).unwrap();
+    let r = relic("gen:Runic Dome").unwrap();
+    assert_eq!(r.rarity, Rarity::Boss);
+    assert!(r.rules.hides_intents);
+    let mut s = dome_fight(Encounter::Cultist, &[], &[]);
+    assert_eq!(s.player.energy, 4);
+    next_turn(&mut s);
+    assert_eq!(s.player.energy, 4);
+    // With Ice Cream, 1 left carries: 1 + 3 + 1.
+    let mut s = dome_fight(Encounter::Cultist, &[], &["Ice Cream"]);
+    s.player.energy = 1;
+    next_turn(&mut s);
+    assert_eq!(s.player.energy, 5);
+}
+
+#[test]
+fn runic_dome_rolls_jaw_worm_when_it_acts() {
+    use sts_engine::agent::{intent_damage, intent_known};
+    // Turn 1: Chomp, its only first move, shown.
+    let mut s = dome_fight(Encounter::JawWorm, &[], &[]);
+    assert!(!s.move_hidden(0));
+    assert!(intent_known(&s, 0));
+    next_turn(&mut s);
+    // After Chomp the next move is still to roll: hidden, the history kept.
+    assert!(s.move_hidden(0));
+    assert!(!intent_known(&s, 0));
+    assert_eq!(s.monsters[0].moves[0], sts_engine::monsters::CHOMP);
+    // The roll a no-Dome copy makes at that history.
+    let mut plain = s.clone();
+    plain.intent_hidden = [0; sts_engine::state::MAX_MONSTERS];
+    let want = plain.move_distribution(0);
+    assert_eq!(want.len(), 2);
+    assert_eq!(s.intent_distribution(0), want);
+    // Expected damage: Thrash's 7 at its chance.
+    let thrash = want.iter().find(|&&(m, _)| sts_engine::state::is_attack(&s.monsters[0].def().moves[m as usize])).unwrap();
+    assert!((thrash.1 - 0.409375).abs() < 1e-9, "{want:?}");
+    assert_eq!(intent_damage(&s, 0), (7.0 * thrash.1).round() as i16);
+    // End Turn: the roll pends as the worm acts.
+    end_turn_paused(&mut s);
+    assert_eq!(s.pending, Some(ChanceEvent::MonsterMove { slot: 0 }));
+    assert_eq!(s.stage, Stage::MonsterActing { slot: 0, next: 0 });
+    let v = dome_listed(&s, 16);
+    assert_eq!(v.len(), 2);
+    for ((p, t), (_, q)) in v.iter().zip(&want) {
+        assert!((p - q).abs() < 1e-12);
+        assert!(!matches!(t.stage, Stage::MonsterActing { .. }), "the move ran");
+    }
+    // Sampled the same way.
+    let mut t = s.clone();
+    t.advance(&mut Rng::new(3));
+    assert_eq!(t.stage, Stage::PlayerTurn);
+    let back = sts_engine::codec::decode(&sts_engine::codec::encode(&s));
+    assert!(back == s, "a paused hidden roll round-trips");
+    let back = sts_engine::codec::decode(&sts_engine::codec::encode(&t));
+    assert!(back == t, "a hidden state round-trips");
+}
+
+#[test]
+fn runic_dome_shows_a_single_outcome() {
+    // Cultist: Incantation, then Dark Strike every turn: nothing to hide.
+    let mut s = dome_fight(Encounter::Cultist, &[], &[]);
+    next_turn(&mut s);
+    assert!(!s.move_hidden(0));
+    assert_eq!(s.monsters[0].intent(), sts_engine::monsters::DARK_STRIKE);
+}
+
+#[test]
+fn runic_dome_spot_weakness_reveals_the_class() {
+    let mut s = dome_fight(Encounter::JawWorm, &["Spot Weakness"], &[]);
+    next_turn(&mut s);
+    assert!(s.move_hidden(0));
+    let p_attack = s.attack_chance(0);
+    assert!((p_attack - 0.409375).abs() < 1e-9);
+    let sw = CardId::from_name("Spot Weakness").unwrap();
+    s.hand.add(sw, 1);
+    s.player.energy = 3;
+    s.apply_action(Action::Play { card: sw, target: Some(0) }).unwrap();
+    assert_eq!(s.pending, Some(ChanceEvent::IntentClass { slot: 0 }));
+    let v = dome_listed(&s, 16);
+    assert_eq!(v.len(), 2);
+    let (pa, attacks) = &v[0];
+    let (pn, quiet) = &v[1];
+    assert!((pa - p_attack).abs() < 1e-12 && (pn - (1.0 - p_attack)).abs() < 1e-12);
+    assert_eq!(attacks.player.powers.get(Power::Strength), 3);
+    assert_eq!(quiet.player.powers.get(Power::Strength), 0);
+    // Its roll then holds that class only.
+    let moves = attacks.monsters[0].def().moves;
+    assert!(attacks.intent_distribution(0).iter().all(|&(m, p)| sts_engine::state::is_attack(&moves[m as usize]) && (p - 1.0).abs() < 1e-12));
+    assert!(quiet.intent_distribution(0).iter().all(|&(m, _)| !sts_engine::state::is_attack(&moves[m as usize])));
+    let back = sts_engine::codec::decode(&sts_engine::codec::encode(attacks));
+    assert!(back == *attacks, "a revealed class round-trips");
+    // At the worm's action, the attack class rolls Thrash with no event.
+    let mut t = attacks.clone();
+    t.apply_action(Action::EndTurn).unwrap();
+    assert!(!matches!(t.pending, Some(ChanceEvent::MonsterMove { .. })), "one move left: no roll event");
+}
+
+#[test]
+fn runic_dome_louse_bite_amount_is_seen_when_it_lands() {
+    let mut s = dome_fight(Encounter::TwoLouse, &[], &[]);
+    for slot in 0..2 {
+        assert_eq!(s.monsters[slot].rolled_damage, 0);
+        assert_ne!(s.intent_hidden[slot] & sts_engine::state::HIDDEN_ROLLED, 0);
+        assert!(s.move_hidden(slot), "a louse's first move is random");
+    }
+    // Play the monsters' turn and look at each event as it comes.
+    end_turn_paused(&mut s);
+    let mut rng = Rng::new(9);
+    let mut saw_amount = false;
+    let mut guard = 0;
+    while let Some(ev) = s.pending {
+        guard += 1;
+        assert!(guard < 20);
+        if let ChanceEvent::RolledAmount { slot } = ev {
+            let (lo, hi) = s.monsters[slot as usize].def().rolled_attack.unwrap();
+            let v = dome_listed(&s, 16);
+            assert_eq!(v.len(), (hi - lo + 1) as usize);
+            assert!(v.iter().all(|(p, _)| (p - 1.0 / v.len() as f64).abs() < 1e-12));
+            saw_amount = true;
+        }
+        // Prefer a Bite at each move roll, to see its amount.
+        if let ChanceEvent::MonsterMove { slot } = ev {
+            let v = dome_listed(&s, 16);
+            let bite = v.iter().find(|(_, t)| t.intent_hidden[slot as usize] & sts_engine::state::HIDDEN_ROLLED != 0 && t.pending.is_some() || t.monsters[slot as usize].rolled_damage > 0);
+            if let Some((_, t)) = bite {
+                s = t.clone();
+                continue;
+            }
+        }
+        s.resolve_chance(&mut rng);
+    }
+    assert!(saw_amount, "a Bite's amount was rolled as it landed");
+}
+
+#[test]
+fn runic_dome_rolls_with_the_allies_at_the_roll() {
+    // A pack monster whose pattern reads Allies: at its roll another lived;
+    // that ally dies before it acts, and the roll still reads "allies".
+    const DOME_PACK: &str = r#"{"version": 1, "monsters": [
+      {"id": "Dome Watcher", "hp": [20, 20], "start_block": 0, "start_powers": [],
+       "moves": [{"name": "Guard", "effects": [{"BlockAlly": 7}]},
+                 {"name": "Poke", "effects": [{"Damage": {"amount": 6, "hits": 1, "target": "Opponent"}}]}],
+       "pattern": [{"when": ["Allies", {"RollBelow": 50}], "then": {"Move": 0}}, {"when": [], "then": {"Move": 1}}]}
+    ]}"#;
+    load_pack(DOME_PACK).unwrap();
+    load_pack(PACK).unwrap();
+    let w = sts_engine::registry::monster_kinds(&["gen:Dome Watcher"]).unwrap()[0];
+    let relics = relics_named(&["gen:Runic Dome"]).unwrap();
+    let (ids, b) = bind(&["Strike", "Strike", "Strike", "Strike", "Strike", "Defend", "Defend", "Defend", "Defend", "Bash"]).unwrap();
+    let mut s = CombatState::new_with(Character::Ironclad, &ids, &b, 60, 80, &[w, w], EncounterGroup::Hallway, &relics, &mut Rng::new(5));
+    for slot in 0..2 {
+        assert!(s.move_hidden(slot));
+        assert_ne!(s.intent_hidden[slot] & sts_engine::state::HIDDEN_ALLIES, 0);
+    }
+    s.monsters[1].hp = 0;
+    end_turn_paused(&mut s);
+    assert_eq!(s.pending, Some(ChanceEvent::MonsterMove { slot: 0 }));
+    let v = dome_listed(&s, 16);
+    assert_eq!(v.len(), 2, "Guard and Poke at 0.5 each (alone now would be Poke only)");
+    assert!(v.iter().all(|(p, _)| (p - 0.5).abs() < 1e-12));
+    // Guard with no ally left: its block goes to itself.
+    assert!(v.iter().any(|(_, t)| t.monsters[0].block == 7 || t.monsters[0].moves[1] == 0));
+}
+
+#[test]
+fn runic_dome_whole_fights_play() {
+    // Random play through whole fights with the Dome: every decision's
+    // state round-trips the codec and hidden moves never show.
+    for (seed, enc) in [(0, Encounter::JawWorm), (1, Encounter::TwoLouse), (2, Encounter::GremlinNob), (3, Encounter::Looter), (4, Encounter::LargeSlime), (5, Encounter::ThreeLouse), (6, Encounter::Hexaghost), (7, Encounter::TwoLouse), (8, Encounter::TheGuardian), (9, Encounter::SlimeBoss), (10, Encounter::ExordiumThugs), (11, Encounter::Lagavulin)] {
+        // Runic Cube and Centennial Puzzle draw in the monsters' turn: a
+        // draw pending when a hidden monster comes to act resolves first.
+        let mut s = fight_with(enc, &deck(&[]), 80, &["Runic Dome", "Runic Cube", "Centennial Puzzle"], seed);
+        let mut rng = Rng::new(seed + 50);
+        let mut steps = 0;
+        while !s.is_over() && steps < 300 {
+            let back = sts_engine::codec::decode(&sts_engine::codec::encode(&s));
+            assert!(back == s, "{enc:?} step {steps} round-trips");
+            for slot in 0..sts_engine::state::MAX_MONSTERS {
+                if s.move_hidden(slot) {
+                    assert!(s.shown_intent(slot).is_none());
+                    assert!(!sts_engine::agent::intent_known(&s, slot));
+                }
+            }
+            let a = s.legal_actions();
+            let act = a[rng.below(a.len() as u32) as usize];
+            s.step(act, &mut rng).unwrap();
+            steps += 1;
+        }
+    }
+}
+
+/// The six boss relics whose combat part is `energyMaster += 1` in
+/// `onEquip` (relics/BustedCrown, CoffeeDripper, CursedKey, Ectoplasm,
+/// FusionHammer, Sozu; their other parts act outside a fight): 4 energy on
+/// turns 1 and 2, as Velvet Choker's hook gives.
+#[test]
+fn energy_boss_relics() {
+    load_pack(PACK).unwrap();
+    for name in ["Busted Crown", "Coffee Dripper", "Cursed Key", "Ectoplasm", "Fusion Hammer", "Sozu"] {
+        assert_eq!(relic(&format!("gen:{name}")).unwrap().rarity, Rarity::Boss, "{name}");
+        let mut s = fight(Encounter::Cultist, &[name]);
+        assert_eq!(s.player.energy, 4, "{name} turn 1");
+        next_turn(&mut s);
+        assert_eq!(s.player.energy, 4, "{name} turn 2");
+    }
+    assert!(relic("gen:Sozu").unwrap().rules.no_potions);
+    let bad = r#"{"version": 2, "relics": [{"id": "sz-bad", "rarity": "boss", "no_potions": 1}]}"#;
+    assert!(load_pack(bad).unwrap_err().contains("no_potions"));
+}
+
+/// Girya (relics/Girya `atBattleStart`: `addToTop(ApplyPowerAction(
+/// StrengthPower(counter)))` when the counter, its lifts, isn't 0; the
+/// rest site's Lift raises it, up to 3): Strength equal to the counter.
+#[test]
+fn girya_strength_from_its_lifts() {
+    load_pack(PACK).unwrap();
+    assert_eq!(relic("gen:Girya").unwrap().rarity, Rarity::Rare);
+    for lifts in 0..=3 {
+        let mut given = relics_named(&["gen:Girya"]).unwrap();
+        given[0].1.counter = lifts;
+        let (ids, b) = bind(&deck(&[]).iter().map(String::as_str).collect::<Vec<_>>()).unwrap();
+        let mut s = CombatState::new_bound_with(Character::Ironclad, &ids, &b, 50, 80, Encounter::Cultist, &given, &mut Rng::new(11));
+        assert_eq!(s.player.powers.get(Power::Strength), lifts, "{lifts} lifts");
+        assert_eq!(s.player.relics.counter(0), lifts, "the counter stays");
+        next_turn(&mut s);
+        assert_eq!(s.player.powers.get(Power::Strength), lifts, "once, at the fight's start");
+    }
+}
+
+/// Cultist Headpiece (relics/CultistMask: `atBattleStart` only a voice
+/// line and a speech bubble) and Spirit Poop (no hooks): no effect.
+#[test]
+fn no_effect_relics() {
+    load_pack(PACK).unwrap();
+    let plain = fight(Encounter::JawWorm, &[]);
+    for name in ["Cultist Headpiece", "Spirit Poop"] {
+        assert_eq!(relic(&format!("gen:{name}")).unwrap().rarity, Rarity::Event, "{name}");
+        let mut s = fight(Encounter::JawWorm, &[name]);
+        let mut p = plain.clone();
+        p.player.relics = s.player.relics.clone();
+        assert!(p == s, "{name}: the same fight but for the relic");
+        next_turn(&mut s);
+        next_turn(&mut p);
+        assert!(p == s, "{name}: and on turn 2");
+    }
+}
+
+/// Bottled Flame, Lightning, Tornado (relics/BottledFlame etc.: the relic's
+/// `atBattleStart` only flashes; the card's `inBottle*` flag puts it on top
+/// with the innate cards in `CardGroup.initializeDeck`, so it is in the
+/// opening hand). The relic's counter names the card: its place in the
+/// fight's deck plus 1.
+#[test]
+fn bottled_card_starts_in_hand() {
+    load_pack(PACK).unwrap();
+    let with = |relic: &str, extra: &str, counter: i16, more: &[&str], seed: u64| {
+        let mut given = relics_named(&[&format!("gen:{relic}")]).unwrap();
+        given[0].1.counter = counter;
+        let mut names = deck(&[extra]);
+        for r in more {
+            names.push(r.to_string());
+        }
+        let mut given_more = relics_named(&more.iter().filter(|r| r.starts_with("gen:")).copied().collect::<Vec<_>>()).unwrap();
+        given.append(&mut given_more);
+        let names: Vec<String> = names.into_iter().filter(|n| !n.starts_with("gen:")).collect();
+        let (ids, b) = bind(&names.iter().map(String::as_str).collect::<Vec<_>>()).unwrap();
+        CombatState::new_bound_with(Character::Ironclad, &ids, &b, 50, 80, Encounter::Cultist, &given, &mut Rng::new(seed))
+    };
+    for (relic, card) in [("Bottled Flame", "Wild Strike"), ("Bottled Lightning", "Spot Weakness")] {
+        assert_eq!(relic_rarity(relic), Rarity::Uncommon);
+        let c = CardId::from_name(card).unwrap();
+        let mut misses = 0;
+        for seed in 0..20 {
+            let s = with(relic, card, 11, &[], seed);
+            assert_eq!(s.hand.count(c), 1, "{relic}: {card} in the opening hand (seed {seed})");
+            assert_eq!(s.hand.len(), 5);
+            assert!(s.bottled.iter().all(Option::is_none));
+            // Counter 0: nothing bottled, the card drawn by chance.
+            misses += (with(relic, card, 0, &[], seed).hand.count(c) == 0) as u32;
+        }
+        assert!(misses > 0, "{relic} at counter 0 bottles nothing");
+    }
+    // A Basic copy picked from the deck works the same in the fight (the
+    // non-basic rule is the pick's, outside it).
+    let s = with("Bottled Flame", "Wild Strike", 1, &[], 3);
+    assert!(s.hand.count(CardId::from_name("Strike").unwrap()) >= 1);
+    // With Frozen Eye the bottled card is on top of the opening order.
+    for seed in 0..5 {
+        let s = with("Bottled Lightning", "Spot Weakness", 11, &["gen:Frozen Eye"], seed);
+        assert_eq!(s.hand.count(CardId::from_name("Spot Weakness").unwrap()), 1);
+        assert_eq!(s.top.n_known(), s.draw().len());
+    }
+}
+
+fn relic_rarity(name: &str) -> Rarity {
+    relic(&format!("gen:{name}")).unwrap().rarity
+}
+
+#[test]
+#[should_panic(expected = "isn't a Attack")]
+fn bottled_card_of_the_wrong_type_is_refused() {
+    load_pack(PACK).unwrap();
+    let mut given = relics_named(&["gen:Bottled Flame"]).unwrap();
+    given[0].1.counter = 6; // a Defend
+    let (ids, b) = bind(&["Strike", "Strike", "Strike", "Strike", "Strike", "Defend", "Defend", "Defend", "Defend", "Bash"]).unwrap();
+    CombatState::new_bound_with(Character::Ironclad, &ids, &b, 50, 80, Encounter::Cultist, &given, &mut Rng::new(1));
+}
+
+#[test]
+fn bottled_tornado_power() {
+    load_pack(PACK).unwrap();
+    assert_eq!(relic_rarity("Bottled Tornado"), Rarity::Uncommon);
+    let mut given = relics_named(&["gen:Bottled Tornado"]).unwrap();
+    given[0].1.counter = 11;
+    let names = deck(&["Inflame"]);
+    let (ids, b) = bind(&names.iter().map(String::as_str).collect::<Vec<_>>()).unwrap();
+    for seed in 0..10 {
+        let s = CombatState::new_bound_with(Character::Ironclad, &ids, &b, 50, 80, Encounter::Cultist, &given, &mut Rng::new(seed));
+        assert_eq!(s.hand.count(ids[10]), 1, "seed {seed}");
+    }
+    let bad = r#"{"version": 2, "relics": [{"id": "bt-bad", "rarity": "uncommon", "bottles": "Curse"}]}"#;
+    assert!(load_pack(bad).unwrap_err().contains("bottles"));
 }

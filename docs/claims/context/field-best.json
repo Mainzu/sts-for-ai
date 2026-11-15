@@ -1,0 +1,22 @@
+{
+  "key": "context/field-best",
+  "rev": 1,
+  "value": "Best published StS bots (survey 2026-11-15): sts-ironclad-agent 50.1% [45.7, 54.5] A20 Ironclad Heart wins over 501 real-game runs, its combat search reading the game's RNG (foresight); best honest StS1 bot silverbot 18.6% +/- 2.4% A20 Heart, ~83% A0 (simulated); StS2 Spire Mentor 14.0% A10 in its own engine, 8.8% in the game's engine.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/sts-ai-prior-art.md",
+      "anchor": "The field at a glance",
+      "sha256": "38a4efd655aa553a178a1d7c9f7538eba59027390df544be73ff3684ac8593c4"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "ea69b906-0ef3-444c-8cc3-77db4706d7ae",
+  "at": "2026-11-15T03:06:41+00:00 @ a93794a5",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "de800ce9551249806fcd00ae72e8ce2445fc23d582e8badfc297c2a7ded4d728"
+}

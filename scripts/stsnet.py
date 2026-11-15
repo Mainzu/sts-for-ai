@@ -654,10 +654,18 @@ class Normalizer:
         return {k: (m.tolist(), s.tolist()) for k, (m, s) in self.stats.items()}
 
 
-def mlp(sizes):
+# A net's hidden activation (its saved `act`; absent = "relu"). Rust search
+# (py/src/net.rs) runs those with a slope in LEAKY_SLOPE; SiLU is for
+# Python screens only.
+ACTS = {"relu": nn.ReLU, "leaky0.01": lambda: nn.LeakyReLU(0.01), "leaky0.1": lambda: nn.LeakyReLU(0.1),
+        "silu": nn.SiLU}
+LEAKY_SLOPE = {"relu": 0.0, "leaky0.01": 0.01, "leaky0.1": 0.1}
+
+
+def mlp(sizes, act="relu"):
     layers = []
     for a, b in zip(sizes, sizes[1:]):
-        layers += [nn.Linear(a, b), nn.ReLU()]
+        layers += [nn.Linear(a, b), ACTS[act]()]
     return nn.Sequential(*layers)
 
 
@@ -675,18 +683,19 @@ class ValueNet(nn.Module):
     instead of a score (`histogram` exponentiates them); `external_score`
     turns the histogram into a score."""
 
-    def __init__(self, dims, width=64, hidden=256, row_width=32, hp_loss=False):
+    def __init__(self, dims, width=64, hidden=256, row_width=32, hp_loss=False, act="relu"):
         super().__init__()
         self.dims = dict(dims)
+        self.act = act
         self.width, self.row_width = width, row_width
         self.hp_loss = hp_loss
         # Pile slots: the net's own (its features' `piles`), not today's PILES.
         self.n_piles = n_piles = self.dims.get("piles", NUM_PILES)
-        self.row = mlp([dims["row"], row_width, row_width])
-        self.card = mlp([dims["card"] + row_width, width, width])
-        self.monster = mlp([dims["monster"] + row_width, width, width])
-        self.player = mlp([dims["player"] + row_width, width])
-        self.head = nn.Sequential(mlp([n_piles * width + 2 * width + width, hidden, hidden // 2]),
+        self.row = mlp([dims["row"], row_width, row_width], act)
+        self.card = mlp([dims["card"] + row_width, width, width], act)
+        self.monster = mlp([dims["monster"] + row_width, width, width], act)
+        self.player = mlp([dims["player"] + row_width, width], act)
+        self.head = nn.Sequential(mlp([n_piles * width + 2 * width + width, hidden, hidden // 2], act),
                                   nn.Linear(hidden // 2, N_BINS if hp_loss else 1))
 
     def forward(self, t):
@@ -858,6 +867,9 @@ def rust_evaluator(model, norm, meta, hp_bonus=0.0, survive_c=None, enemy_streng
     pile's counts as 0, `@xh1`; docs/specs/shown-card-numbers.md) come from
     the meta (`encoder_flags`); None follows it, a value that disagrees is
     refused."""
+    act = getattr(model, "act", "relu")
+    if act not in LEAKY_SLOPE:
+        raise ValueError(f"the net's activation is {act}; Rust search runs {sorted(LEAKY_SLOPE)} only")
     flags = encoder_flags(meta, shown_numbers=shown_numbers, exhaust_hidden=exhaust_hidden)
     hp = getattr(model, "hp_loss", False)
     weights = {k: v.detach().numpy().astype(np.float32) for k, v in model.state_dict().items()}
@@ -870,7 +882,8 @@ def rust_evaluator(model, norm, meta, hp_bonus=0.0, survive_c=None, enemy_streng
               "draw_k": int(draw_k), "turn_start_leaf": bool(turn_start_leaf),
               "leaf_clear_block": bool(leaf_clear_block), "projected_ticks": int(projected_ticks),
               "projected_debuffs": bool(projected_debuffs),
-              "tie_break": bool(tie_break), "win_cap": bool(win_cap), **flags}
+              "tie_break": bool(tie_break), "win_cap": bool(win_cap), **flags,
+              **({"leaky_slope": LEAKY_SLOPE[act]} if act != "relu" else {})}
     rule = getattr(model, "score_rule", None)
     if survive_c is not None:
         if rule is None:
@@ -917,7 +930,7 @@ def save(path, model, norm, meta):
     hp = getattr(model, "hp_loss", False)
     torch.save({"state": model.state_dict(), "dims": model.dims, "width": model.width,
                 "row_width": model.row_width,
-                "hp_loss": hp,
+                "hp_loss": hp, **({"act": model.act} if getattr(model, "act", "relu") != "relu" else {}),
                 **({"hp_head": "histogram", "bin_rep": _bin_rep(model)} if hp else {}), "norm": norm.state_dict(),
                 "meta": {**meta, **layout}, "schema": SCHEMA, **layout}, path)
 
@@ -969,7 +982,8 @@ def _refuse_unloadable(path, d):
 
 def _build(path, d):
     _refuse_unloadable(path, d)
-    model = ValueNet(d["dims"], width=d["width"], row_width=d["row_width"], hp_loss=d.get("hp_loss", False))
+    model = ValueNet(d["dims"], width=d["width"], row_width=d["row_width"], hp_loss=d.get("hp_loss", False),
+                     act=d.get("act", "relu"))
     model.load_state_dict(d["state"])
     if d.get("bin_rep") is not None:
         model.bin_rep = np.asarray(d["bin_rep"], np.float32)
@@ -1024,7 +1038,8 @@ def widen(model, norm, meta, new_meta, new_stats=None):
         dims[d] = len(nc)
     if new["columns"]["monsters"][ALIVE] != "alive":
         raise ValueError("widen: the new layout's first monster column isn't 'alive'")
-    out = ValueNet(dims, width=model.width, row_width=model.row_width, hp_loss=getattr(model, "hp_loss", False))
+    out = ValueNet(dims, width=model.width, row_width=model.row_width, hp_loss=getattr(model, "hp_loss", False),
+                   act=getattr(model, "act", "relu"))
     sd = {k: v.clone() for k, v in model.state_dict().items()}
     stats = {}
     for path, (attr, d) in FIRST_LAYERS.items():

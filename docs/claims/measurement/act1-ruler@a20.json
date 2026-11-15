@@ -1,0 +1,30 @@
+{
+  "key": "measurement/act1-ruler@a20",
+  "rev": 1,
+  "value": "A20 one turn deep with --pack act1-monsters (1020, 500 seq, rules 334dd4b4): pack hallways 14.2 HP lost per fight, 14.7% deaths (619 fights) vs base hard 8.1 HP, 8.5% (854) in the same file; Gremlin Gang 20.8 (22% deaths), pack Exordium Thugs 16.1 vs base Thugs 12.8; shared encounters level with 1017. Clears 0.012.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/a20-ruler-2026-11-15.md",
+      "anchor": "The pack's hallways cost more than the base hard pool",
+      "sha256": "3d94dce4eea90b609b0be665b9f3d27d83b6d898383cc6955c3eecb906b9a6d5"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-tsl1-lcb1-starter-simboss-a20-pack-monsters.json",
+      "sha256": "fbbcbce52e94a7d19420bcf6b560db7a9d49579a5c4fae4f79848e298b35147e"
+    },
+    {
+      "path": "jobs/done/1020-gauntlet.json",
+      "sha256": "c77832c8ffe1ab6d8bc5463cd1ae0e94875a83a5474922eaad107b1140a2fd2d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "e64ceb20-cb8b-4911-9868-4792e27cb099",
+  "at": "2026-11-15T04:54:13+00:00 @ 284a8d50",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "ac4b70a0a58172aa98c7464bf8deee98896e504d696ecaa0fdfb6e43b64f6d1f"
+}

@@ -218,3 +218,54 @@ fn level_two_copy_round_trips_in_section_13() {
     }
     assert!(b.ends_with(&tail), "{} ends with {tail:?}", hex(&b));
 }
+
+/// B8 of docs/research/build-plans-2026-11-14/colorless-powers.md: takes a
+/// power's hook owes behind the turn start (`owed_late`) survive the codec.
+#[test]
+fn owed_late_takes_round_trip() {
+    use sts_engine::state::OwedKind;
+    let mut rng = Rng::new(3);
+    let mut s = CombatState::new_as(Character::Ironclad, &deck(Character::Ironclad, 2), 80, 80, Encounter::JawWorm, &mut rng);
+    while s.pending.is_some() {
+        s.resolve_chance(&mut rng);
+    }
+    assert!(s.owed_late.is_empty());
+    let plain = encode(&s);
+    s.owed_late.push(OwedKind::Top { exhaust: false }, 2, false);
+    s.owed_late.push(OwedKind::Top { exhaust: true }, 1, false);
+    let bytes = encode(&s);
+    assert_eq!(&bytes[..plain.len()], &plain[..], "an appended section");
+    assert_eq!(decode(&bytes), s);
+}
+
+/// A6 of docs/research/build-plans-2026-11-14/colorless-piles.md: cards that
+/// cost less this turn (`turn_costs`) survive the codec, in a section after
+/// the others that a state without any doesn't have.
+#[test]
+fn turn_costs_round_trip() {
+    let mut rng = Rng::new(3);
+    let mut s = CombatState::new_as(Character::Ironclad, &deck(Character::Ironclad, 2), 80, 80, Encounter::JawWorm, &mut rng);
+    while s.pending.is_some() {
+        s.resolve_chance(&mut rng);
+    }
+    assert!(s.turn_costs.is_empty());
+    let plain = encode(&s);
+    let cards: Vec<CardId> = s.hand.iter().map(|(c, _)| c).collect();
+    assert!(cards.len() >= 2);
+    assert!(s.turn_costs.add(cards[0], 1));
+    s.free_in_hand.add(cards[1]);
+    let bytes = encode(&s);
+    assert_ne!(bytes, plain);
+    assert_eq!(decode(&bytes), s);
+    // A mark on a card the hand doesn't hold, or a cost of 0, doesn't decode.
+    let mut bad = bytes.clone();
+    let last = bad.len() - 1;
+    bad[last] = 0;
+    assert!(try_decode(&bad).is_none());
+    // Two marks on one card with one copy: not a state.
+    let mut two = s.clone();
+    if two.hand.count(cards[0]) == 1 {
+        two.turn_costs.add(cards[0], 2);
+        assert!(try_decode(&encode(&two)).is_none());
+    }
+}

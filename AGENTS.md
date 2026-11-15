@@ -23,7 +23,7 @@ owner's goals and standing grants, the shared rules and where things live.
   ../.venv/Scripts/maturin build --release -o ../target/wheels`, then
   rename the `.pyd` aside and `../.venv/Scripts/pip install --no-deps
   --force-reinstall` the new wheel (seconds, not the build's minute).
-- Queued jobs are pinned by default (`jobs.py add`; README "Job queue"):
+- Queued jobs are pinned by default (`jobs.py add`; docs/job-queue.md):
   they load `sts` from their snapshot's `pyroot` under `sts-builds/`, so a
   swap of main's `sts`, a merge or a landing concerns only unpinned jobs
   and runs by hand. Run `jobs.py impact sts` (or `scripts`) first and

@@ -33,7 +33,7 @@ Scope note: the out-of-combat parts (map, rewards, rest sites, shops,
 events) are built as a headless rules simulator for training and testing,
 like the combat engine: no playable front end, art or game text. Playing
 the real game, if we get there, goes through a mod bridge to the owner's
-own copy (since built: README, Real-game bridge).
+own copy (since built: docs/real-game.md).
 
 ## Standing grants (owner)
 
@@ -263,7 +263,7 @@ not only the next spec. So:
 
 ## Job queue
 
-Long runs go through the queue, not by hand (README "Job queue"):
+Long runs go through the queue, not by hand (docs/job-queue.md):
 - `jobs.py add --threads N --mem-gb G --estimate-min M --lane <lane> --note
   "<read rule>" -- <cmd>`; the note says how to read the result and what a
   pass or a fail changes. Keep the lane's next job queued before the

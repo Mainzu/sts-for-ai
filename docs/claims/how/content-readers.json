@@ -1,0 +1,22 @@
+{
+  "key": "how/content-readers",
+  "rev": 1,
+  "value": "registry::load_pack ignores unknown top-level pack sections but rejects an unknown key inside an entry; the bridge loads a fixed pack list, the explorer every content/packs/*.json, the wording test walks them all. So a new entry key needs main's sts swapped before a pack carries it, and content no combat reader should load goes in its own folder.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/extending.md",
+      "anchor": "Who reads which content file",
+      "sha256": "1d0a551a33b17752c956621350e052e81c4309a0337d9e37ee1c4fe38ea5392d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "ea69b906-0ef3-444c-8cc3-77db4706d7ae",
+  "at": "2026-11-15T04:45:33+00:00 @ ed928c6e",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "eb994ab5838bd12308c3c743f91100eec383b74b31b6f015761f5371d225cad1"
+}

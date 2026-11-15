@@ -78,7 +78,8 @@ pub fn render(s: &CombatState) -> String {
         if !m.alive() {
             continue;
         }
-        let intent = match m.intent_def() {
+        let intent = match s.shown_intent(slot) {
+            None if s.move_hidden(slot) => format!("hidden ({})", intent_damage(s, slot)),
             Some(mv) => {
                 let dmg = intent_damage(s, slot);
                 if dmg > 0 { format!("{} ({dmg})", mv.name) } else { mv.name.to_string() }
@@ -106,6 +107,10 @@ pub fn render(s: &CombatState) -> String {
             ChanceEvent::RandomExhaust => "random exhaust from hand".into(),
             ChanceEvent::AllyBlock { slot } => format!("ally pick for slot {slot}'s block"),
             ChanceEvent::TakeTop { .. } => "the draw pile's top card to play".into(),
+            ChanceEvent::Order { .. } => "the draw pile's new order".into(),
+            ChanceEvent::InsertAt { .. } => "a card's spot in the draw pile".into(),
+            ChanceEvent::IntentClass { slot } => format!("whether slot {slot}'s hidden move attacks"),
+            ChanceEvent::RolledAmount { slot } => format!("slot {slot}'s rolled attack amount"),
             ChanceEvent::Offer { k, .. } => format!("{k} cards offered"),
             ChanceEvent::RandomPotion { .. } => "random potion".into(),
             ChanceEvent::RandomCost => "random cost for a card in hand".into(),
@@ -139,6 +144,10 @@ pub fn pending_text(s: &CombatState) -> Option<String> {
         ChanceEvent::RandomExhaust => "random exhaust from hand".into(),
         ChanceEvent::AllyBlock { slot } => format!("ally pick for slot {slot}'s block"),
         ChanceEvent::TakeTop { .. } => "the draw pile's top card to play".into(),
+        ChanceEvent::Order { .. } => "the draw pile's new order".into(),
+        ChanceEvent::InsertAt { .. } => "a card's spot in the draw pile".into(),
+        ChanceEvent::IntentClass { slot } => format!("whether slot {slot}'s hidden move attacks"),
+        ChanceEvent::RolledAmount { slot } => format!("slot {slot}'s rolled attack amount"),
         ChanceEvent::Offer { k, .. } => format!("{k} cards offered"),
         ChanceEvent::RandomPotion { .. } => "random potion".into(),
         ChanceEvent::RandomCost => "random cost for a card in hand".into(),

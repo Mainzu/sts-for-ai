@@ -17,6 +17,7 @@
   "ZeroCostRandom": "a random card in your hand costs 0 for the rest of combat",
   "ZeroCostRandomTurn": "a random card in your hand costs 0 this turn",
   "UpgradeRandom": "upgrade a random card in your hand for the rest of combat",
+  "CostAtMost": "cards in your hand cost at most {cost} this turn{combat}",
   "Draw": "draw {0|card}{per}",
   "RandomizeCost": "give {0} a random cost of 0 to 3 for the rest of combat",
   "GainEnergy": "gain {0} energy{per}",
@@ -241,6 +242,10 @@
   "keeps_energy": "Unspent energy carries into the next turn.",
   "plays_per_turn": "You can't play more than {0} cards a turn.",
   "keeps_hand": "Your hand isn't discarded at the end of your turn.",
+  "sees_draw_order": "The draw pile's order is shown.",
+  "hides_intents": "Enemy intents are hidden.",
+  "no_potions": "You can't obtain potions.",
+  "bottles": "The {0} chosen for it starts each fight in your hand.",
   "heal_scale": "Your healing in combat is multiplied by {0}/{1}, rounded.",
   "exhaust_save": "A card you play that would exhaust has a {0} in {1} chance to go to your discard pile instead."
  },

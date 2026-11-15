@@ -2414,6 +2414,14 @@ fn parse_effect(v: &json::Value) -> Result<(Effect, Option<String>), String> {
         "ZeroCostRandom" => (Effect::ZeroCostRandom, None),
         "ZeroCostRandomTurn" => (Effect::ZeroCostRandomTurn, None),
         "UpgradeRandom" => (Effect::UpgradeRandom, None),
+        "CostAtMost" => {
+            let cost = int(field("cost"), "CostAtMost cost")?;
+            if !(0..=9).contains(&cost) {
+                return Err(format!("CostAtMost cost {cost}: 0 to 9"));
+            }
+            let combat = field("combat").map_or(Ok(false), |v| v.bool().ok_or("CostAtMost combat: expected true or false"))?;
+            (Effect::CostAtMost { cost: cost as i8, combat }, None)
+        }
         "Draw" => (Effect::Draw(n("Draw")? as u8), None),
         "RandomizeCost" => (
             Effect::RandomizeCost(match f.and_then(json::Value::str) {
@@ -2716,7 +2724,16 @@ pub(crate) fn parse_hook_of(v: &json::Value, power: &dyn Fn(&str) -> Option<u16>
             e,
             Effect::MakeRandom { .. } | Effect::ZeroCostRandom | Effect::ZeroCostRandomTurn | Effect::UpgradeRandom
                 | Effect::PlainDamage { target: Target::RandomOpponent, .. }
+                | Effect::PlayTop { .. }
         );
+        // A hook's take waits behind the turn start's work (Mayhem), and
+        // is paid once the turn settles: not in a hook whose turn or
+        // fight ends before that.
+        if matches!(e, Effect::PlayTop { .. })
+            && matches!(trigger, Trigger::OwnerTurnEnd | Trigger::RoundEnd | Trigger::OwnerDied | Trigger::CombatWon | Trigger::OwnerUsedPotion)
+        {
+            return Err(format!("{e:?} in a hook of {trigger:?}: only a hook of a trigger that leaves the turn open may play the top card"));
+        }
         if !runs_outside_a_card(&e) && !relic_pick && !relic_offer && !owed {
             return Err(format!("{e:?} can't run in a hook (only while a card resolves)"));
         }
@@ -2845,6 +2862,8 @@ fn parse_upgrade(v: &json::Value) -> Result<Vec<(Path, Change)>, String> {
             let path = Path::parse(k)?;
             let change = match &path {
                 Path::Keyword(_) => Change::Set(c.bool().ok_or_else(|| format!("upgrade {k:?}: a keyword takes true or false"))?),
+                // A true / false field of an effect (`CostAtMost.combat`).
+                _ if c.bool().is_some() => Change::Set(c.bool().expect("checked")),
                 _ => match (c.int(), c.str()) {
                     (Some(n), _) => Change::Add(Expr::constant(n)),
                     (_, Some(e)) => Change::Add(Expr::parse(e)?),
@@ -3507,7 +3526,7 @@ pub fn element_names() -> Vec<(&'static str, Vec<&'static str>)> {
             "BlockOf", "ScaledBlock", "ExhaustHand", "ExhaustRandom", "Draw", "RandomizeCost", "GainEnergy", "LoseHp", "Heal", "HealOf", "CapHp", "WinHeal", "GainMaxHp", "Apply", "ApplyOf",
             "AddCard", "Split", "Escape", "RemoveSelf", "ReduceSelf", "Pick", "ReplayCard", "GrowDamage",
             "UpgradeHand", "SetCounter", "AddCounter", "DrawPicked", "PlayTop", "Discover", "ObtainRandomPotions",
-            "UpgradeAll", "ShuffleDiscardIntoDraw", "ZeroCostRandom", "ZeroCostRandomTurn", "UpgradeRandom", "MakeRandom", "RemoveDebuffs",
+            "UpgradeAll", "ShuffleDiscardIntoDraw", "ZeroCostRandom", "ZeroCostRandomTurn", "UpgradeRandom", "MakeRandom", "RemoveDebuffs", "CostAtMost",
             "LoseHpOf", "ApplyAsMonster", "AddCopy",
         ]),
         ("target", vec!["Opponent", "AllOpponents", "Me", "Attacker", "RandomOpponent"]),
@@ -3546,7 +3565,7 @@ pub fn element_names() -> Vec<(&'static str, Vec<&'static str>)> {
         ("power_field", POWER_FIELD_KEYS.to_vec()),
         ("hook_field", HOOK_FIELD_KEYS.to_vec()),
         ("relic_rule", vec!["start_power", "fights", "win_heal", "counter", "potion_potency", "potion_slots", "draw_per_turn", "x_bonus", "keeps_energy",
-            "plays_per_turn", "keeps_hand", "heal_scale", "exhaust_save"]),
+            "plays_per_turn", "keeps_hand", "heal_scale", "exhaust_save", "sees_draw_order", "hides_intents", "no_potions", "bottles"]),
         ("potion_rarity", vec!["common", "uncommon", "rare"]),
         ("potion_rule", vec!["potency", "trigger", "fights"]),
     ]
@@ -3650,6 +3669,7 @@ pub fn effect_json(e: &Effect) -> Option<String> {
         Effect::ZeroCostRandom => q("ZeroCostRandom"),
         Effect::ZeroCostRandomTurn => q("ZeroCostRandomTurn"),
         Effect::UpgradeRandom => q("UpgradeRandom"),
+        Effect::CostAtMost { cost, combat } => format!("{{\"CostAtMost\": {{\"cost\": {cost}, \"combat\": {combat}}}}}"),
         Effect::Draw(n) => format!("{{\"Draw\": {n}}}"),
         Effect::RandomizeCost(w) => format!("{{\"RandomizeCost\": \"{w:?}\"}}"),
         Effect::GainEnergy(n) => format!("{{\"GainEnergy\": {n}}}"),

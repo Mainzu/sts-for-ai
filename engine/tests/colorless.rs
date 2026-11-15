@@ -1118,3 +1118,368 @@ fn magnetism_adds_a_colorless_card_to_hand_before_the_draw() {
         assert!(made.iter().all(|n| pool.contains(n)), "{copies}: {made:?}");
     }
 }
+
+// Build B of the same plan: Mayhem (`cards/colorless/Mayhem.java`: cost 2,
+// Power, rare, `ApplyPowerAction(MayhemPower(p, 1), 1)`, upgrade cost 1;
+// `powers/MayhemPower.java` `atStartOfTurn`: `amount` times
+// `addToBot(PlayTopCardAction(random monster, false))`). The take is queued
+// at the bottom, so it comes after the turn's draw and the post-draw hooks
+// but before the work the draw's triggers queue (Evolve).
+
+/// A Mayhem game: `stacks` Mayhem cards and `more` cards played on turn 1
+/// (energy for all), then the piles set as `draw` (the first `known` cards
+/// of it a known top, in order) and `discard` before End Turn. Returns the
+/// state at turn 1's end.
+fn mayhem_game(stacks: usize, more: &[&str], draw: &[&str], known: &[&str], discard: &[&str]) -> CombatState {
+    let mut deck: Vec<&str> = vec!["Mayhem"; stacks];
+    deck.extend_from_slice(more);
+    let n_hand = deck.len();
+    deck.extend_from_slice(draw);
+    deck.extend_from_slice(discard);
+    let (mut s, ids) = combat2(&deck, &(0..n_hand).collect::<Vec<_>>());
+    s.top = Default::default();
+    s.player.energy = 2 * stacks as i16 + 8;
+    for &c in &ids[..n_hand] {
+        play2(&mut s, c);
+    }
+    let named = |names: &[&str], from: usize| -> Vec<CardId> { names.iter().enumerate().map(|(i, _)| ids[from + i]).collect() };
+    s.set_draw(Pile::from_cards(&named(draw, n_hand)));
+    s.set_discard(Pile::from_cards(&named(discard, n_hand + draw.len())));
+    if !known.is_empty() {
+        s.top = sts_engine::state::Top::from_parts(&named(known, n_hand), &[]).unwrap();
+    }
+    s
+}
+
+/// End Turn and every chance event after it, up to the next decision.
+fn end_turn_through(s: &mut CombatState) {
+    let mut rng = Rng::new(9);
+    s.apply_action(Action::EndTurn).unwrap();
+    while s.pending.is_some() {
+        s.resolve_chance(&mut rng);
+    }
+}
+
+#[test]
+fn mayhem_card_stats() {
+    load();
+    for (name, cost) in [("Mayhem", 2), ("Mayhem+", 1)] {
+        let (ids, b) = bind(&[gen(name).as_str()]).unwrap();
+        let d = b.def(ids[0]);
+        assert_eq!((d.cost(), d.ty, d.exhaust, d.targeted(), d.x_cost()), (cost, CardType::Power, false, false, false), "{name}");
+        assert!(!d.ethereal && !d.innate && !d.retain, "{name}");
+    }
+}
+
+/// B1: the take comes after the draw and plays free at the monster.
+#[test]
+fn mayhem_plays_the_top_card_after_the_draw() {
+    let mut s = mayhem_game(1, &[], &["Strike"; 10], &[], &[]);
+    end_turn_through(&mut s);
+    assert_eq!(s.stage, Stage::PlayerTurn);
+    assert_eq!((s.monsters[0].hp, s.player.energy, s.cards_played_this_turn), (94, 3, 1));
+    assert_eq!((s.hand.len(), s.draw().len(), s.discard().count(id("Strike"))), (5, 4, 1));
+}
+
+/// B2: the draw empties the pile; the take reshuffles the discard pile.
+#[test]
+fn mayhem_reshuffles_when_the_draw_empties_the_pile() {
+    let mut s = mayhem_game(1, &[], &["Strike"; 5], &[], &["Defend"]);
+    end_turn_through(&mut s);
+    assert_eq!((s.player.block, s.cards_played_this_turn), (5, 1));
+    assert_eq!((s.hand.len(), s.hand.count(id("Strike")), s.draw().len(), s.discard().count(id("Defend"))), (5, 5, 0, 1));
+}
+
+/// B3: after the post-draw hooks: Demon Form's Strength comes first.
+#[test]
+fn mayhem_plays_after_the_post_draw_hooks() {
+    let mut s = mayhem_game(1, &["Demon Form"], &["Strike"; 10], &[], &[]);
+    assert_eq!(s.player.powers.get(Power::Strength), 0, "none on turn 1");
+    end_turn_through(&mut s);
+    assert_eq!(s.player.powers.get(Power::Strength), 2);
+    assert_eq!(s.monsters[0].hp, 100 - 6 - 2, "Strike 6 + Strength 2");
+}
+
+/// B4: two stacks take both cards before either plays.
+#[test]
+fn mayhem_stacks_take_all_cards_before_any_plays() {
+    let mut draw = vec!["Defend"; 5];
+    draw.extend(["Flash of Steel", "Strike", "Bash"]);
+    let mut s = mayhem_game(2, &[], &draw, &draw[..7], &[]);
+    end_turn_through(&mut s);
+    assert_eq!((s.monsters[0].hp, s.cards_played_this_turn, s.player.energy), (100 - 3 - 6, 2, 3));
+    assert_eq!((s.hand.len(), s.hand.count(id("Bash")), s.draw().len()), (6, 1, 0));
+}
+
+/// B5: Magnetism's card is made before the draw; the top card plays after.
+#[test]
+fn mayhem_and_magnetism() {
+    let mut s = mayhem_game(1, &["Magnetism"], &["Strike"; 10], &[], &[]);
+    let mut rng = Rng::new(9);
+    s.apply_action(Action::EndTurn).unwrap();
+    assert!(to_next_colorless_roll(&mut s, &mut rng));
+    assert_eq!((s.draw().len(), s.hand.len(), s.cards_played_this_turn), (10, 0, 0));
+    while s.pending.is_some() {
+        s.resolve_chance(&mut rng);
+    }
+    assert_eq!((s.hand.len(), s.hand.count(id("Strike")), s.draw().len(), s.cards_played_this_turn, s.monsters[0].hp), (6, 5, 4, 1, 94));
+}
+
+/// B6: nothing to take.
+#[test]
+fn mayhem_with_both_piles_empty_does_nothing() {
+    let mut s = mayhem_game(1, &[], &[], &[], &[]);
+    end_turn_through(&mut s);
+    assert_eq!((s.stage, s.pending, s.cards_played_this_turn, s.hand.len()), (Stage::PlayerTurn, None, 0, 0));
+    assert!(s.owed_late.is_empty());
+}
+
+/// B7: a take needs a turn that stays open.
+#[test]
+fn a_hook_that_plays_the_top_card_must_leave_the_turn_open() {
+    load();
+    for (i, trigger) in ["OwnerTurnEnd", "RoundEnd", "OwnerDied", "CombatWon", "OwnerUsedPotion"].into_iter().enumerate() {
+        let text = format!(
+            r#"{{"version": 2, "powers": [{{"id": "pl-top{i}", "hooks": [{{"trigger": "{trigger}", "condition": "Always", "effects": [{{"PlayTop": {{"n": 1, "exhaust": false}}}}]}}]}}]}}"#
+        );
+        let err = load_pack(&text).unwrap_err();
+        assert!(err.contains("PlayTop"), "{trigger}: {err}");
+    }
+}
+
+/// A relic's hook may play the top card too (after the turn start
+/// settles), and is refused in a turn-end hook like a power's.
+#[test]
+fn a_relic_hook_plays_the_top_card_after_the_draw() {
+    load();
+    load_pack(r#"{"version": 2, "relics": [{"id": "pl-top-relic", "rarity": "common", "hooks": [{"trigger": "OwnerTurnStartPostDraw", "condition": "Always", "effects": [{"PlayTop": {"n": 1, "exhaust": false}}]}]}]}"#).unwrap();
+    let err = load_pack(r#"{"version": 2, "relics": [{"id": "pl-top-relic-end", "rarity": "common", "hooks": [{"trigger": "OwnerTurnEnd", "condition": "Always", "effects": [{"PlayTop": {"n": 1, "exhaust": false}}]}]}]}"#).unwrap_err();
+    assert!(err.contains("PlayTop"), "{err}");
+    let (ids, b) = bind(&["Strike"; 10]).unwrap();
+    let relics = relics_named(&["gen:pl-top-relic"]).unwrap();
+    let mut rng = Rng::new(3);
+    let mut s = CombatState::new_with(Character::Ironclad, &ids, &b, 80, 80, &[sts_engine::monsters::MonsterKind::JawWorm], sts_engine::monsters::EncounterGroup::Hallway, &relics, &mut rng);
+    while s.pending.is_some() {
+        s.resolve_chance(&mut rng);
+    }
+    let hp = s.monsters[0].max_hp;
+    assert_eq!((hp - s.monsters[0].hp, s.cards_played_this_turn, s.player.energy), (6, 1, 3), "Strike played free");
+    assert_eq!((s.hand.len(), s.draw().len(), s.discard().len()), (5, 4, 1));
+}
+
+/// B9: the take comes before the work the turn's draw triggers (Evolve).
+#[test]
+fn mayhem_takes_before_evolve_draws() {
+    let draw = ["Wound", "Bash", "Bash", "Bash", "Bash", "Strike", "Defend"];
+    let mut s = mayhem_game(1, &["Evolve"], &draw, &draw, &[]);
+    end_turn_through(&mut s);
+    assert_eq!((s.monsters[0].hp, s.cards_played_this_turn), (94, 1), "Strike played");
+    assert_eq!((s.hand.len(), s.hand.count(id("Defend")), s.draw().len()), (6, 1, 0), "Evolve drew Defend");
+}
+
+// Build A of docs/research/build-plans-2026-11-14/colorless-piles.md:
+// Enlightenment and the turn cost marks (`CombatState::turn_costs`), the
+// game's `EnlightenmentAction` and `updateCost` read in desktop-1.0.jar.
+
+/// The one card in hand whose definition is named `prefix` or is a changed
+/// copy of it (`prefix{cost=..}`).
+fn held(s: &CombatState, prefix: &str) -> CardId {
+    let found: Vec<CardId> = s.hand.iter().map(|(c, _)| c).filter(|&c| s.binding.def(c).name.starts_with(prefix)).collect();
+    assert_eq!(found.len(), 1, "{prefix}: {found:?}");
+    found[0]
+}
+
+/// A1: Enlightenment: cards costing 2 or more cost 1 this turn; a cost of
+/// 1, X and unplayable stay; plays spend the marked cost; End Turn clears.
+#[test]
+fn enlightenment_caps_the_hand_this_turn() {
+    let (mut s, enl) = setup("Enlightenment", &["Bash", "Carnage", "Strike", "Whirlwind", "Burn"]);
+    let (bash, carnage, strike, whirl, burn) = (id("Bash"), id("Carnage"), id("Strike"), id("Whirlwind"), id("Burn"));
+    play(&mut s, enl);
+    assert_eq!([bash, carnage, strike].map(|c| s.cost_of(c)), [1, 1, 1]);
+    assert_eq!((s.cost_of(whirl), s.cost_of(burn), s.turn_costs.count(whirl) + s.turn_costs.count(burn)), (0, 0, 0), "X-cost and unplayable never qualify");
+    assert_eq!(s.turn_costs.len(), 2, "Bash and Carnage only");
+    assert!(s.free_in_hand.is_empty());
+    play(&mut s, bash);
+    play(&mut s, carnage);
+    assert_eq!(s.player.energy, 1);
+    s.step(Action::EndTurn, &mut Rng::new(5)).unwrap();
+    assert!(s.turn_costs.is_empty());
+}
+
+/// A2: Enlightenment+ also lowers the cost for the combat: the copy keeps
+/// costing 1 in the discard pile and when drawn again.
+#[test]
+fn enlightenment_plus_lowers_the_combat_cost() {
+    let (mut s, enl) = setup("Enlightenment+", &["Bash", "Carnage", "Strike", "Whirlwind", "Burn"]);
+    play(&mut s, enl);
+    let bash = held(&s, "Bash");
+    assert_ne!(bash, id("Bash"), "the changed copy");
+    assert_eq!(sts_engine::registry::copy_of(bash).map(|(b, _)| b), Some(id("Bash")));
+    assert_eq!((s.binding.def(bash).cost(), s.cost_of(bash)), (1, 1));
+    assert!(s.turn_costs.is_empty(), "a mark that no longer lowers the cost goes");
+    assert_eq!(s.hand.count(id("Whirlwind")) + s.hand.count(id("Burn")), 2, "X-cost and unplayable keep their cards");
+    s.step(Action::EndTurn, &mut Rng::new(5)).unwrap();
+    let copies: u8 = [s.hand.view(), s.draw(), s.discard()].into_iter().map(|p| p.count(bash)).sum();
+    assert_eq!(copies, 1, "still the cost-1 copy after the turn");
+    assert_eq!(s.cost_of(bash), 1);
+}
+
+/// A3: a copy marked 0 keeps its mark under Enlightenment+: it costs 0 this
+/// turn and 1 for the combat.
+#[test]
+fn enlightenment_plus_keeps_a_zero_mark() {
+    let (mut s, enl) = setup("Enlightenment+", &["Bash"]);
+    assert!(s.mark_free_in_hand(id("Bash")));
+    play(&mut s, enl);
+    let bash = held(&s, "Bash");
+    assert_eq!((s.binding.def(bash).cost(), s.cost_of(bash), s.free_in_hand.count(bash)), (1, 0, 1));
+    s.player.energy = 0;
+    play(&mut s, bash);
+    assert_eq!(s.player.energy, 0, "played free");
+}
+
+/// A4: Blood for Blood (cost 4) under Enlightenment costs 1; one HP loss
+/// takes its combat cost to 3 and this turn's to 0 (the game's `updateCost`
+/// keeps the gap: diff 3, `costForTurn` 0).
+#[test]
+fn enlightenment_then_blood_for_blood_loses_hp() {
+    let (mut s, enl) = setup("Enlightenment", &["gen:Blood for Blood", "Bloodletting"]);
+    let bfb = held(&s, "gen:Blood for Blood");
+    play(&mut s, enl);
+    assert_eq!(s.cost_of(bfb), 1);
+    play(&mut s, id("Bloodletting"));
+    let moved = held(&s, "gen:Blood for Blood");
+    assert_ne!(moved, bfb);
+    assert_eq!((s.binding.def(moved).cost(), s.cost_of(moved)), (3, 0));
+    assert_eq!((s.turn_costs.len(), s.free_in_hand.count(moved)), (0, 1), "at 0 it is a free mark");
+}
+
+/// A5: of two Bashes one marked 1, a play takes the cheap one; a discard
+/// pick takes the dear one.
+#[test]
+fn a_play_takes_the_cheapest_copy_and_a_pick_the_dearest() {
+    let (mut s, _) = setup("Enlightenment", &[]);
+    let (bash, survivor) = (id("Bash"), id("Survivor"));
+    s.hand = Hand::from_cards(&[bash, bash]);
+    assert!(s.turn_costs.add(bash, 1));
+    assert_eq!(s.cost_of(bash), 1);
+    play(&mut s, bash);
+    assert_eq!((s.player.energy, s.hand.count(bash), s.cost_of(bash), s.turn_costs.len()), (2, 1, 2, 0));
+    s.player.energy = 3;
+    s.hand = Hand::from_cards(&[bash, bash, survivor]);
+    s.turn_costs.add(bash, 1);
+    play(&mut s, survivor);
+    s.apply_action(Action::Choose(bash)).unwrap();
+    assert_eq!((s.hand.count(bash), s.discard().count(bash)), (1, 2), "the played Bash and the picked one");
+    assert_eq!((s.cost_of(bash), s.turn_costs.len()), (1, 1), "the kept Bash is the marked one");
+}
+
+// Random hand picks roll over copy classes: a card's unmarked copies, its
+// copies at each cost this turn, and its copies marked 0 (`HandMark`).
+
+const CLASSES: &str = r#"{"version": 1, "cards": [
+{"id": "ClsFree", "cost": 0, "type": "Skill", "effects": ["ZeroCostRandomTurn"]},
+{"id": "ClsUp", "cost": 0, "type": "Skill", "effects": ["UpgradeRandom"]},
+{"id": "ClsEx", "cost": 0, "type": "Skill", "effects": ["ExhaustRandom"]}
+]}"#;
+
+/// `card` and two Bashes in hand, one of them at cost 1 this turn; the
+/// card is played with its chance event left pending.
+fn two_classes(card: &str, mark: bool) -> CombatState {
+    load_pack(CLASSES).unwrap();
+    let (mut s, c) = setup(card, &["Bash"]);
+    let bash = id("Bash");
+    s.hand = Hand::from_cards(&[c, bash, bash]);
+    if mark {
+        assert!(s.turn_costs.add(bash, 1));
+    }
+    s.apply_action(Action::Play { card: c, target: None }).unwrap();
+    s
+}
+
+fn outcomes_of(s: &CombatState) -> Vec<(f64, CombatState)> {
+    let Some(ChanceOutcomes::Listed(v)) = s.chance_outcomes(10) else { panic!("listed") };
+    v
+}
+
+/// (free marks, cost-this-turn marks) of each outcome, with its weight.
+fn marks(v: &[(f64, CombatState)]) -> Vec<(u8, u8, u8)> {
+    let mut out: Vec<(u8, u8, u8)> = v.iter().map(|(p, t)| ((p * 100.0).round() as u8, t.free_in_hand.len() as u8, t.turn_costs.len() as u8)).collect();
+    out.sort();
+    out
+}
+
+#[test]
+fn random_zero_cost_rolls_over_copy_classes() {
+    let s = two_classes("Madness", true);
+    assert_eq!(s.pending, Some(ChanceEvent::RandomZeroCost));
+    let v = outcomes_of(&s);
+    // The unmarked copy goes (the mark stays), or the marked one (it goes).
+    assert_eq!(marks(&v), [(50, 0, 0), (50, 0, 1)]);
+    for (_, t) in &v {
+        assert_eq!(t.hand.len(), 2);
+    }
+    // One class: no pause.
+    for mark in [false] {
+        assert_eq!(two_classes("Madness", mark).pending, None);
+    }
+}
+
+#[test]
+fn random_free_turn_rolls_over_copy_classes() {
+    let s = two_classes("ClsFree", true);
+    assert_eq!(s.pending, Some(ChanceEvent::RandomFreeTurn));
+    let v = outcomes_of(&s);
+    // The unmarked copy is freed (the cost-1 mark stays), or the marked one
+    // is (its mark is replaced).
+    assert_eq!(marks(&v), [(50, 1, 0), (50, 1, 1)]);
+    assert_eq!(two_classes("ClsFree", false).pending, None);
+}
+
+#[test]
+fn random_upgrade_rolls_over_copy_classes() {
+    let s = two_classes("ClsUp", true);
+    assert_eq!(s.pending, Some(ChanceEvent::RandomUpgrade));
+    let v = outcomes_of(&s);
+    assert_eq!(marks(&v), [(50, 0, 1), (50, 0, 1)]);
+    let (bash, up) = (id("Bash"), id("Bash+"));
+    let mut which: Vec<CardId> = v.iter().map(|(_, t)| t.turn_costs.iter().next().unwrap().0).collect();
+    which.sort();
+    assert_eq!(which, [bash, up], "the upgraded copy keeps its cost this turn, or the plain one does");
+    assert_eq!(two_classes("ClsUp", false).pending, None);
+}
+
+#[test]
+fn random_exhaust_rolls_over_copy_classes() {
+    let s = two_classes("ClsEx", true);
+    assert_eq!(s.pending, Some(ChanceEvent::RandomExhaust));
+    let v = outcomes_of(&s);
+    assert_eq!(marks(&v), [(50, 0, 0), (50, 0, 1)]);
+    assert_eq!(two_classes("ClsEx", false).pending, None);
+}
+
+/// Dual Wield copies a card whose every copy is at a cost this turn: the
+/// copy carries the mark (the game's copy keeps `costForTurn`).
+#[test]
+fn dual_wield_copies_a_cost_this_turn_mark() {
+    let (mut s, dw) = setup("Dual Wield", &["Bash"]);
+    let bash = id("Bash");
+    s.hand = Hand::from_cards(&[dw, bash, bash]);
+    assert!(s.turn_costs.add(bash, 1));
+    assert!(s.turn_costs.add(bash, 1));
+    play(&mut s, dw);
+    if s.pick().is_some() {
+        s.apply_action(Action::Choose(bash)).unwrap();
+    }
+    assert_eq!((s.hand.count(bash), s.turn_costs.count(bash), s.cost_of(bash)), (3, 3, 1));
+    // A mix of marked and unmarked copies: the copy is unmarked, as before.
+    let (mut s, dw) = setup("Dual Wield", &["Bash"]);
+    s.hand = Hand::from_cards(&[dw, bash, bash]);
+    assert!(s.turn_costs.add(bash, 1));
+    play(&mut s, dw);
+    if s.pick().is_some() {
+        s.apply_action(Action::Choose(bash)).unwrap();
+    }
+    assert_eq!((s.hand.count(bash), s.turn_costs.count(bash)), (3, 1));
+}

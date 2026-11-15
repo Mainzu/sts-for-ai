@@ -33,7 +33,13 @@
       "note": "fact split 2026-11-13: measurement/adapted-two@elites, measurement/crossed-player@two-turn, measurement/burst-official@held-out reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
-  "flags": [],
+  "flags": [
+    {
+      "by": "curate-cf44b335-65ef-4f93-841c-f4d788c07b73",
+      "at": "2026-11-15T04:59:05+00:00 @ a3a20322",
+      "reason": "re-check pending: sources are suspect/measured under older rules version; curator can't re-measure"
+    }
+  ],
   "history": [
     {
       "rev": 1,
@@ -379,5 +385,5 @@
       "until": "2026-11-13T02:29:03Z @ 3123201a"
     }
   ],
-  "seal": "8a92d1efada369307a9b133ecb2526d209d8ddf6733b4d5818c80b4662f296e9"
+  "seal": "fec3a6f94d0da295aa9f2a971445fd28208342648b90bba247c5f35b0c134d8d"
 }

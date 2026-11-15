@@ -171,7 +171,7 @@ depth (kb measurement/leaf-vs-heuristic). Training runs in self-play rounds
 (the AlphaZero/TD-Gammon loop). In round 0 the net learns from games played
 by search + heuristic. In each later round it learns from games played by
 search with the previous round's net, and every label is the game's real
-outcome (README "Learned play").
+outcome (docs/training.md).
 
 - **Exact solver** (`engine/src/solve.rs`): not an evaluator for play, but
   the measuring stick. On small endgame positions it computes every

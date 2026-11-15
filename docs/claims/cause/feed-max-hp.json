@@ -1,12 +1,12 @@
 {
   "key": "cause/feed-max-hp",
-  "rev": 1,
-  "value": "Feed only dealt damage in the pack; the game's FeedAction raises max HP by 3 (4 upgraded) and heals as much when its hit kills a non-minion, non-half-dead target (live run 16). Fixed in 67267557: general content condition TargetDied (chosen target dead after the card/potion in play), Feed row TargetDied -> GainMaxHp; a winning kill gains before the combat-end relics. Golden and rules version unchanged. Other jar on-kill cards (Hand of Greed gold, Ritual Dagger, Sunder, Lesson Learned) are outside Act 1 combat content. The gauntlet keeps a fixed max HP between fights, so simulated runs drop the gain.",
+  "rev": 3,
+  "value": "The game's FeedAction raises max HP by 3 (4 upgraded) and heals as much when its hit kills a non-minion, non-half-dead target (live run 16); the engine does it via content condition TargetDied (Feed row TargetDied -> GainMaxHp), a winning kill gaining before combat-end relics. The gauntlet keeps max HP fixed between fights, so simulated runs drop the gain.",
   "status": "active",
   "sources": [
     {
       "path": "docs/research/real-game-runs.md",
-      "sha256": "72bf2a49aa3a1f4c6a14df7f5ff189e9962a6b71b508070c9ba9be2b54c30750"
+      "sha256": "1427845c92d527c8b7d531bf17d857d85f625632b1b4260dfcca9996ce28fb00"
     },
     {
       "path": "engine/tests/kill_effects.rs",
@@ -14,16 +14,61 @@
     },
     {
       "path": "content/packs/act1-ironclad.json",
-      "sha256": "2d9dc918c9343a2ffafd3587dba952cc2c3a238ce50a6cc6b61c7968355981bb"
+      "sha256": "2edef3818a81c03264d29eb7699f75739ba5c6ed805dae1bbba3b8d692e1c8b2"
     }
   ],
   "owner": false,
   "pinned": false,
   "note": null,
-  "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
-  "at": "2026-11-14T04:43:55Z @ 0ccb0f83",
+  "by": "curate-cf44b335-65ef-4f93-841c-f4d788c07b73",
+  "at": "2026-11-15T04:59:02+00:00 @ a3a20322",
   "confirms": [],
   "flags": [],
-  "history": [],
-  "seal": "3f993cb96bf4de1e3a884bd15b663f1825633db9e0936cfe44d9de0f0e3f73dd"
+  "history": [
+    {
+      "rev": 1,
+      "value": "Feed only dealt damage in the pack; the game's FeedAction raises max HP by 3 (4 upgraded) and heals as much when its hit kills a non-minion, non-half-dead target (live run 16). Fixed in 67267557: general content condition TargetDied (chosen target dead after the card/potion in play), Feed row TargetDied -> GainMaxHp; a winning kill gains before the combat-end relics. Golden and rules version unchanged. Other jar on-kill cards (Hand of Greed gold, Ritual Dagger, Sunder, Lesson Learned) are outside Act 1 combat content. The gauntlet keeps a fixed max HP between fights, so simulated runs drop the gain.",
+      "sources": [
+        {
+          "path": "docs/research/real-game-runs.md",
+          "sha256": "1427845c92d527c8b7d531bf17d857d85f625632b1b4260dfcca9996ce28fb00"
+        },
+        {
+          "path": "engine/tests/kill_effects.rs",
+          "sha256": "bcc9644306ca13167a56f67fbe8a6508570c326adff36c2c9b0b2d753fc55865"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "2edef3818a81c03264d29eb7699f75739ba5c6ed805dae1bbba3b8d692e1c8b2"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T04:43:55Z @ 0ccb0f83",
+      "until": "2026-11-15T04:58:28+00:00 @ a3a20322"
+    },
+    {
+      "rev": 2,
+      "value": "The game's FeedAction raises max HP by 3 (4 upgraded) and heals as much when its hit kills a non-minion, non-half-dead target (live run 16); the engine does this via content condition TargetDied (Feed row TargetDied -> GainMaxHp), a winning kill gaining before combat-end relics. Other jar on-kill cards are outside Act 1 combat content. The gauntlet keeps max HP fixed between fights, so simulated runs drop the gain.",
+      "sources": [
+        {
+          "path": "docs/research/real-game-runs.md",
+          "sha256": "1427845c92d527c8b7d531bf17d857d85f625632b1b4260dfcca9996ce28fb00"
+        },
+        {
+          "path": "engine/tests/kill_effects.rs",
+          "sha256": "bcc9644306ca13167a56f67fbe8a6508570c326adff36c2c9b0b2d753fc55865"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "2edef3818a81c03264d29eb7699f75739ba5c6ed805dae1bbba3b8d692e1c8b2"
+        }
+      ],
+      "owner": false,
+      "by": "curate-cf44b335-65ef-4f93-841c-f4d788c07b73",
+      "at": "2026-11-15T04:58:28+00:00 @ a3a20322",
+      "until": "2026-11-15T04:59:02+00:00 @ a3a20322"
+    }
+  ],
+  "seal": "a170a1fb4ba0cec3e2ddd2fd56908ee6f504944c574cf53a82088eab73a7ada4"
 }

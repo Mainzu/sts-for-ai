@@ -15,13 +15,13 @@
     }
   ],
   "check": {
-    "cmd": "python -I scripts/product.py player",
+    "cmd": "python scripts/product.py player",
     "expect": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1",
     "timeout": 10
   },
   "owner": false,
   "pinned": true,
-  "note": null,
+  "note": "check runs the project script with plain python (no -I, which drops PYTHON* variables and PYTHONPATH); output unchanged",
   "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
   "at": "2026-11-13T09:37:40Z @ 335c597a",
   "confirms": [
@@ -44,6 +44,16 @@
       "by": "24a6e50e-3e7c-42ec-b831-f35d7846c20b",
       "at": "2026-11-14T15:48:53Z @ e92ee62d",
       "note": "check passed: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1"
+    },
+    {
+      "by": "0978e03c-be4b-40a0-961e-d5c5404c0e70",
+      "at": "2026-11-15T02:56:36+00:00 @ 92cf478b",
+      "note": "check passed: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1"
+    },
+    {
+      "by": "ea69b906-0ef3-444c-8cc3-77db4706d7ae",
+      "at": "2026-11-15T05:19:03+00:00 @ 97721f22",
+      "note": "check runs the project script with plain python (no -I, which drops PYTHON* variables and PYTHONPATH); output unchanged"
     }
   ],
   "flags": [],
@@ -127,5 +137,5 @@
       "until": "2026-11-13T09:37:40Z @ 335c597a"
     }
   ],
-  "seal": "4cd5d489e8d54f844fff5eb4fd2f3a6809e607b8743fbc413b6e6b489dd58b08"
+  "seal": "55f89468c2fbad2551d4482954ff7d7dfaff07cb705fcb90fefd7dfe130115d5"
 }

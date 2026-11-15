@@ -3,7 +3,7 @@
 How new content and new mechanics are meant to enter this project, and
 why. Settled with the owner on 2026-10-26. This is the concept; the build
 plan was `docs/specs/rules-engine-upgrade.md` (the umbrella and its series
-of specs, built) and the warm-start workflow (README "Fine-tuning on new
+of specs, built) and the warm-start workflow (docs/training.md, "Fine-tuning on new
 content (warm start)"); the idea is idea 51 in the owner's private tracker.
 Read `docs/concept.md` first for how the engine and nets work today.
 
@@ -693,6 +693,23 @@ load error.
   "Attack"}` and `false` as nothing; `playable_if` in a version-1 file is
   a load error. A version-2 card with `only_attacks_in_hand` is a load
   error naming `playable_if`.
+
+### Who reads which content file
+
+- `registry::load_pack` reads only its known top-level sections (`version`,
+  `pools`, `powers`, `cards`, `monsters`, `encounters`, `relics`,
+  `potions`) and ignores any other top-level key. Inside an entry, an
+  unknown key is a load error (relics `RELIC_KEYS`, potions `POTION_KEYS`,
+  encounters, powers' key lists, monsters' ascension fields).
+- The live bridge (`real_game.load_packs()`) loads a fixed list of packs;
+  `scripts/explore.py` loads every `content/packs/*.json`;
+  `engine/tests/wording.rs` walks them all.
+- So: a new key inside an entry needs main's installed `sts` swapped before
+  any pack on main carries it, since the live loops read main's `content/`
+  with that `sts`. A new top-level section loads, unread, in an older
+  `sts`. A new file in `content/packs/` is loaded by the explorer and
+  walked by the wording test, so content that no combat reader should load
+  goes in a folder of its own, with its own reader and wording walk.
 
 ## Costs 0 this turn
 

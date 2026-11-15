@@ -198,6 +198,9 @@ pub enum Num<'a> {
     U8(&'a mut u8),
     /// A fraction's bottom (`amount.per`): at least 1.
     Per(&'a mut i16),
+    /// A true / false field (`CostAtMost.combat`): an upgrade sets it
+    /// (`Change::Set`), never adds to it.
+    Bool(&'a mut bool),
 }
 
 impl Num<'_> {
@@ -206,6 +209,18 @@ impl Num<'_> {
             Num::I16(x) | Num::Per(x) => **x as i64,
             Num::I8(x) => **x as i64,
             Num::U8(x) => **x as i64,
+            Num::Bool(x) => **x as i64,
+        }
+    }
+
+    /// Sets a true / false field; false for a number.
+    fn set_flag(&mut self, b: bool) -> bool {
+        match self {
+            Num::Bool(x) => {
+                **x = b;
+                true
+            }
+            _ => false,
         }
     }
 
@@ -216,6 +231,8 @@ impl Num<'_> {
             Num::I8(x) => i8::try_from(v).map(|v| **x = v).is_ok(),
             Num::U8(x) => u8::try_from(v).map(|v| **x = v).is_ok(),
             Num::Per(x) => i16::try_from(v).ok().filter(|&v| v >= 1).map(|v| **x = v).is_some(),
+            // Not a number: only `Change::Set` writes it.
+            Num::Bool(_) => false,
         }
     }
 }
@@ -239,6 +256,7 @@ pub fn effect_name(e: &Effect) -> &'static str {
         Effect::ZeroCostRandom => "ZeroCostRandom",
         Effect::ZeroCostRandomTurn => "ZeroCostRandomTurn",
         Effect::UpgradeRandom => "UpgradeRandom",
+        Effect::CostAtMost { .. } => "CostAtMost",
         Effect::Draw(_) => "Draw",
         Effect::RandomizeCost(_) => "RandomizeCost",
         Effect::GainEnergy(_) => "GainEnergy",
@@ -326,6 +344,11 @@ pub fn number<'a>(e: &'a mut Effect, name: &str, field: &str) -> Option<Num<'a>>
         Effect::Draw(n) => field.is_empty().then_some(Num::U8(n)),
         Effect::GainEnergy(n) => field.is_empty().then_some(Num::I8(n)),
         Effect::AddCard { n, .. } => (field == "n").then_some(Num::U8(n)),
+        Effect::CostAtMost { cost, combat } => match field {
+            "cost" => Some(Num::I8(cost)),
+            "combat" => Some(Num::Bool(combat)),
+            _ => None,
+        },
         Effect::Pick { n, copies, .. } => match field {
             "n" => Some(Num::U8(n)),
             "copies" => Some(Num::U8(copies)),
@@ -361,6 +384,7 @@ pub fn number_fields(e: &Effect) -> Vec<&'static str> {
             vec![""]
         }
         Effect::AddCard { .. } => vec!["n"],
+        Effect::CostAtMost { .. } => vec!["cost", "combat"],
         Effect::Pick { kind: crate::effects::PickKind::CopyInHand, .. } => vec!["n", "copies"],
         Effect::Pick { .. } => vec!["n"],
         _ => vec![],
@@ -403,6 +427,13 @@ impl Upgrade {
                     p.cost = i8::try_from(v).map_err(|_| fail("cost past the engine's range"))?;
                 }
                 (Path::Keyword(k), Change::Set(b)) => p.keywords[*k as usize] = *b,
+                // A true / false field of an effect (`CostAtMost.combat`).
+                (Path::Number { section, i, effect, field }, Change::Set(b)) => {
+                    let mut num = p.section(*section).and_then(|s| s.get_mut(*i)).and_then(|x| number(x, effect, field)).ok_or_else(|| fail("names no field of the card"))?;
+                    if !num.set_flag(*b) {
+                        return Err(fail("a number takes an amount or an expression of n"));
+                    }
+                }
                 (Path::Number { section, i, effect, field }, Change::Add(e)) => {
                     let mut num = p.section(*section).and_then(|s| s.get_mut(*i)).and_then(|x| number(x, effect, field)).ok_or_else(|| fail("names no number of the card"))?;
                     let v = num.get().saturating_add(e.at(n as i64));
@@ -482,7 +513,8 @@ impl Upgrade {
                     };
                     if u != v {
                         let path = Path::Number { section, i, effect: name.to_string(), field: f.to_string() };
-                        up.changes.push((path, Change::Add(Expr::constant(v - u))));
+                        let flag = matches!(number(&mut y, name, f), Some(Num::Bool(_)));
+                        up.changes.push((path, if flag { Change::Set(v != 0) } else { Change::Add(Expr::constant(v - u)) }));
                     }
                 }
             }

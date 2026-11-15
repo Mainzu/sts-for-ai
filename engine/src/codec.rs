@@ -8,7 +8,7 @@
 //! zigzagged), and the codec version comes first.
 
 use crate::cards::{CardId, NUM_OFFICIAL_CARDS};
-use crate::chance::ChanceEvent;
+use crate::chance::{ChanceEvent, OrderThen};
 use crate::character::Character;
 use crate::monsters::{Ascension, Monster, MonsterKind, MAX_ASCENSION, NUM_OFFICIAL_MONSTERS};
 use crate::powers::{Powers, NUM_OFFICIAL_POWERS, NUM_POWERS};
@@ -16,7 +16,7 @@ use crate::potions::{potion_id, Potions, POTION_CAP};
 use crate::relics::{relic_id, Relics, RELIC_CAP};
 use crate::registry::{changed_copy, copy_of, is_changed, order_key, Binding, Overrides, VARIANT_BASE};
 use crate::effects::{Effect, PickKind, Types};
-use crate::state::{Action, CombatState, CostRolls, FreeMarks, Owed, OwedKind, OWED_CAP, Hand, InPlay, Pick, Pile, PileN, PileRef, Piles, Player, Queued, Run, Stage, Top, TopQueue, HAND_LIMIT, MAX_MONSTERS, PILE_RUN_CAP, TOP_QUEUE_CAP};
+use crate::state::{Action, CombatState, CostRolls, FreeMarks, TurnCosts, Owed, OwedKind, OWED_CAP, Hand, InPlay, Pick, Pile, PileN, PileRef, Piles, Player, Queued, Run, Stage, Top, TopQueue, HAND_LIMIT, MAX_MONSTERS, PILE_RUN_CAP, TOP_QUEUE_CAP};
 
 /// Bumped on any change to the byte format.
 pub const CODEC_VERSION: u8 = 1;
@@ -174,8 +174,10 @@ pub fn encode(s: &CombatState) -> Vec<u8> {
         monsters,
         hand,
         free_in_hand,
+        turn_costs,
         cost_rolls,
         owed,
+        owed_late,
         piles: _,
         top_queue,
         top,
@@ -206,8 +208,11 @@ pub fn encode(s: &CombatState) -> Vec<u8> {
         turn_ending,
         monsters_acting,
         allies_at_move,
+        intent_hidden,
+        bottled,
         ascension,
     } = s;
+    debug_assert!(bottled.iter().all(Option::is_none), "codec: a state before turn 1's opening hand");
     // Set only inside End Turn and the monsters' turn: never seen at rest.
     debug_assert!(!turn_ending, "codec: a state inside End Turn");
     debug_assert!(!monsters_acting, "codec: a state inside the monsters' turn");
@@ -365,6 +370,37 @@ pub fn encode(s: &CombatState) -> Vec<u8> {
         Some(ChanceEvent::ExhaustSave { queued }) => {
             w.byte(11);
             w.byte(queued as u8);
+        }
+        // Frozen Eye's order (tag 13: what waits, 0 nothing, 1 a draw and
+        // its count, 2 `PlayTop` and whether it exhausts) and owed spot
+        // (tag 14, its card).
+        Some(ChanceEvent::Order { then }) => {
+            w.byte(13);
+            match then {
+                OrderThen::Nothing => w.byte(0),
+                OrderThen::Draw(n) => {
+                    w.byte(1);
+                    w.byte(n);
+                }
+                OrderThen::TakeTop { exhaust } => {
+                    w.byte(2);
+                    w.byte(exhaust as u8);
+                }
+            }
+        }
+        Some(ChanceEvent::InsertAt { card }) => {
+            w.byte(14);
+            w.card(card);
+        }
+        // Runic Dome's reveal of whether a hidden monster attacks (tag 15)
+        // and its rolled amount (tag 16), each with the slot.
+        Some(ChanceEvent::IntentClass { slot }) => {
+            w.byte(15);
+            w.byte(slot);
+        }
+        Some(ChanceEvent::RolledAmount { slot }) => {
+            w.byte(16);
+            w.byte(slot);
         }
         Some(ChanceEvent::Offer { .. }) => unreachable!("an open offer counts as generated content"),
         Some(ChanceEvent::RandomPotion { .. }) => unreachable!("a pending random potion counts as generated content"),
@@ -535,6 +571,8 @@ pub fn encode(s: &CombatState) -> Vec<u8> {
                 OwedKind::Upgrade => 2,
                 OwedKind::Draw => 3,
                 OwedKind::Hit { .. } => 4,
+                OwedKind::Insert { .. } => 5,
+                OwedKind::Top { .. } => unreachable!("a late take is written in section 21"),
                 OwedKind::Make { .. } => unreachable!("owed MakeRandom rolls count as generated content"),
             };
             w.byte(kind | (e.wait as u8) << 7);
@@ -542,6 +580,10 @@ pub fn encode(s: &CombatState) -> Vec<u8> {
             // A hit's amount follows its count.
             if let OwedKind::Hit { amount } = e.kind {
                 w.i(amount as i64);
+            }
+            // An owed spot's card (Frozen Eye) too.
+            if let OwedKind::Insert { card } = e.kind {
+                w.card(card);
             }
         }
     }
@@ -572,6 +614,40 @@ pub fn encode(s: &CombatState) -> Vec<u8> {
     if *unfired_curse_draws != 0 {
         w.byte(19);
         w.byte(*unfired_curse_draws);
+    }
+    // 20, Runic Dome's hidden intents (`CombatState::intent_hidden`): a
+    // slot mask, then each slot's bits. Only when any is set.
+    if *intent_hidden != [0; MAX_MONSTERS] {
+        w.byte(20);
+        w.byte(intent_hidden.iter().enumerate().filter(|(_, &b)| b != 0).fold(0u8, |m, (i, _)| m | 1 << i));
+        for &b in intent_hidden.iter().filter(|&&b| b != 0) {
+            w.byte(b);
+        }
+    }
+    // 21, the takes a power's hook owes behind the turn start (Mayhem,
+    // `owed_late`), in order: each entry's kind (6 `Top`, 7 `Top` that
+    // exhausts), its count. Only while any is owed.
+    if !owed_late.is_empty() {
+        w.byte(21);
+        w.byte(owed_late.iter().count() as u8);
+        for e in owed_late.iter() {
+            let OwedKind::Top { exhaust } = e.kind else { unreachable!("owed_late holds takes only") };
+            w.byte(6 + exhaust as u8);
+            w.byte(e.n);
+        }
+    }
+    // 22, the hand cards that cost 1 or more this turn, below their cost
+    // (Enlightenment, `turn_costs`): their count, then each copy's card and
+    // cost this turn, by card then cost. Only when any is marked.
+    if !turn_costs.is_empty() {
+        w.byte(22);
+        w.byte(turn_costs.len() as u8);
+        let mut marks: Vec<(u8, u8)> = turn_costs.iter().map(|(c, v)| (card_byte(&w.ranks, c), v)).collect();
+        marks.sort_unstable();
+        for (b, v) in marks {
+            w.byte(b);
+            w.byte(v);
+        }
     }
     w.out
 }
@@ -808,6 +884,23 @@ pub fn try_decode(bytes: &[u8]) -> Option<CombatState> {
                 _ => return None,
             },
         }),
+        13 => Some(ChanceEvent::Order {
+            then: match r.byte()? {
+                0 => OrderThen::Nothing,
+                1 => OrderThen::Draw(r.byte()?),
+                2 => OrderThen::TakeTop {
+                    exhaust: match r.byte()? {
+                        0 => false,
+                        1 => true,
+                        _ => return None,
+                    },
+                },
+                _ => return None,
+            },
+        }),
+        14 => Some(ChanceEvent::InsertAt { card: r.card()? }),
+        15 => Some(ChanceEvent::IntentClass { slot: r.byte().filter(|&k| (k as usize) < MAX_MONSTERS)? }),
+        16 => Some(ChanceEvent::RolledAmount { slot: r.byte().filter(|&k| (k as usize) < MAX_MONSTERS)? }),
         _ => return None,
     };
     let mut deferred_block = [0i16; MAX_MONSTERS];
@@ -822,8 +915,10 @@ pub fn try_decode(bytes: &[u8]) -> Option<CombatState> {
         monsters,
         hand,
         free_in_hand: FreeMarks::default(),
+        turn_costs: TurnCosts::default(),
         cost_rolls: CostRolls::default(),
         owed: Owed::default(),
+        owed_late: Owed::default(),
         piles,
         top_queue: TopQueue::default(),
         turn,
@@ -854,6 +949,8 @@ pub fn try_decode(bytes: &[u8]) -> Option<CombatState> {
         turn_ending: false,
         monsters_acting: false,
         allies_at_move: 0,
+        intent_hidden: [0; MAX_MONSTERS],
+        bottled: [None; 3],
         ascension: Ascension(0),
     };
     let mut s = s;
@@ -1033,6 +1130,55 @@ pub fn try_decode(bytes: &[u8]) -> Option<CombatState> {
                     return None;
                 }
             }
+            20 => {
+                let mask = r.byte()?;
+                if mask == 0 || mask >> MAX_MONSTERS != 0 {
+                    return None;
+                }
+                for i in 0..MAX_MONSTERS {
+                    if mask & 1 << i != 0 {
+                        let b = r.byte()?;
+                        // Only the defined bits, a class only with the move hidden.
+                        if b == 0 || b >> 5 != 0 || (b & crate::state::HIDDEN_CLASS == crate::state::HIDDEN_CLASS) || (b & !crate::state::HIDDEN_ROLLED != 0 && b & crate::state::HIDDEN_MOVE == 0) {
+                            return None;
+                        }
+                        s.intent_hidden[i] = b;
+                    }
+                }
+            }
+            21 => {
+                let n = r.byte()? as usize;
+                if n == 0 || n > OWED_CAP {
+                    return None;
+                }
+                let mut owed = Owed::default();
+                for _ in 0..n {
+                    let (b, k) = (r.byte()?, r.byte()?);
+                    let kind = match b {
+                        6 => OwedKind::Top { exhaust: false },
+                        7 => OwedKind::Top { exhaust: true },
+                        _ => return None,
+                    };
+                    if k == 0 {
+                        return None;
+                    }
+                    owed.push(kind, k, false);
+                }
+                // As written: no two neighbours the same work (they join).
+                if owed.iter().count() != n {
+                    return None;
+                }
+                s.owed_late = owed;
+            }
+            22 => {
+                let n = r.byte()? as usize;
+                let pairs: Vec<_> = (0..n).map(|_| Some((r.card()?, r.byte()?))).collect::<Option<_>>()?;
+                s.turn_costs = TurnCosts::from_pairs(&pairs)?;
+                // Marks only copies in hand, one mark a copy.
+                if s.turn_costs.iter().any(|(c, _)| s.turn_costs.count(c) + s.free_in_hand.count(c) > s.hand.count(c)) {
+                    return None;
+                }
+            }
             16 => {
                 let mask = r.byte()?;
                 if mask == 0 || mask >> MAX_MONSTERS != 0 {
@@ -1061,6 +1207,7 @@ pub fn try_decode(bytes: &[u8]) -> Option<CombatState> {
                         2 => OwedKind::Upgrade,
                         3 => OwedKind::Draw,
                         4 => OwedKind::Hit { amount: r.i16()? },
+                        5 => OwedKind::Insert { card: r.card()? },
                         _ => return None,
                     };
                     if k == 0 {
@@ -1175,6 +1322,11 @@ fn resolve_ranks(s: &CombatState, ranks: &[CardId]) -> Option<CombatState> {
         ids.sort();
         t.free_in_hand = FreeMarks::from_ids(&ids)?;
     }
+    if !s.turn_costs.is_empty() {
+        let mut marks: Vec<(CardId, u8)> = s.turn_costs.iter().map(|(c, v)| Some((f(c)?, v))).collect::<Option<_>>()?;
+        marks.sort();
+        t.turn_costs = TurnCosts::from_pairs(&marks)?;
+    }
     let mut rolls = CostRolls::default();
     for (c, marked) in s.cost_rolls.iter() {
         rolls.push(f(c)?, marked);
@@ -1187,6 +1339,20 @@ fn resolve_ranks(s: &CombatState, ranks: &[CardId]) -> Option<CombatState> {
     t.top_queue = q;
     if let Stage::PlayingCard { card, .. } = &mut t.stage {
         *card = f(*card)?;
+    }
+    if let Some(ChanceEvent::InsertAt { card }) = &mut t.pending {
+        *card = f(*card)?;
+    }
+    if s.owed.iter().any(|e| matches!(e.kind, OwedKind::Insert { .. })) {
+        let mut owed = Owed::default();
+        for e in s.owed.iter() {
+            let kind = match e.kind {
+                OwedKind::Insert { card } => OwedKind::Insert { card: f(card)? },
+                k => k,
+            };
+            owed.push(kind, e.n, e.wait);
+        }
+        t.owed = owed;
     }
     Some(t)
 }

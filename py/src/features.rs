@@ -496,7 +496,7 @@ const CARD_PROPS: [&str; 14] = [
 ];
 const LEGACY_CLASH: usize = 9;
 
-const PLAYER_SCALARS: [&str; 26] = [
+const PLAYER_SCALARS: [&str; 27] = [
     "hp",
     "max_hp",
     "block",
@@ -532,6 +532,10 @@ const PLAYER_SCALARS: [&str; 26] = [
     "pending_random_exhaust",
     // Upgrades in combat (card-upgrades spec): the upgrade pick.
     "pick_upgrade_from_hand",
+    // Hand cards marked to cost less this turn (Enlightenment, Liquid
+    // Memories, Mummified Hand): the sum over marked copies of their cost
+    // less their cost this turn. A layout without it reads 0 (additive).
+    "hand_turn_discount",
 ];
 
 const MONSTER_SCALARS: [&str; 7] = ["alive", "hp", "max_hp", "block", "can_split", "escaped", "intent_damage"];
@@ -1215,6 +1219,8 @@ impl Encoder {
                 // Random hand work (blocked-relics spec step 5): no column,
                 // as ZeroCostRandom; the net reads the hand it leaves.
                 Effect::ZeroCostRandomTurn | Effect::UpgradeRandom => {}
+                // As the other hand-cost work: the net reads `hand_turn_discount`.
+                Effect::CostAtMost { .. } => {}
                 // Debuffs removed: no column (blocked-relics spec step 4).
                 Effect::RemoveDebuffs => {}
                 Effect::ReplayCard => add("replay", 1.0),
@@ -1826,7 +1832,9 @@ impl Encoder {
         let p = &s.player;
         let over = |won: bool| (s.stage == Stage::Over { won }) as u8 as f32;
         let (draw, mmove, hit) = match s.pending {
-            Some(ChanceEvent::Draw { n }) => (n as f32, 0.0, 0.0),
+            Some(ChanceEvent::Draw { n } | ChanceEvent::Order { then: sts_engine::chance::OrderThen::Draw(n) }) => (n as f32, 0.0, 0.0),
+            Some(ChanceEvent::Order { .. } | ChanceEvent::InsertAt { .. } | ChanceEvent::RolledAmount { .. }) => (0.0, 0.0, 0.0),
+            Some(ChanceEvent::IntentClass { .. }) => (0.0, 1.0, 0.0),
             Some(ChanceEvent::MonsterMove { .. } | ChanceEvent::AllyBlock { .. }) => (0.0, 1.0, 0.0),
             Some(ChanceEvent::RandomTarget { amount } | ChanceEvent::PlainHit { amount }) => (0.0, 0.0, amount as f32),
             Some(ChanceEvent::RandomExhaust | ChanceEvent::TakeTop { .. } | ChanceEvent::Offer { .. } | ChanceEvent::MakeRandom { .. } | ChanceEvent::RandomPotion { .. } | ChanceEvent::RandomCost | ChanceEvent::RandomZeroCost | ChanceEvent::RandomFreeTurn | ChanceEvent::RandomUpgrade | ChanceEvent::ExhaustSave { .. }) | None => (0.0, 0.0, 0.0),
@@ -1862,6 +1870,7 @@ impl Encoder {
             pick.is_some_and(|p| p.kind == PickKind::ReturnFromExhaust) as u8 as f32,
             (s.pending == Some(ChanceEvent::RandomExhaust)) as u8 as f32,
             pick.is_some_and(|p| p.kind == PickKind::UpgradeFromHand) as u8 as f32,
+            s.hand_turn_discount() as f32,
         ]);
         let bd = &s.binding;
         if !bd.is_empty() && self.repr == CardRepr::Ids && !IDS_WARNED.swap(true, Ordering::Relaxed) {
@@ -1918,7 +1927,35 @@ impl Encoder {
             } else {
                 effects
             };
-            self.effects(shown, m.rolled_damage, &mut b.monsters);
+            // Runic Dome: a hidden move's vector is the mean over its roll
+            // still to come (the rolled amount at its range's mean while unseen).
+            if s.move_hidden(slot) || s.intent_hidden[slot] & sts_engine::state::HIDDEN_ROLLED != 0 {
+                let rolled = match m.def().rolled_attack {
+                    Some((lo, hi)) if s.intent_hidden[slot] & sts_engine::state::HIDDEN_ROLLED != 0 => (lo + hi) / 2,
+                    _ => m.rolled_damage,
+                };
+                let at = b.monsters.len();
+                let mut sum: Vec<f32> = Vec::new();
+                for (id, p) in s.intent_distribution(slot) {
+                    let mv = m.def().moves.get(id as usize).map_or(&[][..], |mv| mv.effects);
+                    let mut one = Vec::with_capacity(self.effect_dim());
+                    self.effects(mv, rolled, &mut one);
+                    if sum.is_empty() {
+                        sum = vec![0.0; one.len()];
+                    }
+                    for (a, x) in sum.iter_mut().zip(one) {
+                        *a += p as f32 * x;
+                    }
+                }
+                if sum.is_empty() {
+                    self.effects(&[], rolled, &mut b.monsters);
+                } else {
+                    b.monsters.extend(sum);
+                }
+                debug_assert_eq!(b.monsters.len() - at, self.effect_dim());
+            } else {
+                self.effects(shown, m.rolled_damage, &mut b.monsters);
+            }
             if self.lookahead {
                 self.lookahead_cols(s, slot, &mut b.monsters);
             }

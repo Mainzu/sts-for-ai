@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neuron Microscope</title>
+<style>
+:root {
+  --bg: #fbfaf7; --panel: #ffffff; --ink: #1d1d1f; --muted: #6b6b70; --line: #e3e1db;
+  --accent: #2f6fdf; --warm: #d9622b; --good: #2e8b57;
+  --heat0: 251, 250, 247; --heat1: 32, 84, 190;
+  --s1: #2f6fdf; --s2: #d9622b; --s3: #2e8b57; --s4: #8a4fd0; --s5: #b5892a; --s6: #c23b6b;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141416; --panel: #1c1c1f; --ink: #ececee; --muted: #9a9aa2; --line: #2e2e33;
+  --accent: #6c9cff; --warm: #ff8a52; --good: #4cc38a;
+  --heat0: 28, 28, 31; --heat1: 120, 170, 255;
+  --s1: #6c9cff; --s2: #ff8a52; --s3: #4cc38a; --s4: #b58cff; --s5: #e0b84a; --s6: #ff6f9f;
+}}
+:root[data-theme="dark"] {
+  --bg: #141416; --panel: #1c1c1f; --ink: #ececee; --muted: #9a9aa2; --line: #2e2e33;
+  --accent: #6c9cff; --warm: #ff8a52; --good: #4cc38a;
+  --heat0: 28, 28, 31; --heat1: 120, 170, 255;
+  --s1: #6c9cff; --s2: #ff8a52; --s3: #4cc38a; --s4: #b58cff; --s5: #e0b84a; --s6: #ff6f9f;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+header { padding: 18px 16px 8px; max-width: 1400px; margin: 0 auto; }
+h1 { font-size: 20px; margin: 0 0 2px; }
+.sub { color: var(--muted); font-size: 13px; word-break: break-all; }
+nav { display: flex; gap: 4px; flex-wrap: wrap; padding: 8px 16px; max-width: 1400px; margin: 0 auto; }
+nav button { border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 6px 12px; border-radius: 6px; cursor: pointer; font: inherit; }
+nav button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+main { max-width: 1400px; margin: 0 auto; padding: 8px 16px 40px; }
+.tab { display: none; } .tab.on { display: block; }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 16px; align-items: start; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+.scroll { overflow: auto; max-height: 78vh; }
+.note { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
+canvas { display: block; }
+#tip { position: fixed; pointer-events: none; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; font-size: 12px; box-shadow: 0 2px 10px rgba(0,0,0,.15); display: none; z-index: 10; max-width: 320px; }
+.bar { display: flex; align-items: center; gap: 6px; font-size: 12px; margin: 2px 0; }
+.bar .lab { width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar .track { flex: 1; height: 10px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.bar .fill { height: 100%; background: var(--accent); }
+.bar .val { width: 38px; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+h3 { font-size: 14px; margin: 12px 0 6px; } h3:first-child { margin-top: 0; }
+svg text { fill: var(--muted); font-size: 11px; }
+.legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; margin: 6px 0; }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; background: var(--c); margin-right: 4px; vertical-align: -1px; }
+.charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 16px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Neuron Microscope</h1>
+  <div class="sub" id="netname"></div>
+</header>
+<nav id="nav"></nav>
+<main>
+  <section class="tab" id="t-cards"><div class="grid">
+    <div class="card"><p class="note">Each column is one card-encoder neuron, each row one card alone in hand. Darker means stronger. Columns are sorted by the card they like most; grey dashes mark dead neurons (no card turns them on). Click a column.</p><div class="scroll"><canvas id="cv-cards"></canvas></div></div>
+    <div class="card" id="p-cards"><p class="note">Click a neuron column.</p></div>
+  </div></section>
+  <section class="tab" id="t-enemies"><div class="grid">
+    <div class="card"><p class="note">Each column is one monster-encoder neuron, each row one enemy kind, averaged over the first decisions of greedy-played fights. An effects-mode encoder gets no enemy name, only HP, block, powers and intent. Click a column.</p><div class="scroll"><canvas id="cv-enemies"></canvas></div></div>
+    <div class="card" id="p-enemies"><p class="note">Click a neuron column.</p></div>
+  </div></section>
+  <section class="tab" id="t-copies"><div class="charts">
+    <div class="card"><h3>Score as copies of one card fill the draw pile</h3><p class="note" id="copies-note"></p><div id="ch-copies"></div></div>
+    <div class="card"><h3>Head neurons still on</h3><p class="note">Each card's copies are multiplied into the head's input, so many copies push it outside the decks it trained on and its neurons switch off.</p><div id="ch-headon"></div></div>
+    <div class="card"><h3>A card's value over a Defend, as Strikes fill the draw pile</h3><p class="note">Perfected Strike deals 6 + 2 per Strike-named card in the deck; if the net knew that, its line would climb much faster than the others.</p><div id="ch-strikes"></div></div>
+  </div></section>
+  <section class="tab" id="t-train"><div class="grid">
+    <div class="card"><p class="note" id="train-note"></p><div class="scroll"><canvas id="cv-train"></canvas></div></div>
+    <div class="card" id="p-train"><p class="note">Click a neuron row to see which cards it responded to at each step.</p></div>
+  </div></section>
+  <section class="tab" id="t-nets"><div class="grid">
+    <div class="card"><p class="note">For each card neuron of this net (column), how closely its best partner in the other net responds to the same cards (correlation over cards). Click a column to compare the pair.</p><div class="scroll"><canvas id="cv-nets"></canvas></div><div id="nets-hist"></div></div>
+    <div class="card" id="p-nets"><p class="note">Click a neuron column.</p></div>
+  </div></section>
+</main>
+<div id="tip"></div>
+<script>
+const D = /*DATA*/null;
+const $ = id => document.getElementById(id);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const tip = $("tip");
+function showTip(e, html) { tip.innerHTML = html; tip.style.display = "block";
+  const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8), y = Math.min(e.clientY + 14, innerHeight - tip.offsetHeight - 8);
+  tip.style.left = x + "px"; tip.style.top = y + "px"; }
+function hideTip() { tip.style.display = "none"; }
+const T = a => a[0].map((_, j) => a.map(r => r[j]));  // transpose
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+
+$("netname").textContent = D.net;
+const tabs = [["cards", "Card neurons"], ["enemies", "Monster neurons"]];
+if (D.copies) tabs.push(["copies", "Copies"]);
+if (D.series) tabs.push(["train", "Over training"]);
+if (D.compare.length) tabs.push(["nets", "Between nets"]);
+tabs.forEach(([k, label], i) => { const b = document.createElement("button"); b.textContent = label;
+  b.onclick = () => { document.querySelectorAll("nav button").forEach(x => x.classList.remove("on")); b.classList.add("on");
+    document.querySelectorAll(".tab").forEach(x => x.classList.remove("on")); $("t-" + k).classList.add("on"); draw(k); };
+  $("nav").appendChild(b); if (!i) b.classList.add("on"); });
+$("t-cards").classList.add("on");
+
+// Column order: by the row each neuron likes most; dead ones last.
+function colOrder(M) { const cols = T(M);
+  return cols.map((c, j) => ({ j, top: c.indexOf(Math.max(...c)), max: Math.max(...c) }))
+    .sort((a, b) => (a.max <= 1e-3) - (b.max <= 1e-3) || a.top - b.top || b.max - a.max).map(x => x.j); }
+
+function heat(v, max) { const t = Math.sqrt(Math.max(0, Math.min(1, v / (max || 1))));
+  const a = css("--heat0").split(",").map(Number), b = css("--heat1").split(",").map(Number);
+  return `rgb(${a.map((x, i) => Math.round(x + (b[i] - x) * t)).join(",")})`; }
+
+function heatmap(canvas, rows, M, order, opt) {
+  const cell = opt.cell || 11, left = opt.left || 130, top = 22, dpr = devicePixelRatio || 1;
+  const W = left + order.length * cell + 4, H = top + rows.length * cell + 4;
+  canvas.width = W * dpr; canvas.height = H * dpr; canvas.style.width = W + "px"; canvas.style.height = H + "px";
+  const g = canvas.getContext("2d"); g.scale(dpr, dpr); g.clearRect(0, 0, W, H);
+  const max = opt.max || Math.max(...M.flat());
+  g.font = "11px system-ui"; g.textBaseline = "middle";
+  rows.forEach((r, i) => { g.fillStyle = opt.rowColor ? opt.rowColor(i) : css("--muted"); g.textAlign = "right";
+    g.fillText(r.length > 19 ? r.slice(0, 18) + "…" : r, left - 6, top + i * cell + cell / 2); });
+  order.forEach((j, x) => {
+    const colMax = Math.max(...M.map(r => r[j]));
+    if (x % 4 === 0) { g.fillStyle = css("--muted"); g.textAlign = "left"; g.save(); g.translate(left + x * cell + 2, top - 4); g.rotate(-Math.PI / 4); g.fillText("n" + j, 0, 0); g.restore(); }
+    rows.forEach((_, i) => { const v = M[i][j];
+      g.fillStyle = colMax <= 1e-3 ? css("--line") : (opt.color ? opt.color(v) : heat(v, max));
+      g.fillRect(left + x * cell, top + i * cell, cell - 1, cell - 1); });
+    if (opt.selected === j) { g.strokeStyle = css("--warm"); g.lineWidth = 2; g.strokeRect(left + x * cell - 1, top - 1, cell + 1, rows.length * cell + 1); }
+  });
+  canvas.onmousemove = e => { const r = canvas.getBoundingClientRect(), x = Math.floor((e.clientX - r.left - left) / cell), i = Math.floor((e.clientY - r.top - top) / cell);
+    if (x < 0 || x >= order.length || i < 0 || i >= rows.length) return hideTip();
+    showTip(e, opt.tip(order[x], i)); };
+  canvas.onmouseleave = hideTip;
+  canvas.onclick = e => { const r = canvas.getBoundingClientRect(), x = Math.floor((e.clientX - r.left - left) / cell);
+    if (x >= 0 && x < order.length) opt.click(order[x]); };
+}
+
+function bars(items, max, color) { return items.map(([lab, v]) => `<div class="bar"><span class="lab" title="${esc(lab)}">${esc(lab)}</span><span class="track"><span class="fill" style="width:${Math.max(0, Math.min(100, 100 * v / (max || 1)))}%;${color ? "background:" + color : ""}"></span></span><span class="val">${v.toFixed(2)}</span></div>`).join(""); }
+function topOf(col, names, n = 10) { return col.map((v, i) => [names[i], v]).sort((a, b) => b[1] - a[1]).slice(0, n).filter(x => x[1] > 1e-3); }
+
+// ---- line chart (SVG)
+const PAL = ["--s1", "--s2", "--s3", "--s4", "--s5", "--s6"];
+function lines(el, xs, series, opt = {}) {
+  const W = 520, H = 260, l = 44, r = 10, t = 10, b = 30;
+  const all = series.flatMap(s => s.ys).filter(v => v != null);
+  let lo = Math.min(...all), hi = Math.max(...all); if (opt.zero) lo = Math.min(lo, 0); if (hi - lo < 1e-6) hi = lo + 1;
+  const xl = opt.logx ? (v => Math.log2(v + 1)) : (v => v);
+  const x0 = xl(xs[0]), x1 = xl(xs[xs.length - 1]);
+  const X = v => l + (W - l - r) * (xl(v) - x0) / ((x1 - x0) || 1), Y = v => t + (H - t - b) * (1 - (v - lo) / (hi - lo));
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-width:${W}px">`;
+  for (let k = 0; k <= 4; k++) { const v = lo + (hi - lo) * k / 4; s += `<line x1="${l}" x2="${W - r}" y1="${Y(v)}" y2="${Y(v)}" stroke="${css("--line")}"/><text x="${l - 4}" y="${Y(v) + 4}" text-anchor="end">${v.toFixed(Math.abs(hi - lo) < 5 ? 1 : 0)}</text>`; }
+  const ticks = opt.ticks || xs; ticks.forEach(v => s += `<text x="${X(v)}" y="${H - 12}" text-anchor="middle">${v}</text>`);
+  if (opt.xlabel) s += `<text x="${(l + W - r) / 2}" y="${H}" text-anchor="middle">${esc(opt.xlabel)}</text>`;
+  series.forEach((ser, i) => { const c = ser.color || css(PAL[i % PAL.length]);
+    const pts = xs.map((x, k) => ser.ys[k] == null ? null : [X(x), Y(ser.ys[k])]).filter(Boolean);
+    s += `<polyline fill="none" stroke="${c}" stroke-width="${ser.width || 2}" points="${pts.map(p => p.join(",")).join(" ")}"/>`;
+    xs.forEach((x, k) => { if (ser.ys[k] != null) s += `<circle cx="${X(x)}" cy="${Y(ser.ys[k])}" r="3" fill="${c}"><title>${esc(ser.name)} · ${x}: ${ser.ys[k].toFixed(2)}</title></circle>`; });
+  });
+  s += "</svg>";
+  el.innerHTML = `<div class="legend">${series.map((ser, i) => `<span style="--c:${ser.color || css(PAL[i % PAL.length])}">${esc(ser.name)}</span>`).join("")}</div>` + s;
+}
+
+// ---- cards
+let selCard = null;
+const owners = [...new Set(D.owner)];
+function drawCards() {
+  const order = colOrder(D.card_acts);
+  heatmap($("cv-cards"), D.cards, D.card_acts, order, { selected: selCard,
+    rowColor: i => css(PAL[owners.indexOf(D.owner[i]) % PAL.length]),
+    tip: (j, i) => `<b>n${j}</b> · ${esc(D.cards[i])}: ${D.card_acts[i][j].toFixed(2)}`,
+    click: j => { selCard = j; drawCards(); cardPanel(j); } });
+}
+function cardPanel(j) {
+  const col = D.card_acts.map(r => r[j]), top = topOf(col, D.cards, 12);
+  let h = `<h3>Card neuron n${j}</h3>` + (top.length ? bars(top, top[0][1]) : `<p class="note">Dead: no card turns it on.</p>`);
+  D.compare.forEach((c, k) => { const pc = c.acts[j], pt = topOf(pc, D.cards, 6);
+    h += `<h3>Best partner in ${esc(c.net.split(/[\\/]/).slice(-2, -1)[0] || c.net)}: n${c.best[j]} (corr ${c.corr[j].toFixed(2)})</h3>` + bars(pt, pt.length ? pt[0][1] : 1, css("--s2")); });
+  if (D.series) { h += `<h3>Over training</h3><div id="pc-train"></div>`; }
+  $("p-cards").innerHTML = h;
+  if (D.series) trainLines($("pc-train"), j);
+}
+function trainLines(el, j) {
+  const S = D.series, last = S.acts[S.acts.length - 1][j];
+  const top = last.map((v, i) => [i, v]).sort((a, b) => b[1] - a[1]).slice(0, 5).filter(x => x[1] > 1e-3);
+  // also cards that were its favourite early and later lost
+  const early = new Set(); S.acts.forEach(a => { const c = a[j]; const i = c.indexOf(Math.max(...c)); if (c[i] > 1e-3) early.add(i); });
+  const ids = [...new Set([...top.map(x => x[0]), ...early])].slice(0, 6);
+  const xs = S.steps;
+  lines(el, xs, ids.map(i => ({ name: D.cards[i], ys: S.acts.map(a => a[j][i]) })), { logx: true, ticks: xs.filter((x, k) => k % 3 === 0 || k === xs.length - 1), xlabel: "training step (log scale)", zero: true });
+}
+
+// ---- enemies
+let selEnemy = null;
+function drawEnemies() {
+  const order = colOrder(D.enemy_acts);
+  heatmap($("cv-enemies"), D.enemies, D.enemy_acts, order, { selected: selEnemy, cell: 12,
+    tip: (j, i) => `<b>n${j}</b> · ${esc(D.enemies[i])}: ${D.enemy_acts[i][j].toFixed(2)} <span style="color:${css("--muted")}">(${D.enemy_counts[i]} samples)</span>`,
+    click: j => { selEnemy = j; drawEnemies(); const col = D.enemy_acts.map(r => r[j]), top = topOf(col, D.enemies, 16);
+      const sum = col.reduce((a, b) => a + Math.max(0, b), 0);
+      $("p-enemies").innerHTML = `<h3>Monster neuron n${j}</h3>` + (top.length ? `<p class="note">The top enemy holds ${(100 * top[0][1] / sum).toFixed(0)}% of this neuron's total.</p>` + bars(top, top[0][1]) : `<p class="note">Dead on these fights.</p>`); } });
+}
+
+// ---- copies
+function drawCopies() {
+  const C = D.copies;
+  $("copies-note").textContent = `Versus ${D.encounter}; hand Defend ×3 and Bash, draw pile Defend ×2 plus the copies. Score ×100 (200 = a win at full HP).`;
+  lines($("ch-copies"), C.copies, Object.entries(C.cards).map(([k, v]) => ({ name: k, ys: v.score })), { xlabel: "copies in the draw pile" });
+  lines($("ch-headon"), C.copies, Object.entries(C.cards).map(([k, v]) => ({ name: k, ys: v.head_on })), { xlabel: `copies (of ${C.head_width} head neurons)` });
+  lines($("ch-strikes"), C.strikes, Object.entries(C.strike_cards).map(([k, v]) => ({ name: k, ys: v, width: k === "Perfected Strike" ? 3.5 : 2 })), { xlabel: "Strikes in the draw pile", zero: true });
+}
+
+// ---- training
+let selTrain = null;
+function drawTrain() {
+  const S = D.series, n = S.settle[0].length;
+  $("train-note").innerHTML = `Rows are card neurons, columns are snapshots of one training run (${S.steps.length} snapshots, step ${S.steps[0]} to ${S.steps[S.steps.length - 1]}, log-spaced, then one per epoch). Colour is how alike each neuron's response over cards is to its response at the last snapshot, the last training step (correlation): blue = already its final self, orange = something else. Click a row.`;
+  const cv = $("cv-train"), cell = 12, left = 50, top = 22, dpr = devicePixelRatio || 1, W = left + S.steps.length * 22 + 4, H = top + n * cell + 4, cw = 22;
+  cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + "px"; cv.style.height = H + "px";
+  const g = cv.getContext("2d"); g.scale(dpr, dpr); g.font = "11px system-ui"; g.textBaseline = "middle";
+  const order = [...Array(n).keys()].sort((a, b) => { const fa = S.settle.findIndex(s => s[a] > 0.9), fb = S.settle.findIndex(s => s[b] > 0.9);
+    return (fa < 0 ? 1e9 : fa) - (fb < 0 ? 1e9 : fb); });
+  const blue = css("--accent"), warm = css("--warm"), line = css("--line");
+  S.steps.forEach((st, x) => { if (x % 2 === 0) { g.fillStyle = css("--muted"); g.textAlign = "left"; g.save(); g.translate(left + x * cw + 4, top - 4); g.rotate(-Math.PI / 4); g.fillText(st, 0, 0); g.restore(); } });
+  order.forEach((j, y) => { g.fillStyle = css("--muted"); g.textAlign = "right"; g.fillText("n" + j, left - 6, top + y * cell + cell / 2);
+    S.settle.forEach((s, x) => { const v = s[j]; g.globalAlpha = Math.min(1, Math.abs(v)); g.fillStyle = v >= 0 ? blue : warm;
+      if (Math.abs(v) < 1e-6) { g.globalAlpha = 1; g.fillStyle = line; }
+      g.fillRect(left + x * cw, top + y * cell, cw - 1, cell - 1); g.globalAlpha = 1; });
+    if (selTrain === j) { g.strokeStyle = warm; g.lineWidth = 2; g.strokeRect(left - 1, top + y * cell - 1, S.steps.length * cw + 1, cell + 1); } });
+  cv.onmousemove = e => { const r = cv.getBoundingClientRect(), x = Math.floor((e.clientX - r.left - left) / cw), y = Math.floor((e.clientY - r.top - top) / cell);
+    if (x < 0 || x >= S.steps.length || y < 0 || y >= n) return hideTip(); const j = order[y], a = S.acts[x][j];
+    const best = a.map((v, i) => [D.cards[i], v]).sort((p, q) => q[1] - p[1]).slice(0, 3).filter(p => p[1] > 1e-3);
+    showTip(e, `<b>n${j}</b> at step ${S.steps[x]} (epoch ${S.epochs[x] + 1}): like its end ${S.settle[x][j].toFixed(2)}<br>${best.map(p => esc(p[0]) + " " + p[1].toFixed(2)).join(", ") || "off for every card"}`); };
+  cv.onmouseleave = hideTip;
+  cv.onclick = e => { const r = cv.getBoundingClientRect(), y = Math.floor((e.clientY - r.top - top) / cell); if (y >= 0 && y < n) { selTrain = order[y]; drawTrain();
+    $("p-train").innerHTML = `<h3>Card neuron n${selTrain}</h3><p class="note">Its response to the cards it ends up liking most, and to cards it liked most at some earlier step.</p><div id="pt-lines"></div>`; trainLines($("pt-lines"), selTrain); } };
+}
+
+// ---- nets
+let selNet = null;
+function drawNets() {
+  const order = colOrder(D.card_acts), rows = D.compare.map(c => c.net.split(/[\\/]/).slice(-2, -1)[0] || c.net);
+  const M = D.compare.map(c => c.corr);  // rows = nets, cols = neurons
+  heatmap($("cv-nets"), rows, M, order, { selected: selNet, cell: 13, left: 230, max: 1,
+    color: v => heat(Math.max(0, v), 1),
+    tip: (j, i) => `<b>n${j}</b> ↔ ${esc(rows[i])} n${D.compare[i].best[j]}: corr ${D.compare[i].corr[j].toFixed(2)}`,
+    click: j => { selNet = j; drawNets(); const mine = topOf(D.card_acts.map(r => r[j]), D.cards, 8);
+      let h = `<h3>This net's n${j}</h3>` + bars(mine, mine.length ? mine[0][1] : 1);
+      D.compare.forEach((c, k) => { const pt = topOf(c.acts[j], D.cards, 8); h += `<h3>${esc(rows[k])} n${c.best[j]} (corr ${c.corr[j].toFixed(2)})</h3>` + bars(pt, pt.length ? pt[0][1] : 1, css("--s2")); });
+      $("p-nets").innerHTML = h; } });
+  const live = order.filter(j => Math.max(...D.card_acts.map(r => r[j])) > 1e-3);
+  if (!live.length) { $("nets-hist").innerHTML = `<p class="note">This net has no live card neurons.</p>`; return; }
+  $("nets-hist").innerHTML = `<h3>Share of this net's ${live.length} live card neurons with a close partner</h3>` +
+    bars(D.compare.map((c, i) => [rows[i] + " ≥ 0.9", live.filter(j => c.corr[j] >= 0.9).length / live.length]), 1) +
+    bars(D.compare.map((c, i) => [rows[i] + " ≥ 0.7", live.filter(j => c.corr[j] >= 0.7).length / live.length]), 1, css("--s3"));
+}
+
+const drawn = {};
+function draw(k) { ({ cards: drawCards, enemies: drawEnemies, copies: drawCopies, train: drawTrain, nets: drawNets })[k](); drawn[k] = true; }
+draw("cards");
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => draw(document.querySelector(".tab.on").id.slice(2)));
+</script>
+</body>
+</html>

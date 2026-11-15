@@ -1,0 +1,27 @@
+{
+  "key": "cause/root-filter-saves-little",
+  "rev": 1,
+  "value": "A GNU-Backgammon-style root filter (turn 2 only under one-turn's top 3 options) saves ~3% of two-turn nodes, because different first plays reach the same end-of-turn states the search already merges, and plays level (+0.005 (0.009)); only filtering end-of-turn states (end_k) saves nodes, and it failed its rule.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Top-3 two-turn player: no change (owner away, 2026-10-31)",
+      "sha256": "3b0d7854e9ac51e3546e31e180b9ccecd437168bc47ac5848d679df6e6a104ad"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Selective two-turn search: fails its first check, not merged (owner away, 2026-11-01)",
+      "sha256": "557727c645d200ad18ef69cf1e1208327c2de3837baf8162fa779c114bbfdb75"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "ea69b906-0ef3-444c-8cc3-77db4706d7ae",
+  "at": "2026-11-15T03:06:46+00:00 @ a93794a5",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "f18a8db130bbd48095bdcded55d135ff99a0cefbbda8ed9bac5e5734e8e59be6"
+}

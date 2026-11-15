@@ -1082,6 +1082,20 @@ def feature_mode(cfg):
     return mode + selfplay.XHID if cfg.get("exhaust_hidden") else mode
 
 
+def net_meta(cfg, mode):
+    """The meta a net trained by `fit` on config `cfg` in feature `mode`
+    saves, less its run, datasets and val MSE."""
+    card_repr, look, rates, start = selfplay.split_mode(mode)
+    return {"card_repr": card_repr, **({"lookahead": True} if look else {}), **({"rates": True} if rates else {}),
+            **({"start_hp": True} if start else {}),
+            **{k: True for k, on in zip(stsnet.ENCODER_FLAGS, selfplay.split_flags(mode)[1:]) if on},
+            **({"score_rule": score_rule(cfg)} if score_rule(cfg) else {}),
+            **selfplay.meta_vocab(mode),
+            "held_out": selfplay.HELD_OUT,
+            "held_out_check9": sts.held_out_card_names(), "format": selfplay.FORMAT,
+            "switches": cfg.get("switches", {})}
+
+
 def fit(cfg, name, parts, val_id, root=registry.ROOT, log=print, bench=False, finish=True, samples=None, seed=None):
     """Trains one net on `parts`, [(dataset id, its round)] joined, into a
     new registry run; returns (run, best val MSE, {dataset id: label
@@ -1102,15 +1116,7 @@ def fit(cfg, name, parts, val_id, root=registry.ROOT, log=print, bench=False, fi
         train_ds.close()  # its exact examples' temporary cache
         del train_ds
     ids = {"train": train_ids[0] if len(train_ids) == 1 else train_ids, "val": val_id}
-    card_repr, look, rates, start = selfplay.split_mode(mode)
-    meta = {"card_repr": card_repr, **({"lookahead": True} if look else {}), **({"rates": True} if rates else {}),
-            **({"start_hp": True} if start else {}),
-            **{k: True for k, on in zip(stsnet.ENCODER_FLAGS, selfplay.split_flags(mode)[1:]) if on},
-            **({"score_rule": score_rule(cfg)} if score_rule(cfg) else {}),
-            **selfplay.meta_vocab(mode),
-            "held_out": selfplay.HELD_OUT,
-            "held_out_check9": sts.held_out_card_names(), "val_mse": min(hist), "format": selfplay.FORMAT,
-            "run": run.id, "datasets": ids, "switches": cfg.get("switches", {})}
+    meta = {**net_meta(cfg, mode), "val_mse": min(hist), "run": run.id, "datasets": ids}
     run.save_model(model, norm, meta)
     run.save_curves(curves)
     if bench:

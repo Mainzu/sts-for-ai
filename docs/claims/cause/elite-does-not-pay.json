@@ -30,7 +30,13 @@
       "note": "fact split 2026-11-13: measurement/mini-run@control reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
-  "flags": [],
+  "flags": [
+    {
+      "by": "curate-cf44b335-65ef-4f93-841c-f4d788c07b73",
+      "at": "2026-11-15T04:59:04+00:00 @ a3a20322",
+      "reason": "re-check pending: sources measured under an older rules version (context/rules-version rev 9 moved) and headline-setting is suspect; curator can't re-measure"
+    }
+  ],
   "history": [
     {
       "rev": 1,
@@ -60,5 +66,5 @@
       "until": "2026-11-13T02:29:01Z @ 3123201a"
     }
   ],
-  "seal": "d202e75ef9caa696ca36f4ccecca16def2600c792b64ef38d6ea81e4a5d2780c"
+  "seal": "943f9a9d696173ec653a5efae0fe3d65795eb820594ec50d236f45211acd1a7b"
 }

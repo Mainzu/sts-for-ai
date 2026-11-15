@@ -234,3 +234,40 @@ fn successor_load_errors() {
         assert!(e.contains(id), "{id}: {e}");
     }
 }
+
+/// An upgrade path may name a true / false field of an effect
+/// (`CostAtMost.combat`, Enlightenment+): it loads as a set, applies at
+/// level 1 beside a number change, writes back out as the same block, and a
+/// number on a flag (or a flag on a number) is a load error.
+#[test]
+fn an_effects_flag_upgrades_as_a_bool() {
+    use sts_engine::effects::Effect;
+    load_pack(&pack(
+        r#"{"id": "UpFlag", "cost": 0, "type": "Skill", "effects": [{"CostAtMost": {"cost": 2, "combat": false}}], "upgrade": {"effects.0.CostAtMost.combat": true, "effects.0.CostAtMost.cost": -1}}"#,
+    ))
+    .unwrap();
+    assert_eq!(def_of("gen:UpFlag").effects[0], Effect::CostAtMost { cost: 2, combat: false });
+    assert_eq!(def_of("gen:UpFlag+").effects[0], Effect::CostAtMost { cost: 1, combat: true });
+    // Written out and read back: the same upgrade.
+    let entry = sts_engine::registry::card_json("RtFlag", def_of("gen:UpFlag")).unwrap();
+    assert!(entry.contains(r#""effects.0.CostAtMost.combat": true"#), "{entry}");
+    load_pack(&pack(&entry)).unwrap();
+    assert_eq!(def_of("gen:RtFlag+").effects[0], Effect::CostAtMost { cost: 1, combat: true });
+    // The leveled entry has the flag set.
+    let leveled = sts_engine::registry::card_level_json(
+        r#"{"id": "UpFlag", "cost": 0, "type": "Skill", "effects": [{"CostAtMost": {"cost": 2, "combat": false}}], "upgrade": {"effects.0.CostAtMost.combat": true}}"#,
+        1,
+        false,
+        1,
+    )
+    .unwrap()
+    .unwrap();
+    assert!(leveled.contains(r#""combat": true"#), "{leveled}");
+    for (entry, id) in [
+        (r#"{"id": "LeNumOnFlag", "cost": 0, "type": "Skill", "effects": [{"CostAtMost": {"cost": 2, "combat": false}}], "upgrade": {"effects.0.CostAtMost.combat": 1}}"#, "LeNumOnFlag"),
+        (r#"{"id": "LeFlagOnNum", "cost": 0, "type": "Skill", "effects": [{"Block": 3}], "upgrade": {"effects.0.Block": true}}"#, "LeFlagOnNum"),
+    ] {
+        let e = load_pack(&pack(entry)).expect_err(id);
+        assert!(e.contains(id), "{id}: {e}");
+    }
+}

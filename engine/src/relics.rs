@@ -268,9 +268,10 @@ pub const FIGHT_KINDS: [(&str, EncounterGroup); 3] =
     [("hallway", EncounterGroup::Hallway), ("elite", EncounterGroup::Elite), ("boss", EncounterGroup::Boss)];
 
 /// The keys a relic entry may carry; any other is a load error.
-pub const RELIC_KEYS: [&str; 16] = [
+pub const RELIC_KEYS: [&str; 20] = [
     "id", "rarity", "powers", "fights", "win_heal", "hooks", "counter", "potion_potency", "potion_slots", "draw_per_turn", "x_bonus", "keeps_energy",
-    "plays_per_turn", "keeps_hand", "heal_scale", "exhaust_save",
+    "plays_per_turn", "keeps_hand", "heal_scale", "exhaust_save", "sees_draw_order",
+    "hides_intents", "no_potions", "bottles",
 ];
 
 /// What a held relic changes in the combat's rules (docs/specs/blocked-relics.md
@@ -295,6 +296,24 @@ pub struct RelicRules {
     /// `exhaust_save`, docs/specs/blocked-relics.md step 7). A save fires no
     /// `CardExhausted` hooks. Each held relic rolls alone; (0, 0) is none.
     pub exhaust_save: (i16, i16),
+    /// The player sees the draw pile in its order (Frozen Eye): every
+    /// shuffle is a chance event over the pile's orders, and a card put in
+    /// at a random spot one over its spots, so `Top` knows the whole pile.
+    pub sees_draw_order: bool,
+    /// Enemy intents are hidden (Runic Dome): a monster's next move is
+    /// rolled when it acts, from its history and allies when the game
+    /// rolled it (`CombatState::intent_hidden`).
+    pub hides_intents: bool,
+    /// The player can't obtain potions (Sozu: the game's `hasRelic("Sozu")`
+    /// in ObtainPotionAction, EntropicBrew.use and the other callers): an
+    /// `ObtainRandomPotions` gives none.
+    pub no_potions: bool,
+    /// One card of this type, chosen outside the fight, starts every fight
+    /// in the opening hand as an innate card does (Bottled Flame, Lightning,
+    /// Tornado: the card's `inBottle*` flag, which `CardGroup.initializeDeck`
+    /// puts on top with the innate cards). The relic's counter names it: its
+    /// place in the fight's deck plus 1 (0: none chosen).
+    pub bottles: Option<crate::cards::CardType>,
 }
 
 /// A relic as loaded.
@@ -457,6 +476,18 @@ pub fn parse_relic(
         keeps_energy: flag("keeps_energy")?,
         plays_per_turn: int_in("plays_per_turn", 1, 99)?,
         keeps_hand: flag("keeps_hand")?,
+        sees_draw_order: flag("sees_draw_order")?,
+        hides_intents: flag("hides_intents")?,
+        no_potions: flag("no_potions")?,
+        bottles: match v.get("bottles") {
+            None => None,
+            Some(c) => match c.str() {
+                Some("Attack") => Some(crate::cards::CardType::Attack),
+                Some("Skill") => Some(crate::cards::CardType::Skill),
+                Some("Power") => Some(crate::cards::CardType::Power),
+                _ => return Err(err(format!("bottles must be \"Attack\", \"Skill\" or \"Power\", got {c:?}"))),
+            },
+        },
         exhaust_save: match v.get("exhaust_save") {
             None => (0, 0),
             Some(c) => match c.items() {
@@ -550,6 +581,18 @@ pub fn official_relic_json(id: &str, s: &RelicSpec) -> String {
     }
     if r.keeps_hand {
         f.push("\"keeps_hand\": true".into());
+    }
+    if r.sees_draw_order {
+        f.push("\"sees_draw_order\": true".into());
+    }
+    if r.hides_intents {
+        f.push("\"hides_intents\": true".into());
+    }
+    if r.no_potions {
+        f.push("\"no_potions\": true".into());
+    }
+    if let Some(ty) = r.bottles {
+        f.push(format!("\"bottles\": \"{ty:?}\""));
     }
     if s.heal_scale != (1, 1) {
         f.push(format!("\"heal_scale\": [{}, {}]", s.heal_scale.0, s.heal_scale.1));

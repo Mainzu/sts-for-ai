@@ -48,16 +48,37 @@ pub fn incoming_damage(s: &CombatState) -> i16 {
 
 /// Damage the monster in `slot` will deal to the player with its intent
 /// (0 for a dead slot or a move without attacks).
+/// Hidden (Runic Dome): the expectation over its roll still to come and
+/// over a rolled amount not seen yet, rounded.
 pub fn intent_damage(s: &CombatState, slot: usize) -> i16 {
     let m = &s.monsters[slot];
     let Some(mv) = m.intent_def().filter(|_| m.alive()) else { return 0 };
-    s.move_attacks(slot, mv, true).map(|(d, h)| d * h as i16).sum()
+    let rolled_hidden = s.intent_hidden[slot] & crate::state::HIDDEN_ROLLED != 0;
+    if !s.move_hidden(slot) && !rolled_hidden {
+        return s.move_attacks(slot, mv, true).map(|(d, h)| d * h as i16).sum();
+    }
+    let amounts: Vec<i16> = match m.def().rolled_attack {
+        Some((lo, hi)) if rolled_hidden => (lo..=hi).collect(),
+        _ => vec![m.rolled_damage],
+    };
+    let mut t = s.clone();
+    let moves = m.def().moves;
+    let mut e = 0.0;
+    for (id, p) in s.intent_distribution(slot) {
+        let Some(d) = moves.get(id as usize) else { continue };
+        for &v in &amounts {
+            t.monsters[slot].rolled_damage = v;
+            let x: i16 = t.move_attacks(slot, d, true).map(|(d, h)| d * h as i16).sum();
+            e += p * x as f64 / amounts.len() as f64;
+        }
+    }
+    e.round() as i16
 }
 
 /// Whether a monster's intent is the move it uses next (not still to roll).
 pub fn intent_known(s: &CombatState, slot: usize) -> bool {
     let m = &s.monsters[slot];
-    if m.intent() == NO_MOVE {
+    if m.intent() == NO_MOVE || s.move_hidden(slot) {
         return false;
     }
     match (s.stage, s.pending) {

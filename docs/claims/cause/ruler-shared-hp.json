@@ -1,17 +1,22 @@
 {
   "key": "cause/ruler-shared-hp",
-  "rev": 1,
-  "value": "Recent goal-2 candidates' headline end-HP gains are almost all HP left on sequences both players clear (all-content twin two turns +1.41 = +0.09 clear flips + 1.32 shared), unlike a real effect (two turns over one +6.14 = 3.68 flips + 2.45 shared); shared HP's worth depends on the act-transition heal, unchecked (backlog 69).",
+  "rev": 3,
+  "value": "Headline end HP (gauntlet_protocol.end_hp, boss-floor HP on a clear) pays 1:1 for HP left after the Act 1 boss, which the game heals to full at A0 and 75% of missing at A5+ (worth 0 at A0, ~0.25/point at A20). Recent leads were mostly that: all-content twin +1.41 = +0.09 clear flips + 1.32 shared; a real effect splits (two turns over one +6.14 = 3.68 flips + 2.45). A20 reads report V (backlog 90).",
   "status": "active",
   "sources": [
     {
-      "path": "docs/research/big-picture-2026-11-12.md",
-      "anchor": "Key claims and the skeptics' verdicts",
-      "sha256": "6f007c65243b7606f2eefafbe1eba953b4f590ea69291cb209ccf0c2e10714c5"
+      "path": "docs/research/big-picture-2026-11-15.md",
+      "anchor": "Key claims and what the skeptics left",
+      "sha256": "a992a07fb3d2575dbd68e244f10c3e41f12f9db566224e2446e43e009f10a5ed"
     },
     {
-      "path": "results/gauntlet/match-allcontent40k-s1-hpe0.01-two-line-step-starter-simboss.json",
-      "sha256": "bdf5f423aaa8eb0ac8a14b78f3c982c7270a74a5a331a3e8954b13fe6662f83a"
+      "path": "docs/research/ascension-act1-2026-11-14.md",
+      "sha256": "2eff33898e862b7184a87aa65b1a8927ef7e8ed2570327d8d4ba473895ab81a7"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After the big-picture review of 2026-11-15 (on the owner's behalf, 2026-11-15)",
+      "sha256": "08564d3531f376d75811904b5f43bc256ee67460736ad39a45c312b6284e78a7"
     },
     {
       "key": "yardstick/protocol",
@@ -21,10 +26,62 @@
   "owner": false,
   "pinned": false,
   "note": null,
-  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:27:59Z @ 3123201a",
+  "by": "curate-cf44b335-65ef-4f93-841c-f4d788c07b73",
+  "at": "2026-11-15T04:58:30+00:00 @ a3a20322",
   "confirms": [],
   "flags": [],
-  "history": [],
-  "seal": "4339f025b40ad5850ac6c6c077582a6c6de070d5ad867036ab19de005b9eb435"
+  "history": [
+    {
+      "rev": 1,
+      "value": "Recent goal-2 candidates' headline end-HP gains are almost all HP left on sequences both players clear (all-content twin two turns +1.41 = +0.09 clear flips + 1.32 shared), unlike a real effect (two turns over one +6.14 = 3.68 flips + 2.45 shared); shared HP's worth depends on the act-transition heal, unchecked (backlog 69).",
+      "sources": [
+        {
+          "path": "docs/research/big-picture-2026-11-12.md",
+          "anchor": "Key claims and the skeptics' verdicts",
+          "sha256": "6f007c65243b7606f2eefafbe1eba953b4f590ea69291cb209ccf0c2e10714c5"
+        },
+        {
+          "path": "results/gauntlet/match-allcontent40k-s1-hpe0.01-two-line-step-starter-simboss.json",
+          "sha256": "bdf5f423aaa8eb0ac8a14b78f3c982c7270a74a5a331a3e8954b13fe6662f83a"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:27:59Z @ 3123201a",
+      "until": "2026-11-15T03:30:52+00:00 @ 0570c0a5"
+    },
+    {
+      "rev": 2,
+      "value": "Headline end HP (gauntlet_protocol.end_hp, boss-floor HP on a clear) pays 1:1 for HP left after the Act 1 boss, which the game heals to full at A0 and 75% of missing at A5+ (worth 0 at A0, ~0.25 per point at A20). Recent leads were mostly that: all-content twin +1.41 = +0.09 clear flips + 1.32 shared; a real effect splits (two turns over one +6.14 = 3.68 flips + 2.45). A20 reads report V (backlog 90).",
+      "sources": [
+        {
+          "path": "docs/research/big-picture-2026-11-15.md",
+          "anchor": "Key claims and what the skeptics left",
+          "sha256": "a992a07fb3d2575dbd68e244f10c3e41f12f9db566224e2446e43e009f10a5ed"
+        },
+        {
+          "path": "docs/research/ascension-act1-2026-11-14.md",
+          "sha256": "2eff33898e862b7184a87aa65b1a8927ef7e8ed2570327d8d4ba473895ab81a7"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the big-picture review of 2026-11-15 (on the owner's behalf, 2026-11-15)",
+          "sha256": "08564d3531f376d75811904b5f43bc256ee67460736ad39a45c312b6284e78a7"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "0978e03c-be4b-40a0-961e-d5c5404c0e70",
+      "at": "2026-11-15T03:30:52+00:00 @ 0570c0a5",
+      "until": "2026-11-15T04:58:30+00:00 @ a3a20322"
+    }
+  ],
+  "seal": "f0c46bc1d53a674810ad6e95ab70dc0d55a734f8a1b3dd24082b41986f80325f"
 }

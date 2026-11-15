@@ -838,9 +838,9 @@ all-official pool); a deck's pool cards bind in slot order.
   Dramatic Entrance, Blind, Trip, Panacea, Master of Strategy, Purity,
   Hand of Greed (its gold is the run layer's), Panic Button, The Bomb,
   Discovery, Jack of All Trades. About 19 need words: Mind Blast,
-  Impatience, Dark Shackles, Deep Breath, Enlightenment, Madness,
+  Impatience, Dark Shackles, Deep Breath, Enlightenment (loads since the colorless build A), Madness,
   Forethought, Chrysalis, Metamorphosis (C5's kin), Apotheosis (C6's
-  kin), Magnetism (R28; loads since R28), Mayhem (C8), Secret Technique, Secret Weapon,
+  kin), Magnetism (R28; loads since R28), Mayhem (C8; loads since the colorless build B), Secret Technique, Secret Weapon,
   Violence, Thinking Ahead, Transmutation, Panache, Sadistic Nature
   (R14's kin). Colorless Potion and Toolbox load with that pack.
 

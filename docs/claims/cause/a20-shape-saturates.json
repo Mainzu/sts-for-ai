@@ -1,0 +1,39 @@
+{
+  "key": "cause/a20-shape-saturates",
+  "rev": 1,
+  "value": "On the fixed gauntlet shape at A20 runs die at elites reached without a rest: clears 0.008 one turn (1017), 0.025 product (1019) vs 0.55 for the product in the real game at A20. Two turns over one reads +0.32 (0.19) HP end HP (A0 +6.14), floors won +0.63 (0.12): the +1.5 HP bar is out of reach and decision/level-pass passes nearly anything. Exit: a shape with rests (1021/1022) or the run simulator.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/a20-ruler-2026-11-15.md",
+      "anchor": "At A20 the fixed shape is nearly unwinnable",
+      "sha256": "4630c35993a06a2ebfa59366c5e81e189d9a9a25c650847e8f8759324c57e842"
+    },
+    {
+      "path": "docs/research/a20-ruler-2026-11-15.md",
+      "anchor": "What that does to the reads",
+      "sha256": "eae6c12c4ff6418ea6195e6410b8e70a4b12b837d45c15a4414e3cb098260623"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-tsl1-lcb1-starter-simboss-a20.json",
+      "sha256": "f1e649021e0afc56e16ffb04aceba013f3798e699c12ac10aa2132a69343e683"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-tsl1-lcb1-two-line-step-starter-simboss-a20.json",
+      "sha256": "aea6aa96221fb9d3a8ad6479c0ec39c65ef07bd1a381e5dd3f1684f60abf56fd"
+    },
+    {
+      "path": "docs/research/real-game-runs.md",
+      "sha256": "1427845c92d527c8b7d531bf17d857d85f625632b1b4260dfcca9996ce28fb00"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "e64ceb20-cb8b-4911-9868-4792e27cb099",
+  "at": "2026-11-15T04:54:15+00:00 @ 284a8d50",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "a623ece0c1c21edac4ed32faf2940735c2d29d404f1640a9a69237a7180b6a4d"
+}

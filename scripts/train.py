@@ -186,7 +186,7 @@ def rank_score(pred, x, hp_loss, rule=None):
 
 
 def train(mode, train_ds, val_ds, seed=0, log=print, curves=None, rank_weight=0.0, hp_loss=False,
-          start=None, replay=None, share=0.5, lr=None, epochs=None, score_rule=None, anchor=0.0):
+          start=None, replay=None, share=0.5, lr=None, epochs=None, score_rule=None, anchor=0.0, snapshot=None, act="relu"):
     """Returns (model, normalizer, history) with the best-validation weights.
     `curves`, when given, gets per-epoch "train" loss and "val" MSE lists.
     The value loss weights each example by `train_ds.weight` when set.
@@ -204,7 +204,11 @@ def train(mode, train_ds, val_ds, seed=0, log=print, curves=None, rank_weight=0.
     `score_rule` (switch 6, stsnet.score_rule; None: the engine rule) goes
     on a fresh net as its `score_rule`, which the ranking term scores by.
     `anchor` λ > 0 (docs/specs/burst-anchor.md, warm start only) adds λ x
-    the summed squared distance of every weight from the start net's."""
+    the summed squared distance of every weight from the start net's.
+    `snapshot(step, epoch, model, norm)`, when given, is called after each
+    optimiser step (from 1) and once before the first with step 0, for
+    saving the net as it trains (scripts/analysis/neurons.py retrain).
+    `act` is a fresh net's hidden activation (stsnet.ACTS)."""
     torch.manual_seed(seed)
     rng = np.random.default_rng(seed)
     rank = rank_weight > 0
@@ -212,7 +216,7 @@ def train(mode, train_ds, val_ds, seed=0, log=print, curves=None, rank_weight=0.
         raise ValueError("replay needs 0 < share < 1 and no ranking loss")
     if start is None:
         norm = stsnet.Normalizer.fit(train_ds)
-        model = stsnet.ValueNet(selfplay.features(mode).dims, hp_loss=hp_loss)
+        model = stsnet.ValueNet(selfplay.features(mode).dims, hp_loss=hp_loss, act=act)
         if score_rule is not None:
             model.score_rule = score_rule
     else:
@@ -227,6 +231,9 @@ def train(mode, train_ds, val_ds, seed=0, log=print, curves=None, rank_weight=0.
     best, best_state, bad, hist = float("inf"), None, 0, []
     threads = torch.get_num_threads()
     torch.set_num_threads(THREADS)
+    step = 0
+    if snapshot is not None:
+        snapshot(0, 0, model, norm)
     with ThreadPoolExecutor(1) as pool:
         for epoch in range(EPOCHS if epochs is None else epochs):
             t = time.perf_counter()
@@ -253,6 +260,9 @@ def train(mode, train_ds, val_ds, seed=0, log=print, curves=None, rank_weight=0.
                 opt.zero_grad()
                 loss.backward()
                 opt.step()
+                step += 1
+                if snapshot is not None:
+                    snapshot(step, epoch, model, norm)
                 total, n = total + loss.item() * len(y), n + len(y)
             p.close(final=False)
             v = mse(model, norm, val_ds)

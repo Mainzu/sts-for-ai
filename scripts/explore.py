@@ -1886,6 +1886,8 @@ def effect_text(e, user, split=None, self_name=None):
     if key == "ExhaustHand":
         ex = (v or {}).get("except")
         f["except"] = " except Attacks" if ex == "Attack" else (f" except {ex}s" if ex else "")
+    if key == "CostAtMost":
+        f["combat"] = " and for the rest of combat" if v.get("combat") else ""
     if key == "PlayTop":
         f["exhaust"] = (" and exhaust it" if v.get("n", 1) == 1 else " and exhaust them") if v.get("exhaust") else ""
     if key == "ObtainRandomPotions":  # docs/specs/act1-singles.md section 5
@@ -2051,10 +2053,10 @@ def describe_relic(r, powers):
     if r.get("draw_per_turn"):  # docs/specs/sparse-piles.md
         lines.append(fill(word("relic_rule", "draw_per_turn"), {"0": r["draw_per_turn"]}))
     # docs/specs/blocked-relics.md step 1
-    for k in ("x_bonus", "plays_per_turn"):
+    for k in ("x_bonus", "plays_per_turn", "bottles"):
         if r.get(k):
             lines.append(fill(word("relic_rule", k), {"0": r[k]}))
-    for k in ("keeps_energy", "keeps_hand"):
+    for k in ("keeps_energy", "keeps_hand", "sees_draw_order", "hides_intents", "no_potions"):
         if r.get(k):
             lines.append(word("relic_rule", k))
     if r.get("heal_scale", [1, 1]) != [1, 1]:  # docs/specs/blocked-relics.md step 4

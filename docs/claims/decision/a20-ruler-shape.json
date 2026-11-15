@@ -1,0 +1,22 @@
+{
+  "key": "decision/a20-ruler-shape",
+  "rev": 1,
+  "value": "Goal 2's A20 ruler takes --pack content/packs/act1-monsters.json; its shape is chosen by probe: 1021 (--mid-rest 5 --elite-offers 2) if one-turn clears >= 0.20, else 1022 (plus --elites hp --elite-hp 40); the chosen file is the A20 one-turn control. 1018 waits on both; every A20 read reports floors won beside end HP, clears and V. A0 headline unchanged.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "The A20 ruler takes the pack; its fixed shape saturates; a shape probe before 1018 (on the owner's behalf, 2026-11-15)",
+      "sha256": "b404374db67433f1f66282708051b4bfd3fa42451edf15e7d8148662292d6a07"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "e64ceb20-cb8b-4911-9868-4792e27cb099",
+  "at": "2026-11-15T04:54:16+00:00 @ 284a8d50",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "b746e14857ec22f76668cd1070468b607889fb83b71af1b65ef4fdb8805cdc98"
+}

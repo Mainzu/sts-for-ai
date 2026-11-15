@@ -1,27 +1,27 @@
 {
   "key": "measurement/colorless-cards@files",
-  "rev": 8,
-  "value": "26 of the game's 34 in-combat colorless cards load from content/packs/act1-colorless.json with upgrades (Blind, Trip, Jack of All Trades as successors), each tested base and upgraded vs its class (engine/tests/colorless.rs); the Colorless pool is the game's 34 less the 8 unloaded (discovery.rs). NoBlock zeroes card block only. Magnetism is the latest to load.",
+  "rev": 9,
+  "value": "27 of the game's 34 in-combat colorless cards load from content/packs/act1-colorless.json with upgrades (Blind, Trip, Jack of All Trades as successors), each tested base and upgraded vs its class (engine/tests/colorless.rs); the Colorless pool is the game's 34 less the 7 unloaded (discovery.rs). NoBlock zeroes card block only. Mayhem is the latest to load.",
   "status": "active",
   "sources": [
     {
       "path": "content/packs/act1-colorless.json",
-      "sha256": "a293ba14f712c17c870bd6756740d2600474f750a05cded2f5561748d8b6498b"
+      "sha256": "f17dc167c1a776aabfd3783ee60095493f117387c62750534acb2f4ea0b053cd"
     },
     {
       "path": "engine/tests/colorless.rs",
-      "sha256": "76e2e3cbe2476e3a7654f4e5902e8b972c0ce43162870d5f040f9b3c09469d62"
+      "sha256": "b36f61b2c4d778c9b3927dffd46522cc47c9ce98d6aa269c6ff434e9d262e513"
     },
     {
       "path": "engine/tests/discovery.rs",
-      "sha256": "ba41a41586f657c25017633344af59cd82518821a234fca41ed6fc525325ec91"
+      "sha256": "373baba6f702a948faa3a7a5ea77bb3f35b8f2a0b3decff8a73f8cbeaed73942"
     }
   ],
   "owner": false,
   "pinned": false,
-  "note": "act1-mag build A landed in 98202917",
-  "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
-  "at": "2026-11-14T13:40:21+00:00 @ 2e1d1b32",
+  "note": "Mayhem (build-plans row 9) landed in 97def6fe",
+  "by": "7f7283c0-5c38-4c8a-b03a-832c461de822",
+  "at": "2026-11-15T05:37:06+00:00 @ ced060bf",
   "confirms": [],
   "flags": [],
   "history": [
@@ -178,7 +178,29 @@
       "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
       "at": "2026-11-14T13:40:11+00:00 @ 2e1d1b32",
       "until": "2026-11-14T13:40:21+00:00 @ 2e1d1b32"
+    },
+    {
+      "rev": 8,
+      "value": "26 of the game's 34 in-combat colorless cards load from content/packs/act1-colorless.json with upgrades (Blind, Trip, Jack of All Trades as successors), each tested base and upgraded vs its class (engine/tests/colorless.rs); the Colorless pool is the game's 34 less the 8 unloaded (discovery.rs). NoBlock zeroes card block only. Magnetism is the latest to load.",
+      "sources": [
+        {
+          "path": "content/packs/act1-colorless.json",
+          "sha256": "a293ba14f712c17c870bd6756740d2600474f750a05cded2f5561748d8b6498b"
+        },
+        {
+          "path": "engine/tests/colorless.rs",
+          "sha256": "76e2e3cbe2476e3a7654f4e5902e8b972c0ce43162870d5f040f9b3c09469d62"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "ba41a41586f657c25017633344af59cd82518821a234fca41ed6fc525325ec91"
+        }
+      ],
+      "owner": false,
+      "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+      "at": "2026-11-14T13:40:21+00:00 @ 2e1d1b32",
+      "until": "2026-11-15T05:37:06+00:00 @ ced060bf"
     }
   ],
-  "seal": "e77da019e33fcdbcf9635192dc565bcc55bbc817ba60e740b12cde4c34d7ac53"
+  "seal": "1995e3b780436c2f84104b7dd58a030242f47d5fd135320695503927687e7b72"
 }

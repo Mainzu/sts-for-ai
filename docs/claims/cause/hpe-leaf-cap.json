@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Level-defaults read: `@tsl1` and `@lcb1` pass, `@hpe` one turn deep fails; the one-turn controls move (on the owner's behalf, 2026-11-13)",
-      "sha256": "93c0eef8f5b4f77d6058a88b608fb09dcd5283673f90801ff744fc2de7d3f939"
+      "sha256": "410c998847803ff6fb16ba1ee621e9909761c83d199b3a4f2e092bea6305d860"
     },
     {
       "path": "results/gauntlet/net1029-hpe0.01-starter-simboss.json",
@@ -15,7 +15,7 @@
     },
     {
       "path": "py/src/lib.rs",
-      "sha256": "ba1da33b09583bf36224ed7b181184a53d2ff9cdc0463e8071cd8cc40b2525a8"
+      "sha256": "d71f3fe36056f9e2217494ff41c15f5dac4df45e23183008db355bb9021ad42d"
     }
   ],
   "owner": false,
@@ -28,9 +28,14 @@
       "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
       "at": "2026-11-13T13:43:10Z @ d240a173",
       "note": "navigator 2026-11-13: py/src/lib.rs add_prices unchanged since 8aad300e (still min(HP + win_heal, max HP) on unfinished leaves); finished states are priced in engine/src/search.rs SearchConfig::finished on HP that already holds the heal (state.rs won_healed), so no double count; the lib.rs diff adds win_heal/with_player_hp/view getters only"
+    },
+    {
+      "by": "0978e03c-be4b-40a0-961e-d5c5404c0e70",
+      "at": "2026-11-15T02:58:03+00:00 @ 92cf478b",
+      "note": "navigator 2026-11-15: ac8eebd9 adds win_cap to py/src/lib.rs add_prices, off by default; @hpe still prices unfinished leaves at min(HP + win heal, max HP); exit (76's fix) not built"
     }
   ],
   "flags": [],
   "history": [],
-  "seal": "1452813a6ee5d280e635566aa8e433b30c3d6dd82526a22d092eee398a3c1cc5"
+  "seal": "0b81313d750599b336e564540f174684aadfba74ee6dfa8df49192a17c0285d2"
 }

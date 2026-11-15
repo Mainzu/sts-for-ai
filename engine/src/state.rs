@@ -1074,6 +1074,118 @@ impl FreeMarks {
     }
 }
 
+/// A hand copy's class among the copies of its card: no mark, a cost this
+/// turn above 0 (`TurnCosts`), or costing 0 this turn (`FreeMarks`). A
+/// random pick over the hand rolls over classes, each as heavy as its copies.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum HandMark {
+    None,
+    Turn(u8),
+    Free,
+}
+
+/// Hand cards that cost a set amount above 0 this turn, below their cost
+/// (Enlightenment, the game's `costForTurn` set to 1 on a card of cost 2 or
+/// more): one entry per copy, (id, cost this turn) with the cost at least 1,
+/// sorted. A copy holds no `FreeMarks` mark as well (that is a cost of 0),
+/// so the two marks of a card never exceed its copies in hand; cleared at
+/// turn end, and empty unless `CostAtMost` marked a card.
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
+pub struct TurnCosts {
+    ids: [u16; HAND_LIMIT],
+    costs: [u8; HAND_LIMIT],
+    n: u8,
+}
+
+/// Only the marks in use (the rest are zero), as `FreeMarks`'.
+impl std::hash::Hash for TurnCosts {
+    fn hash<H: std::hash::Hasher>(&self, h: &mut H) {
+        self.ids[..self.n as usize].hash(h);
+        self.costs[..self.n as usize].hash(h);
+    }
+}
+
+impl TurnCosts {
+    pub fn is_empty(&self) -> bool {
+        self.n == 0
+    }
+
+    pub fn len(&self) -> usize {
+        self.n as usize
+    }
+
+    /// The marks (card, cost this turn), copies repeated, in order.
+    pub fn iter(&self) -> impl Iterator<Item = (CardId, u8)> + '_ {
+        (0..self.n as usize).map(|i| (CardId(self.ids[i]), self.costs[i]))
+    }
+
+    pub fn count(&self, c: CardId) -> u8 {
+        self.iter().filter(|&(x, _)| x == c).count() as u8
+    }
+
+    /// The cost this turn of `c`'s cheapest marked copy.
+    pub fn lowest(&self, c: CardId) -> Option<u8> {
+        self.iter().filter(|&(x, _)| x == c).map(|(_, v)| v).min()
+    }
+
+    /// The cost this turn of `c`'s dearest marked copy.
+    pub fn highest(&self, c: CardId) -> Option<u8> {
+        self.iter().filter(|&(x, _)| x == c).map(|(_, v)| v).max()
+    }
+
+    /// Marks one more copy of `c` at cost `v` (at least 1); false when full.
+    pub fn add(&mut self, c: CardId, v: u8) -> bool {
+        let n = self.n as usize;
+        if n == HAND_LIMIT || v == 0 {
+            return false;
+        }
+        let i = (0..n).position(|i| (self.ids[i], self.costs[i]) > (c.0, v)).unwrap_or(n);
+        self.ids.copy_within(i..n, i + 1);
+        self.costs.copy_within(i..n, i + 1);
+        (self.ids[i], self.costs[i]) = (c.0, v);
+        self.n += 1;
+        true
+    }
+
+    /// Unmarks one copy of `c` at cost `v`; false when none is.
+    pub fn remove(&mut self, c: CardId, v: u8) -> bool {
+        let n = self.n as usize;
+        let Some(i) = (0..n).position(|i| (self.ids[i], self.costs[i]) == (c.0, v)) else {
+            return false;
+        };
+        self.ids.copy_within(i + 1..n, i);
+        self.costs.copy_within(i + 1..n, i);
+        (self.ids[n - 1], self.costs[n - 1]) = (0, 0);
+        self.n -= 1;
+        true
+    }
+
+    /// Unmarks every copy of `c`, returning their costs, lowest first.
+    pub fn take_all(&mut self, c: CardId) -> Vec<u8> {
+        let costs: Vec<u8> = self.iter().filter(|&(x, _)| x == c).map(|(_, v)| v).collect();
+        for &v in &costs {
+            self.remove(c, v);
+        }
+        costs
+    }
+
+    pub fn clear(&mut self) {
+        *self = TurnCosts::default();
+    }
+
+    /// The marks from their entries (the codec); `None` if they can't be one.
+    pub fn from_pairs(pairs: &[(CardId, u8)]) -> Option<TurnCosts> {
+        if pairs.is_empty() || pairs.len() > HAND_LIMIT || pairs.iter().any(|&(_, v)| v == 0) || pairs.windows(2).any(|w| (w[0].0 .0, w[0].1) > (w[1].0 .0, w[1].1)) {
+            return None;
+        }
+        let mut m = TurnCosts::default();
+        for &(c, v) in pairs {
+            m.add(c, v);
+        }
+        Some(m)
+    }
+}
+
 /// Hand cards waiting for a random cost roll (docs/specs/sparse-piles.md:
 /// Snecko Oil's hand, Confused's draws): one entry per copy, with whether
 /// that copy is marked to cost 0 this turn, sorted (pile order, unmarked
@@ -1170,6 +1282,13 @@ pub enum OwedKind {
     /// have run (the game's `addToBot`), before its reactions queued
     /// later (Curl Up's block) land.
     Hit { amount: i16 },
+    /// Frozen Eye: card `card` (already in the draw pile, not yet among
+    /// `Top`'s known cards) takes a random spot under the top card
+    /// (`ChanceEvent::InsertAt`).
+    Insert { card: CardId },
+    /// Mayhem: a `PlayTop` take (`exhaust`: the card exhausts when played),
+    /// kept in `CombatState::owed_late`, never in `owed`.
+    Top { exhaust: bool },
 }
 
 /// One entry of `Owed`: `n` times `kind`; `wait` when a hook owed it with
@@ -1252,6 +1371,22 @@ impl Owed {
     }
 }
 
+/// `CombatState::intent_hidden`'s bits (Runic Dome).
+pub const HIDDEN_MOVE: u8 = 1;
+pub const HIDDEN_ALLIES: u8 = 2;
+pub const HIDDEN_CLASS: u8 = 0b1100;
+pub const REVEALED_ATTACK: u8 = 0b0100;
+pub const REVEALED_NO_ATTACK: u8 = 0b1000;
+pub const HIDDEN_ROLLED: u8 = 16;
+/// The bits a move set (rolled or by a reaction) clears.
+pub const HIDDEN_MASK: u8 = HIDDEN_MOVE | HIDDEN_ALLIES | HIDDEN_CLASS;
+
+/// Whether a move attacks (a `Damage` or `RolledAttack` effect: the game's
+/// `getIntentBaseDmg() >= 0`).
+pub fn is_attack(mv: &MoveDef) -> bool {
+    mv.effects.iter().any(|e| matches!(e, Effect::Damage { .. } | Effect::RolledAttack))
+}
+
 /// `Top::known`'s capacity, and `Top::floaters`': entries of (card, above)
 /// each with a copy count.
 pub const TOP_KNOWN: usize = 16;
@@ -1295,8 +1430,9 @@ fn canon_floaters(f: &mut [(u16, u8, u8)]) -> usize {
 /// into plain pile members once nothing is known and none has a positive
 /// `above`.
 /// All zeros when nothing is known, so it costs existing content nothing
-/// but its bytes.
-#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
+/// but its bytes. With Frozen Eye (`RelicRules::sees_draw_order`) the known
+/// cards are the whole pile, past the 16 inline in `more`.
+#[derive(Clone, Debug, Default, PartialEq, Eq)]
 pub struct Top {
     known: [u16; TOP_KNOWN],
     n_known: u8,
@@ -1307,6 +1443,9 @@ pub struct Top {
     /// matter).
     floaters: [(u16, u8, u8); TOP_FLOATERS],
     n_floaters: u8,
+    /// Known cards past the 16 inline, the bottom card first (the 17th is
+    /// last); `Some` only with all 16 inline in use and at least one more.
+    more: Option<Box<Vec<u16>>>,
 }
 
 /// Only the entries in use (the rest are zero), as `Pile`'s.
@@ -1314,6 +1453,9 @@ impl std::hash::Hash for Top {
     fn hash<H: std::hash::Hasher>(&self, h: &mut H) {
         self.known[..self.n_known as usize].hash(h);
         self.floaters[..self.n_floaters as usize].hash(h);
+        if let Some(m) = &self.more {
+            m.hash(h);
+        }
     }
 }
 
@@ -1324,11 +1466,42 @@ impl Top {
 
     /// The known cards, the next drawn first.
     pub fn known(&self) -> impl Iterator<Item = CardId> + '_ {
-        self.known[..self.n_known as usize].iter().map(|&c| CardId(c))
+        let more = self.more.as_deref().map_or(&[][..], |m| &m[..]);
+        self.known[..self.n_known as usize].iter().chain(more.iter().rev()).map(|&c| CardId(c))
     }
 
     pub fn n_known(&self) -> usize {
-        self.n_known as usize
+        self.n_known as usize + self.more.as_ref().map_or(0, |m| m.len())
+    }
+
+    /// The known cards become `seq` (the next drawn first), any number;
+    /// floaters stay.
+    pub fn set_known(&mut self, seq: &[CardId]) {
+        let k = seq.len().min(TOP_KNOWN);
+        self.known = [0; TOP_KNOWN];
+        for (i, c) in seq[..k].iter().enumerate() {
+            self.known[i] = c.0;
+        }
+        self.n_known = k as u8;
+        self.more = (seq.len() > TOP_KNOWN).then(|| Box::new(seq[TOP_KNOWN..].iter().rev().map(|c| c.0).collect()));
+        self.normalize();
+    }
+
+    /// `c` known with `d` cards above it (Frozen Eye's random spot).
+    pub fn insert_known(&mut self, d: usize, c: CardId) {
+        let mut seq: Vec<CardId> = self.known().collect();
+        seq.insert(d, c);
+        self.set_known(&seq);
+    }
+
+    /// One known copy of `c` (the one nearest the top) leaves; `false` if
+    /// none is known.
+    pub fn remove_known(&mut self, c: CardId) -> bool {
+        let mut seq: Vec<CardId> = self.known().collect();
+        let Some(i) = seq.iter().position(|&x| x == c) else { return false };
+        seq.remove(i);
+        self.set_known(&seq);
+        true
     }
 
     /// The floaters as (card, above), one per copy.
@@ -1368,8 +1541,12 @@ impl Top {
     }
 
     /// `c` goes on top, known; every floater is now below it too. Past
-    /// capacity the bottom known card is forgotten (it stays in `draw`).
-    pub fn push(&mut self, c: CardId) {
+    /// capacity the bottom known card is forgotten (it stays in `draw`),
+    /// unless `keep_all` (Frozen Eye: the whole pile stays known).
+    pub fn push(&mut self, c: CardId, keep_all: bool) {
+        if keep_all && self.n_known as usize == TOP_KNOWN {
+            self.more.get_or_insert_with(Default::default).push(self.known[TOP_KNOWN - 1]);
+        }
         let n = (self.n_known as usize).min(TOP_KNOWN - 1);
         self.known.copy_within(0..n, 1);
         self.known[0] = c.0;
@@ -1415,8 +1592,16 @@ impl Top {
         let c = CardId(self.known[0]);
         let n = self.n_known as usize;
         self.known.copy_within(1..n, 0);
-        self.known[n - 1] = 0;
-        self.n_known -= 1;
+        match self.more.as_mut().and_then(|m| m.pop()) {
+            Some(x) => self.known[n - 1] = x,
+            None => {
+                self.known[n - 1] = 0;
+                self.n_known -= 1;
+            }
+        }
+        if self.more.as_ref().is_some_and(|m| m.is_empty()) {
+            self.more = None;
+        }
         self.lower_floaters(0);
         c
     }
@@ -1456,6 +1641,9 @@ impl Top {
         for c in &mut self.known[..self.n_known as usize] {
             *c = f(CardId(*c)).0;
         }
+        for c in self.more.iter_mut().flat_map(|m| m.iter_mut()) {
+            *c = f(CardId(*c)).0;
+        }
         for x in &mut self.floaters[..self.n_floaters as usize] {
             x.0 = f(CardId(x.0)).0;
         }
@@ -1466,13 +1654,11 @@ impl Top {
     /// per copy); `None` if they can't be one or say nothing (no known card
     /// and no positive `above`).
     pub fn from_parts(known: &[CardId], floaters: &[(CardId, u8)]) -> Option<Top> {
-        if known.len() > TOP_KNOWN {
+        if known.len() > PILE_RUN_CAP {
             return None;
         }
-        let mut t = Top { n_known: known.len() as u8, ..Top::default() };
-        for (i, c) in known.iter().enumerate() {
-            t.known[i] = c.0;
-        }
+        let mut t = Top::default();
+        t.set_known(known);
         if floaters.len() > u8::MAX as usize {
             return None;
         }
@@ -1514,12 +1700,20 @@ pub struct CombatState {
     /// Hand cards that cost 0 this turn (docs/specs/act1-singles.md);
     /// empty unless something marked one.
     pub free_in_hand: FreeMarks,
+    /// Hand cards that cost 1 or more this turn, below their cost
+    /// (Enlightenment); empty unless something marked one.
+    pub turn_costs: TurnCosts,
     /// Hand cards waiting for a random cost roll (docs/specs/sparse-piles.md);
     /// empty for content without cost rolls.
     pub cost_rolls: CostRolls,
     /// Random work hooks owe, paid in order before anything else
     /// (docs/specs/blocked-relics.md step 5); empty unless a hook owed it.
     pub owed: Owed,
+    /// Takes a power's hook owes behind everything else the turn start
+    /// queued (Mayhem's `PlayTopCardAction`, the game's `addToBot`): paid
+    /// one card at a time once the turn has settled, so after the draw,
+    /// the post-draw hooks and their owed work. Only `OwedKind::Top`.
+    pub owed_late: Owed,
     /// The draw, discard and exhaust piles, in one list
     /// (docs/specs/sparse-piles.md): `draw()`, `discard()`, `exhaust()`
     /// read them, `draw_mut()` and the others change them.
@@ -1630,6 +1824,18 @@ pub struct CombatState {
     /// (the game counts at the move, not at the roll). 0 for every other
     /// kind, so official states never set it.
     pub allies_at_move: u8,
+    /// Per slot, Runic Dome's hidden intents (`RelicRules::hides_intents`):
+    /// `HIDDEN_MOVE` while the next move is still to roll (it rolls when
+    /// the monster acts; `moves` is then the history only, `moves[0]` the
+    /// move used last), `HIDDEN_ALLIES` the allies bit when the game rolled
+    /// it, `HIDDEN_CLASS` what a card revealed (`REVEALED_ATTACK` or
+    /// `REVEALED_NO_ATTACK`), `HIDDEN_ROLLED` a rolled attack amount not
+    /// seen yet (louse Bite). All zero without the relic.
+    pub intent_hidden: [u8; MAX_MONSTERS],
+    /// The Bottled relics' cards (`RelicRules::bottles`), one copy each, put
+    /// in the opening hand with the innate cards; empty once turn 1 starts,
+    /// so never at a decision.
+    pub bottled: [Option<CardId>; 3],
     /// The game's ascension level (docs/specs/ascension.md), as every
     /// monster holds it: fixed for the combat.
     pub ascension: Ascension,
@@ -1680,6 +1886,9 @@ impl std::fmt::Debug for CombatState {
         if !self.owed.is_empty() {
             d.field("owed", &self.owed);
         }
+        if !self.owed_late.is_empty() {
+            d.field("owed_late", &self.owed_late);
+        }
         if self.unfired_exhausts != 0 || self.owed_draw != 0 {
             d.field("unfired_exhausts", &self.unfired_exhausts).field("owed_draw", &self.owed_draw);
         }
@@ -1703,6 +1912,9 @@ impl std::fmt::Debug for CombatState {
         }
         if !self.free_in_hand.is_empty() {
             d.field("free_in_hand", &self.free_in_hand);
+        }
+        if !self.turn_costs.is_empty() {
+            d.field("turn_costs", &self.turn_costs);
         }
         if self.escaped {
             d.field("escaped", &self.escaped);
@@ -1926,7 +2138,15 @@ impl CombatState {
         };
         let mut relics = Relics::default();
         let mut win_heal = character.win_heal();
+        let mut bottled = [None; 3];
         for (name, r) in &acting {
+            // A Bottled relic's card: its counter is the card's place in the deck plus 1.
+            if let (Some(ty), k @ 1..) = (r.rules.bottles, r.counter) {
+                let c = *deck.get(k as usize - 1).unwrap_or_else(|| panic!("relic {name:?}: counter {k} names no card of the {}-card deck", deck.len()));
+                assert!(binding.def(c).ty == ty, "relic {name:?}: card {:?} isn't a {ty:?}", binding.def(c).name);
+                let slot = bottled.iter().position(Option::is_none).unwrap_or_else(|| panic!("more than 3 bottled cards"));
+                bottled[slot] = Some(c);
+            }
             relic_id(name)
                 .and_then(|id| {
                     crate::relics::register_hooks(id, r.hooks)
@@ -1955,8 +2175,10 @@ impl CombatState {
             monsters,
             hand: Hand::default(),
             free_in_hand: FreeMarks::default(),
+            turn_costs: TurnCosts::default(),
             cost_rolls: CostRolls::default(),
             owed: Owed::default(),
+            owed_late: Owed::default(),
             piles: Piles::default(),
             top_queue: TopQueue::default(),
             top: Top::default(),
@@ -1987,8 +2209,20 @@ impl CombatState {
             turn_ending: false,
             monsters_acting: false,
             allies_at_move: 0,
+            intent_hidden: [0; MAX_MONSTERS],
+            bottled,
             ascension,
         };
+        // Runic Dome: a rolled attack amount (louse Bite) isn't shown; the
+        // roll is made as without it, so seeded fights stay aligned.
+        if s.hides_intents() {
+            for slot in 0..MAX_MONSTERS {
+                if s.monsters[slot].kind != MonsterKind::None && s.monsters[slot].def().rolled_attack.is_some() {
+                    s.monsters[slot].rolled_damage = 0;
+                    s.intent_hidden[slot] |= HIDDEN_ROLLED;
+                }
+            }
+        }
         s.piles.set(Run::Draw, Pile::from_cards(deck));
         s.run_opts(turn1_pre_draw);
         while s.pending.is_some() {
@@ -2092,6 +2326,70 @@ impl CombatState {
 
     /// Cards the held relics add to every turn's draw (`draw_per_turn`:
     /// Snecko Eye's 2).
+    /// The cards turn 1 starts with in hand before its draw: every innate
+    /// copy in the draw pile and one copy per Bottled relic's card.
+    pub fn opening_cards(&self) -> Vec<(CardId, u8)> {
+        let mut v: Vec<(CardId, u8)> = self.draw().iter().filter(|(c, _)| self.binding.def(*c).innate).collect();
+        for c in self.bottled.iter().flatten() {
+            match v.iter_mut().find(|x| x.0 == *c) {
+                Some(x) if x.1 < self.draw().count(*c) && !self.binding.def(*c).innate => x.1 += 1,
+                Some(_) => {}
+                None if self.draw().count(*c) > 0 => v.push((*c, 1)),
+                None => {}
+            }
+        }
+        v
+    }
+
+    /// Whether enemy intents are hidden (a relic's `hides_intents`: Runic Dome).
+    pub fn hides_intents(&self) -> bool {
+        self.player.relics.iter().any(|(id, _)| id.rules().hides_intents)
+    }
+
+    /// Whether monster `slot`'s next move is still to roll (Runic Dome).
+    pub fn move_hidden(&self, slot: usize) -> bool {
+        self.intent_hidden[slot] & HIDDEN_MOVE != 0
+    }
+
+    /// The move monster `slot` shows: none while it is hidden.
+    pub fn shown_intent(&self, slot: usize) -> Option<&'static MoveDef> {
+        if self.move_hidden(slot) {
+            None
+        } else {
+            self.monsters[slot].intent_def()
+        }
+    }
+
+    /// Monster `slot`'s next move: its intent with probability 1, or while
+    /// hidden the roll still to come, given what a card revealed of it.
+    pub fn intent_distribution(&self, slot: usize) -> Vec<(MoveId, f64)> {
+        if !self.move_hidden(slot) {
+            return vec![(self.monsters[slot].intent(), 1.0)];
+        }
+        self.roll_distribution(slot)
+    }
+
+    /// Monster `slot`'s roll (`move_distribution`), given what a card
+    /// revealed of a hidden one (Runic Dome).
+    pub fn roll_distribution(&self, slot: usize) -> Vec<(MoveId, f64)> {
+        let dist = self.move_distribution(slot);
+        let want = match self.intent_hidden[slot] & HIDDEN_CLASS {
+            REVEALED_ATTACK => true,
+            REVEALED_NO_ATTACK => false,
+            _ => return dist,
+        };
+        let moves = self.monsters[slot].def().moves;
+        let kept: Vec<(MoveId, f64)> = dist.into_iter().filter(|&(m, _)| moves.get(m as usize).is_some_and(|d| is_attack(d)) == want).collect();
+        let total: f64 = kept.iter().map(|x| x.1).sum();
+        kept.into_iter().map(|(m, p)| (m, p / total)).collect()
+    }
+
+    /// Whether the player sees the draw pile's order (a relic's
+    /// `sees_draw_order`: Frozen Eye).
+    pub fn sees_order(&self) -> bool {
+        self.player.relics.iter().any(|(id, _)| id.rules().sees_draw_order)
+    }
+
     pub fn relic_draw(&self) -> u8 {
         self.player.relics.iter().map(|(id, _)| id.draw_per_turn().max(0) as u8).sum()
     }
@@ -2353,11 +2651,74 @@ impl CombatState {
     /// mark) becomes the copy at cost `v` for the combat.
     pub(crate) fn set_combat_cost(&mut self, c: CardId, v: i8, marked: bool) {
         let to = self.at_combat_cost(c, v);
-        self.hand.remove(c, 1);
         if marked {
             self.free_in_hand.remove(c);
+            self.hand.remove(c, 1);
+        } else {
+            // The copy may be one that costs less this turn: it loses that
+            // mark with the roll (a change in cost sets `costForTurn`).
+            self.hand_remove(c, 1);
         }
         self.hand.add(to, 1);
+    }
+
+    /// Every copy of `c` in hand becomes the copy at cost `v` for the
+    /// combat and keeps its marks (Enlightenment+: the game sets `cost` and
+    /// leaves `costForTurn`); a mark that no longer lowers the cost goes.
+    fn set_combat_cost_keep_marks(&mut self, c: CardId, v: i8) {
+        let to = self.at_combat_cost(c, v);
+        let n = self.hand.count(c);
+        let free = self.free_in_hand.count(c);
+        let costs = self.turn_costs.take_all(c);
+        for _ in 0..free {
+            self.free_in_hand.remove(c);
+        }
+        self.hand.remove(c, n);
+        self.hand.add(to, n);
+        for _ in 0..free {
+            self.mark_free_in_hand(to);
+        }
+        for k in costs {
+            self.mark_turn_cost(to, k as i8);
+        }
+    }
+
+    /// `CostAtMost`: every hand copy (not X-cost or unplayable) that costs
+    /// more than `cost` this turn costs `cost` this turn, then with
+    /// `combat` every card whose own cost is above `cost` costs `cost` for
+    /// the combat, keeping its mark.
+    fn cost_at_most(&mut self, cost: i8, combat: bool) {
+        for (c, n) in self.hand.iter().collect::<Vec<_>>() {
+            let d = self.binding.def(c);
+            if d.x_cost() || d.unplayable() {
+                continue;
+            }
+            let unmarked = self.unmarked_cost(c);
+            let free = self.free_in_hand.count(c);
+            let costs = self.turn_costs.take_all(c);
+            let loose = n - free - costs.len() as u8;
+            // The copies above `cost` now: marked ones at a higher cost
+            // this turn, and the unmarked ones when the card itself is.
+            let above = costs.iter().filter(|&&k| k as i8 > cost).count() as u8 + if unmarked > cost { loose } else { 0 };
+            for &k in costs.iter().filter(|&&k| k as i8 <= cost) {
+                self.turn_costs.add(c, k);
+            }
+            for _ in 0..above {
+                if cost == 0 {
+                    self.free_in_hand.add(c);
+                } else {
+                    self.turn_costs.add(c, cost as u8);
+                }
+            }
+        }
+        if combat {
+            for (c, _) in self.hand.iter().collect::<Vec<_>>() {
+                let d = self.binding.def(c);
+                if !d.x_cost() && !d.unplayable() && d.cost() > cost {
+                    self.set_combat_cost_keep_marks(c, cost);
+                }
+            }
+        }
     }
 
     /// Card `c` at cost `v` for the combat (the changed copy; `c`'s own
@@ -2388,18 +2749,29 @@ impl CombatState {
             .iter()
             .filter_map(|(c, n)| self.after_hp_loss(c).map(|to| (c, to, n, self.free_in_hand.count(c))))
             .collect();
+        // A copy at a cost this turn keeps the gap to its cost (the game's
+        // `updateCost`): 1 less, at 0 free.
+        let mut costs: Vec<Vec<u8>> = Vec::new();
         for &(c, _, n, m) in &moved {
             for _ in 0..m {
                 self.free_in_hand.remove(c);
             }
+            costs.push(self.turn_costs.take_all(c));
             self.hand.remove(c, n);
         }
         for &(_, to, n, _) in &moved {
             self.hand.add(to, n);
         }
-        for &(_, to, _, m) in &moved {
+        for (&(_, to, _, m), costs) in moved.iter().zip(&costs) {
             for _ in 0..m {
                 self.mark_free_in_hand(to);
+            }
+            for &k in costs {
+                if k > 1 {
+                    self.mark_turn_cost(to, k as i8 - 1);
+                } else {
+                    self.mark_free_in_hand(to);
+                }
             }
         }
         let mut map: Vec<(CardId, CardId)> = Vec::new();
@@ -2561,9 +2933,12 @@ impl CombatState {
                 let x = if d.x_cost() { std::mem::take(&mut self.player.energy).clamp(0, u8::MAX as i16) as u8 } else { 0 };
                 // An unplayable card a rule plays (Blue Candle) costs 0.
                 self.player.energy -= self.cost_of(card).max(0) as i16;
-                // A marked copy is the one played (it costs 0).
-                if !self.free_in_hand.is_empty() {
+                // The cheapest copy is the one played: a copy marked 0, then
+                // the lowest cost this turn.
+                if !self.free_in_hand.is_empty() && self.free_in_hand.count(card) > 0 {
                     self.free_in_hand.remove(card);
+                } else if let Some(v) = self.turn_costs.lowest(card) {
+                    self.turn_costs.remove(card, v);
                 }
                 self.hand_remove(card, 1);
                 self.cards_played_this_turn = self.cards_played_this_turn.saturating_add(1);
@@ -2596,7 +2971,8 @@ impl CombatState {
                     PickKind::DiscardToTop => {
                         self.discard_mut().remove(c, 1);
                         self.draw_mut().add(c, 1);
-                        self.top.push(c);
+                        let all = self.sees_order();
+                        self.top.push(c, all);
                     }
                     PickKind::ExhaustFromHand => {
                         self.hand_remove(c, 1);
@@ -2743,7 +3119,11 @@ impl CombatState {
         if !self.free_in_hand.is_empty() && self.free_in_hand.count(card) > 0 {
             return 0;
         }
-        self.unmarked_cost(card)
+        let unmarked = self.unmarked_cost(card);
+        match self.turn_costs.lowest(card) {
+            Some(v) => unmarked.min(v as i8),
+            None => unmarked,
+        }
     }
 
     /// `cost_of` without the marks (an X-cost or unplayable card's base
@@ -2773,15 +3153,53 @@ impl CombatState {
         if d.x_cost() || d.unplayable() || self.unmarked_cost(card) <= 0 || self.free_in_hand.count(card) >= self.hand.count(card) {
             return false;
         }
+        if self.free_in_hand.count(card) + self.turn_costs.count(card) < self.hand.count(card) {
+            return self.free_in_hand.add(card);
+        }
+        // Every copy holds a mark: one that costs something this turn
+        // becomes free (a copy's identity is only its mark).
+        let Some(v) = self.turn_costs.highest(card) else { return false };
+        self.turn_costs.remove(card, v);
         self.free_in_hand.add(card)
     }
 
-    /// Takes `n` copies of `c` out of the hand, unmarked copies first (a
-    /// play takes the marked one itself, before calling this).
+    /// What the marks take off the hand this turn: for each marked copy,
+    /// its cost less its cost this turn (the net's `hand_turn_discount`).
+    pub fn hand_turn_discount(&self) -> i32 {
+        let free: i32 = self.free_in_hand.iter().map(|c| self.unmarked_cost(c) as i32).sum();
+        let costs: i32 = self.turn_costs.iter().map(|(c, v)| self.unmarked_cost(c) as i32 - v as i32).sum();
+        free + costs
+    }
+
+    /// Marks one copy of `card` in hand as costing `v` (at least 1) this
+    /// turn: only when that is below its cost now, it isn't X-cost or
+    /// unplayable, and a copy in hand holds no mark. Returns whether it did.
+    pub(crate) fn mark_turn_cost(&mut self, card: CardId, v: i8) -> bool {
+        let d = self.binding.def(card);
+        if v < 1 || d.x_cost() || d.unplayable() || v >= self.unmarked_cost(card) || self.free_in_hand.count(card) + self.turn_costs.count(card) >= self.hand.count(card) {
+            return false;
+        }
+        self.turn_costs.add(card, v as u8)
+    }
+
+    /// Takes `n` copies of `c` out of the hand, the dearest first: unmarked
+    /// copies, then the highest cost this turn, then copies marked 0 (a play
+    /// takes the cheapest itself, before calling this).
     pub(crate) fn hand_remove(&mut self, c: CardId, n: u8) {
         self.hand.remove(c, n);
-        if !self.free_in_hand.is_empty() {
-            self.free_in_hand.cap(c, self.hand.count(c));
+        if !self.free_in_hand.is_empty() || !self.turn_costs.is_empty() {
+            self.cap_marks(c);
+        }
+    }
+
+    /// Drops the marks of `c` beyond its copies in hand, the dearest first.
+    fn cap_marks(&mut self, c: CardId) {
+        let copies = self.hand.count(c);
+        while self.free_in_hand.count(c) + self.turn_costs.count(c) > copies {
+            match self.turn_costs.highest(c) {
+                Some(v) => self.turn_costs.remove(c, v),
+                None => self.free_in_hand.remove(c),
+            };
         }
     }
 
@@ -2890,6 +3308,20 @@ impl CombatState {
                 }
             }
             match self.stage {
+                // Takes a power's hook owes at the bottom of the turn
+                // start's queue (Mayhem) come once the turn has settled,
+                // ahead of the triggers of the turn's draw (Evolve): one
+                // card at a time, all taken before any plays.
+                Stage::PlayerTurn if !self.owed_late.is_empty() && !self.top_queue.is_full() => {
+                    let e = self.owed_late.front().expect("owed work");
+                    let OwedKind::Top { exhaust } = e.kind else { unreachable!("{:?} isn't a late take", e.kind) };
+                    if self.draw().len() + self.discard().len() == 0 {
+                        self.owed_late.take_front(e.n);
+                    } else {
+                        self.owed_late.take_front(1);
+                        self.request_take_top(exhaust);
+                    }
+                }
                 // Blocks broken outside a card or potion (a hook's damage)
                 // fire where the turn settles.
                 Stage::PlayerTurn if self.block_broken != [0; MAX_MONSTERS] => {
@@ -2950,6 +3382,12 @@ impl CombatState {
                 // Paused at a pick: the player acts next.
                 Stage::PlayingCard { more: InPlay { pick: Some(_), .. }, .. } => return,
                 Stage::PlayingCard { card, target, next, hit, x, more } => match self.binding.def(card).effect_at(next as usize) {
+                    // Runic Dome: a row asking whether a hidden target
+                    // attacks reveals that much first (Spot Weakness).
+                    Some(at) if at.row_start && hit == 0 && at.condition == Condition::TargetIntendsAttack && target.is_some_and(|t| self.intent_class_unknown(t as usize)) => {
+                        self.pending = Some(ChanceEvent::IntentClass { slot: target.expect("a target") });
+                        return;
+                    }
                     // A row whose condition fails is skipped whole.
                     Some(at) if at.row_start && hit == 0 && !self.condition_holds(Who::Player, at.condition, HookCtx { card: Some(card), target, drawn: None }) => {
                         self.stage = Stage::PlayingCard { card, target, next: at.row_end as u8, hit: 0, x, more };
@@ -3133,8 +3571,9 @@ impl CombatState {
                             // chance event; the use stays here until the
                             // slots are full (the game's queued
                             // ObtainPotionActions, Entropic Brew).
+                            // Sozu (`no_potions`): none (EntropicBrew.use).
                             Effect::ObtainRandomPotions { pool } => {
-                                if self.player.potions.len() < self.potion_slots().min(crate::potions::POTION_CAP) {
+                                if self.player.potions.len() < self.potion_slots().min(crate::potions::POTION_CAP) && !self.player.relics.iter().any(|(id, _)| id.rules().no_potions) {
                                     // `hit` past 0: its row's condition isn't read again.
                                     self.stage = on(next, hit.saturating_add(1), None);
                                     self.pending = Some(ChanceEvent::RandomPotion { pool });
@@ -3236,6 +3675,14 @@ impl CombatState {
                             self.stage = Stage::Over { won: false };
                             return;
                         }
+                        // Frozen Eye: the opening shuffle's order is shown
+                        // before the fight's start (`initializeDeck` runs
+                        // before `atBattleStartPreDraw`); innate cards are
+                        // on top (`Top::set_known` in the event).
+                        if self.turn == 0 && self.top.n_known() < self.draw().len() && self.sees_order() {
+                            self.pending = Some(ChanceEvent::Order { then: crate::chance::OrderThen::Nothing });
+                            return;
+                        }
                         // The turn starts: its resets, then the player's
                         // pre-draw hooks (the game's `atStartOfTurn`); a
                         // `Draw` among them joins the turn's draw, and a kill
@@ -3277,8 +3724,16 @@ impl CombatState {
                     if self.turn == 1 {
                         n += self.character.first_turn_draw();
                         // Innate cards start in the opening hand and count toward its draw.
-                        let innate: Vec<(CardId, u8)> = self.draw().iter().filter(|(c, _)| self.binding.def(*c).innate).collect();
+                        let innate = self.opening_cards();
+                        self.bottled = [None; 3];
+                        let all = self.sees_order();
                         for &(c, k) in &innate {
+                            // Frozen Eye: they are the known head.
+                            for _ in 0..k {
+                                if all {
+                                    self.top.remove_known(c);
+                                }
+                            }
                             self.draw_mut().remove(c, k);
                             self.hand.add(c, k);
                             n = n.saturating_sub(k);
@@ -3555,8 +4010,10 @@ impl CombatState {
         self.block_broken = [0; MAX_MONSTERS];
         // Nor owed random work (a hook pass that ended it leaves no run).
         self.owed.clear();
+        self.owed_late.clear();
         // Nor marks: a finished state is the same with or without them.
         self.free_in_hand.clear();
+        self.turn_costs.clear();
         true
     }
 
@@ -3686,6 +4143,7 @@ impl CombatState {
         // Every mark ends with the turn (the game's `endTurn` resets every
         // card's cost for the turn), retained cards' too.
         self.free_in_hand.clear();
+        self.turn_costs.clear();
         // Runic Pyramid keeps the rest of the hand; a card that acted at
         // turn end (Burn) was played and goes to the discard pile.
         let keeps_hand = self.player.relics.iter().any(|(id, _)| id.rules().keeps_hand);
@@ -3776,7 +4234,13 @@ impl CombatState {
     /// `GainBlockRandomMonsterAction`: not the source, not showing an
     /// Escape move, not dying), in slot order.
     pub(crate) fn ally_block_candidates(&self, slot: usize) -> Vec<usize> {
-        let escapes = |i: usize| self.monsters[i].intent_def().is_some_and(|mv| mv.effects.iter().any(|e| matches!(e, Effect::Escape)));
+        // A hidden candidate (Runic Dome) escapes when its roll can only
+        // give an Escape (`hidden_escape_open` rolls a mixed one first).
+        let esc = |mv: &MoveDef| mv.effects.iter().any(|e| matches!(e, Effect::Escape));
+        let escapes = |i: usize| {
+            let moves = self.monsters[i].def().moves;
+            self.intent_distribution(i).iter().all(|&(m, _)| moves.get(m as usize).is_some_and(esc))
+        };
         self.living_slots().filter(|&i| i != slot && !escapes(i)).collect()
     }
 
@@ -3790,6 +4254,28 @@ impl CombatState {
             if !m.alive() {
                 continue;
             }
+            // A hidden roll a card narrowed to one move is set (no event).
+            if self.move_hidden(slot) {
+                if let [(mv, _)] = self.intent_distribution(slot)[..] {
+                    self.set_monster_move(slot, mv);
+                }
+            }
+            let m = &self.monsters[slot];
+            // Runic Dome: its move rolls as it acts (allies as at the
+            // game's roll, `HIDDEN_ALLIES`), then a rolled attack amount
+            // not seen yet. A player's draw already pending resolves first.
+            if self.move_hidden(slot) || (self.intent_hidden[slot] & HIDDEN_ROLLED != 0 && m.intent_def().is_some_and(|d| d.effects.contains(&Effect::RolledAttack))) {
+                if !(resumed && slot == from_slot) {
+                    self.note_allies(slot);
+                }
+                if self.pending.is_none() {
+                    let ev = if self.move_hidden(slot) { ChanceEvent::MonsterMove { slot: slot as u8 } } else { ChanceEvent::RolledAmount { slot: slot as u8 } };
+                    self.pending = Some(ev);
+                }
+                self.stage = Stage::MonsterActing { slot: slot as u8, next: 0 };
+                return None;
+            }
+            let m = &self.monsters[slot];
             // Monsters spawned this turn (split slimes) have no move yet.
             let Some(mv) = m.intent_def() else { continue };
             let used = m.intent();
@@ -3804,6 +4290,14 @@ impl CombatState {
                 // already pending (Runic Cube) resolves first, then this
                 // effect runs again.
                 if let Effect::BlockAlly(n) = *e {
+                    // A hidden ally that may or may not escape rolls first.
+                    if let Some(k) = self.hidden_escape_open(slot) {
+                        if self.pending.is_none() {
+                            self.pending = Some(ChanceEvent::MonsterMove { slot: k as u8 });
+                        }
+                        self.stage = Stage::MonsterActing { slot: slot as u8, next: i as u8 };
+                        return None;
+                    }
                     let to = match self.ally_block_candidates(slot)[..] {
                         [] => slot,
                         [a] => a,
@@ -3837,11 +4331,33 @@ impl CombatState {
             // status a later move puts in the discard pile can be
             // reshuffled into that draw here and not in the game.
             debug_assert!(
-                matches!(self.pending, None | Some(ChanceEvent::Draw { .. })),
+                matches!(self.pending, None | Some(ChanceEvent::Draw { .. }) | Some(ChanceEvent::Order { then: crate::chance::OrderThen::Draw(_) })),
                 "monster moves must not wait on chance other than a player's draw"
             );
         }
         Some(true)
+    }
+
+    /// Runic Dome: a living other monster than `slot` whose hidden roll
+    /// may give an Escape and may not (a `BlockAlly` pick reads it).
+    fn hidden_escape_open(&self, slot: usize) -> Option<usize> {
+        self.living_slots().filter(|&i| i != slot && self.move_hidden(i)).find(|&i| {
+            let moves = self.monsters[i].def().moves;
+            let esc: Vec<bool> = self.intent_distribution(i).iter().map(|&(m, _)| moves.get(m as usize).is_some_and(|d| d.effects.iter().any(|e| matches!(e, Effect::Escape)))).collect();
+            esc.iter().any(|&x| x) && !esc.iter().all(|&x| x)
+        })
+    }
+
+    /// Whether a card's `TargetIntendsAttack` on hidden monster `t` needs a
+    /// reveal: its roll can give an attack and can give none, and no card
+    /// revealed which yet.
+    pub(crate) fn intent_class_unknown(&self, t: usize) -> bool {
+        if t >= MAX_MONSTERS || !self.move_hidden(t) || self.intent_hidden[t] & HIDDEN_CLASS != 0 {
+            return false;
+        }
+        let moves = self.monsters[t].def().moves;
+        let att: Vec<bool> = self.move_distribution(t).iter().map(|&(m, _)| moves.get(m as usize).is_some_and(|d| is_attack(d))).collect();
+        att.iter().any(|&x| x) && !att.iter().all(|&x| x)
     }
 
     /// Monster `slot` is about to use its move: for a kind whose pattern
@@ -4052,6 +4568,7 @@ impl CombatState {
             // A monster's random opponent is the player: no roll.
             Effect::PlainDamage { target: Target::RandomOpponent, .. } => owner == Who::Player,
             Effect::Draw(_) => !self.owed.is_empty(),
+            Effect::PlayTop { .. } => true,
             _ => false,
         }
     }
@@ -4060,6 +4577,14 @@ impl CombatState {
     /// and scale), joins `owed`; while a relic's pick or offer is open it
     /// waits for that relic's hook to finish.
     fn owe(&mut self, owner: Who, e: Effect, times: i16) {
+        // A take goes behind the turn start's other work (a monster has no
+        // draw pile: nothing).
+        if let Effect::PlayTop { n, exhaust } = e {
+            if owner == Who::Player {
+                self.owed_late.push(OwedKind::Top { exhaust }, (n as i16).saturating_mul(times).clamp(0, u8::MAX as i16) as u8, false);
+            }
+            return;
+        }
         let wait = matches!(self.stage, Stage::RelicPick { .. } | Stage::RelicOffer { .. });
         let clamp = |n: i16| n.clamp(0, u8::MAX as i16) as u8;
         let (kind, n) = match e {
@@ -4110,6 +4635,11 @@ impl CombatState {
                 self.owed.take_front(1);
                 self.request_plain_hit(amount);
             }
+            OwedKind::Insert { card } => {
+                self.owed.take_front(1);
+                self.request_insert(card);
+            }
+            OwedKind::Top { .. } => unreachable!("a late take is paid from owed_late"),
         }
     }
 
@@ -4313,10 +4843,16 @@ impl CombatState {
                 None => ctx.card.is_some_and(|card| self.binding.def(card).ty == ty),
             },
             Condition::TargetHas(p) => ctx.target.is_some_and(|t| self.monsters[t as usize].powers.get(p) > 0),
+            // Hidden (Runic Dome): what the reveal said, or the one class
+            // its roll can give (`intent_class_unknown` pauses otherwise).
             Condition::TargetIntendsAttack => ctx.target.is_some_and(|t| {
-                self.monsters[t as usize].intent_def().is_some_and(|mv| {
-                    mv.effects.iter().any(|e| matches!(e, Effect::Damage { .. } | Effect::RolledAttack))
-                })
+                let t = t as usize;
+                if self.move_hidden(t) {
+                    let moves = self.monsters[t].def().moves;
+                    self.intent_distribution(t).iter().all(|&(m, _)| moves.get(m as usize).is_some_and(|d| is_attack(d)))
+                } else {
+                    self.monsters[t].intent_def().is_some_and(is_attack)
+                }
             }),
             // Cards played before the one in play (the counter includes it).
             Condition::CardsPlayedThisTurnBelow(n) => self.cards_played_this_turn.saturating_sub(1) < n,
@@ -4398,6 +4934,7 @@ impl CombatState {
             Effect::ZeroCostRandom => self.request_zero_cost(),
             Effect::ZeroCostRandomTurn => self.request_free_turn(),
             Effect::UpgradeRandom => self.request_upgrade_random(),
+            Effect::CostAtMost { cost, combat } => self.cost_at_most(cost, combat),
             Effect::Draw(n) => {
                 debug_assert_eq!(actor, Who::Player);
                 self.request_draw(n);
@@ -4516,6 +5053,10 @@ impl CombatState {
                         self.draw_mut().add(c, n);
                     }
                     self.top = Top::default();
+                    // Frozen Eye: the new order is shown at once.
+                    if self.sees_order() {
+                        self.pending = Some(crate::chance::ChanceEvent::Order { then: crate::chance::OrderThen::Nothing });
+                    }
                 }
             }
             Effect::RemoveDebuffs => {
@@ -4611,12 +5152,20 @@ impl CombatState {
     /// this turn when every copy of `c` in hand does (the copy keeps
     /// `costForTurn`; the rule `upgrade_in_hand` uses) or with `free`.
     fn copy_in_hand(&mut self, c: CardId, n: u8, free: bool) {
+        // Every copy marked: the copies keep the mark (the game's copy keeps
+        // `costForTurn`): a cost this turn (the dearest), else 0.
+        let all = self.free_in_hand.count(c) + self.turn_costs.count(c) == self.hand.count(c);
+        let kept = if all { self.turn_costs.highest(c) } else { None };
         let marked = free || (!self.free_in_hand.is_empty() && self.free_in_hand.count(c) == self.hand.count(c));
         let k = (HAND_LIMIT.saturating_sub(self.hand.len()) as u8).min(n);
         self.do_effect(Who::Player, &Effect::AddCard { card: c, n, pile: PileKind::Hand }, None);
         if marked {
             for _ in 0..k {
                 self.mark_free_in_hand(c);
+            }
+        } else if let Some(v) = kept {
+            for _ in 0..k {
+                self.mark_turn_cost(c, v as i8);
             }
         }
     }
@@ -4628,29 +5177,96 @@ impl CombatState {
         // An unmarked copy is upgraded first; a marked one keeps its mark
         // (the game's `upgradeBaseCost` leaves a 0 for the turn at 0).
         let marked = !self.free_in_hand.is_empty() && self.free_in_hand.count(c) == self.hand.count(c);
+        // Every copy marked, some at a cost this turn: the dearest of those
+        // is the one upgraded, and its cost this turn stays if still lower.
+        let carried = (self.free_in_hand.count(c) + self.turn_costs.count(c) == self.hand.count(c)).then(|| self.turn_costs.highest(c)).flatten();
         let Some(up) = crate::registry::upgraded(&self.binding, c) else { return false };
         self.hand_remove(c, 1);
         self.hand.add(up, 1);
         if marked {
             self.mark_free_in_hand(up);
+        } else if let Some(k) = carried {
+            self.mark_turn_cost(up, k as i8);
         }
         true
     }
 
-    /// One copy of `c` in hand, a marked one when `marked` (it stays
-    /// marked, as `upgrade_in_hand`'s), is upgraded (`UpgradeRandom`).
-    pub(crate) fn upgrade_copy(&mut self, c: CardId, marked: bool) {
+    /// One copy of `c` in hand of class `mark` is upgraded
+    /// (`UpgradeRandom`); its mark stays (a cost this turn only while still
+    /// below the new cost, as `upgrade_in_hand`'s).
+    pub(crate) fn upgrade_copy(&mut self, c: CardId, mark: HandMark) {
         let Some(up) = crate::registry::upgraded(&self.binding, c) else { return };
-        if marked {
-            self.free_in_hand.remove(c);
-            self.hand.remove(c, 1);
-        } else {
-            self.hand_remove(c, 1);
-        }
+        self.take_class(c, mark);
         self.hand.add(up, 1);
-        if marked {
-            self.mark_free_in_hand(up);
+        self.remark(up, mark);
+    }
+
+    /// The copies of `c` in hand by class (`HandMark`), with their counts:
+    /// unmarked, each cost this turn (lowest first), then marked 0.
+    pub(crate) fn hand_classes(&self, c: CardId) -> Vec<(HandMark, u8)> {
+        let n = self.hand.count(c);
+        let free = self.free_in_hand.count(c).min(n);
+        let mut out = Vec::new();
+        let mut turn = 0;
+        let mut at: Vec<(HandMark, u8)> = Vec::new();
+        for (_, v) in self.turn_costs.iter().filter(|&(x, _)| x == c) {
+            turn += 1;
+            match at.last_mut() {
+                Some((HandMark::Turn(w), k)) if *w == v => *k += 1,
+                _ => at.push((HandMark::Turn(v), 1)),
+            }
         }
+        let loose = n.saturating_sub(free + turn);
+        if loose > 0 {
+            out.push((HandMark::None, loose));
+        }
+        out.extend(at);
+        if free > 0 {
+            out.push((HandMark::Free, free));
+        }
+        out
+    }
+
+    /// Takes one copy of `c` of class `mark` out of the hand, its mark with it.
+    pub(crate) fn take_class(&mut self, c: CardId, mark: HandMark) {
+        match mark {
+            HandMark::Free => {
+                self.free_in_hand.remove(c);
+            }
+            HandMark::Turn(v) => {
+                self.turn_costs.remove(c, v);
+            }
+            HandMark::None => {}
+        }
+        self.hand.remove(c, 1);
+    }
+
+    /// The copy `c` just added to the hand takes the mark `mark` its
+    /// predecessor held (a cost this turn only while below its cost now).
+    fn remark(&mut self, c: CardId, mark: HandMark) {
+        match mark {
+            HandMark::Free => {
+                self.mark_free_in_hand(c);
+            }
+            HandMark::Turn(v) => {
+                self.mark_turn_cost(c, v as i8);
+            }
+            HandMark::None => {}
+        }
+    }
+
+    /// One copy of `c` of class `mark` costs 0 this turn (replacing its mark).
+    pub(crate) fn free_class(&mut self, c: CardId, mark: HandMark) {
+        self.take_class(c, mark);
+        self.hand.add(c, 1);
+        self.mark_free_in_hand(c);
+    }
+
+    /// One copy of `c` of class `mark` costs 0 for the combat (and so needs no mark).
+    pub(crate) fn zero_class(&mut self, c: CardId, mark: HandMark) {
+        let to = self.at_combat_cost(c, 0);
+        self.take_class(c, mark);
+        self.hand.add(to, 1);
     }
 
     /// Armaments+: each copy in hand once by a general upgrade.
@@ -4695,10 +5311,14 @@ impl CombatState {
 
     /// `c` into the draw pile as `CardGroup.addToRandomSpot`: under the top
     /// card when the pile holds any, so never the next draw.
+    /// With Frozen Eye its spot is owed work (`OwedKind::Insert`), paid
+    /// before anything reads the order.
     fn add_to_random_spot(&mut self, c: CardId) {
         let was_empty = self.draw().is_empty();
         self.draw_mut().add(c, 1);
-        if !was_empty {
+        if self.sees_order() {
+            self.owed.push(OwedKind::Insert { card: c }, 1, false);
+        } else if !was_empty {
             self.top.add_floater_under(c);
         }
     }
@@ -4707,8 +5327,9 @@ impl CombatState {
     fn hand_to_top(&mut self, c: CardId, k: u8) {
         self.hand_remove(c, k);
         self.draw_mut().add(c, k);
+        let all = self.sees_order();
         for _ in 0..k {
-            self.top.push(c);
+            self.top.push(c, all);
         }
     }
 
@@ -5326,6 +5947,7 @@ impl CombatState {
                 } else {
                     m.block = gained_block(m.block, guardian::DEFENSIVE_BLOCK);
                 }
+                self.intent_hidden[slot as usize] &= !HIDDEN_MASK;
             }
             return;
         }
@@ -5334,17 +5956,21 @@ impl CombatState {
         if m.kind == MonsterKind::Lagavulin && lagavulin::asleep(m) {
             m.powers.reduce(Power::Metallicize, lagavulin::OPEN_METALLICIZE);
             m.set_move(lagavulin::STUNNED);
+            self.intent_hidden[slot as usize] &= !HIDDEN_MASK;
         }
+        let m = &mut self.monsters[slot as usize];
         let split = m.def().split_move;
         if split != NO_MOVE && m.intent() != split && 2 * m.hp <= m.max_hp {
             m.set_move(split);
+            self.intent_hidden[slot as usize] &= !HIDDEN_MASK;
         }
     }
 
     /// Sets a monster's next move, with what choosing it fixes (Hexaghost's
     /// Divider damage, from the player's HP now).
-    pub(crate) fn set_monster_move(&mut self, slot: usize, m: MoveId) {
+    pub fn set_monster_move(&mut self, slot: usize, m: MoveId) {
         let player_hp = self.player.hp;
+        self.intent_hidden[slot] &= !HIDDEN_MASK;
         let mon = &mut self.monsters[slot];
         mon.set_move(m);
         if mon.kind == MonsterKind::Hexaghost && m == hexaghost::DIVIDER {

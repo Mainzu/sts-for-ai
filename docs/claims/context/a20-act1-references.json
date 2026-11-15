@@ -1,0 +1,27 @@
+{
+  "key": "context/a20-act1-references",
+  "rev": 1,
+  "value": "Outside reference points for the real-game A20 Ironclad Act 1 boss rate: all humans 47%, 1000+ hour players 54%, streamers 85-92% (SpireBench, Mega Crit telemetry); top LLM agents 90% of 10 seeds; sts-ironclad-agent ~89% simulated, with foresight; bottled_ai 20%.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/sts-ai-prior-art.md",
+      "anchor": "The field at a glance",
+      "sha256": "38a4efd655aa553a178a1d7c9f7538eba59027390df544be73ff3684ac8593c4"
+    },
+    {
+      "path": "docs/research/sts-bots-and-runs.md",
+      "anchor": "What exists (verified)",
+      "sha256": "189f86f1293b16897d7f4a6a77adb009482fb6960f82cdc89a6c2360da49df22"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "ea69b906-0ef3-444c-8cc3-77db4706d7ae",
+  "at": "2026-11-15T03:06:44+00:00 @ a93794a5",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "630ee3efe897268927f811ea5de68ade6d53e17766f0d8e1749e7aea5e7a965c"
+}

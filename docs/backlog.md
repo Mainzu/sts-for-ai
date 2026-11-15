@@ -467,6 +467,16 @@ its reads run (no lane, no code). 75 is done but for (c)'s code flip and
 (d), which rides on the next from-scratch net. 77 `product-level-flags`
 is done: read 2026-11-13, level: the product gains `@tsl1@lcb1` and the
 `@hpe0.01@lcb1` chooser (decisions "Product read 0986").
+- **After the review of 2026-11-15** (`docs/research/big-picture-2026-11-15.md`,
+   which outranks this order): the ruler pays 1:1 for HP the game refunds
+   after the boss (held by both skeptics), so 90 goes first, inside the
+   final round, before step 7 reads; the blind-element audit (72's first
+   step) joins the round as optional step 4(c), code only; 55's
+   chooser-noise count is the cheapest goal-2 ruler check left; the
+   navigator reads the simulator against the real game when 1019 and 1020
+   land (the review's direction 5, no CPU). Throughput by more heavy
+   slots is answered (skeptic: memory, ready work and holds bind), so 89
+   and 66's memory items carry that line.
 - **One lane at a time** (`decision/one-lane`, 2026-11-14): every
    lane session goes to `lane/final-round` (78 below) until the final
    round is queued and read. The ranking below is for the next slot after
@@ -477,11 +487,22 @@ is done: read 2026-11-13, level: the product gains `@tsl1@lcb1` and the
 - **78 `final-run-inputs`** (open as `lane/final-round` (2026-11-14)):
    the owner's final training round at A20, with 82 and 85 probed as its
    step 2 (decisions "The stall probes become final-round's step 2").
-0. **76 `hpe-leaf-cap`** (likely one turn deep, even for the product;
-   a few lines of code, about 10 cpu-h; probe sheet, the first code
-   session on main takes it with `tb1-default-flip`): the product's HP
-   price misprices running fights near full HP; the cheapest goal-2
-   product lever in the record.
+0. **76 `hpe-leaf-cap`** (even for the product; a few lines of code,
+   about 6 thread-h): read on its own product arm at A20 beside @wc1's,
+   against the A20 product control on S2's shape (1026; decisions "A20
+   ruler: the shape of probe S2, read by its compression"), if a code
+   session lands its suffix before the round; else after it.
+- **90 `a20-gate`** (likely; its probe is 1026, the product on S2's
+  shape, queued first in final-round, about 9 thread-h): two turns over
+  one on S2's shape decides whether that shape carries reads (+1.5 HP or
+  more) and sizes step 7; V and floors won reported on every A20 read.
+- **93 `real-fit-shape`** (likely to lift clears, even whether it is
+  worth building before the run simulator's driver; small code, about 9
+  thread-h for its controls): only if 1026 reads two turns over one
+  under +1.5 HP on S2's shape.
+- **89 `gated-chains`** (likely; no CPU, small code): a check that
+  encodes `decision/level-pass`, so dependent reads queue behind
+  `--if-passed` and run without a session.
 1. **68 `multi-hook-zero-shot`** (ready charter, the next free project
    slot, once 65's seed-101 grid read is recorded; even, about 4 thread-h
    of reads and half a day of code): the next width after single hooks.
@@ -1655,8 +1676,12 @@ run):
    Under `decision/level-pass` a level product read passes (a misprice
    fix). **CPU**: about 2.4 thread-h one turn deep, about 7 thread-h for
    the product's headline read (`measurement/line-step@headline`'s wall
-   time), 10 in all; code a few lines and a test. **Cheapest probe**
-   (probe sheet, waits for code): the 10-29 net `@hpe0.01` with the fix
+   time), 10 in all; code a few lines and a test. **Cheapest probe** (since 2026-11-15: every A0 control is stale after
+   Row V, `context/stale-after-row-v`, so the one-turn probe below would
+   need two fresh A0 files; the product read at A20 replaces it): the
+   product with the fix, two turns deep at A20, `--against` the A20
+   product control (job 1019), beside @wc1's arm, under
+   `decision/level-pass`. The old one-turn form: the 10-29 net `@hpe0.01` with the fix
    one turn deep, plain leaf, on the headline at n 500 against the plain
    `@hpb0.01` file (the old one-turn control) and against 0970's file. Kill-fast: if it gains under 0.9 HP (half
    0970's loss) against 0970's file, stop (the cap isn't the loss); if
@@ -1829,7 +1854,13 @@ run):
    intent on show even while a rolled monster (A0 Nob, Jaw Worm, the M/L
    slimes, lice) or a monster behind it in slot order still has to roll,
    so the net sees the previous move there (the heuristic checks it,
-   heuristic.rs:309). Generic, so custom monsters get it with no new code;
+   heuristic.rs:309). Also the shown move's non-damage effects (block on itself, block on
+   allies, Strength, debuffs on the player): the monster row holds only
+   `intent_damage` (`py/src/features.rs` MONSTER_SCALARS), so a Protect
+   move is invisible to the net; run 83's stall (85) needs the block a
+   monster's pattern gives its allies per turn, the one form 85's probe
+   left (`decision/stall-85-out-of-round`; 72's BlockAlly atom is the card
+   side of the same blind spot). Generic, so custom monsters get it with no new code;
    moves the player triggers (Mode Shift, Lagavulin waking, Slime Boss's
    split; `lost_hp`, state.rs:5033) stay unseen. Rated **even** (for: the
    past-horizon columns show exactly what both searches miss, and the cause
@@ -1884,9 +1915,12 @@ run):
    unfinished ones loses to noise alone; the cap is an admissible bound,
    which removes the cases the bound can prove, not the noise. Taken into
    `lane/final-round` as its step 2 (owner, 2026-11-14, "prefer the
-   kill"): a pass is read under `decision/level-pass` and joins the A20
-   controls, the run's self-play and the product. 76 (the same function)
-   stays on the probe sheet, apart, so the read stays clean.
+   kill"). Probe passed 2026-11-15 (`docs/research/stall-probes.md`:
+   `@wc1` kills in 9 of 10 run-56 cases, 3 of 4 run-52, and stops no kill
+   the plain search took); the adoption read is 1025 at A20 on S2's shape
+   against 1022 (`decision/a20-adoption-reads`), then the product with it
+   against 1026. 76 (the same function) reads on its own arm,
+   apart, so each read stays clean.
 
 83. **run-fight-cost** (Source: owner, 2026-11-14: "Should it share a part
    of the network with the player? Separate AI, or automated system?"; a
@@ -2014,7 +2048,16 @@ run):
    how long the fight has left, so a per-turn cost at the leaf doesn't
    separate two leaves at the same depth. Taken into `lane/final-round`
    as its step 2 (owner, 2026-11-14), with a check of how `learn.py`
-   ends and labels a self-play game at the turn cap.
+   ends and labels a self-play game at the turn cap. **Probe read
+   2026-11-15** (`docs/research/stall-probes.md`): the progress term
+   failed kill-fast (run 83 turn 40 strikes the block at every c from
+   0.03 to 0.3, since 12 damage into 11 block counts as progress); a
+   self-play game at the turn cap is labelled a loss. Out of the final
+   round (`decision/stall-85-out-of-round`): the headline has no Gremlin
+   Gang, so nothing could show a gain there. The A20 ruler now takes the
+   pack (`decision/a20-ruler-shape`), so that reason is gone: the
+   remainder is candidate 92 (the ally-block column in 81), with the
+   history (repetition) form and the bridge's fight guard 2 for live runs.
 
 86. **chance-step-fidelity** (Source: the real-game runs, 2026-11-14, the
    Act 1 session's read of run 83; `docs/research/real-game-runs.md` "how
@@ -2068,8 +2111,128 @@ run):
    Kill-fast: under 90% exact matches, or no wall-time saving because
    the trial fights then compete with the fight search for the CPU.
 
+89. **gated-chains** (Source: navigator ideas run 2026-11-15, from
+   health's `cpu` red for 131 steward runs (no job for 1,312 minutes on
+   2026-11-15 morning) while cost mode runs one lane on four Sonnet
+   sessions a day; goal: machine time, both goals): the queue already
+   chains jobs with `--if-passed` and a `--check` command, but no check
+   encodes the read rules (`decision/level-pass`, the protocol's verdict
+   from the `--against` file), so every dependent read waits for a lane
+   session to read its parent. Mechanism: a small script
+   (`scripts/analysis/read_check.py <file> --rule level|protocol`, exit 0
+   on pass, the numbers on its last line) lets a session queue a whole
+   chain at once (1025, then the product arm with @wc1, then step 6's
+   learn), so the CPU runs between sessions. Shown wrong if zero-job
+   minutes don't fall over the next three days of chains queued with it.
+   Rediscovery: gated CI pipelines and workflow DAGs; in the record,
+   `queue-throughput` (2026-11-09) found backfill recovers 0.0-1.1 of
+   19.8 idle-pending hours, a different cause (jobs pending, not missing).
+   Rated **likely** (the reads are mechanical rules; the runner records
+   the check's last line as the verdict). Code: S, no CPU. A suspicious
+   pass (exactly at its bar) still gets a session's look before anything
+   is promoted: the check gates CPU, never `product.py set`. Cheapest
+   probe: write it, gate the @wc1 product arm on 1025 with it; kill-fast:
+   it disagrees with the lane worker's hand read of 1025.
+
+90. **a20-gate** (Source: review 2026-11-15, direction 1 and key claim
+   2, held by both skeptics; goal 2's ruler at A20 and the final round's
+   step 7): `gauntlet_protocol.end_hp` is the boss floor's HP on a clear,
+   else 0, and the protocol and the level rule pay for it 1:1; the game
+   heals 75% of the missing HP between acts at A5 and above (to full
+   below), so a point of HP left after the Act 1 boss is worth about 0.25
+   at A20. Mechanism: report the Act-2-entry value V = clear x (0.75 x
+   max HP + 0.25 x HP left) beside end HP and clears on every A20 read,
+   so a lead made of refunded HP shows as such; and size step 7 so its
+   go read can see the effect it expects. The owner's level rule
+   (`docs/direction.md`, end HP and clears) stays as written: V is a
+   reported column and a power check, not a new bar. Shown wrong if, on
+   the A20 files, V and end HP give the same verdict on every paired read
+   (then V adds nothing). Rediscovery: choosing the metric that matches
+   the objective (proper scoring; in chess engines, Elo from game results,
+   not material left); in the record `cause/ruler-shared-hp` and
+   `clears-statistic` (69), the same split at A0. Rated **likely** to
+   change at least one verdict's reading (the twin's +1.41 was 94% shared
+   HP at A0), **even** that it changes step 7's go. CPU: none for V (a
+   column over existing files); step 7 at n 1000 needs the A20 controls
+   on sequences 500-999 (about 2.75 thread-h one turn, about 11 for the
+   product). On the fixed shape the sd was never the problem: two turns
+   over one read +0.32 (0.19) HP (sd 2.7) where A0 reads +6.14, so the
+   effect is compressed and more sequences don't restore it; floors won,
+   paired, still separates them (z 5.3 at n 200), so it joins V as a
+   reported column (`decision/a20-ruler-shape`). Cheapest probe, queued as 1026
+   (the product on S2's shape, 2026-11-15) against 1022: the paired
+   two-turns-over-one read between the two controls gives the compression
+   on that shape against A0's +6.14 (the fixed shape at n 500: +0.16
+   (0.14) HP, +0.61 (0.08) floors won); under +1.5 HP the shape doesn't
+   carry reads and 93 comes next; the SPRT's simulated
+   pass rate (`scripts/analysis/gauntlet_protocol.py` `sprt`, offline) at
+   that sd for a true effect scaled by the same ratio decides n 500 or n
+   1000 for step 7. Kill-fast: pass rate at n 500 already 0.7 or more:
+   nothing to change.
+
+92. **gang-protect** (Source: navigator ideas run 2026-11-15, revived from
+   85's remainder: its reason "the headline has no Gremlin Gang, so
+   nothing can show a gain there" no longer holds once the A20 ruler takes
+   the pack (`measurement/act1-ruler@a20`); goal 2, and goal 1's "new
+   mechanics hurt" through an input the net lacks): Gremlin Gang is the
+   costliest hallway on the A20 ruler one turn deep (20.8 HP per fight,
+   22% deaths in 92), against about 14 net of Burning Blood and no deaths
+   over 21 real-game A20 fights. Mechanism: the net's monster row holds
+   only `intent_damage` (`py/src/features.rs` MONSTER_SCALARS), so Shield
+   Gremlin's Protect and the Gremlin Wizard's charge are invisible and the
+   search can strike into renewed block (run 83's stall); the ally-block
+   column folded into 81 makes it visible. Shown wrong if the product two
+   turns deep already loses no more on Gremlin Gang than the base hard
+   pool's dearest encounters (about 12 HP), since then depth covers what
+   the input would. Rediscovery: feature engineering for an unseen state
+   variable (partial observability); in the record `cause/roundend-blind`
+   (an element the net has no row for costs about 2.5 HP and training
+   doesn't repair it). Rated **even** (for: an invisible effect that
+   recurs each turn is what the second turn can't price; against: Gang is
+   one of 11 hard encounters, about a tenth of hard floors). After the
+   final round (its inputs close 2026-11-20). CPU: about 1 thread-h for
+   the code's check. Cheapest probe: Gremlin Gang's per-fight cost in 1026 (the
+   A20 product control on S2's shape; no extra CPU), against 1022 one turn
+   deep; kill-fast: the product's Gang cost within
+   2 HP of the base hard pool's dearest.
+
+93. **real-fit-shape** (Source: navigator ideas run 2026-11-15, from
+   the shape probes 1021/1022 against the real-game A20 runs,
+   `docs/research/a20-ruler-2026-11-15.md` "Where the real game differs";
+   goal 2's ruler at A20, `decision/a20-default`): per fight the gauntlet
+   at A20 already costs what the real game costs (Jaw Worm 9.0 HP gross
+   against 8.8, Gremlin Nob 28.9 against 31.4, Sentries 34.8 against
+   33.8), but a run plays 10 fights before the boss where the 63 real A20
+   runs played 8.4 (7.6 hallways, 0.86 elites) with about 17 HP of
+   mid-act healing, so S2's runs reach the boss at 44 HP against 67.
+   Mechanism: a gauntlet shape fitted to the logged runs' counts (two
+   hard floors fewer, the HP-40 elite rule and S2's mid-act rest kept)
+   raises boss arrival toward 67 HP, where one turn deep already wins the
+   boss 0.37-0.42 in 1022 (45+ HP arrivals), so clears and end HP leave
+   the floor and effects show in them; it is also about a fifth cheaper
+   per sequence. Shown wrong if its one-turn clears stay under 0.20 or two
+   turns over one on it reads under +1.5 HP end HP. Rediscovery:
+   simulator calibration to logged data (sim-to-real: fit the
+   simulator's distribution of situations to the target's, here the
+   number of fights and heals); in the record the mini-run
+   (`docs/specs/mini-run.md`) and the run simulator
+   (`docs/specs/run-simulator.md`), the end state that plays the real map;
+   this is an interim flag on the gauntlet, discarded when the simulator's
+   driver (build step 18) reads the ruler. Rated **likely** to lift
+   one-turn clears past 0.20 (boss arrival +20 HP at a 0.4 boss rate,
+   reach rate up from 0.51), **even** whether it is worth building: only
+   if 1026 shows S2's shape too compressed, and only while the
+   simulator's driver is more than about a week away. Code: S (a floor
+   list option in `scripts/gauntlet.py`), a lane's. CPU: one-turn control
+   about 2.5 thread-h, product control about 7. Cheapest probe: none
+   before 1026 reads; then the one-turn control on the fitted shape,
+   kill-fast: clears under 0.20.
+
 **Checked and not proposed** (one line each; the reason stands unless new
 evidence answers it):
+- *more heavy slots* (2026-11-15, review direction 2(b)): the runner's idle readings show the CPU near saturated by work outside the queue, and memory, ready work and holds bind (review skeptics on claim 5; `queue-throughput`); reopen if a replay over jobs/done shows a third heavy slot recovering 2 h or more in a week with no other change.
+- *hands-at-a20* (2026-11-15, revival check of `hands-where-small`'s "a setting where fights start low"): A20 meets the setting clause, but 16 hands saved HP only on starts at 60+ HP and nothing at 40-59 (`measurement/hands16@elite-replay`), so lower starts shrink the gain; reopen on the condition's second half (0.3 HP per elite at 2 se on starts under 60 HP).
+- *bounded-leaf pruning* (2026-11-15, from @wc1: the win cap gives each unfinished leaf an upper bound without the net, as Star1/Star2 pruning and score-bounded MCTS use): the bound sits below a found line's value only near a kill, a small share of nodes, so it saves little search; reopen if a profile shows net evaluations at such leaves over a tenth of search time.
 - *elite-relic-reward* (2026-11-14, revival check of `cause/elite-does-not-pay`'s exit "elites pay a relic"): Act 1 relics load in combat, but `scripts/gauntlet.py` awards none, so the exit isn't met; giving elites a relic is run-level resource pricing, which the owner put in 83's later stage; reopen with 83's stage 2.
 - *a20-burst* (2026-11-14, navigator ideas run: reach A20 by a fine-tune burst on the 10-29 net instead of a from-scratch round): A20 changes Act 1 monsters' numbers, not their mechanics, and bursts don't repair plain numbers (`cause/bursts-no-boss-or-stat`, `measurement/stat-burst@one-turn`), so the burst arm can gain nothing the round can't; reopen if a burst cuts a stat-only modifier's cost by half at 2 se.
 - *best-of-three promotion* (2026-11-14, final-round's design): promoting whichever of three seeds reads best on the headline selects on the ruler (between-net MDE 0.06-0.07 clears at 500, `cause/headline-pairing-weak`); seed 201 is pre-registered instead and 1 and 101 only measure the spread; reopen if a confirm set (sequences 500-999) is read for every seed.
@@ -2190,6 +2353,8 @@ evidence answers it):
 - The reactive-stack lead as its own lane: read in `adapted-two-turn`.
 
 **Answered** (one line each; details in `docs/decisions.md`):
+- *a20-shape* (candidate 91 until 2026-11-15, probes 1021/1022, `measurement/a20-shape@probes`): neither shape reached 0.20 one-turn clears (S1 0.05 at 350 of 500, S2 0.126); S2's shape is the A20 ruler for now, read by its compression (1026), decisions "A20 ruler: the shape of probe S2, read by its compression".
+- *act1-ruler* (candidate 88 until 2026-11-15, probe 1020, `measurement/act1-ruler@a20`): go; the pack's hallways cost 14.2 HP per fight with 14.7% deaths beside the base hard pool's 8.1 and 8.5%, so the A20 ruler takes the pack (`decision/a20-ruler-shape`); the probe also showed the fixed shape saturates at A20 (91).
 - *all-content-product* (candidate 48 until 2026-11-10, probe 0782-0783, `measurement/pack-net-twin@one-turn`): the all-content twins gain +0.76 (0.87) HP on the ruler one turn deep, all of it Demon Form, which two turns deep the product already plays; -1.50 (1.00) outside it; retired (decisions "Probe pns-twin-official read").
 - *pack-dose-33* (candidate 38 until 2026-11-10, probes 0697-0701 and 0734-0738, `measurement/pack-dose-33@gen-b1`, `measurement/pack-dose-99s9@gen-b1`): 33 games each too few for eight mechanics; 99 at share 0.9 removes the Lagavulin leak and keeps the cut and the edge; pack chains train g99-sh9 (decisions "After pack-dose 99s9").
 - *share-quote-widen* (candidate 46 until 2026-11-09, probe 0715-0728, `measurement/share-quote-widen@sentries`): 33 games at share 0.9 cut half or more on both damage-trigger mechanics; the trained parent spared on OppCard-Damage, +1.68 HP on OppCard-PlainDamage.

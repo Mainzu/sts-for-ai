@@ -144,6 +144,10 @@ pub(crate) fn allies_bit(s: &CombatState, slot: usize) -> bool {
 /// used its move (`CombatState::allies_at_move`; the game's count at the
 /// move), or lives now before its first move.
 fn allies(s: &CombatState, slot: usize) -> bool {
+    // A roll Runic Dome deferred reads the fight as it was at the roll.
+    if s.move_hidden(slot) {
+        return s.intent_hidden[slot] & crate::state::HIDDEN_ALLIES != 0;
+    }
     if s.monsters[slot].intent() == NO_MOVE {
         s.living_slots().any(|i| i != slot)
     } else {

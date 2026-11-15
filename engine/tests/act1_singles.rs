@@ -622,6 +622,8 @@ fn entropic_brew_fills_every_empty_slot() {
         assert_eq!(brewed(&held, false, seed).player.potions.len(), 4);
         // Sacred Bark doesn't change it (the loop reads the slots, not potency).
         assert_eq!(brew(brew_fight_with(&["Entropic Brew"], &["Sacred Bark"]), seed).player.potions.len(), 3);
+        // Sozu: none (`EntropicBrew.use` checks `hasRelic("Sozu")`), the Brew used up.
+        assert_eq!(brew(brew_fight_with(&["Entropic Brew"], &["Sozu"]), seed).player.potions.len(), 0);
     }
 }
 

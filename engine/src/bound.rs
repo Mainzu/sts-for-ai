@@ -40,6 +40,7 @@ impl Effect {
             | Effect::ZeroCostRandom
             | Effect::ZeroCostRandomTurn
             | Effect::UpgradeRandom
+            | Effect::CostAtMost { .. }
             | Effect::Draw(_)
             | Effect::RandomizeCost(_)
             | Effect::GainEnergy(_)
