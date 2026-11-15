@@ -472,6 +472,8 @@ fn condition_key(c: Condition) -> (String, f32) {
         Condition::TargetDied => ("TargetDied".into(), 0.0),
         Condition::CounterAtMost(n) => ("CounterAtMost".into(), n as f32),
         Condition::NotFirstTurn => ("NotFirstTurn".into(), 0.0),
+        // Not in `condition_names` (a net layout reads it as "other").
+        Condition::DrawHas(t) => (format!("DrawHas({t:?})"), 0.0),
     }
 }
 
@@ -1212,6 +1214,9 @@ impl Encoder {
                 Effect::Pick { kind: PickKind::HandToTop, .. } => {}
                 // No column yet (ironclad-last-four spec step 3), as HandToTop.
                 Effect::Pick { kind: PickKind::CopyInHand, .. } => {}
+                // No column (colorless build B), as HandToTop: the net reads
+                // the piles it leaves.
+                Effect::Pick { kind: PickKind::DrawToHand, .. } => {}
                 Effect::UpgradeHand => add("upgrade_hand", 1.0),
                 // No column yet (colorless-cards spec step 4): a new column
                 // changes the layout.
@@ -1221,6 +1226,9 @@ impl Encoder {
                 Effect::ZeroCostRandomTurn | Effect::UpgradeRandom => {}
                 // As the other hand-cost work: the net reads `hand_turn_discount`.
                 Effect::CostAtMost { .. } => {}
+                // A random take off the draw pile: no column; the net reads
+                // the hand and piles it leaves.
+                Effect::TakeRandomFromDraw { .. } => {}
                 // Debuffs removed: no column (blocked-relics spec step 4).
                 Effect::RemoveDebuffs => {}
                 Effect::ReplayCard => add("replay", 1.0),
@@ -1833,7 +1841,7 @@ impl Encoder {
         let over = |won: bool| (s.stage == Stage::Over { won }) as u8 as f32;
         let (draw, mmove, hit) = match s.pending {
             Some(ChanceEvent::Draw { n } | ChanceEvent::Order { then: sts_engine::chance::OrderThen::Draw(n) }) => (n as f32, 0.0, 0.0),
-            Some(ChanceEvent::Order { .. } | ChanceEvent::InsertAt { .. } | ChanceEvent::RolledAmount { .. }) => (0.0, 0.0, 0.0),
+            Some(ChanceEvent::Order { .. } | ChanceEvent::InsertAt { .. } | ChanceEvent::RolledAmount { .. } | ChanceEvent::DrawInstance { .. } | ChanceEvent::TakeRandom { .. }) => (0.0, 0.0, 0.0),
             Some(ChanceEvent::IntentClass { .. }) => (0.0, 1.0, 0.0),
             Some(ChanceEvent::MonsterMove { .. } | ChanceEvent::AllyBlock { .. }) => (0.0, 1.0, 0.0),
             Some(ChanceEvent::RandomTarget { amount } | ChanceEvent::PlainHit { amount }) => (0.0, 0.0, amount as f32),

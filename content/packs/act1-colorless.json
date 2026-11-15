@@ -1,5 +1,5 @@
 {"version": 2,
-"pools": {"Colorless": ["Swift Strike", "Flash of Steel", "Finesse", "Good Instincts", "Dramatic Entrance", "Blind", "Trip", "Panacea", "Purity", "Panic Button", "Discovery", "Jack of All Trades", "Master of Strategy", "Hand of Greed", "Thinking Ahead", "Mind Blast", "Deep Breath", "Apotheosis", "Impatience", "Dark Shackles", "Sadistic Nature", "Madness", "Chrysalis", "Metamorphosis", "Transmutation", "Magnetism", "Mayhem", "Enlightenment"]},
+"pools": {"Colorless": ["Swift Strike", "Flash of Steel", "Finesse", "Good Instincts", "Dramatic Entrance", "Blind", "Trip", "Panacea", "Purity", "Panic Button", "Discovery", "Jack of All Trades", "Master of Strategy", "Hand of Greed", "Thinking Ahead", "Mind Blast", "Deep Breath", "Apotheosis", "Impatience", "Dark Shackles", "Sadistic Nature", "Madness", "Chrysalis", "Metamorphosis", "Transmutation", "Magnetism", "Mayhem", "Enlightenment", "Secret Technique", "Secret Weapon", "Violence"]},
 "powers": [
 {"id": "NoBlock", "debuff": true, "skips_first_round": {"from_monster_after_turn_end": true}, "hooks": [{"trigger": "RoundEnd", "condition": "Always", "effects": [{"ReduceSelf": 1}]}], "statics": [{"modifies": "BlockGained", "stage": "Multiply", "amount": 0, "num": 0, "den": 1, "condition": "Always"}]},
 {"id": "Shackled", "cap": 999, "hooks": [{"trigger": "OwnerTurnEnd", "condition": "Always", "effects": [{"Apply": {"power": "Strength", "amount": 1, "target": "Me"}}, "RemoveSelf"]}]},
@@ -37,6 +37,9 @@
 {"id": "Transmutation", "cost": -1, "type": "Skill", "exhaust": true, "effects": [{"MakeRandom": {"pool": "Colorless", "n": {"base": 0, "k": 1, "of": "EnergySpent"}, "pile": "Hand", "free": true, "match_level": true}}], "upgrade": {}},
 {"id": "Magnetism", "cost": 2, "type": "Power", "effects": [{"Apply": {"power": "Magnetism", "amount": 1, "target": "Me"}}], "upgrade": {"cost": -1}},
 {"id": "Enlightenment", "cost": 0, "type": "Skill", "effects": [{"CostAtMost": {"cost": 1, "combat": false}}], "upgrade": {"effects.0.CostAtMost.combat": true}},
+{"id": "Secret Technique", "cost": 0, "type": "Skill", "exhaust": true, "playable_if": {"DrawHas": "Skill"}, "effects": [{"Pick": {"kind": "DrawToHand", "n": 1, "exact": true, "of": ["Skill"]}}], "upgrade": {"exhaust": false}},
+{"id": "Secret Weapon", "cost": 0, "type": "Skill", "exhaust": true, "playable_if": {"DrawHas": "Attack"}, "effects": [{"Pick": {"kind": "DrawToHand", "n": 1, "exact": true, "of": ["Attack"]}}], "upgrade": {"exhaust": false}},
+{"id": "Violence", "cost": 0, "type": "Skill", "exhaust": true, "effects": [{"TakeRandomFromDraw": {"ty": "Attack", "n": 3}}], "upgrade": {"effects.0.TakeRandomFromDraw.n": 1}},
 {"id": "Mayhem", "cost": 2, "type": "Power", "effects": [{"Apply": {"power": "Mayhem", "amount": 1, "target": "Me"}}], "upgrade": {"cost": -1}},
 {"id": "Ascender's Bane", "cost": -2, "type": "Curse", "ethereal": true, "effects": []},
 {"id": "Clumsy", "cost": -2, "type": "Curse", "ethereal": true, "effects": []},

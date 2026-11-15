@@ -119,6 +119,8 @@ pub fn render(s: &CombatState) -> String {
             ChanceEvent::RandomUpgrade => "random hand card upgraded".into(),
             ChanceEvent::ExhaustSave { .. } => "exhaust save roll".into(),
             ChanceEvent::MakeRandom { .. } => "random card made".into(),
+            ChanceEvent::DrawInstance { .. } => "which copy leaves the draw pile".into(),
+            ChanceEvent::TakeRandom { .. } => "random cards taken from the draw pile".into(),
         };
         let _ = write!(out, "\n(paused at chance event: {what})");
     }
@@ -156,5 +158,7 @@ pub fn pending_text(s: &CombatState) -> Option<String> {
         ChanceEvent::RandomUpgrade => "random hand card upgraded".into(),
         ChanceEvent::ExhaustSave { .. } => "exhaust save roll".into(),
         ChanceEvent::MakeRandom { .. } => "random card made".into(),
+        ChanceEvent::DrawInstance { .. } => "which copy leaves the draw pile".into(),
+        ChanceEvent::TakeRandom { .. } => "random cards taken from the draw pile".into(),
     })
 }

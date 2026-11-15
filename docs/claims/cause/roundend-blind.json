@@ -11,7 +11,7 @@
     },
     {
       "path": "py/src/features.rs",
-      "sha256": "84d985246d6153d8f095104f834f648e3265e5ee3d42562040cb54fc1a5fd2dd"
+      "sha256": "a5f726a8fc04f085b5f0dbba16f87f350b6ebcd166591dfd58420f532c37c64b"
     },
     {
       "path": "content/powers.json",
@@ -93,5 +93,5 @@
       "until": "2026-11-13T09:29:07+07:00 @ 3123201a"
     }
   ],
-  "seal": "cba864232d06e3268895edb711d8e95febefc8ab32f52a344456361408116f8a"
+  "seal": "5ad50aa371f6bcbed14b487488cb937ccdbec8f88ba17327da68dd4f6f07c51c"
 }

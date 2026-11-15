@@ -15,7 +15,7 @@
     },
     {
       "path": "py/src/lib.rs",
-      "sha256": "01107a2978bbd39e3d696a09d6fc33fec8369157229a0936b6568800f0287210"
+      "sha256": "76a9d9631ddcc59051e92c88c4ef7c23d15165acab70f61291df987feca2c807"
     }
   ],
   "owner": false,
@@ -37,5 +37,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "ab9026a055410e2be0dd499c45e8870be7dfe963fab1bbf3f6d32db16dd6d50b"
+  "seal": "6581aafa84023518196d89a691abe16e9a34a0047e6713b6c7b8d59bf52d7243"
 }

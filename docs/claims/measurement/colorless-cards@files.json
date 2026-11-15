@@ -1,27 +1,27 @@
 {
   "key": "measurement/colorless-cards@files",
-  "rev": 10,
-  "value": "28 of the game's 34 in-combat colorless cards load from content/packs/act1-colorless.json with upgrades (Blind, Trip, Jack of All Trades as successors), each tested base and upgraded vs its class (engine/tests/colorless.rs); the Colorless pool is the game's 34 less the 6 unloaded (discovery.rs). NoBlock zeroes card block only. Enlightenment is the latest to load.",
+  "rev": 11,
+  "value": "31 of the game's 34 in-combat colorless cards load from content/packs/act1-colorless.json with upgrades (Blind, Trip, Jack of All Trades as successors), each tested base and upgraded vs its class (engine/tests/colorless.rs); the Colorless pool is the game's 34 less the 3 unloaded (discovery.rs). NoBlock zeroes card block only. Secret Technique, Secret Weapon and Violence are the latest to load.",
   "status": "active",
   "sources": [
     {
       "path": "content/packs/act1-colorless.json",
-      "sha256": "f31deca3f13aafec97217aca09309f6b9b851857672889e6286695d97201a16d"
+      "sha256": "ccd2ac881cfbe2abbbb27ea176e9d15b7c8a7c26147ea8b5de3d6b240011061a"
     },
     {
       "path": "engine/tests/colorless.rs",
-      "sha256": "9474cd0456e9f98c04ea589bdcab6ddcbdb7759d0738fc8670841304743300bc"
+      "sha256": "3afb52a8057eb5f7f1796fa6868b0f351eb45edcc626a3ef8d9e58c3c593ab14"
     },
     {
       "path": "engine/tests/discovery.rs",
-      "sha256": "1cdd905a984db44936e9723d1edf735fcce2bab01d742315fd7a269a11c379ea"
+      "sha256": "689d7dc8662f76b7ace435478b1f91073534ce8f0a7a3741624f0e3124230ad6"
     }
   ],
   "owner": false,
   "pinned": false,
-  "note": "Enlightenment (build-plans row 10) landed in f08f165e, 8dd20cc8",
+  "note": "build-plans row 11 landed in d9601e23, 0cb8f2a3",
   "by": "7f7283c0-5c38-4c8a-b03a-832c461de822",
-  "at": "2026-11-15T13:41:49+07:00 @ d221ce9e",
+  "at": "2026-11-15T15:03:22+07:00 @ 0cb8f2a3",
   "confirms": [],
   "flags": [],
   "history": [
@@ -222,7 +222,29 @@
       "by": "7f7283c0-5c38-4c8a-b03a-832c461de822",
       "at": "2026-11-15T12:37:06+07:00 @ ced060bf",
       "until": "2026-11-15T13:41:49+07:00 @ d221ce9e"
+    },
+    {
+      "rev": 10,
+      "value": "28 of the game's 34 in-combat colorless cards load from content/packs/act1-colorless.json with upgrades (Blind, Trip, Jack of All Trades as successors), each tested base and upgraded vs its class (engine/tests/colorless.rs); the Colorless pool is the game's 34 less the 6 unloaded (discovery.rs). NoBlock zeroes card block only. Enlightenment is the latest to load.",
+      "sources": [
+        {
+          "path": "content/packs/act1-colorless.json",
+          "sha256": "f31deca3f13aafec97217aca09309f6b9b851857672889e6286695d97201a16d"
+        },
+        {
+          "path": "engine/tests/colorless.rs",
+          "sha256": "9474cd0456e9f98c04ea589bdcab6ddcbdb7759d0738fc8670841304743300bc"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "1cdd905a984db44936e9723d1edf735fcce2bab01d742315fd7a269a11c379ea"
+        }
+      ],
+      "owner": false,
+      "by": "7f7283c0-5c38-4c8a-b03a-832c461de822",
+      "at": "2026-11-15T13:41:49+07:00 @ d221ce9e",
+      "until": "2026-11-15T15:03:22+07:00 @ 0cb8f2a3"
     }
   ],
-  "seal": "192ed69b349f72f562298126cb71242ff90dac2c27d17ff9beab774c04efc2fe"
+  "seal": "b481441818be70953a41b6af7cc91c18c4b23e4e7d32680700c01077cd89719a"
 }

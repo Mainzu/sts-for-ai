@@ -269,3 +269,46 @@ fn turn_costs_round_trip() {
         assert!(try_decode(&encode(&two)).is_none());
     }
 }
+
+/// Cards taken out of the draw pile (colorless build B): a floater's slack
+/// (section 23) and the events `DrawInstance` (tag 17) and `TakeRandom`
+/// (tag 18) round-trip; a state without any encodes as it did.
+#[test]
+fn taken_cards_round_trip() {
+    use sts_engine::chance::ChanceEvent;
+    use sts_engine::cards::CardType;
+    use sts_engine::state::Top;
+    let card = |n: &str| CardId::from_name(n).unwrap();
+    let (strike, defend, wound, bash) = (card("Strike"), card("Defend"), card("Wound"), card("Bash"));
+    let mut rng = Rng::new(3);
+    let mut s = CombatState::new_as(Character::Ironclad, &deck(Character::Ironclad, 2), 80, 80, Encounter::JawWorm, &mut rng);
+    while s.pending.is_some() {
+        s.resolve_chance(&mut rng);
+    }
+    s.set_draw(Pile::from_cards(&[strike, strike, defend, wound, bash]));
+    s.top = Top::from_parts(&[bash], &[(wound, 1)]).unwrap();
+    let plain = encode(&s);
+    assert_eq!(decode(&plain), s);
+    // Slack: the Wound is in some of the places 1 to 2 only; a second
+    // floater with none after it, and equal `above` with different slack
+    // stay in their order.
+    s.top = Top::from_parts_slack(&[bash], &[(wound, 1, 1), (defend, 1, 0)]).unwrap();
+    assert_eq!(s.top.floaters_slack().collect::<Vec<_>>(), vec![(wound, 1, 1), (defend, 1, 0)]);
+    let bytes = encode(&s);
+    assert_ne!(bytes, plain);
+    assert_eq!(decode(&bytes), s);
+    // A slack past the places, or all zero slacks in section 23, don't decode.
+    let mut t = s.clone();
+    t.top = Top::from_parts_slack(&[bash], &[(wound, 1, 9)]).unwrap();
+    assert!(try_decode(&encode(&t)).is_none());
+    // The events, with the cards they name in the draw pile.
+    for ev in [ChanceEvent::DrawInstance { card: strike }, ChanceEvent::TakeRandom { ty: CardType::Attack, n: 3 }, ChanceEvent::TakeRandom { ty: CardType::Skill, n: 1 }] {
+        let mut u = s.clone();
+        u.pending = Some(ev);
+        assert_eq!(decode(&encode(&u)), u, "{ev:?}");
+    }
+    // A copy that isn't in the pile can't be taken.
+    let mut u = s.clone();
+    u.pending = Some(ChanceEvent::DrawInstance { card: card("Anger") });
+    assert!(try_decode(&encode(&u)).is_none());
+}

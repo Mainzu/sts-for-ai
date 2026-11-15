@@ -6,7 +6,7 @@
   "sources": [
     {
       "path": "py/src/lib.rs",
-      "sha256": "01107a2978bbd39e3d696a09d6fc33fec8369157229a0936b6568800f0287210"
+      "sha256": "76a9d9631ddcc59051e92c88c4ef7c23d15165acab70f61291df987feca2c807"
     },
     {
       "path": "scripts/selfplay.py",
@@ -74,5 +74,5 @@
       "until": "2026-11-13T19:20:53+07:00 @ c070cc5c"
     }
   ],
-  "seal": "8824aab3aac8af2b9a243959dd7c2432b7c8aa4bc3acb069bcd2d1591fc64869"
+  "seal": "0eaf2160209ff71f2518749da37f555eb3613e2da270cf84062603c8f438c04b"
 }

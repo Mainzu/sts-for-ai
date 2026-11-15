@@ -10,7 +10,7 @@
     },
     {
       "path": "content/packs/act1-colorless.json",
-      "sha256": "f31deca3f13aafec97217aca09309f6b9b851857672889e6286695d97201a16d"
+      "sha256": "ccd2ac881cfbe2abbbb27ea176e9d15b7c8a7c26147ea8b5de3d6b240011061a"
     },
     {
       "path": "engine/tests/act1_potions.rs",
@@ -22,7 +22,7 @@
     },
     {
       "path": "engine/tests/colorless.rs",
-      "sha256": "9474cd0456e9f98c04ea589bdcab6ddcbdb7759d0738fc8670841304743300bc"
+      "sha256": "3afb52a8057eb5f7f1796fa6868b0f351eb45edcc626a3ef8d9e58c3c593ab14"
     }
   ],
   "owner": false,
@@ -103,5 +103,5 @@
       "until": "2026-11-13T20:12:19+07:00 @ cbadc349"
     }
   ],
-  "seal": "b53380404e35e69b88fbadbc00354aedc0f856142d62c7236927f1095b79ee47"
+  "seal": "6de9d09af80fd18207ad2bb241bd941a7fbe5e0a2667a56957a74e19c2be9f4d"
 }

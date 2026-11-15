@@ -1088,6 +1088,25 @@ fn magnetism_card_stats() {
     }
 }
 
+/// A Magnetism power bound into a fight whose deck has no Magnetism (its
+/// card played and gone, as `from_view` rebuilds it) binds the Colorless
+/// pool too: its turn-start roll makes a card instead of panicking.
+#[test]
+fn a_bound_magnetism_power_binds_its_pool() {
+    let (mut s, _) = combat2(&["Defend"; 10], &[]);
+    let (b, mag) = bind_power(&s.binding, "Magnetism").unwrap();
+    s.binding = b;
+    s.player.powers.add(mag, 1);
+    let mut rng = Rng::new(9);
+    s.apply_action(Action::EndTurn).unwrap();
+    while s.pending.is_some() {
+        s.resolve_chance(&mut rng);
+    }
+    let made: Vec<String> = s.hand.iter().map(|(x, _)| s.binding.def(x).name.trim_start_matches("gen:").to_string()).filter(|n| n != "Defend").collect();
+    assert_eq!(made.len(), 1, "{made:?}");
+    assert!(colorless_names().contains(&made[0]), "{made:?}");
+}
+
 /// A1, A2: each stack makes one random colorless card in hand at turn
 /// start, rolled before the turn's draw.
 #[test]
@@ -1482,4 +1501,268 @@ fn dual_wield_copies_a_cost_this_turn_mark() {
         s.apply_action(Action::Choose(bash)).unwrap();
     }
     assert_eq!((s.hand.count(bash), s.turn_costs.count(bash)), (3, 1));
+}
+
+// ---- Colorless build B: taking cards out of the draw pile (Secret
+// Technique, Secret Weapon, Violence;
+// docs/research/build-plans-2026-11-14/colorless-piles.md tests B1 to B9).
+
+/// Plays `card` and stops at the first chance event (`play` samples them).
+fn play_raw(s: &mut CombatState, card: CardId) {
+    let target = if s.binding.def(card).targeted() { Some(0) } else { None };
+    s.apply_action(Action::Play { card, target }).unwrap();
+}
+
+/// A card of `s`'s hand other than `not`.
+fn other_card(s: &CombatState, not: CardId) -> CardId {
+    s.hand.iter().map(|(c, _)| c).find(|&c| c != not).expect("another card in hand")
+}
+
+#[test]
+fn secret_technique_and_weapon_need_their_type_in_the_draw_pile() {
+    // B1: `canUse` is false without a Skill (Attack) in the draw pile.
+    for (name, yes, no) in [("Secret Technique", "Defend", "Strike"), ("Secret Weapon", "Strike", "Defend")] {
+        let (mut s, c) = setup(name, &[]);
+        s.set_draw(pile(&[no, no]));
+        assert!(!s.is_legal(Action::Play { card: c, target: None }), "{name}");
+        s.set_draw(pile(&[no, yes]));
+        assert!(s.is_legal(Action::Play { card: c, target: None }), "{name}");
+    }
+    // Havoc plays the top card; with no Skill left in the draw pile it is
+    // exhausted unplayed.
+    let (mut s, havoc) = setup("Havoc", &["gen:Secret Technique"]);
+    let st = other_card(&s, havoc);
+    s.hand = Hand::from_cards(&[havoc]);
+    s.set_draw(Pile::from_cards(&[st]));
+    play(&mut s, havoc);
+    assert_eq!((s.exhaust().count(st), s.hand.len(), s.draw().len()), (1, 0, 0));
+}
+
+#[test]
+fn secret_technique_picks_one_skill_kind_from_the_draw_pile() {
+    // B2: draw {Defend 2, Strike 3, Shrug It Off}: Defend or Shrug It Off.
+    for (name, exhausted) in [("Secret Technique", true), ("Secret Technique+", false)] {
+        let (mut s, c) = setup(name, &[]);
+        s.set_draw(pile(&["Defend", "Defend", "Strike", "Strike", "Strike", "Shrug It Off"]));
+        play(&mut s, c);
+        let mut want = vec![id("Defend"), id("Shrug It Off")];
+        want.sort();
+        let mut got = choices(&s);
+        got.sort();
+        assert_eq!(got, want, "{name}");
+        s.apply_action(Action::Choose(id("Shrug It Off"))).unwrap();
+        assert_eq!((s.stage, s.pending), (Stage::PlayerTurn, None), "{name}");
+        assert_eq!((s.hand.count(id("Shrug It Off")), s.hand.len()), (1, 1), "{name}");
+        assert_eq!(s.draw().to_pile(), pile(&["Defend", "Defend", "Strike", "Strike", "Strike"]), "{name}");
+        assert_eq!((s.exhaust().count(c), s.discard().count(c)), (exhausted as u8, !exhausted as u8), "{name}");
+        assert_eq!(s.player.energy, 3, "{name}");
+    }
+    // Secret Weapon: the same with Attacks (B9's mirror).
+    for (name, exhausted) in [("Secret Weapon", true), ("Secret Weapon+", false)] {
+        let (mut s, c) = setup(name, &[]);
+        s.set_draw(pile(&["Strike", "Strike", "Defend", "Defend", "Defend", "Bash"]));
+        play(&mut s, c);
+        let mut want = vec![id("Strike"), id("Bash")];
+        want.sort();
+        let mut got = choices(&s);
+        got.sort();
+        assert_eq!(got, want, "{name}");
+        s.apply_action(Action::Choose(id("Bash"))).unwrap();
+        assert_eq!((s.hand.count(id("Bash")), s.hand.len(), s.draw().len()), (1, 1, 5), "{name}");
+        assert_eq!((s.exhaust().count(c), s.discard().count(c)), (exhausted as u8, !exhausted as u8), "{name}");
+    }
+}
+
+#[test]
+fn one_kind_in_the_draw_pile_moves_at_once() {
+    // B3: the game's grid opens only for two or more cards; identical
+    // copies are one choice here.
+    let (mut s, c) = setup("Secret Technique", &[]);
+    s.set_draw(pile(&["Defend", "Defend", "Strike", "Strike", "Strike"]));
+    play(&mut s, c);
+    assert_eq!((s.stage, s.pending, s.hand.count(id("Defend")), s.draw().len()), (Stage::PlayerTurn, None, 1, 4));
+}
+
+#[test]
+fn a_full_hand_sends_the_chosen_card_to_the_discard_pile() {
+    // B4: no play reaches this (the card in play and Havoc leave at most 9
+    // in hand), so the pick is open with the hand filled up to 10.
+    let (mut s, c) = setup("Secret Technique", &["Strike"]);
+    s.set_draw(pile(&["Defend", "Shrug It Off"]));
+    play(&mut s, c);
+    assert!(s.pick().is_some());
+    for _ in 0..9 {
+        s.hand.add(id("Strike"), 1);
+    }
+    assert_eq!(s.hand.len(), 10);
+    s.apply_action(Action::Choose(id("Defend"))).unwrap();
+    assert_eq!((s.hand.len(), s.discard().count(id("Defend")), s.draw().len()), (10, 1, 1));
+}
+
+/// The states a pending event leaves, each with its chance.
+fn resolved(s: &CombatState) -> Vec<(f64, CombatState)> {
+    let Some(ChanceOutcomes::Listed(v)) = s.chance_outcomes(1000) else { panic!("listed") };
+    v
+}
+
+/// The chance that the next draw is `c`, over the states `v` (a mixture).
+fn next_is(v: &[(f64, CombatState)], c: CardId) -> f64 {
+    v.iter().map(|(w, t)| w * common::engine_draw_odds(t, 1).iter().filter(|(h, _)| h[0] == c).map(|x| x.1).sum::<f64>()).sum()
+}
+
+#[test]
+fn a_known_head_copy_may_be_the_one_taken() {
+    // B5: Headbutt put a Defend on top of {Defend, Strike 3}; Secret
+    // Technique takes a Defend: the known one or the plain one, alike.
+    // P(next draw Defend) = 1/2 x 1/4 + 1/2 x 1 = 5/8, the uniform model.
+    let (mut s, st) = setup("Secret Technique", &["Headbutt"]);
+    let (defend, strike) = (id("Defend"), id("Strike"));
+    s.set_draw(pile(&["Defend", "Strike", "Strike", "Strike"]));
+    s.set_discard(pile(&["Defend"]));
+    play(&mut s, id("Headbutt"));
+    s.apply_action(Action::Choose(defend)).unwrap();
+    assert_eq!(known(&s), vec![defend]);
+    play_raw(&mut s, st);
+    assert_eq!(s.pending, Some(ChanceEvent::DrawInstance { card: defend }));
+    let v = resolved(&s);
+    assert_eq!(v.len(), 2);
+    assert!(v.iter().all(|(p, t)| (p - 0.5).abs() < 1e-12 && t.hand.count(defend) == 1));
+    assert!((next_is(&v, defend) - 5.0 / 8.0).abs() < 1e-12);
+    common::assert_mixture_odds_match(&v, &[defend], &[defend, strike, strike, strike], &[common::PileOp::Remove(defend)]);
+    // A sampled run takes either, and every pause is gone.
+    let mut t = s.clone();
+    t.advance(&mut Rng::new(4));
+    assert_eq!((t.pending, t.hand.count(defend), t.draw().len()), (None, 1, 4));
+}
+
+#[test]
+fn taking_a_card_keeps_the_floaters_odds() {
+    // B6: plain {Strike 3, Defend}, Wild Strike's Wound under the top, Secret
+    // Technique takes the Defend: the Wound can be next only when the
+    // Defend was the top card (1/4) and the Wound just under it (1/4).
+    let (mut s, st) = setup("Secret Technique", &["Wild Strike"]);
+    let (defend, strike, wound) = (id("Defend"), id("Strike"), id("Wound"));
+    s.set_draw(pile(&["Strike", "Strike", "Strike", "Defend"]));
+    play(&mut s, id("Wild Strike"));
+    assert_eq!(s.top.floaters().collect::<Vec<_>>(), vec![(wound, 1)]);
+    play_raw(&mut s, st);
+    assert_eq!(s.pending, Some(ChanceEvent::DrawInstance { card: defend }));
+    let v = resolved(&s);
+    assert!((next_is(&v, wound) - 1.0 / 16.0).abs() < 1e-12);
+    common::assert_mixture_odds_match(&v, &[], &[strike, strike, strike, defend], &[common::PileOp::RandomSpot(wound), common::PileOp::Remove(defend)]);
+    assert!(v.iter().all(|(_, t)| t.draw().len() == 4));
+}
+
+/// `setup` for Violence: `hand` further Defends in hand, `draw` the draw pile.
+fn violence(name: &str, hand: usize, draw: &[&str]) -> (CombatState, CardId) {
+    let fill = vec!["Defend"; hand];
+    let (mut s, c) = setup(name, &fill);
+    s.set_draw(pile(draw));
+    play_raw(&mut s, c);
+    (s, c)
+}
+
+#[test]
+fn violence_takes_random_attacks_from_the_draw_pile() {
+    // B8: {Strike 3, Bash, Defend 2}, hand 4 (5 with it): 3 of the 4
+    // Attacks, a uniform sample: all Strikes 1/4, Bash and 2 Strikes 3/4.
+    let (strike, bash, defend) = (id("Strike"), id("Bash"), id("Defend"));
+    let (s, c) = violence("Violence", 4, &["Strike", "Strike", "Strike", "Bash", "Defend", "Defend"]);
+    assert!(matches!(s.pending, Some(ChanceEvent::TakeRandom { .. })));
+    let v = resolved(&s);
+    assert_eq!(v.len(), 2);
+    for (p, t) in &v {
+        assert_eq!((t.hand.len(), t.draw().count(defend), t.exhaust().count(c)), (7, 2, 1));
+        if t.hand.count(bash) == 0 {
+            assert_eq!(t.hand.count(strike), 3);
+            assert!((p - 0.25).abs() < 1e-12);
+        } else {
+            assert_eq!((t.hand.count(strike), t.draw().count(strike)), (2, 1));
+            assert!((p - 0.75).abs() < 1e-12);
+        }
+    }
+    // One Attack in the draw pile: it moves, no event.
+    let (s, _) = violence("Violence", 4, &["Strike", "Defend", "Defend", "Defend", "Defend", "Defend"]);
+    assert_eq!((s.pending, s.hand.count(strike), s.draw().len()), (None, 1, 5));
+    // Violence+ takes 4: all of them here, no event.
+    let (s, _) = violence("Violence+", 4, &["Strike", "Strike", "Strike", "Bash", "Defend"]);
+    assert_eq!((s.pending, s.hand.count(strike), s.hand.count(bash), s.draw().len()), (None, 3, 1, 1));
+    // No Attack: nothing, and it still plays.
+    let (s, c) = violence("Violence", 4, &["Defend", "Defend"]);
+    assert_eq!((s.pending, s.hand.len(), s.draw().len(), s.exhaust().count(c)), (None, 4, 2, 1));
+    // Violence+ takes 4 of 5 Attacks: 5 outcomes by the one left behind.
+    let (s, _) = violence("Violence+", 4, &["Strike", "Strike", "Strike", "Bash", "Bash"]);
+    let v = resolved(&s);
+    assert_eq!(v.len(), 2);
+    assert!((v.iter().map(|x| x.0).sum::<f64>() - 1.0).abs() < 1e-12);
+}
+
+#[test]
+fn violence_fills_the_hand_then_the_discard_pile() {
+    // B8: hand 9 once it is played, draw {Strike 2, Bash}: the first card
+    // taken goes to the hand, the other two to the discard pile.
+    let (strike, bash) = (id("Strike"), id("Bash"));
+    let (s, _) = violence("Violence", 9, &["Strike", "Strike", "Bash"]);
+    let v = resolved(&s);
+    assert_eq!(v.len(), 2);
+    for (p, t) in &v {
+        assert_eq!((t.hand.len(), t.draw().len(), t.discard().len()), (10, 0, 2));
+        if t.hand.count(bash) == 1 {
+            assert_eq!((t.discard().count(strike), t.discard().count(bash)), (2, 0));
+            assert!((p - 1.0 / 3.0).abs() < 1e-12);
+        } else {
+            assert_eq!((t.discard().count(strike), t.discard().count(bash)), (1, 1));
+            assert!((p - 2.0 / 3.0).abs() < 1e-12);
+        }
+    }
+}
+
+/// What a view writes of `Top` (known cards, floaters oldest first with
+/// above and slack) rebuilds the same `Top`, equal and with an equal hash
+/// (`Combat.view` / `from_view`, py/src/lib.rs), for states a Secret
+/// Technique take leaves; a run of equal (above, slack) in any order too.
+#[test]
+fn a_view_of_top_rebuilds_it_with_slack_and_age() {
+    use std::hash::{Hash, Hasher};
+    use sts_engine::state::Top;
+    let h = |t: &Top| {
+        let mut x = std::collections::hash_map::DefaultHasher::new();
+        t.hash(&mut x);
+        x.finish()
+    };
+    let (mut s, st) = setup("Secret Technique", &["Wild Strike", "Wild Strike"]);
+    let (defend, wound) = (id("Defend"), id("Wound"));
+    s.set_draw(pile(&["Strike", "Strike", "Strike", "Defend"]));
+    s.player.energy = 5;
+    for _ in 0..2 {
+        play(&mut s, id("Wild Strike"));
+    }
+    play_raw(&mut s, st);
+    let v = resolved(&s);
+    assert!(v.iter().any(|(_, t)| t.top.floaters_slack().any(|f| f.2 > 0)), "a slack to carry");
+    for (_, t) in &v {
+        let k: Vec<CardId> = t.top.known().collect();
+        let mut f: Vec<(CardId, u8, u8)> = t.top.floaters_slack().collect();
+        let back = Top::from_parts_slack(&k, &f);
+        assert_eq!(back.as_ref(), (!t.top.is_empty()).then_some(&t.top));
+        if let Some(b) = back {
+            assert_eq!((h(&b), &b), (h(&t.top), &t.top));
+        }
+        // The view sorts a run of equal (above, slack) by name.
+        f.reverse();
+        let mut run_ok = true;
+        for w in f.windows(2) {
+            run_ok &= (w[0].1, w[0].2) != (w[1].1, w[1].2) || w[0].0 == w[1].0;
+        }
+        if run_ok && !f.is_empty() {
+            f.reverse();
+            assert_eq!(Top::from_parts_slack(&k, &f).as_ref(), Some(&t.top));
+        }
+    }
+    // Two ages with a slack: the Wounds' order and slack matter.
+    let a = Top::from_parts_slack(&[], &[(wound, 1, 1), (defend, 1, 0)]).unwrap();
+    let b = Top::from_parts_slack(&[], &[(defend, 1, 0), (wound, 1, 1)]).unwrap();
+    assert_ne!(a, b);
+    assert_eq!(a, Top::from_parts_slack(&[], &a.floaters_slack().collect::<Vec<_>>()).unwrap());
+    assert_eq!(Top::from_parts(&[], &[(wound, 1), (defend, 1)]), Top::from_parts_slack(&[], &[(wound, 1, 0), (defend, 1, 0)]));
 }

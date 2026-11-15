@@ -18,6 +18,7 @@
   "ZeroCostRandomTurn": "a random card in your hand costs 0 this turn",
   "UpgradeRandom": "upgrade a random card in your hand for the rest of combat",
   "CostAtMost": "cards in your hand cost at most {cost} this turn{combat}",
+  "TakeRandomFromDraw": "put {n} random {types} from your draw pile into your hand",
   "Draw": "draw {0|card}{per}",
   "RandomizeCost": "give {0} a random cost of 0 to 3 for the rest of combat",
   "GainEnergy": "gain {0} energy{per}",
@@ -78,7 +79,8 @@
   "ReturnFromExhaust": "put {n|card} from your exhaust pile into your hand",
   "UpgradeFromHand": "upgrade {n|card} in your hand for the rest of combat",
   "HandToTop": "put {n|card} from your hand on top of your draw pile",
-  "CopyInHand": "choose {n|card} in your hand and add {copies|copy} of it to your hand"
+  "CopyInHand": "choose {n|card} in your hand and add {copies|copy} of it to your hand",
+  "DrawToHand": "put {n|card} from your draw pile into your hand"
  },
  "pick_rule": {"free_this_turn": "; it costs 0 this turn", "of": "; only {of} cards"},
  "pile": {"Draw": "draw pile", "Discard": "discard pile", "Hand": "hand"},
@@ -122,6 +124,7 @@
   "OwnerBlockIs": "if its owner has exactly {0} block",
   "Applying": "if the power is {0}",
   "HandNone": "if no {0} is in your hand",
+  "DrawHas": "if your draw pile has a {0}",
   "TargetLacks": "if the enemy has no {0}",
   "TargetDied": "if this kills the enemy",
   "CounterAtMost": "if this relic's counter is at most {0}",

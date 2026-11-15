@@ -1805,7 +1805,7 @@ def _condition(c, family="condition"):
     w = word(family, key, default=f"{key} {v}" if v is not None else key)
     if key == "CardType":  # the article follows the type: "an Attack"
         return f"if it is a{'n' if str(v)[0] in 'AEIOU' else ''} {v}"
-    if key == "HandAll" and str(v)[:1] in "AEIOU":  # "an Attack"
+    if key in ("HandAll", "DrawHas") and str(v)[:1] in "AEIOU":  # "an Attack"
         w = w.replace("a {0}", "an {0}")
     if isinstance(v, dict):  # Holds: worded by its side
         return fill(w.get(v.get("side"), key) if isinstance(w, dict) else w, v)
@@ -1888,6 +1888,8 @@ def effect_text(e, user, split=None, self_name=None):
         f["except"] = " except Attacks" if ex == "Attack" else (f" except {ex}s" if ex else "")
     if key == "CostAtMost":
         f["combat"] = " and for the rest of combat" if v.get("combat") else ""
+    if key == "TakeRandomFromDraw":  # Violence: "3 random Attacks", "1 random Attack"
+        f["types"] = v["ty"] + ("" if v["n"] == 1 else "s")
     if key == "PlayTop":
         f["exhaust"] = (" and exhaust it" if v.get("n", 1) == 1 else " and exhaust them") if v.get("exhaust") else ""
     if key == "ObtainRandomPotions":  # docs/specs/act1-singles.md section 5

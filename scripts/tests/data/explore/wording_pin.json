@@ -1188,6 +1188,50 @@
      "Cards in your hand cost at most 1 this turn and for the rest of combat."
     ]
    },
+   "Secret Technique": {
+    "head": "Secret Technique · 0 Cost · Skill",
+    "lines": [
+     "Can only be played if your draw pile has a Skill.",
+     "Put 1 card from your draw pile into your hand; only Skill cards.",
+     "Exhaust."
+    ]
+   },
+   "Secret Technique+": {
+    "head": "Secret Technique+ · 0 Cost · Skill",
+    "lines": [
+     "Can only be played if your draw pile has a Skill.",
+     "Put 1 card from your draw pile into your hand; only Skill cards."
+    ]
+   },
+   "Secret Weapon": {
+    "head": "Secret Weapon · 0 Cost · Skill",
+    "lines": [
+     "Can only be played if your draw pile has an Attack.",
+     "Put 1 card from your draw pile into your hand; only Attack cards.",
+     "Exhaust."
+    ]
+   },
+   "Secret Weapon+": {
+    "head": "Secret Weapon+ · 0 Cost · Skill",
+    "lines": [
+     "Can only be played if your draw pile has an Attack.",
+     "Put 1 card from your draw pile into your hand; only Attack cards."
+    ]
+   },
+   "Violence": {
+    "head": "Violence · 0 Cost · Skill",
+    "lines": [
+     "Put 3 random Attacks from your draw pile into your hand.",
+     "Exhaust."
+    ]
+   },
+   "Violence+": {
+    "head": "Violence+ · 0 Cost · Skill",
+    "lines": [
+     "Put 4 random Attacks from your draw pile into your hand.",
+     "Exhaust."
+    ]
+   },
    "Mayhem": {
     "head": "Mayhem · 2 Cost · Power",
     "lines": [
@@ -15785,6 +15829,42 @@
    "type": "Skill",
    "source": "pack:act1-colorless",
    "text": "Cards in your hand cost at most 1 this turn and for the rest of combat."
+  },
+  "cards/pack:act1-colorless/Secret Technique": {
+   "name": "Secret Technique",
+   "type": "Skill",
+   "source": "pack:act1-colorless",
+   "text": "Can only be played if your draw pile has a Skill. Put 1 card from your draw pile into your hand; only Skill cards. Exhaust."
+  },
+  "cards/pack:act1-colorless/Secret Technique+": {
+   "name": "Secret Technique+",
+   "type": "Skill",
+   "source": "pack:act1-colorless",
+   "text": "Can only be played if your draw pile has a Skill. Put 1 card from your draw pile into your hand; only Skill cards."
+  },
+  "cards/pack:act1-colorless/Secret Weapon": {
+   "name": "Secret Weapon",
+   "type": "Skill",
+   "source": "pack:act1-colorless",
+   "text": "Can only be played if your draw pile has an Attack. Put 1 card from your draw pile into your hand; only Attack cards. Exhaust."
+  },
+  "cards/pack:act1-colorless/Secret Weapon+": {
+   "name": "Secret Weapon+",
+   "type": "Skill",
+   "source": "pack:act1-colorless",
+   "text": "Can only be played if your draw pile has an Attack. Put 1 card from your draw pile into your hand; only Attack cards."
+  },
+  "cards/pack:act1-colorless/Violence": {
+   "name": "Violence",
+   "type": "Skill",
+   "source": "pack:act1-colorless",
+   "text": "Put 3 random Attacks from your draw pile into your hand. Exhaust."
+  },
+  "cards/pack:act1-colorless/Violence+": {
+   "name": "Violence+",
+   "type": "Skill",
+   "source": "pack:act1-colorless",
+   "text": "Put 4 random Attacks from your draw pile into your hand. Exhaust."
   },
   "cards/pack:act1-colorless/Mayhem": {
    "name": "Mayhem",

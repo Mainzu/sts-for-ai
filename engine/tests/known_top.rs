@@ -280,44 +280,68 @@ fn copies_of_a_floater_share_an_entry() {
     assert_eq!(Top::from_parts(&[], &[(wound, 0)]), None);
 }
 
-/// Random sequences of random-spot inserts, cards put on top and draws,
-/// each card a kind of its own: every draw's odds and the odds of every
-/// next hand at the end equal an exact enumeration of the game's pile.
-#[test]
-fn random_sequences_keep_the_games_odds() {
+/// The engine's states after a uniformly random copy of `c` left the draw
+/// pile (the hand emptied again), with their chances.
+fn engine_remove(s: &CombatState, c: CardId) -> Vec<(f64, CombatState)> {
+    let mut t = s.clone();
+    t.hand = Hand::default();
+    t.pending = Some(ChanceEvent::DrawInstance { card: c });
+    let Some(ChanceOutcomes::Listed(v)) = t.chance_outcomes(100_000) else { panic!("listed") };
+    v.into_iter()
+        .map(|(p, mut u)| {
+            u.hand = Hand::default();
+            (p, u)
+        })
+        .collect()
+}
+
+/// Random sequences of random-spot inserts, cards put on top, cards taken
+/// out of the pile at random and draws, over `unknown` (in random order):
+/// the engine's states (a mixture: which copy left is a chance event) and
+/// the game's pile orders, enumerated, give every draw's odds and the odds
+/// of every next hand at the end equal.
+fn random_sequences(unknown: &[CardId], inserts: &[CardId], pushes: &[CardId], cases: u32, seed: u64) {
     use std::collections::BTreeMap;
-    let unknown = ["Strike", "Defend", "Anger"].map(card);
-    let inserts = ["Wound", "Dazed", "Slimed", "Burn", "Bash+", "Anger+"].map(card);
-    let pushes = ["Bash", "Clash", "Cleave"].map(card);
-    let mut rng = Rng::new(20261114);
-    for case in 0..400 {
+    let mut rng = Rng::new(seed);
+    for case in 0..cases {
         let mut s = vs(&[K::JawWorm], &[], Some(100));
-        s.set_draw(Pile::from_cards(&unknown));
+        s.set_draw(Pile::from_cards(unknown));
         // The game: each pile order (bottom first) with its chance.
-        let mut piles: Vec<(Vec<CardId>, f64)> = Vec::new();
-        let mut v = unknown.to_vec();
-        for a in 0..3 {
-            for b in 0..3 {
-                for c in 0..3 {
-                    if a != b && b != c && a != c {
-                        piles.push((vec![v[a], v[b], v[c]], 1.0 / 6.0));
-                    }
-                }
+        let mut orders: BTreeMap<Vec<CardId>, f64> = BTreeMap::new();
+        let mut idx: Vec<usize> = (0..unknown.len()).collect();
+        let mut perms = Vec::new();
+        fn rec(v: &mut Vec<usize>, i: usize, out: &mut Vec<Vec<usize>>) {
+            if i == v.len() {
+                out.push(v.clone());
+                return;
+            }
+            for j in i..v.len() {
+                v.swap(i, j);
+                rec(v, i + 1, out);
+                v.swap(i, j);
             }
         }
-        v.clear();
+        rec(&mut idx, 0, &mut perms);
+        for p in &perms {
+            *orders.entry(p.iter().map(|&i| unknown[i]).collect()).or_default() += 1.0 / perms.len() as f64;
+        }
+        let mut piles: Vec<(Vec<CardId>, f64)> = orders.into_iter().collect();
+        let mut states: Vec<(f64, CombatState)> = vec![(1.0, s)];
         let (mut ins, mut push) = (inserts.iter(), pushes.iter());
         let mut log = Vec::new();
-        for _ in 0..8 {
-            let op = rng.below(3);
+        for _ in 0..10 {
+            let op = rng.below(4);
             let spot = if op == 0 { ins.next().copied() } else { None };
             let top = if op == 1 { push.next().copied() } else { None };
+            let len = states[0].1.draw().len();
             if let Some(c) = spot {
                 log.push(format!("spot {}", c.name()));
-                let was_empty = s.draw().is_empty();
-                s.draw_mut().add(c, 1);
-                if !was_empty {
-                    s.top.add_floater_under(c);
+                for (_, s) in &mut states {
+                    let was_empty = s.draw().is_empty();
+                    s.draw_mut().add(c, 1);
+                    if !was_empty {
+                        s.top.add_floater_under(c);
+                    }
                 }
                 piles = piles
                     .into_iter()
@@ -332,18 +356,50 @@ fn random_sequences_keep_the_games_odds() {
                     .collect();
             } else if let Some(c) = top {
                 log.push(format!("top {}", c.name()));
-                s.draw_mut().add(c, 1);
-                s.top.push(c, false);
+                for (_, s) in &mut states {
+                    s.draw_mut().add(c, 1);
+                    s.top.push(c, false);
+                }
                 for (p, _) in &mut piles {
                     p.push(c);
                 }
-            } else if !s.draw().is_empty() {
+            } else if op == 3 && len > 1 {
+                // A random copy of a random kind in the pile leaves.
+                let kinds: Vec<CardId> = states[0].1.draw().iter().map(|(c, _)| c).collect();
+                let c = kinds[rng.below(kinds.len() as u32) as usize];
+                log.push(format!("remove {}", c.name()));
+                let mut next: Vec<(f64, CombatState)> = Vec::new();
+                for (w, s) in &states {
+                    for (p, u) in engine_remove(s, c) {
+                        match next.iter_mut().find(|x| x.1 == u) {
+                            Some(x) => x.0 += w * p,
+                            None => next.push((w * p, u)),
+                        }
+                    }
+                }
+                states = next;
+                let mut out: BTreeMap<Vec<CardId>, f64> = BTreeMap::new();
+                for (p, q) in piles {
+                    let k = p.iter().filter(|&&x| x == c).count();
+                    for at in (0..p.len()).filter(|&at| p[at] == c) {
+                        let mut t = p.clone();
+                        t.remove(at);
+                        *out.entry(t).or_default() += q / k as f64;
+                    }
+                }
+                piles = out.into_iter().collect();
+            } else if len > 0 {
                 // Draw: the game's odds of each card, then follow one.
                 let mut game: BTreeMap<CardId, f64> = BTreeMap::new();
                 for (p, q) in &piles {
                     *game.entry(*p.last().unwrap()).or_default() += q;
                 }
-                let eng: BTreeMap<CardId, f64> = engine_draw_odds(&s, 1).into_iter().map(|(h, p)| (h[0], p)).collect();
+                let mut eng: BTreeMap<CardId, f64> = BTreeMap::new();
+                for (w, s) in &states {
+                    for (h, p) in engine_draw_odds(s, 1) {
+                        *eng.entry(h[0]).or_default() += w * p;
+                    }
+                }
                 assert_eq!(eng.keys().collect::<Vec<_>>(), game.keys().collect::<Vec<_>>(), "case {case}: {log:?}");
                 for (c, p) in &eng {
                     assert!((p - game[c]).abs() < 1e-9, "case {case}: {log:?}: {} engine {p} game {}", c.name(), game[c]);
@@ -351,12 +407,24 @@ fn random_sequences_keep_the_games_odds() {
                 let keys: Vec<CardId> = game.keys().copied().collect();
                 let c = keys[rng.below(keys.len() as u32) as usize];
                 log.push(format!("draw {}", c.name()));
-                let mut t = s.clone();
-                t.hand = Hand::default();
-                t.pending = Some(ChanceEvent::Draw { n: 1 });
-                let Some(ChanceOutcomes::Listed(out)) = t.chance_outcomes(100) else { panic!("listed") };
-                s = out.into_iter().find(|(_, u)| u.hand.count(c) == 1).expect("that card drawn").1;
-                s.hand = Hand::default();
+                let mut next: Vec<(f64, CombatState)> = Vec::new();
+                for (w, s) in &states {
+                    let mut t = s.clone();
+                    t.hand = Hand::default();
+                    t.pending = Some(ChanceEvent::Draw { n: 1 });
+                    let Some(ChanceOutcomes::Listed(out)) = t.chance_outcomes(100) else { panic!("listed") };
+                    for (p, mut u) in out {
+                        if u.hand.count(c) == 1 {
+                            u.hand = Hand::default();
+                            match next.iter_mut().find(|x| x.1 == u) {
+                                Some(x) => x.0 += w * p,
+                                None => next.push((w * p, u)),
+                            }
+                        }
+                    }
+                }
+                let total: f64 = next.iter().map(|x| x.0).sum();
+                states = next.into_iter().map(|(w, s)| (w / total, s)).collect();
                 let total: f64 = piles.iter().filter(|(p, _)| *p.last().unwrap() == c).map(|x| x.1).sum();
                 piles = piles
                     .into_iter()
@@ -369,22 +437,55 @@ fn random_sequences_keep_the_games_odds() {
             }
         }
         // Every next hand from what is left.
-        for k in 1..=s.draw().len().min(10) {
+        let left = states[0].1.draw().len();
+        assert!(states.iter().all(|(_, s)| s.draw().len() == left), "case {case}: {log:?}");
+        for k in 1..=left.min(10) {
             let mut game: BTreeMap<Vec<CardId>, f64> = BTreeMap::new();
             for (p, q) in &piles {
                 let mut h = p[p.len() - k..].to_vec();
                 h.sort();
                 *game.entry(h).or_default() += q;
             }
-            let eng = engine_draw_odds(&s, k as u8);
+            let mut eng: BTreeMap<Vec<CardId>, f64> = BTreeMap::new();
+            for (w, s) in &states {
+                for (h, p) in engine_draw_odds(s, k as u8) {
+                    *eng.entry(h).or_default() += w * p;
+                }
+            }
             assert_eq!(eng.len(), game.len(), "case {case}: {log:?}: draw {k}");
             for ((h, p), (g, q)) in eng.iter().zip(&game) {
                 assert_eq!(h, g, "case {case}: {log:?}: draw {k}");
-                assert!((p - q).abs() < 1e-9, "case {case}: {log:?}: draw {k}: {h:?} engine {p} game {q}");
+                assert!((p - q).abs() < 1e-9, "case {case}: {log:?}: draw {k}: {h:?} engine {p} game {q}
+{:?}", states.iter().map(|(w, s)| (*w, s.top.known().map(|c| c.name()).collect::<Vec<_>>(), s.top.floater_entries_slack().map(|(c, a, k, sl)| (c.name(), a, k, sl)).collect::<Vec<_>>(), engine_draw_odds(s, k as u8).into_iter().map(|(h, p)| (h.iter().map(|c| c.name()).collect::<Vec<_>>(), p)).collect::<Vec<_>>())).collect::<Vec<_>>());
             }
         }
-        assert_eq!(codec::decode(&codec::encode(&s)), s, "case {case}: {log:?}");
+        for (_, s) in &states {
+            assert_eq!(codec::decode(&codec::encode(s)), *s, "case {case}: {log:?}");
+        }
     }
+}
+
+/// Random sequences of random-spot inserts, cards put on top, cards taken
+/// out of the pile at random and draws, each card a kind of its own: every
+/// draw's odds and the odds of every next hand at the end equal an exact
+/// enumeration of the game's pile.
+#[test]
+fn random_sequences_keep_the_games_odds() {
+    let unknown = ["Strike", "Defend", "Anger"].map(card);
+    let inserts = ["Wound", "Dazed", "Slimed", "Burn", "Bash+", "Anger+"].map(card);
+    let pushes = ["Bash", "Clash", "Cleave"].map(card);
+    random_sequences(&unknown, &inserts, &pushes, 400, 20261114);
+}
+
+/// The same with copies: the cards put in and taken out are often kinds
+/// the pile holds already, so the copy that leaves can be a known card, a
+/// floater or a plain one.
+#[test]
+fn random_sequences_with_copies_keep_the_games_odds() {
+    let unknown = ["Strike", "Strike", "Defend", "Defend"].map(card);
+    let inserts = ["Wound", "Strike", "Wound", "Defend", "Bash"].map(card);
+    let pushes = ["Defend", "Strike", "Wound"].map(card);
+    random_sequences(&unknown, &inserts, &pushes, 250, 20261115);
 }
 
 /// A Wound already in the pile and one put under the top: the plain Wound

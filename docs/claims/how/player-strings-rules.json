@@ -19,7 +19,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "181ef6905890da762158adf650111fd7209d74c20825596be3a355142bf3a21f"
+      "sha256": "1db08cba9a486bf3686b7564be7c77d0474f7917b885a5206aae89c6181dfad6"
     }
   ],
   "owner": false,
@@ -53,5 +53,5 @@
       "until": "2026-11-13T20:43:47+07:00 @ d240a173"
     }
   ],
-  "seal": "90b2847da04180895601db2d3078e6d8a581de4bbef1154b27f81fefc1b8ac9c"
+  "seal": "0252489b6cdad3efa5b1fc9a922ef0f869411b3439ddebb68444d3eb3a9e5d3a"
 }

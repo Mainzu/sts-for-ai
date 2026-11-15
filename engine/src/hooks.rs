@@ -272,6 +272,9 @@ pub enum Condition {
     /// No card of this type is in the player's hand, the card in play
     /// already gone from it (Impatience; the game's `ConditionalDrawAction`).
     HandNone(CardType),
+    /// The draw pile holds a card of this type (a card's `playable_if`:
+    /// Secret Technique, Secret Weapon).
+    DrawHas(CardType),
     /// The chosen target holds none of this power (Dark Shackles: Artifact).
     TargetLacks(Power),
     /// The power being applied is a debuff, or a `debuff_if_negative` one

@@ -257,6 +257,7 @@ pub fn effect_name(e: &Effect) -> &'static str {
         Effect::ZeroCostRandomTurn => "ZeroCostRandomTurn",
         Effect::UpgradeRandom => "UpgradeRandom",
         Effect::CostAtMost { .. } => "CostAtMost",
+        Effect::TakeRandomFromDraw { .. } => "TakeRandomFromDraw",
         Effect::Draw(_) => "Draw",
         Effect::RandomizeCost(_) => "RandomizeCost",
         Effect::GainEnergy(_) => "GainEnergy",
@@ -349,6 +350,7 @@ pub fn number<'a>(e: &'a mut Effect, name: &str, field: &str) -> Option<Num<'a>>
             "combat" => Some(Num::Bool(combat)),
             _ => None,
         },
+        Effect::TakeRandomFromDraw { n, .. } => (field == "n").then_some(Num::U8(n)),
         Effect::Pick { n, copies, .. } => match field {
             "n" => Some(Num::U8(n)),
             "copies" => Some(Num::U8(copies)),
@@ -385,6 +387,7 @@ pub fn number_fields(e: &Effect) -> Vec<&'static str> {
         }
         Effect::AddCard { .. } => vec!["n"],
         Effect::CostAtMost { .. } => vec!["cost", "combat"],
+        Effect::TakeRandomFromDraw { .. } => vec!["n"],
         Effect::Pick { kind: crate::effects::PickKind::CopyInHand, .. } => vec!["n", "copies"],
         Effect::Pick { .. } => vec!["n"],
         _ => vec![],

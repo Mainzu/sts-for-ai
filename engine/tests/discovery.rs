@@ -101,10 +101,7 @@ const GAME_COLORLESS: [&str; 34] = [
 ];
 /// The game's colorless cards that don't load yet
 /// (docs/specs/colorless-cards.md): each joins the pool once it loads.
-const MISSING_COLORLESS: [&str; 6] = [
-    "The Bomb", "Secret Technique", "Secret Weapon", "Violence", "Panache",
-    "Forethought",
-];
+const MISSING_COLORLESS: [&str; 3] = ["The Bomb", "Panache", "Forethought"];
 
 #[test]
 fn the_colorless_pool_is_the_games_less_the_missing_cards() {

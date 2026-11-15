@@ -1648,7 +1648,9 @@ pub fn bind_power(b: &Binding, id: &str) -> Result<(Binding, Power), String> {
     let pi = table().lock().unwrap().powers.get(id).map(|(i, _)| *i).ok_or_else(|| format!("unknown power {id:?}"))?;
     let mut s = b.slot_set().clone();
     add_power(&mut s, pi)?;
-    let nb = if s == *b.slot_set() { *b } else { Binding::of(&s)? };
+    // With the pool cards its hooks can make (Magnetism held after its
+    // card has left the piles), as every other bind path has them.
+    let nb = if s == *b.slot_set() { *b } else { bind_discovered(&Binding::of(&s)?, Vec::new())? };
     Ok((nb, nb.slot_of(pi)))
 }
 
@@ -2095,6 +2097,7 @@ fn condition_of(v: Option<&json::Value>, applying: bool) -> Result<Condition, St
             Condition::Applying(official_power(p).ok_or_else(|| format!("Applying: {p:?} is not an official power"))?)
         }
         Some(("HandNone", f)) => Condition::HandNone(card_type(f.and_then(json::Value::str))?),
+        Some(("DrawHas", f)) => Condition::DrawHas(card_type(f.and_then(json::Value::str))?),
         Some(("TargetLacks", f)) => {
             let p = f.and_then(json::Value::str).ok_or("TargetLacks without a power")?;
             Condition::TargetLacks(official_power(p).ok_or_else(|| format!("TargetLacks: {p:?} is not an official power"))?)
@@ -2414,6 +2417,13 @@ fn parse_effect(v: &json::Value) -> Result<(Effect, Option<String>), String> {
         "ZeroCostRandom" => (Effect::ZeroCostRandom, None),
         "ZeroCostRandomTurn" => (Effect::ZeroCostRandomTurn, None),
         "UpgradeRandom" => (Effect::UpgradeRandom, None),
+        "TakeRandomFromDraw" => {
+            let n = int(field("n"), "TakeRandomFromDraw n")?;
+            if !(1..=20).contains(&n) {
+                return Err(format!("TakeRandomFromDraw n {n}: 1 to 20"));
+            }
+            (Effect::TakeRandomFromDraw { ty: card_type(field("ty").and_then(json::Value::str))?, n: n as u8 }, None)
+        }
         "CostAtMost" => {
             let cost = int(field("cost"), "CostAtMost cost")?;
             if !(0..=9).contains(&cost) {
@@ -2492,6 +2502,7 @@ fn parse_effect(v: &json::Value) -> Result<(Effect, Option<String>), String> {
                 Some("UpgradeFromHand") => PickKind::UpgradeFromHand,
                 Some("HandToTop") => PickKind::HandToTop,
                 Some("CopyInHand") => PickKind::CopyInHand,
+                Some("DrawToHand") => PickKind::DrawToHand,
                 x => return Err(format!("bad pick kind {x:?}")),
             };
             let free = field("free_this_turn").and_then(json::Value::bool).unwrap_or(false);
@@ -2808,6 +2819,7 @@ fn runs_outside_a_card(e: &Effect) -> bool {
             | Effect::ZeroCostRandom
             | Effect::ZeroCostRandomTurn
             | Effect::UpgradeRandom
+            | Effect::TakeRandomFromDraw { .. }
             | Effect::PlayTop { .. }
             | Effect::Discover { .. }
             | Effect::MakeRandom { .. }
@@ -3526,12 +3538,12 @@ pub fn element_names() -> Vec<(&'static str, Vec<&'static str>)> {
             "BlockOf", "ScaledBlock", "ExhaustHand", "ExhaustRandom", "Draw", "RandomizeCost", "GainEnergy", "LoseHp", "Heal", "HealOf", "CapHp", "WinHeal", "GainMaxHp", "Apply", "ApplyOf",
             "AddCard", "Split", "Escape", "RemoveSelf", "ReduceSelf", "Pick", "ReplayCard", "GrowDamage",
             "UpgradeHand", "SetCounter", "AddCounter", "DrawPicked", "PlayTop", "Discover", "ObtainRandomPotions",
-            "UpgradeAll", "ShuffleDiscardIntoDraw", "ZeroCostRandom", "ZeroCostRandomTurn", "UpgradeRandom", "MakeRandom", "RemoveDebuffs", "CostAtMost",
+            "UpgradeAll", "ShuffleDiscardIntoDraw", "ZeroCostRandom", "ZeroCostRandomTurn", "UpgradeRandom", "MakeRandom", "RemoveDebuffs", "CostAtMost", "TakeRandomFromDraw",
             "LoseHpOf", "ApplyAsMonster", "AddCopy",
         ]),
         ("target", vec!["Opponent", "AllOpponents", "Me", "Attacker", "RandomOpponent"]),
         ("quantity", vec!["OwnBlock", "OwnStrength", "EnergySpent", "CardsTagged", "HandCards", "OwnMaxHp", "DrawPileSize", "CardsOfType", "HpDealt"]),
-        ("pick", vec!["DiscardFromHand", "ReturnFromDiscard", "DiscardToTop", "ExhaustFromHand", "ReturnFromExhaust", "UpgradeFromHand", "HandToTop", "CopyInHand"]),
+        ("pick", vec!["DiscardFromHand", "ReturnFromDiscard", "DiscardToTop", "ExhaustFromHand", "ReturnFromExhaust", "UpgradeFromHand", "HandToTop", "CopyInHand", "DrawToHand"]),
         ("pick_rule", vec!["free_this_turn", "of"]),
         ("pile", vec!["Draw", "Discard", "Hand"]),
         ("cost_roll", vec!["Hand", "Drawn"]),
@@ -3544,7 +3556,7 @@ pub fn element_names() -> Vec<(&'static str, Vec<&'static str>)> {
         ]),
         ("condition", vec![
             "Always", "CardType", "TargetIntendsAttack", "TargetHas", "CardsPlayedThisTurnBelow", "HandAll", "OwnerHpAtMostHalf", "CounterIs",
-            "OwnerBlockIs", "Applying", "HandNone", "TargetLacks", "ApplyingDebuff", "TargetDied", "CounterAtMost", "NotFirstTurn",
+            "OwnerBlockIs", "Applying", "HandNone", "TargetLacks", "ApplyingDebuff", "TargetDied", "CounterAtMost", "NotFirstTurn", "DrawHas",
         ]),
         ("static_condition", vec!["Always", "CardInPlayTagged", "OwnerHpAtMostHalf", "Holds"]),
         ("modifies", vec!["DamageDealt", "DamageTaken", "BlockGained"]),
@@ -3670,6 +3682,7 @@ pub fn effect_json(e: &Effect) -> Option<String> {
         Effect::ZeroCostRandomTurn => q("ZeroCostRandomTurn"),
         Effect::UpgradeRandom => q("UpgradeRandom"),
         Effect::CostAtMost { cost, combat } => format!("{{\"CostAtMost\": {{\"cost\": {cost}, \"combat\": {combat}}}}}"),
+        Effect::TakeRandomFromDraw { ty, n } => format!("{{\"TakeRandomFromDraw\": {{\"ty\": {}, \"n\": {n}}}}}", q(&format!("{ty:?}"))),
         Effect::Draw(n) => format!("{{\"Draw\": {n}}}"),
         Effect::RandomizeCost(w) => format!("{{\"RandomizeCost\": \"{w:?}\"}}"),
         Effect::GainEnergy(n) => format!("{{\"GainEnergy\": {n}}}"),
@@ -3823,6 +3836,7 @@ fn condition_json(c: Condition) -> String {
         Condition::OwnerBlockIs(n) => format!("{{\"OwnerBlockIs\": {n}}}"),
         Condition::Applying(p) => format!("{{\"Applying\": {}}}", q(&format!("{p:?}"))),
         Condition::HandNone(t) => format!("{{\"HandNone\": {}}}", q(&format!("{t:?}"))),
+        Condition::DrawHas(t) => format!("{{\"DrawHas\": {}}}", q(&format!("{t:?}"))),
         Condition::TargetLacks(p) => format!("{{\"TargetLacks\": {}}}", q(&format!("{p:?}"))),
         Condition::ApplyingDebuff => q("ApplyingDebuff"),
         Condition::TargetDied => q("TargetDied"),

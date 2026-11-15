@@ -211,9 +211,9 @@ KB_READONLY=1 python -I ../kb/skills/kb/kb.py render
 
 `kb render` prints the current state. `kb find <words>` and `kb get <key>`
 look facts up; `get` is instant, while `render`, `list` and `check` hash
-every source and take a minute or two. With `KB_READONLY=1` kb writes
-nothing: no usage log under `.claude/` and no cache in `.git/`. `kb check`
-may still run the shell check commands some facts carry.
+every source and take a minute or two. With `KB_READONLY=1` kb changes
+nothing: it writes no usage log under `.claude/` and no cache in `.git/`,
+and it runs none of the check commands some facts carry.
 
 The facts were re-sealed for this copy, but more than half still show as
 suspect or unchecked. Most cite run results, job records or documents that

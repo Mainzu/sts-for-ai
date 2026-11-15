@@ -14,7 +14,7 @@
     },
     {
       "path": "engine/tests/discovery.rs",
-      "sha256": "1cdd905a984db44936e9723d1edf735fcce2bab01d742315fd7a269a11c379ea"
+      "sha256": "689d7dc8662f76b7ace435478b1f91073534ce8f0a7a3741624f0e3124230ad6"
     },
     {
       "path": "docs/research/act1-coverage.json",
@@ -22,7 +22,7 @@
     },
     {
       "path": "engine/src/registry.rs",
-      "sha256": "1caafdb4f758945a6b94b5ea4c6303bf8cea39fe2641371ca50d753d175f99e6"
+      "sha256": "66027063792810f42f860edd4b657880b8ec283a34fe318aa56d42ec59b2dd94"
     }
   ],
   "owner": false,
@@ -433,5 +433,5 @@
       "until": "2026-11-14T13:46:15+07:00 @ e7957815"
     }
   ],
-  "seal": "56f013850da053c73b6b4854413f00782e82dbb758555e0d704f8b5f5f7c5a8f"
+  "seal": "994f766cacb4137753d9eca2c38493608b1bf17b98766cf518a7b963167adc4f"
 }

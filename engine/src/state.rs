@@ -1392,16 +1392,19 @@ pub fn is_attack(mv: &MoveDef) -> bool {
 pub const TOP_KNOWN: usize = 16;
 pub const TOP_FLOATERS: usize = 8;
 
-/// `Top`'s floater entries (card, above, copies), oldest first, put in
-/// canonical order: each run of neighbours with equal `above` sorted by
-/// card, equal (card, above) neighbours merged. Returns the entries kept
-/// (the rest of the slice is left as is).
-fn canon_floaters(f: &mut [(u16, u8, u8)]) -> usize {
+/// One of `Top`'s floater entries: (card, above, copies, slack).
+type FloaterEntry = (u16, u8, u8, u8);
+
+/// `Top`'s floater entries, oldest first, put in canonical order: each run
+/// of neighbours with equal (`above`, slack) sorted by card, equal (card,
+/// above, slack) neighbours merged. Returns the entries kept (the rest of
+/// the slice is left as is).
+fn canon_floaters(f: &mut [FloaterEntry]) -> usize {
     let n = f.len();
     let mut start = 0;
     while start < n {
         let mut end = start + 1;
-        while end < n && f[end].1 == f[start].1 {
+        while end < n && (f[end].1, f[end].3) == (f[start].1, f[start].3) {
             end += 1;
         }
         f[start..end].sort_unstable_by_key(|x| x.0);
@@ -1410,7 +1413,7 @@ fn canon_floaters(f: &mut [(u16, u8, u8)]) -> usize {
     let mut m = 0;
     for i in 0..n {
         let x = f[i];
-        if m > 0 && (f[m - 1].0, f[m - 1].1) == (x.0, x.1) {
+        if m > 0 && (f[m - 1].0, f[m - 1].1, f[m - 1].3) == (x.0, x.1, x.3) {
             f[m - 1].2 = f[m - 1].2.saturating_add(x.2);
         } else {
             f[m] = x;
@@ -1418,6 +1421,18 @@ fn canon_floaters(f: &mut [(u16, u8, u8)]) -> usize {
         }
     }
     m
+}
+
+/// Which card of the draw pile a removal takes (`Top::without`).
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Gone {
+    /// The known card at this index (0 = the next drawn).
+    Known(usize),
+    /// A copy of this floater entry (its newest copy: copies of an entry
+    /// are interchangeable).
+    Floater(usize),
+    /// A card that is neither known nor a floater.
+    Plain,
 }
 
 /// What the player knows about the draw pile's order (known-top spec):
@@ -1429,6 +1444,11 @@ fn canon_floaters(f: &mut [(u16, u8, u8)]) -> usize {
 /// floater lowers those of the floaters put in after it. Floaters dissolve
 /// into plain pile members once nothing is known and none has a positive
 /// `above`.
+/// A floater's **slack** is how many of the last places of its range (the
+/// pile once the floaters put in after it are left out) it certainly is
+/// not in: 0 for a card put at a random spot, more once a card was taken out
+/// of the draw pile (`Top::without`): the floater is then in a range of
+/// places, `above` to the last one less its slack, each alike.
 /// All zeros when nothing is known, so it costs existing content nothing
 /// but its bytes. With Frozen Eye (`RelicRules::sees_draw_order`) the known
 /// cards are the whole pile, past the 16 inline in `more`.
@@ -1436,12 +1456,12 @@ fn canon_floaters(f: &mut [(u16, u8, u8)]) -> usize {
 pub struct Top {
     known: [u16; TOP_KNOWN],
     n_known: u8,
-    /// (card, above, copies), oldest first; unused entries zero. A run of
-    /// neighbours with equal `above` is sorted by card and equal (card,
-    /// above) neighbours merged, so equal knowledge is equal state (such
-    /// neighbours keep equal `above` until both are 0: their order can't
-    /// matter).
-    floaters: [(u16, u8, u8); TOP_FLOATERS],
+    /// (card, above, copies, slack), oldest first; unused entries zero. A
+    /// run of neighbours with equal `above` and slack is sorted by card and
+    /// equal (card, above, slack) neighbours merged, so equal knowledge is
+    /// equal state (such neighbours keep equal `above` until both are 0:
+    /// their order can't matter).
+    floaters: [FloaterEntry; TOP_FLOATERS],
     n_floaters: u8,
     /// Known cards past the 16 inline, the bottom card first (the 17th is
     /// last); `Some` only with all 16 inline in use and at least one more.
@@ -1508,12 +1528,24 @@ impl Top {
     pub fn floaters(&self) -> impl Iterator<Item = (CardId, u8)> + '_ {
         self.floaters[..self.n_floaters as usize]
             .iter()
-            .flat_map(|&(c, a, k)| std::iter::repeat_n((CardId(c), a), k as usize))
+            .flat_map(|&(c, a, k, _)| std::iter::repeat_n((CardId(c), a), k as usize))
     }
 
     /// The floater entries, oldest first: (card, above, copies).
     pub fn floater_entries(&self) -> impl Iterator<Item = (CardId, u8, u8)> + '_ {
-        self.floaters[..self.n_floaters as usize].iter().map(|&(c, a, k)| (CardId(c), a, k))
+        self.floaters[..self.n_floaters as usize].iter().map(|&(c, a, k, _)| (CardId(c), a, k))
+    }
+
+    /// The floater entries, oldest first: (card, above, copies, slack).
+    pub fn floater_entries_slack(&self) -> impl Iterator<Item = (CardId, u8, u8, u8)> + '_ {
+        self.floaters[..self.n_floaters as usize].iter().map(|&(c, a, k, s)| (CardId(c), a, k, s))
+    }
+
+    /// The floaters as (card, above, slack), one per copy.
+    pub fn floaters_slack(&self) -> impl Iterator<Item = (CardId, u8, u8)> + '_ {
+        self.floaters[..self.n_floaters as usize]
+            .iter()
+            .flat_map(|&(c, a, k, s)| std::iter::repeat_n((CardId(c), a, s), k as usize))
     }
 
     /// Floater entries that can be drawn next (`above` 0): (entry, card,
@@ -1523,20 +1555,21 @@ impl Top {
             .iter()
             .enumerate()
             .filter(|(_, f)| f.1 == 0)
-            .map(|(i, &(c, _, k))| (i as u8, CardId(c), k))
+            .map(|(i, &(c, _, k, _))| (i as u8, CardId(c), k))
             .collect()
     }
 
-    /// Sorts each run of neighbours with equal `above` by card, merges equal
-    /// (card, above) neighbours, zeroes the tail; with nothing known and no
-    /// positive `above`, the floaters dissolve.
+    /// Sorts each run of neighbours with equal `above` and slack by card,
+    /// merges equal (card, above, slack) neighbours, zeroes the tail; with
+    /// nothing known and no positive `above` or slack, the floaters dissolve
+    /// (a floater with nothing above and no slack is in any place alike).
     fn normalize(&mut self) {
-        if self.n_known == 0 && self.floaters[..self.n_floaters as usize].iter().all(|f| f.1 == 0) {
+        if self.n_known == 0 && self.floaters[..self.n_floaters as usize].iter().all(|f| f.1 == 0 && f.3 == 0) {
             self.floaters = Default::default();
             self.n_floaters = 0;
         }
         let m = canon_floaters(&mut self.floaters[..self.n_floaters as usize]);
-        self.floaters[m..].fill((0, 0, 0));
+        self.floaters[m..].fill((0, 0, 0, 0));
         self.n_floaters = m as u8;
     }
 
@@ -1568,13 +1601,13 @@ impl Top {
         if n == TOP_FLOATERS {
             // Full: it still joins the newest run of `above` 1 (whose order
             // with it can't matter) when that run holds its card.
-            let r = (0..n).rev().take_while(|&i| self.floaters[i].1 == 1).find(|&i| self.floaters[i].0 == c.0);
+            let r = (0..n).rev().take_while(|&i| self.floaters[i].1 == 1 && self.floaters[i].3 == 0).find(|&i| self.floaters[i].0 == c.0);
             if let Some(i) = r {
                 self.floaters[i].2 = self.floaters[i].2.saturating_add(1);
             }
             return;
         }
-        self.floaters[n] = (c.0, 1, 1);
+        self.floaters[n] = (c.0, 1, 1, 0);
         self.n_floaters += 1;
         self.normalize();
     }
@@ -1610,13 +1643,13 @@ impl Top {
     /// positive `above` of the floaters put in after it drop by 1.
     pub fn take_floater(&mut self, i: u8) -> CardId {
         let (i, n) = (i as usize, self.n_floaters as usize);
-        let (c, a, _) = self.floaters[i];
+        let (c, a, _, _) = self.floaters[i];
         assert_eq!(a, 0, "a floater on top");
         self.floaters[i].2 -= 1;
         let mut after = i + 1;
         if self.floaters[i].2 == 0 {
             self.floaters.copy_within(i + 1..n, i);
-            self.floaters[n - 1] = (0, 0, 0);
+            self.floaters[n - 1] = (0, 0, 0, 0);
             self.n_floaters -= 1;
             after = i;
         }
@@ -1634,6 +1667,121 @@ impl Top {
     /// Floater copies of `c`, any `above`.
     pub fn floater_count(&self, c: CardId) -> u8 {
         self.floaters[..self.n_floaters as usize].iter().filter(|f| f.0 == c.0).map(|f| f.2).sum()
+    }
+
+    /// The knowledge once the card `gone` left a draw pile of `pile` cards
+    /// (this knowledge is of the pile before): the distinct knowledges it
+    /// can leave with their probabilities (summing to 1; the caller weighs
+    /// the classes of card `gone` can be of). `None` past `cap` outcomes.
+    ///
+    /// A floater is in a range of places of its own frame (the pile once the
+    /// floaters put in after it are left out), `above` to its last place
+    /// less its slack, each alike, whatever the others do. The card taken
+    /// sat at some place `q` of that frame (cards above it): a known card at
+    /// its index, a plain card at any place under the known cards, each
+    /// alike (the plain cards are in random order), a floater's at a place
+    /// of its own range. A floater above it (it went in at a place up to
+    /// `q`) keeps its places up to `q`: the range is cut short (more slack);
+    /// one below it (a place past `q`) moves up by 1 (`above` drops to at
+    /// least `q`, the slack stays). The outcome names which, with the chance
+    /// of the places on each side, and the next newer floater's frame holds
+    /// the card one place lower or not accordingly.
+    pub fn without(&self, gone: Gone, pile: usize, cap: usize) -> Option<Vec<(f64, Top)>> {
+        let mut fl: Vec<(u16, u8, u8)> = Vec::new();
+        for &(c, a, k, s) in &self.floaters[..self.n_floaters as usize] {
+            fl.extend(std::iter::repeat_n((c, a, s), k as usize));
+        }
+        let (m, k) = (fl.len(), self.n_known());
+        let mut known: Vec<CardId> = self.known().collect();
+        // Where the card sat in the first frame that holds it (`qs`, with
+        // chances), and the floaters that keep as they are (`kept`).
+        let (kept, start, qs): (usize, usize, Vec<(f64, usize)>) = match gone {
+            Gone::Known(x) => {
+                known.remove(x);
+                (0, 0, vec![(1.0, x)])
+            }
+            Gone::Plain => {
+                let plain = pile.checked_sub(k + m).filter(|&p| p > 0)?;
+                (0, 0, (k..k + plain).map(|q| (1.0 / plain as f64, q)).collect())
+            }
+            Gone::Floater(e) => {
+                let mut upto = 0;
+                let mut j = 0;
+                for (i, f) in self.floaters[..self.n_floaters as usize].iter().enumerate() {
+                    upto += f.2 as usize;
+                    if i == e {
+                        j = upto - 1;
+                        break;
+                    }
+                }
+                let (_, a, s) = fl.remove(j);
+                // Its own frame: the pile less the floaters from it on.
+                let b = (pile - (m - j)).checked_sub(s as usize)?;
+                let a = a as usize;
+                let qs = if j < fl.len() && b >= a { (a..=b).map(|d| (1.0 / (b - a + 1) as f64, d)).collect() } else { vec![(1.0, 0)] };
+                (j, j, qs)
+            }
+        };
+        // Floaters from `start` on (of the list with the card out), oldest
+        // first: a frontier of (chance, place of the card, floaters done).
+        let mut frontier: Vec<(f64, usize, Vec<(u16, u8, u8)>)> = qs.into_iter().map(|(w, q)| (w, q, Vec::new())).collect();
+        for i in start..fl.len() {
+            let (c, a, s) = fl[i];
+            // The frame of this floater, its own place not counted: the
+            // pile (card still in) less the floaters from it on.
+            let after = fl.len() - i;
+            let n = pile - after;
+            let (a, s) = (a as usize, s as usize);
+            let b = n.checked_sub(s)?;
+            let mut next: Vec<(f64, usize, Vec<(u16, u8, u8)>)> = Vec::new();
+            let mut push = |w: f64, q: usize, done: &Vec<(u16, u8, u8)>, e: (u16, u8, u8)| {
+                let mut d = done.clone();
+                d.push(e);
+                match next.iter_mut().find(|x| x.1 == q && x.2 == d) {
+                    Some(x) => x.0 += w,
+                    None => next.push((w, q, d)),
+                }
+            };
+            let total = (b + 1).checked_sub(a).filter(|&t| t > 0)?;
+            for (w, q, done) in &frontier {
+                let q = *q;
+                // Above the card: a place up to `q`.
+                if a <= q {
+                    let hi = b.min(q);
+                    let cnt = hi - a + 1;
+                    let s2 = u8::try_from(n - 1 - hi).ok()?;
+                    push(w * cnt as f64 / total as f64, q + 1, done, (c, a as u8, s2));
+                }
+                // Below it: a place past `q`, one up now.
+                if b > q {
+                    let lo = a.max(q + 1);
+                    let cnt = b - lo + 1;
+                    push(w * cnt as f64 / total as f64, q, done, (c, (lo - 1) as u8, s as u8));
+                }
+            }
+            if next.len() > cap {
+                return None;
+            }
+            frontier = next;
+        }
+        let mut out: Vec<(f64, Top)> = Vec::new();
+        for (w, _, done) in frontier {
+            let mut t = Top::default();
+            t.set_known(&known);
+            let mut f: Vec<FloaterEntry> = fl[..kept].iter().chain(done.iter()).map(|&(c, a, s)| (c, a, 1, s)).collect();
+            let m = canon_floaters(&mut f);
+            if m > TOP_FLOATERS {
+                return None;
+            }
+            t.floaters[..m].copy_from_slice(&f[..m]);
+            t.n_floaters = m as u8;
+            t.normalize();
+            match out.iter_mut().find(|x| x.1 == t) {
+                Some(x) => x.0 += w,
+                None => out.push((w, t)),
+            }
+        }
+        Some(out)
     }
 
     /// Every card here through `f` (Inferno's Burn upgrade).
@@ -1654,6 +1802,12 @@ impl Top {
     /// per copy); `None` if they can't be one or say nothing (no known card
     /// and no positive `above`).
     pub fn from_parts(known: &[CardId], floaters: &[(CardId, u8)]) -> Option<Top> {
+        let f: Vec<(CardId, u8, u8)> = floaters.iter().map(|&(c, a)| (c, a, 0)).collect();
+        Top::from_parts_slack(known, &f)
+    }
+
+    /// `from_parts` with each floater's slack too: (card, above, slack).
+    pub fn from_parts_slack(known: &[CardId], floaters: &[(CardId, u8, u8)]) -> Option<Top> {
         if known.len() > PILE_RUN_CAP {
             return None;
         }
@@ -1662,7 +1816,7 @@ impl Top {
         if floaters.len() > u8::MAX as usize {
             return None;
         }
-        let mut f: Vec<(u16, u8, u8)> = floaters.iter().map(|&(c, a)| (c.0, a, 1)).collect();
+        let mut f: Vec<FloaterEntry> = floaters.iter().map(|&(c, a, s)| (c.0, a, 1, s)).collect();
         let m = canon_floaters(&mut f);
         if m > TOP_FLOATERS {
             return None;
@@ -1673,21 +1827,29 @@ impl Top {
         (!t.is_empty()).then_some(t)
     }
 
-    /// Whether every card here is in `draw`, and no floater has more cards
-    /// certainly above it than the pile holds cards that are no floater
-    /// (so some card can be on top).
+    /// Whether every card here is in `draw`, and every floater has a place
+    /// to be in: its range (`above` to its frame's last place less its
+    /// slack, the frame being the pile less the floaters from it on) is not
+    /// empty.
     pub fn within(&self, draw: PileRef<'_>) -> bool {
         let mut p = Pile::default();
         for c in self.known() {
             p.add(c, 1);
         }
         let fl = &self.floaters[..self.n_floaters as usize];
-        for &(c, _, k) in fl {
+        for &(c, _, k, _) in fl {
             p.add(CardId(c), k);
         }
-        let copies: usize = fl.iter().map(|f| f.2 as usize).sum();
-        let plain = draw.len().saturating_sub(copies);
-        p.iter().all(|(c, k)| draw.count(c) >= k) && fl.iter().all(|f| f.1 as usize <= plain)
+        let mut left: usize = fl.iter().map(|f| f.2 as usize).sum();
+        let mut ranges = true;
+        for f in fl {
+            for _ in 0..f.2 {
+                // This floater's frame, itself not counted.
+                ranges &= draw.len() >= left && f.1 as usize + f.3 as usize <= draw.len() - left;
+                left -= 1;
+            }
+        }
+        p.iter().all(|(c, k)| draw.count(c) >= k) && ranges
     }
 }
 
@@ -2467,6 +2629,7 @@ impl CombatState {
             PickKind::DiscardFromHand | PickKind::ExhaustFromHand | PickKind::HandToTop | PickKind::CopyInHand => self.hand.view().to_pile(),
             PickKind::ReturnFromDiscard | PickKind::ReturnFromExhaust if self.hand.len() >= HAND_LIMIT => return None,
             PickKind::ReturnFromDiscard => self.discard().to_pile(),
+            PickKind::DrawToHand => self.draw().to_pile(),
             PickKind::DiscardToTop => self.discard().to_pile(),
             PickKind::Offered => Pile::from_cards(&self.offer.cards().collect::<Vec<_>>()),
             // Only cards a general upgrade can raise (not statuses, not at
@@ -2989,6 +3152,7 @@ impl CombatState {
                         self.upgrade_in_hand(c);
                     }
                     PickKind::HandToTop => self.hand_to_top(c, 1),
+                    PickKind::DrawToHand => self.take_from_draw(c),
                     PickKind::Offered => self.take_offered(c),
                     PickKind::CopyInHand => self.copy_in_hand(c, p.copies, p.free),
                 }
@@ -3438,6 +3602,13 @@ impl CombatState {
                         self.stage = Stage::PlayingCard { card, target, next: next + 1, hit: 0, x, more };
                         let c = self.only_candidate(&at.effect).expect("one candidate");
                         self.copy_in_hand(c, copies, free);
+                    }
+                    // One kind of the draw pile to choose from: it goes to
+                    // the hand at once (the game's grid opens for 2 or more).
+                    Effect::Pick { kind: PickKind::DrawToHand, n: 1, exact: true, .. } if self.only_candidate(&at.effect).is_some() => {
+                        self.stage = Stage::PlayingCard { card, target, next: next + 1, hit: 0, x, more };
+                        let c = self.only_candidate(&at.effect).expect("one candidate");
+                        self.take_from_draw(c);
                     }
                     // At most `n` cards, all of one kind, in hand: they go on
                     // top at once (`PutOnDeckAction` moves the whole hand then).
@@ -4865,6 +5036,7 @@ impl CombatState {
             // The `OwnerApplied` pass picks its hooks by it (`apply_power`).
             Condition::Applying(_) | Condition::ApplyingDebuff => true,
             Condition::HandNone(ty) => !self.hand.iter().any(|(c, _)| self.binding.def(c).ty == ty),
+            Condition::DrawHas(ty) => self.draw().iter().any(|(c, _)| self.binding.def(c).ty == ty),
             Condition::TargetLacks(p) => ctx.target.is_some_and(|t| self.monsters[t as usize].powers.get(p) == 0),
             Condition::TargetDied => ctx.target.is_some_and(|t| {
                 let m = &self.monsters[t as usize];
@@ -4935,6 +5107,7 @@ impl CombatState {
             Effect::ZeroCostRandomTurn => self.request_free_turn(),
             Effect::UpgradeRandom => self.request_upgrade_random(),
             Effect::CostAtMost { cost, combat } => self.cost_at_most(cost, combat),
+            Effect::TakeRandomFromDraw { ty, n } => self.request_take_random(ty, n),
             Effect::Draw(n) => {
                 debug_assert_eq!(actor, Who::Player);
                 self.request_draw(n);

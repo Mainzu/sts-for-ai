@@ -80,6 +80,16 @@ pub enum ChanceEvent {
     /// Runic Dome: hidden monster `slot`'s rolled attack amount (louse
     /// Bite), seen as it first lands: `rolled_attack`'s lo..=hi alike.
     RolledAmount { slot: u8 },
+    /// A copy of `card` leaves the draw pile for the hand (the discard pile
+    /// with the hand full: Secret Technique's pick) and the copies are not
+    /// all alike in what the player knows of the pile's order: which one
+    /// (`CombatState::instance_outcomes`).
+    DrawInstance { card: CardId },
+    /// Up to `n` random draw pile cards of type `ty` leave it, the first
+    /// ones for the hand while it has room, the rest for the discard pile
+    /// (`Effect::TakeRandomFromDraw`, Violence): which kinds, and which
+    /// instances of them.
+    TakeRandom { ty: crate::cards::CardType, n: u8 },
 }
 
 /// What waits for an `Order` event.
@@ -611,13 +621,14 @@ impl CombatState {
             return self.draw().iter().map(|(c, k)| (k as u64, c, TopPick::Plain)).collect();
         }
         let n = self.draw().len() as u64;
-        let entries: Vec<(CardId, u8, u8)> = self.top.floater_entries().collect();
-        // Newest first: each free entry's (entry, card, copies, denominator).
+        let entries: Vec<(CardId, u8, u8, u8)> = self.top.floater_entries_slack().collect();
+        // Newest first: each free entry's (entry, card, copies, denominator):
+        // its places (the pile less the newer floaters) less its slack.
         let mut free = Vec::new();
         let mut newer = 0u64;
-        for (i, &(c, a, k)) in entries.iter().enumerate().rev() {
+        for (i, &(c, a, k, s)) in entries.iter().enumerate().rev() {
             if a == 0 {
-                free.push((i as u8, c, k as u64, n - newer));
+                free.push((i as u8, c, k as u64, n - newer - s as u64));
             }
             newer += k as u64;
         }
@@ -651,8 +662,11 @@ impl CombatState {
             }
             None => {
                 let m = n - entries.iter().map(|e| e.2 as u64).sum::<u64>();
+                // With every card a floater (taken cards leave such piles)
+                // no plain card shares the weights: they stand as they are.
+                let scale = m.max(1);
                 for (&(i, c, _, _), &x) in free.iter().zip(&w) {
-                    v.push((x * m, c, TopPick::Floater(i)));
+                    v.push((x * scale, c, TopPick::Floater(i)));
                 }
                 for (c, k) in self.draw().iter() {
                     let r = k as u64 - self.top.floater_count(c) as u64;
@@ -662,7 +676,196 @@ impl CombatState {
                 }
             }
         }
+        // A card that can't be on top (a floater or the rest, sure to be
+        // elsewhere once cards left the pile) is no outcome.
+        v.retain(|x| x.0 > 0);
         v
+    }
+
+    /// The ways a copy of `c` taken from the draw pile at random (every copy
+    /// alike) can sit in what the player knows of its order: (copies, class).
+    fn instance_classes(&self, c: CardId) -> Vec<(u64, crate::state::Gone)> {
+        use crate::state::Gone;
+        let mut v = Vec::new();
+        let mut taken = 0u64;
+        for (i, x) in self.top.known().enumerate() {
+            if x == c {
+                v.push((1, Gone::Known(i)));
+                taken += 1;
+            }
+        }
+        for (e, (x, _, k)) in self.top.floater_entries().enumerate() {
+            if x == c {
+                v.push((k as u64, Gone::Floater(e)));
+                taken += k as u64;
+            }
+        }
+        let plain = (self.draw().count(c) as u64).saturating_sub(taken);
+        if plain > 0 {
+            v.push((plain, Gone::Plain));
+        }
+        v
+    }
+
+    /// What the player knows of the draw pile's order once a uniformly
+    /// random copy of `c` left it, with the chance of each; `None` past `cap`
+    /// outcomes. One outcome with nothing known (no floater to place, no
+    /// known card to find). Not changing the pile itself.
+    pub(crate) fn instance_outcomes(&self, c: CardId, cap: usize) -> Option<Vec<(f64, crate::state::Top)>> {
+        if self.top.is_empty() {
+            return Some(vec![(1.0, crate::state::Top::default())]);
+        }
+        let classes = self.instance_classes(c);
+        let total: u64 = classes.iter().map(|x| x.0).sum();
+        let n = self.draw().len();
+        let mut out: Vec<(f64, crate::state::Top)> = Vec::new();
+        for (w, gone) in classes {
+            for (p, t) in self.top.without(gone, n, cap)? {
+                let p = p * w as f64 / total as f64;
+                match out.iter_mut().find(|x| x.1 == t) {
+                    Some(x) => x.0 += p,
+                    None => out.push((p, t)),
+                }
+            }
+            if out.len() > cap {
+                return None;
+            }
+        }
+        Some(out)
+    }
+
+    /// A copy of `c` that left the draw pile (with `top` its knowledge now)
+    /// goes to the hand, or to the discard pile with `to_hand` false.
+    fn put_taken(&mut self, c: CardId, top: crate::state::Top, to_hand: bool) {
+        self.top = top;
+        self.draw_mut().remove(c, 1);
+        if to_hand {
+            self.hand.add(c, 1);
+        } else {
+            self.discard_mut().add(c, 1);
+        }
+    }
+
+    /// A copy of `c` goes from the draw pile to the hand, to the discard
+    /// pile when the hand is full (the game's `moveToHand` /
+    /// `moveToDiscardPile` pair); pauses at `DrawInstance` when it matters
+    /// which copy.
+    pub(crate) fn take_from_draw(&mut self, c: CardId) {
+        match self.instance_outcomes(c, 1) {
+            Some(mut v) if v.len() == 1 => {
+                let t = v.pop().expect("one outcome").1;
+                let to_hand = self.hand.len() < HAND_LIMIT;
+                self.put_taken(c, t, to_hand);
+            }
+            _ => self.pending = Some(ChanceEvent::DrawInstance { card: c }),
+        }
+    }
+
+    /// The kinds a `TakeRandom` of `n` cards of type `ty` can take, as
+    /// (hand part, discard part, chance): a uniform sample without
+    /// replacement of min(n, copies of the type) cards, the first `room` for
+    /// the hand. `None` past `limit`.
+    fn take_random_kinds(&self, ty: crate::cards::CardType, n: u8, limit: usize) -> Option<Vec<(Vec<CardId>, Vec<CardId>, f64)>> {
+        let kinds: Vec<(CardId, usize)> = self.draw().iter().filter(|&(c, _)| self.binding.def(c).ty == ty).map(|(c, k)| (c, k as usize)).collect();
+        let total: usize = kinds.iter().map(|x| x.1).sum();
+        let t = (n as usize).min(total);
+        let h = t.min(HAND_LIMIT.saturating_sub(self.hand.len()));
+        let falling = |x: usize, k: usize| (0..k).fold(1.0, |a, i| a * (x - i) as f64);
+        let denom = falling(total, t);
+        let fact = |k: usize| (1..=k).fold(1.0, |a, i| a * i as f64);
+        // Every split of the sample into (hand part, discard part) counts.
+        let mut out: Vec<(Vec<CardId>, Vec<CardId>, f64)> = Vec::new();
+        fn rec(kinds: &[(CardId, usize)], i: usize, hl: usize, dl: usize, hand: &mut Vec<usize>, disc: &mut Vec<usize>, f: &mut dyn FnMut(&[usize], &[usize]) -> bool) -> bool {
+            if i == kinds.len() {
+                return hl != 0 || dl != 0 || f(hand, disc);
+            }
+            for a in 0..=hl.min(kinds[i].1) {
+                for b in 0..=dl.min(kinds[i].1 - a) {
+                    hand.push(a);
+                    disc.push(b);
+                    let ok = rec(kinds, i + 1, hl - a, dl - b, hand, disc, f);
+                    hand.pop();
+                    disc.pop();
+                    if !ok {
+                        return false;
+                    }
+                }
+            }
+            true
+        }
+        let ok = rec(&kinds, 0, h, t - h, &mut Vec::new(), &mut Vec::new(), &mut |a: &[usize], b: &[usize]| {
+            // Orderings of each part times the chance of one ordered
+            // sequence of kinds.
+            let mut w = fact(h) * fact(t - h) / denom;
+            let mut hand = Vec::new();
+            let mut disc = Vec::new();
+            for (i, &(c, k)) in kinds.iter().enumerate() {
+                w *= falling(k, a[i] + b[i]) / (fact(a[i]) * fact(b[i]));
+                hand.extend(std::iter::repeat_n(c, a[i]));
+                disc.extend(std::iter::repeat_n(c, b[i]));
+            }
+            out.push((hand, disc, w));
+            out.len() <= limit
+        });
+        ok.then_some(out)
+    }
+
+    /// Every state after the copies in `seq` (card, to the hand) left the
+    /// draw pile one by one, with chances; `None` past `cap` states.
+    fn take_all(&self, seq: &[(CardId, bool)], cap: usize) -> Option<Vec<(f64, CombatState)>> {
+        let mut cur = vec![(1.0, self.clone())];
+        for &(c, to_hand) in seq {
+            let mut next: Vec<(f64, CombatState)> = Vec::new();
+            for (p, s) in &cur {
+                for (q, t) in s.instance_outcomes(c, cap)? {
+                    let mut u = s.clone();
+                    u.put_taken(c, t, to_hand);
+                    match next.iter_mut().find(|x| x.1 == u) {
+                        Some(x) => x.0 += p * q,
+                        None => next.push((p * q, u)),
+                    }
+                }
+                if next.len() > cap {
+                    return None;
+                }
+            }
+            cur = next;
+        }
+        Some(cur)
+    }
+
+    /// `Effect::TakeRandomFromDraw`: up to `n` cards of type `ty` leave the
+    /// draw pile at random; pauses at `TakeRandom` unless the result is one
+    /// state.
+    pub(crate) fn request_take_random(&mut self, ty: crate::cards::CardType, n: u8) {
+        let Some(kinds) = self.take_random_kinds(ty, n, 2) else {
+            self.pending = Some(ChanceEvent::TakeRandom { ty, n });
+            return;
+        };
+        if kinds.len() > 1 {
+            self.pending = Some(ChanceEvent::TakeRandom { ty, n });
+            return;
+        }
+        let Some((hand, disc, _)) = kinds.into_iter().next() else { return };
+        let seq: Vec<(CardId, bool)> = hand.iter().map(|&c| (c, true)).chain(disc.iter().map(|&c| (c, false))).collect();
+        match self.take_all(&seq, 1) {
+            Some(mut v) if v.len() == 1 => *self = v.pop().expect("one state").1,
+            _ => self.pending = Some(ChanceEvent::TakeRandom { ty, n }),
+        }
+    }
+
+    /// One of `outcomes`, by chance.
+    fn sample_weighted<T>(outcomes: Vec<(f64, T)>, rng: &mut Rng) -> T {
+        let r = rng.unit();
+        let mut acc = 0.0;
+        let last = outcomes.len() - 1;
+        for (i, (p, t)) in outcomes.into_iter().enumerate() {
+            acc += p;
+            if r < acc || i == last {
+                return t;
+            }
+        }
+        unreachable!("an outcome")
     }
 
     /// One of `top_cards`' entries, by weight.
@@ -1087,6 +1290,34 @@ impl CombatState {
                     })
                     .collect()
             }
+            ChanceEvent::DrawInstance { card } => {
+                let Some(v) = self.instance_outcomes(card, limit) else { return Some(ChanceOutcomes::Large) };
+                let to_hand = self.hand.len() < HAND_LIMIT;
+                v.into_iter()
+                    .map(|(p, t)| {
+                        let mut s = base.clone();
+                        s.put_taken(card, t, to_hand);
+                        s.run();
+                        (p, s)
+                    })
+                    .collect()
+            }
+            ChanceEvent::TakeRandom { ty, n } => {
+                let Some(kinds) = self.take_random_kinds(ty, n, limit) else { return Some(ChanceOutcomes::Large) };
+                let mut v = Vec::new();
+                for (hand, disc, p) in kinds {
+                    let seq: Vec<(CardId, bool)> = hand.iter().map(|&c| (c, true)).chain(disc.iter().map(|&c| (c, false))).collect();
+                    let Some(states) = base.take_all(&seq, limit) else { return Some(ChanceOutcomes::Large) };
+                    for (q, mut s) in states {
+                        s.run();
+                        v.push((p * q, s));
+                    }
+                    if v.len() > limit {
+                        return Some(ChanceOutcomes::Large);
+                    }
+                }
+                v
+            }
         };
         let mut merged: Vec<(f64, CombatState)> = Vec::with_capacity(states.len());
         for (p, s) in states {
@@ -1232,6 +1463,25 @@ impl CombatState {
             ChanceEvent::RandomPotion { pool } => {
                 let id = crate::potions::potion_pool(pool).sample(rng);
                 self.player.potions.insert(id).expect("an empty slot");
+            }
+            ChanceEvent::DrawInstance { card } => {
+                let t = Self::sample_weighted(self.instance_outcomes(card, usize::MAX).expect("outcomes"), rng);
+                let to_hand = self.hand.len() < HAND_LIMIT;
+                self.put_taken(card, t, to_hand);
+            }
+            ChanceEvent::TakeRandom { ty, n } => {
+                let kinds = self.take_random_kinds(ty, n, usize::MAX).expect("outcomes");
+                let r = rng.unit();
+                let mut acc = 0.0;
+                let last = kinds.len() - 1;
+                let (hand, disc, _) = kinds.into_iter().enumerate().find(|(i, x)| {
+                    acc += x.2;
+                    r < acc || *i == last
+                }).expect("an outcome").1;
+                for (c, to_hand) in hand.iter().map(|&c| (c, true)).chain(disc.iter().map(|&c| (c, false))) {
+                    let t = Self::sample_weighted(self.instance_outcomes(c, usize::MAX).expect("outcomes"), rng);
+                    self.put_taken(c, t, to_hand);
+                }
             }
         }
         self.run_opts(turn1_pre_draw);

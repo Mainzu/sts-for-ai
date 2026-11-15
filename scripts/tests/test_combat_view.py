@@ -219,3 +219,22 @@ def test_runic_dome_hidden_move_from_view():
     v["monsters"][0]["move_hidden"] = True
     m = sts.Combat.from_view(v, seed=1, group="hallway").view()["monsters"][0]
     assert m["moves"] == (1, 0) and "intent_hidden" not in m, m
+
+
+def test_top_floaters_keep_age_and_slack():
+    """The view writes each floater as [name, above, slack], oldest first;
+    from_view reads that back to the same knowledge, and an older view's
+    [name, above] as slack 0 (a run of equal above and slack sorted by name)."""
+    v = sts.Combat(["Strike"] * 5 + ["Defend"] * 4 + ["Bash"], "jaw_worm", seed=1).view()
+    v["draw"] = {"Strike": 3, "Defend": 1, "Wound": 2, "Bash": 1}
+    v["top"] = ["Bash"]
+    v["top_floaters"] = [["Wound", 1, 2], ["Defend", 1, 0]]
+    w = sts.Combat.from_view(v, seed=1, group="hallway").view()
+    assert [list(x) for x in w["top_floaters"]] == [["Wound", 1, 2], ["Defend", 1, 0]]
+    assert sts.Combat.from_view(w, seed=1, group="hallway").view() == w
+    v["top_floaters"] = [["Defend", 1, 0], ["Wound", 2, 1]]  # the other age order stays
+    w = sts.Combat.from_view(v, seed=1, group="hallway").view()
+    assert [list(x) for x in w["top_floaters"]] == [["Defend", 1, 0], ["Wound", 2, 1]]
+    v["top_floaters"] = [["Wound", 1], ["Defend", 1]]
+    w = sts.Combat.from_view(v, seed=1, group="hallway").view()
+    assert [list(x) for x in w["top_floaters"]] == [["Defend", 1, 0], ["Wound", 1, 0]]

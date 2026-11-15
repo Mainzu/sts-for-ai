@@ -841,7 +841,7 @@ all-official pool); a deck's pool cards bind in slot order.
   Impatience, Dark Shackles, Deep Breath, Enlightenment (loads since the colorless build A), Madness,
   Forethought, Chrysalis, Metamorphosis (C5's kin), Apotheosis (C6's
   kin), Magnetism (R28; loads since R28), Mayhem (C8; loads since the colorless build B), Secret Technique, Secret Weapon,
-  Violence, Thinking Ahead, Transmutation, Panache, Sadistic Nature
+  Violence (all three load since the colorless build B), Thinking Ahead, Transmutation, Panache, Sadistic Nature
   (R14's kin). Colorless Potion and Toolbox load with that pack.
 
 ## The player applied a power (2026-11-13, session act1-r14)

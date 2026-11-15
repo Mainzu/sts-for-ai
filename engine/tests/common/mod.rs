@@ -126,6 +126,9 @@ pub enum PileOp {
     RandomSpot(CardId),
     /// `addToTop` (Headbutt, Warcry): the card goes on top.
     Top(CardId),
+    /// A uniformly random copy of this kind leaves the pile (Secret
+    /// Technique, Violence: the model of docs/specs/colorless-cards.md).
+    Remove(CardId),
 }
 
 /// The game's chance of each next `k` cards drawn (sorted), from a draw
@@ -155,6 +158,15 @@ pub fn game_draw_odds(known: &[CardId], unknown: &[CardId], ops: &[PileOp], k: u
                 let mut t = pile;
                 t.push(c);
                 walk(t, &ops[1..], p, k, out);
+            }
+            Some(&PileOp::Remove(c)) => {
+                let at: Vec<usize> = (0..pile.len()).filter(|&i| pile[i] == c).collect();
+                assert!(!at.is_empty(), "a copy to remove");
+                for &i in &at {
+                    let mut t = pile.clone();
+                    t.remove(i);
+                    walk(t, &ops[1..], p / at.len() as f64, k, out);
+                }
             }
             Some(&PileOp::RandomSpot(c)) if pile.is_empty() => walk(vec![c], &ops[1..], p, k, out),
             Some(&PileOp::RandomSpot(c)) => {
@@ -200,10 +212,26 @@ pub fn engine_draw_odds(s: &CombatState, k: u8) -> Vec<(Vec<CardId>, f64)> {
 /// `engine_draw_odds` equals `game_draw_odds` for every `k` up to the draw
 /// pile's size.
 pub fn assert_draw_odds_match(s: &CombatState, known: &[CardId], unknown: &[CardId], ops: &[PileOp]) {
-    assert_eq!(s.draw().len(), known.len() + unknown.len() + ops.len(), "the pile the model describes");
-    for k in 1..=s.draw().len() {
-        let (e, g) = (engine_draw_odds(s, k as u8), game_draw_odds(known, unknown, ops, k));
-        assert_eq!(e.iter().map(|x| &x.0).collect::<Vec<_>>(), g.iter().map(|x| &x.0).collect::<Vec<_>>(), "draw {k}: hands");
+    assert_mixture_odds_match(&[(1.0, s.clone())], known, unknown, ops)
+}
+
+/// `assert_draw_odds_match` for the states a chance event left (each with its
+/// chance, all of one pile size): the mixture of their odds equals the
+/// game's (which copy left is the event's, not the player's to see).
+pub fn assert_mixture_odds_match(states: &[(f64, CombatState)], known: &[CardId], unknown: &[CardId], ops: &[PileOp]) {
+    let len = states[0].1.draw().len();
+    let size = |at: usize, op: &PileOp| if matches!(op, PileOp::Remove(_)) { at - 1 } else { at + 1 };
+    assert_eq!(len, ops.iter().fold(known.len() + unknown.len(), size), "the pile the model describes");
+    assert!(states.iter().all(|(_, s)| s.draw().len() == len));
+    for k in 1..=len {
+        let g = game_draw_odds(known, unknown, ops, k);
+        let mut e: std::collections::BTreeMap<Vec<CardId>, f64> = Default::default();
+        for (w, s) in states {
+            for (h, p) in engine_draw_odds(s, k as u8) {
+                *e.entry(h).or_default() += w * p;
+            }
+        }
+        assert_eq!(e.keys().collect::<Vec<_>>(), g.iter().map(|x| &x.0).collect::<Vec<_>>(), "draw {k}: hands");
         for ((h, p), (_, q)) in e.iter().zip(&g) {
             assert!((p - q).abs() < 1e-9, "draw {k}: {h:?} engine {p} game {q}");
         }

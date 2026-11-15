@@ -7,7 +7,7 @@
 //! monster slots are skipped, numbers are LEB128 varints (signed ones
 //! zigzagged), and the codec version comes first.
 
-use crate::cards::{CardId, NUM_OFFICIAL_CARDS};
+use crate::cards::{CardId, CardType, NUM_OFFICIAL_CARDS};
 use crate::chance::{ChanceEvent, OrderThen};
 use crate::character::Character;
 use crate::monsters::{Ascension, Monster, MonsterKind, MAX_ASCENSION, NUM_OFFICIAL_MONSTERS};
@@ -402,6 +402,17 @@ pub fn encode(s: &CombatState) -> Vec<u8> {
             w.byte(16);
             w.byte(slot);
         }
+        // A random take off the draw pile (Secret Technique's pick, Violence):
+        // tags 17 (the card) and 18 (the card type, the count).
+        Some(ChanceEvent::DrawInstance { card }) => {
+            w.byte(17);
+            w.card(card);
+        }
+        Some(ChanceEvent::TakeRandom { ty, n }) => {
+            w.byte(18);
+            w.byte(ty as u8);
+            w.byte(n);
+        }
         Some(ChanceEvent::Offer { .. }) => unreachable!("an open offer counts as generated content"),
         Some(ChanceEvent::RandomPotion { .. }) => unreachable!("a pending random potion counts as generated content"),
         Some(ChanceEvent::MakeRandom { .. }) => unreachable!("a pending MakeRandom roll counts as generated content"),
@@ -421,6 +432,7 @@ pub fn encode(s: &CombatState) -> Vec<u8> {
     // pile's order (the known count may be 0 when only floaters under the
     // top are known: draw-knowledge spec item 1); 2, the per-copy variants
     // the card ids name; 3, the exhaust-trigger counters.
+    let mut slack: Vec<u8> = Vec::new();
     if !top.is_empty() {
         w.byte(1);
         w.byte(top.n_known() as u8);
@@ -430,15 +442,16 @@ pub fn encode(s: &CombatState) -> Vec<u8> {
         // Oldest first (their order matters, `Top`); within a run of equal
         // `above` (whose order can't) in byte order, so the bytes don't
         // depend on card id numbering.
-        let mut floaters: Vec<(u8, u8)> = top.floaters().map(|(c, a)| (card_byte(&w.ranks, c), a)).collect();
-        for run in floaters.chunk_by_mut(|x, y| x.1 == y.1) {
+        let mut floaters: Vec<(u8, u8, u8)> = top.floaters_slack().map(|(c, a, s)| (card_byte(&w.ranks, c), a, s)).collect();
+        for run in floaters.chunk_by_mut(|x, y| (x.1, x.2) == (y.1, y.2)) {
             run.sort_unstable();
         }
         w.u(floaters.len() as u64);
-        for (c, a) in floaters {
+        for &(c, a, _) in &floaters {
             w.byte(c);
             w.byte(a);
         }
+        slack = floaters.iter().map(|x| x.2).collect();
     }
     // 2, the changed copies the card bytes name, by value, when each is
     // grown damage at its base's own level (as the variants were); any
@@ -649,6 +662,15 @@ pub fn encode(s: &CombatState) -> Vec<u8> {
             w.byte(v);
         }
     }
+    // 23, the floaters' slack (a card was taken out of the draw pile at
+    // random: Secret Technique, Violence), one byte each in section 1's
+    // order. Only when any is not 0.
+    if slack.iter().any(|&s| s != 0) {
+        w.byte(23);
+        for s in slack {
+            w.byte(s);
+        }
+    }
     w.out
 }
 
@@ -702,6 +724,7 @@ impl Reader<'_> {
                 let kind = match k {
                     8 => PickKind::HandToTop,
                     9 => PickKind::CopyInHand,
+                    10 => PickKind::DrawToHand,
                     k => *[PickKind::DiscardFromHand, PickKind::ReturnFromDiscard, PickKind::DiscardToTop, PickKind::ExhaustFromHand, PickKind::ReturnFromExhaust, PickKind::UpgradeFromHand].get(k as usize - 1)?,
                 };
                 let left = self.byte()?;
@@ -901,6 +924,18 @@ pub fn try_decode(bytes: &[u8]) -> Option<CombatState> {
         14 => Some(ChanceEvent::InsertAt { card: r.card()? }),
         15 => Some(ChanceEvent::IntentClass { slot: r.byte().filter(|&k| (k as usize) < MAX_MONSTERS)? }),
         16 => Some(ChanceEvent::RolledAmount { slot: r.byte().filter(|&k| (k as usize) < MAX_MONSTERS)? }),
+        17 => Some(ChanceEvent::DrawInstance { card: r.card()? }),
+        18 => Some(ChanceEvent::TakeRandom {
+            ty: match r.byte()? {
+                0 => CardType::Attack,
+                1 => CardType::Skill,
+                2 => CardType::Power,
+                3 => CardType::Status,
+                4 => CardType::Curse,
+                _ => return None,
+            },
+            n: r.byte().filter(|&n| n > 0)?,
+        }),
         _ => return None,
     };
     let mut deferred_block = [0i16; MAX_MONSTERS];
@@ -961,6 +996,10 @@ pub fn try_decode(bytes: &[u8]) -> Option<CombatState> {
     // damage, 14 the cards waiting for a cost roll, 15 the owed work, 16
     // the blocks broken.
     let mut last = 0;
+    // The known top's parts (section 1) and the floaters' slack (23), put
+    // together once both are read.
+    let mut top_raw: Option<(Vec<CardId>, Vec<(CardId, u8)>)> = None;
+    let mut top_slack: Vec<u8> = Vec::new();
     // The changed copies sections 2 or 13 define, in rank order.
     let mut changed: Vec<CardId> = Vec::new();
     while r.at < bytes.len() {
@@ -973,7 +1012,7 @@ pub fn try_decode(bytes: &[u8]) -> Option<CombatState> {
             1 => {
                 let known: Vec<_> = (0..r.byte()?).map(|_| r.card()).collect::<Option<_>>()?;
                 let floaters: Vec<_> = (0..r.u()?).map(|_| Some((r.card()?, r.byte()?))).collect::<Option<_>>()?;
-                s.top = Top::from_parts(&known, &floaters)?;
+                top_raw = Some((known, floaters));
             }
             2 => {
                 let n = r.byte()? as usize;
@@ -1170,6 +1209,13 @@ pub fn try_decode(bytes: &[u8]) -> Option<CombatState> {
                 }
                 s.owed_late = owed;
             }
+            23 => {
+                let n = top_raw.as_ref()?.1.len();
+                top_slack = (0..n).map(|_| r.byte()).collect::<Option<_>>()?;
+                if top_slack.iter().all(|&x| x == 0) {
+                    return None;
+                }
+            }
             22 => {
                 let n = r.byte()? as usize;
                 let pairs: Vec<_> = (0..n).map(|_| Some((r.card()?, r.byte()?))).collect::<Option<_>>()?;
@@ -1250,6 +1296,10 @@ pub fn try_decode(bytes: &[u8]) -> Option<CombatState> {
             _ => return None,
         }
     }
+    if let Some((known, floaters)) = top_raw {
+        let f: Vec<(CardId, u8, u8)> = floaters.iter().enumerate().map(|(i, &(c, a))| (c, a, top_slack.get(i).copied().unwrap_or(0))).collect();
+        s.top = Top::from_parts_slack(&known, &f)?;
+    }
     // Rank bytes become the changed copies they name: in pile order, each
     // named at least once, none past the list.
     if changed.windows(2).any(|w| order_key(w[0]) >= order_key(w[1])) {
@@ -1314,8 +1364,8 @@ fn resolve_ranks(s: &CombatState, ranks: &[CardId]) -> Option<CombatState> {
     t.set_exhaust(pile(s.exhaust())?);
     if !s.top.is_empty() {
         let known: Vec<CardId> = s.top.known().map(f).collect::<Option<_>>()?;
-        let floaters: Vec<(CardId, u8)> = s.top.floaters().map(|(c, a)| Some((f(c)?, a))).collect::<Option<_>>()?;
-        t.top = Top::from_parts(&known, &floaters)?;
+        let floaters: Vec<(CardId, u8, u8)> = s.top.floaters_slack().map(|(c, a, k)| Some((f(c)?, a, k))).collect::<Option<_>>()?;
+        t.top = Top::from_parts_slack(&known, &floaters)?;
     }
     if !s.free_in_hand.is_empty() {
         let mut ids: Vec<CardId> = s.free_in_hand.iter().map(f).collect::<Option<_>>()?;
@@ -1342,6 +1392,14 @@ fn resolve_ranks(s: &CombatState, ranks: &[CardId]) -> Option<CombatState> {
     }
     if let Some(ChanceEvent::InsertAt { card }) = &mut t.pending {
         *card = f(*card)?;
+    }
+    if let Some(ChanceEvent::DrawInstance { card }) = t.pending {
+        let card = f(card)?;
+        // A copy in the draw pile leaves it.
+        if t.draw().count(card) == 0 {
+            return None;
+        }
+        t.pending = Some(ChanceEvent::DrawInstance { card });
     }
     if s.owed.iter().any(|e| matches!(e.kind, OwedKind::Insert { .. })) {
         let mut owed = Owed::default();

@@ -82,6 +82,37 @@ card of the pile, the engine's outcomes still tell them apart (the
 search knows which copy it drew; the odds of what follows are right on
 average, but a decision could use the difference).
 
+**Taking a card out of the pile (colorless build B).** A card that leaves
+the draw pile from anywhere (Secret Technique, Secret Weapon, Violence)
+leaves what is known exact if each floater is read as a range. A floater
+is in one of the places `above` to the last place of its frame (the pile
+less the floaters put in after it) less its **slack**, each alike,
+independently of the others (a card at a random spot has slack 0; with
+slack 0 the old rule is this one). A card taken out sat at a place `q`
+of a floater's frame (cards above it): a known card at its index, a plain
+card at any place under the known cards, each alike, a floater at a place
+of its own range. The floater was above it (a place up to `q`: it keeps
+those places, so its slack grows) or below it (a place past `q`: it moves
+up by 1, `above` drops to at least `q`, the slack stays); the outcome
+says which, with the chance of the places on each side, and the next
+newer floater's frame holds the card one place lower for a floater above
+it. The plan's first rule (a floater loses 1 `above` only when the card
+is certainly above it) is not exact: with the card possibly above or
+below the floater, the places next to it are doubly likely. The classes of
+the copy taken (a known head card, a floater entry, a plain card) are the
+event `ChanceEvent::DrawInstance`, weighted by copies. `top_cards` uses
+the range (`above` = 0 floaters on top with chance 1 / (places less
+slack)), skips a card that can't be on top, and a pile of floaters only
+(no plain card left) weighs them as they stand. The codec writes the
+slacks in section 23 (only when any is not 0), and `within` checks each
+floater's range is not empty. Test: `known_top.rs`
+`random_sequences_keep_the_games_odds` (distinct kinds) and
+`random_sequences_with_copies_keep_the_games_odds` (copies, so the copy
+taken can be a known card, a floater or a plain one) mix random-spot
+inserts, cards on top, removals and draws; the engine's states form a
+mixture, equal to the game's enumeration at every draw and every next
+hand.
+
 ## 2. The next turn's draw, from one engine function
 
 `CombatState::next_draw(&self) -> (min, max)`, the number of cards the

@@ -17,15 +17,32 @@ relic, and gives packs eight new words.
 **Non-goals** (each needs a bigger engine piece; listed with it in
 `docs/research/act1-relics-potions.md` "Missing building blocks"):
 The Bomb (separate countdowns per card played: per-instance powers),
-Secret Technique, Secret Weapon (a pick from the draw pile), Violence
-(random cards of a type from the draw pile), Panache (a counter on a
-power), Forethought (a known bottom of the draw pile). Enlightenment,
+Panache (a counter on a power), Forethought (a known bottom of the draw
+pile). Enlightenment,
 once a Non-goal (a "costs 1 this turn" mark), loads since the colorless
 build A (`CombatState::turn_costs` beside `free_in_hand`, effect
 `CostAtMost`; docs/research/build-plans-2026-11-14/colorless-piles.md).
 Every random pick in the hand (Madness, Mummified Hand, Warped Tongs,
 True Grit) rolls over copy classes (`HandMark`: unmarked, each cost this
-turn, marked 0), and Dual Wield's copy carries a cost-this-turn mark. Magnetism, once a Non-goal (a random card in a
+turn, marked 0), and Dual Wield's copy carries a cost-this-turn mark.
+Secret Technique, Secret Weapon and Violence, once Non-goals (taking
+cards out of the draw pile), load since the colorless build B: the pick
+`DrawToHand`, the condition `DrawHas` (their `playable_if`), the effect
+`TakeRandomFromDraw`, and `ChanceEvent::DrawInstance` / `TakeRandom`
+(`CombatState::instance_outcomes`, `Top::without`:
+docs/research/build-plans-2026-11-14/colorless-piles.md). A card taken
+out of the draw pile keeps what the player knows of its order exact:
+which copy left is a chance event when the copies differ in what is
+known (a known head card, a floater, a plain card), and a floater's
+knowledge gains a **slack** (docs/specs/draw-knowledge.md). Known
+difference (accepted, as draw-knowledge item 1's search knowing which
+instance went): Secret Technique and Secret Weapon take a uniformly
+random copy of the chosen kind, as a player picking among identical grid
+cards at random would; the game's grid puts the bottommost Skill (Attack)
+of the draw pile always in its last slot, so a player could take that
+copy on purpose and learn its kind, which the engine doesn't model.
+Violence is the game's own rule (a shuffled sample without replacement).
+Magnetism, once a Non-goal (a random card in a
 power hook), loads since that piece landed (blocked-relics step 5;
 docs/research/build-plans-2026-11-14/colorless-powers.md build A), and
 so does Mayhem (build B: a power's `PlayTop` hook owes its takes behind

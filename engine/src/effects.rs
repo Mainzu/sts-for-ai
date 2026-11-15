@@ -162,6 +162,11 @@ pub enum PickKind {
     /// of it, past the hand limit into the discard pile (Dual Wield, the
     /// game's `DualWieldAction`). One eligible card is copied at once.
     CopyInHand,
+    /// From the draw pile into hand, the discard pile when the hand is full
+    /// (Secret Technique, Secret Weapon: the game's
+    /// `SkillFromDeckToHandAction`, `AttackFromDeckToHandAction`). Any
+    /// copy of the chosen kind goes alike (`ChanceEvent::DrawInstance`).
+    DrawToHand,
 }
 
 /// A set of card types: the cards a pick may take (`Effect::Pick`'s `of`).
@@ -393,6 +398,12 @@ pub enum Effect {
     /// one whose own cost is above `cost` costs `cost` for the combat too,
     /// keeping its mark. No chance.
     CostAtMost { cost: i8, combat: bool },
+    /// Up to `n` random draw pile cards of type `ty` leave it (every copy
+    /// alike, without replacement): the first ones for the hand while it has
+    /// room, the rest for the discard pile (Violence, the game's
+    /// `DrawPileToHandAction`). A chance event while the result is not one
+    /// state.
+    TakeRandomFromDraw { ty: CardType, n: u8 },
 }
 
 impl Effect {

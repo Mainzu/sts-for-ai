@@ -10,7 +10,7 @@
     },
     {
       "path": "content/packs/act1-colorless.json",
-      "sha256": "f31deca3f13aafec97217aca09309f6b9b851857672889e6286695d97201a16d"
+      "sha256": "ccd2ac881cfbe2abbbb27ea176e9d15b7c8a7c26147ea8b5de3d6b240011061a"
     },
     {
       "path": "content/relics.json",
@@ -1436,5 +1436,5 @@
       "until": "2026-11-14T07:43:49+07:00 @ d48b3f26"
     }
   ],
-  "seal": "b7a5781be2f9ea544e7d2ee1918b615ffcab563bb4e7c5ff2debf749e8ae329f"
+  "seal": "1f36c0614da20cf7484121833d554179535a575b17677695f7dc666c01ad51aa"
 }

@@ -893,10 +893,15 @@ impl Combat {
         // What the player knows of the draw pile's order (Headbutt):
         // the known cards from the top, and floaters (card, cards above it).
         v.set_item("top", s.top.known().map(|c| card_name(c, b)).collect::<Vec<_>>())?;
-        // Sorted by name: the engine keeps them in card-id order, and the ids
-        // of changed copies depend on what the process met first.
-        let mut floaters: Vec<(&str, u8)> = s.top.floaters().map(|(c, a)| (card_name(c, b), a)).collect();
-        floaters.sort();
+        // Oldest first, as `Top` orders them (the order matters), each with
+        // its cards above and its slack: [name, above, slack]. A run of equal
+        // (above, slack), whose order can't matter and which the engine keeps
+        // in card-id order (the ids of changed copies depend on what the
+        // process met first), is sorted by name.
+        let mut floaters: Vec<(&str, u8, u8)> = s.top.floaters_slack().map(|(c, a, k)| (card_name(c, b), a, k)).collect();
+        for run in floaters.chunk_by_mut(|x, y| (x.1, x.2) == (y.1, y.2)) {
+            run.sort();
+        }
         v.set_item("top_floaters", floaters)?;
         v.set_item("draw", pile(s.draw())?)?;
         v.set_item("discard", pile(s.discard())?)?;
@@ -1177,12 +1182,29 @@ impl Combat {
         s.top_queue = Default::default();
         s.top = Default::default();
         let known: Vec<String> = get(view, "top")?.unwrap_or_default();
-        let floaters: Vec<(String, u8)> = pairs(view, "top_floaters")?;
+        // [name, above] (an older view: slack 0) or [name, above, slack].
+        let floaters: Vec<(String, u8, u8)> = {
+            let items: Vec<Bound<'_, PyAny>> = get(view, "top_floaters")?.unwrap_or_default();
+            items
+                .iter()
+                .map(|x| {
+                    let bad = |e: PyErr| err(format!("view key \"top_floaters\": {e}"));
+                    let n = x.len()?;
+                    if !(2..=3).contains(&n) {
+                        return Err(err("view key \"top_floaters\": entries are [name, above] or [name, above, slack]"));
+                    }
+                    let a = x.get_item(0)?.extract::<String>().map_err(bad)?;
+                    let b = x.get_item(1)?.extract::<u8>().map_err(bad)?;
+                    let c = if n == 3 { x.get_item(2)?.extract::<u8>().map_err(bad)? } else { 0 };
+                    Ok((a, b, c))
+                })
+                .collect::<PyResult<_>>()?
+        };
         if !known.is_empty() || !floaters.is_empty() {
             let id = |n: &String| card_ids.get(n).copied().ok_or_else(|| err(format!("top card {n:?} not in the piles")));
             let known: Vec<CardId> = known.iter().map(id).collect::<PyResult<_>>()?;
-            let floaters: Vec<(CardId, u8)> = floaters.iter().map(|(n, a)| Ok((id(n)?, *a))).collect::<PyResult<_>>()?;
-            s.top = sts_engine::state::Top::from_parts(&known, &floaters).ok_or_else(|| err("top: not a draw-pile knowledge"))?;
+            let floaters: Vec<(CardId, u8, u8)> = floaters.iter().map(|(n, a, k)| Ok((id(n)?, *a, *k))).collect::<PyResult<_>>()?;
+            s.top = sts_engine::state::Top::from_parts_slack(&known, &floaters).ok_or_else(|| err("top: not a draw-pile knowledge"))?;
             if !s.top.within(s.draw()) {
                 return Err(err("top: cards or cards above them the draw pile doesn't hold"));
             }
