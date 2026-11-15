@@ -34,12 +34,12 @@
   "pinned": false,
   "note": null,
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:12:30+00:00 @ fc9cdd8",
+  "at": "2026-11-02T23:12:30+07:00 @ fc9cdd8",
   "confirms": [],
   "flags": [
     {
       "by": "4a17366f-b8aa-4d87-974e-5a037ff67155",
-      "at": "2026-11-06T15:05:56+00:00 @ 34ec7e4",
+      "at": "2026-11-06T22:05:56+07:00 @ 34ec7e4",
       "reason": "review 2026-11-06: the lean, lean-thr, data40k and data80k rows are seed 1 only; pooled over three seeds data40k reads -0.16 HP and lean-thr is level with the 10-29 net (two skeptics); re-set from the ledger script when it exists"
     }
   ],
@@ -76,8 +76,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:12:30+00:00 @ fc9cdd8",
-      "until": "2026-11-06T22:56:23+00:00 @ c3f8745",
+      "at": "2026-11-02T23:12:30+07:00 @ fc9cdd8",
+      "until": "2026-11-07T05:56:23+07:00 @ c3f8745",
       "retired": "replaced by measurement/ledger@cells (ledger.py pools every recipe over seeds and books, as the review's flag asked)"
     }
   ],

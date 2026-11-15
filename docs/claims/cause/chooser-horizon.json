@@ -6,7 +6,7 @@
   "sources": [
     {
       "path": "scripts/gauntlet.py",
-      "sha256": "467b6f22c066a4a78f8019ed186148284ee0f5a59db9b36d35259864fa98e688"
+      "sha256": "423da2758d9ae9a9e5e391a6486544276dc1d2f9a718fc2f0cd437cb60ce2be6"
     },
     {
       "key": "cause/boss-deaths-elite-hp",
@@ -22,12 +22,17 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:28:59Z @ 3123201a",
+  "at": "2026-11-13T09:28:59+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
-      "at": "2026-11-13T13:43:11Z @ d240a173",
+      "at": "2026-11-13T20:43:11+07:00 @ d240a173",
       "note": "navigator 2026-11-13: scripts/gauntlet.py diff since 3123201a is only RUST_MIN_STACK 64 MB; chooser scoring unchanged"
+    },
+    {
+      "by": "0da61d6f-35d0-4446-8154-bd86ddcaed39",
+      "at": "2026-11-15T13:37:19+07:00 @ a7061d61",
+      "note": "5eaccdaf passes the run's max HP (75 at A20) into sim_choose and rest_choose; the chooser's trial fights are still the next floor plus the boss, so the horizon claim holds"
     }
   ],
   "flags": [],
@@ -56,8 +61,8 @@
       ],
       "owner": false,
       "by": "ed3c6b4a-3acf-4db6-955f-8d0df3367833",
-      "at": "2026-11-07T01:19:20Z @ de5296b",
-      "until": "2026-11-10T05:10:39Z @ 8d8349d"
+      "at": "2026-11-07T08:19:20+07:00 @ de5296b",
+      "until": "2026-11-10T12:10:39+07:00 @ 8d8349d"
     },
     {
       "rev": 2,
@@ -92,8 +97,8 @@
       ],
       "owner": false,
       "by": "9b2dd76a-ebb7-49f2-a306-4e05e9845de4",
-      "at": "2026-11-10T05:10:39Z @ 8d8349d",
-      "until": "2026-11-10T05:11:19Z @ 8d8349d"
+      "at": "2026-11-10T12:10:39+07:00 @ 8d8349d",
+      "until": "2026-11-10T12:11:19+07:00 @ 8d8349d"
     },
     {
       "rev": 3,
@@ -128,9 +133,9 @@
       ],
       "owner": false,
       "by": "9b2dd76a-ebb7-49f2-a306-4e05e9845de4",
-      "at": "2026-11-10T05:11:19Z @ 8d8349d",
-      "until": "2026-11-13T02:28:59Z @ 3123201a"
+      "at": "2026-11-10T12:11:19+07:00 @ 8d8349d",
+      "until": "2026-11-13T09:28:59+07:00 @ 3123201a"
     }
   ],
-  "seal": "e08e4d2b99b04ca54ed9a71ef9d90c15cb32cc5bbc94d94d6f5da3259801aaec"
+  "seal": "57c04b589da160997908a5ef2104cc79298aec681851cca8df421e1e64243cb5"
 }

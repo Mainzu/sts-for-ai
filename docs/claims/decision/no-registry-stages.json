@@ -19,7 +19,7 @@
   "pinned": false,
   "note": null,
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:11:31Z @ fc9cdd8",
+  "at": "2026-11-02T23:11:31+07:00 @ fc9cdd8",
   "confirms": [],
   "flags": [],
   "history": [
@@ -40,8 +40,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:11:31Z @ fc9cdd8",
-      "until": "2026-11-04T12:58:18Z @ 8fc9083",
+      "at": "2026-11-02T23:11:31+07:00 @ fc9cdd8",
+      "until": "2026-11-04T19:58:18+07:00 @ 8fc9083",
       "retired": "superseded by the owner's decision of 2026-11-04 (decision/registry-first): runtime-registry stages 2-5 are now the first development item; lane/runtime-registry opened"
     }
   ],

@@ -18,11 +18,11 @@
   "pinned": false,
   "note": null,
   "by": "5c05598a-e481-4462-8671-1b83efbc36a8",
-  "at": "2026-11-10T05:43:15Z @ 856b9c3",
+  "at": "2026-11-10T12:43:15+07:00 @ 856b9c3",
   "confirms": [
     {
       "by": "5c05598a-e481-4462-8671-1b83efbc36a8",
-      "at": "2026-11-10T06:12:46Z @ 8243021",
+      "at": "2026-11-10T13:12:46+07:00 @ 8243021",
       "note": "upgradable() in scripts/gauntlet.py still requires the + in sts.deck_card_names() for official cards (Amendment 1 changed only base_ids)"
     }
   ],
@@ -44,8 +44,8 @@
       ],
       "owner": false,
       "by": "5c05598a-e481-4462-8671-1b83efbc36a8",
-      "at": "2026-11-10T05:43:15Z @ 856b9c3",
-      "until": "2026-11-10T06:13:40Z @ 8243021",
+      "at": "2026-11-10T12:43:15+07:00 @ 856b9c3",
+      "until": "2026-11-10T13:13:40+07:00 @ 8243021",
       "retired": "the same fact under the shorter key decision/rest-held-out (STATUS.md's length cap)"
     }
   ],

@@ -17,11 +17,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:29:20Z @ 3123201a",
+  "at": "2026-11-13T09:29:20+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:26Z @ 3123201a",
+      "at": "2026-11-13T09:33:26+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/rate-columns@ritual2, measurement/seed-sd@gauntlet reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
@@ -47,8 +47,8 @@
       ],
       "owner": false,
       "by": "d324392d-c74c-40b3-8e96-6301e0fb4db6",
-      "at": "2026-11-04T17:59:37Z @ 011f7f1",
-      "until": "2026-11-13T02:29:20Z @ 3123201a"
+      "at": "2026-11-05T00:59:37+07:00 @ 011f7f1",
+      "until": "2026-11-13T09:29:20+07:00 @ 3123201a"
     }
   ],
   "seal": "cb6cae9c30e07ba53dc719772586729eedc2d902cca1c3bf00d4c93919e482fd"

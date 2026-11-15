@@ -18,11 +18,11 @@
   "pinned": false,
   "note": null,
   "by": "6aa4a9da-7898-44db-8044-db1c5ead72f0",
-  "at": "2026-11-13T11:33:25Z @ 65ef0fb2",
+  "at": "2026-11-13T18:33:25+07:00 @ 65ef0fb2",
   "confirms": [
     {
       "by": "7d56156e-4917-4739-9261-9dd0f9274997",
-      "at": "2026-11-13T13:24:19Z @ c4fb1faf",
+      "at": "2026-11-13T20:24:19+07:00 @ c4fb1faf",
       "note": "real-game-bridge.md changed only its Status line, as-built notes kept (8b0ba903); launch/play flow unchanged"
     }
   ],

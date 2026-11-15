@@ -18,21 +18,21 @@
   "pinned": false,
   "note": null,
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:11:25Z @ fc9cdd8",
+  "at": "2026-11-02T23:11:25+07:00 @ fc9cdd8",
   "confirms": [
     {
       "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
-      "at": "2026-11-03T00:34:27Z @ da67084",
-      "note": "README.md#Learned play re-read 00:50 UTC 2026-11-03: datasets/<id> with manifest, cache/, immutable runs/<date>-<config>-<hash>, runs/index.csv, other rules refused, all as stated; the section's change is the survive score config note"
+      "at": "2026-11-03T07:34:27+07:00 @ da67084",
+      "note": "README.md#Learned play re-read 07:50 2026-11-03: datasets/<id> with manifest, cache/, immutable runs/<date>-<config>-<hash>, runs/index.csv, other rules refused, all as stated; the section's change is the survive score config note"
     },
     {
       "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
-      "at": "2026-11-05T14:59:45Z @ 2e013b2",
+      "at": "2026-11-05T21:59:45+07:00 @ 2e013b2",
       "note": "README Learned play section trimmed (sweep subsection shortened, amendment history and a survive-arm result dropped); the registry paragraph this fact restates is unchanged"
     },
     {
       "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
-      "at": "2026-11-10T15:37:59Z @ 80d6c86",
+      "at": "2026-11-10T22:37:59+07:00 @ 80d6c86",
       "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
     }
   ],

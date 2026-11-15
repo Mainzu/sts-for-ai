@@ -19,16 +19,16 @@
   "pinned": false,
   "note": "direction heading renamed (no date in instruction files)",
   "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
-  "at": "2026-11-05T14:25:53Z @ ccff0a5",
+  "at": "2026-11-05T21:25:53+07:00 @ ccff0a5",
   "confirms": [
     {
       "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
-      "at": "2026-11-05T14:26:16Z @ ccff0a5",
+      "at": "2026-11-05T21:26:16+07:00 @ ccff0a5",
       "note": "direction heading renamed (no date in instruction files)"
     },
     {
       "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
-      "at": "2026-11-05T15:24:47Z @ 1e8f127",
+      "at": "2026-11-05T22:24:47+07:00 @ 1e8f127",
       "note": "direction section lost only its line on goal 1's yardstick; the rule stated in this fact is unchanged"
     }
   ],

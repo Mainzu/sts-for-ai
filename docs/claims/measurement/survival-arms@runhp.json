@@ -26,11 +26,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:31:34+00:00 @ 3123201a",
+  "at": "2026-11-13T09:31:34+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
-      "at": "2026-11-13T04:30:13+00:00 @ 28c50af5",
+      "at": "2026-11-13T11:30:13+07:00 @ 28c50af5",
       "note": "the fact was read against the old one-turn control files (net1029-hpb0.01-starter-simboss.json / net1029-hpb0.01.json), which are unchanged; only the yardstick pointer moved (decisions 'Combined one-turn control ... read', 2026-11-13)"
     }
   ],
@@ -72,8 +72,8 @@
       ],
       "owner": false,
       "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
-      "at": "2026-11-02T17:23:50+00:00 @ c3f81f4",
-      "until": "2026-11-13T02:31:34+00:00 @ 3123201a"
+      "at": "2026-11-03T00:23:50+07:00 @ c3f81f4",
+      "until": "2026-11-13T09:31:34+07:00 @ 3123201a"
     }
   ],
   "seal": "36c9c115c4a8a112a5c34f661751264088e05def6fc74db6ac8f05f38c078e23"

@@ -18,16 +18,16 @@
   "pinned": false,
   "note": null,
   "by": "2fda0390-ebf2-4956-a49b-b93252b1ac30",
-  "at": "2026-11-13T01:43:25Z @ 2d152e05",
+  "at": "2026-11-13T08:43:25+07:00 @ 2d152e05",
   "confirms": [
     {
       "by": "2fda0390-ebf2-4956-a49b-b93252b1ac30",
-      "at": "2026-11-13T01:46:54Z @ 206c50d6",
+      "at": "2026-11-13T08:46:54+07:00 @ 206c50d6",
       "note": "the section edit renamed job 0968 to 0969 only; the tb1 adoption text unchanged"
     },
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:17Z @ 3123201a",
+      "at": "2026-11-13T09:33:17+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/portfolio-finish-faster-tiebreak reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],

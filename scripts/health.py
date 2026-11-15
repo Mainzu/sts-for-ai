@@ -45,7 +45,19 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import jobs  # noqa: E402
 from sweep_watch import pid_alive  # noqa: E402
 
-KB = os.path.join(os.path.expanduser("~"), ".claude", "skills", "kb", "kb.py")
+def find_kb():
+    """kb.py: $KB_PY, else the skills folder, else the newest installed kb plugin."""
+    if os.environ.get("KB_PY"):
+        return os.environ["KB_PY"]
+    home = os.path.expanduser("~")
+    path = os.path.join(home, ".claude", "skills", "kb", "kb.py")
+    if os.path.exists(path):
+        return path
+    found = glob.glob(os.path.join(home, ".claude", "plugins", "cache", "mainzu", "kb", "*", "skills", "kb", "kb.py"))
+    return max(found, key=os.path.getmtime) if found else path
+
+
+KB = find_kb()
 IDEAS_REPO = os.environ.get("STS_IDEAS_REPO", "")  # owner/repo of the idea issues; unset: the ideas metric is unknown
 DISK_MIN_GB = 8.0
 UNPUSHED_MAX_H = 0.5        # a commit on main not pushed after this long means a refused push

@@ -47,7 +47,7 @@
   "pinned": false,
   "note": null,
   "by": "1ec59987-d1e7-4821-ae13-fbedea71c3f8",
-  "at": "2026-11-12T12:35:45+00:00 @ c570745",
+  "at": "2026-11-12T19:35:45+07:00 @ c570745",
   "confirms": [],
   "flags": [],
   "history": [
@@ -96,8 +96,8 @@
       ],
       "owner": false,
       "by": "1ec59987-d1e7-4821-ae13-fbedea71c3f8",
-      "at": "2026-11-12T12:35:45+00:00 @ c570745",
-      "until": "2026-11-12T16:01:19+00:00 @ 0ee4d27",
+      "at": "2026-11-12T19:35:45+07:00 @ c570745",
+      "until": "2026-11-12T23:01:19+07:00 @ 0ee4d27",
       "retired": "merged into measurement/genpack-yardstick@18-seeds (STATUS cap), which quotes its numbers"
     }
   ],

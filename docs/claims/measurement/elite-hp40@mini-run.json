@@ -30,7 +30,7 @@
   "pinned": false,
   "note": null,
   "by": "3edeb150-e3e3-40cf-bb7e-c5b63b73194e",
-  "at": "2026-11-04T06:54:58+00:00 @ bd51c87",
+  "at": "2026-11-04T13:54:58+07:00 @ bd51c87",
   "confirms": [],
   "flags": [],
   "history": [
@@ -62,8 +62,8 @@
       ],
       "owner": false,
       "by": "3edeb150-e3e3-40cf-bb7e-c5b63b73194e",
-      "at": "2026-11-04T06:54:58+00:00 @ bd51c87",
-      "until": "2026-11-11T08:58:25+00:00 @ 20449c5",
+      "at": "2026-11-04T13:54:58+07:00 @ bd51c87",
+      "until": "2026-11-11T15:58:25+07:00 @ 20449c5",
       "retired": "merged into measurement/mini-run@control (STATUS cap)"
     }
   ],

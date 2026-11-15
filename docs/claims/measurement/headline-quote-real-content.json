@@ -26,11 +26,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:28:19+00:00 @ 3123201a",
+  "at": "2026-11-13T09:28:19+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:19+00:00 @ 3123201a",
+      "at": "2026-11-13T09:33:19+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/act1-monsters@product, measurement/pack-net-scratch@two-turn, measurement/act1-cards@pack-offers reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],

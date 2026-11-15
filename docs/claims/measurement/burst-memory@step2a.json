@@ -22,7 +22,7 @@
   "pinned": false,
   "note": null,
   "by": "d41b9665-fb2c-439a-9abb-7972c16ad0f3",
-  "at": "2026-11-06T22:32:07+00:00 @ 579a868",
+  "at": "2026-11-07T05:32:07+07:00 @ 579a868",
   "confirms": [],
   "flags": [],
   "history": [
@@ -46,8 +46,8 @@
       ],
       "owner": false,
       "by": "d41b9665-fb2c-439a-9abb-7972c16ad0f3",
-      "at": "2026-11-06T22:32:07+00:00 @ 579a868",
-      "until": "2026-11-11T07:44:08+00:00 @ 0b5de0f",
+      "at": "2026-11-07T05:32:07+07:00 @ 579a868",
+      "until": "2026-11-11T14:44:08+07:00 @ 0b5de0f",
       "retired": "merged into measurement/learn-memory@40k (STATUS cap)"
     }
   ],

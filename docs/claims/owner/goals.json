@@ -14,11 +14,11 @@
   "pinned": false,
   "note": null,
   "by": "a6359566-cf14-4ff6-86a0-0d5e6d776985",
-  "at": "2026-11-09T06:02:03Z @ d3bfcae",
+  "at": "2026-11-09T13:02:03+07:00 @ d3bfcae",
   "confirms": [
     {
       "by": "7d56156e-4917-4739-9261-9dd0f9274997",
-      "at": "2026-11-13T14:03:29Z @ 83c18db4",
+      "at": "2026-11-13T21:03:29+07:00 @ 83c18db4",
       "note": "Goals (owner) changed only where the Act 1 count is kept (docs/INDEX.md, owner-approved 2026-11-13); goals unchanged"
     }
   ],
@@ -36,8 +36,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:11:39Z @ fc9cdd8",
-      "until": "2026-11-09T06:02:03Z @ d3bfcae"
+      "at": "2026-11-02T23:11:39+07:00 @ fc9cdd8",
+      "until": "2026-11-09T13:02:03+07:00 @ d3bfcae"
     }
   ],
   "seal": "3b364e322ec349edca32db8fda89698a68ea49f91511120421aed63f4460f097"

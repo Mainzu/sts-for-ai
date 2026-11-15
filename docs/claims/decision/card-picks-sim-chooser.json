@@ -18,11 +18,11 @@
   "pinned": false,
   "note": null,
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:11:27Z @ fc9cdd8",
+  "at": "2026-11-02T23:11:27+07:00 @ fc9cdd8",
   "confirms": [
     {
       "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
-      "at": "2026-11-02T17:25:57Z @ 7f0a742",
+      "at": "2026-11-03T00:25:57+07:00 @ 7f0a742",
       "note": "run-value-plan rev 2 only closes (c) and (d); the card-pick decision is unchanged"
     }
   ],

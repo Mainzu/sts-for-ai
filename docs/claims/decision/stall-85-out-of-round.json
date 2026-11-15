@@ -1,26 +1,55 @@
 {
   "key": "decision/stall-85-out-of-round",
-  "rev": 1,
-  "value": "Backlog 85 (Protect stall) adds no input to the final round: the headline's hard pool has no Gremlin Gang (gauntlet.py HARD), so it can gain nothing on the ruler; pack-monsters headline Gremlin Gang 4.62 HP/fight, 1 death in 138. Research fix folds into backlog 81 (ally-block column); live stopgap is fight guard 2 (85(b)).",
+  "rev": 2,
+  "value": "Backlog 85 (Protect stall) adds no input to the final round (its inputs close 2026-11-20): the research fix folds into backlog 81 (ally-block column), the live stopgap is fight guard 2 (85(b)). With the pack on the A20 ruler Gremlin Gang is on it again (20.8 HP/fight one turn deep, measurement/act1-ruler@a20), so its remainder returns after the round as backlog 92 gang-protect.",
   "status": "active",
   "sources": [
     {
       "path": "docs/decisions.md",
       "anchor": "A20 controls now; the win cap read at A20; 85's fallback and 76 (on the owner's behalf, 2026-11-15)",
-      "sha256": "0e8b94ebb278514f4bd26df846715719b148b3934c3428c413338c0be5c4418d"
+      "sha256": "ba4e39e45fef716942eff4b5863fc85ddf05bd072010f8825e958608bdb46982"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "The A20 ruler takes the pack; its fixed shape saturates; a shape probe before 1018 (on the owner's behalf, 2026-11-15)",
+      "sha256": "b404374db67433f1f66282708051b4bfd3fa42451edf15e7d8148662292d6a07"
     },
     {
       "path": "docs/research/stall-probes.md",
       "sha256": "212d6afe54c81862a430e7606040feca7c917063e40d3f49399685c7118c4149"
+    },
+    {
+      "key": "measurement/act1-ruler@a20",
+      "rev": 1
     }
   ],
   "owner": false,
   "pinned": false,
   "note": null,
-  "by": "0978e03c-be4b-40a0-961e-d5c5404c0e70",
-  "at": "2026-11-15T02:49:07+00:00 @ 9db2c8a3",
+  "by": "0da61d6f-35d0-4446-8154-bd86ddcaed39",
+  "at": "2026-11-15T13:37:33+07:00 @ a7061d61",
   "confirms": [],
   "flags": [],
-  "history": [],
-  "seal": "92b9f975116de38d73af41720135b9d791e57b92b697c6a1889b71947c3cf7b6"
+  "history": [
+    {
+      "rev": 1,
+      "value": "Backlog 85 (Protect stall) adds no input to the final round: the headline's hard pool has no Gremlin Gang (gauntlet.py HARD), so it can gain nothing on the ruler; pack-monsters headline Gremlin Gang 4.62 HP/fight, 1 death in 138. Research fix folds into backlog 81 (ally-block column); live stopgap is fight guard 2 (85(b)).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "A20 controls now; the win cap read at A20; 85's fallback and 76 (on the owner's behalf, 2026-11-15)",
+          "sha256": "0e8b94ebb278514f4bd26df846715719b148b3934c3428c413338c0be5c4418d"
+        },
+        {
+          "path": "docs/research/stall-probes.md",
+          "sha256": "212d6afe54c81862a430e7606040feca7c917063e40d3f49399685c7118c4149"
+        }
+      ],
+      "owner": false,
+      "by": "0978e03c-be4b-40a0-961e-d5c5404c0e70",
+      "at": "2026-11-15T09:49:07+07:00 @ 9db2c8a3",
+      "until": "2026-11-15T13:37:33+07:00 @ a7061d61"
+    }
+  ],
+  "seal": "1c9749b99581f7fdc1bdc298a969330744b04ae91d42b17583d20057535649a0"
 }

@@ -18,7 +18,7 @@
   "pinned": false,
   "note": "debug run of play_last_probe (#[ignore]) 2026-11-14, heuristic evaluator, default SearchConfig; 34,867 and 14,623 from the 2026-11-13 probe",
   "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
-  "at": "2026-11-14T13:17:06+00:00 @ d661984c",
+  "at": "2026-11-14T20:17:06+07:00 @ d661984c",
   "confirms": [],
   "flags": [],
   "history": [
@@ -33,8 +33,8 @@
       ],
       "owner": false,
       "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
-      "at": "2026-11-13T14:20:38+00:00 @ 5ae86a77",
-      "until": "2026-11-14T13:17:06+00:00 @ d661984c"
+      "at": "2026-11-13T21:20:38+07:00 @ 5ae86a77",
+      "until": "2026-11-14T20:17:06+07:00 @ d661984c"
     }
   ],
   "seal": "3daf05713eff04dff19ebca5bc896adfb6f6a5dcbf32ea4fadfb243a01da1f52"

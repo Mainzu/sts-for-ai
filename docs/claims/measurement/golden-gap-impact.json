@@ -21,7 +21,7 @@
   "pinned": false,
   "note": "counts 2026-11-14 at 2899ba05: manifest/run.json loops, read-only sqlite counts, jobs.py pins",
   "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
-  "at": "2026-11-14T07:29:47+00:00 @ 287af073",
+  "at": "2026-11-14T14:29:47+07:00 @ 287af073",
   "confirms": [],
   "flags": [],
   "history": [
@@ -44,8 +44,8 @@
       ],
       "owner": false,
       "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
-      "at": "2026-11-14T07:29:25+00:00 @ 287af073",
-      "until": "2026-11-14T07:29:47+00:00 @ 287af073"
+      "at": "2026-11-14T14:29:25+07:00 @ 287af073",
+      "until": "2026-11-14T14:29:47+07:00 @ 287af073"
     }
   ],
   "seal": "c216e9811433f2376b739a0a0a9ba0532b903e17debd99b10c4743afb3a109d0"

@@ -19,11 +19,11 @@
   "pinned": false,
   "note": null,
   "by": "ea89a8f4-8c59-4b7d-bec0-35b31ed878d6",
-  "at": "2026-11-04T12:45:20Z @ fe27ec2",
+  "at": "2026-11-04T19:45:20+07:00 @ fe27ec2",
   "confirms": [
     {
       "by": "62b7a521-3221-4c6f-8916-214850efc667",
-      "at": "2026-11-10T12:13:28Z @ 4f63f69",
+      "at": "2026-11-10T19:13:28+07:00 @ 4f63f69",
       "note": "the changed heading now points to 'Parity source: the game's own code (owner, 2026-11-10)', which keeps level 2 of the arena ladder dropped; nothing reopens"
     }
   ],
@@ -46,8 +46,8 @@
       ],
       "owner": true,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:11:42Z @ fc9cdd8",
-      "until": "2026-11-03T06:47:11Z @ 57e0bea"
+      "at": "2026-11-02T23:11:42+07:00 @ fc9cdd8",
+      "until": "2026-11-03T13:47:11+07:00 @ 57e0bea"
     },
     {
       "rev": 2,
@@ -66,8 +66,8 @@
       ],
       "owner": false,
       "by": "a5cb4157-4f5b-4229-8f32-e0392c96548e",
-      "at": "2026-11-03T06:47:11Z @ 57e0bea",
-      "until": "2026-11-04T12:45:20Z @ fe27ec2"
+      "at": "2026-11-03T13:47:11+07:00 @ 57e0bea",
+      "until": "2026-11-04T19:45:20+07:00 @ fe27ec2"
     }
   ],
   "seal": "b1fc0663c12e70591e7cb918f6884c18a666711f1b9cfc423a9b3f68f7e139a2"

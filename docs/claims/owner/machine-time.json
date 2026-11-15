@@ -14,11 +14,11 @@
   "pinned": false,
   "note": "source moved from docs/manager.md to docs/operating.md at the operating-model cut-over",
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:11:40Z @ fc9cdd8",
+  "at": "2026-11-02T23:11:40+07:00 @ fc9cdd8",
   "confirms": [
     {
       "by": "4c7c253c-5b5e-41ad-9b86-9fe7a2e430cb",
-      "at": "2026-11-03T05:23:10Z @ 0d052e3",
+      "at": "2026-11-03T12:23:10+07:00 @ 0d052e3",
       "note": "source moved from docs/manager.md to docs/operating.md at the operating-model cut-over"
     }
   ],

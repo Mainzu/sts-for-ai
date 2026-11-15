@@ -19,7 +19,7 @@
   "pinned": false,
   "note": "resolves the docs: '66 runs' (manager.md) and '16 groups' (big-picture-2026-10-31b diagnosis) describe the same pool; the older 0.006-0.0075 came from one shared-draw group (rung-4 seed check) and is wrong as a general sd. Reproduced by two skeptics from runs/*/round.json",
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:12:34+00:00 @ fc9cdd8",
+  "at": "2026-11-02T23:12:34+07:00 @ fc9cdd8",
   "confirms": [],
   "flags": [],
   "history": [
@@ -40,8 +40,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:12:34+00:00 @ fc9cdd8",
-      "until": "2026-11-11T08:47:39+00:00 @ 2b6131f",
+      "at": "2026-11-02T23:12:34+07:00 @ fc9cdd8",
+      "until": "2026-11-11T15:47:39+07:00 @ 2b6131f",
       "retired": "merged into measurement/seed-sd@gauntlet (STATUS cap)"
     }
   ],

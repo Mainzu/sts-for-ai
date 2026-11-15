@@ -34,7 +34,7 @@
   "pinned": false,
   "note": null,
   "by": "8e6ee65c-7e4e-4c51-b846-19d524091e89",
-  "at": "2026-11-09T23:30:04+00:00 @ 2af5b30",
+  "at": "2026-11-10T06:30:04+07:00 @ 2af5b30",
   "confirms": [],
   "flags": [],
   "history": [
@@ -70,8 +70,8 @@
       ],
       "owner": false,
       "by": "8e6ee65c-7e4e-4c51-b846-19d524091e89",
-      "at": "2026-11-09T23:30:04+00:00 @ 2af5b30",
-      "until": "2026-11-11T00:59:40+00:00 @ 05607eb",
+      "at": "2026-11-10T06:30:04+07:00 @ 2af5b30",
+      "until": "2026-11-11T07:59:40+07:00 @ 05607eb",
       "retired": "superseded by measurement/pack-net-scratch@three-seeds, which pools seed 1 with seeds 101 and 201 on the same reads; no fact cites it"
     }
   ],

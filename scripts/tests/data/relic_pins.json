@@ -68,10 +68,10 @@
   },
   "effects/player": {
    "dtype": "float32",
-   "sha256": "27c9a367c00c088ecb20ccd8e07628bcd06c6fe03c1422cfb74f134d2fbea53d",
+   "sha256": "ad54fc7f490beba3d0b7a536e7c12791042dbf08f39d4b73b9c64c4a9e35b445",
    "shape": [
     3104,
-    35
+    36
    ]
   },
   "effects/row_card": {
@@ -185,10 +185,10 @@
   },
   "ids/player": {
    "dtype": "float32",
-   "sha256": "2b9f0c7cb854a535b780311c2429727a450958b42d30b10733d14037d69e30f3",
+   "sha256": "1a89d325e9d854863de90009d751e4af6ca00aca9d0c336b2d427f6d9d6c0092",
    "shape": [
     3104,
-    57
+    58
    ]
   },
   "ids/row_card": {

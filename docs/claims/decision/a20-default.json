@@ -7,16 +7,22 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Ascension 20 becomes the default setting after the real-game day (owner, 2026-11-14)",
-      "sha256": "c530c3b8f16bc0612afe45a9ad30dd24cf7c3af9af07b1794ee0c7923b041c38"
+      "sha256": "f3eacf04ff88e61fbc91e200dae3aa146fa4ad8c0459ee53cf18f90be890ab67"
     }
   ],
   "owner": false,
   "pinned": false,
   "note": null,
   "by": "6aa4a9da-7898-44db-8044-db1c5ead72f0",
-  "at": "2026-11-14T10:58:31Z @ 3fd17834",
-  "confirms": [],
+  "at": "2026-11-14T17:58:31+07:00 @ 3fd17834",
+  "confirms": [
+    {
+      "by": "0da61d6f-35d0-4446-8154-bd86ddcaed39",
+      "at": "2026-11-15T13:37:20+07:00 @ a7061d61",
+      "note": "decisions heading (owner, 2026-11-14) read in full: A20 default for training, levels recorded, never pooled silently, ruler moves to A20 once A20 controls exist; the order of steps matches"
+    }
+  ],
   "flags": [],
   "history": [],
-  "seal": "7dede5f4835a41256fad75f1c2dc3054f3b5f5f1d786b673105641a402c34be9"
+  "seal": "9f2eddcdb3eba893c2ebec065b71c7b8184fe57fc0eec2d2386539393057c668"
 }

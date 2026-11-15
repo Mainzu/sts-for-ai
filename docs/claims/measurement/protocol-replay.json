@@ -18,7 +18,7 @@
   "pinned": false,
   "note": "corrected same session: the first value quoted decisions' '2.5x more sample-efficient', which this section doesn't hold",
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:14:34+00:00 @ fc9cdd8",
+  "at": "2026-11-02T23:14:34+07:00 @ fc9cdd8",
   "confirms": [],
   "flags": [],
   "history": [
@@ -38,8 +38,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:14:24+00:00 @ fc9cdd8",
-      "until": "2026-11-02T16:14:34+00:00 @ fc9cdd8"
+      "at": "2026-11-02T23:14:24+07:00 @ fc9cdd8",
+      "until": "2026-11-02T23:14:34+07:00 @ fc9cdd8"
     }
   ],
   "seal": "31f67c3417348fcb3d635729a31c3bb57c76f62a0ffc8986931e48358d9cde54"

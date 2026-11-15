@@ -26,16 +26,16 @@
   "pinned": false,
   "note": null,
   "by": "71bd303c-1f59-45cf-8b2f-211d03b8fa6d",
-  "at": "2026-11-08T01:14:30+00:00 @ 82bd92c",
+  "at": "2026-11-08T08:14:30+07:00 @ 82bd92c",
   "confirms": [
     {
       "by": "39a51ba0-c0c3-4eaf-863c-47ea9435815c",
-      "at": "2026-11-08T01:25:26+00:00 @ 2f5aeb9",
+      "at": "2026-11-08T08:25:26+07:00 @ 2f5aeb9",
       "note": "navigator 2026-11-08: the record changed after filing only by the runner's verdict (pass, from family.py verdict), which agrees; cuts, shares and parent changes match docs/research/gen-adapted-column.md's gac-ocd table"
     },
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:19+00:00 @ 3123201a",
+      "at": "2026-11-13T09:33:19+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/gen-adapted@ocpd reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],

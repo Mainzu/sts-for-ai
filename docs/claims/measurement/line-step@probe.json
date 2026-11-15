@@ -22,16 +22,16 @@
   "pinned": false,
   "note": null,
   "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
-  "at": "2026-11-02T18:01:48+00:00 @ 7adb302",
+  "at": "2026-11-03T01:01:48+07:00 @ 7adb302",
   "confirms": [
     {
       "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
-      "at": "2026-11-03T00:37:13+00:00 @ da67084",
+      "at": "2026-11-03T07:37:13+07:00 @ da67084",
       "note": "re-checked 08:00 2026-11-03: product/net rev 4 changed only the play flags (--line-seed --step-line; same net, same price) and yardstick/cost-savers rev 2 only added the line-step verdict; the fact's content is unaffected"
     },
     {
       "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
-      "at": "2026-11-13T09:42:07+00:00 @ e24c419a",
+      "at": "2026-11-13T16:42:07+07:00 @ e24c419a",
       "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
     }
   ],

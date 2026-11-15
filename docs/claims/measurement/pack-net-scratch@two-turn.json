@@ -22,11 +22,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:30:42+00:00 @ 3123201a",
+  "at": "2026-11-13T09:30:42+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
-      "at": "2026-11-13T09:42:23+00:00 @ e24c419a",
+      "at": "2026-11-13T16:42:23+07:00 @ e24c419a",
       "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
     }
   ],
@@ -80,8 +80,8 @@
       ],
       "owner": false,
       "by": "62b7a521-3221-4c6f-8916-214850efc667",
-      "at": "2026-11-10T12:10:46+00:00 @ 9748e5c",
-      "until": "2026-11-10T16:53:04+00:00 @ 5e367c8"
+      "at": "2026-11-10T19:10:46+07:00 @ 9748e5c",
+      "until": "2026-11-10T23:53:04+07:00 @ 5e367c8"
     },
     {
       "rev": 2,
@@ -144,8 +144,8 @@
       ],
       "owner": false,
       "by": "76244db9-7a36-4d59-9a82-257f8498490b",
-      "at": "2026-11-10T16:53:04+00:00 @ 5e367c8",
-      "until": "2026-11-13T02:30:42+00:00 @ 3123201a"
+      "at": "2026-11-10T23:53:04+07:00 @ 5e367c8",
+      "until": "2026-11-13T09:30:42+07:00 @ 3123201a"
     }
   ],
   "seal": "f8b31783f556c358d3a25d294e4d42a833953aa7ea2546d11ab5cf859525a947"

@@ -22,12 +22,12 @@
   "pinned": false,
   "note": null,
   "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
-  "at": "2026-11-02T17:25:54Z @ 7f0a742",
+  "at": "2026-11-03T00:25:54+07:00 @ 7f0a742",
   "confirms": [
     {
       "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
-      "at": "2026-11-03T00:37:05Z @ da67084",
-      "note": "re-checked 01:00 UTC 2026-11-03: product/net rev 4 changed only the play flags (--line-seed --step-line; same net, same price) and yardstick/cost-savers rev 2 only added the line-step verdict; the fact's content is unaffected"
+      "at": "2026-11-03T07:37:05+07:00 @ da67084",
+      "note": "re-checked 08:00 2026-11-03: product/net rev 4 changed only the play flags (--line-seed --step-line; same net, same price) and yardstick/cost-savers rev 2 only added the line-step verdict; the fact's content is unaffected"
     }
   ],
   "flags": [],
@@ -52,8 +52,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:11:34Z @ fc9cdd8",
-      "until": "2026-11-02T17:25:54Z @ 7f0a742"
+      "at": "2026-11-02T23:11:34+07:00 @ fc9cdd8",
+      "until": "2026-11-03T00:25:54+07:00 @ 7f0a742"
     },
     {
       "rev": 2,
@@ -75,8 +75,8 @@
       ],
       "owner": false,
       "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
-      "at": "2026-11-02T17:25:54Z @ 7f0a742",
-      "until": "2026-11-05T14:59:46Z @ 2e013b2",
+      "at": "2026-11-03T00:25:54+07:00 @ 7f0a742",
+      "until": "2026-11-05T21:59:46+07:00 @ 2e013b2",
       "retired": "stage 2 was built and adopted as line step, the two-turn play mode (decision/line-step-play-mode); docs/specs/line-seed.md is gone"
     }
   ],

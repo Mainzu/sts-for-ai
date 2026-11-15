@@ -27,26 +27,26 @@
   "pinned": true,
   "note": "Row V, C1 caps and Shield Gremlin's Protect landed in 378e2a40 (640 Fungi golden lines and 273 proving lines moved, 4 cover games appended), no SAME_RULES entry. Check runs the venv python without -I (it dropped PYTHON* variables); output unchanged.",
   "by": "b8a9db13-f74c-4d56-b794-25229c64f682",
-  "at": "2026-11-14T17:00:14Z @ 5b383266",
+  "at": "2026-11-15T00:00:14+07:00 @ 5b383266",
   "confirms": [
     {
       "by": "1a486010-e04b-47f9-af39-5e94867a4af2",
-      "at": "2026-11-15T01:34:08+00:00 @ 9eb76d4f",
+      "at": "2026-11-15T08:34:08+07:00 @ 9eb76d4f",
       "note": "check passed: 334dd4b4ef071632"
     },
     {
       "by": "0978e03c-be4b-40a0-961e-d5c5404c0e70",
-      "at": "2026-11-15T02:56:53+00:00 @ 92cf478b",
+      "at": "2026-11-15T09:56:53+07:00 @ 92cf478b",
       "note": "check passed: 334dd4b4ef071632"
     },
     {
       "by": "cf44b335-65ef-4f93-841c-f4d788c07b73",
-      "at": "2026-11-15T04:57:32+00:00 @ bbcf740c",
+      "at": "2026-11-15T11:57:32+07:00 @ bbcf740c",
       "note": "check passed: 334dd4b4ef071632"
     },
     {
       "by": "ea69b906-0ef3-444c-8cc3-77db4706d7ae",
-      "at": "2026-11-15T05:20:39+00:00 @ 97721f22",
+      "at": "2026-11-15T12:20:39+07:00 @ 97721f22",
       "note": "Row V, C1 caps and Shield Gremlin's Protect landed in 378e2a40 (640 Fungi golden lines and 273 proving lines moved, 4 cover games appended), no SAME_RULES entry. Check runs the venv python without -I (it dropped PYTHON* variables); output unchanged."
     }
   ],
@@ -67,8 +67,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:08:56Z @ fc9cdd8",
-      "until": "2026-11-10T14:56:42Z @ a97705c"
+      "at": "2026-11-02T23:08:56+07:00 @ fc9cdd8",
+      "until": "2026-11-10T21:56:42+07:00 @ a97705c"
     },
     {
       "rev": 2,
@@ -90,8 +90,8 @@
       ],
       "owner": true,
       "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
-      "at": "2026-11-10T14:56:42Z @ a97705c",
-      "until": "2026-11-10T15:15:34Z @ a97705c"
+      "at": "2026-11-10T21:56:42+07:00 @ a97705c",
+      "until": "2026-11-10T22:15:34+07:00 @ a97705c"
     },
     {
       "rev": 3,
@@ -113,8 +113,8 @@
       ],
       "owner": true,
       "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
-      "at": "2026-11-10T15:15:34Z @ a97705c",
-      "until": "2026-11-13T17:49:37Z @ 49d55af3"
+      "at": "2026-11-10T22:15:34+07:00 @ a97705c",
+      "until": "2026-11-14T00:49:37+07:00 @ 49d55af3"
     },
     {
       "rev": 4,
@@ -136,8 +136,8 @@
       ],
       "owner": true,
       "by": "1d4d0e39-91ea-4cd4-bd84-cc18976039f3",
-      "at": "2026-11-13T17:49:37Z @ 49d55af3",
-      "until": "2026-11-14T08:58:04Z @ 3885e39b"
+      "at": "2026-11-14T00:49:37+07:00 @ 49d55af3",
+      "until": "2026-11-14T15:58:04+07:00 @ 3885e39b"
     },
     {
       "rev": 5,
@@ -159,8 +159,8 @@
       ],
       "owner": false,
       "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
-      "at": "2026-11-14T08:58:04Z @ 3885e39b",
-      "until": "2026-11-14T11:16:54Z @ 88b189c1"
+      "at": "2026-11-14T15:58:04+07:00 @ 3885e39b",
+      "until": "2026-11-14T18:16:54+07:00 @ 88b189c1"
     },
     {
       "rev": 6,
@@ -182,8 +182,8 @@
       ],
       "owner": false,
       "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
-      "at": "2026-11-14T11:16:54Z @ 88b189c1",
-      "until": "2026-11-14T12:51:43Z @ 69a75332"
+      "at": "2026-11-14T18:16:54+07:00 @ 88b189c1",
+      "until": "2026-11-14T19:51:43+07:00 @ 69a75332"
     },
     {
       "rev": 7,
@@ -205,8 +205,8 @@
       ],
       "owner": false,
       "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
-      "at": "2026-11-14T12:51:43Z @ 69a75332",
-      "until": "2026-11-14T15:58:34Z @ 13527edf"
+      "at": "2026-11-14T19:51:43+07:00 @ 69a75332",
+      "until": "2026-11-14T22:58:34+07:00 @ 13527edf"
     },
     {
       "rev": 8,
@@ -228,8 +228,8 @@
       ],
       "owner": false,
       "by": "b8a9db13-f74c-4d56-b794-25229c64f682",
-      "at": "2026-11-14T15:58:34Z @ 13527edf",
-      "until": "2026-11-14T17:00:14Z @ 5b383266"
+      "at": "2026-11-14T22:58:34+07:00 @ 13527edf",
+      "until": "2026-11-15T00:00:14+07:00 @ 5b383266"
     }
   ],
   "seal": "0319085898a08837ec89457f903f061b5f67bb0f503a4225f2514f65e57629a4"

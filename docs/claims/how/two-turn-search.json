@@ -18,21 +18,21 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:29:17Z @ 3123201a",
+  "at": "2026-11-13T09:29:17+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:17Z @ 3123201a",
+      "at": "2026-11-13T09:33:17+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: decision/line-step-play-mode reworded to a shorter single claim; the claim this fact cites kept its key"
     },
     {
       "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
-      "at": "2026-11-13T03:47:04Z @ d08ef5a4",
+      "at": "2026-11-13T10:47:04+07:00 @ d08ef5a4",
       "note": "checked c98e084d's README diff: no two-turn flag or cost text changed"
     },
     {
       "by": "7d56156e-4917-4739-9261-9dd0f9274997",
-      "at": "2026-11-13T13:24:21Z @ c4fb1faf",
+      "at": "2026-11-13T20:24:21+07:00 @ c4fb1faf",
       "note": "README 'Act-1 gauntlet' changed only dead spec links (e901624c); --two-turn text unchanged"
     }
   ],
@@ -60,8 +60,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:11:16Z @ fc9cdd8",
-      "until": "2026-11-03T00:34:23Z @ da67084"
+      "at": "2026-11-02T23:11:16+07:00 @ fc9cdd8",
+      "until": "2026-11-03T07:34:23+07:00 @ da67084"
     },
     {
       "rev": 2,
@@ -89,8 +89,8 @@
       ],
       "owner": false,
       "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
-      "at": "2026-11-03T00:34:23Z @ da67084",
-      "until": "2026-11-13T02:29:17Z @ 3123201a"
+      "at": "2026-11-03T07:34:23+07:00 @ da67084",
+      "until": "2026-11-13T09:29:17+07:00 @ 3123201a"
     }
   ],
   "seal": "d5f0540fc38bb83065f5970935dcb5f27ec3a9583b2ff7c6a2adf6630ad2a50c"

@@ -18,11 +18,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:29:35Z @ 3123201a",
+  "at": "2026-11-13T09:29:35+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:15Z @ 3123201a",
+      "at": "2026-11-13T09:33:15+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/line-step@headline reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
@@ -44,8 +44,8 @@
       ],
       "owner": false,
       "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
-      "at": "2026-11-03T00:34:22Z @ da67084",
-      "until": "2026-11-03T05:42:33Z @ b47437a"
+      "at": "2026-11-03T07:34:22+07:00 @ da67084",
+      "until": "2026-11-03T12:42:33+07:00 @ b47437a"
     },
     {
       "rev": 2,
@@ -63,8 +63,8 @@
       ],
       "owner": false,
       "by": "f1fb0f59-8b60-4c54-a39e-129739c75134",
-      "at": "2026-11-03T05:42:33Z @ b47437a",
-      "until": "2026-11-13T02:29:35Z @ 3123201a"
+      "at": "2026-11-03T12:42:33+07:00 @ b47437a",
+      "until": "2026-11-13T09:29:35+07:00 @ 3123201a"
     }
   ],
   "seal": "e3fb491b40694a3f2f4b5155542e7809ff9ecca659fa5170facd96e6cfb8882e"

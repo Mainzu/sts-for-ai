@@ -30,7 +30,7 @@
   "pinned": false,
   "note": null,
   "by": "58772442-8d0e-4067-9bfa-00b87832475e",
-  "at": "2026-11-08T03:08:47+00:00 @ 5643e98",
+  "at": "2026-11-08T10:08:47+07:00 @ 5643e98",
   "confirms": [],
   "flags": [],
   "history": [
@@ -62,8 +62,8 @@
       ],
       "owner": false,
       "by": "58772442-8d0e-4067-9bfa-00b87832475e",
-      "at": "2026-11-08T03:08:47+00:00 @ 5643e98",
-      "until": "2026-11-12T15:16:13+00:00 @ da93b77",
+      "at": "2026-11-08T10:08:47+07:00 @ 5643e98",
+      "until": "2026-11-12T22:16:13+07:00 @ da93b77",
       "retired": "STATUS.md over its cap; closed lane strength-by-hits-left's numbers stay in cause/leaf-price-trades, measurement/portfolio-strength-by-hits-left and docs/research/strength-hits-price.md#Step 2, scale 0.01 (job 0555, 2026-11-08)"
     }
   ],

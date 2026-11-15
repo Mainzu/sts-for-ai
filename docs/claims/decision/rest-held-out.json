@@ -11,27 +11,32 @@
     },
     {
       "path": "scripts/gauntlet.py",
-      "sha256": "467b6f22c066a4a78f8019ed186148284ee0f5a59db9b36d35259864fa98e688"
+      "sha256": "423da2758d9ae9a9e5e391a6486544276dc1d2f9a718fc2f0cd437cb60ce2be6"
     }
   ],
   "owner": false,
   "pinned": false,
   "note": null,
   "by": "5c05598a-e481-4462-8671-1b83efbc36a8",
-  "at": "2026-11-10T06:13:37Z @ 8243021",
+  "at": "2026-11-10T13:13:37+07:00 @ 8243021",
   "confirms": [
     {
       "by": "dbbf57b7-c9db-43bc-b118-76df16e56eb8",
-      "at": "2026-11-12T01:15:52Z @ 4c2b9a0",
+      "at": "2026-11-12T08:15:52+07:00 @ 4c2b9a0",
       "note": "scripts/gauntlet.py changed only by 45c445b (resolve_player: a glob in the net path resolved to its one match before play); reads, settings and pairing unchanged"
     },
     {
       "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
-      "at": "2026-11-13T13:43:11Z @ d240a173",
+      "at": "2026-11-13T20:43:11+07:00 @ d240a173",
       "note": "navigator 2026-11-13: scripts/gauntlet.py diff since 3123201a is only RUST_MIN_STACK 64 MB; rest-site upgradable() unchanged"
+    },
+    {
+      "by": "0da61d6f-35d0-4446-8154-bd86ddcaed39",
+      "at": "2026-11-15T13:37:18+07:00 @ a7061d61",
+      "note": "scripts/gauntlet.py upgradable() at 5eaccdaf still upgrades an official card only when its + is in sts.deck_card_names(); held-out cards never upgraded; the A20 change touched only max HP"
     }
   ],
   "flags": [],
   "history": [],
-  "seal": "0180671194f3cf706b68e829944f2ab357c90a7cf1803118be3370ef80efdb03"
+  "seal": "223256f33382aa0aac35bc0d00577763ac708f2e478c974b9021dec58b56b881"
 }

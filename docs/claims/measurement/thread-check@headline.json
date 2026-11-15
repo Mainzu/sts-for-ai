@@ -30,11 +30,11 @@
   "pinned": false,
   "note": null,
   "by": "40c7fd32-465f-466d-b406-dffe78633301",
-  "at": "2026-11-04T13:22:21+00:00 @ ac13299",
+  "at": "2026-11-04T20:22:21+07:00 @ ac13299",
   "confirms": [
     {
       "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
-      "at": "2026-11-05T14:57:58+00:00 @ a875850",
+      "at": "2026-11-05T21:57:58+07:00 @ a875850",
       "note": "yardstick/headline-setting rev 2 changed only which depth judges a change (one turn; the two-turn product is the reported score); the setting's flags this fact relies on (--start starter --rewards sim --sim-boss, 500 sequences) are unchanged"
     }
   ],
@@ -68,8 +68,8 @@
       ],
       "owner": false,
       "by": "40c7fd32-465f-466d-b406-dffe78633301",
-      "at": "2026-11-04T13:22:21+00:00 @ ac13299",
-      "until": "2026-11-11T08:47:40+00:00 @ 2b6131f",
+      "at": "2026-11-04T20:22:21+07:00 @ ac13299",
+      "until": "2026-11-11T15:47:40+07:00 @ 2b6131f",
       "retired": "merged into measurement/cost@gauntlet (STATUS cap)"
     }
   ],

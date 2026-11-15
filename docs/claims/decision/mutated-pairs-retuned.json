@@ -21,9 +21,9 @@
   ],
   "owner": false,
   "pinned": false,
-  "note": "0062-mutate-monsters read 15:20 UTC 2026-11-02",
+  "note": "0062-mutate-monsters read 22:20 2026-11-02",
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:11:54Z @ fc9cdd8",
+  "at": "2026-11-02T23:11:54+07:00 @ fc9cdd8",
   "confirms": [],
   "flags": [],
   "history": [
@@ -43,8 +43,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:11:38Z @ fc9cdd8",
-      "until": "2026-11-02T16:11:54Z @ fc9cdd8"
+      "at": "2026-11-02T23:11:38+07:00 @ fc9cdd8",
+      "until": "2026-11-02T23:11:54+07:00 @ fc9cdd8"
     },
     {
       "rev": 2,
@@ -67,8 +67,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:11:54Z @ fc9cdd8",
-      "until": "2026-11-11T16:19:35Z @ 23464e1",
+      "at": "2026-11-02T23:11:54+07:00 @ fc9cdd8",
+      "until": "2026-11-11T23:19:35+07:00 @ 23464e1",
       "retired": "spent (STATUS cap): the stage-A mutated pairs (SharpHide, Metallicize) were read on 2026-11-02 and no open lane plays them; the generated-enemy grid replaced them; the rule stays in its sources"
     }
   ],

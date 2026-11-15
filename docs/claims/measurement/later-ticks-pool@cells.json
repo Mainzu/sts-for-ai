@@ -18,11 +18,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:30:29+00:00 @ 3123201a",
+  "at": "2026-11-13T09:30:29+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:20+00:00 @ 3123201a",
+      "at": "2026-11-13T09:33:20+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/pack-net-twin@one-turn reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
@@ -73,8 +73,8 @@
       ],
       "owner": false,
       "by": "d39a52bc-801d-4e26-ab71-88de22748b97",
-      "at": "2026-11-10T09:57:50+00:00 @ c306ff0",
-      "until": "2026-11-13T02:30:29+00:00 @ 3123201a"
+      "at": "2026-11-10T16:57:50+07:00 @ c306ff0",
+      "until": "2026-11-13T09:30:29+07:00 @ 3123201a"
     }
   ],
   "seal": "db2eafbf9ca2a32ce92b96d4c752bd62b89c8af92dddedd5b9e01f99207dd8cf"

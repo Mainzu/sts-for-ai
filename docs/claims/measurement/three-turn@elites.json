@@ -30,11 +30,11 @@
   "pinned": false,
   "note": null,
   "by": "096341b9-e011-4c28-8fc6-dabe3839b7ea",
-  "at": "2026-11-04T14:07:31+00:00 @ bbd973c",
+  "at": "2026-11-04T21:07:31+07:00 @ bbd973c",
   "confirms": [
     {
       "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
-      "at": "2026-11-13T09:42:42+00:00 @ e24c419a",
+      "at": "2026-11-13T16:42:42+07:00 @ e24c419a",
       "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
     }
   ],

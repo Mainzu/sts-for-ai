@@ -30,7 +30,7 @@
   "pinned": false,
   "note": null,
   "by": "22671add-cd16-4d99-9e2e-3a0bd4f9f071",
-  "at": "2026-11-09T21:10:11+00:00 @ 30aa133",
+  "at": "2026-11-10T04:10:11+07:00 @ 30aa133",
   "confirms": [],
   "flags": [],
   "history": [
@@ -62,8 +62,8 @@
       ],
       "owner": false,
       "by": "22671add-cd16-4d99-9e2e-3a0bd4f9f071",
-      "at": "2026-11-09T21:10:11+00:00 @ 30aa133",
-      "until": "2026-11-10T07:04:30+00:00 @ f97b79c",
+      "at": "2026-11-10T04:10:11+07:00 @ 30aa133",
+      "until": "2026-11-10T14:04:30+07:00 @ f97b79c",
       "retired": "merged into measurement/portfolio-shown-card-numbers"
     }
   ],

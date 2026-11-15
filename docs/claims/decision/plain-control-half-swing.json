@@ -18,7 +18,7 @@
   "pinned": false,
   "note": null,
   "by": "a5cb4157-4f5b-4229-8f32-e0392c96548e",
-  "at": "2026-11-03T07:35:06Z @ 77d7eeb",
+  "at": "2026-11-03T14:35:06+07:00 @ 77d7eeb",
   "confirms": [],
   "flags": [],
   "history": [
@@ -38,8 +38,8 @@
       ],
       "owner": false,
       "by": "a5cb4157-4f5b-4229-8f32-e0392c96548e",
-      "at": "2026-11-03T07:35:06Z @ 77d7eeb",
-      "until": "2026-11-11T11:48:07Z @ d2e6eb5",
+      "at": "2026-11-03T14:35:06+07:00 @ 77d7eeb",
+      "until": "2026-11-11T18:48:07+07:00 @ d2e6eb5",
       "retired": "spent: the plain two-turn player is no read's control now (yardstick/headline-control is the stepped product); the record stays in docs/decisions.md#Review 2026-11-03; STATUS cap"
     }
   ],

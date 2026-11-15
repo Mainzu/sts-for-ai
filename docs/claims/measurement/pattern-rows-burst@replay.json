@@ -54,7 +54,7 @@
   "pinned": false,
   "note": null,
   "by": "5b495940-bc52-4b6c-8aa6-696f09ea7cc9",
-  "at": "2026-11-06T02:36:32+00:00 @ b05316d",
+  "at": "2026-11-06T09:36:32+07:00 @ b05316d",
   "confirms": [],
   "flags": [],
   "history": [
@@ -110,8 +110,8 @@
       ],
       "owner": false,
       "by": "5b495940-bc52-4b6c-8aa6-696f09ea7cc9",
-      "at": "2026-11-06T02:36:32+00:00 @ b05316d",
-      "until": "2026-11-10T07:03:37+00:00 @ f97b79c",
+      "at": "2026-11-06T09:36:32+07:00 @ b05316d",
+      "until": "2026-11-10T14:03:37+07:00 @ f97b79c",
       "retired": "merged into measurement/portfolio-pattern-rows-burst"
     }
   ],

@@ -22,11 +22,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:29:02Z @ 3123201a",
+  "at": "2026-11-13T09:29:02+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:31Z @ 3123201a",
+      "at": "2026-11-13T09:33:31+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/fresh-control@cells, measurement/burst8-tsl1@cells reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
@@ -49,8 +49,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:10:31Z @ fc9cdd8",
-      "until": "2026-11-06T04:28:12Z @ 6e7b860"
+      "at": "2026-11-02T23:10:31+07:00 @ fc9cdd8",
+      "until": "2026-11-06T11:28:12+07:00 @ 6e7b860"
     },
     {
       "rev": 2,
@@ -78,8 +78,8 @@
       ],
       "owner": false,
       "by": "0e7447e6-d56a-4040-b055-879ac14dbf6e",
-      "at": "2026-11-06T04:28:12Z @ 6e7b860",
-      "until": "2026-11-06T23:02:38Z @ c526be3"
+      "at": "2026-11-06T11:28:12+07:00 @ 6e7b860",
+      "until": "2026-11-07T06:02:38+07:00 @ c526be3"
     },
     {
       "rev": 3,
@@ -105,8 +105,8 @@
       ],
       "owner": false,
       "by": "11322cec-67d1-4203-ab9e-e656f1d0a61c",
-      "at": "2026-11-06T23:02:38Z @ c526be3",
-      "until": "2026-11-06T23:38:29Z @ cdd1d7d"
+      "at": "2026-11-07T06:02:38+07:00 @ c526be3",
+      "until": "2026-11-07T06:38:29+07:00 @ cdd1d7d"
     },
     {
       "rev": 4,
@@ -133,8 +133,8 @@
       ],
       "owner": false,
       "by": "11322cec-67d1-4203-ab9e-e656f1d0a61c",
-      "at": "2026-11-06T23:38:29Z @ cdd1d7d",
-      "until": "2026-11-13T02:29:02Z @ 3123201a"
+      "at": "2026-11-07T06:38:29+07:00 @ cdd1d7d",
+      "until": "2026-11-13T09:29:02+07:00 @ 3123201a"
     }
   ],
   "seal": "e48767c1ac7a0d4235380fbabbc6e6cacf420f61c892db7380c6d00f4c9aa76c"

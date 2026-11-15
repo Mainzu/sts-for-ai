@@ -26,11 +26,11 @@
   "pinned": false,
   "note": null,
   "by": "12709262-f343-4a97-bad9-1987a314fa8e",
-  "at": "2026-11-07T13:00:16+00:00 @ 0a8edd4",
+  "at": "2026-11-07T20:00:16+07:00 @ 0a8edd4",
   "confirms": [
     {
       "by": "ff4c73d2-3bed-4ee6-ba6e-cf0c50506dd8",
-      "at": "2026-11-07T16:17:15+00:00 @ bf50a10",
+      "at": "2026-11-07T23:17:15+07:00 @ bf50a10",
       "note": "0470 merged batch 2 into the file; read-gen gives batch 1's eight rows unchanged (all elites and per parent)"
     }
   ],
@@ -60,8 +60,8 @@
       ],
       "owner": false,
       "by": "12709262-f343-4a97-bad9-1987a314fa8e",
-      "at": "2026-11-07T13:00:16+00:00 @ 0a8edd4",
-      "until": "2026-11-11T09:03:51+00:00 @ 20449c5",
+      "at": "2026-11-07T20:00:16+07:00 @ 0a8edd4",
+      "until": "2026-11-11T16:03:51+07:00 @ 20449c5",
       "retired": "merged into measurement/gen-enemies@table24 (same results file; STATUS cap)"
     }
   ],

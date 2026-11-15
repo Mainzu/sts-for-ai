@@ -26,21 +26,21 @@
   "pinned": false,
   "note": null,
   "by": "f1fb0f59-8b60-4c54-a39e-129739c75134",
-  "at": "2026-11-03T05:58:48+00:00 @ 3872195",
+  "at": "2026-11-03T12:58:48+07:00 @ 3872195",
   "confirms": [
     {
       "by": "a5cb4157-4f5b-4229-8f32-e0392c96548e",
-      "at": "2026-11-03T06:47:48+00:00 @ 7fcf10e",
+      "at": "2026-11-03T13:47:48+07:00 @ 7fcf10e",
       "note": "the only change to docs/specs/draw-leaf.md since the fact was set is its status line (3acdcf8: 'built through step 3; the screen failed'); the numbers come from results/probes/draw_leaf_screen.json, unchanged"
     },
     {
       "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
-      "at": "2026-11-13T09:41:44+00:00 @ e24c419a",
+      "at": "2026-11-13T16:41:44+07:00 @ e24c419a",
       "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
     },
     {
       "by": "7d56156e-4917-4739-9261-9dd0f9274997",
-      "at": "2026-11-13T13:24:21+00:00 @ c4fb1faf",
+      "at": "2026-11-13T20:24:21+07:00 @ c4fb1faf",
       "note": "draw-leaf.md changed only its Status line (8b0ba903)"
     }
   ],

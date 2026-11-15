@@ -18,11 +18,11 @@
   "pinned": false,
   "note": null,
   "by": "64c172a1-04ba-4a3e-8b8e-c6bdfc6e543f",
-  "at": "2026-11-09T09:41:13+00:00 @ 46de388",
+  "at": "2026-11-09T16:41:13+07:00 @ 46de388",
   "confirms": [
     {
       "by": "1e53d6ed-baa0-4367-8ee3-26d3d9d38c35",
-      "at": "2026-11-09T09:57:36+00:00 @ 0aed5f6",
+      "at": "2026-11-09T16:57:36+07:00 @ 0aed5f6",
       "note": "scripts/queue_replay.py unchanged since 46de388, the commit the fact's numbers came from (git log); the fact was filed in 8a14073 right after"
     }
   ],
@@ -44,8 +44,8 @@
       ],
       "owner": false,
       "by": "64c172a1-04ba-4a3e-8b8e-c6bdfc6e543f",
-      "at": "2026-11-09T09:41:13+00:00 @ 46de388",
-      "until": "2026-11-12T16:03:34+00:00 @ 0ee4d27",
+      "at": "2026-11-09T16:41:13+07:00 @ 46de388",
+      "until": "2026-11-12T23:03:34+07:00 @ 0ee4d27",
       "retired": "closed lane queue-throughput; its numbers stay in measurement/portfolio-queue-throughput and docs/research/queue-throughput.md#Step 1: offline backfill replay (2026-11-09) (STATUS cap)"
     }
   ],

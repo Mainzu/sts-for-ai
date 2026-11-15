@@ -18,26 +18,26 @@
   "pinned": false,
   "note": "commit 3e792c0c",
   "by": "927c8823-cdb0-4507-88b0-7bb88b122117",
-  "at": "2026-11-13T11:16:31Z @ 472bc3c9",
+  "at": "2026-11-13T18:16:31+07:00 @ 472bc3c9",
   "confirms": [
     {
       "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
-      "at": "2026-11-13T13:43:15Z @ d240a173",
+      "at": "2026-11-13T20:43:15+07:00 @ d240a173",
       "note": "navigator 2026-11-13: engine/src/state.rs changes after 472bc3c9 are colorless conditions and pile words; move_attacks and its readers unchanged"
     },
     {
       "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
-      "at": "2026-11-13T13:48:12Z @ 3e463530",
+      "at": "2026-11-13T20:48:12+07:00 @ 3e463530",
       "note": "navigator 2026-11-13 20:50: state.rs diff in colorless step 5 adds the RandomZeroCost chance event only; move_attacks untouched"
     },
     {
       "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
-      "at": "2026-11-14T04:43:44Z @ 0ccb0f83",
+      "at": "2026-11-14T11:43:44+07:00 @ 0ccb0f83",
       "note": "kill-effects 795ff77c touched only check_over/condition_holds (TargetDied), Feed's pack row and an appended condition column; fact still true"
     },
     {
       "by": "24a6e50e-3e7c-42ec-b831-f35d7846c20b",
-      "at": "2026-11-14T15:50:00Z @ 418de4d6",
+      "at": "2026-11-14T22:50:00+07:00 @ 418de4d6",
       "note": "navigator: CombatState::move_attacks (state.rs) is called by agent::intent_damage, agent::move_damage (rate_damage), heuristic::move_damage and the board's hits (py/src/lib.rs); engine-audit.md section 5 unchanged"
     }
   ],
@@ -59,8 +59,8 @@
       ],
       "owner": false,
       "by": "927c8823-cdb0-4507-88b0-7bb88b122117",
-      "at": "2026-11-13T11:16:13Z @ 3e792c0c",
-      "until": "2026-11-13T11:16:31Z @ 472bc3c9"
+      "at": "2026-11-13T18:16:13+07:00 @ 3e792c0c",
+      "until": "2026-11-13T18:16:31+07:00 @ 472bc3c9"
     }
   ],
   "seal": "3fd4408dcd8eb95195dfc2d8825df621b80bc9f75a108b26713b817af03b06a8"

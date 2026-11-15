@@ -23,36 +23,36 @@
   "pinned": true,
   "note": "check runs the project script with plain python (no -I, which drops PYTHON* variables and PYTHONPATH); output unchanged",
   "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
-  "at": "2026-11-13T09:37:40Z @ 335c597a",
+  "at": "2026-11-13T16:37:40+07:00 @ 335c597a",
   "confirms": [
     {
       "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
-      "at": "2026-11-14T12:51:48Z @ 1232e778",
+      "at": "2026-11-14T19:51:48+07:00 @ 1232e778",
       "note": "check passed: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1"
     },
     {
       "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
-      "at": "2026-11-14T13:40:23Z @ 2e1d1b32",
+      "at": "2026-11-14T20:40:23+07:00 @ 2e1d1b32",
       "note": "check passed: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1"
     },
     {
       "by": "24a6e50e-3e7c-42ec-b831-f35d7846c20b",
-      "at": "2026-11-14T15:43:19Z @ 770ebbbe",
+      "at": "2026-11-14T22:43:19+07:00 @ 770ebbbe",
       "note": "check passed: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1"
     },
     {
       "by": "24a6e50e-3e7c-42ec-b831-f35d7846c20b",
-      "at": "2026-11-14T15:48:53Z @ e92ee62d",
+      "at": "2026-11-14T22:48:53+07:00 @ e92ee62d",
       "note": "check passed: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1"
     },
     {
       "by": "0978e03c-be4b-40a0-961e-d5c5404c0e70",
-      "at": "2026-11-15T02:56:36+00:00 @ 92cf478b",
+      "at": "2026-11-15T09:56:36+07:00 @ 92cf478b",
       "note": "check passed: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1"
     },
     {
       "by": "ea69b906-0ef3-444c-8cc3-77db4706d7ae",
-      "at": "2026-11-15T05:19:03+00:00 @ 97721f22",
+      "at": "2026-11-15T12:19:03+07:00 @ 97721f22",
       "note": "check runs the project script with plain python (no -I, which drops PYTHON* variables and PYTHONPATH); output unchanged"
     }
   ],
@@ -70,8 +70,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:08:14Z @ fc9cdd8",
-      "until": "2026-11-02T16:08:15Z @ fc9cdd8"
+      "at": "2026-11-02T23:08:14+07:00 @ fc9cdd8",
+      "until": "2026-11-02T23:08:15+07:00 @ fc9cdd8"
     },
     {
       "rev": 2,
@@ -85,8 +85,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:08:15Z @ fc9cdd8",
-      "until": "2026-11-02T16:08:15Z @ fc9cdd8"
+      "at": "2026-11-02T23:08:15+07:00 @ fc9cdd8",
+      "until": "2026-11-02T23:08:15+07:00 @ fc9cdd8"
     },
     {
       "rev": 3,
@@ -114,8 +114,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:08:15Z @ fc9cdd8",
-      "until": "2026-11-03T00:34:19Z @ da67084"
+      "at": "2026-11-02T23:08:15+07:00 @ fc9cdd8",
+      "until": "2026-11-03T07:34:19+07:00 @ da67084"
     },
     {
       "rev": 4,
@@ -133,8 +133,8 @@
       ],
       "owner": false,
       "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
-      "at": "2026-11-03T00:34:19Z @ da67084",
-      "until": "2026-11-13T09:37:40Z @ 335c597a"
+      "at": "2026-11-03T07:34:19+07:00 @ da67084",
+      "until": "2026-11-13T16:37:40+07:00 @ 335c597a"
     }
   ],
   "seal": "55f89468c2fbad2551d4482954ff7d7dfaff07cb705fcb90fefd7dfe130115d5"

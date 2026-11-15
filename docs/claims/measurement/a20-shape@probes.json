@@ -1,0 +1,38 @@
+{
+  "key": "measurement/a20-shape@probes",
+  "rev": 1,
+  "value": "A20 one turn deep with the pack (500 seq, rules 334dd4b4): S1 --mid-rest 5 --elite-offers 2 (1021) clears 0.062, end HP 1.30, floors 6.89, elites 45% deaths; S2 plus --elites hp --elite-hp 40 (1022) clears 0.126, end HP 2.56 (sd 8.2), floors 8.33, 0.78 elite fights a run at 15% deaths (real A20 0.86, 17%), boss reached 254 at 44 HP (real 67).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/a20-ruler-2026-11-15.md",
+      "anchor": "The shape probes (1021, 1022) and the fixed shape at n 500",
+      "sha256": "154ae767420a9f9782da5940119c92d5324fde63da6bc44427598f75a2d76692"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-tsl1-lcb1-starter-simboss-a20-pack-monsters-minirun.json",
+      "sha256": "f0c65c8cacd079fbb3e91752d124802cd269ede6b66096faefee833c2336e61b"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-tsl1-lcb1-starter-simboss-a20-pack-monsters-minirun-elitehp40.json",
+      "sha256": "ac64061c62b470b7916d86d4f00acd28532d846abf1fbf4b8a83612024b1d4d9"
+    },
+    {
+      "path": "jobs/done/1021-gauntlet.json",
+      "sha256": "048fdab2fe11e8f64e245170b304964872fac462d8f1f9c3705f798298322d6d"
+    },
+    {
+      "path": "jobs/done/1022-gauntlet.json",
+      "sha256": "c3cfd0d34095d337ed0386c7591e454bfe3bb7b4420cf4daa4cbc812a0bdc812"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "0da61d6f-35d0-4446-8154-bd86ddcaed39",
+  "at": "2026-11-15T13:45:46+07:00 @ cb9136e2",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "7b9d5397ff010c287eb089c5f093fc099477a9cef045cc0c034dc3bc1f1dcf7d"
+}

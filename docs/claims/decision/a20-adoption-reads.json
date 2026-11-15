@@ -1,25 +1,25 @@
 {
   "key": "decision/a20-adoption-reads",
-  "rev": 2,
-  "value": "Fix adoption reads for the final round run at A20, not A0 (every A0 control is stale since Row V, context/stale-after-row-v), against A20 controls on the shape decision/a20-ruler-shape picks: one turn the chosen probe file (1021 or 1022), product re-recorded on it; 1017/1019 are the fixed shape's references. A passed arm's file is the A20 control with the fix.",
+  "rev": 3,
+  "value": "Fix adoption reads for the final round run at A20, not A0 (every A0 control is stale since Row V, context/stale-after-row-v), on decision/a20-ruler-shape's shape: one turn against 1022's file (@wc1: 1025), two turns against the product control 1026. A level pass with floors won worse at 2 se wakes the navigator first. A passed arm's file is the A20 control with the fix.",
   "status": "active",
   "sources": [
     {
       "path": "docs/decisions.md",
-      "anchor": "A20 controls now; the win cap read at A20; 85's fallback and 76 (on the owner's behalf, 2026-11-15)",
-      "sha256": "ba4e39e45fef716942eff4b5863fc85ddf05bd072010f8825e958608bdb46982"
+      "anchor": "A20 ruler: the shape of probe S2, read by its compression (on the owner's behalf, 2026-11-15)",
+      "sha256": "eefb11d769fa1bf11e0abfb70d07776c646cfa6da0d5f98de2ef1b54a3ce4ac7"
     },
     {
       "path": "docs/decisions.md",
-      "anchor": "The A20 ruler takes the pack; its fixed shape saturates; a shape probe before 1018 (on the owner's behalf, 2026-11-15)",
-      "sha256": "b404374db67433f1f66282708051b4bfd3fa42451edf15e7d8148662292d6a07"
+      "anchor": "A20 controls now; the win cap read at A20; 85's fallback and 76 (on the owner's behalf, 2026-11-15)",
+      "sha256": "ba4e39e45fef716942eff4b5863fc85ddf05bd072010f8825e958608bdb46982"
     }
   ],
   "owner": false,
   "pinned": false,
   "note": null,
-  "by": "e64ceb20-cb8b-4911-9868-4792e27cb099",
-  "at": "2026-11-15T04:54:33+00:00 @ 284a8d50",
+  "by": "0da61d6f-35d0-4446-8154-bd86ddcaed39",
+  "at": "2026-11-15T13:45:49+07:00 @ cb9136e2",
   "confirms": [],
   "flags": [],
   "history": [
@@ -43,9 +43,29 @@
       ],
       "owner": false,
       "by": "0978e03c-be4b-40a0-961e-d5c5404c0e70",
-      "at": "2026-11-15T02:49:05+00:00 @ 9db2c8a3",
-      "until": "2026-11-15T04:54:33+00:00 @ 284a8d50"
+      "at": "2026-11-15T09:49:05+07:00 @ 9db2c8a3",
+      "until": "2026-11-15T11:54:33+07:00 @ 284a8d50"
+    },
+    {
+      "rev": 2,
+      "value": "Fix adoption reads for the final round run at A20, not A0 (every A0 control is stale since Row V, context/stale-after-row-v), against A20 controls on the shape decision/a20-ruler-shape picks: one turn the chosen probe file (1021 or 1022), product re-recorded on it; 1017/1019 are the fixed shape's references. A passed arm's file is the A20 control with the fix.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "A20 controls now; the win cap read at A20; 85's fallback and 76 (on the owner's behalf, 2026-11-15)",
+          "sha256": "ba4e39e45fef716942eff4b5863fc85ddf05bd072010f8825e958608bdb46982"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "The A20 ruler takes the pack; its fixed shape saturates; a shape probe before 1018 (on the owner's behalf, 2026-11-15)",
+          "sha256": "b404374db67433f1f66282708051b4bfd3fa42451edf15e7d8148662292d6a07"
+        }
+      ],
+      "owner": false,
+      "by": "e64ceb20-cb8b-4911-9868-4792e27cb099",
+      "at": "2026-11-15T11:54:33+07:00 @ 284a8d50",
+      "until": "2026-11-15T13:45:49+07:00 @ cb9136e2"
     }
   ],
-  "seal": "fd67600eddede567bfc09272e9eb2a52390c9bf79de7515ec6e7010af19dbb28"
+  "seal": "79193889c1fcbbf65baa678950cf11f84caeedbde75b641d4c0ede269facbd9a"
 }

@@ -26,7 +26,7 @@
   "pinned": false,
   "note": "navigator 2026-11-13: re-set after engine audit 1 (flag)",
   "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
-  "at": "2026-11-13T13:43:47Z @ d240a173",
+  "at": "2026-11-13T20:43:47+07:00 @ d240a173",
   "confirms": [],
   "flags": [],
   "history": [
@@ -49,8 +49,8 @@
       ],
       "owner": false,
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:28:06Z @ 3123201a",
-      "until": "2026-11-13T13:43:47Z @ d240a173"
+      "at": "2026-11-13T09:28:06+07:00 @ 3123201a",
+      "until": "2026-11-13T20:43:47+07:00 @ d240a173"
     }
   ],
   "seal": "3570fd1ee1eeffdfb3f668f7e3166c02dc7d2f097b7494d0f631c8dd1d16e162"

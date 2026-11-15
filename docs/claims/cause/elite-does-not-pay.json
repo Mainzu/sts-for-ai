@@ -22,18 +22,18 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:29:01Z @ 3123201a",
+  "at": "2026-11-13T09:29:01+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:32:56Z @ 3123201a",
+      "at": "2026-11-13T09:32:56+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/mini-run@control reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
   "flags": [
     {
       "by": "curate-cf44b335-65ef-4f93-841c-f4d788c07b73",
-      "at": "2026-11-15T04:59:04+00:00 @ a3a20322",
+      "at": "2026-11-15T11:59:04+07:00 @ a3a20322",
       "reason": "re-check pending: sources measured under an older rules version (context/rules-version rev 9 moved) and headline-setting is suspect; curator can't re-measure"
     }
   ],
@@ -62,8 +62,8 @@
       ],
       "owner": false,
       "by": "4253ac8b-4270-40d7-958b-ef9945166c5b",
-      "at": "2026-11-04T07:12:37Z @ 08b53c0",
-      "until": "2026-11-13T02:29:01Z @ 3123201a"
+      "at": "2026-11-04T14:12:37+07:00 @ 08b53c0",
+      "until": "2026-11-13T09:29:01+07:00 @ 3123201a"
     }
   ],
   "seal": "943f9a9d696173ec653a5efae0fe3d65795eb820594ec50d236f45211acd1a7b"

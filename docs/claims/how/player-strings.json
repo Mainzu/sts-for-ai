@@ -18,16 +18,16 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:29:14Z @ 3123201a",
+  "at": "2026-11-13T09:29:14+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
-      "at": "2026-11-13T03:47:03Z @ d08ef5a4",
+      "at": "2026-11-13T10:47:03+07:00 @ d08ef5a4",
       "note": "checked c98e084d's README diff: it adds the meanings of the listed settings the fact points to; the list stands"
     },
     {
       "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
-      "at": "2026-11-13T13:43:16Z @ d240a173",
+      "at": "2026-11-13T20:43:16+07:00 @ d240a173",
       "note": "navigator 2026-11-13: bench.py _SETTING still @hpb|@hpe|@esp|@shl|@sc|@dl|@tsl|@lcb|@pl|@pd|@tb|@sn|@xh; bench diff is PLAY_TURN_LIMIT from sts; README gained the leaf-settings paragraph"
     }
   ],
@@ -55,8 +55,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:11:15Z @ fc9cdd8",
-      "until": "2026-11-07T13:19:14Z @ 39c4f63"
+      "at": "2026-11-02T23:11:15+07:00 @ fc9cdd8",
+      "until": "2026-11-07T20:19:14+07:00 @ 39c4f63"
     },
     {
       "rev": 2,
@@ -82,8 +82,8 @@
       ],
       "owner": false,
       "by": "24375f99-3cb3-4ef9-b28f-f6df271d6129",
-      "at": "2026-11-07T13:19:14Z @ 39c4f63",
-      "until": "2026-11-08T05:14:10Z @ b8de83b"
+      "at": "2026-11-07T20:19:14+07:00 @ 39c4f63",
+      "until": "2026-11-08T12:14:10+07:00 @ b8de83b"
     },
     {
       "rev": 3,
@@ -113,8 +113,8 @@
       ],
       "owner": false,
       "by": "f498054e-03ee-43a5-94ee-61d61fc50682",
-      "at": "2026-11-08T05:14:10Z @ b8de83b",
-      "until": "2026-11-09T08:54:04Z @ 946a2c4"
+      "at": "2026-11-08T12:14:10+07:00 @ b8de83b",
+      "until": "2026-11-09T15:54:04+07:00 @ 946a2c4"
     },
     {
       "rev": 4,
@@ -148,8 +148,8 @@
       ],
       "owner": false,
       "by": "1e53d6ed-baa0-4367-8ee3-26d3d9d38c35",
-      "at": "2026-11-09T08:54:04Z @ 946a2c4",
-      "until": "2026-11-09T19:31:08Z @ 9588fed"
+      "at": "2026-11-09T15:54:04+07:00 @ 946a2c4",
+      "until": "2026-11-10T02:31:08+07:00 @ 9588fed"
     },
     {
       "rev": 5,
@@ -187,8 +187,8 @@
       ],
       "owner": false,
       "by": "afbe1ebb-305c-4ac9-b359-8583079e6ffd",
-      "at": "2026-11-09T19:31:08Z @ 9588fed",
-      "until": "2026-11-09T23:45:21Z @ ee7b734"
+      "at": "2026-11-10T02:31:08+07:00 @ 9588fed",
+      "until": "2026-11-10T06:45:21+07:00 @ ee7b734"
     },
     {
       "rev": 6,
@@ -230,8 +230,8 @@
       ],
       "owner": false,
       "by": "b80fa29f-c01b-4065-805a-4beba0657002",
-      "at": "2026-11-09T23:45:21Z @ ee7b734",
-      "until": "2026-11-13T01:43:30Z @ 2d152e05"
+      "at": "2026-11-10T06:45:21+07:00 @ ee7b734",
+      "until": "2026-11-13T08:43:30+07:00 @ 2d152e05"
     },
     {
       "rev": 7,
@@ -278,8 +278,8 @@
       ],
       "owner": false,
       "by": "2fda0390-ebf2-4956-a49b-b93252b1ac30",
-      "at": "2026-11-13T01:43:30Z @ 2d152e05",
-      "until": "2026-11-13T02:29:14Z @ 3123201a"
+      "at": "2026-11-13T08:43:30+07:00 @ 2d152e05",
+      "until": "2026-11-13T09:29:14+07:00 @ 3123201a"
     }
   ],
   "seal": "a42ece9a0b292f27c056489b7e17e89abbe844ee7cba847bf11346c13da65ed4"

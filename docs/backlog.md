@@ -2353,7 +2353,7 @@ evidence answers it):
 - The reactive-stack lead as its own lane: read in `adapted-two-turn`.
 
 **Answered** (one line each; details in `docs/decisions.md`):
-- *a20-shape* (candidate 91 until 2026-11-15, probes 1021/1022, `measurement/a20-shape@probes`): neither shape reached 0.20 one-turn clears (S1 0.05 at 350 of 500, S2 0.126); S2's shape is the A20 ruler for now, read by its compression (1026), decisions "A20 ruler: the shape of probe S2, read by its compression".
+- *a20-shape* (candidate 91 until 2026-11-15, probes 1021/1022, `measurement/a20-shape@probes`): neither shape reached 0.20 one-turn clears (S1 0.062, S2 0.126); S2's shape is the A20 ruler for now, read by its compression (1026), decisions "A20 ruler: the shape of probe S2, read by its compression".
 - *act1-ruler* (candidate 88 until 2026-11-15, probe 1020, `measurement/act1-ruler@a20`): go; the pack's hallways cost 14.2 HP per fight with 14.7% deaths beside the base hard pool's 8.1 and 8.5%, so the A20 ruler takes the pack (`decision/a20-ruler-shape`); the probe also showed the fixed shape saturates at A20 (91).
 - *all-content-product* (candidate 48 until 2026-11-10, probe 0782-0783, `measurement/pack-net-twin@one-turn`): the all-content twins gain +0.76 (0.87) HP on the ruler one turn deep, all of it Demon Form, which two turns deep the product already plays; -1.50 (1.00) outside it; retired (decisions "Probe pns-twin-official read").
 - *pack-dose-33* (candidate 38 until 2026-11-10, probes 0697-0701 and 0734-0738, `measurement/pack-dose-33@gen-b1`, `measurement/pack-dose-99s9@gen-b1`): 33 games each too few for eight mechanics; 99 at share 0.9 removes the Lagavulin leak and keeps the cut and the edge; pack chains train g99-sh9 (decisions "After pack-dose 99s9").

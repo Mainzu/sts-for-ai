@@ -30,7 +30,7 @@
   "pinned": false,
   "note": "resolves 'cut shares 1-5%' (approach review, from the bosses/train/silent probes) vs '1.4%' (line probe index 0): both true for their sets; the held-out tight2 cut probe is the outlier at 14-16%. Read from cut_probe.cut_share and summary.per_index in the files, 2026-11-02",
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:12:49+00:00 @ fc9cdd8",
+  "at": "2026-11-02T23:12:49+07:00 @ fc9cdd8",
   "confirms": [],
   "flags": [],
   "history": [],

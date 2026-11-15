@@ -1,27 +1,27 @@
 {
   "key": "measurement/colorless-cards@files",
-  "rev": 9,
-  "value": "27 of the game's 34 in-combat colorless cards load from content/packs/act1-colorless.json with upgrades (Blind, Trip, Jack of All Trades as successors), each tested base and upgraded vs its class (engine/tests/colorless.rs); the Colorless pool is the game's 34 less the 7 unloaded (discovery.rs). NoBlock zeroes card block only. Mayhem is the latest to load.",
+  "rev": 10,
+  "value": "28 of the game's 34 in-combat colorless cards load from content/packs/act1-colorless.json with upgrades (Blind, Trip, Jack of All Trades as successors), each tested base and upgraded vs its class (engine/tests/colorless.rs); the Colorless pool is the game's 34 less the 6 unloaded (discovery.rs). NoBlock zeroes card block only. Enlightenment is the latest to load.",
   "status": "active",
   "sources": [
     {
       "path": "content/packs/act1-colorless.json",
-      "sha256": "f17dc167c1a776aabfd3783ee60095493f117387c62750534acb2f4ea0b053cd"
+      "sha256": "f31deca3f13aafec97217aca09309f6b9b851857672889e6286695d97201a16d"
     },
     {
       "path": "engine/tests/colorless.rs",
-      "sha256": "b36f61b2c4d778c9b3927dffd46522cc47c9ce98d6aa269c6ff434e9d262e513"
+      "sha256": "9474cd0456e9f98c04ea589bdcab6ddcbdb7759d0738fc8670841304743300bc"
     },
     {
       "path": "engine/tests/discovery.rs",
-      "sha256": "373baba6f702a948faa3a7a5ea77bb3f35b8f2a0b3decff8a73f8cbeaed73942"
+      "sha256": "1cdd905a984db44936e9723d1edf735fcce2bab01d742315fd7a269a11c379ea"
     }
   ],
   "owner": false,
   "pinned": false,
-  "note": "Mayhem (build-plans row 9) landed in 97def6fe",
+  "note": "Enlightenment (build-plans row 10) landed in f08f165e, 8dd20cc8",
   "by": "7f7283c0-5c38-4c8a-b03a-832c461de822",
-  "at": "2026-11-15T05:37:06+00:00 @ ced060bf",
+  "at": "2026-11-15T13:41:49+07:00 @ d221ce9e",
   "confirms": [],
   "flags": [],
   "history": [
@@ -44,8 +44,8 @@
       ],
       "owner": false,
       "by": "61166b4e-f6ea-4e10-8934-4aa3e752f9cd",
-      "at": "2026-11-13T13:12:26+00:00 @ cbadc349",
-      "until": "2026-11-13T13:12:33+00:00 @ cbadc349"
+      "at": "2026-11-13T20:12:26+07:00 @ cbadc349",
+      "until": "2026-11-13T20:12:33+07:00 @ cbadc349"
     },
     {
       "rev": 2,
@@ -66,8 +66,8 @@
       ],
       "owner": false,
       "by": "61166b4e-f6ea-4e10-8934-4aa3e752f9cd",
-      "at": "2026-11-13T13:12:33+00:00 @ cbadc349",
-      "until": "2026-11-13T13:16:37+00:00 @ 1b748b0c"
+      "at": "2026-11-13T20:12:33+07:00 @ cbadc349",
+      "until": "2026-11-13T20:16:37+07:00 @ 1b748b0c"
     },
     {
       "rev": 3,
@@ -88,8 +88,8 @@
       ],
       "owner": false,
       "by": "7f40d6e4-69d1-4b13-a29e-284dff8cfde9",
-      "at": "2026-11-13T13:16:37+00:00 @ 1b748b0c",
-      "until": "2026-11-13T13:37:15+00:00 @ d093795d"
+      "at": "2026-11-13T20:16:37+07:00 @ 1b748b0c",
+      "until": "2026-11-13T20:37:15+07:00 @ d093795d"
     },
     {
       "rev": 4,
@@ -110,8 +110,8 @@
       ],
       "owner": false,
       "by": "b223e90e-b9f7-42c5-aee5-ad1cd1534cb5",
-      "at": "2026-11-13T13:37:15+00:00 @ d093795d",
-      "until": "2026-11-13T13:42:54+00:00 @ e402b42b"
+      "at": "2026-11-13T20:37:15+07:00 @ d093795d",
+      "until": "2026-11-13T20:42:54+07:00 @ e402b42b"
     },
     {
       "rev": 5,
@@ -132,8 +132,8 @@
       ],
       "owner": false,
       "by": "712aba8b-e6ed-4a5f-83a6-568c1e11015e",
-      "at": "2026-11-13T13:42:54+00:00 @ e402b42b",
-      "until": "2026-11-13T13:52:08+00:00 @ b9a755f2"
+      "at": "2026-11-13T20:42:54+07:00 @ e402b42b",
+      "until": "2026-11-13T20:52:08+07:00 @ b9a755f2"
     },
     {
       "rev": 6,
@@ -154,8 +154,8 @@
       ],
       "owner": false,
       "by": "7dc07ed2-ae25-4d63-bdd8-6b03a4001381",
-      "at": "2026-11-13T13:52:08+00:00 @ b9a755f2",
-      "until": "2026-11-14T13:40:11+00:00 @ 2e1d1b32"
+      "at": "2026-11-13T20:52:08+07:00 @ b9a755f2",
+      "until": "2026-11-14T20:40:11+07:00 @ 2e1d1b32"
     },
     {
       "rev": 7,
@@ -176,8 +176,8 @@
       ],
       "owner": false,
       "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
-      "at": "2026-11-14T13:40:11+00:00 @ 2e1d1b32",
-      "until": "2026-11-14T13:40:21+00:00 @ 2e1d1b32"
+      "at": "2026-11-14T20:40:11+07:00 @ 2e1d1b32",
+      "until": "2026-11-14T20:40:21+07:00 @ 2e1d1b32"
     },
     {
       "rev": 8,
@@ -198,9 +198,31 @@
       ],
       "owner": false,
       "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
-      "at": "2026-11-14T13:40:21+00:00 @ 2e1d1b32",
-      "until": "2026-11-15T05:37:06+00:00 @ ced060bf"
+      "at": "2026-11-14T20:40:21+07:00 @ 2e1d1b32",
+      "until": "2026-11-15T12:37:06+07:00 @ ced060bf"
+    },
+    {
+      "rev": 9,
+      "value": "27 of the game's 34 in-combat colorless cards load from content/packs/act1-colorless.json with upgrades (Blind, Trip, Jack of All Trades as successors), each tested base and upgraded vs its class (engine/tests/colorless.rs); the Colorless pool is the game's 34 less the 7 unloaded (discovery.rs). NoBlock zeroes card block only. Mayhem is the latest to load.",
+      "sources": [
+        {
+          "path": "content/packs/act1-colorless.json",
+          "sha256": "f17dc167c1a776aabfd3783ee60095493f117387c62750534acb2f4ea0b053cd"
+        },
+        {
+          "path": "engine/tests/colorless.rs",
+          "sha256": "b36f61b2c4d778c9b3927dffd46522cc47c9ce98d6aa269c6ff434e9d262e513"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "373baba6f702a948faa3a7a5ea77bb3f35b8f2a0b3decff8a73f8cbeaed73942"
+        }
+      ],
+      "owner": false,
+      "by": "7f7283c0-5c38-4c8a-b03a-832c461de822",
+      "at": "2026-11-15T12:37:06+07:00 @ ced060bf",
+      "until": "2026-11-15T13:41:49+07:00 @ d221ce9e"
     }
   ],
-  "seal": "1995e3b780436c2f84104b7dd58a030242f47d5fd135320695503927687e7b72"
+  "seal": "192ed69b349f72f562298126cb71242ff90dac2c27d17ff9beab774c04efc2fe"
 }

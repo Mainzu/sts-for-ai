@@ -13,6 +13,7 @@ records the kb fact `product/net`.
 
 import argparse
 import datetime
+import glob
 import json
 import os
 import subprocess
@@ -21,7 +22,19 @@ import sys
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 REGISTRY = os.path.join(ROOT, "configs", "product.json")
 DECISIONS = os.path.join(ROOT, "docs", "decisions.md")
-KB = os.path.join(os.path.expanduser("~"), ".claude", "skills", "kb", "kb.py")
+def find_kb():
+    """kb.py: $KB_PY, else the skills folder, else the newest installed kb plugin."""
+    if os.environ.get("KB_PY"):
+        return os.environ["KB_PY"]
+    home = os.path.expanduser("~")
+    path = os.path.join(home, ".claude", "skills", "kb", "kb.py")
+    if os.path.exists(path):
+        return path
+    found = glob.glob(os.path.join(home, ".claude", "plugins", "cache", "mainzu", "kb", "*", "skills", "kb", "kb.py"))
+    return max(found, key=os.path.getmtime) if found else path
+
+
+KB = find_kb()
 
 
 def load(path=REGISTRY):

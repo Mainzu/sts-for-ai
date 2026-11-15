@@ -1,26 +1,26 @@
 {
   "key": "cause/a20-shape-saturates",
-  "rev": 1,
-  "value": "On the fixed gauntlet shape at A20 runs die at elites reached without a rest: clears 0.008 one turn (1017), 0.025 product (1019) vs 0.55 for the product in the real game at A20. Two turns over one reads +0.32 (0.19) HP end HP (A0 +6.14), floors won +0.63 (0.12): the +1.5 HP bar is out of reach and decision/level-pass passes nearly anything. Exit: a shape with rests (1021/1022) or the run simulator.",
+  "rev": 2,
+  "value": "At A20 the gauntlet's per-fight costs match the real game's (Jaw Worm 9.0 vs 8.8 HP, Nob 28.9 vs 31.4) but its shape doesn't: 10 fights before the boss vs 8.4, one heal vs ~17 HP mid-act, so runs reach the boss at 44 HP vs 67. Fixed shape at n 500: clears 0.014 one turn, 0.028 product; two turns over one +0.16 (0.14) HP end HP, +0.61 (0.08) floors won. Exit: a shape fitted to the real runs or the run simulator.",
   "status": "active",
   "sources": [
+    {
+      "path": "docs/research/a20-ruler-2026-11-15.md",
+      "anchor": "The shape probes (1021, 1022) and the fixed shape at n 500",
+      "sha256": "154ae767420a9f9782da5940119c92d5324fde63da6bc44427598f75a2d76692"
+    },
     {
       "path": "docs/research/a20-ruler-2026-11-15.md",
       "anchor": "At A20 the fixed shape is nearly unwinnable",
       "sha256": "4630c35993a06a2ebfa59366c5e81e189d9a9a25c650847e8f8759324c57e842"
     },
     {
-      "path": "docs/research/a20-ruler-2026-11-15.md",
-      "anchor": "What that does to the reads",
-      "sha256": "eae6c12c4ff6418ea6195e6410b8e70a4b12b837d45c15a4414e3cb098260623"
-    },
-    {
       "path": "results/gauntlet/net1029-hpb0.01-tsl1-lcb1-starter-simboss-a20.json",
-      "sha256": "f1e649021e0afc56e16ffb04aceba013f3798e699c12ac10aa2132a69343e683"
+      "sha256": "e52dd2c0163650cefe7b1e09dd54e53c5eb138853ec21bc937cc39b5ec7259ef"
     },
     {
       "path": "results/gauntlet/net1029-hpe0.01-tsl1-lcb1-two-line-step-starter-simboss-a20.json",
-      "sha256": "aea6aa96221fb9d3a8ad6479c0ec39c65ef07bd1a381e5dd3f1684f60abf56fd"
+      "sha256": "43f2a533d1f7334421f6a343b84b422caa9d3db0e8db607317fb887a8fa9bc0b"
     },
     {
       "path": "docs/research/real-game-runs.md",
@@ -30,10 +30,43 @@
   "owner": false,
   "pinned": false,
   "note": null,
-  "by": "e64ceb20-cb8b-4911-9868-4792e27cb099",
-  "at": "2026-11-15T04:54:15+00:00 @ 284a8d50",
+  "by": "0da61d6f-35d0-4446-8154-bd86ddcaed39",
+  "at": "2026-11-15T13:45:47+07:00 @ cb9136e2",
   "confirms": [],
   "flags": [],
-  "history": [],
-  "seal": "a623ece0c1c21edac4ed32faf2940735c2d29d404f1640a9a69237a7180b6a4d"
+  "history": [
+    {
+      "rev": 1,
+      "value": "On the fixed gauntlet shape at A20 runs die at elites reached without a rest: clears 0.008 one turn (1017), 0.025 product (1019) vs 0.55 for the product in the real game at A20. Two turns over one reads +0.32 (0.19) HP end HP (A0 +6.14), floors won +0.63 (0.12): the +1.5 HP bar is out of reach and decision/level-pass passes nearly anything. Exit: a shape with rests (1021/1022) or the run simulator.",
+      "sources": [
+        {
+          "path": "docs/research/a20-ruler-2026-11-15.md",
+          "anchor": "At A20 the fixed shape is nearly unwinnable",
+          "sha256": "4630c35993a06a2ebfa59366c5e81e189d9a9a25c650847e8f8759324c57e842"
+        },
+        {
+          "path": "docs/research/a20-ruler-2026-11-15.md",
+          "anchor": "What that does to the reads",
+          "sha256": "eae6c12c4ff6418ea6195e6410b8e70a4b12b837d45c15a4414e3cb098260623"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-tsl1-lcb1-starter-simboss-a20.json",
+          "sha256": "f1e649021e0afc56e16ffb04aceba013f3798e699c12ac10aa2132a69343e683"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-tsl1-lcb1-two-line-step-starter-simboss-a20.json",
+          "sha256": "aea6aa96221fb9d3a8ad6479c0ec39c65ef07bd1a381e5dd3f1684f60abf56fd"
+        },
+        {
+          "path": "docs/research/real-game-runs.md",
+          "sha256": "1427845c92d527c8b7d531bf17d857d85f625632b1b4260dfcca9996ce28fb00"
+        }
+      ],
+      "owner": false,
+      "by": "e64ceb20-cb8b-4911-9868-4792e27cb099",
+      "at": "2026-11-15T11:54:15+07:00 @ 284a8d50",
+      "until": "2026-11-15T13:45:47+07:00 @ cb9136e2"
+    }
+  ],
+  "seal": "7c2fc772951d79887c4d1bcc28bcfa768759a831d6eb62b4ee2484a8c4977519"
 }

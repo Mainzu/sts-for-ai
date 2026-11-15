@@ -30,16 +30,16 @@
   "pinned": false,
   "note": "re-checked after the lane worker's and the navigator's STATUS-cap merges: the merged facts hold their sources' numbers verbatim, this fact's own numbers unchanged",
   "by": "38f068ab-8b7e-4981-8bbe-695e64cca72a",
-  "at": "2026-11-04T14:28:47+00:00 @ 63f7e28",
+  "at": "2026-11-04T21:28:47+07:00 @ 63f7e28",
   "confirms": [
     {
       "by": "b7755c1b-c846-428e-b225-17f45923e96d",
-      "at": "2026-11-11T09:00:52+00:00 @ 20449c5",
+      "at": "2026-11-11T16:00:52+07:00 @ 20449c5",
       "note": "re-checked after the lane worker's and the navigator's STATUS-cap merges: the merged facts hold their sources' numbers verbatim, this fact's own numbers unchanged"
     },
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:22+00:00 @ 3123201a",
+      "at": "2026-11-13T09:33:22+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/deck-matched@one-turn, measurement/deck-matched@two-turn, measurement/cost@gauntlet reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],

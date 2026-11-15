@@ -27,11 +27,11 @@
   "pinned": false,
   "note": null,
   "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
-  "at": "2026-11-05T14:44:02Z @ 60e882a",
+  "at": "2026-11-05T21:44:02+07:00 @ 60e882a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:15Z @ 3123201a",
+      "at": "2026-11-13T09:33:15+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/deck-matched@two-turn reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
@@ -53,8 +53,8 @@
       ],
       "owner": false,
       "by": "1aba741f-cb73-4746-91c0-26ca852ecaed",
-      "at": "2026-11-04T14:24:48Z @ 2ee0f61",
-      "until": "2026-11-05T14:44:02Z @ 60e882a"
+      "at": "2026-11-04T21:24:48+07:00 @ 2ee0f61",
+      "until": "2026-11-05T21:44:02+07:00 @ 60e882a"
     }
   ],
   "seal": "0f74cac77e2a1d67a0192a1383797918ca0c512449e7dd9c2256d245e878ed30"

@@ -18,16 +18,16 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:29:19Z @ 3123201a",
+  "at": "2026-11-13T09:29:19+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
-      "at": "2026-11-13T09:44:55Z @ e24c419a",
+      "at": "2026-11-13T16:44:55+07:00 @ e24c419a",
       "note": "mutate_monsters.py's only change since rev (3a4033c9) sets RUST_MIN_STACK to 64 MB; read, odds and the parent draw are untouched"
     },
     {
       "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
-      "at": "2026-11-13T13:43:14Z @ d240a173",
+      "at": "2026-11-13T20:43:14+07:00 @ d240a173",
       "note": "navigator 2026-11-13: mutate_monsters.py diff since 3123201a: RUST_MIN_STACK and the byte-patch helpers replaced by Combat.with_monster_hp/with_monster_power (same rounding, same living monsters); read columns unchanged"
     }
   ],
@@ -49,8 +49,8 @@
       ],
       "owner": false,
       "by": "1ef7f60b-ed9a-4889-af70-64f5334e6905",
-      "at": "2026-11-04T22:14:32Z @ 99b1561",
-      "until": "2026-11-05T00:48:13Z @ 22b5d9b"
+      "at": "2026-11-05T05:14:32+07:00 @ 99b1561",
+      "until": "2026-11-05T07:48:13+07:00 @ 22b5d9b"
     },
     {
       "rev": 2,
@@ -77,8 +77,8 @@
       ],
       "owner": false,
       "by": "ff666280-ee25-4103-8011-de5b45cf8e3c",
-      "at": "2026-11-05T00:48:13Z @ 22b5d9b",
-      "until": "2026-11-05T07:13:26Z @ 0518f72"
+      "at": "2026-11-05T07:48:13+07:00 @ 22b5d9b",
+      "until": "2026-11-05T14:13:26+07:00 @ 0518f72"
     },
     {
       "rev": 3,
@@ -114,8 +114,8 @@
       ],
       "owner": false,
       "by": "7341b88a-0947-4f2b-9d60-594698d8eaa7",
-      "at": "2026-11-05T07:13:26Z @ 0518f72",
-      "until": "2026-11-05T12:26:34Z @ 035810b"
+      "at": "2026-11-05T14:13:26+07:00 @ 0518f72",
+      "until": "2026-11-05T19:26:34+07:00 @ 035810b"
     },
     {
       "rev": 4,
@@ -156,8 +156,8 @@
       ],
       "owner": false,
       "by": "2ef20aae-4e81-4598-8ce8-557bca9d73a3",
-      "at": "2026-11-05T12:26:34Z @ 035810b",
-      "until": "2026-11-13T02:29:19Z @ 3123201a"
+      "at": "2026-11-05T19:26:34+07:00 @ 035810b",
+      "until": "2026-11-13T09:29:19+07:00 @ 3123201a"
     }
   ],
   "seal": "3ce3d0df37ce071fdb0236b07665c6cb26273799dbd0868310df2b2ea8f04f56"

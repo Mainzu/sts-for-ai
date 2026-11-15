@@ -22,16 +22,16 @@
   "pinned": false,
   "note": null,
   "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
-  "at": "2026-11-14T01:32:24Z @ 626955c6",
+  "at": "2026-11-14T08:32:24+07:00 @ 626955c6",
   "confirms": [
     {
       "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
-      "at": "2026-11-14T04:43:36Z @ 0ccb0f83",
+      "at": "2026-11-14T11:43:36+07:00 @ 0ccb0f83",
       "note": "kill-effects 795ff77c touched only check_over/condition_holds (TargetDied), Feed's pack row and an appended condition column; fact still true"
     },
     {
       "by": "0978e03c-be4b-40a0-961e-d5c5404c0e70",
-      "at": "2026-11-15T03:02:15+00:00 @ 5fadbba0",
+      "at": "2026-11-15T10:02:15+07:00 @ 5fadbba0",
       "note": "navigator 2026-11-15: 626955c6 is in HEAD; engine/src/state.rs still holds the turn_ending flag (7 uses) that lands deferred monster block after the reset"
     }
   ],
@@ -53,8 +53,8 @@
       ],
       "owner": false,
       "by": "12ae5317-5033-4622-ad4c-f74f4df39f7e",
-      "at": "2026-11-14T00:50:00Z @ fb9e9f16",
-      "until": "2026-11-14T01:32:15Z @ 626955c6"
+      "at": "2026-11-14T07:50:00+07:00 @ fb9e9f16",
+      "until": "2026-11-14T08:32:15+07:00 @ 626955c6"
     },
     {
       "rev": 2,
@@ -76,8 +76,8 @@
       ],
       "owner": false,
       "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
-      "at": "2026-11-14T01:32:15Z @ 626955c6",
-      "until": "2026-11-14T01:32:24Z @ 626955c6"
+      "at": "2026-11-14T08:32:15+07:00 @ 626955c6",
+      "until": "2026-11-14T08:32:24+07:00 @ 626955c6"
     }
   ],
   "seal": "9dd5fa2eaf5702a9e3cbc92f9566889c28d578d7db64281c99d1afec8a6602d1"

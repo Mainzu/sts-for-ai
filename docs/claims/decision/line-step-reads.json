@@ -18,7 +18,7 @@
   "pinned": false,
   "note": null,
   "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
-  "at": "2026-11-02T18:01:50Z @ 7adb302",
+  "at": "2026-11-03T01:01:50+07:00 @ 7adb302",
   "confirms": [],
   "flags": [],
   "history": [
@@ -38,8 +38,8 @@
       ],
       "owner": false,
       "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
-      "at": "2026-11-02T18:01:50Z @ 7adb302",
-      "until": "2026-11-11T10:11:35Z @ 3e258d9",
+      "at": "2026-11-03T01:01:50+07:00 @ 7adb302",
+      "until": "2026-11-11T17:11:35+07:00 @ 3e258d9",
       "retired": "spent: the line-step step 4 reads ran and the stepped line is the product's play mode (decision/line-step-play-mode, measurement/line-step@headline); STATUS cap"
     }
   ],

@@ -34,7 +34,7 @@
   "pinned": false,
   "note": null,
   "by": "28d694dc-765e-44fc-8517-4c02a32de603",
-  "at": "2026-11-10T00:30:32+00:00 @ 48e40db",
+  "at": "2026-11-10T07:30:32+07:00 @ 48e40db",
   "confirms": [],
   "flags": [],
   "history": [
@@ -70,8 +70,8 @@
       ],
       "owner": false,
       "by": "28d694dc-765e-44fc-8517-4c02a32de603",
-      "at": "2026-11-10T00:30:32+00:00 @ 48e40db",
-      "until": "2026-11-10T07:03:38+00:00 @ f97b79c",
+      "at": "2026-11-10T07:30:32+07:00 @ 48e40db",
+      "until": "2026-11-10T14:03:38+07:00 @ f97b79c",
       "retired": "merged into measurement/portfolio-recurring-debuff-leaf"
     }
   ],

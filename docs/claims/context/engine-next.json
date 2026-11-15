@@ -1,7 +1,7 @@
 {
   "key": "context/engine-next",
   "rev": 2,
-  "value": "Branch engine-next landed on main 2026-11-02 17:20 UTC (c3f81f4; worktree removed, branch kept): Rust changes to engine/src/search.rs on main are free again; line-seed stage 2, mutated monsters stage B, the two-turn self-play round and the sampled-draw leaf are unblocked; docs/engine-next.md on main describes the series.",
+  "value": "Branch engine-next landed on main 2026-11-03 00:20 (c3f81f4; worktree removed, branch kept): Rust changes to engine/src/search.rs on main are free again; line-seed stage 2, mutated monsters stage B, the two-turn self-play round and the sampled-draw leaf are unblocked; docs/engine-next.md on main describes the series.",
   "status": "retired",
   "sources": [
     {
@@ -17,7 +17,7 @@
   "pinned": false,
   "note": null,
   "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
-  "at": "2026-11-02T17:23:55Z @ c3f81f4",
+  "at": "2026-11-03T00:23:55+07:00 @ c3f81f4",
   "confirms": [],
   "flags": [],
   "history": [
@@ -27,12 +27,12 @@
       "sources": [],
       "owner": true,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:08:57Z @ fc9cdd8",
-      "until": "2026-11-02T17:23:55Z @ c3f81f4"
+      "at": "2026-11-02T23:08:57+07:00 @ fc9cdd8",
+      "until": "2026-11-03T00:23:55+07:00 @ c3f81f4"
     },
     {
       "rev": 2,
-      "value": "Branch engine-next landed on main 2026-11-02 17:20 UTC (c3f81f4; worktree removed, branch kept): Rust changes to engine/src/search.rs on main are free again; line-seed stage 2, mutated monsters stage B, the two-turn self-play round and the sampled-draw leaf are unblocked; docs/engine-next.md on main describes the series.",
+      "value": "Branch engine-next landed on main 2026-11-03 00:20 (c3f81f4; worktree removed, branch kept): Rust changes to engine/src/search.rs on main are free again; line-seed stage 2, mutated monsters stage B, the two-turn self-play round and the sampled-draw leaf are unblocked; docs/engine-next.md on main describes the series.",
       "sources": [
         {
           "key": "decision/engine-next-landed",
@@ -45,8 +45,8 @@
       ],
       "owner": false,
       "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
-      "at": "2026-11-02T17:23:55Z @ c3f81f4",
-      "until": "2026-11-05T14:59:19Z @ 2e013b2",
+      "at": "2026-11-03T00:23:55+07:00 @ c3f81f4",
+      "until": "2026-11-05T21:59:19+07:00 @ 2e013b2",
       "retired": "the series landed 2026-11-03 and everything it unblocked has run; decision/engine-next-landed keeps the landing, docs/archive/engine-next.md the series"
     }
   ],

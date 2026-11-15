@@ -34,7 +34,7 @@
   "pinned": false,
   "note": "re-set when 0063 (seed twins s101/s201) is read",
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:12:17+00:00 @ fc9cdd8",
+  "at": "2026-11-02T23:12:17+07:00 @ fc9cdd8",
   "confirms": [],
   "flags": [],
   "history": [
@@ -70,8 +70,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:12:17+00:00 @ fc9cdd8",
-      "until": "2026-11-02T17:23:52+00:00 @ c3f81f4",
+      "at": "2026-11-02T23:12:17+07:00 @ fc9cdd8",
+      "until": "2026-11-03T00:23:52+07:00 @ c3f81f4",
       "retired": "superseded by measurement/solve-step@headline (3 seeds pooled)"
     }
   ],

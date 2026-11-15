@@ -34,16 +34,16 @@
   "pinned": false,
   "note": null,
   "by": "129b8d9d-a225-49d7-abbc-06f8d5f99e19",
-  "at": "2026-11-09T13:47:48+00:00 @ 1b2f7d1",
+  "at": "2026-11-09T20:47:48+07:00 @ 1b2f7d1",
   "confirms": [
     {
       "by": "129b8d9d-a225-49d7-abbc-06f8d5f99e19",
-      "at": "2026-11-09T15:28:43+00:00 @ 99df525",
+      "at": "2026-11-09T22:28:43+07:00 @ 99df525",
       "note": "re-checked 2026-11-09 after measurement/adaptation-curve's and decision/burst-share's re-set (share-quote-widen read): this fact's text does not depend on the changed sentence (the quote now covers four mechanics and qualifies the parent on OppCard-PlainDamage); where it quotes 33 games at share 0.9 on the two debuff mechanics or on cards, that narrower claim still holds"
     },
     {
       "by": "2edc559b-edfc-489b-a2d9-c1df70ab65a0",
-      "at": "2026-11-09T21:22:24+00:00 @ af53c25",
+      "at": "2026-11-10T04:22:24+07:00 @ af53c25",
       "note": "cascade from decision/burst-share rev 3, which only added the pack-chain clause (g99 at share 0.9, measurement/pack-dose-99s9@gen-b1); this fact's numbers and claims do not depend on that clause, re-read 2026-11-10"
     }
   ],
@@ -81,8 +81,8 @@
       ],
       "owner": false,
       "by": "129b8d9d-a225-49d7-abbc-06f8d5f99e19",
-      "at": "2026-11-09T13:47:48+00:00 @ 1b2f7d1",
-      "until": "2026-11-11T05:36:17+00:00 @ a84d752",
+      "at": "2026-11-09T20:47:48+07:00 @ 1b2f7d1",
+      "until": "2026-11-11T12:36:17+07:00 @ a84d752",
       "retired": "merged into measurement/pack-dose-99s9@gen-b1 (STATUS cap)"
     }
   ],

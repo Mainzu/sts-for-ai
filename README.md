@@ -191,11 +191,11 @@ real game (`runs/2026-11-10-packnet40k-s201-r1-91c8ae0`). It also includes
 the result files behind the showcase's headline numbers. The tools make
 `jobs/`, `models/` and the rest of `results/` as they run.
 
-Some internal files are not here: the feature specs (`docs/specs/` and
-`SPEC.md`), the owner's idea tracker (the `ideas#<n>` references), the
-daily digests, the raw datasets, most run folders, and the Claude skills
-the sessions used. Docs still link to the specs; the decisions log records
-what each spec decided.
+The feature specs are here too: `SPEC.md` (the first one) and
+`docs/specs/`, each a plan for one feature, with its checks and what was
+built. Some internal files are not here: the owner's idea tracker (the
+`ideas#<n>` references), the daily digests, the raw datasets, most run
+folders, and the Claude skills the sessions used.
 
 [docs/claims/](docs/claims/) holds the project's short sourced facts
 (measurements, causes, how things work) as a read-only archive. Their

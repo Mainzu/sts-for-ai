@@ -35,26 +35,26 @@
   "pinned": false,
   "note": null,
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:13:29+00:00 @ fc9cdd8",
+  "at": "2026-11-02T23:13:29+07:00 @ fc9cdd8",
   "confirms": [
     {
       "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
-      "at": "2026-11-03T00:37:12+00:00 @ da67084",
+      "at": "2026-11-03T07:37:12+07:00 @ da67084",
       "note": "re-checked 08:00 2026-11-03: product/net rev 4 changed only the play flags (--line-seed --step-line; same net, same price) and yardstick/cost-savers rev 2 only added the line-step verdict; the fact's content is unaffected"
     },
     {
       "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
-      "at": "2026-11-10T15:38:04+00:00 @ 80d6c86",
+      "at": "2026-11-10T22:38:04+07:00 @ 80d6c86",
       "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
     },
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:20+00:00 @ 3123201a",
+      "at": "2026-11-13T09:33:20+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: yardstick/cost-savers reworded to a shorter single claim; the claim this fact cites kept its key"
     },
     {
       "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
-      "at": "2026-11-13T09:42:01+00:00 @ e24c419a",
+      "at": "2026-11-13T16:42:01+07:00 @ e24c419a",
       "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
     }
   ],

@@ -18,11 +18,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:29:22Z @ 3123201a",
+  "at": "2026-11-13T09:29:22+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:35Z @ 3123201a",
+      "at": "2026-11-13T09:33:35+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/share-quote-widen@sentries reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
@@ -44,8 +44,8 @@
       ],
       "owner": false,
       "by": "9dac2594-61af-4f50-ba8b-c66fd10cfd0a",
-      "at": "2026-11-09T11:36:35Z @ a816116",
-      "until": "2026-11-09T15:27:21Z @ 0ca3bfa"
+      "at": "2026-11-09T18:36:35+07:00 @ a816116",
+      "until": "2026-11-09T22:27:21+07:00 @ 0ca3bfa"
     },
     {
       "rev": 2,
@@ -68,8 +68,8 @@
       ],
       "owner": false,
       "by": "129b8d9d-a225-49d7-abbc-06f8d5f99e19",
-      "at": "2026-11-09T15:27:21Z @ 0ca3bfa",
-      "until": "2026-11-09T21:21:01Z @ 2123f4d"
+      "at": "2026-11-09T22:27:21+07:00 @ 0ca3bfa",
+      "until": "2026-11-10T04:21:01+07:00 @ 2123f4d"
     },
     {
       "rev": 3,
@@ -96,8 +96,8 @@
       ],
       "owner": false,
       "by": "2edc559b-edfc-489b-a2d9-c1df70ab65a0",
-      "at": "2026-11-09T21:21:01Z @ 2123f4d",
-      "until": "2026-11-13T02:29:22Z @ 3123201a"
+      "at": "2026-11-10T04:21:01+07:00 @ 2123f4d",
+      "until": "2026-11-13T09:29:22+07:00 @ 3123201a"
     }
   ],
   "seal": "9ce00488ea51dd7e380ddff5ea080f9bae34f1c2d50f4aa8d918e0894b846c49"

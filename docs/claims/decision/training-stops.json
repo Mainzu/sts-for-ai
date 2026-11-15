@@ -18,16 +18,16 @@
   "pinned": false,
   "note": "unpinned for the STATUS cap (docs/decisions.md, lane shown-card-numbers as built); value checked unchanged against docs/operating.md",
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:11:23Z @ fc9cdd8",
+  "at": "2026-11-02T23:11:23+07:00 @ fc9cdd8",
   "confirms": [
     {
       "by": "afbe1ebb-305c-4ac9-b359-8583079e6ffd",
-      "at": "2026-11-09T19:36:49Z @ 5506948",
+      "at": "2026-11-10T02:36:49+07:00 @ 5506948",
       "note": "unpinned by lane worker: STATUS cap (the rule is in docs/operating.md's owner section); re-pin with --pin"
     },
     {
       "by": "afbe1ebb-305c-4ac9-b359-8583079e6ffd",
-      "at": "2026-11-09T19:37:13Z @ 5506948",
+      "at": "2026-11-10T02:37:13+07:00 @ 5506948",
       "note": "unpinned for the STATUS cap (docs/decisions.md, lane shown-card-numbers as built); value checked unchanged against docs/operating.md"
     }
   ],

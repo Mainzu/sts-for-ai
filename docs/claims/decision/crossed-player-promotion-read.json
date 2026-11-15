@@ -23,11 +23,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:28:17Z @ 3123201a",
+  "at": "2026-11-13T09:28:17+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:13Z @ 3123201a",
+      "at": "2026-11-13T09:33:13+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: cause/leaf-gain-third reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],

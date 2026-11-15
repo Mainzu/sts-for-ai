@@ -19,7 +19,7 @@
   "pinned": false,
   "note": null,
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:11:37Z @ fc9cdd8",
+  "at": "2026-11-02T23:11:37+07:00 @ fc9cdd8",
   "confirms": [],
   "flags": [],
   "history": [
@@ -40,8 +40,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:11:37Z @ fc9cdd8",
-      "until": "2026-11-11T10:10:44Z @ 3e258d9",
+      "at": "2026-11-02T23:11:37+07:00 @ fc9cdd8",
+      "until": "2026-11-11T17:10:44+07:00 @ 3e258d9",
       "retired": "spent: the 2026-11-02 order L1-L6 is done or replaced by the lane portfolio and docs/backlog.md's ranking (the newest big-picture review outranks it); STATUS cap"
     }
   ],

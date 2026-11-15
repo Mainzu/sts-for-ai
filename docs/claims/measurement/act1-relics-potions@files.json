@@ -29,26 +29,26 @@
   "pinned": false,
   "note": null,
   "by": "61166b4e-f6ea-4e10-8934-4aa3e752f9cd",
-  "at": "2026-11-13T13:12:19+00:00 @ cbadc349",
+  "at": "2026-11-13T20:12:19+07:00 @ cbadc349",
   "confirms": [
     {
       "by": "7f40d6e4-69d1-4b13-a29e-284dff8cfde9",
-      "at": "2026-11-13T13:28:27+00:00 @ 9108cf87",
+      "at": "2026-11-13T20:28:27+07:00 @ 9108cf87",
       "note": "step 4 added cards only; Colorless Potion entry and its colorless.rs test unchanged and passing"
     },
     {
       "by": "b223e90e-b9f7-42c5-aee5-ad1cd1534cb5",
-      "at": "2026-11-13T13:38:32+00:00 @ d093795d",
+      "at": "2026-11-13T20:38:32+07:00 @ d093795d",
       "note": "step 2 added three cards and two powers to act1-colorless; Colorless Potion and its test unchanged"
     },
     {
       "by": "712aba8b-e6ed-4a5f-83a6-568c1e11015e",
-      "at": "2026-11-13T13:42:56+00:00 @ e402b42b",
+      "at": "2026-11-13T20:42:56+07:00 @ e402b42b",
       "note": "colorless step 5 added Madness only; Colorless Potion and potion counts unchanged"
     },
     {
       "by": "7dc07ed2-ae25-4d63-bdd8-6b03a4001381",
-      "at": "2026-11-13T13:52:08+00:00 @ b9a755f2",
+      "at": "2026-11-13T20:52:08+07:00 @ b9a755f2",
       "note": "colorless step 3 added cards only; Colorless Potion entry and its colorless.rs test unchanged and passing"
     }
   ],
@@ -73,8 +73,8 @@
       ],
       "owner": false,
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:28:26+00:00 @ 3123201a",
-      "until": "2026-11-13T06:46:13+00:00 @ 5240b8fb"
+      "at": "2026-11-13T09:28:26+07:00 @ 3123201a",
+      "until": "2026-11-13T13:46:13+07:00 @ 5240b8fb"
     },
     {
       "rev": 2,
@@ -99,8 +99,8 @@
       ],
       "owner": false,
       "by": "a8f31275-1ed7-44ce-95f2-c3f7d8378390",
-      "at": "2026-11-13T06:46:13+00:00 @ 5240b8fb",
-      "until": "2026-11-13T13:12:19+00:00 @ cbadc349"
+      "at": "2026-11-13T13:46:13+07:00 @ 5240b8fb",
+      "until": "2026-11-13T20:12:19+07:00 @ cbadc349"
     }
   ],
   "seal": "2bc8e9d9cd251c584c328d447470809dc2837a09b39903368bb560859ad69cce"

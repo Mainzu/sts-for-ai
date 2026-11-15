@@ -22,11 +22,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:31:25+00:00 @ 3123201a",
+  "at": "2026-11-13T09:31:25+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:24+00:00 @ 3123201a",
+      "at": "2026-11-13T09:33:24+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/rollout-leaf@elites reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
@@ -60,8 +60,8 @@
       ],
       "owner": false,
       "by": "fc5c2804-8208-4855-b0c6-e5cd7afafed9",
-      "at": "2026-11-04T10:08:09+00:00 @ e3e711d",
-      "until": "2026-11-04T11:08:37+00:00 @ f093f1c"
+      "at": "2026-11-04T17:08:09+07:00 @ e3e711d",
+      "until": "2026-11-04T18:08:37+07:00 @ f093f1c"
     },
     {
       "rev": 2,
@@ -87,8 +87,8 @@
       ],
       "owner": false,
       "by": "ed05eb9c-8eb3-446d-8f37-09e8ef4beb58",
-      "at": "2026-11-04T11:08:37+00:00 @ f093f1c",
-      "until": "2026-11-13T02:31:25+00:00 @ 3123201a"
+      "at": "2026-11-04T18:08:37+07:00 @ f093f1c",
+      "until": "2026-11-13T09:31:25+07:00 @ 3123201a"
     }
   ],
   "seal": "a6a1393bd9564a8ec4c8914ed4416eca7f9f5d269993866907b7ae396030dafd"

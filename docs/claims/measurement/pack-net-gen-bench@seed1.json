@@ -48,7 +48,7 @@
   "pinned": false,
   "note": null,
   "by": "9b2dd76a-ebb7-49f2-a306-4e05e9845de4",
-  "at": "2026-11-10T05:44:59+00:00 @ 41760df",
+  "at": "2026-11-10T12:44:59+07:00 @ 41760df",
   "confirms": [],
   "flags": [],
   "history": [
@@ -80,8 +80,8 @@
       ],
       "owner": false,
       "by": "b80fa29f-c01b-4065-805a-4beba0657002",
-      "at": "2026-11-10T00:20:24+00:00 @ 6117301",
-      "until": "2026-11-10T05:44:59+00:00 @ 41760df"
+      "at": "2026-11-10T07:20:24+07:00 @ 6117301",
+      "until": "2026-11-10T12:44:59+07:00 @ 41760df"
     },
     {
       "rev": 2,
@@ -129,8 +129,8 @@
       ],
       "owner": false,
       "by": "9b2dd76a-ebb7-49f2-a306-4e05e9845de4",
-      "at": "2026-11-10T05:44:59+00:00 @ 41760df",
-      "until": "2026-11-11T09:00:39+00:00 @ 50c01fd",
+      "at": "2026-11-10T12:44:59+07:00 @ 41760df",
+      "until": "2026-11-11T16:00:39+07:00 @ 50c01fd",
       "retired": "STATUS cap: no fact cites it; its numbers stay in docs/research/pns-probes.md#pns1-gen-bench (0762) and #pns-gen-attribution; its conclusion (the pack net is no goal-1 base for generated packs) is superseded by measurement/genpack-transfer@three-seeds, where nets trained on a generated pack cut that cost 0.76"
     }
   ],

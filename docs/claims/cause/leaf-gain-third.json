@@ -25,18 +25,18 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:29:03Z @ 3123201a",
+  "at": "2026-11-13T09:29:03+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:32:57Z @ 3123201a",
+      "at": "2026-11-13T09:32:57+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/adapted-two@elites, measurement/crossed-player@two-turn, measurement/burst-official@held-out reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
   "flags": [
     {
       "by": "curate-cf44b335-65ef-4f93-841c-f4d788c07b73",
-      "at": "2026-11-15T04:59:05+00:00 @ a3a20322",
+      "at": "2026-11-15T11:59:05+07:00 @ a3a20322",
       "reason": "re-check pending: sources are suspect/measured under older rules version; curator can't re-measure"
     }
   ],
@@ -74,8 +74,8 @@
       ],
       "owner": false,
       "by": "2ef20aae-4e81-4598-8ce8-557bca9d73a3",
-      "at": "2026-11-05T12:31:12Z @ 74e540f",
-      "until": "2026-11-05T15:45:29Z @ f89053c"
+      "at": "2026-11-05T19:31:12+07:00 @ 74e540f",
+      "until": "2026-11-05T22:45:29+07:00 @ f89053c"
     },
     {
       "rev": 2,
@@ -123,8 +123,8 @@
       ],
       "owner": false,
       "by": "56c5a1d1-29a3-4ae4-b122-773b2e4caee5",
-      "at": "2026-11-05T15:45:29Z @ f89053c",
-      "until": "2026-11-06T01:23:57Z @ aa30d72"
+      "at": "2026-11-05T22:45:29+07:00 @ f89053c",
+      "until": "2026-11-06T08:23:57+07:00 @ aa30d72"
     },
     {
       "rev": 3,
@@ -185,8 +185,8 @@
       ],
       "owner": false,
       "by": "d348e064-834e-4cae-be51-056e6d1678db",
-      "at": "2026-11-06T01:23:57Z @ aa30d72",
-      "until": "2026-11-10T12:11:18Z @ 9748e5c"
+      "at": "2026-11-06T08:23:57+07:00 @ aa30d72",
+      "until": "2026-11-10T19:11:18+07:00 @ 9748e5c"
     },
     {
       "rev": 4,
@@ -256,8 +256,8 @@
       ],
       "owner": false,
       "by": "62b7a521-3221-4c6f-8916-214850efc667",
-      "at": "2026-11-10T12:11:18Z @ 9748e5c",
-      "until": "2026-11-10T16:53:24Z @ 5e367c8"
+      "at": "2026-11-10T19:11:18+07:00 @ 9748e5c",
+      "until": "2026-11-10T23:53:24+07:00 @ 5e367c8"
     },
     {
       "rev": 5,
@@ -314,8 +314,8 @@
       ],
       "owner": false,
       "by": "76244db9-7a36-4d59-9a82-257f8498490b",
-      "at": "2026-11-10T16:53:24Z @ 5e367c8",
-      "until": "2026-11-11T05:21:39Z @ d06e052"
+      "at": "2026-11-10T23:53:24+07:00 @ 5e367c8",
+      "until": "2026-11-11T12:21:39+07:00 @ d06e052"
     },
     {
       "rev": 6,
@@ -381,8 +381,8 @@
       ],
       "owner": false,
       "by": "c33c26e2-be6a-40e4-ba5d-4a83e10c1caf",
-      "at": "2026-11-11T05:21:39Z @ d06e052",
-      "until": "2026-11-13T02:29:03Z @ 3123201a"
+      "at": "2026-11-11T12:21:39+07:00 @ d06e052",
+      "until": "2026-11-13T09:29:03+07:00 @ 3123201a"
     }
   ],
   "seal": "fec3a6f94d0da295aa9f2a971445fd28208342648b90bba247c5f35b0c134d8d"

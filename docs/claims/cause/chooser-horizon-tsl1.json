@@ -22,11 +22,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:27:45Z @ 3123201a",
+  "at": "2026-11-13T09:27:45+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:32:55Z @ 3123201a",
+      "at": "2026-11-13T09:32:55+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/turn-start-leaf@headline, measurement/pack-net-twin@one-turn reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],

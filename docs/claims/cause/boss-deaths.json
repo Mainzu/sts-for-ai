@@ -30,7 +30,7 @@
   "pinned": false,
   "note": "recounted 2026-11-14 from the files' floors (boss floor 11, hp_start of lost boss fights); the earlier value's 72 vs 107 was the plain two-turn file net1029-hpe0.01-two-starter-simboss.json (0.804), which still reads 72 (63 <60)",
   "by": "d69e5130-a6d4-440b-8a69-a6a19797e7de",
-  "at": "2026-11-13T23:45:52Z @ ba30bac1",
+  "at": "2026-11-14T06:45:52+07:00 @ ba30bac1",
   "confirms": [],
   "flags": [],
   "history": [
@@ -56,8 +56,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:10:37Z @ fc9cdd8",
-      "until": "2026-11-05T00:48:14Z @ 22b5d9b"
+      "at": "2026-11-02T23:10:37+07:00 @ fc9cdd8",
+      "until": "2026-11-05T07:48:14+07:00 @ 22b5d9b"
     },
     {
       "rev": 2,
@@ -94,8 +94,8 @@
       ],
       "owner": false,
       "by": "ff666280-ee25-4103-8011-de5b45cf8e3c",
-      "at": "2026-11-05T00:48:14Z @ 22b5d9b",
-      "until": "2026-11-13T02:28:57Z @ 3123201a"
+      "at": "2026-11-05T07:48:14+07:00 @ 22b5d9b",
+      "until": "2026-11-13T09:28:57+07:00 @ 3123201a"
     },
     {
       "rev": 3,
@@ -119,8 +119,8 @@
       ],
       "owner": false,
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:28:57Z @ 3123201a",
-      "until": "2026-11-13T23:45:52Z @ ba30bac1"
+      "at": "2026-11-13T09:28:57+07:00 @ 3123201a",
+      "until": "2026-11-14T06:45:52+07:00 @ ba30bac1"
     }
   ],
   "seal": "889416f21721dae923ea335d586ac6c83d44ffbae559ecfc41a01bc641695940"

@@ -17,11 +17,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:28:05Z @ 3123201a",
+  "at": "2026-11-13T09:28:05+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
-      "at": "2026-11-13T13:43:12Z @ d240a173",
+      "at": "2026-11-13T20:43:12+07:00 @ d240a173",
       "note": "navigator 2026-11-13: scripts/gauntlet.py diff since 3123201a is only RUST_MIN_STACK 64 MB; --match unchanged"
     }
   ],

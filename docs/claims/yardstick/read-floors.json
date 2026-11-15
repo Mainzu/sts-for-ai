@@ -22,11 +22,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:29:19Z @ 3123201a",
+  "at": "2026-11-13T09:29:19+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:25Z @ 3123201a",
+      "at": "2026-11-13T09:33:25+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/seed-sd@gauntlet reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
@@ -61,8 +61,8 @@
       ],
       "owner": false,
       "by": "f25bbf58-85c9-46a1-a2a0-053ec482e8a0",
-      "at": "2026-11-10T10:14:22Z @ d5b23ef",
-      "until": "2026-11-10T16:53:36Z @ 5e367c8"
+      "at": "2026-11-10T17:14:22+07:00 @ d5b23ef",
+      "until": "2026-11-10T23:53:36+07:00 @ 5e367c8"
     },
     {
       "rev": 2,
@@ -98,8 +98,8 @@
       ],
       "owner": false,
       "by": "76244db9-7a36-4d59-9a82-257f8498490b",
-      "at": "2026-11-10T16:53:36Z @ 5e367c8",
-      "until": "2026-11-13T02:29:19Z @ 3123201a"
+      "at": "2026-11-10T23:53:36+07:00 @ 5e367c8",
+      "until": "2026-11-13T09:29:19+07:00 @ 3123201a"
     }
   ],
   "seal": "ecaca0f2259b67bdbfe4952a8407238cd8d3dcdee2d824c7f5d7171e364c4a16"

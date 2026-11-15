@@ -46,11 +46,11 @@
   "pinned": false,
   "note": null,
   "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-  "at": "2026-11-02T16:12:12+00:00 @ fc9cdd8",
+  "at": "2026-11-02T23:12:12+07:00 @ fc9cdd8",
   "confirms": [
     {
       "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
-      "at": "2026-11-05T14:57:57+00:00 @ a875850",
+      "at": "2026-11-05T21:57:57+07:00 @ a875850",
       "note": "yardstick/headline-setting rev 2 changed only which depth judges a change (one turn; the two-turn product is the reported score); the setting's flags this fact relies on (--start starter --rewards sim --sim-boss, 500 sequences) are unchanged"
     }
   ],
@@ -100,8 +100,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:12:12+00:00 @ fc9cdd8",
-      "until": "2026-11-10T07:03:41+00:00 @ f97b79c",
+      "at": "2026-11-02T23:12:12+07:00 @ fc9cdd8",
+      "until": "2026-11-10T14:03:41+07:00 @ f97b79c",
       "retired": "superseded by measurement/ledger@cells, yardstick/one-turn-controls and decision/no-goal2-training-arms"
     }
   ],

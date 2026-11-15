@@ -21,11 +21,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:28:58Z @ 3123201a",
+  "at": "2026-11-13T09:28:58+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:31Z @ 3123201a",
+      "at": "2026-11-13T09:33:31+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/adaptation-curve, measurement/adaptation-transfer, measurement/share-curve@retention reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
@@ -72,8 +72,8 @@
       ],
       "owner": false,
       "by": "e63fdaaa-91f4-4e3b-b7d3-22c1f840fbed",
-      "at": "2026-11-05T13:54:35Z @ 53d26c9",
-      "until": "2026-11-09T11:38:12Z @ a816116"
+      "at": "2026-11-05T20:54:35+07:00 @ 53d26c9",
+      "until": "2026-11-09T18:38:12+07:00 @ a816116"
     },
     {
       "rev": 2,
@@ -125,8 +125,8 @@
       ],
       "owner": false,
       "by": "9dac2594-61af-4f50-ba8b-c66fd10cfd0a",
-      "at": "2026-11-09T11:38:12Z @ a816116",
-      "until": "2026-11-13T02:28:58Z @ 3123201a"
+      "at": "2026-11-09T18:38:12+07:00 @ a816116",
+      "until": "2026-11-13T09:28:58+07:00 @ 3123201a"
     }
   ],
   "seal": "a580f1910e45e748d57616bf358b2d1734566b4f62e89d1d611951bf562e3214"

@@ -22,11 +22,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:30:30+00:00 @ 3123201a",
+  "at": "2026-11-13T09:30:30+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:20+00:00 @ 3123201a",
+      "at": "2026-11-13T09:33:20+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/leaf-numbers@probe reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
@@ -76,8 +76,8 @@
       ],
       "owner": false,
       "by": "df1dd138-05b0-40d9-b4aa-97d496908a18",
-      "at": "2026-11-07T05:07:12+00:00 @ ff66de4",
-      "until": "2026-11-13T02:30:30+00:00 @ 3123201a"
+      "at": "2026-11-07T12:07:12+07:00 @ ff66de4",
+      "until": "2026-11-13T09:30:30+07:00 @ 3123201a"
     }
   ],
   "seal": "844f7e06e6dc8359dc1c5bd22dda9492eeb3bd5a39536868250ca7d24a5f8677"

@@ -39,7 +39,7 @@
   "pinned": false,
   "note": null,
   "by": "d3f741ca-584b-4cf4-9328-8a251465b107",
-  "at": "2026-11-12T05:35:12+00:00 @ b1d5f78",
+  "at": "2026-11-12T12:35:12+07:00 @ b1d5f78",
   "confirms": [],
   "flags": [],
   "history": [
@@ -80,8 +80,8 @@
       ],
       "owner": false,
       "by": "d3f741ca-584b-4cf4-9328-8a251465b107",
-      "at": "2026-11-12T05:35:12+00:00 @ b1d5f78",
-      "until": "2026-11-12T05:35:29+00:00 @ b1d5f78",
+      "at": "2026-11-12T12:35:12+07:00 @ b1d5f78",
+      "until": "2026-11-12T12:35:29+07:00 @ b1d5f78",
       "retired": "folded into lane/genpack-product-depth/step (STATUS.md cap); the verdict goes to measurement/genpack-transfer@two-turn"
     }
   ],

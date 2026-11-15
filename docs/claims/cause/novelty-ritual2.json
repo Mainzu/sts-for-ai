@@ -21,11 +21,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:27:55Z @ 3123201a",
+  "at": "2026-11-13T09:27:55+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:32Z @ 3123201a",
+      "at": "2026-11-13T09:33:32+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/adaptation-curve, measurement/rate-columns@ritual2, measurement/genpack-yardstick@18-seeds reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],

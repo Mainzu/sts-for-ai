@@ -26,7 +26,7 @@
   "pinned": false,
   "note": null,
   "by": "40a17f81-a1b8-46e7-8d57-80f7b5648f1f",
-  "at": "2026-11-09T17:18:13+00:00 @ 693c4cd",
+  "at": "2026-11-10T00:18:13+07:00 @ 693c4cd",
   "confirms": [],
   "flags": [],
   "history": [
@@ -54,8 +54,8 @@
       ],
       "owner": false,
       "by": "40a17f81-a1b8-46e7-8d57-80f7b5648f1f",
-      "at": "2026-11-09T17:18:13+00:00 @ 693c4cd",
-      "until": "2026-11-10T07:03:41+00:00 @ f97b79c",
+      "at": "2026-11-10T00:18:13+07:00 @ 693c4cd",
+      "until": "2026-11-10T14:03:41+07:00 @ f97b79c",
       "retired": "superseded by the 31-card pack reads (measurement/pack-net-twin@one-turn) and the 27-card measurement/act1-cards@pack-offers"
     }
   ],

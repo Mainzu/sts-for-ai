@@ -18,7 +18,7 @@
   "pinned": false,
   "note": null,
   "by": "12ae5317-5033-4622-ad4c-f74f4df39f7e",
-  "at": "2026-11-13T23:35:21Z @ baa3df76",
+  "at": "2026-11-14T06:35:21+07:00 @ baa3df76",
   "confirms": [],
   "flags": [],
   "history": [
@@ -38,8 +38,8 @@
       ],
       "owner": false,
       "by": "12ae5317-5033-4622-ad4c-f74f4df39f7e",
-      "at": "2026-11-13T23:35:21Z @ baa3df76",
-      "until": "2026-11-14T00:12:08Z @ 6f6a6438",
+      "at": "2026-11-14T06:35:21+07:00 @ baa3df76",
+      "until": "2026-11-14T07:12:08+07:00 @ 6f6a6438",
       "retired": "fixed by 6f6a6438 (InPlay.queued; tagged_count skips queued and copied cards)"
     }
   ],

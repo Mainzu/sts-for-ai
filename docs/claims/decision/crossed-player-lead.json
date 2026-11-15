@@ -26,11 +26,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:29:23Z @ 3123201a",
+  "at": "2026-11-13T09:29:23+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:13Z @ 3123201a",
+      "at": "2026-11-13T09:33:13+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/crossed-player@two-turn, measurement/pack-net-twin@two-turn, decision/headline-pool-after-act1 reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
@@ -64,8 +64,8 @@
       ],
       "owner": false,
       "by": "d348e064-834e-4cae-be51-056e6d1678db",
-      "at": "2026-11-06T01:23:56Z @ aa30d72",
-      "until": "2026-11-11T04:35:14Z @ 9c1ca04"
+      "at": "2026-11-06T08:23:56+07:00 @ aa30d72",
+      "until": "2026-11-11T11:35:14+07:00 @ 9c1ca04"
     },
     {
       "rev": 2,
@@ -100,8 +100,8 @@
       ],
       "owner": false,
       "by": "c33c26e2-be6a-40e4-ba5d-4a83e10c1caf",
-      "at": "2026-11-11T04:35:14Z @ 9c1ca04",
-      "until": "2026-11-13T02:29:23Z @ 3123201a"
+      "at": "2026-11-11T11:35:14+07:00 @ 9c1ca04",
+      "until": "2026-11-13T09:29:23+07:00 @ 3123201a"
     }
   ],
   "seal": "4d4ef35828bae53c048a8aa0552e2f54d3214867183a65bd8b8b178572609bd1"

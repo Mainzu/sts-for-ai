@@ -45,12 +45,12 @@
   "pinned": false,
   "note": null,
   "by": "7341b88a-0947-4f2b-9d60-594698d8eaa7",
-  "at": "2026-11-05T07:26:37Z @ c272a75",
+  "at": "2026-11-05T14:26:37+07:00 @ c272a75",
   "confirms": [],
   "flags": [
     {
       "by": "19324dbf-6338-4e64-b0a5-7bf437e6c6ca",
-      "at": "2026-11-05T09:51:19Z @ 707a52d",
+      "at": "2026-11-05T16:51:19+07:00 @ 707a52d",
       "reason": "measurement/adapted-two@elites (lead, 2.3-2.5 se): two turns deep the product pays ~2 HP per elite fight beyond the heuristic on sharp2/thorns2 and a 399-game burst removes it; confirmation on fresh starts queued by lane adapted-two-turn"
     }
   ],
@@ -75,8 +75,8 @@
       ],
       "owner": false,
       "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
-      "at": "2026-11-02T16:11:32Z @ fc9cdd8",
-      "until": "2026-11-02T17:25:55Z @ 7f0a742"
+      "at": "2026-11-02T23:11:32+07:00 @ fc9cdd8",
+      "until": "2026-11-03T00:25:55+07:00 @ 7f0a742"
     },
     {
       "rev": 2,
@@ -98,8 +98,8 @@
       ],
       "owner": false,
       "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
-      "at": "2026-11-02T17:25:55Z @ 7f0a742",
-      "until": "2026-11-04T16:01:07Z @ 24a7e00"
+      "at": "2026-11-03T00:25:55+07:00 @ 7f0a742",
+      "until": "2026-11-04T23:01:07+07:00 @ 24a7e00"
     },
     {
       "rev": 3,
@@ -126,8 +126,8 @@
       ],
       "owner": false,
       "by": "0abb1a96-a184-451e-87ad-b17eeedec484",
-      "at": "2026-11-04T16:01:07Z @ 24a7e00",
-      "until": "2026-11-04T22:14:32Z @ 99b1561"
+      "at": "2026-11-04T23:01:07+07:00 @ 24a7e00",
+      "until": "2026-11-05T05:14:32+07:00 @ 99b1561"
     },
     {
       "rev": 4,
@@ -159,8 +159,8 @@
       ],
       "owner": false,
       "by": "1ef7f60b-ed9a-4889-af70-64f5334e6905",
-      "at": "2026-11-04T22:14:32Z @ 99b1561",
-      "until": "2026-11-05T00:47:57Z @ 22b5d9b"
+      "at": "2026-11-05T05:14:32+07:00 @ 99b1561",
+      "until": "2026-11-05T07:47:57+07:00 @ 22b5d9b"
     },
     {
       "rev": 5,
@@ -191,8 +191,8 @@
       ],
       "owner": false,
       "by": "ff666280-ee25-4103-8011-de5b45cf8e3c",
-      "at": "2026-11-05T00:47:57Z @ 22b5d9b",
-      "until": "2026-11-05T07:26:37Z @ c272a75"
+      "at": "2026-11-05T07:47:57+07:00 @ 22b5d9b",
+      "until": "2026-11-05T14:26:37+07:00 @ c272a75"
     },
     {
       "rev": 6,
@@ -237,8 +237,8 @@
       ],
       "owner": false,
       "by": "7341b88a-0947-4f2b-9d60-594698d8eaa7",
-      "at": "2026-11-05T07:26:37Z @ c272a75",
-      "until": "2026-11-05T12:26:34Z @ 035810b",
+      "at": "2026-11-05T14:26:37+07:00 @ c272a75",
+      "until": "2026-11-05T19:26:34+07:00 @ 035810b",
       "retired": "replaced by decision/burst-adapted-column: lane adapted-two-turn's go (a 399-game burst beats the product two turns deep on sharp2 and thorns2) showed the heuristic reference hid the cost"
     }
   ],

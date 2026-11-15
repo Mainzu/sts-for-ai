@@ -18,11 +18,11 @@
   "pinned": false,
   "note": null,
   "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-  "at": "2026-11-13T02:29:32Z @ 3123201a",
+  "at": "2026-11-13T09:29:32+07:00 @ 3123201a",
   "confirms": [
     {
       "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
-      "at": "2026-11-13T02:33:16Z @ 3123201a",
+      "at": "2026-11-13T09:33:16+07:00 @ 3123201a",
       "note": "fact split 2026-11-13: measurement/shl0.005@headline reworded to a shorter single claim; the claim this fact cites kept its key"
     }
   ],
@@ -44,8 +44,8 @@
       ],
       "owner": false,
       "by": "0c5cb0c7-6e7e-4957-b99e-736fdb238ae0",
-      "at": "2026-11-08T09:16:19Z @ 1f37c73",
-      "until": "2026-11-13T02:29:32Z @ 3123201a"
+      "at": "2026-11-08T16:16:19+07:00 @ 1f37c73",
+      "until": "2026-11-13T09:29:32+07:00 @ 3123201a"
     }
   ],
   "seal": "9ee2711c700a861e926805d739a47c589d661f76ceee4b9eb7e083dcbe1b4573"

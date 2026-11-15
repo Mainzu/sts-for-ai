@@ -26,7 +26,7 @@
   "pinned": false,
   "note": null,
   "by": "3e597e15-f95a-456e-8b37-d729df3b4edf",
-  "at": "2026-11-10T02:54:56+00:00 @ 21e61cc",
+  "at": "2026-11-10T09:54:56+07:00 @ 21e61cc",
   "confirms": [],
   "flags": [],
   "history": [
@@ -54,8 +54,8 @@
       ],
       "owner": false,
       "by": "3e597e15-f95a-456e-8b37-d729df3b4edf",
-      "at": "2026-11-10T02:54:56+00:00 @ 21e61cc",
-      "until": "2026-11-10T07:03:38+00:00 @ f97b79c",
+      "at": "2026-11-10T09:54:56+07:00 @ 21e61cc",
+      "until": "2026-11-10T14:03:38+07:00 @ f97b79c",
       "retired": "merged into measurement/portfolio-fickle-enemy"
     }
   ],
