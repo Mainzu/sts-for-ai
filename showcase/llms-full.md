@@ -36,7 +36,7 @@ The AI searching two turns deep, on our 11-fight Act 1 test, over 1,000 seeded r
 
 **499** recorded decisions
 
-**318** things tried, each with a line
+**312** things tried, each with a line
 
 **~58** research lanes run by AI roles
 
@@ -54,7 +54,7 @@ Each mark below is one thing the project tried: an experiment, a change to the s
 
 ### Everything tried, by day
 
-Chart (timeline of every thing tried; here as counts per stretch, 318 in all):
+Chart (timeline of every thing tried; here as counts per stretch, 312 in all):
 
 | Stretch | Name | Dates | Things tried | Outcomes |
 |---|---|---|---|---|
@@ -62,10 +62,10 @@ Chart (timeline of every thing tried; here as counts per stretch, 318 in all):
 | 2 | Self-play, with the owner at the desk | 25 Oct to 28 Oct | 14 | Worked 2, Didn't work 3, Partly 1, Built 8 |
 | 3 | Claude runs the lab day to day | 29 Oct to 31 Oct | 46 | Worked 12, Didn't work 19, Partly 4, Built 11 |
 | 4 | From single fights to an Act | 1 Nov to 2 Nov | 74 | Worked 21, Didn't work 12, Partly 8, Built 31, Dropped 2 |
-| 5 | The AI roles take over | 3 Nov to 5 Nov | 35 | Worked 10, Didn't work 6, Partly 7, Built 11, Dropped 1 |
-| 6 | Real Act 1 goes in | 6 Nov to 9 Nov | 65 | Worked 24, Didn't work 12, Partly 11, Built 17, Dropped 1 |
-| 7 | New nets for new content; relics and potions | 10 Nov to 12 Nov | 43 | Worked 13, Didn't work 11, Partly 5, Built 13, Still open 1 |
-| 8 | The product changes; the real game | 13 Nov to 14 Nov | 26 | Worked 5, Didn't work 1, Built 18, Still open 2 |
+| 5 | The AI roles take over | 3 Nov to 5 Nov | 34 | Worked 9, Didn't work 6, Partly 7, Built 11, Dropped 1 |
+| 6 | Real Act 1 goes in | 6 Nov to 9 Nov | 62 | Worked 21, Didn't work 12, Partly 11, Built 17, Dropped 1 |
+| 7 | New nets for new content; relics and potions | 10 Nov to 12 Nov | 42 | Worked 13, Didn't work 11, Partly 5, Built 12, Still open 1 |
+| 8 | The product changes; the real game | 13 Nov to 14 Nov | 25 | Worked 5, Didn't work 1, Built 17, Still open 2 |
 
 ### Commits per day
 Bands are the eight stretches below.
@@ -246,7 +246,7 @@ Stretch 5 · **3–5 Nov** 340 commits
 
 **Moment:** Skipping elites kept winning, because the engine had no relics for an elite to drop.
 
-**35 things tried in this stretch:** Worked 10, Didn't work 6, Partly 7, Built 11, Dropped 1. (Every one is listed under "Everything tried", stretch 5.)
+**34 things tried in this stretch:** Worked 9, Didn't work 6, Partly 7, Built 11, Dropped 1. (Every one is listed under "Everything tried", stretch 5.)
 
 Stretch 6 · **6–9 Nov** 763 commits
 
@@ -278,7 +278,7 @@ Stretch 6 · **6–9 Nov** 763 commits
 
 **Moment:** The real Exordium Thugs are meaner. They cost 3.28 HP more than the engine's old stand-in, because the real encounter can hold a Blue or Red Slaver.
 
-**65 things tried in this stretch:** Worked 24, Didn't work 12, Partly 11, Built 17, Dropped 1. (Every one is listed under "Everything tried", stretch 6.)
+**62 things tried in this stretch:** Worked 21, Didn't work 12, Partly 11, Built 17, Dropped 1. (Every one is listed under "Everything tried", stretch 6.)
 
 Stretch 7 · **10–12 Nov** 431 commits
 
@@ -306,7 +306,7 @@ Stretch 7 · **10–12 Nov** 431 commits
 
 **Moment:** The relic count climbed by the hour: 23 on 10 November, 40 at lunchtime on the 12th, 52 by 11 pm.
 
-**43 things tried in this stretch:** Worked 13, Didn't work 11, Partly 5, Built 13, Still open 1. (Every one is listed under "Everything tried", stretch 7.)
+**42 things tried in this stretch:** Worked 13, Didn't work 11, Partly 5, Built 12, Still open 1. (Every one is listed under "Everything tried", stretch 7.)
 
 Stretch 8 · **13–14 Nov** 416 commits so far
 
@@ -336,7 +336,7 @@ Stretch 8 · **13–14 Nov** 416 commits so far
 
 **Moment:** The first product change in ten days was a tie, on purpose. It prices things more correctly, which matters once relics that act at turn start come in.
 
-**26 things tried in this stretch:** Worked 5, Didn't work 1, Built 18, Still open 2. (Every one is listed under "Everything tried", stretch 8.)
+**25 things tried in this stretch:** Worked 5, Didn't work 1, Built 17, Still open 2. (Every one is listed under "Everything tried", stretch 8.)
 
 ### Act 1 content in the engine
 Counts, not results: what loads and plays.
@@ -384,15 +384,15 @@ A one-person hobby project, set up so the research could keep going while its ow
 
 **One turn deep for comparisons.** The owner's choice: every change is judged one turn deep, where a read costs minutes; the two-turn product is the reported score, not the ruler.
 
-9. 7 Nov
+8. 7 Nov
 
 **Reads without a session.** A family of queued jobs can run from one session to its verdict, so a lane needs no worker checking in between jobs.
 
-10. 9 Nov
+9. 9 Nov
 
 **The owner works on Act 1 content directly.** A lane spent about 3.5 hours of spec, review and speed checks on two cards, so the owner moved Act 1 content into their own sessions.
 
-11. 13 Nov
+10. 13 Nov
 
 **Curator, "level is a pass".** A daily curator role keeps the fact store current. A change that is more correct or more general passes when it reads level, without a gain.
 
@@ -4468,7 +4468,7 @@ Everything tried
 
 In order, stretch by stretch, whether it worked or not. Lanes (the AI roles' short research projects) say how likely they rated themselves before they ran. 
 
-Outcome words: Worked, Didn't work, Partly, Built, Dropped, Still open. Lanes say how likely they rated themselves before they ran and the CPU-hours they used. 318 entries.
+Outcome words: Worked, Didn't work, Partly, Built, Dropped, Still open. Lanes say how likely they rated themselves before they ran and the CPU-hours they used. 312 entries.
 
 ### Stretch 1: The engine and the first question (23 Oct to 24 Oct)
 
@@ -4706,7 +4706,7 @@ Outcome words: Worked, Didn't work, Partly, Built, Dropped, Still open. Lanes sa
 
 ### Stretch 5: The AI roles take over (3 Nov to 5 Nov)
 
-35 things tried: Worked 10, Didn't work 6, Partly 7, Built 11, Dropped 1.
+34 things tried: Worked 9, Didn't work 6, Partly 7, Built 11, Dropped 1.
 
 #### Engine
 
@@ -4768,7 +4768,7 @@ Outcome words: Worked, Didn't work, Partly, Built, Dropped, Still open. Lanes sa
 
 ### Stretch 6: Real Act 1 goes in (6 Nov to 9 Nov)
 
-65 things tried: Worked 24, Didn't work 12, Partly 11, Built 17, Dropped 1.
+62 things tried: Worked 21, Didn't work 12, Partly 11, Built 17, Dropped 1.
 
 #### Engine
 
@@ -4855,7 +4855,7 @@ Outcome words: Worked, Didn't work, Partly, Built, Dropped, Still open. Lanes sa
 
 ### Stretch 7: New nets for new content; relics and potions (10 Nov to 12 Nov)
 
-43 things tried: Worked 13, Didn't work 11, Partly 5, Built 13, Still open 1.
+42 things tried: Worked 13, Didn't work 11, Partly 5, Built 12, Still open 1.
 
 #### Engine
 
@@ -4922,7 +4922,7 @@ Outcome words: Worked, Didn't work, Partly, Built, Dropped, Still open. Lanes sa
 
 ### Stretch 8: The product changes; the real game (13 Nov to 14 Nov)
 
-26 things tried: Worked 5, Didn't work 1, Built 18, Still open 2.
+25 things tried: Worked 5, Didn't work 1, Built 17, Still open 2.
 
 #### Engine
 

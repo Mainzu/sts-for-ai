@@ -19,7 +19,7 @@ already tried.
   showcase page as plain text: what was built, what was found, every number
   with the test it was measured on. [showcase/index.html](showcase/index.html)
   is the same page with charts. [showcase/llms-full.md](showcase/llms-full.md)
-  adds every real-game fight, a line for each of the 318 things tried, and the
+  adds every real-game fight, a line for each thing tried, and the
   statistics behind the page.
 - **Where it stands:** the best player is the 29 October net searching two
   turns deep (`configs/product.json`); the net that played the real game is
