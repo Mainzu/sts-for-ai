@@ -6,7 +6,7 @@
   "sources": [
     {
       "path": "scripts/gauntlet.py",
-      "sha256": "467b6f22c066a4a78f8019ed186148284ee0f5a59db9b36d35259864fa98e688"
+      "sha256": "423da2758d9ae9a9e5e391a6486544276dc1d2f9a718fc2f0cd437cb60ce2be6"
     }
   ],
   "owner": false,
@@ -23,5 +23,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "96223ef0b179fe839dca2b903edfa12cd270da9d54a666376ee29eb69e1c7b0b"
+  "seal": "10af9536fe92ca5fa4a9a223b68345062143b5c80652637fa5427c8daa131db3"
 }

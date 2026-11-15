@@ -6,11 +6,11 @@
   "sources": [
     {
       "path": "scripts/bench.py",
-      "sha256": "4775f6a625b25046800f7d57fca6dd24adc9df99311c9557e8847ff8b74139cf"
+      "sha256": "8e4f6365dbbcb958cde99d8dad7313d6de73f45dcc13a3f90504a2f7e645bf80"
     },
     {
       "path": "scripts/stsnet.py",
-      "sha256": "7dce02fe6c4bcf9a5359306f476bcce12231854bb83385bc3c785a034ec6a6da"
+      "sha256": "f4ec70aee7a0b997de3e59d95d9a4b2415fac0f0ab00a471c8b009f4af6acac0"
     },
     {
       "path": "docs/research/engine-audit.md",
@@ -19,7 +19,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "e491f0494fd8fdc2f68ffc1820fcfdb46cd0dc1a6d3bb24b714fd8f194691b3a"
+      "sha256": "181ef6905890da762158adf650111fd7209d74c20825596be3a355142bf3a21f"
     }
   ],
   "owner": false,
@@ -53,5 +53,5 @@
       "until": "2026-11-13T20:43:47+07:00 @ d240a173"
     }
   ],
-  "seal": "3570fd1ee1eeffdfb3f668f7e3166c02dc7d2f097b7494d0f631c8dd1d16e162"
+  "seal": "90b2847da04180895601db2d3078e6d8a581de4bbef1154b27f81fefc1b8ac9c"
 }

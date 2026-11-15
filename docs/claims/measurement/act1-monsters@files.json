@@ -7,7 +7,7 @@
     {
       "path": "docs/research/act1-inventory.md",
       "anchor": "Blocks M6 and M7 as built",
-      "sha256": "35ef92f8500d21dbba3f7d2c34b59b4827eb76e2c3fd3aba389990771e700c6b"
+      "sha256": "bd073808f9a500a3598cd0541d6c57219576d5667a1053b4856bc5950cfd0940"
     },
     {
       "path": "docs/research/act1-inventory.md",
@@ -16,11 +16,11 @@
     },
     {
       "path": "content/packs/act1-monsters.json",
-      "sha256": "b06aa5bf09f02be2502cd195c39bbc071627e13c764483493fa9e23e60fd4fb2"
+      "sha256": "e893452dc52b1a10e3f870c6ac462b69bb96427baedce141ac9fc2cee5fb4411"
     },
     {
       "path": "engine/tests/act1_packs.rs",
-      "sha256": "39f90956c4b1b4e2f488530c5f1b42a4aa69be467edaaf1f7c19a75b63b0229a"
+      "sha256": "226f4ab2d134166c31d42ee3f7e05c0c7f33401207617b8273d8c0e7f65b9a97"
     }
   ],
   "owner": false,
@@ -164,5 +164,5 @@
       "until": "2026-11-13T09:29:39+07:00 @ 3123201a"
     }
   ],
-  "seal": "ff5c048b806df7184af4d2c4cfafdf01b968280b9ec67b699a7b45ef8d4a426a"
+  "seal": "1b48bfe3ef01d72803b02600ee309708edcd9d84c119ae8886007f2208a7e44d"
 }

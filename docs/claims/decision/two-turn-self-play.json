@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lane two-turn-round closed (2026-11-03)",
-      "sha256": "cf20693d957c124a7e89f127c6b3a4195be23ac352996beda5f35c77e08fda93"
+      "sha256": "7e1718abbe27dc706e5877eed5f099b05c796965397a00c3c7b9b7f4c5ac8f96"
     },
     {
       "key": "measurement/two-turn-round@cells",
@@ -128,5 +128,5 @@
       "until": "2026-11-13T09:29:33+07:00 @ 3123201a"
     }
   ],
-  "seal": "ef9c4f659ea57a32c6e29bede4d3aeba69fa13e51d297089639d9cc5d985c8ad"
+  "seal": "4a27f17307ffecb197a091c9745c89e5a127e48464915b8bf4d3b99d1c113646"
 }

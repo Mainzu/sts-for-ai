@@ -6,7 +6,7 @@
   "sources": [
     {
       "path": "content/packs/act1-ironclad.json",
-      "sha256": "e685a78130107c84c188b01abc90acf6b7df5b0898eef2449e319814e4a6e120"
+      "sha256": "2edef3818a81c03264d29eb7699f75739ba5c6ed805dae1bbba3b8d692e1c8b2"
     },
     {
       "path": "engine/tests/ironclad_last_four.rs",
@@ -14,15 +14,15 @@
     },
     {
       "path": "engine/tests/discovery.rs",
-      "sha256": "ba41a41586f657c25017633344af59cd82518821a234fca41ed6fc525325ec91"
+      "sha256": "1cdd905a984db44936e9723d1edf735fcce2bab01d742315fd7a269a11c379ea"
     },
     {
       "path": "docs/research/act1-coverage.json",
-      "sha256": "3c5070217d542db5039741042b8f0c96626dc38a0d377dbb57051a3ca24f8407"
+      "sha256": "48bd8b532fcbc33f5037c198ef47ca5ec34fa8456451193d0a3e3ac094404cc2"
     },
     {
       "path": "engine/src/registry.rs",
-      "sha256": "5762ab9b1edf187b00173cc2a3ec01a3a83685957e3094308414304d7c344015"
+      "sha256": "1caafdb4f758945a6b94b5ea4c6303bf8cea39fe2641371ca50d753d175f99e6"
     }
   ],
   "owner": false,
@@ -433,5 +433,5 @@
       "until": "2026-11-14T13:46:15+07:00 @ e7957815"
     }
   ],
-  "seal": "1492ad5694c2226928a8b53ca6fc3c0bfdd42d840ac3356a520d7de77715dcab"
+  "seal": "56f013850da053c73b6b4854413f00782e82dbb758555e0d704f8b5f5f7c5a8f"
 }

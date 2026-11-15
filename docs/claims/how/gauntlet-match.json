@@ -6,7 +6,7 @@
   "sources": [
     {
       "path": "scripts/gauntlet.py",
-      "sha256": "467b6f22c066a4a78f8019ed186148284ee0f5a59db9b36d35259864fa98e688"
+      "sha256": "423da2758d9ae9a9e5e391a6486544276dc1d2f9a718fc2f0cd437cb60ce2be6"
     },
     {
       "path": "docs/specs/pack-pick-split.md",
@@ -27,5 +27,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "22e168b489e4b7fc1d7d9f8d17852b0db8a83b2cc90fc20b4afe41a9d21e205f"
+  "seal": "a32aacceadc296c9f463216dd7dd61e4d8afb0c797a30abd6ddac98816b8c3c6"
 }

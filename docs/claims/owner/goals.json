@@ -7,7 +7,7 @@
     {
       "path": "docs/operating.md",
       "anchor": "Goals (owner)",
-      "sha256": "16ce9fa3031dedfa609af8c68f20d842717c31cd9a4e41d326d2bceb8af1ef00"
+      "sha256": "efe1aa70ddf079b5849da3416181d81c31d26b304f3675ef752eef4070fca315"
     }
   ],
   "owner": false,
@@ -40,5 +40,5 @@
       "until": "2026-11-09T13:02:03+07:00 @ d3bfcae"
     }
   ],
-  "seal": "3b364e322ec349edca32db8fda89698a68ea49f91511120421aed63f4460f097"
+  "seal": "b1463b3a3d4f0a1ea9d195eb099ec0288725eaed53dfebb3719128cc37b0e6ed"
 }

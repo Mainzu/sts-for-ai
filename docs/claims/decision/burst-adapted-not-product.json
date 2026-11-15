@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
-      "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+      "sha256": "64c7e5d327baf3060836ae89f275415e948f877dd2c0a97b8ccf401f98ef90de"
     },
     {
       "key": "decision/crossed-player-lead",
@@ -28,5 +28,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "0e04e0980c6f388a31eb6107436c18e30e2e372c21f2378ffcccc5ab9319295d"
+  "seal": "5e7be2a1e1cf3ca028fe378e772cb93454b794e2aa4d292f78eb5ff825d995b1"
 }

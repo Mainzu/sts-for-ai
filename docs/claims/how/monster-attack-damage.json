@@ -6,7 +6,7 @@
   "sources": [
     {
       "path": "engine/src/state.rs",
-      "sha256": "9200c10a087b9452251f58354c1e5ef39c2635f1bab9e62a7374db793f243ba6"
+      "sha256": "33eba0e563e2c807a594c671f9f673976238504eed2d3894fed0ba16fd1ba830"
     },
     {
       "path": "docs/research/engine-audit.md",
@@ -63,5 +63,5 @@
       "until": "2026-11-13T18:16:31+07:00 @ 472bc3c9"
     }
   ],
-  "seal": "3fd4408dcd8eb95195dfc2d8825df621b80bc9f75a108b26713b817af03b06a8"
+  "seal": "7bcbf5cba8f445759368a13489d1224a0f516db66a2b820ae99192cefc8c02b0"
 }

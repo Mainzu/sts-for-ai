@@ -7,7 +7,7 @@
     {
       "path": "docs/research/big-picture-2026-11-12.md",
       "anchor": "Diagnosis",
-      "sha256": "4a95153f1db59b82ae4baa57b65e149ecc53faf2aa9678f893e9d31d9f7d6796"
+      "sha256": "5f32b5c99b6b6809bd2a00086dd0c61a29b6c95803d8ca719832f99baba1e366"
     }
   ],
   "owner": false,
@@ -66,5 +66,5 @@
       "until": "2026-11-13T09:29:08+07:00 @ 3123201a"
     }
   ],
-  "seal": "f1ff6002a49cb5b77b2887159466a330f7dc6131aa02a3c918f82a5060c8a866"
+  "seal": "80f24195262045f5850b656d90f214fb571755721f9d51b4859e8f2fd58de785"
 }

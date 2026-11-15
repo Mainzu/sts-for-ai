@@ -11,7 +11,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "After the big-picture review of 2026-11-10: read floors for charters; counterfactual pricing, product-depth worlds and wider generators ranked; 0780 cancelled; generated-pack-scratch's reroute written in advance (on the owner's behalf, 2026-11-10)",
-      "sha256": "04d4d7f9352e4975a4c7f8e97179294d67f74eddd5419f0bf6216353b2b11a37"
+      "sha256": "2459eac5084da29af01a8209c2e933635fbfbcfc8143def0ebb6eac87a221380"
     }
   ],
   "owner": false,
@@ -28,5 +28,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "edce7321cc1711298974f1a7bb9ad2d6372fce4040f36501b7ddd38cfb66b4a3"
+  "seal": "a224b065eadc332cca5e02d7233102569d4dcf14a3b1007ab135cc247f92ad83"
 }

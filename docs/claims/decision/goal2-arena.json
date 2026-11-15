@@ -7,12 +7,12 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Navigator's first defaults (on the owner's behalf, 2026-11-03)",
-      "sha256": "99ae6081cf923509353550c2ed1894855c6a3e762c8547071e90966717351583"
+      "sha256": "18e20b6a30201df7186b794b620e563af290d65b768f8bba914748ddf23dd446"
     },
     {
       "path": "docs/decisions.md",
       "anchor": "Parity source and arena after the install: the game's jar first, the real game is arena level 2 (on the owner's behalf, 2026-11-13)",
-      "sha256": "11828ce0f35147a66f7f356124b9c0a96d6440b1420c923f00e38a3527de0cb8"
+      "sha256": "4a23b62a5c4f81ce6254720eb286d2d3baf636909b10dd7312d12c759566208a"
     },
     {
       "key": "decision/parity-source",
@@ -116,5 +116,5 @@
       "until": "2026-11-13T16:46:18+07:00 @ 67cbe2e3"
     }
   ],
-  "seal": "974f4776d5190e01f6ee3a8d5c27aee541befea778b1c66b76ee1ea6587737ac"
+  "seal": "82e73594909f9d81af8ad586dd92aa9e8aea35fbb777631a5cf886b4321ee6dd"
 }

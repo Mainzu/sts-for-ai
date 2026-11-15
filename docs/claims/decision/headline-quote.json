@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "After the big-picture review of 2026-11-09: act1-content puts relics and potions before the one-card blocks; queue-throughput opens; a random-world bench is the next exploration (on the owner's behalf, 2026-11-09)",
-      "sha256": "ee9b5a5a731c985cbce859ca24a33ed2e74d6de58cc73a95b33430c8d1305c4d"
+      "sha256": "9bb46b13079a3316e46edab818c676dc78a74e52a4d075db950bed60fdecbc69"
     },
     {
       "path": "docs/decisions.md",
@@ -174,5 +174,5 @@
       "until": "2026-11-13T16:46:19+07:00 @ 67cbe2e3"
     }
   ],
-  "seal": "45bacb9ee9c4c34328ebf1c709734340ed119109978abe606f2cf045cb66de82"
+  "seal": "aec53a527c03884f1b6a20976ea9f8374c32c92cbc60f53dd2cf18997889068e"
 }

@@ -6,10 +6,10 @@
   "sources": [
     {
       "path": "scripts/gauntlet.py",
-      "sha256": "467b6f22c066a4a78f8019ed186148284ee0f5a59db9b36d35259864fa98e688"
+      "sha256": "423da2758d9ae9a9e5e391a6486544276dc1d2f9a718fc2f0cd437cb60ce2be6"
     },
     {
-      "path": "README.md",
+      "path": "docs/gauntlet.md",
       "anchor": "Act-1 gauntlet",
       "sha256": "aea93b5ad2affc6f62998f17d4b5989b712158849ce208aaa1f0f947c33b46a2"
     }
@@ -293,5 +293,5 @@
       "until": "2026-11-13T09:29:11+07:00 @ 3123201a"
     }
   ],
-  "seal": "4dc7cb301a98623ca8affe76a35727b1a45560682cb2cbd6af098080e6fa361b"
+  "seal": "98a5b2dc3b44760a8bd3a03c89ae54dbea805eba5d319270841d975eed2b7523"
 }

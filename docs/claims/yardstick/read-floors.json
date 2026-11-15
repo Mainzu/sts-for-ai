@@ -7,7 +7,7 @@
     {
       "path": "docs/research/big-picture-2026-11-10.md",
       "anchor": "Navigator's reading",
-      "sha256": "0cff042b3e296a09e159b241af03d70ea43a13b55611b9f2839e621f133d07f5"
+      "sha256": "128988034f80a9c1e0904fd56ab16c598402c8567a8bc7dc93c1ccce90e13b79"
     },
     {
       "key": "cause/headline-pairing-weak",
@@ -102,5 +102,5 @@
       "until": "2026-11-13T09:29:19+07:00 @ 3123201a"
     }
   ],
-  "seal": "ecaca0f2259b67bdbfe4952a8407238cd8d3dcdee2d824c7f5d7171e364c4a16"
+  "seal": "ad4130d4184d87d2cf39a622055ac8611ad92d2e16fb361da069380a3005279c"
 }

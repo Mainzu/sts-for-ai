@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lane genpack-burst-base closed (2026-11-13)",
-      "sha256": "09ea2523c37fdf386d88123ab6f3994d03125288b269d10526a0268836bbb244"
+      "sha256": "9302ef584fd0d798b13107f5ffec3d4e71f6dd053b11994dc7d354e529808eb0"
     }
   ],
   "owner": false,
@@ -18,5 +18,5 @@
   "confirms": [],
   "flags": [],
   "history": [],
-  "seal": "5c00dbc0ed6f4f2fa708b1343119b9e18bdb3d0bb6e67e34e6860d2f7acf2842"
+  "seal": "927e41ea9567acbfca5fab364b1c2c4e4c3c23d99ed901c9fb3747be25337222"
 }

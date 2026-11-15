@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "The owner's filler proposal placed: read the held-out half of existing nets, not full-size ids twins; unseen cards cost the net half its edge (on the owner's behalf, 2026-11-05)",
-      "sha256": "547b8f1568a7eaf73a4f2a8711d574c312fe6251bf1317566635535ebb8d4fa7"
+      "sha256": "3de8809720eabf5e8102ef9e373e9c8825df1677e7b1b8cd0a56c4ec4fabb589"
     },
     {
       "key": "decision/training-stops",
@@ -106,5 +106,5 @@
       "until": "2026-11-13T09:29:28+07:00 @ 3123201a"
     }
   ],
-  "seal": "cc0ff3dc0ce82fe7c96be7f6191f3eecc5b6edb053a7fe1e1bf018fdaf940f69"
+  "seal": "5f525a4a6393824605854de75af7201f3f214c9830116041f5e174363a56d5cd"
 }

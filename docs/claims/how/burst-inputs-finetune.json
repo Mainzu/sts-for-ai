@@ -6,7 +6,7 @@
   "sources": [
     {
       "path": "scripts/finetune.py",
-      "sha256": "9c71161cbb40e56e497ba4ea81b376354c912c03c55d3b190fbc4a964e6df517"
+      "sha256": "50ed5a17e23f6e01283240d226c57f50fb9b498117e845f5247747e8d57b42be"
     }
   ],
   "owner": false,
@@ -17,5 +17,5 @@
   "confirms": [],
   "flags": [],
   "history": [],
-  "seal": "ddd8c38851a015602d5386e76e7448cc571dbd457a6901f2b196a4ee18310010"
+  "seal": "4fdb4f3a555d8891abd33be41a000336f62bf6103afcaaad8adaff7a272e17d6"
 }

@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
-      "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+      "sha256": "83e7768c4e15975331d892b5f107a581f26a9f8a96d523a7d7bf57c7c678a6c0"
     }
   ],
   "owner": false,
@@ -18,5 +18,5 @@
   "confirms": [],
   "flags": [],
   "history": [],
-  "seal": "50cb917f3390c37b00c407469da376e9b17b545b1c6a91a00a905cabcfa879d5"
+  "seal": "14ec44b2f2925ddab36d5fb6bd3f202ab559caf961f4b81c79c329b660a3c022"
 }

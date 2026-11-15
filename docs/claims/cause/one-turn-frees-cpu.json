@@ -15,7 +15,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lanes burst-official and test-full-memory opened; what the one-turn rule does to the queue (on the owner's behalf, 2026-11-05)",
-      "sha256": "ef475c8de4198ca437f261e868aa0bfaac39f0c805feb30b6b70a27bd0d72f94"
+      "sha256": "a0e28d3b3ebdee43e07e59f1cb8188e1d01b36e5a55b9c9c410b3f4ead03438d"
     }
   ],
   "owner": false,
@@ -64,5 +64,5 @@
       "until": "2026-11-13T09:29:06+07:00 @ 3123201a"
     }
   ],
-  "seal": "4f712f549a0f283b74efd3adaee62d3f4ae22cac64e4e11e3528e2436ff5ee14"
+  "seal": "f0158f265ed9a3e2b1003fa5c121cd32992d01ba2f5edfc60df1de8fe1131da5"
 }

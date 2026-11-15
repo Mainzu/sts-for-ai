@@ -7,11 +7,11 @@
     {
       "path": "docs/decisions.md",
       "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
-      "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+      "sha256": "83e7768c4e15975331d892b5f107a581f26a9f8a96d523a7d7bf57c7c678a6c0"
     },
     {
       "path": "scripts/finetune.py",
-      "sha256": "9c71161cbb40e56e497ba4ea81b376354c912c03c55d3b190fbc4a964e6df517"
+      "sha256": "50ed5a17e23f6e01283240d226c57f50fb9b498117e845f5247747e8d57b42be"
     }
   ],
   "owner": false,
@@ -42,5 +42,5 @@
       "until": "2026-11-13T09:29:11+07:00 @ 3123201a"
     }
   ],
-  "seal": "ad7c844555733c62249bf7f5cdb9720a63c0d84f0aa88e5277811f653622d27f"
+  "seal": "cd70ffe9838de6c07738c78515926fd09b7aaf81f04e3def4e54f4f2a8eec57d"
 }

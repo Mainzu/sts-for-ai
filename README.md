@@ -197,11 +197,32 @@ built. Some internal files are not here: the owner's idea tracker (the
 `ideas#<n>` references), the daily digests, the raw datasets, most run
 folders, and the Claude skills the sessions used.
 
-[docs/claims/](docs/claims/) holds the project's short sourced facts
-(measurements, causes, how things work) as a read-only archive. Their
-seals and source hashes refer to the private repository. Commit hashes in
-the docs also come from the private history; this repository starts from a
-single commit.
+[docs/claims/](docs/claims/) holds the project's short sourced facts:
+measurements, causes, decisions in force and how things work, one JSON
+file per fact. [kb](https://github.com/Mainzu/kb) reads them. Install it
+as a Claude Code plugin (`/plugin marketplace add Mainzu/kb`, then
+`/plugin install kb@mainzu`), or clone it at the tag this copy was sealed
+with and run it from the root of this repository:
+
+```bash
+git clone https://github.com/Mainzu/kb ../kb && git -C ../kb checkout v0.2.0
+KB_READONLY=1 python -I ../kb/skills/kb/kb.py render
+```
+
+`kb render` prints the current state. `kb find <words>` and `kb get <key>`
+look facts up; `get` is instant, while `render`, `list` and `check` hash
+every source and take a minute or two. With `KB_READONLY=1` kb writes
+nothing: no usage log under `.claude/` and no cache in `.git/`. `kb check`
+may still run the shell check commands some facts carry.
+
+The facts were re-sealed for this copy, but more than half still show as
+suspect or unchecked. Most cite run results, job records or documents that
+aren't published here (`missing:` or `not here (ignored)` in `kb check`),
+and the rest depend on those facts. A fact marked clean was checked against
+files in this copy.
+
+Commit hashes in the docs and in the facts come from the private history;
+this repository starts from a single commit.
 
 Licensed under the MIT license ([LICENSE](LICENSE)). Map icons in
 `showcase/rooms/` are from Slay the Spire, by Mega Crit.

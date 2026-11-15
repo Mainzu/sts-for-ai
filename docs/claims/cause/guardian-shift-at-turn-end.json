@@ -11,7 +11,7 @@
     },
     {
       "path": "engine/src/state.rs",
-      "sha256": "2e735ca4d56162644b2e2abce9f569fdccdbb827a4a3d542a0ba467c93e2808e"
+      "sha256": "33eba0e563e2c807a594c671f9f673976238504eed2d3894fed0ba16fd1ba830"
     },
     {
       "path": "engine/tests/act1_bosses.rs",
@@ -80,5 +80,5 @@
       "until": "2026-11-14T08:32:24+07:00 @ 626955c6"
     }
   ],
-  "seal": "9dd5fa2eaf5702a9e3cbc92f9566889c28d578d7db64281c99d1afec8a6602d1"
+  "seal": "203dd717f4dcefbe6b979f5e91554a93fb0115b39cd6366d4e672585eb73d435"
 }

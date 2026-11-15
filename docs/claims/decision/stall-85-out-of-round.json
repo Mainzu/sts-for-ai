@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "A20 controls now; the win cap read at A20; 85's fallback and 76 (on the owner's behalf, 2026-11-15)",
-      "sha256": "ba4e39e45fef716942eff4b5863fc85ddf05bd072010f8825e958608bdb46982"
+      "sha256": "d0a89cafeafa54f479f0f1f5020f068be13dbe89fc3444751c12eede4aad84f1"
     },
     {
       "path": "docs/decisions.md",
@@ -51,5 +51,5 @@
       "until": "2026-11-15T13:37:33+07:00 @ a7061d61"
     }
   ],
-  "seal": "1c9749b99581f7fdc1bdc298a969330744b04ae91d42b17583d20057535649a0"
+  "seal": "257fc8fc27b680c12cdd79b6760eca26028bdb458536737f20015231dd035f77"
 }

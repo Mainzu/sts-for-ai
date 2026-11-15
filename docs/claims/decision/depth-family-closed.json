@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lane depth-headroom closed (2026-11-04)",
-      "sha256": "490d1701979b2d6a1091bd6c943b8743eeeb9554efa86636a175f45170c1ac6b"
+      "sha256": "7e16960907a342b93417bc86f03d1f7738c3b6424bb0f631f0894e290fa01aaa"
     },
     {
       "key": "cause/depth-saturated",
@@ -28,5 +28,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "122c7d259090c1f330f86dc6181d3af847037164f9e0a22b7e5c712695de1dc3"
+  "seal": "b34d2c49d9b19e968c98d2f867c406cbb619dc733cb41b9b4b5d01d316b36030"
 }

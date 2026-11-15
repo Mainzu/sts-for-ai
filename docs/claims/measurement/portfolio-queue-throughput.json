@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lane queue-throughput closed (2026-11-09)",
-      "sha256": "5ecca708e0191ab4c092793ef2653f709b1306509860c0d280717b357df73837"
+      "sha256": "51a4ed5f33753a9d5e41ca404143efed05e1ef49b2efe487e9d2dfaa0ff8e03e"
     }
   ],
   "owner": false,
@@ -34,5 +34,5 @@
       "until": "2026-11-13T09:31:10+07:00 @ 3123201a"
     }
   ],
-  "seal": "2201af84e52aca08e828834c23a14bde193530f78780f782844bab4cfca32dda"
+  "seal": "6fcb8b0eb8c01f46816a8de99f098d63df51ba9c0b7aba55868fde422e154731"
 }

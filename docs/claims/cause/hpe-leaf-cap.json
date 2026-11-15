@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Level-defaults read: `@tsl1` and `@lcb1` pass, `@hpe` one turn deep fails; the one-turn controls move (on the owner's behalf, 2026-11-13)",
-      "sha256": "410c998847803ff6fb16ba1ee621e9909761c83d199b3a4f2e092bea6305d860"
+      "sha256": "93c0eef8f5b4f77d6058a88b608fb09dcd5283673f90801ff744fc2de7d3f939"
     },
     {
       "path": "results/gauntlet/net1029-hpe0.01-starter-simboss.json",
@@ -15,7 +15,7 @@
     },
     {
       "path": "py/src/lib.rs",
-      "sha256": "d71f3fe36056f9e2217494ff41c15f5dac4df45e23183008db355bb9021ad42d"
+      "sha256": "01107a2978bbd39e3d696a09d6fc33fec8369157229a0936b6568800f0287210"
     }
   ],
   "owner": false,
@@ -37,5 +37,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "0b81313d750599b336e564540f174684aadfba74ee6dfa8df49192a17c0285d2"
+  "seal": "ab9026a055410e2be0dd499c45e8870be7dfe963fab1bbf3f6d32db16dd6d50b"
 }

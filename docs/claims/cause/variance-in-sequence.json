@@ -7,7 +7,7 @@
     {
       "path": "docs/research/approach-review-2026-11-02.md",
       "anchor": "The patterns behind the record",
-      "sha256": "16de4c3c7820337ce8999ae598c89f0472ecea8c15e5da9370798defb26d5f14"
+      "sha256": "5b765574aa790320257b102e1b78d6ff5f48d82d0217fe993d9436b55f4ec7b5"
     }
   ],
   "owner": false,
@@ -18,5 +18,5 @@
   "confirms": [],
   "flags": [],
   "history": [],
-  "seal": "6f6126cb2c322cbd5647d6d6afb012a5483f5c41bd967d85978fd920ab4e184b"
+  "seal": "8b5436ca2f243706c4fc3e894107ff15aecaa3dde9778184b09bf0017e759eee"
 }

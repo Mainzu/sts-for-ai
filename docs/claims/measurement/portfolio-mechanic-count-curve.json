@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lane mechanic-count-curve closed (2026-11-12)",
-      "sha256": "725c2cae89b58c618ce18516bf3c06b91028461a2949e9347ed2ed2d91dc66b1"
+      "sha256": "bcd21a9bd272b6e924637d763f4edeee930c20bc1fbc51119bbdd3a418fdbeec"
     },
     {
       "key": "measurement/mechanic-count@six-arm",
@@ -74,5 +74,5 @@
       "until": "2026-11-13T09:31:05+07:00 @ 3123201a"
     }
   ],
-  "seal": "4bc1897eb9c7e7ec1dff4bde2e26b68e676cdbf44c37ff8dbe2907d6f6c29894"
+  "seal": "d99525a30acbf19de488631aef3e003690a513b293b1a08beec93b23d6b4024f"
 }

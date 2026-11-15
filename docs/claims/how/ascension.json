@@ -11,11 +11,11 @@
     },
     {
       "path": "engine/src/monsters.rs",
-      "sha256": "5e082a4ad73fe2d5132d850eec97c934b716f13254c9bcd129234be7c78af162"
+      "sha256": "02531a4a863a2f6c2c72a21c910b9ecc0953254ecb7355e6ced65b3e345e487e"
     },
     {
       "path": "engine/tests/ascension.rs",
-      "sha256": "26246ffc7c97d5cbef64ed602a26fdb6b73625963b9160b55a72645c86ee16fe"
+      "sha256": "2e97d35357cc995b36df5146c932acd4b2b1d9a78569edd969c38229a2310600"
     }
   ],
   "owner": false,
@@ -50,5 +50,5 @@
       "until": "2026-11-14T13:14:12+07:00 @ 90665f89"
     }
   ],
-  "seal": "b575949870adab10c00b1aff05182d765545f25986c546919f740c287966f834"
+  "seal": "6c865cc6ee32c6aeda4b814cce03d7cce210b58ba7b4522fe8236cbbcd4b6756"
 }

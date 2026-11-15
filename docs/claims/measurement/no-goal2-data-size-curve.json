@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "After the big-picture review of 2026-11-06: code first, the mechanic as goal 1's sample unit, two stored conclusions re-set, probes without lanes (on the owner's behalf, 2026-11-06)",
-      "sha256": "096065a46774079ceb207bb68cfa4dfed4d24ca8580a5ba2438a3b885da0fb30"
+      "sha256": "337f1a56ce9ab618d53ec616485f3a59377a7b07e6fd64ceec5cee13b0d9a843"
     },
     {
       "path": "docs/research/big-picture-2026-11-06.md",
@@ -33,5 +33,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "6fe1a78421e4c0c3582a0b6f3a5939ba7f6aa06eda52eaa95b4e626c18dc231b"
+  "seal": "dfceab61557433ce7963c81693da191e4d6d83863e892c0422ef645b847fa620"
 }

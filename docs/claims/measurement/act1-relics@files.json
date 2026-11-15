@@ -6,11 +6,11 @@
   "sources": [
     {
       "path": "content/packs/act1-relics.json",
-      "sha256": "54495ac135a663bfbbfe99a47dfec3fb46f60a2a1b38cab18082ffcb2bcf7d04"
+      "sha256": "043a4f495f2f27c026fc37a99fd5e34bd91c3dcdd9b25d2466824b0c413208d9"
     },
     {
       "path": "content/packs/act1-colorless.json",
-      "sha256": "f170df0e9cfead109bb0848c9b1fa80d4892640aefcd5f40b733ed88b9d76bb0"
+      "sha256": "f31deca3f13aafec97217aca09309f6b9b851857672889e6286695d97201a16d"
     },
     {
       "path": "content/relics.json",
@@ -18,7 +18,7 @@
     },
     {
       "path": "engine/tests/act1_relics.rs",
-      "sha256": "986317e703dd8a1b072bca010f67baa614cf307dc4dee3ef5963964dcc3ada78"
+      "sha256": "3b3d10743f5a0bed651938f4b52d68ce3fb3b38dcba033edbc93f36d6a3b1733"
     },
     {
       "path": "engine/tests/fight_vocabulary.rs",
@@ -26,7 +26,7 @@
     },
     {
       "path": "engine/tests/act1_singles.rs",
-      "sha256": "e519d0ab4eb2b7956eb290d700340783b12d814625901fd8b80c1fbbe28e9539"
+      "sha256": "0640b00d62bf1f20ecc864493d3c8132a3f70862c9f05141cdc190f23c56c9ed"
     },
     {
       "path": "engine/tests/snecko.rs",
@@ -34,7 +34,7 @@
     },
     {
       "path": "engine/src/relics.rs",
-      "sha256": "1ef8fc80827813a7942f02b40f795db318cf8329a755c6d41b8f0b67a11b75c1"
+      "sha256": "03ff3e8e4e91813815ee28d12543ec058703e3fe202ea282f61e5f87d78245a3"
     }
   ],
   "owner": false,
@@ -1436,5 +1436,5 @@
       "until": "2026-11-14T07:43:49+07:00 @ d48b3f26"
     }
   ],
-  "seal": "69ad3acc777e2e2dca63e9614ad4927fd49694d21c4732ed82c1b839a2e1d07f"
+  "seal": "b7a5781be2f9ea544e7d2ee1918b615ffcab563bb4e7c5ff2debf749e8ae329f"
 }

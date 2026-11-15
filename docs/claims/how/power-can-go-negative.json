@@ -6,24 +6,24 @@
   "sources": [
     {
       "path": "engine/src/registry.rs",
-      "sha256": "d63f68bd19a0e3ce2f9fc3e13a0cdca958d88af854b187caccdd00c1c8091db9"
+      "sha256": "1caafdb4f758945a6b94b5ea4c6303bf8cea39fe2641371ca50d753d175f99e6"
     },
     {
       "path": "engine/src/state.rs",
-      "sha256": "9200c10a087b9452251f58354c1e5ef39c2635f1bab9e62a7374db793f243ba6"
+      "sha256": "33eba0e563e2c807a594c671f9f673976238504eed2d3894fed0ba16fd1ba830"
     },
     {
       "path": "content/powers.json",
-      "sha256": "7a95a139b19b7efc0654dc9c9f507610346290cbe8ce11205a6ec36875a0412c"
+      "sha256": "79cd40fff3443713a2ca0b7d6fe5bae019f577aa79567ec2826750bee0ac1a7b"
     },
     {
       "path": "py/src/lib.rs",
-      "sha256": "41d9c8af51de7e66005dc2e88f8ea598184300db2f725357789b4c5069de30c0"
+      "sha256": "01107a2978bbd39e3d696a09d6fc33fec8369157229a0936b6568800f0287210"
     },
     {
       "path": "docs/decisions.md",
       "anchor": "Rules version moves for Pocketwatch's play count (on the owner's behalf, 2026-11-14)",
-      "sha256": "e00c0296d95284c7135fcc66f43eb41581ac4b1a0b680b439cc5350ea4c4288d"
+      "sha256": "d2e7d665d0d8dbb8dfffed3e638b9a1f1e70405ae489bf0c428f9ae3fb5f95d2"
     }
   ],
   "owner": false,
@@ -34,5 +34,5 @@
   "confirms": [],
   "flags": [],
   "history": [],
-  "seal": "a9812bf44a6fcbd0e456e7da6653bad7d4b764bf825eb3fc11a988fff24d05ce"
+  "seal": "8d7655cb99987ac58720f47739ff924c4d75fd8c8fac1932ca12307e4ffd8866"
 }

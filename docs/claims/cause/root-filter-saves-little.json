@@ -7,12 +7,12 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Top-3 two-turn player: no change (owner away, 2026-10-31)",
-      "sha256": "3b0d7854e9ac51e3546e31e180b9ccecd437168bc47ac5848d679df6e6a104ad"
+      "sha256": "73d06868c50bfcc33bd9473411294644f3ffb56cfe936222b5cd2256fdcb78cb"
     },
     {
       "path": "docs/decisions.md",
       "anchor": "Selective two-turn search: fails its first check, not merged (owner away, 2026-11-01)",
-      "sha256": "557727c645d200ad18ef69cf1e1208327c2de3837baf8162fa779c114bbfdb75"
+      "sha256": "0e9d39bd7be51c22de642c29867eb2393e2f25acf3ae3526570ec989a026d879"
     }
   ],
   "owner": false,
@@ -23,5 +23,5 @@
   "confirms": [],
   "flags": [],
   "history": [],
-  "seal": "f18a8db130bbd48095bdcded55d135ff99a0cefbbda8ed9bac5e5734e8e59be6"
+  "seal": "380df851b4f2efeafad6df12ae24b61cb9f7ceac887d4d0e00d47008383879ff"
 }

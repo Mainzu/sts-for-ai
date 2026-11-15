@@ -6,21 +6,21 @@
   "sources": [
     {
       "path": "engine/src/monsters.rs",
-      "sha256": "9012bd7562ae04faaf61cd95f17a95bb9c56e4aee708aa5fe8f51898a9ec17a9"
+      "sha256": "02531a4a863a2f6c2c72a21c910b9ecc0953254ecb7355e6ced65b3e345e487e"
     },
     {
       "path": "engine/tests/monsters_act1.rs",
-      "sha256": "8d93354d6fc01a1aa97167cf100c1ef1765a0d767560fe2ee8595bfc827aa4cd"
+      "sha256": "04685ec76ac5d733141bb9075625b5536b369c18a41e86af36c01c5bd1ecab1e"
     },
     {
       "path": "docs/research/real-game-runs.md",
       "anchor": "Bugs the live runs found",
-      "sha256": "f31c86cb87ddef8b8f59e8d8036e9450d68eeada5e34e03004e788d4e5d7ef2c"
+      "sha256": "38c9b71c80253241ffa37e0b95ddb8759a129884de500ccaab7e5aef16f49a24"
     },
     {
       "path": "docs/decisions.md",
       "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
-      "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
+      "sha256": "cefd05c5b7afba1aa613c9fb99908385471077436af80952b04bf9c8f6dec6ac"
     },
     {
       "key": "how/power-can-go-negative",
@@ -124,5 +124,5 @@
       "until": "2026-11-14T19:52:15+07:00 @ 1232e778"
     }
   ],
-  "seal": "ab1f3166f41097f41695509851c1c453f3aa08a3c9090fd7e7c5591e3a0b9c87"
+  "seal": "49ca14afc3f5be083cadc84a4804928ea28abf895101093c5264d8c13a231cb5"
 }

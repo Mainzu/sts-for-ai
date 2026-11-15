@@ -6,7 +6,7 @@
   "sources": [
     {
       "path": "docs/research/approach-review-2026-11-02.md",
-      "sha256": "b624a97a18ed26dd1d3713a28c4bc1530dc86f666713da8ee58d6027aa463d1a"
+      "sha256": "446b2e07da3cbe0e43db42cf246cd7970d619d348c9a0c0be3aa2026e8eb012c"
     },
     {
       "path": "docs/decisions.md",
@@ -22,5 +22,5 @@
   "confirms": [],
   "flags": [],
   "history": [],
-  "seal": "fad58172051f6b179d83733ea0bb5119bea7ff4c5bd7b218d640d17ee6b61b6e"
+  "seal": "4d87c623e8d23327e296a8130b323852bff795afcb8a962c3960585c6eb5436f"
 }

@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Act 1 is finished; act1-content reopens now (owner, 2026-11-09)",
-      "sha256": "91bacaa5f98bed159136767b1e36279a7cea6281bd50790a68eaae34ee8a542f"
+      "sha256": "049e1e43d03ee810c9b5d7ea2bf2c94d2359e568ef4ae42172c5b7e377af6ffa"
     },
     {
       "key": "decision/act1-owner-led",
@@ -97,5 +97,5 @@
       "until": "2026-11-13T09:29:24+07:00 @ 3123201a"
     }
   ],
-  "seal": "ca9aafa8c7fb79bcd07e0d602f314c08e842cc4f3b9033e02f449cbfdde67537"
+  "seal": "5fc2b5415b7c28291be2cbd5afeff0d59f5254f85580dfca9ba752ec23348149"
 }

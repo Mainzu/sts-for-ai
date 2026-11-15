@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Navigator's first defaults (on the owner's behalf, 2026-11-03)",
-      "sha256": "99ae6081cf923509353550c2ed1894855c6a3e762c8547071e90966717351583"
+      "sha256": "18e20b6a30201df7186b794b620e563af290d65b768f8bba914748ddf23dd446"
     },
     {
       "path": "docs/decisions.md",
@@ -53,5 +53,5 @@
       "until": "2026-11-03T13:47:11+07:00 @ 57e0bea"
     }
   ],
-  "seal": "3c97c23ebef342df486a6e4358343e2419f67ce8b70c8ec33e3206ced409bafe"
+  "seal": "36877c1e0185f842e691518041d15b127d71c5a8238ea8e307ea2e061e053fa5"
 }

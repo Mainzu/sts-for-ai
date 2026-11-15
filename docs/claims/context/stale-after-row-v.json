@@ -7,12 +7,12 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Rules version moves for Row V, the game's caps and Shield Gremlin's Protect (on the owner's behalf, 2026-11-15)",
-      "sha256": "c9d5519cb111862ab426547696222b337e8f34c68ddd7b6122d672fdc56229b0"
+      "sha256": "8efc8bd870352a080e8a1026398a4cb15dd13bdc44350803eaf0229c374a5345"
     },
     {
       "path": "docs/decisions.md",
       "anchor": "A20 controls now; the win cap read at A20; 85's fallback and 76 (on the owner's behalf, 2026-11-15)",
-      "sha256": "d1d7b3ee1a26fdd4d1eaaffe339a1ea51f265536753dd692e47cd1eb8080eb32"
+      "sha256": "d0a89cafeafa54f479f0f1f5020f068be13dbe89fc3444751c12eede4aad84f1"
     },
     {
       "key": "context/rules-version",
@@ -47,5 +47,5 @@
       "until": "2026-11-15T09:58:08+07:00 @ 92cf478b"
     }
   ],
-  "seal": "5f66a85028b4ec66da44c1adbad280a5f90ae1f644af07f7c05314de4440a864"
+  "seal": "5200dd0e64cd760d670b3c7384408005d63164182e334d9dd842b486b21c8557"
 }

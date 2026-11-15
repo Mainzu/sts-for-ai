@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "The final training round, with the best setting reached so far (owner, 2026-11-14)",
-      "sha256": "3abbe8af822ecfdff740654c9916809ff2fffe63090ec05f7cbcad9124d6db4b"
+      "sha256": "dbcef15018a2cd58da9f9930be553741ff94dd6b1e1f1ec9a852a906a816173b"
     }
   ],
   "owner": false,
@@ -34,5 +34,5 @@
       "until": "2026-11-14T23:51:31+07:00 @ 31602cf1"
     }
   ],
-  "seal": "1937ad8fb68ba7a448f56e4fe03af06c39fa81f75c84f8b26e473d872dd5c7bd"
+  "seal": "c953537de426e08c31f390fed6e0dd28c9f45eceeed101ee426fe917b93bcf14"
 }

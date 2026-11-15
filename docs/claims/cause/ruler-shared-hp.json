@@ -7,11 +7,11 @@
     {
       "path": "docs/research/big-picture-2026-11-15.md",
       "anchor": "Key claims and what the skeptics left",
-      "sha256": "a992a07fb3d2575dbd68e244f10c3e41f12f9db566224e2446e43e009f10a5ed"
+      "sha256": "c4d499d1fbc1440fbde2b020a7a9d1d1d706f5857bb988283b7f478fc35899aa"
     },
     {
       "path": "docs/research/ascension-act1-2026-11-14.md",
-      "sha256": "2eff33898e862b7184a87aa65b1a8927ef7e8ed2570327d8d4ba473895ab81a7"
+      "sha256": "d86606a3a434f0faf179e874f6d0d19c380adcf0e5f44e532d231b1732bbdd28"
     },
     {
       "path": "docs/decisions.md",
@@ -83,5 +83,5 @@
       "until": "2026-11-15T11:58:30+07:00 @ a3a20322"
     }
   ],
-  "seal": "f0c46bc1d53a674810ad6e95ab70dc0d55a734f8a1b3dd24082b41986f80325f"
+  "seal": "c19a91ce99dca9904ee4612ca00d60afb14cf9d86f217f240f560988745e93d7"
 }

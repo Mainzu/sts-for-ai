@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Learns 0899 and 0904 re-queued at mem_gb 2.5 (on the owner's behalf, 2026-11-12)",
-      "sha256": "bdd7ec2bf6216f4fc2b9f62dda0afa1546fdbe58d2b46ccfbd8faf090b880112"
+      "sha256": "4e92ed8513377b5cb1b2633f63c32b707e5ab8dae15a7d59ea0ad3541a54052d"
     },
     {
       "key": "measurement/learn-memory@40k",
@@ -28,5 +28,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "12fcdbf528d6d91894e20483dc84b1f320edfa6287b5f743b19a6acfed9e6b8f"
+  "seal": "bf3d1ce81dd7fcec040bfc32baf393087b1a17c3737b81e40075ea7353a4ed25"
 }

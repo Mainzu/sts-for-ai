@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lane machine-throughput closed (2026-11-15)",
-      "sha256": "cdec4e566dbda480a5740dd5c0106c5777b2f685eec6f11291a3c6ef58e03b1c"
+      "sha256": "c8962ca4c1393743b021a843169c815d1203f99207fc641049ba0b3bc4bf8aa5"
     }
   ],
   "owner": false,
@@ -18,5 +18,5 @@
   "confirms": [],
   "flags": [],
   "history": [],
-  "seal": "9e78f9c304cfddb24cde0764c2153abb18ee80c716a5000236e36b45fb174ba6"
+  "seal": "7da7c7d0789236de8ddf070cd9adbd6a17a2140dd3a5b20986d34e8d6b595dd3"
 }

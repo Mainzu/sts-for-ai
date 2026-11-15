@@ -7,7 +7,7 @@
     {
       "path": "docs/research/learned-play-results.md",
       "anchor": "Burst memory (step 2a read): the mapped pool cuts a burst's peak from 3.81 to 0.70 GB at 4 threads; the curve check's 0.00219 gap is the wider input layout, not the pool, so the check is passed by hand and the bursts run (yardstick-cards step 2a; 0304 against 0276; read 05:50 2026-11-07, lanes)",
-      "sha256": "dcfd841ca9540454ceec16c351756a91444a676a41d182c0180495b1db481f96"
+      "sha256": "c8e937549e6cf156cc0c086efa7332eb052b60eba3d7f4a4d227ff4455446752"
     },
     {
       "path": "jobs/done/0304-finetune.json",
@@ -22,5 +22,5 @@
   "confirms": [],
   "flags": [],
   "history": [],
-  "seal": "d1c55999b6a89f489414aa68ac34dbf4bab1701a8208163cc77a07be25513eb9"
+  "seal": "103f28e7f66f9247920e5c6c4b35d97b4b9fde9125edae33fcef2740eff8aa38"
 }

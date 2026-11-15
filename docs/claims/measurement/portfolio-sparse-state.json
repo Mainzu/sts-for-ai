@@ -12,7 +12,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lane sparse-state opened (on the owner's behalf, 2026-11-06)",
-      "sha256": "3ec0b9d26f2e64a325e591ae673760c7be29833aa0e63ee72469f6c5f2614bbd"
+      "sha256": "0a1d633438662c252244252b14c66f6ba09446b60c41e8109e946bd5f66e9f52"
     }
   ],
   "owner": false,
@@ -23,5 +23,5 @@
   "confirms": [],
   "flags": [],
   "history": [],
-  "seal": "0b9b45ff54602e5e35db785a01e58b024e63d0a0572466985e8504bb19525ec3"
+  "seal": "bf85e2c3946b1f361cff22a2eecbbdb901320c9a691e5b4b39ac44ee1c1647ca"
 }

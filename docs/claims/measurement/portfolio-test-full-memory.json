@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lane test-full-memory closed (2026-11-07)",
-      "sha256": "46b0b8ed9651725636d15f1e3ae287b58bdb5ee1c5562103f519be7867cb5471"
+      "sha256": "183a74ae7cda617fd7130f17fcfc4ccb510de33e16d6177e3c32eb3e4c27c400"
     },
     {
       "path": "docs/research/test-full-memory-2026-11-06.md",
@@ -48,5 +48,5 @@
       "until": "2026-11-13T09:31:16+07:00 @ 3123201a"
     }
   ],
-  "seal": "9ef134a7cddbec8e9f9a12494d19a39cf9d1fd058d65ea942f9f0a22e5423704"
+  "seal": "3f80422a0a278da2faaa322f967ed4f44df2d2864a7ef6cfc202339d8dcbe359"
 }

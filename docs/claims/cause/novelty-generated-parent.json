@@ -11,7 +11,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "After generated-enemies batch 1: three probe reads before step 4; all-content-net is the ready exploration charter (on the owner's behalf, 2026-11-07)",
-      "sha256": "938f460bd0036c0a2449342f6ed44934880449f57d9dcf8310b89eb0d576c695"
+      "sha256": "451a735353588f0483031d3e835a218473d9ddf892f7da7891a93261e4ae10c0"
     }
   ],
   "owner": false,
@@ -28,5 +28,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "016931cad1bdb1b6f8478457849544d81550860da209aed485eab8dd34b34487"
+  "seal": "0d3ea39f275a4b93eafa62e3b8e4047d1564c20674fbac2b5ddf5f983a49f777"
 }

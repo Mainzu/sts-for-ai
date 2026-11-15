@@ -7,7 +7,7 @@
     {
       "path": "docs/operating.md",
       "anchor": "Machine time is the bottleneck (owner)",
-      "sha256": "206365ff2444b31f68e64ba0fef9c93c120919bb25d4c8a7a5212151a82f3bcc"
+      "sha256": "8d1da36a2e4d971b8ee6918aaac46bd284f46eabb54c77c3b217aebc247a92a9"
     }
   ],
   "owner": false,
@@ -24,5 +24,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "2d813ff1c35c0f919e4a831f39d7b0c4dc389a09f47b85c3a6a4fed20e5e72ef"
+  "seal": "916e18de4486fbf2629cee5703e3cd0f9d1268d03a320eebf859f39f43c904bf"
 }

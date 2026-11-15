@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lane burst-official closed (2026-11-06)",
-      "sha256": "4fde8b7d74612b8c7d92348c486943caa49af57c3c72deae873edbd7fcf873f4"
+      "sha256": "a25dd70846da6e4fcc84041e7fb36037b1ffad7f26207cba5810645b9c181f19"
     }
   ],
   "owner": false,
@@ -34,5 +34,5 @@
       "until": "2026-11-13T09:30:50+07:00 @ 3123201a"
     }
   ],
-  "seal": "a6bdd30efa2a3f11fb6713e43389cac4d26e19b32803c5748af4545acc99eb48"
+  "seal": "05072562a3fec5d891aa1ad26932948e1cdc608ceb6787f26dbc74076f6e27fc"
 }

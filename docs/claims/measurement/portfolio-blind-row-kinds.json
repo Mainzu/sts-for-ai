@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lane blind-row-kinds closed (2026-11-15)",
-      "sha256": "713b1158396aba7fb1ad6b14991cb5cd75cd8f50fad6613816ec175ff6e3ffd8"
+      "sha256": "2d6acc5bf07b2b3c0e8b2d5b3dcf1a2d8c59b8a564d249f89f1a5fdce9473c59"
     }
   ],
   "owner": false,
@@ -18,5 +18,5 @@
   "confirms": [],
   "flags": [],
   "history": [],
-  "seal": "e55087ef845942e994e4156ddd90fd66489fa8ba7f8246e37a52d080fc1409a5"
+  "seal": "c60ca0cc88cb84d6ec1c7f65b29901a4c91f6704116df1f72bd30871759d6ae8"
 }

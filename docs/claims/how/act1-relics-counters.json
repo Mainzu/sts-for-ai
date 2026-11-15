@@ -6,7 +6,7 @@
   "sources": [
     {
       "path": "docs/research/act1-relics-potions.md",
-      "sha256": "cca2d144e27148f664dad7b6901d9ded23c7653afef4f1eacd91a2fa6cc83f5e"
+      "sha256": "829d47f6c578ee962e07802f853f4310edb44f2f1687be2b4c2a1d8b857c0778"
     }
   ],
   "owner": false,
@@ -33,5 +33,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "acb63ec6d7bf4e843cd642de7fec658fb62790d1603d7afdfdb679f0ecc8ec62"
+  "seal": "78e1fa4f6241bf18baa87c8fb2b2d2264614ee2336ba64b7ba85442b9de3ae6b"
 }

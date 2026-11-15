@@ -12,7 +12,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Parity source and arena after the install: the game's jar first, the real game is arena level 2 (on the owner's behalf, 2026-11-13)",
-      "sha256": "11828ce0f35147a66f7f356124b9c0a96d6440b1420c923f00e38a3527de0cb8"
+      "sha256": "4a23b62a5c4f81ce6254720eb286d2d3baf636909b10dd7312d12c759566208a"
     }
   ],
   "owner": false,
@@ -54,5 +54,5 @@
       "until": "2026-11-13T16:46:17+07:00 @ 67cbe2e3"
     }
   ],
-  "seal": "15454ac5c742ae9b41a0225dd52a1c1ea67f47a7b4678b8117253707387048c4"
+  "seal": "f5b6da139b41a9d98b7e421b40a3243a54f97b62fb252fe985cac15e61f6e6ff"
 }

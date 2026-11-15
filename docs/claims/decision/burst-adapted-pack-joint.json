@@ -7,12 +7,12 @@
     {
       "path": "docs/decisions.md",
       "anchor": "After the pack-joint-burst probe: a pack's net is one joint burst; pack-adapt-pipeline gets a ready charter (on the owner's behalf, 2026-11-08)",
-      "sha256": "f7ae48061db680c2b10c39d1a8a81d799e32f884d73b0c98dce7f36fab168339"
+      "sha256": "2043ca040eba63a239f22fea63441eb2c9ef684af6c295243d54c542585f5d55"
     },
     {
       "path": "docs/decisions.md",
       "anchor": "After the bench-retention probes: a pack's net reads retention on the whole bench, per parent; a joint-burst probe queued (on the owner's behalf, 2026-11-08)",
-      "sha256": "85d11377dfac93b56a584be67e10faea63e9b73025fae8bd5c917ede3502affa"
+      "sha256": "a3f5098da5438c3387aeac9722c557913fde3e170269e217a262144c9a3bc71a"
     },
     {
       "key": "measurement/pack-joint-burst@gen-b1",
@@ -37,5 +37,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "a4ee80fc192a64b7a3d202d649e4a0c06c030979187e995b515d9276ea4d2446"
+  "seal": "2e43eb2cd079e04876756e2bbd61713e06edac16fb5ba3979d7721dc063f9826"
 }

@@ -7,12 +7,12 @@
     {
       "path": "docs/operating.md",
       "anchor": "Big-picture reviews (owner)",
-      "sha256": "0374ccf97f0e7314d3406568b7be545b35f9531fa3ebb2ec3c7e9f8f9df67719"
+      "sha256": "367718ac3c3c6eba5caae25d507709b631c9b0527d309483f6427f5ac348f8c5"
     },
     {
       "path": "docs/decisions.md",
       "anchor": "Reviews every 3 days from 2026-11-14 (on the owner's behalf, 2026-11-14)",
-      "sha256": "5e22c3b7e20c6741e01ce5fe5947fc961a72bb6f49b6b039948a72b4105ba42b"
+      "sha256": "7f1b7437c36b64b48c4ce93a013cf5d6df0af6db397cddc22b665a878f9edb90"
     }
   ],
   "owner": false,
@@ -69,5 +69,5 @@
       "until": "2026-11-14T22:48:07+07:00 @ b916610c"
     }
   ],
-  "seal": "a573f709348fbe208844c0787fb13ffd9279ead600ef039bc7080f49bb8343e0"
+  "seal": "11e90a2dd3a7c0cb13f54184d860195c2562efe3e1ca277a392a382ce09dfaf5"
 }

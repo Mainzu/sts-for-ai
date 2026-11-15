@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lane session-free-reads closed (2026-11-08)",
-      "sha256": "621eed775c1d2fca166d7d900836f2979f5198733c5d747f8caaf2d6de89aea0"
+      "sha256": "392fcfccfa80a5014995bf8cb1a27c517a6fcc28e15edd92bc1d7a7fce5948ce"
     }
   ],
   "owner": false,
@@ -34,5 +34,5 @@
       "until": "2026-11-13T09:31:14+07:00 @ 3123201a"
     }
   ],
-  "seal": "d60a42719640774f292427689f00cca87e6fa2b57377d61a8da86f9432878ad6"
+  "seal": "3e7716d0d22b11dbe5916b34b8dda270e90d7438f38ce2bbdfdf55281c6e418b"
 }

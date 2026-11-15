@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Lane wider-generators closed (2026-11-13)",
-      "sha256": "fcb7415e4f30437047d6c11bcd3a4a9c9870b104e81494afc9f045cfe5ff41a7"
+      "sha256": "4f3f4570719f73374d3e1d6efd7cf6bacc19a4346844c6006f2673a69e3fd4ec"
     }
   ],
   "owner": false,
@@ -34,5 +34,5 @@
       "until": "2026-11-13T09:31:19+07:00 @ 3123201a"
     }
   ],
-  "seal": "33072c9f057e509e352c1ac0bdf0765647ff62373928465b8751fe8af50dfffb"
+  "seal": "0ff046c2407e78bc167dfcbbed76796448df736c89a8a92f073961ad2c4f7124"
 }

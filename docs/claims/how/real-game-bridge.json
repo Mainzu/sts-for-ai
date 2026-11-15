@@ -5,9 +5,9 @@
   "status": "active",
   "sources": [
     {
-      "path": "README.md",
+      "path": "docs/real-game.md",
       "anchor": "Real-game bridge",
-      "sha256": "d9e504ae1ea3af7f31536dac31ce33172099377871a62e7ad9a38a4c46b2af3c"
+      "sha256": "c2718970a3bf150e16b6285dfc67ad31116f75e03df01b9519ccda72afb7769f"
     },
     {
       "path": "docs/specs/real-game-bridge.md",
@@ -28,5 +28,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "bb2ee61de3c66f7e3942496cda215b8d3fe53eb88445dd8d6ca126b65dc0d491"
+  "seal": "427b6f07e710de00df3d553a7c73ecc73f8e6e61b03a4e5814000d3b37938c1a"
 }

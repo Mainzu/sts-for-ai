@@ -6,7 +6,7 @@
   "sources": [
     {
       "path": "docs/specs/sparse-piles.md",
-      "sha256": "6264feebf1c6c72ba835123fe4c99897be2bf6f861632ea86ab482b93e29095b"
+      "sha256": "1ae462da55d9cd14e056c261a8b630a93545da3f6361bb8fe509569c068ab0ff"
     }
   ],
   "owner": false,
@@ -66,5 +66,5 @@
       "until": "2026-11-13T14:49:36+07:00 @ d45a2e9c"
     }
   ],
-  "seal": "d2ee5f4984ef8434bd0a8fb81cda7dddfc5f638d3f083cdfd727433e478d2b73"
+  "seal": "48718668d8f6391a7e40156fc4c2f74d40146b5ae7c2a32b3d354d39e435ea69"
 }

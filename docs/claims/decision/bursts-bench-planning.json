@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "After unseen-boss-burst: games do not buy play on a whole unseen boss; lane sequential-bursts opened (on the owner's behalf, 2026-11-05)",
-      "sha256": "7a8bb85497437bd2162545d23f140ee7e1b4fc31c5ee9d622933caa5fa7167bf"
+      "sha256": "0e920b5781799d3e42e81e915df53e07bfda3ab74eab9b33b9cb788115df0448"
     }
   ],
   "owner": false,
@@ -18,5 +18,5 @@
   "confirms": [],
   "flags": [],
   "history": [],
-  "seal": "1851a588327e3f9ccf01021bea535df18d7737ecd24746800c81f77b817410de"
+  "seal": "e2864cd6db749aa7edb7daa34cdf740dcc13cfd1055bf19e8f3bad60409317c2"
 }

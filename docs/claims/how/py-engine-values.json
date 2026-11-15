@@ -6,15 +6,15 @@
   "sources": [
     {
       "path": "py/src/lib.rs",
-      "sha256": "ba1da33b09583bf36224ed7b181184a53d2ff9cdc0463e8071cd8cc40b2525a8"
+      "sha256": "01107a2978bbd39e3d696a09d6fc33fec8369157229a0936b6568800f0287210"
     },
     {
       "path": "scripts/selfplay.py",
-      "sha256": "efcb746aa30251fb182584d36f89914a70e2ee59faabcc262df9a67f4462dbf6"
+      "sha256": "7c8446aa9399c81d4335c7d45bd41c812bb87c3e8e1d0ed0c613fd08b38820ea"
     },
     {
       "path": "engine/src/runner.rs",
-      "sha256": "990484a6957782c4959df152f497474d9ac08c5b152300ff208ceed8d4225830"
+      "sha256": "6086ededcbf251224147a46074c6a8862bbf8747a0b68bd6a486c6fb7bca3b2d"
     },
     {
       "path": "scripts/analysis/mutate_monsters.py",
@@ -74,5 +74,5 @@
       "until": "2026-11-13T19:20:53+07:00 @ c070cc5c"
     }
   ],
-  "seal": "fd04e2546a2118ea5b9cefc55500749d0f0c10e353bde3a2a89934cff00b501b"
+  "seal": "8824aab3aac8af2b9a243959dd7c2432b7c8aa4bc3acb069bcd2d1591fc64869"
 }

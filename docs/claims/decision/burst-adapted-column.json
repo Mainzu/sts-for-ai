@@ -15,7 +15,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
-      "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+      "sha256": "64c7e5d327baf3060836ae89f275415e948f877dd2c0a97b8ccf401f98ef90de"
     },
     {
       "key": "measurement/burst-bosses@replay",
@@ -719,5 +719,5 @@
       "until": "2026-11-13T09:29:21+07:00 @ 3123201a"
     }
   ],
-  "seal": "afc8b170eb786b262f85cb8df466bcea2cc32fc588a6bc8d7276101031f66052"
+  "seal": "9307112f3c18a37e7e4f8c6a507946deee6d3bd2fc7568f696c25052022e4c75"
 }

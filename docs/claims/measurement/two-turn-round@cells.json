@@ -7,7 +7,7 @@
     {
       "path": "docs/research/learned-play-results.md",
       "anchor": "Two-turn self-play round: both arms fail the protocol; the outcome-label family closes (two-turn-round lane; 0067-0071; read 15:10 2026-11-03, lanes 42d5e5e2)",
-      "sha256": "78207e4353aec80be6d3cf712a124714ef86b5f17777628f53b867eb86f2fd1f"
+      "sha256": "e23fa041033a847930f54cf0ca830ae98c44f02d634b6bc7722a209a322bfc51"
     },
     {
       "path": "results/gauntlet/twoturn-s1-hpb0.01.json",
@@ -74,5 +74,5 @@
       "until": "2026-11-13T09:31:36+07:00 @ 3123201a"
     }
   ],
-  "seal": "fbc3f3b9a419d88f70a92207d26808df07051bb5caa4a6cd0bc578413c4abb08"
+  "seal": "1da5b96258d8d56ba4b207efa1b5e3adfcf50b68c09a6a616db57df95e715013"
 }

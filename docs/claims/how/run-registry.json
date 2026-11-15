@@ -5,7 +5,7 @@
   "status": "active",
   "sources": [
     {
-      "path": "README.md",
+      "path": "docs/training.md",
       "anchor": "Learned play: training runs and the registry",
       "sha256": "c03754871c950032cd66f1693bf801412cce9fb99ab70e66ae392b8de2844a8c"
     },
@@ -38,5 +38,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "f55b3c2c9b80c77d9a8cfecea76f131506bb5bb90d217580b170a70682b31201"
+  "seal": "e36aaf8d66f40ad1cd2b0f23690379dad32e8d0a2376175ed1e800143368e49f"
 }

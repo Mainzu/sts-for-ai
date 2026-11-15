@@ -5,7 +5,7 @@
   "status": "active",
   "sources": [
     {
-      "path": "README.md",
+      "path": "docs/gauntlet.md",
       "anchor": "Act-1 gauntlet",
       "sha256": "aea93b5ad2affc6f62998f17d4b5989b712158849ce208aaa1f0f947c33b46a2"
     },
@@ -93,5 +93,5 @@
       "until": "2026-11-13T09:29:17+07:00 @ 3123201a"
     }
   ],
-  "seal": "d5f0540fc38bb83065f5970935dcb5f27ec3a9583b2ff7c6a2adf6630ad2a50c"
+  "seal": "a76cf7851eed0467c672e6ae6098ca5deaa9c140c47e20954ba6737c8e660993"
 }

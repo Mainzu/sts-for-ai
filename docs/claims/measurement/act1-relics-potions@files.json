@@ -6,15 +6,15 @@
   "sources": [
     {
       "path": "content/packs/act1-potions.json",
-      "sha256": "1d5a2096cb1bf8f964bc424c14be2cf62cf4494af54ebd9dcf7dd2a75f989f00"
+      "sha256": "ce78e131815794cca10acf2aafc7879c1fe1aa2e2852733928a49ccf215a023e"
     },
     {
       "path": "content/packs/act1-colorless.json",
-      "sha256": "a6248bae58fd0094ac62095c0c8b42fe07f75c86ecbeffc8dd2eca8d9ebaf338"
+      "sha256": "f31deca3f13aafec97217aca09309f6b9b851857672889e6286695d97201a16d"
     },
     {
       "path": "engine/tests/act1_potions.rs",
-      "sha256": "0446e0dbbc6c5de15c8a94709ac30138df204d2a0dfdf8f168786c1f38ee61ae"
+      "sha256": "aa80b489e8a06ee185a4f37f04c354fd5a2c2d6c417b83ac3ed8b3a0ca7dc32a"
     },
     {
       "path": "engine/tests/snecko.rs",
@@ -22,7 +22,7 @@
     },
     {
       "path": "engine/tests/colorless.rs",
-      "sha256": "a59fad745e3335f03d4907b4c3056a73bb98b364b9ff22f188654251fb3cc44b"
+      "sha256": "9474cd0456e9f98c04ea589bdcab6ddcbdb7759d0738fc8670841304743300bc"
     }
   ],
   "owner": false,
@@ -103,5 +103,5 @@
       "until": "2026-11-13T20:12:19+07:00 @ cbadc349"
     }
   ],
-  "seal": "2bc8e9d9cd251c584c328d447470809dc2837a09b39903368bb560859ad69cce"
+  "seal": "b53380404e35e69b88fbadbc00354aedc0f856142d62c7236927f1095b79ee47"
 }

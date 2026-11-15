@@ -7,7 +7,7 @@
     {
       "path": "docs/research/big-picture-2026-11-03.md",
       "anchor": "Key claims and skeptic verdicts",
-      "sha256": "514e8d57723252224fddbb00168a7aab245fe7f3a3bc175b57890b4537c51d4a"
+      "sha256": "c4f49baa43a99c78a3f1afd72181bc15a63a0184e576e922791f89ee0bf9a086"
     },
     {
       "key": "yardstick/protocol",
@@ -46,5 +46,5 @@
       "until": "2026-11-13T09:29:02+07:00 @ 3123201a"
     }
   ],
-  "seal": "dbf4a9b4a17d3564c6cf4f6d5ca88f473cf783e3e5b14a8b1b0147c0cfd32a09"
+  "seal": "835068e477651e3076e41b70460bca435122bb75d66ad44ceddb60d06aeeca9e"
 }

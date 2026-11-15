@@ -11,7 +11,7 @@
     {
       "path": "docs/research/approach-review-2026-11-02.md",
       "anchor": "Approaches to try",
-      "sha256": "935fa90dc4d0e1d854bd6eb0c01810f8a7255eb80f1eff06bde3362a5fb1a9cf"
+      "sha256": "150be8749b46f965c2cb323220cf420d783d4ce71cd23608d36d5322c7722e87"
     }
   ],
   "owner": false,
@@ -85,5 +85,5 @@
       "until": "2026-11-13T09:30:05+07:00 @ 3123201a"
     }
   ],
-  "seal": "96b22882e942b5ea1cf4435c6cef56ae38946c126a1d1a1083d7139444efc5d3"
+  "seal": "8ae285cdc0976213f919c84b04b30995e76775bde0be358ddc844c7b0af6a3c4"
 }

@@ -7,11 +7,11 @@
     {
       "path": "docs/decisions.md",
       "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
-      "sha256": "64e5d7322445698604f5a58975f2058c2e8ebf0152f463504e0e7c7511e88081"
+      "sha256": "42909bbfe77bd4c70e1f7e91f207831fdaee86c7626b1baf418c6bb9d12f3d90"
     },
     {
       "path": "engine/src/heuristic.rs",
-      "sha256": "a735ca0c2618a1cdeeedb09786a86d16f4a8e47011780ae17a46d1e60cce088d"
+      "sha256": "a3de3c53e9938614fdc55f3306f9b50d874adeb939893fe5fc0e3617b95114b8"
     }
   ],
   "owner": false,
@@ -42,5 +42,5 @@
       "until": "2026-11-14T22:50:01+07:00 @ 418de4d6"
     }
   ],
-  "seal": "27d75c7577f39fa1c1fe839102b81177b0af253614c77114544807ba69292580"
+  "seal": "4d6a90bd436a30f79ed65dc28593a96c83e713414d6a8b6b126bfa9081ab6f05"
 }

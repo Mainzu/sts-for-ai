@@ -49,5 +49,5 @@
       "retired": "closed lane queue-throughput; its numbers stay in measurement/portfolio-queue-throughput and docs/research/queue-throughput.md#Step 1: offline backfill replay (2026-11-09) (STATUS cap)"
     }
   ],
-  "seal": "d304a30165019bee60db5f631f61dea3582f7d79d9ddf391c200b8e48999e9cc"
+  "seal": "339b0e140aa609376070a90c592f0c4269820d9374ecd9746713351644b04f90"
 }

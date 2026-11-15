@@ -7,7 +7,7 @@
     {
       "path": "docs/decisions.md",
       "anchor": "Navigator's first defaults (on the owner's behalf, 2026-11-03)",
-      "sha256": "99ae6081cf923509353550c2ed1894855c6a3e762c8547071e90966717351583"
+      "sha256": "18e20b6a30201df7186b794b620e563af290d65b768f8bba914748ddf23dd446"
     },
     {
       "key": "yardstick/headline-setting",
@@ -28,5 +28,5 @@
   ],
   "flags": [],
   "history": [],
-  "seal": "e8314bbc7050b58263bd9cfbf168dce069fae47cc57440f759eef7093f79e59f"
+  "seal": "6b84256cf69922644c562d7c946fececcb7a39e17dd8ba4016e7fabd668e3f7a"
 }
