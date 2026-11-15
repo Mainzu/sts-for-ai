@@ -1,0 +1,22 @@
+{
+ "content": {
+  "cards": [
+   "gc1_000",
+   "gc1_011",
+   "gc1_013",
+   "gc1_017",
+   "gc1_018",
+   "gc1_024",
+   "gc1_025",
+   "gc1_026"
+  ],
+  "pack": "data/bench/gen_powers_pack.json"
+ },
+ "game_seed": 31,
+ "games": 4000,
+ "n_val": 300,
+ "name": "burst8neither-s101",
+ "player": "net",
+ "pool": 10000,
+ "seed": 101
+}

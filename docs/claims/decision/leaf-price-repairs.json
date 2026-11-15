@@ -1,0 +1,22 @@
+{
+  "key": "decision/leaf-price-repairs",
+  "rev": 1,
+  "value": "Goal-1 zero-games repairs are looked for among simulations of the rules first; a hand-set price is read on the whole bench, not on its target.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After shl-held-out: the Strength price's trade stays on one cell; its one-turn headline read queued (on the owner's behalf, 2026-11-08)",
+      "sha256": "7a07273c3a7b5d86aacc8fc3cbe6e3762b74c77fe565cb955a8e32abeab33294"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:27:50Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "40558c00884b1268410a79c7dac44e302426c0be5977ff0cf215613f82f0a8da"
+}

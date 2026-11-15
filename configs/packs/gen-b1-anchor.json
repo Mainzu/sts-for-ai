@@ -1,0 +1,40 @@
+{
+ "name": "gen-b1-anchor",
+ "lane": "pack-retention",
+ "about": "Lane pack-retention step 2 (kb lane/pack-retention, docs/specs/burst-anchor.md): gen-b1's g99 arm with the net teacher and an L2 anchor toward the parent's weights, lambda 0.003 and 0.03, two seeds, read on the same bench against the same zero-shot base (results/mutate/gen-enemies-b1.json, reused). Question: does holding the burst near the parent remove the Lagavulin leaks (measurement/pack-chain@gen-b1) while keeping 8.0 HP or more of the AttackLoss-Damage x Nob cut?",
+ "parent": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt",
+ "pack": {
+  "mechanics": [
+   "GE-TurnStart-Strength",
+   "GE-TurnStart-Damage",
+   "GE-TurnEnd-Frail",
+   "GE-TurnEnd-Damage",
+   "GE-OppCard-Vulnerable",
+   "GE-OppCard-PlainDamage",
+   "GE-AttackLoss-Strength",
+   "GE-AttackLoss-Damage"
+  ],
+  "encounters": [
+   "gremlin_nob",
+   "lagavulin",
+   "three_sentries"
+  ],
+  "base": "results/mutate/gen-enemies-b1.json",
+  "arms": {
+   "a003": {
+    "games": 99,
+    "anchor": 0.003
+   },
+   "a03": {
+    "games": 99,
+    "anchor": 0.03
+   }
+  },
+  "target": {
+   "mechanic": "GE-AttackLoss-Damage",
+   "encounter": "gremlin_nob",
+   "share": 0.5,
+   "min_se": 2.0
+  }
+ }
+}

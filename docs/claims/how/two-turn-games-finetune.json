@@ -1,0 +1,21 @@
+{
+  "key": "how/two-turn-games-finetune",
+  "rev": 1,
+  "value": "finetune.py takes source {kind: two-turn|one-turn, player, encounters?, decks?} instead of content; two-turn pace 7.2 stepped fights per thread-minute at 400k nodes (job 0067).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "scripts/two_turn_games.py",
+      "sha256": "491471e564ccb9429e3be17cc723dde7070b39668e5736da9ddcfecf81b424d1"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:07Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "77902ea26629110ee38681c9e6980dd2c18404beb5aa2f07ea5cc3488de13f87"
+}

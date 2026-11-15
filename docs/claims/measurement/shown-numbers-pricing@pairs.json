@@ -1,0 +1,59 @@
+{
+  "key": "measurement/shown-numbers-pricing@pairs",
+  "rev": 2,
+  "value": "@sn1 zero-shot on the 10-29 net, on the old floor-the-total shown arithmetic (before engine audit 1's per-hit shown_damage): attack-card pricing where player Strength or Weak is up corr with the played-out change 0.156 -> 0.218 (+0.060 (0.025), 1,324 pairs); other pairs +0.009 (0.012); those pairs hold 31% of the net's squared error. No play read. Not re-runnable: zero-shot @sn1 is now refused.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pile-prices-2026-11-09.md",
+      "anchor": "Shown card numbers: a zero-shot gain where Strength or Weak is up",
+      "sha256": "6b55b8b0cf3d3418b52904b52c107d41ceda8f86fd8b8e0887f057c7c1baeace"
+    },
+    {
+      "path": "results/probes/pile-prices/pairs.jsonl",
+      "sha256": "700ba5ad57c20535820b9df92d82db6119e68613b97fd47269d239dadfc70671"
+    },
+    {
+      "path": "results/probes/pile-prices/shown.log",
+      "sha256": "24149b755e89e96d2e335573c1b84148e0b5015baeffe17c28ca5bc5f743b335"
+    },
+    {
+      "path": "docs/research/engine-audit.md",
+      "anchor": "1. Encoder value flags aren't in the net's meta; shown numbers use their own arithmetic",
+      "sha256": "3ec8cb53327fb342e934c264f6d4602e162942ce18302f5068d266e820d9f001"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "navigator 2026-11-13: audit 1 flag resolved",
+  "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+  "at": "2026-11-13T13:43:49+00:00 @ d240a173",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "@sn1 (card numbers as the game shows them) zero-shot on the 10-29 net lifts attack-card pricing where player Strength or Weak is up: corr with the played-out change 0.156 -> 0.218 (+0.060 (0.025), 1,324 pairs); other pairs +0.009 (0.012). Those pairs hold 31% of the net's squared error. No play read.",
+      "sources": [
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Shown card numbers: a zero-shot gain where Strength or Weak is up",
+          "sha256": "6b55b8b0cf3d3418b52904b52c107d41ceda8f86fd8b8e0887f057c7c1baeace"
+        },
+        {
+          "path": "results/probes/pile-prices/pairs.jsonl",
+          "sha256": "700ba5ad57c20535820b9df92d82db6119e68613b97fd47269d239dadfc70671"
+        },
+        {
+          "path": "results/probes/pile-prices/shown.log",
+          "sha256": "24149b755e89e96d2e335573c1b84148e0b5015baeffe17c28ca5bc5f743b335"
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:28:50+00:00 @ 3123201a",
+      "until": "2026-11-13T13:43:49+00:00 @ d240a173"
+    }
+  ],
+  "seal": "ebdd8e02b6bddce5bf83a76d4e06347c65145c4f08dc0dd757aebbe621b3b610"
+}

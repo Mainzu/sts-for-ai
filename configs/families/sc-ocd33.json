@@ -1,0 +1,61 @@
+{
+ "name": "sc-ocd33",
+ "lane": "main",
+ "about": "Navigator probe sheet, candidate share-quote-widen (docs/backlog.md 46): GE-OppCard-Damage x Sentries, 33-game net-teacher bursts at replay share 0.9 (decision/burst-share), three seeds, the same reads and table as gac-ocd (99 games share 0.5 passed, 33 at 0.5 was too few); passes on the table's rule; the trained parent's change is read beside gac-ocd's",
+ "parent": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt",
+ "arms": {
+  "net-g33-sh9": [
+   "configs/sc-ocd-net-g33-sh9-s1.json",
+   "configs/sc-ocd-net-g33-sh9-s2.json",
+   "configs/sc-ocd-net-g33-sh9-s3.json"
+  ]
+ },
+ "burst": {
+  "threads": 4,
+  "mem_gb": 2.0,
+  "estimate_min": 3
+ },
+ "reads": {
+  "gen": {
+   "cmd": [
+    "scripts/analysis/mutate_monsters.py",
+    "play",
+    "--starts",
+    "1000",
+    "--groups",
+    "elite",
+    "--seeds",
+    "4",
+    "--players",
+    "one",
+    "--net",
+    "{net}@tsl1",
+    "--mods",
+    "GE-OppCard-Damage,c-hp1.5-str2",
+    "--threads",
+    "3",
+    "--out",
+    "results/mutate/gac-{run}.json"
+   ],
+   "threads": 3,
+   "mem_gb": 1.5,
+   "estimate_min": 7
+  }
+ },
+ "table": {
+  "kind": "gen",
+  "book": "gen",
+  "base": "results/mutate/gen-enemies-b1.json",
+  "mechanic": "GE-OppCard-Damage",
+  "control": "c-hp1.5-str2",
+  "seeds": 4,
+  "encounters": [
+   "three_sentries"
+  ],
+  "min_starts": 200,
+  "rule": {
+   "share": 0.5,
+   "min_se": 2.0
+  }
+ }
+}

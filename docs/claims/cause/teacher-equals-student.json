@@ -1,0 +1,82 @@
+{
+  "key": "cause/teacher-equals-student",
+  "rev": 3,
+  "value": "Training plateaus after one self-play round: the data policy is search over the current net (no teacher stronger than the student; round 1 +0.017, then flat); the two-turn product's outcome labels fit no better and lose 1.0-1.4 HP one turn deep. Exits: inputs the net can't see, new content.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/two-turn-round@cells",
+      "rev": 2
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane two-turn-round closed (2026-11-03)",
+      "sha256": "cf20693d957c124a7e89f127c6b3a4195be23ac352996beda5f35c77e08fda93"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:08Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:07Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/two-turn-round@cells reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Training plateaus after one self-play round because the data policy is one-turn search over the current net at the player's own settings, so no teacher is stronger than the student; more or cleaner labels of that kind change the loss, not the play (round 1 +0.017 then flat). Untried exit: games from the two-turn product as the teacher.",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "The patterns behind the record",
+          "sha256": "16de4c3c7820337ce8999ae598c89f0472ecea8c15e5da9370798defb26d5f14"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Training: when it runs and when it stops (owner, 2026-11-02)",
+          "sha256": "a0cd1d3322bd319e3b04a96daaf25e6871cd833c2ed661cb4cc3df3fff8daed1"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:10:32Z @ fc9cdd8",
+      "until": "2026-11-03T08:19:17Z @ e4270c2"
+    },
+    {
+      "rev": 2,
+      "value": "Training plateaus after one self-play round because no label set tried lifts the net: the one-turn data policy is search over the current net at the player's own settings (no teacher stronger than the student; round 1 +0.017 then flat), and the stronger teacher's outcome labels (3000 elite+boss games from the stepped two-turn product, measurement/two-turn-round@cells) fit no better (val MSE at its best by epoch 1-2) and lose 1.0-1.4 HP one turn deep, on the boss floor. Outcome labels of either depth are exhausted on the dev machine; the exits left are inputs the net cannot see today and new content (the owner's training rule). Untested mechanism: labels valued under the two-turn continuation make a one-turn player optimistic about states it cannot exploit.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Two-turn self-play round: both arms fail the protocol; the outcome-label family closes (two-turn-round lane; 0067-0071; read 15:10 2026-11-03, lanes 42d5e5e2)",
+          "sha256": "78207e4353aec80be6d3cf712a124714ef86b5f17777628f53b867eb86f2fd1f"
+        },
+        {
+          "key": "measurement/two-turn-round@cells",
+          "rev": 1
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane two-turn-round closed (2026-11-03)",
+          "sha256": "cf20693d957c124a7e89f127c6b3a4195be23ac352996beda5f35c77e08fda93"
+        },
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "The patterns behind the record",
+          "sha256": "16de4c3c7820337ce8999ae598c89f0472ecea8c15e5da9370798defb26d5f14"
+        }
+      ],
+      "owner": false,
+      "by": "ae18f220-87fd-49ea-bfb7-7764da2b8ce9",
+      "at": "2026-11-03T08:19:17Z @ e4270c2",
+      "until": "2026-11-13T02:29:08Z @ 3123201a"
+    }
+  ],
+  "seal": "5bad1bd2ff5b098ed73635499fa57ab69ce525e8243f756a989c40c6ecd89568"
+}

@@ -1,0 +1,84 @@
+{
+  "key": "measurement/turn-start-leaf@cells",
+  "rev": 2,
+  "value": "@tsl1 (leaf after the player's no-chance turn-start hooks) minus plain, 10-29 net @hpb0.01, both cell books one turn: held-out Demon Form decks +7.54 (1.10) HP, +0.149 (0.028) clears (n 174); train -0.02 (0.15); other held-out +0.04 (0.08). Gen bench elite+boss wins: OwnerTurnStart +0.243 (0.054), Demon Form +0.170 (0.030), OwnerTurnEnd -0.011 (0.011). Two-turn not measured.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/turn-start-leaf-2026-11-07.md",
+      "anchor": "Result: go (jobs 0324-0326, read 2026-11-07)",
+      "sha256": "febb662ac8eecf42e3eb409692dcb2e2a7c4b354575bac5c296f8e0bac4cd74f"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-tsl1.json",
+      "sha256": "88bcfa6dc0f358ec2209d8dc0129d850ede28fa706f836b83bc120c18b3b8107"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-tsl1-b500.json",
+      "sha256": "91ed63b41b153449c5d7190037d04c89cc618caa897ed38c8f5078cf4b09a2b3"
+    },
+    {
+      "key": "yardstick/one-turn-controls",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:35+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+      "at": "2026-11-13T04:30:14+00:00 @ 28c50af5",
+      "note": "the fact was read against the old one-turn control files (net1029-hpb0.01-starter-simboss.json / net1029-hpb0.01.json), which are unchanged; only the yardstick pointer moved (decisions 'Combined one-turn control ... read', 2026-11-13)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The 10-29 net @hpb0.01@tsl1 (leaf scored after the player's no-chance turn-start hooks) minus the plain leaf, both cell books one turn deep, paired, se over sequences: held-out Demon Form decks +7.54 (1.10) HP and +0.149 (0.028) clears (n 174); train -0.02 (0.15) (n 500); other held-out +0.04 (0.08) (n 326); every changed non-DF sequence holds Brutality. Generated-power bench, elite+boss, flag minus plain wins: OwnerTurnStart powers +0.243 (0.054) over 12 cells, original Demon Form +0.170 (0.030), OwnerTurnEnd -0.011 (0.011). Two-turn not measured.",
+      "sources": [
+        {
+          "path": "docs/research/turn-start-leaf-2026-11-07.md",
+          "anchor": "Result: go (jobs 0324-0326, read 2026-11-07)",
+          "sha256": "febb662ac8eecf42e3eb409692dcb2e2a7c4b354575bac5c296f8e0bac4cd74f"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-tsl1.json",
+          "sha256": "88bcfa6dc0f358ec2209d8dc0129d850ede28fa706f836b83bc120c18b3b8107"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-tsl1-b500.json",
+          "sha256": "91ed63b41b153449c5d7190037d04c89cc618caa897ed38c8f5078cf4b09a2b3"
+        },
+        {
+          "path": "jobs/done/0324-gauntlet.json",
+          "sha256": "b9ae52b021c7ad06da3492ed2b15b3b13767addafa75dc340833fbd8dd5cc95f"
+        },
+        {
+          "path": "jobs/done/0325-gauntlet.json",
+          "sha256": "78829c6fa915e024867c2cdb6ccefa3c7947a96cf194cff047edd6849ca4e445"
+        },
+        {
+          "path": "jobs/done/0326-gen-powers-read.json",
+          "sha256": "1ad5e8c350373664beb24d5304de4970d4c9d53e866fb152ae8aea0c70fee59c"
+        },
+        {
+          "path": "scripts/analysis/cards_by_half.py",
+          "sha256": "c0a20d0e7b96a024e40f5f2502484ee2454f3b379e4b972fe3ce8010e6ef7d14"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "ec49b43c-2792-4636-a6c5-2cf99e927caa",
+      "at": "2026-11-06T22:43:41+00:00 @ e73babe",
+      "until": "2026-11-13T02:31:35+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "d2e27087a8563e4ae0054cbbf4018768934968538508fc17a19d90bf64b456ed"
+}

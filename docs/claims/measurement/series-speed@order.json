@@ -1,0 +1,54 @@
+{
+  "key": "measurement/series-speed@order",
+  "rev": 2,
+  "value": "series_speed with build order swapped per run (9f26511): whichever build runs first is ~12% faster at 1-thread search, ~11% slower at random combats, so a fixed old-first order biases the read. Swapped: E1 +0.6% / +0.1%, S1+C4 -3.8% / -0.7% (1 thr / random), within noise; one 25-run read has se ~4-5%.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/act1-inventory.md",
+      "anchor": "E1 speed re-read (0570, 0571)",
+      "sha256": "0459e404a62699c618435cc22026b5581056c64f032d081d6fdaa15bfeb37d7b"
+    },
+    {
+      "path": "jobs/done/0570-series-speed.json",
+      "sha256": "a051ba1d176ee494c05928e8d79be7cc10e824a04df842c6c9761f2be56e1a99"
+    },
+    {
+      "path": "jobs/done/0571-series-speed.json",
+      "sha256": "143147bca86c677b822c762aabab43945343141ba9caf511bad19ffd56812bb6"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:28+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "series_speed with the build order swapped every other run (9f26511): the build that runs first is ~12% faster at 1-thread search and ~11% slower at random combats; the fixed old-first order made 0492's and 0462's -9% (1 thr) / +8-11% (random). Swapped, E1 (f872674 vs b17e059) reads 1 thr +0.6% median (geo-mean +1.9%, se 4%), random +0.1%; S1+C4 (a35376e vs f4d8d33) 1 thr -3.8% median (geo-mean -2.5%, se 5%), random -0.7%: both within noise of zero. One 25-run read has se ~4-5%.",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "E1 speed re-read (0570, 0571)",
+          "sha256": "0459e404a62699c618435cc22026b5581056c64f032d081d6fdaa15bfeb37d7b"
+        },
+        {
+          "path": "jobs/done/0570-series-speed.json",
+          "sha256": "a051ba1d176ee494c05928e8d79be7cc10e824a04df842c6c9761f2be56e1a99"
+        },
+        {
+          "path": "jobs/done/0571-series-speed.json",
+          "sha256": "143147bca86c677b822c762aabab43945343141ba9caf511bad19ffd56812bb6"
+        }
+      ],
+      "owner": false,
+      "by": "eb5c7398-12ed-4238-ac3a-6385040b2df9",
+      "at": "2026-11-08T07:39:18+00:00 @ be037b6",
+      "until": "2026-11-13T02:31:28+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "dcbb6a237f738eb97e648678b6ba58ce3260dcf2bf2e7ee2e2a621e392214f1f"
+}

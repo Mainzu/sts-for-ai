@@ -1,0 +1,22 @@
+{
+  "key": "measurement/later-ticks-exposure@pool",
+  "rev": 1,
+  "value": "allcontent40k twins' round-0 data hold Demon Form in 31-36% of states on DF decks (~24% of games, ~29k of 120k) vs bursts' 8-52% at <=1.6k games: volume differs, not share; data40k never meets the card.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/from-scratch-later-ticks.md",
+      "anchor": "Step 1b: Demon Form's exposure in the twins' training data (read 2026-11-10 16:40, lanes d39a52bc)",
+      "sha256": "1e940b3957bf95ff355ad736b2adc1b47061d8c0c35156cdeb236600964b9f23"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:40+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "de27159673dec94c31122d26c0b22a42b95313fb73b8f6ce39012063a679707c"
+}

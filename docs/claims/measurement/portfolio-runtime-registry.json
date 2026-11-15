@@ -1,0 +1,43 @@
+{
+  "key": "measurement/portfolio-runtime-registry",
+  "rev": 2,
+  "value": "pred p 0.7; done: stages 2-4 landed 2026-11-06 (128 cards, 30 powers, 18 monsters from content/*.json, Rust tables removed, golden identical); stage 5 specced with a measured speed case, not built; 0 queued cpu-h. Reopen: sparse-state ranked, content >256 card ids, per-run content needed, or code-only monsters becoming pack rows.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane runtime-registry closed (2026-11-06)",
+      "sha256": "e0d4f2ae6c3bb82a59066bb4f906cccfcc1510aad8a5c27a452035783ec00d72"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:12+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted p ~0.7 that stages 2-4 land by 2026-11-13, no score moved (the owner's prerequisite for Act 1 content and generated content), ~30 cpu-h, cap 45; actual stages 2-4 landed by 2026-11-06 (128 cards, 30 powers, 18 monsters from content/*.json, Rust tables removed, golden identical), stage 5 specced with a measured speed case and not built, 0.0 cpu-h in queued jobs; reopen if: a sparse-state build is ranked, content passes 256 card ids, content per run is needed, or the code-only monsters become pack rows",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane runtime-registry closed (2026-11-06)",
+          "sha256": "e0d4f2ae6c3bb82a59066bb4f906cccfcc1510aad8a5c27a452035783ec00d72"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane runtime-registry opened (on the owner's behalf, 2026-11-04)",
+          "sha256": "78cd0e5b6c76b8df1c12b3ba81a89a78fec8ce2c4c2951c92ca49251ce68b841"
+        }
+      ],
+      "owner": false,
+      "by": "ceffddb3-2139-4125-a96d-d369379eb78d",
+      "at": "2026-11-06T16:07:44+00:00 @ 6406410",
+      "until": "2026-11-13T02:31:12+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "ee2751f00813aad6d2a8aea311cd723fc736405f2ed257f18b872538cf0af688"
+}

@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-yardstick-cards",
+  "rev": 2,
+  "value": "pred likely/long shot/even/likely; two step-2 arms raise Demon Form decks on the plain leaf (+3.77, +4.48) but fail the @tsl1 gate (first tick only), none beats burst8's +6.10, parts level; step 3 table recorded (inflame-turn1, metal-c2-a5 cost @tsl1); 47.4 cpu-h. Reopen: a leaf or target seeing a recurring power's later ticks, or adapted column 0409-0421 closing a @tsl1 modifier cost.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane yardstick-cards closed (2026-11-07)",
+      "sha256": "fd280270a489740c1e1c91455e2e01c7882f9b7cccd40c60e8f7ea537449db03"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:20+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted likely that a step-2 arm raises the Demon Form decks at 2 se, a long shot that it beats burst8's +6.10, even that parts gains half of the same-row arm, likely that step 3's table exists within the cap; about 23 cpu-h more at the raise to cap 45 (38 at opening); actual: two arms raise Demon Form decks on the plain leaf (+3.77, +4.48) but the tsl1 gate fails both (first tick only), none beats +6.10, parts level with neither, step 3's table recorded (inflame-turn1 and metal-c2-a5 cost @tsl1); 47.4 cpu-h; reopen if: a leaf or training target sees a recurring power's later ticks, or the adapted column 0409-0421 closes a @tsl1 modifier cost",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane yardstick-cards closed (2026-11-07)",
+          "sha256": "fd280270a489740c1e1c91455e2e01c7882f9b7cccd40c60e8f7ea537449db03"
+        }
+      ],
+      "owner": false,
+      "by": "34ade50d-0c3c-43a4-95dc-03e6e008496f",
+      "at": "2026-11-07T05:02:55+00:00 @ 1fc9269",
+      "until": "2026-11-13T02:31:20+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "7bf2349cc36a2628f661aea136fd5458cd92ea807d8e440e68935dca4688471e"
+}

@@ -1,0 +1,66 @@
+{
+  "key": "measurement/all-content-s101@boss-replay",
+  "rev": 2,
+  "value": "allcontent40k s101 on the boss replay (474 fights, one turn) minus twin data40k-s101: Guardian +0.050 (0.009), Hexaghost +0.054 (0.012), Slime +0.003 (0.005). Pooled with s1: vs twins Guardian +0.049 (0.008), Hexaghost +0.073 (0.012); outside Demon Form vs 10-29 net Guardian +0.035 (0.007), Hexaghost +0.017 (0.008).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "All-content net seed 101 on the boss replay repeats seed 1: Guardian +0.050 (0.009), Hexaghost +0.054 (0.012) wins against its twin; pooled over seeds 1 and 101, outside Demon Form decks against the 10-29 net, the Guardian gains +0.035 (0.007) and Hexaghost +0.017 (0.008); the lane closed at its cap before seed 201 and the one-turn headline (all-content-net close; 0581, 0583, 0601; read 21:20 2026-11-08, lanes)",
+      "sha256": "58c267ddae3b79fc3691d0f84d031e46ea7f51c9893682acf98061274b09e700"
+    },
+    {
+      "path": "results/boss_replay/allcontent40k-s101-hpb0.01.json",
+      "sha256": "abe34ea257ee4b826f2b1e7b4cadd6b88abaec9b26e5e9122080c28cb7555fd7"
+    },
+    {
+      "path": "results/boss_replay/data40k-s101-r1-hpb0.01.json",
+      "sha256": "ccc8d40a692380541f6e1159714cdee9456e16e4f68fe3f07cb6e09b6261d031"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:47+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "allcontent40k seed 101 (runs/2026-11-08-allcontent40k-s101-r1-ce824da@hpb0.01, 0583, peak 6.03 GB) on the boss replay (474 headline boss fights, HP 30-80 x 4 seeds, one turn deep) minus its twin data40k-s101 r1, paired by deck: Guardian +0.050 (0.009), Hexaghost +0.054 (0.012), Slime Boss +0.003 (0.005); Guardian+Hexaghost by stratum: train +0.025, other held-out +0.012, Metallicize +0.105 (+0.058 against the 10-29 net), Demon Form +0.238; outside Demon Form against the 10-29 net Guardian +0.048 (0.008), Hexaghost +0.010 (0.009). Pooled with seed 1: against twins Guardian +0.049 (0.008), Hexaghost +0.073 (0.012), Slime Boss -0.000; outside Demon Form against the 10-29 net Guardian +0.035 (0.007), Hexaghost +0.017 (0.008). Two of three seeds; seed 201 and the one-turn headline not run (lane closed at its cap).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "All-content net seed 101 on the boss replay repeats seed 1: Guardian +0.050 (0.009), Hexaghost +0.054 (0.012) wins against its twin; pooled over seeds 1 and 101, outside Demon Form decks against the 10-29 net, the Guardian gains +0.035 (0.007) and Hexaghost +0.017 (0.008); the lane closed at its cap before seed 201 and the one-turn headline (all-content-net close; 0581, 0583, 0601; read 21:20 2026-11-08, lanes)",
+          "sha256": "58c267ddae3b79fc3691d0f84d031e46ea7f51c9893682acf98061274b09e700"
+        },
+        {
+          "path": "results/boss_replay/allcontent40k-s101-hpb0.01.json",
+          "sha256": "abe34ea257ee4b826f2b1e7b4cadd6b88abaec9b26e5e9122080c28cb7555fd7"
+        },
+        {
+          "path": "results/boss_replay/data40k-s101-r1-hpb0.01.json",
+          "sha256": "ccc8d40a692380541f6e1159714cdee9456e16e4f68fe3f07cb6e09b6261d031"
+        },
+        {
+          "path": "jobs/done/0601-boss-replay.json",
+          "sha256": "bbd6c060b7e736c3843ffdf7fe0ccfe11c93238bfd17f376d07468d4e8d19ae0"
+        },
+        {
+          "path": "jobs/done/0581-boss-replay.json",
+          "sha256": "53b44b23a68040584313133ff09dce3a1a9f8b9dcd4794a2a04d4c88b9e097c7"
+        },
+        {
+          "path": "jobs/done/0583-learn.json",
+          "sha256": "2019d848afd8df3e37973c763c205aa8e152b5c5d685e219e9151085a8624d3f"
+        }
+      ],
+      "owner": false,
+      "by": "eda5a964-10e9-4dbc-9772-27ee36c8c96a",
+      "at": "2026-11-08T14:15:42+00:00 @ 5c32e9b",
+      "until": "2026-11-13T02:29:47+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "4121605f16408965102b2218929ee6a04ddd593418b874ae1e5c724a7ee9702b"
+}

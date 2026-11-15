@@ -1,0 +1,11 @@
+{
+ "source": {"kind": "one-turn", "player": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpb0.01",
+            "encounters": ["the_guardian", "hexaghost"]},
+ "game_seed": 41,
+ "games": 1600,
+ "top": 1600,
+ "n_val": 300,
+ "name": "ubb-g1600-s2",
+ "pool": 10000,
+ "seed": 2
+}

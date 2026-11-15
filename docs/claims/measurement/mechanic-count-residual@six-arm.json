@@ -1,0 +1,22 @@
+{
+  "key": "measurement/mechanic-count-residual@six-arm",
+  "rev": 1,
+  "value": "Left by every generated-pack recipe (6/18/58 mechanics): OppCard-PlainDamage x Three Sentries and a TurnEnd-Frail leak on Nob and Lagavulin, ~0.1-0.6 HP pooled.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Mechanic count (lane mechanic-count-curve; read by the navigator, jobs 0905, 0906)",
+      "sha256": "03800f3a386de0d047b73d6867f6c39a82ff8c5d2a40917557843771ee631414"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:42+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "8bbca7e43ea5245f709a3200276ea6a7fa150fd1e8c80e8cbec049d8ccf5ee7a"
+}

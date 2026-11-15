@@ -1,0 +1,165 @@
+{
+  "key": "cause/leaf-price-trades",
+  "rev": 4,
+  "value": "Leaf changes that run the engine's rules further haven't traded mechanics (@tsl1, @pl2); hand-set prices trade where the priced quantity is what the mechanic grows: @esp0.04 fixed AttackLoss-Damage x Nob (+13.29 -> -0.06 HP) and cost +13..+22 HP wherever attacks give Strength.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/turn-start-leaf@cells",
+      "rev": 2
+    },
+    {
+      "key": "measurement/projected-leaf@cards-k2",
+      "rev": 2
+    },
+    {
+      "key": "measurement/esp-on-gen@batch1",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:04Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:32:58Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/turn-start-leaf@cells, measurement/projected-leaf@cards-k2, measurement/esp-on-gen@batch1 reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Leaf changes that run the engine's own rules further have not traded one mechanic for another (@tsl1: Demon Form decks +7.54 (1.10) HP, train and other held-out level; @pl2: its target's HP the right way, +0.14 (0.07) on one control); leaf changes that add a hand-set price trade: @esp0.04 removed AttackLoss-Damage x Nob's cost (+13.29 to -0.06) and cost +13 to +22 HP on AttackLoss-Strength; @shl0.005 kept 71% of the cut and cost AttackLoss-Strength x Nob +2.37 (0.57) HP (that cell's wins up 0.879 to 0.892); @shl0.01 cut 93% and cost +9.38/+4.77/+1.67. So goal 1's zero-games repairs are looked for among simulations of the rules, and a price is read on the whole bench, not on its target. Exits: a price level on every bench row while it halves its target's cost (probe 0566 reads @shl0.005 on the 16 mechanics outside batch 1).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Navigator 2026-11-08 midday: the review; a held-out read of the Strength price; stall wakes; act1-content's cap extended (on the owner's behalf, 2026-11-08)",
+          "sha256": "d59dfe75210bdef271a9e84095e782c96eb0d11a69e094f5d9417b51d8d82a5a"
+        },
+        {
+          "key": "measurement/turn-start-leaf@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/projected-leaf@cards-k2",
+          "rev": 1
+        },
+        {
+          "key": "measurement/esp-on-gen@batch1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/shl0.005@gen-b1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/shl0.01@gen-b1",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "f498054e-03ee-43a5-94ee-61d61fc50682",
+      "at": "2026-11-08T05:11:51Z @ 121136c",
+      "until": "2026-11-08T06:09:15Z @ 317325d"
+    },
+    {
+      "rev": 2,
+      "value": "Leaf changes that run the engine's own rules further have not traded one mechanic for another (@tsl1: Demon Form decks +7.54 (1.10) HP, train and other held-out level; @pl2: its target's HP the right way, +0.14 (0.07) on one control). Hand-set prices trade where the priced quantity is what the mechanic grows: the flat enemy-Strength price @esp0.04 removed AttackLoss-Damage x Nob's cost (+13.29 to -0.06) and cost +13 to +22 HP wherever attacks give Strength; @shl (Strength x the hits it will still land) traded on AttackLoss-Strength x Nob only (+2.37 (0.57) at 0.005, wins up; +9.38/+4.77/+1.67 at 0.01) and at 0.005 was inert or helpful on the 16 other bench mechanics (mean -0.41 (0.06), Nob -1.21, no row worse by 1.5 HP). So goal 1's zero-games repairs are looked for among simulations of the rules first, a price is read on the whole bench and not on its target, and a price that tracks how long a threat lasts can hold where a flat one trades. Exits: @shl0.005 failing the one-turn headline (job 0572) narrows it to the bench; a simulated leaf that trades on the bench breaks the first half.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After shl-held-out: the Strength price's trade stays on one cell; its one-turn headline read queued (on the owner's behalf, 2026-11-08)",
+          "sha256": "7a07273c3a7b5d86aacc8fc3cbe6e3762b74c77fe565cb955a8e32abeab33294"
+        },
+        {
+          "path": "docs/research/strength-hits-price.md",
+          "anchor": "Held-out read: @shl0.005 on the 16 mechanics outside batch 1 (job 0566, navigator probe, 2026-11-08)",
+          "sha256": "681dac5aa122c10697b7f56c7bacfaeed7fbe8eea7b9e69e324242f7c748aecf"
+        },
+        {
+          "key": "measurement/turn-start-leaf@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/projected-leaf@cards-k2",
+          "rev": 1
+        },
+        {
+          "key": "measurement/esp-on-gen@batch1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/shl0.005@gen-b1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/shl0.01@gen-b1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/shl0.005@gen-rest",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "f498054e-03ee-43a5-94ee-61d61fc50682",
+      "at": "2026-11-08T06:09:15Z @ 317325d",
+      "until": "2026-11-08T09:16:20Z @ 1f37c73"
+    },
+    {
+      "rev": 3,
+      "value": "Leaf changes that run the engine's own rules further have not traded one mechanic for another (@tsl1: Demon Form decks +7.54 (1.10) HP, train and other held-out level; @pl2: its target's HP the right way, +0.14 (0.07) on one control). Hand-set prices trade where the priced quantity is what the mechanic grows: the flat enemy-Strength price @esp0.04 removed AttackLoss-Damage x Nob's cost (+13.29 to -0.06) and cost +13 to +22 HP wherever attacks give Strength; @shl (Strength x the hits it will still land) traded on AttackLoss-Strength x Nob only (+2.37 (0.57) at 0.005, wins up; +9.38/+4.77/+1.67 at 0.01) and at 0.005 was inert or helpful on the 16 other bench mechanics (mean -0.41 (0.06), Nob -1.21, no row worse by 1.5 HP). So goal 1's zero-games repairs are looked for among simulations of the rules first, a price is read on the whole bench and not on its target, and a price that tracks how long a threat lasts can hold where a flat one trades. On official play @shl0.005 is level one turn deep on the headline (+0.95 (0.64) HP, clears +0.012, measurement/shl0.005@headline), so its trade is a bench cell, not an official cost. Exits: a simulated leaf that trades on the bench breaks the first half; a bench table where @shl0.005 worsens a row by 1.5 HP outside AttackLoss-Strength narrows the second.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After shl-held-out: the Strength price's trade stays on one cell; its one-turn headline read queued (on the owner's behalf, 2026-11-08)",
+          "sha256": "7a07273c3a7b5d86aacc8fc3cbe6e3762b74c77fe565cb955a8e32abeab33294"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After shl-headline: @shl0.005 level on the headline; goal-1 bench tables read it beside @tsl1; running chains keep their leaf (on the owner's behalf, 2026-11-08)",
+          "sha256": "7894549c23aebc731b59c4298d50545d4c8e0011b35a47c4a44c751c1ed49e0c"
+        },
+        {
+          "path": "docs/research/strength-hits-price.md",
+          "anchor": "Held-out read: @shl0.005 on the 16 mechanics outside batch 1 (job 0566, navigator probe, 2026-11-08)",
+          "sha256": "681dac5aa122c10697b7f56c7bacfaeed7fbe8eea7b9e69e324242f7c748aecf"
+        },
+        {
+          "path": "docs/research/strength-hits-price.md",
+          "anchor": "Step 2, scale 0.01 (job 0555, 2026-11-08), and the lane's verdict",
+          "sha256": "2ae303a25bd7c59103099354fa48b44302d998eb9472b5d79a28f87e776fe303"
+        },
+        {
+          "key": "measurement/turn-start-leaf@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/projected-leaf@cards-k2",
+          "rev": 1
+        },
+        {
+          "key": "measurement/esp-on-gen@batch1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/shl0.005@gen-b1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/shl0.005@headline",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "0c5cb0c7-6e7e-4957-b99e-736fdb238ae0",
+      "at": "2026-11-08T09:16:20Z @ 1f37c73",
+      "until": "2026-11-13T02:29:04Z @ 3123201a"
+    }
+  ],
+  "seal": "015d3eb44293928b17cd380da8c86b058999f181782ab9a67f6821edd107a747"
+}

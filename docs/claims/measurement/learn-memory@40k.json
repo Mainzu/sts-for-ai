@@ -1,0 +1,82 @@
+{
+  "key": "measurement/learn-memory@40k",
+  "rev": 3,
+  "value": "allcontent40k-s101 round 0 (120k-game pool, 417k examples): peak commit 1.01 GB with puzzles.dataset_games streaming (whole pool held: 3.72 GB). Runner peak_gb (6.06) counts the mmapped feature cache (7.9 GB on disk, file-backed), not commit. Burst: measurement/burst-memory@finetune.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learn-memory.md",
+      "anchor": "Step 3/4 read: 0732-memprobe (2026-11-09)",
+      "sha256": "61372d6bcc1c705c82bea55d63ac526b80f38718542ef7cea54d9cd097ff5823"
+    },
+    {
+      "path": "jobs/done/0732-memprobe.json",
+      "sha256": "105bef94ebdc3864b12b0444c60251baeebdf6e3347e5d4981fc098f2bc172c3"
+    },
+    {
+      "key": "measurement/burst-memory@finetune",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:32+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Round 0 of allcontent40k-s101 at 40k games per group (120,000-game pool, 417k examples): peak commit 1.01 GB (training phase) once puzzles.dataset_games streams to its limit (the 0-game solve step had held the whole pool: 3.72 GB, re-measured 0.25 GB); pool games_sha256 equal to 0583's (same examples, same net); the runner's peak_gb (working set, 6.06) counts the memory-mapped feature cache (7.9 GB on disk), file-backed pages, not commit.",
+      "sources": [
+        {
+          "path": "docs/research/learn-memory.md",
+          "anchor": "Step 3/4 read: 0732-memprobe (2026-11-09)",
+          "sha256": "61372d6bcc1c705c82bea55d63ac526b80f38718542ef7cea54d9cd097ff5823"
+        },
+        {
+          "path": "jobs/done/0732-memprobe.json",
+          "sha256": "105bef94ebdc3864b12b0444c60251baeebdf6e3347e5d4981fc098f2bc172c3"
+        }
+      ],
+      "owner": false,
+      "by": "e210147f-dc95-40cc-8c04-6656660acf23",
+      "at": "2026-11-09T14:57:45+00:00 @ a4453b8",
+      "until": "2026-11-11T07:44:08+00:00 @ 0b5de0f"
+    },
+    {
+      "rev": 2,
+      "value": "Round 0 of allcontent40k-s101 at 40k games per group (120,000-game pool, 417k examples): peak commit 1.01 GB (training phase) once puzzles.dataset_games streams to its limit (the 0-game solve step had held the whole pool: 3.72 GB, re-measured 0.25 GB); pool games_sha256 equal to 0583's (same examples, same net); the runner's peak_gb (working set, 6.06) counts the memory-mapped feature cache (7.9 GB on disk), file-backed pages, not commit. A finetune.py burst with the memory-mapped replay pool (60cc028) peaks at 0.70 GB at 4 threads (job 0304; 0276 on the old code 3.81 GB), training unchanged (curves equal to 5 digits for 3 epochs; the later 0.00219 val MSE drift is the wider input layout).",
+      "sources": [
+        {
+          "path": "docs/research/learn-memory.md",
+          "anchor": "Step 3/4 read: 0732-memprobe (2026-11-09)",
+          "sha256": "61372d6bcc1c705c82bea55d63ac526b80f38718542ef7cea54d9cd097ff5823"
+        },
+        {
+          "path": "jobs/done/0732-memprobe.json",
+          "sha256": "105bef94ebdc3864b12b0444c60251baeebdf6e3347e5d4981fc098f2bc172c3"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Burst memory (step 2a read): the mapped pool cuts a burst's peak from 3.81 to 0.70 GB at 4 threads; the curve check's 0.00219 gap is the wider input layout, not the pool, so the check is passed by hand and the bursts run (yardstick-cards step 2a; 0304 against 0276; read 05:50 2026-11-07, lanes)",
+          "sha256": "dcfd841ca9540454ceec16c351756a91444a676a41d182c0180495b1db481f96"
+        },
+        {
+          "path": "jobs/done/0304-finetune.json",
+          "sha256": "7867287ba525f908a20a18b035a6dcd3258a941d92c30fdb79d5e12615f08e74"
+        },
+        {
+          "path": "jobs/done/0276-finetune.json",
+          "sha256": "f10f9961b6f414f3ce38c39a43803130a259fa3a22925a0ecbf5c0673a97b3d0"
+        }
+      ],
+      "owner": false,
+      "by": "b7755c1b-c846-428e-b225-17f45923e96d",
+      "at": "2026-11-11T07:44:08+00:00 @ 0b5de0f",
+      "until": "2026-11-13T02:30:32+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "745a56ddca5f6ce47bf696dfc88b5e641a112421bc0f2a2590ea7cba4b5c03c8"
+}

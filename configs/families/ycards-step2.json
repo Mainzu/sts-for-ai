@@ -1,0 +1,152 @@
+{
+ "name": "ycards-step2",
+ "lane": "yardstick-cards",
+ "about": "yardstick-cards steps 2 (adapted column: bursts on held-out decks by player and games) and 2b (parts and neither); rule from docs/research/learned-play-results.md (step 1c 'What it changes'): an arm passes when the Demon Form stratum gains 2 se over its three seeds against the one-turn 10-29 net with train HP within -0.9 and train clears within -0.04; beating burst8's +6.10 and parts against neither stay with the lane's read",
+ "parent": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt",
+ "arms": {
+  "heur-g400": [
+   "configs/ycards-heur-g400-s1.json",
+   "configs/ycards-heur-g400-s2.json",
+   "configs/ycards-heur-g400-s3.json"
+  ],
+  "net-g100": [
+   "configs/ycards-net-g100-s1.json",
+   "configs/ycards-net-g100-s2.json",
+   "configs/ycards-net-g100-s3.json"
+  ],
+  "net-g400": [
+   "configs/ycards-net-g400-s1.json",
+   "configs/ycards-net-g400-s2.json",
+   "configs/ycards-net-g400-s3.json"
+  ],
+  "net-g1600": [
+   "configs/ycards-net-g1600-s1.json",
+   "configs/ycards-net-g1600-s2.json",
+   "configs/ycards-net-g1600-s3.json"
+  ],
+  "two-g400": [
+   "configs/ycards-two-g400-s1.json",
+   "configs/ycards-two-g400-s2.json",
+   "configs/ycards-two-g400-s3.json"
+  ],
+  "parts": [
+   "configs/burst8parts-s1.json",
+   "configs/burst8parts-s101.json",
+   "configs/burst8parts-s201.json"
+  ],
+  "neither": [
+   "configs/burst8neither-s1.json",
+   "configs/burst8neither-s101.json",
+   "configs/burst8neither-s201.json"
+  ]
+ },
+ "burst": {
+  "threads": 4,
+  "mem_gb": 2.5,
+  "estimate_min": 30
+ },
+ "reads": {
+  "a": {
+   "cmd": [
+    "scripts/gauntlet.py",
+    "play",
+    "{net}@hpb0.01",
+    "--sequences",
+    "500",
+    "--threads",
+    "3",
+    "--out",
+    "results/gauntlet/rerank-{run}-hpb0.01.json"
+   ],
+   "threads": 3,
+   "mem_gb": 1.5,
+   "estimate_min": 6
+  },
+  "b": {
+   "cmd": [
+    "scripts/gauntlet.py",
+    "play",
+    "{net}@hpb0.01",
+    "--first",
+    "500",
+    "--sequences",
+    "500",
+    "--threads",
+    "3",
+    "--out",
+    "results/gauntlet/rerank-{run}-hpb0.01-b500.json"
+   ],
+   "threads": 3,
+   "mem_gb": 1.5,
+   "estimate_min": 6
+  },
+  "boss": {
+   "cmd": [
+    "scripts/analysis/boss_replay.py",
+    "play",
+    "--file",
+    "results/gauntlet/net1029-hpe0.01-two-starter-simboss.json",
+    "--player",
+    "{net}@hpb0.01",
+    "--seeds",
+    "4",
+    "--threads",
+    "3",
+    "--out",
+    "results/boss_replay/{run}-hpb0.01.json"
+   ],
+   "threads": 3,
+   "mem_gb": 1.6,
+   "estimate_min": 6
+  }
+ },
+ "table": {
+  "kind": "strata",
+  "books": [
+   "a",
+   "b"
+  ],
+  "control": {
+   "a": "results/gauntlet/net1029-hpb0.01.json",
+   "b": "results/gauntlet/net1029-hpb0.01-b500.json"
+  },
+  "rule": {
+   "stratum": "held-out DF",
+   "min_se": 2.0,
+   "keep": {
+    "train": {
+     "hp": -0.9,
+     "clears": -0.04
+    }
+   }
+  }
+ },
+ "then": {
+  "headline": {
+   "cmd": [
+    "scripts/gauntlet.py",
+    "play",
+    "{net}@hpb0.01",
+    "--start",
+    "starter",
+    "--rewards",
+    "sim",
+    "--sim-boss",
+    "--sequences",
+    "500",
+    "--threads",
+    "3",
+    "--against",
+    "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+    "--min-n",
+    "500",
+    "--out",
+    "results/gauntlet/{run}-hpb0.01-starter-simboss.json"
+   ],
+   "net": "best",
+   "threads": 3,
+   "mem_gb": 1.5,
+   "estimate_min": 40
+  }
+ }
+}

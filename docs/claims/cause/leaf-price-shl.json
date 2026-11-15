@@ -1,0 +1,36 @@
+{
+  "key": "cause/leaf-price-shl",
+  "rev": 1,
+  "value": "@shl0.005 trades only on AttackLoss-Strength x Nob (+2.37 (0.57) HP); on the 16 other bench mechanics inert or helpful (mean -0.41 (0.06), none worse by 1.5 HP); level on the headline (measurement/shl0.005@headline).",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/shl0.005@gen-b1",
+      "rev": 2
+    },
+    {
+      "path": "docs/research/strength-hits-price.md",
+      "anchor": "Held-out read: @shl0.005 on the 16 mechanics outside batch 1 (job 0566, navigator probe, 2026-11-08)",
+      "sha256": "681dac5aa122c10697b7f56c7bacfaeed7fbe8eea7b9e69e324242f7c748aecf"
+    },
+    {
+      "key": "measurement/shl0.005@headline",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:27:49Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:32:58Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/shl0.005@gen-b1, measurement/shl0.005@headline reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "6b0c6734f047aa2a4fafe6bf8ea3414d5d133aa5a4829567519240a54b496582"
+}

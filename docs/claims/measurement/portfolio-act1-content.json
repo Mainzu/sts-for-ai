@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-act1-content",
+  "rev": 2,
+  "value": "predicted likely per kind, ~16 cpu-h (cap 36); actual monsters done (7/7, re-rank no zero-shot gap), cards 27 written / 13 blocked (C3, C5-C14), relics+potions not started, 36.8 cpu-h; reopen if a general mechanism makes building blocks hours not specs, or relics/potions gain atoms.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane act1-content closed (2026-11-09)",
+      "sha256": "4934066d2b16b027d4b784853234f1f4ffcf7df5c1ffe7cbd9afa29bcb5e7457"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:46+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted likely per content kind once the registry has its atoms, about 16 cpu-h (cap 24, extended to 36); actual monsters kind done (7/7 from pack, re-rank passed: no zero-shot gap for net or search), cards kind 27 written and 13 blocked (C3, C5-C14), relics and potions not started, about 36.8 cpu-h at the cap; reopen if: a general mechanism makes a building block cost hours rather than a spec and build each, or relics and potions gain registry atoms; the pack Thugs parity replay first",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane act1-content closed (2026-11-09)",
+          "sha256": "4934066d2b16b027d4b784853234f1f4ffcf7df5c1ffe7cbd9afa29bcb5e7457"
+        }
+      ],
+      "owner": false,
+      "by": "70f6f749-4814-4641-9282-ae6c535c9b47",
+      "at": "2026-11-08T19:46:34+00:00 @ 80ffede",
+      "until": "2026-11-13T02:30:46+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "8ae6059659a67a4e19a2fad3292da76fd82ce83bb8f22007ba2af68b9e9dced2"
+}

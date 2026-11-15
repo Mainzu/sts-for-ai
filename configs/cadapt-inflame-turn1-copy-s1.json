@@ -1,0 +1,13 @@
+{
+ "content": {
+  "pack": "data/bench/mutated_cards_pack.json",
+  "cards": ["inflame-turn1", "Inflame~copy"]
+ },
+ "game_seed": 61,
+ "games": 400,
+ "n_val": 150,
+ "name": "cadapt-inflame-turn1-copy-s1",
+ "player": "net",
+ "pool": 10000,
+ "seed": 1
+}

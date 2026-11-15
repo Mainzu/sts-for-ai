@@ -1,0 +1,12 @@
+{
+ "name": "baseline",
+ "mode": "effects",
+ "n_train": 10000,
+ "n_val": 1000,
+ "train_seed": 1,
+ "val_seed": 2,
+ "search": {"limit": 16},
+ "seed": 0,
+ "rounds": {"n": 3, "temperature": 0.05, "every": 1},
+ "switches": {}
+}

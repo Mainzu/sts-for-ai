@@ -1,0 +1,57 @@
+{
+  "key": "measurement/portfolio-two-turn-round",
+  "rev": 2,
+  "value": "pred p 0.3; null both seeds (s1 -1.37 (0.83), s101 -1.02 (0.70) end-HP at n 150, below the one-turn control arm -0.05 (0.58); measurement/two-turn-round@cells); the outcome-label family closed; ~20 thread-h.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane two-turn-round closed (2026-11-03)",
+      "sha256": "cf20693d957c124a7e89f127c6b3a4195be23ac352996beda5f35c77e08fda93"
+    },
+    {
+      "key": "measurement/two-turn-round@cells",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:18+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:24+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/two-turn-round@cells reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted p ~0.3 that a net fine-tuned on stepped two-turn product games gains +1-2 HP at run level, ~37 CPU-h (cap 45); actual: null on both seeds (s1 -1.37 se 0.83, s101 -1.02 se 0.70 at n 150, both below the one-turn control arm -0.05 se 0.58), the outcome-label family closed; about 20 thread-hours used (0067 16.6 under the built-in lane train, 0068 2.0, the three arms 0.6; health.py counted 2.8 for this lane)",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane two-turn-round closed (2026-11-03)",
+          "sha256": "cf20693d957c124a7e89f127c6b3a4195be23ac352996beda5f35c77e08fda93"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "First lane charters (on the owner's behalf, 2026-11-03)",
+          "sha256": "fbbbdfa84b6b2cbd393f6a42dbda8658a387df0a92463e53dc4a631583ccda40"
+        },
+        {
+          "key": "measurement/two-turn-round@cells",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "ae18f220-87fd-49ea-bfb7-7764da2b8ce9",
+      "at": "2026-11-03T08:19:17+00:00 @ e4270c2",
+      "until": "2026-11-13T02:31:18+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "f650bf510c175a449fc395cf7e9f37f3c8f7a48213b383d75119dda3c2d40930"
+}

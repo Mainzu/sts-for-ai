@@ -1,0 +1,73 @@
+{
+  "key": "owner/reviews",
+  "rev": 4,
+  "value": "Run the big-picture-review workflow every 3 days from 2026-11-14 and after any major result, written to docs/research/big-picture-<date>.md, re-ranking docs/backlog.md from it (newest outranks the backlog's order); every spec says how it moves goal 1 or 2; a probe needs a trade-off (an option that can gain nothing isn't probed).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/operating.md",
+      "anchor": "Big-picture reviews (owner)",
+      "sha256": "0374ccf97f0e7314d3406568b7be545b35f9531fa3ebb2ec3c7e9f8f9df67719"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Reviews every 3 days from 2026-11-14 (on the owner's behalf, 2026-11-14)",
+      "sha256": "5e22c3b7e20c6741e01ce5fe5947fc961a72bb6f49b6b039948a72b4105ba42b"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "24a6e50e-3e7c-42ec-b831-f35d7846c20b",
+  "at": "2026-11-14T15:48:07Z @ b916610c",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Run the big-picture-review workflow about every 24 hours and after any major result, written to docs/research/big-picture-<date>.md, re-ranking Next from it; every spec says in one paragraph how it moves goal 1 or 2 and how we will know.",
+      "sources": [
+        {
+          "path": "docs/manager.md",
+          "anchor": "Big-picture reviews (owner, 2026-10-30)",
+          "sha256": "f7dd3b2e01835bc91265773bf4f815e0854e8d1ebe380223a69f1ef07efd828e"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:41Z @ fc9cdd8",
+      "until": "2026-11-03T05:23:10Z @ 0d052e3"
+    },
+    {
+      "rev": 2,
+      "value": "Run the big-picture-review workflow about every 24 hours (every 3 days from 2026-11-14) and after any major result, written to docs/research/big-picture-<date>.md, re-ranking docs/backlog.md from it; every spec says in one paragraph how it moves goal 1 or 2 and how we will know.",
+      "sources": [
+        {
+          "path": "docs/operating.md",
+          "anchor": "Big-picture reviews (owner)",
+          "sha256": "52d6646d2ec43578a42e91c935b1594e04ed5b602aad9c612baabd43aecfc670"
+        }
+      ],
+      "owner": false,
+      "by": "4c7c253c-5b5e-41ad-9b86-9fe7a2e430cb",
+      "at": "2026-11-03T05:23:10Z @ 0d052e3",
+      "until": "2026-11-04T12:58:18Z @ 8fc9083"
+    },
+    {
+      "rev": 3,
+      "value": "Run the big-picture-review workflow about every 24 hours (every 3 days from 2026-11-14) and after any major result, written to docs/research/big-picture-<date>.md, re-ranking docs/backlog.md from it (the newest file outranks the backlog's order); every spec says in one paragraph how it moves goal 1 or 2 and how we will know; a probe needs a trade-off: a spec that measures a choice writes what each option can gain on the current setting, and if one option can gain nothing there the answer is known, so the probe is not specced (record that, then spec what would give the option its value, or drop the question).",
+      "sources": [
+        {
+          "path": "docs/operating.md",
+          "anchor": "Big-picture reviews (owner)",
+          "sha256": "0374ccf97f0e7314d3406568b7be545b35f9531fa3ebb2ec3c7e9f8f9df67719"
+        }
+      ],
+      "owner": false,
+      "by": "e1d8aca3-bf85-47fa-949b-a0192894458e",
+      "at": "2026-11-04T12:58:18Z @ 8fc9083",
+      "until": "2026-11-14T15:48:07Z @ b916610c"
+    }
+  ],
+  "seal": "a573f709348fbe208844c0787fb13ffd9279ead600ef039bc7080f49bb8343e0"
+}

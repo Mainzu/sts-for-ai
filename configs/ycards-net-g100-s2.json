@@ -1,0 +1,14 @@
+{
+ "source": {
+  "kind": "one-turn",
+  "player": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpb0.01",
+  "decks": "held-out"
+ },
+ "game_seed": 51,
+ "games": 100,
+ "top": 1600,
+ "n_val": 150,
+ "name": "ycards-net-g100-s2",
+ "pool": 10000,
+ "seed": 2
+}

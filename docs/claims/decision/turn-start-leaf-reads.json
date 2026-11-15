@@ -1,0 +1,98 @@
+{
+  "key": "decision/turn-start-leaf-reads",
+  "rev": 4,
+  "value": "Goal-1 reads on content with an OwnerTurnStart power play @tsl1, plain leaf beside it where the parent has one; tsl1 cell controls: results/gauntlet/net1029-hpb0.01-tsl1.json, -tsl1-b500.json. The one-turn controls play @tsl1 since 0966 (decision/tsl1-fight-leaf); the product stays plain.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Level-defaults read: `@tsl1` and `@lcb1` pass, `@hpe` one turn deep fails; the one-turn controls move (on the owner's behalf, 2026-11-13)",
+      "sha256": "93c0eef8f5b4f77d6058a88b608fb09dcd5283673f90801ff744fc2de7d3f939"
+    },
+    {
+      "key": "measurement/turn-start-leaf@cells",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+  "at": "2026-11-13T03:49:18Z @ 8aad300e",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Goal-1 reads on content holding a power with an OwnerTurnStart hook (yardstick-cards step 3, act1-cards-zero-shot) play the turn-start leaf @tsl1, with the plain leaf beside it where the parent has such a hook. Cell controls with the flag: results/gauntlet/net1029-hpb0.01-tsl1.json and -tsl1-b500.json; other one-turn files stand, since the flag leaves decks without such a power unchanged. The one-turn headline control gains an @tsl1 twin (job 0333): not a protocol fail re-sets yardstick/one-turn-controls to the @tsl1 files. The product stays without tsl1 (expected under 0.01 clears two turns deep); reopen when Berserk joins the headline offers.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After turn-start-leaf: the turn-start leaf for goal-1 card reads, the product unchanged, probes on burst8 and the headline (on the owner's behalf, 2026-11-07)",
+          "sha256": "37746dbcfc72e78b90164b489edbe9c42ecf8361749837eb61e059f54524e05a"
+        },
+        {
+          "key": "measurement/turn-start-leaf@cells",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "11322cec-67d1-4203-ab9e-e656f1d0a61c",
+      "at": "2026-11-06T23:02:37Z @ c526be3",
+      "until": "2026-11-07T01:19:20Z @ de5296b"
+    },
+    {
+      "rev": 2,
+      "value": "Goal-1 reads on content holding a power with an OwnerTurnStart hook (yardstick-cards step 3, act1-cards-zero-shot) play the turn-start leaf @tsl1, with the plain leaf beside it where the parent has such a hook. Cell controls with the flag: results/gauntlet/net1029-hpb0.01-tsl1.json and -tsl1-b500.json; other one-turn files stand, since the flag leaves decks without such a power unchanged. On the headline setting the flag failed the protocol (job 0333, level: +0.12 HP; its chooser overpicks Demon Form, cause/chooser-horizon), so yardstick/one-turn-controls stays on the plain-leaf files and own-pick headline reads stay plain. The product stays without tsl1, in its trial fights too; reopen when Berserk joins the headline offers or a chooser's horizon holds the elites.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After turn-start-leaf: the turn-start leaf for goal-1 card reads, the product unchanged, probes on burst8 and the headline (on the owner's behalf, 2026-11-07)",
+          "sha256": "37746dbcfc72e78b90164b489edbe9c42ecf8361749837eb61e059f54524e05a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the turn-start leaf on the one-turn headline: the one-turn controls stay plain; the chooser's horizon overpicks Demon Form (on the owner's behalf, 2026-11-07)",
+          "sha256": "0791d670fdae65c9381fd276a895fd9078193b58210d4e262093f08c3d91f255"
+        },
+        {
+          "key": "measurement/turn-start-leaf@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/turn-start-leaf@headline",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "ed3c6b4a-3acf-4db6-955f-8d0df3367833",
+      "at": "2026-11-07T01:19:20Z @ de5296b",
+      "until": "2026-11-13T02:29:33Z @ 3123201a"
+    },
+    {
+      "rev": 3,
+      "value": "Goal-1 reads on content with an OwnerTurnStart power play @tsl1, plain leaf beside it where the parent has one; tsl1 cell controls: results/gauntlet/net1029-hpb0.01-tsl1.json, -tsl1-b500.json. One-turn controls and product stay plain until backlog fight-leaf-tsl1 passes.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After turn-start-leaf: the turn-start leaf for goal-1 card reads, the product unchanged, probes on burst8 and the headline (on the owner's behalf, 2026-11-07)",
+          "sha256": "37746dbcfc72e78b90164b489edbe9c42ecf8361749837eb61e059f54524e05a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the turn-start leaf on the one-turn headline: the one-turn controls stay plain; the chooser's horizon overpicks Demon Form (on the owner's behalf, 2026-11-07)",
+          "sha256": "0791d670fdae65c9381fd276a895fd9078193b58210d4e262093f08c3d91f255"
+        },
+        {
+          "key": "measurement/turn-start-leaf@cells",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:29:33Z @ 3123201a",
+      "until": "2026-11-13T03:49:18Z @ 8aad300e"
+    }
+  ],
+  "seal": "e9a0331b6bc2cbab919875db3036d51611d7d7cd4e5336a9af4de59cf32b7d62"
+}

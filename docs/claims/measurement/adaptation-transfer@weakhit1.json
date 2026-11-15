@@ -1,0 +1,30 @@
+{
+  "key": "measurement/adaptation-transfer@weakhit1",
+  "rev": 1,
+  "value": "The SharpHide 1602-game burst cuts weakhit1's (WeakOnHit, never trained) HP cost 1.36 (0.29) of 1.74 and gains +0.024 (0.008) wins on elites; nothing on dmg0.8 or split: transfer spans powers that punish attacking.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Stage B bursts: nothing to repair one turn deep, and no burst cuts its modifier at 2 se; the SharpHide control gains on WeakOnHit (4.8 se in HP), so transfer is wider than one effect atom (adaptation lane step 3; 0138, 0139, 0141 with 0112; read 05:10 2026-11-05, lanes 2cca9f24)",
+      "sha256": "9f709c0401b5192f2fb69c3113f78217e6d8ace2979a71b4f617edaa7c68b722"
+    },
+    {
+      "path": "results/adapt/control-1602-stageb.json",
+      "sha256": "99bfb0d4ea30b7101be58008cfbcb437e4915729ab30fb7378ef4c92f2158b2b"
+    },
+    {
+      "path": "jobs/done/0125-mutate-monsters.json",
+      "sha256": "259b78c89f9d76f6a3090977a7c9b0bed9db96a9445abce5e86d0e4ca4e543db"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:28+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "8345949dd0995d2335cc71b71117323c6281edd27053f04f3b11dfba9c2ef366"
+}

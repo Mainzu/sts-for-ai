@@ -1,0 +1,14 @@
+{
+ "name": "gen-b1",
+ "lane": "pack-adapt-pipeline",
+ "about": "Lane pack-adapt-pipeline step 2 (docs/specs/pack-adapt-pipeline.md): gen batch 1's eight mechanics on the three elites, one joint burst per arm and seed (net teacher @hpb0.01@tsl1), read on the bench (1000 starts, elites, 4 seeds) against the zero-shot 10-29 net; arms: 99 games per mechanic, and the same with the three parents in the burst. Ships the best net that passes the guard; the lane's measure is AttackLoss-Damage x Nob's cut (target).",
+ "parent": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt",
+ "pack": {
+  "mechanics": ["GE-TurnStart-Strength", "GE-TurnStart-Damage", "GE-TurnEnd-Frail", "GE-TurnEnd-Damage",
+                "GE-OppCard-Vulnerable", "GE-OppCard-PlainDamage", "GE-AttackLoss-Strength", "GE-AttackLoss-Damage"],
+  "encounters": ["gremlin_nob", "lagavulin", "three_sentries"],
+  "base": "results/mutate/gen-enemies-b1.json",
+  "arms": {"g99": {"games": 99}, "g99-parents": {"games": 99, "parents": true}},
+  "target": {"mechanic": "GE-AttackLoss-Damage", "encounter": "gremlin_nob", "share": 0.5, "min_se": 2.0}
+ }
+}

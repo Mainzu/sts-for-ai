@@ -1,0 +1,255 @@
+{
+  "key": "cause/rules-changes-outside-golden",
+  "rev": 8,
+  "value": "Rule fixes after e47bcfcdb6b2777a left golden.txt unchanged: Perfected Strike from limbo, Guardian Mode Shift block, turn-end order (Burn, Combust, Regeneration, Metallicize, Plated Armor, Orichalcum), Feed on kill, Blood for Blood per copy, Rupture on own Burn, Artifact vs Flex. Golden's cover games (golden.rs COVER) cover them; two more (Lagavulin's wake, Pocketwatch) moved it to 32f1971b.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "engine/tests/golden.rs",
+      "sha256": "b6e4a223737733200e7cc2b837a2de123e8d4fe48656a4605aea782ab5364643"
+    },
+    {
+      "path": "engine/tests/data/golden.txt",
+      "sha256": "32f1971b128452c4c74c34a4b56a049527392e3c6a25bc2c397322cff95c6fbf"
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 7
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Rules version moves to cover the 14 Nov rule fixes (on the owner's behalf, 2026-11-14)",
+      "sha256": "d116ccd48411cdb9c546777d79585adfb436a1a1d414a8c8dfc80fdae962cac1"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
+      "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Rules version moves for Pocketwatch's play count (on the owner's behalf, 2026-11-14)",
+      "sha256": "e00c0296d95284c7135fcc66f43eb41581ac4b1a0b680b439cc5350ea4c4288d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+  "at": "2026-11-14T12:52:31Z @ 1232e778",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Rule fixes since e47bcfcdb6b2777a (fc124b67) that left golden.txt unchanged, so same-version data replays differently: 6f6a6438 Perfected Strike from limbo; 626955c6 Guardian Mode Shift block at turn end; cd9a501d Regeneration/Orichalcum turn-end order; 67267557 Feed max HP on kill; 6c4f392b Blood for Blood per copy, Rupture on own Burn/Decay. Under 7042d1d6a6149ba0: 49600d01 Artifact blocks Flex.",
+      "sources": [
+        {
+          "key": "context/rules-version",
+          "rev": 4
+        },
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "e47bcfcdb6b2777ab5d4ed70b3363c6f9ede1328f7748038060d67aaf4d52f3b"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T07:29:24Z @ 287af073",
+      "until": "2026-11-14T08:58:29Z @ 3885e39b"
+    },
+    {
+      "rev": 2,
+      "value": "Rule fixes made after e47bcfcdb6b2777a (fc124b67) left golden.txt unchanged: Perfected Strike from limbo, Guardian Mode Shift block at turn end, turn-end order (Burn, Combust, Regeneration, Metallicize, Plated Armor, Orichalcum), Feed max HP on kill, Blood for Blood per copy, Rupture on own Burn, Artifact blocks Flex. Covered at f59b662aa4500070 by golden's 5 cover games (engine/tests/golden.rs COVER, cover_games_reach_their_mechanics).",
+      "sources": [
+        {
+          "path": "engine/tests/golden.rs",
+          "sha256": "a1743a7c9a8f4e915b8b61e831229f761fd475d1ec1ebf81d49fdb624ad7846d"
+        },
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "f59b662aa4500070d55817cd1ff2075fda6477abd5945624e53fad622c26c0b1"
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 5
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves to cover the 14 Nov rule fixes (on the owner's behalf, 2026-11-14)",
+          "sha256": "3d1e24a3b2b074a10fa89f9b515f059292bc1a184740c61df4c4c7c81e60045a"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T08:58:29Z @ 3885e39b",
+      "until": "2026-11-14T08:58:54Z @ 3885e39b"
+    },
+    {
+      "rev": 3,
+      "value": "Rule fixes after e47bcfcdb6b2777a left golden.txt unchanged: Perfected Strike from limbo, Guardian Mode Shift block, turn-end order (Burn, Combust, Regeneration, Metallicize, Plated Armor, Orichalcum), Feed on kill, Blood for Blood per copy, Rupture on own Burn, Artifact vs Flex. Golden's 5 cover games (golden.rs COVER) cover them at f59b662aa4500070.",
+      "sources": [
+        {
+          "path": "engine/tests/golden.rs",
+          "sha256": "a1743a7c9a8f4e915b8b61e831229f761fd475d1ec1ebf81d49fdb624ad7846d"
+        },
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "f59b662aa4500070d55817cd1ff2075fda6477abd5945624e53fad622c26c0b1"
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 5
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves to cover the 14 Nov rule fixes (on the owner's behalf, 2026-11-14)",
+          "sha256": "3d1e24a3b2b074a10fa89f9b515f059292bc1a184740c61df4c4c7c81e60045a"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T08:58:54Z @ 3885e39b",
+      "until": "2026-11-14T11:17:05Z @ 88b189c1"
+    },
+    {
+      "rev": 4,
+      "value": "Rule fixes after e47bcfcdb6b2777a left golden.txt unchanged: Perfected Strike from limbo, Guardian Mode Shift block, turn-end order (Burn, Combust, Regeneration, Metallicize, Plated Armor, Orichalcum), Feed on kill, Blood for Blood per copy, Rupture on own Burn, Artifact vs Flex. Golden's cover games (golden.rs COVER) cover them; a sixth (Lagavulin's burning wake) moved the version to 696d607bbb413f47.",
+      "sources": [
+        {
+          "path": "engine/tests/golden.rs",
+          "sha256": "3d8629ffd3c9757b421689d6e1da583d41442515f509a1cc47809ddabf7dffeb"
+        },
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "696d607bbb413f474fbf93fd8e168a3179400d77254c12ad47b5ae3492b04431"
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 6
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves to cover the 14 Nov rule fixes (on the owner's behalf, 2026-11-14)",
+          "sha256": "d116ccd48411cdb9c546777d79585adfb436a1a1d414a8c8dfc80fdae962cac1"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
+          "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T11:17:05Z @ 88b189c1",
+      "until": "2026-11-14T11:17:22Z @ 88b189c1"
+    },
+    {
+      "rev": 5,
+      "value": "Rule fixes after e47bcfcdb6b2777a left golden.txt unchanged: Perfected Strike from limbo, Guardian Mode Shift block, turn-end order (Burn, Combust, Regeneration, Metallicize, Plated Armor, Orichalcum), Feed on kill, Blood for Blood per copy, Rupture on own Burn, Artifact vs Flex. Golden's cover games (golden.rs COVER) cover them; a sixth (Lagavulin's burning wake) moved it to 696d607b.",
+      "sources": [
+        {
+          "path": "engine/tests/golden.rs",
+          "sha256": "3d8629ffd3c9757b421689d6e1da583d41442515f509a1cc47809ddabf7dffeb"
+        },
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "696d607bbb413f474fbf93fd8e168a3179400d77254c12ad47b5ae3492b04431"
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 6
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves to cover the 14 Nov rule fixes (on the owner's behalf, 2026-11-14)",
+          "sha256": "d116ccd48411cdb9c546777d79585adfb436a1a1d414a8c8dfc80fdae962cac1"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
+          "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T11:17:22Z @ 88b189c1",
+      "until": "2026-11-14T12:51:44Z @ 1232e778"
+    },
+    {
+      "rev": 6,
+      "value": "Rule fixes after e47bcfcdb6b2777a left golden.txt unchanged: Perfected Strike from limbo, Guardian Mode Shift block, turn-end order (Burn, Combust, Regeneration, Metallicize, Plated Armor, Orichalcum), Feed on kill, Blood for Blood per copy, Rupture on own Burn, Artifact vs Flex. Golden's cover games (golden.rs COVER) cover them; a sixth (Lagavulin's burning wake) and a seventh (Pocketwatch's play count) moved it to 32f1971b.",
+      "sources": [
+        {
+          "path": "engine/tests/golden.rs",
+          "sha256": "b6e4a223737733200e7cc2b837a2de123e8d4fe48656a4605aea782ab5364643"
+        },
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "32f1971b128452c4c74c34a4b56a049527392e3c6a25bc2c397322cff95c6fbf"
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 7
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves to cover the 14 Nov rule fixes (on the owner's behalf, 2026-11-14)",
+          "sha256": "d116ccd48411cdb9c546777d79585adfb436a1a1d414a8c8dfc80fdae962cac1"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
+          "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Pocketwatch's play count (on the owner's behalf, 2026-11-14)",
+          "sha256": "e00c0296d95284c7135fcc66f43eb41581ac4b1a0b680b439cc5350ea4c4288d"
+        }
+      ],
+      "owner": false,
+      "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+      "at": "2026-11-14T12:51:44Z @ 1232e778",
+      "until": "2026-11-14T12:52:14Z @ 1232e778"
+    },
+    {
+      "rev": 7,
+      "value": "Rule fixes after e47bcfcdb6b2777a left golden.txt unchanged: Perfected Strike from limbo, Guardian Mode Shift block, turn-end order (Burn, Combust, Regeneration, Metallicize, Plated Armor, Orichalcum), Feed on kill, Blood for Blood per copy, Rupture on own Burn, Artifact vs Flex. Golden's cover games (golden.rs COVER) cover them; two more (Lagavulin's burning wake, Pocketwatch) moved it to 32f1971b.",
+      "sources": [
+        {
+          "path": "engine/tests/golden.rs",
+          "sha256": "b6e4a223737733200e7cc2b837a2de123e8d4fe48656a4605aea782ab5364643"
+        },
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "32f1971b128452c4c74c34a4b56a049527392e3c6a25bc2c397322cff95c6fbf"
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 7
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves to cover the 14 Nov rule fixes (on the owner's behalf, 2026-11-14)",
+          "sha256": "d116ccd48411cdb9c546777d79585adfb436a1a1d414a8c8dfc80fdae962cac1"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
+          "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Pocketwatch's play count (on the owner's behalf, 2026-11-14)",
+          "sha256": "e00c0296d95284c7135fcc66f43eb41581ac4b1a0b680b439cc5350ea4c4288d"
+        }
+      ],
+      "owner": false,
+      "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+      "at": "2026-11-14T12:52:14Z @ 1232e778",
+      "until": "2026-11-14T12:52:31Z @ 1232e778"
+    }
+  ],
+  "seal": "6008435cbd33b0a039b2cd2320170973a064fbeb40997b4e7c8c002b01571eb1"
+}

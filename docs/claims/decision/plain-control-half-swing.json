@@ -1,0 +1,47 @@
+{
+  "key": "decision/plain-control-half-swing",
+  "rev": 1,
+  "value": "The plain two-turn control's half swing (0.852 on 0-249 vs 0.756 on 250-499, z 2.7) is not replayed: no code channel was found and the stepped file is the control; it stands as an unexplained property of the plain player on that sequence set.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Review 2026-11-03: job threads, the half swing, two charters (on the owner's behalf, 2026-11-03)",
+      "sha256": "ecddd01a8054c334202bb36c7b3584e4db9c164755ab8d3c4c4614f0de0bc7a6"
+    },
+    {
+      "key": "measurement/line-step@headline",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "a5cb4157-4f5b-4229-8f32-e0392c96548e",
+  "at": "2026-11-03T07:35:06Z @ 77d7eeb",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The plain two-turn control's half swing (0.852 on 0-249 vs 0.756 on 250-499, z 2.7) is not replayed: no code channel was found and the stepped file is the control; it stands as an unexplained property of the plain player on that sequence set.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Review 2026-11-03: job threads, the half swing, two charters (on the owner's behalf, 2026-11-03)",
+          "sha256": "ecddd01a8054c334202bb36c7b3584e4db9c164755ab8d3c4c4614f0de0bc7a6"
+        },
+        {
+          "key": "measurement/line-step@headline",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "a5cb4157-4f5b-4229-8f32-e0392c96548e",
+      "at": "2026-11-03T07:35:06Z @ 77d7eeb",
+      "until": "2026-11-11T11:48:07Z @ d2e6eb5",
+      "retired": "spent: the plain two-turn player is no read's control now (yardstick/headline-control is the stepped product); the record stays in docs/decisions.md#Review 2026-11-03; STATUS cap"
+    }
+  ],
+  "seal": "7e5e6f49f13407752cf48bb72729fbdaeed1b2db102d50ba7f8d23b0a4cc9214"
+}

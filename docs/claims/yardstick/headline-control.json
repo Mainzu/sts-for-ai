@@ -1,0 +1,128 @@
+{
+  "key": "yardstick/headline-control",
+  "rev": 4,
+  "value": "Two-turn headline control (--against): results/gauntlet/net1029-hpe0.01-tsl1-lcb1-two-line-step-starter-simboss.json (configs/product.json headline_control), the product (product/net) on the headline setting, seq 0-499, 0.832 clears, seed 20261101. A player without the product's flags reads with --vary price, --vary chooser, --vary line_seed --vary step_line as they differ.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Product read 0986: `@tsl1@lcb1` two turns deep is level; the product gains both flags and the chooser (on the owner's behalf, 2026-11-13)",
+      "sha256": "531b472107a5bfc62f349958aff89e773997c8235683a54723a04538f399fa2b"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-tsl1-lcb1-two-line-step-starter-simboss.json",
+      "sha256": "a25e3e2dccd5a694870c2c33bfa79b9a2d76cb8a3e6dc6233857a5e441bc7944"
+    },
+    {
+      "path": "configs/product.json",
+      "sha256": "a8f3e876d86e570ff1ad85531fb7f5426ef0dac11cbf57e076e8be1c77440e2d"
+    },
+    {
+      "path": "jobs/done/0986-gauntlet.json",
+      "sha256": "e022a3717d85918eedf5e5aeb7b6fec23a1ecdd7bfe46125d5284c4409510c3a"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    }
+  ],
+  "owner": false,
+  "pinned": true,
+  "note": null,
+  "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+  "at": "2026-11-13T09:38:23Z @ 335c597a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Control for every two-turn headline read (--against): results/gauntlet/net1029-hpe0.01-two-starter-simboss.json, the product two turns deep on the headline setting, sequences 0-499, 0.804 clears, seed 20261101.",
+      "sources": [
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-starter-simboss.json",
+          "sha256": "6a788adf75486e786c2d055cfcab9e47732f9ab63695ed072eb6702e6acbf05b"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Two-turn product on the headline setting: 0.804 clears (Q2; b39a / b39b; read 14:30 2026-11-02, manager 837a5e68)",
+          "sha256": "6db5240cce5632a9d581f71f3a39f64895cb7f1e5b2017077934ca9e081c9b10"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/headline-setting",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:09:13Z @ fc9cdd8",
+      "until": "2026-11-03T05:41:41Z @ b47437a"
+    },
+    {
+      "rev": 2,
+      "value": "Control for every two-turn headline read (--against): results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json (configs/product.json headline_control), the product (--two-turn --line-seed --step-line) on the headline setting, sequences 0-499, 0.834 clears, seed 20261101. A read of a player without the stepped flags adds --vary line_seed --vary step_line.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Line step on the headline setting, all 500 sequences: level; the stepped file is the headline control, 0.834 clears (cheap-depth lane; 0066; read 13:05 2026-11-03, lanes f1fb0f59)",
+          "sha256": "74409743784def91b15ddf8803930ebb115b8f446282a03e1f27333c2fad3b49"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json",
+          "sha256": "18cd9996abd64a927459287bf456a4b974f7956884d4d9f5fb551745bb1162ed"
+        },
+        {
+          "path": "configs/product.json",
+          "sha256": "7eff1ba9bd0d40302b1369c5e0b6e275e795dee5c83c07cb7c1e7222e90e74c1"
+        },
+        {
+          "path": "jobs/done/0066-gauntlet.json",
+          "sha256": "d7274ebfec66469995c175353e82f216b3cf8b4b0b7ccf58e80d3f8cfad7d6ea"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "f1fb0f59-8b60-4c54-a39e-129739c75134",
+      "at": "2026-11-03T05:41:41Z @ b47437a",
+      "until": "2026-11-13T09:38:07Z @ 335c597a"
+    },
+    {
+      "rev": 3,
+      "value": "Control for every two-turn headline read (--against): results/gauntlet/net1029-hpe0.01-tsl1-lcb1-two-line-step-starter-simboss.json (configs/product.json headline_control), the product (product/net: @tsl1@lcb1, --chooser @hpe0.01@lcb1, --two-turn --line-seed --step-line) on the headline setting, sequences 0-499, 0.832 clears, seed 20261101. A player without those flags reads with --vary price / --vary chooser / --vary line_seed --vary step_line.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Product read 0986: `@tsl1@lcb1` two turns deep is level; the product gains both flags and the chooser (on the owner's behalf, 2026-11-13)",
+          "sha256": "531b472107a5bfc62f349958aff89e773997c8235683a54723a04538f399fa2b"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-tsl1-lcb1-two-line-step-starter-simboss.json",
+          "sha256": "a25e3e2dccd5a694870c2c33bfa79b9a2d76cb8a3e6dc6233857a5e441bc7944"
+        },
+        {
+          "path": "configs/product.json",
+          "sha256": "a8f3e876d86e570ff1ad85531fb7f5426ef0dac11cbf57e076e8be1c77440e2d"
+        },
+        {
+          "path": "jobs/done/0986-gauntlet.json",
+          "sha256": "e022a3717d85918eedf5e5aeb7b6fec23a1ecdd7bfe46125d5284c4409510c3a"
+        },
+        {
+          "key": "product/net",
+          "rev": 5
+        }
+      ],
+      "owner": false,
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:38:07Z @ 335c597a",
+      "until": "2026-11-13T09:38:23Z @ 335c597a"
+    }
+  ],
+  "seal": "e4a7c31dcdb2b4ff8667873323878caadfdb6a1aea1c75ec02a2c453871dc13d"
+}

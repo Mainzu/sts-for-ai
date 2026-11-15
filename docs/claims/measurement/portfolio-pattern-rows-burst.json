@@ -1,0 +1,102 @@
+{
+  "key": "measurement/portfolio-pattern-rows-burst",
+  "rev": 3,
+  "value": "pred long shot; fail: Hexaghost +0.004 (0.002) wins pooled over 4 twin pairs (bar +0.015; measurement/pattern-rows-burst@bosses); 2.37 cpu-h. Reopen: inputs showing more of the schedule than the next move (rows unrolling 2+ moves, cycle position as a column) or a deeper teacher's labels, read against the same 4 plain twins.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane pattern-rows-burst closed (2026-11-06)",
+      "sha256": "96f7d73c714358a16bd8889f44315377f252b05691f7fa3f24fef8c12231c654"
+    },
+    {
+      "key": "measurement/pattern-rows-burst@bosses",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:08+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted a long shot, a go would be the first learned change on Hexaghost, about 3.5 cpu-h; actual fail: Hexaghost +0.004 (0.002) pooled over four twin pairs, 2.37 cpu-h; reopen if: inputs show more of the schedule than the next move (rows unrolling two or more moves, or the cycle position as a column) or the labels come from a deeper teacher, read against the same four plain twins",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane pattern-rows-burst closed (2026-11-06)",
+          "sha256": "96f7d73c714358a16bd8889f44315377f252b05691f7fa3f24fef8c12231c654"
+        }
+      ],
+      "owner": false,
+      "by": "5b495940-bc52-4b6c-8aa6-696f09ea7cc9",
+      "at": "2026-11-06T02:37:57+00:00 @ 2a180dd",
+      "until": "2026-11-10T07:03:36+00:00 @ f97b79c"
+    },
+    {
+      "rev": 2,
+      "value": "predicted a long shot, a go would be the first learned change on Hexaghost, about 3.5 cpu-h; actual fail: Hexaghost +0.004 (0.002) pooled over four twin pairs, 2.37 cpu-h; reopen if: inputs show more of the schedule than the next move (rows unrolling two or more moves, or the cycle position as a column) or the labels come from a deeper teacher, read against the same four plain twins The read (was measurement/pattern-rows-burst@replay): Pattern rows on the four unseen-boss bursts (400 and 1600 games, seeds 1-2), one turn deep @hpb0.01, against each plain twin paired by deck on the 474 headline boss fights (HP 30-80 x 4 seeds): Hexaghost +0.004 (0.002) pooled (per pair -0.002, +0.003, +0.008, +0.008), Guardian +0.000 (0.002), Slime Boss +0.000 (0.001); cells 0-499 -0.42 (0.19) HP against the twins, clears +0.001. A burst does not learn Hexaghost from its next move; the rows show only one move past the intent.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane pattern-rows-burst closed (2026-11-06)",
+          "sha256": "96f7d73c714358a16bd8889f44315377f252b05691f7fa3f24fef8c12231c654"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Pattern-row bursts read: pooled over the four twin pairs Hexaghost gains +0.004 (0.002) wins against the plain twins, under the +0.015 fail bar, so the lane fails; Guardian +0.000 (0.002), Slime Boss +0.000 (0.001); cells -0.42 (0.19) HP against the twins (pattern-rows-burst stop read; 0248-0255; read 09:45 2026-11-06, lanes)",
+          "sha256": "b198298679461bfc50a2cceb2b7b89aff5456df936f9ed050e088ac437808e24"
+        },
+        {
+          "path": "jobs/done/0248-boss-replay.json",
+          "sha256": "798fb149e6d5b161e16b0bbc66937b4df97c66c13166c44dd34792cc0ed7048c"
+        },
+        {
+          "path": "jobs/done/0250-boss-replay.json",
+          "sha256": "769241e36d7286c05a4199bbffe682920f7f30cb1b7b340c2ed400b47a0ada0b"
+        },
+        {
+          "path": "jobs/done/0252-boss-replay.json",
+          "sha256": "f21c1669b65dd7b49a5b3b57a1d3ffc184bd2e520864d3816587bb1bed8f0333"
+        },
+        {
+          "path": "jobs/done/0254-boss-replay.json",
+          "sha256": "b79b01ddbff1fac34785cab549e376645342adf165af91757f051ec9db66521d"
+        },
+        {
+          "path": "jobs/done/0249-gauntlet.json",
+          "sha256": "c44241347d2a1f486aeffbf77acaf8db6087bc7b91118dc443c181aa74c8a922"
+        },
+        {
+          "path": "jobs/done/0251-gauntlet.json",
+          "sha256": "b1c4b1741896c82c4617dd5c342ceab238f08c675cc51c6a9c16f50f84e1d436"
+        },
+        {
+          "path": "jobs/done/0253-gauntlet.json",
+          "sha256": "4addc91d01a1d9585c4b0244899ca650df01b4dfa8c1bf2bf9579ee99ecdccf4"
+        },
+        {
+          "path": "jobs/done/0255-gauntlet.json",
+          "sha256": "2ffe2c663ed8b116b24e586242ef488adfd14d60ac65bf5d9fc4e799a317b604"
+        },
+        {
+          "key": "measurement/unseen-boss-burst@replay",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "b03f7647-f3c8-4742-857a-e434dfb7a594",
+      "at": "2026-11-10T07:03:36+00:00 @ f97b79c",
+      "until": "2026-11-13T02:31:08+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "abaa5fc732e7000513799e3dc22577dc0246e40c673ff5b523ed52b2a50565bf"
+}

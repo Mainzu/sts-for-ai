@@ -1,0 +1,58 @@
+{
+  "key": "measurement/pummel-timing@replay",
+  "rev": 2,
+  "value": "Early Pummel isn't a loss on official Act 1 (10-29 net @hpb0.01 one turn, headline file, 363 plays, 32 paired futures): holding it until Strength is 3 higher loses -3.01 (0.69) HP, -0.051 (0.019) wins; a one-turn hold -2.08 (0.65); bosses -3.13 (1.08), Hexaghost level; a per-position oracle gains <=+0.002 headline clears.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pile-prices-2026-11-09.md",
+      "anchor": "Pummel timing: early Pummel is not a loss on official Act 1",
+      "sha256": "614f666635605e382cc017c68cdfd6df14173769f943be3df22faf2e0a42ca57"
+    },
+    {
+      "path": "results/probes/pile-prices/hold_rise3.json",
+      "sha256": "e6b13bfd48be77452045df0cbb2a2c57fce9952ad3469973d89cac08f34bdc14"
+    },
+    {
+      "path": "results/probes/pile-prices/hold32.json",
+      "sha256": "815a25059e0dd2055d0a0cabe6e94161b36349c9254384a5495abc5cb2819cd0"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:22+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Early Pummel is not a loss on official Act 1, one turn deep (10-29 net @hpb0.01, headline file, 32 paired futures): of 363 Pummel plays in 450 fights, 65 came 3+ Strength below the fight's later peak; holding Pummel until Strength is 3 higher loses -3.01 (0.69) HP and -0.051 (0.019) wins against playing it (Rupture decks -2.83 (1.61) HP; elites worse in all 14 plays; bosses -3.13 (1.08), Hexaghost level +0.44 (0.74)); a one-turn hold -2.08 (0.65), the same as where Strength never grew; on lost fights holding helps in 5 of 19 plays and hurts in 10 (-0.117 (0.058) wins); a per-position oracle gains at most about +0.002 headline clears.",
+      "sources": [
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Pummel timing: early Pummel is not a loss on official Act 1",
+          "sha256": "614f666635605e382cc017c68cdfd6df14173769f943be3df22faf2e0a42ca57"
+        },
+        {
+          "path": "results/probes/pile-prices/hold_rise3.json",
+          "sha256": "e6b13bfd48be77452045df0cbb2a2c57fce9952ad3469973d89cac08f34bdc14"
+        },
+        {
+          "path": "results/probes/pile-prices/hold32.json",
+          "sha256": "815a25059e0dd2055d0a0cabe6e94161b36349c9254384a5495abc5cb2819cd0"
+        },
+        {
+          "path": "results/probes/pile-prices/hold_lost.json",
+          "sha256": "8c5428ba250aa911842e273d4126905532bb2141f3b973a484f86d8bc8e71ead"
+        }
+      ],
+      "owner": false,
+      "by": "0804bcc5-cde8-4829-ac5c-3f208429ea29",
+      "at": "2026-11-09T10:46:21+00:00 @ 5af5c88",
+      "until": "2026-11-13T02:31:22+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "6c0c045324fad01c9dab0d34e76798d6faede34553fd769a95ecc5f9e4c98fd2"
+}

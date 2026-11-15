@@ -1,0 +1,118 @@
+{
+  "key": "measurement/seed-sd@gauntlet",
+  "rev": 4,
+  "value": "Training-seed sd at run level (one-turn cells, end-HP) ~0.65-0.7 HP pooled over 14 twin groups (~0 for 10-29 recipe twins, ~1.2 for data-size/burst recipes): a single-seed pair's true se ~1.1 HP, 2x a 500-sequence read's printed se; a 2-3 se one-seed lead flips in 13-36% of other seeds; recipe questions need seeds (>500 sequences cuts se ~12%).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Run-level seed noise (twins b37d-f, 2026-11-02)",
+      "sha256": "ebf38d1ef129969dd28b84399dbf16f64e6b9d2288186076a261da7c4d7a41be"
+    },
+    {
+      "path": "docs/research/big-picture-2026-11-06.md",
+      "anchor": "Key claims and skeptic verdicts",
+      "sha256": "c59114d491930272819530fccaeefa81decc6681260fde6952cb6e52ee4edbd7"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:27+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Training-seed sd at run level (one-turn cell gauntlet, 500 sequences, seed twins of two recipes) is ~0.4 HP end-HP and ~0.01 clears, rough (3 + 2 nets, twins sharing round 0); so a run-level recipe read at 3 seeds has MDE ~1.0 HP / ~0.02 clears. On the headline setting deck noise is larger: ~0.035 clears se per 250-sequence pair.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Run-level seed noise (twins b37d-f, 2026-11-02)",
+          "sha256": "ebf38d1ef129969dd28b84399dbf16f64e6b9d2288186076a261da7c4d7a41be"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Lean s1 on the headline: the solve step may carry about 0.05 of the 10-29 net's lead, at 1.5-2 se (headline re-rank's cheap check; 0061; read 22:35 2026-11-02, manager 19428521)",
+          "sha256": "900b6ca4ea2645ad949e7dc1af8a9ee625c5cd280b8cbcc1b6f5f23f5047f529"
+        },
+        {
+          "path": "results/gauntlet/net1029s101-hpb0.01.json",
+          "sha256": "f4eb6b17c9d13791793f0a01b1abe43234cce7f552045a8bc87ad867089aa3c6"
+        },
+        {
+          "path": "results/gauntlet/net1029s201-hpb0.01.json",
+          "sha256": "270ff2ae51d4aa994cde79e64659994dd3bfd5cfcfbc1ce46d5f2f83555fce3a"
+        },
+        {
+          "path": "results/gauntlet/burst8hp2s101-hpb0.01.json",
+          "sha256": "1f4aea2d0212be1dfc92a96dc122648c4ca92e8434ddc6eb606b2811424e90d3"
+        },
+        {
+          "key": "yardstick/gauntlet",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:12:32+00:00 @ fc9cdd8",
+      "until": "2026-11-06T15:05:55+00:00 @ 34ec7e4"
+    },
+    {
+      "rev": 2,
+      "value": "Training-seed sd at run level (one-turn cell gauntlet, end-HP) is about 0.65-0.7 HP pooled over 14 twin groups (review 2026-11-06, two skeptics alike), from about 0 for the 10-29 product recipe's twins to about 1.2 for data-size and burst recipes; the earlier 0.4 HP came from 3 + 2 nets sharing round 0. So a single-seed pair's true se is about 1.1 HP, twice the 0.5 a 500-sequence read prints, a 2-3 se lead from one seed flips in other seeds roughly 13-36% of the time, and a recipe question needs seeds, not sequences (beyond 500 sequences the se falls only about 12%). For two fixed players sequence se are sound (leads at 2-3 se replicated on the other book in 63 of 65 pairs). On the headline setting deck noise is larger: about 0.035 clears se per 250-sequence pair. To be reproduced by the ledger script (backlog experiment-ledger).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Run-level seed noise (twins b37d-f, 2026-11-02)",
+          "sha256": "ebf38d1ef129969dd28b84399dbf16f64e6b9d2288186076a261da7c4d7a41be"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-06.md",
+          "anchor": "Key claims and skeptic verdicts",
+          "sha256": "c59114d491930272819530fccaeefa81decc6681260fde6952cb6e52ee4edbd7"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the big-picture review of 2026-11-06: code first, the mechanic as goal 1's sample unit, two stored conclusions re-set, probes without lanes (on the owner's behalf, 2026-11-06)",
+          "sha256": "096065a46774079ceb207bb68cfa4dfed4d24ca8580a5ba2438a3b885da0fb30"
+        },
+        {
+          "key": "yardstick/gauntlet",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "4a17366f-b8aa-4d87-974e-5a037ff67155",
+      "at": "2026-11-06T15:05:55+00:00 @ 34ec7e4",
+      "until": "2026-11-11T08:47:36+00:00 @ 2b6131f"
+    },
+    {
+      "rev": 3,
+      "value": "Training-seed sd at run level (one-turn cell gauntlet, end-HP) is about 0.65-0.7 HP pooled over 14 twin groups (review 2026-11-06, two skeptics alike), from about 0 for the 10-29 product recipe's twins to about 1.2 for data-size and burst recipes; the earlier 0.4 HP came from 3 + 2 nets sharing round 0. So a single-seed pair's true se is about 1.1 HP, twice the 0.5 a 500-sequence read prints, a 2-3 se lead from one seed flips in other seeds roughly 13-36% of the time, and a recipe question needs seeds, not sequences (beyond 500 sequences the se falls only about 12%). For two fixed players sequence se are sound (leads at 2-3 se replicated on the other book in 63 of 65 pairs). On the headline setting deck noise is larger: about 0.035 clears se per 250-sequence pair. To be reproduced by the ledger script (backlog experiment-ledger). On tight2 (merged from seed-sd@tight2): Training-seed sd on tight2 is 0.010 train / 0.013 held-out, pooled within 16 arm-and-round groups over 66-67 runs (47 df); arms sharing a round-0 net pool to ~0.009 / 0.009, fresh round 0s to 0.012 / 0.018. MDE = 2.8 x sd x sqrt(2/seeds), ~0.02-0.03 at 3 unpaired seeds; paired arms that share data can see ~0.01.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Run-level seed noise (twins b37d-f, 2026-11-02)",
+          "sha256": "ebf38d1ef129969dd28b84399dbf16f64e6b9d2288186076a261da7c4d7a41be"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-06.md",
+          "anchor": "Key claims and skeptic verdicts",
+          "sha256": "c59114d491930272819530fccaeefa81decc6681260fde6952cb6e52ee4edbd7"
+        },
+        {
+          "path": "docs/research/big-picture-2026-10-31b.md",
+          "anchor": "Manager's reading (what changes)",
+          "sha256": "80035ee6e9445077abaaed4cb8b79c99fd26e30ce247dca7b51ac7c7e7586f30"
+        }
+      ],
+      "owner": false,
+      "by": "b356cdbd-671d-4d56-ac5d-ca5cc9a26c08",
+      "at": "2026-11-11T08:47:36+00:00 @ 2b6131f",
+      "until": "2026-11-13T02:31:27+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "c9891d1f65d0d516e3b1f37a109dc33cdae5445702446f086d4cf755d4de26b8"
+}

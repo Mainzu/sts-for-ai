@@ -1,0 +1,76 @@
+{
+  "key": "decision/mutated-pairs-retuned",
+  "rev": 2,
+  "value": "Mutated-monster pairs are balanced by measurement on their parent fights, not assumed: of the retuned pairs (0062), SharpHide 1 + HP x0.9 is near its parent (-0.021), while Metallicize 4 + HP x0.75 is still easier on bosses and level on elites, so no single HP factor balances it for both groups.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Mutated monsters stage A, two-turn read: horizon, not a training gap; no burst on mutated monsters (owner away, 2026-11-02)",
+      "sha256": "ae2709dc1a3ab324429cbe8fd9d5501b19a33c42b280fce7c0197c87019c4ae4"
+    },
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Mutated monsters, stage A, two turns deep: depth removes the net's SharpHide cost, so the enemies rung is a horizon problem, not a training gap (L4; 0059l8b4; read 22:30 2026-11-02, manager 19428521)",
+      "sha256": "7fa9643a0dca4bbe6b3eaa56a10c18fb9c34539c8499db7db36125ec049a11db"
+    },
+    {
+      "key": "decision/goal1-yardstick",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "0062-mutate-monsters read 15:20 UTC 2026-11-02",
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:11:54Z @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Mutated-monster pairs are retuned by measurement, not assumed balanced: Metallicize 4 + HP x0.75 and SharpHide 1 + HP x0.9 replace the owner's first pairs where those measured off the parent.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Mutated monsters stage A, two-turn read: horizon, not a training gap; no burst on mutated monsters (owner away, 2026-11-02)",
+          "sha256": "ae2709dc1a3ab324429cbe8fd9d5501b19a33c42b280fce7c0197c87019c4ae4"
+        },
+        {
+          "key": "decision/goal1-yardstick",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:38Z @ fc9cdd8",
+      "until": "2026-11-02T16:11:54Z @ fc9cdd8"
+    },
+    {
+      "rev": 2,
+      "value": "Mutated-monster pairs are balanced by measurement on their parent fights, not assumed: of the retuned pairs (0062), SharpHide 1 + HP x0.9 is near its parent (-0.021), while Metallicize 4 + HP x0.75 is still easier on bosses and level on elites, so no single HP factor balances it for both groups.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Mutated monsters stage A, two-turn read: horizon, not a training gap; no burst on mutated monsters (owner away, 2026-11-02)",
+          "sha256": "ae2709dc1a3ab324429cbe8fd9d5501b19a33c42b280fce7c0197c87019c4ae4"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Mutated monsters, stage A, two turns deep: depth removes the net's SharpHide cost, so the enemies rung is a horizon problem, not a training gap (L4; 0059l8b4; read 22:30 2026-11-02, manager 19428521)",
+          "sha256": "7fa9643a0dca4bbe6b3eaa56a10c18fb9c34539c8499db7db36125ec049a11db"
+        },
+        {
+          "key": "decision/goal1-yardstick",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:54Z @ fc9cdd8",
+      "until": "2026-11-11T16:19:35Z @ 23464e1",
+      "retired": "spent (STATUS cap): the stage-A mutated pairs (SharpHide, Metallicize) were read on 2026-11-02 and no open lane plays them; the generated-enemy grid replaced them; the rule stays in its sources"
+    }
+  ],
+  "seal": "640f71de498150a39205545e3026f09d6d4cec928a1bdfbf20953a12e1afbfcd"
+}

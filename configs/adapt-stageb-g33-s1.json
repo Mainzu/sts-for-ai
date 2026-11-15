@@ -1,0 +1,15 @@
+{
+ "content": {
+  "mutated": [
+   "weakhit1",
+   "dmg0.8",
+   "split"
+  ]
+ },
+ "game_seed": 41,
+ "games": 33,
+ "n_val": 300,
+ "name": "adapt-stageb-g33-s1",
+ "pool": 10000,
+ "seed": 1
+}

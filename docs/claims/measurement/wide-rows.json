@@ -1,0 +1,211 @@
+{
+  "key": "measurement/wide-rows",
+  "rev": 4,
+  "value": "100-mechanic grid's 76 new rows, 675 official elite starts, one turn @tsl1, novelty cost beyond parent, generated-pack s1 vs pack-net-scratch s1 (4 seeds): held-out pairs (17) +1.59 (0.14) vs +4.01, cut 0.60 (0.03); whole trigger Attacked (11) +1.07 vs +5.66, cut 0.81; whole effect Wound (8) +1.10 vs +1.00; training pairs (40) +1.05 vs +4.21, cut 0.75.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Step 2 read (jobs 0896, 0897, 0898; 2026-11-11)",
+      "sha256": "92dd62028b8d300450375ee6832320790307bd797c4465c6703975234ad3fcd0"
+    },
+    {
+      "path": "results/mutate/gen-wide-gp1-tsl1.json",
+      "sha256": "d96fc131cbbff776fe13cc8c28a36a28fe7bcb509df0a7a4aa16e20d207b2af9"
+    },
+    {
+      "path": "results/mutate/gen-wide-pns1-tsl1.json",
+      "sha256": "3477532fc835a2bc8af5f706864805a1a3c411914960a01ad0709dfef269967b"
+    },
+    {
+      "path": "jobs/done/0921-genpack-cut.json",
+      "sha256": "a2641b19516005823277842e8d05f1bce20fdcd5295c659c4679473684c3ff86"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:39+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Seed-1 generated-pack net @tsl1 vs pack-net-scratch s1 on the 100-mechanic grid's 76 new rows (675 official elite starts x 4 seeds, novelty cost beyond parent): new held-out pairs (17) +1.59 (0.14) HP vs +4.01, cut 0.60 (0.03); whole trigger Attacked (11) +1.07 vs +5.66, cut 0.81 (behaviour overlaps AttackLoss/OppAttack, column trained by Flame Barrier); whole effect Wound (8) +1.10 vs +1.00, nothing to cut; new training pairs (40) +1.05 vs +4.21, cut 0.75; largest: Attacked/OppAttack-DexDown (+26 base, +4-5 genpack), OppCard-Artifact (+10-11 both).",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Step 2 read (jobs 0896, 0897, 0898; 2026-11-11)",
+          "sha256": "92dd62028b8d300450375ee6832320790307bd797c4465c6703975234ad3fcd0"
+        },
+        {
+          "path": "results/mutate/gen-wide-gp1-tsl1.json",
+          "sha256": "d96fc131cbbff776fe13cc8c28a36a28fe7bcb509df0a7a4aa16e20d207b2af9"
+        },
+        {
+          "path": "results/mutate/gen-wide-pns1-tsl1.json",
+          "sha256": "3477532fc835a2bc8af5f706864805a1a3c411914960a01ad0709dfef269967b"
+        },
+        {
+          "path": "jobs/done/0898-genpack-cut.json",
+          "sha256": "2ff9f11403e21b90291c7b6b7afeeb15dd527b0becc2154f816fe01edcd1ecab"
+        },
+        {
+          "path": "jobs/done/0896-mutate-monsters.json",
+          "sha256": "755da837ea9e5348c5b6ce2257abdcef730fcf1d681c10febb70861de0d71c52"
+        },
+        {
+          "path": "jobs/done/0897-mutate-monsters.json",
+          "sha256": "d9ea6400ef96a908aed4ae9a2490ee80b3389f3d7bba30d56ca21f7053ed5a44"
+        }
+      ],
+      "owner": false,
+      "by": "8e4d9036-3934-42f4-b850-74b52d753921",
+      "at": "2026-11-11T16:19:34+00:00 @ 23464e1",
+      "until": "2026-11-12T15:57:13+00:00 @ 37d2453"
+    },
+    {
+      "rev": 2,
+      "value": "100-mechanic grid's 76 new rows, 675 official elite starts, one turn deep @tsl1, novelty cost beyond parent. Step 2 (4 seeds): seed-1 generated-pack net vs pack-net-scratch s1: new held-out pairs (17) +1.59 (0.14) vs +4.01, cut 0.60 (0.03); whole trigger Attacked (11) +1.07 vs +5.66, cut 0.81; whole effect Wound (8) +1.10 vs +1.00; new training pairs (40) +1.05 vs +4.21, cut 0.75. Step 3 (2 seeds): wide-pack s1 net vs generated-pack s1: held-out pairs +0.25 (0.15), cut 0.84 (0.09); Attacked +0.52 (0.18), cut 0.51 (0.16); Wound +0.05, cut 0.95; training pairs +0.03, cut 0.97; RoundEnd-Damage uncut (+2.30); OppCard-Artifact +10.8 to +0.3. Wide net on the old 24 rows: held-out 6 +0.98 to +0.10 (gain +0.88 (0.16)), training 18 -1.22 to -0.99 (-0.23 (0.15)); one-turn cells paired end HP -0.25 (0.55); k-4 random worlds at the start-HP cap +3.16 to +2.48, paired -0.67 (0.14).",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Step 2 read (jobs 0896, 0897, 0898; 2026-11-11)",
+          "sha256": "92dd62028b8d300450375ee6832320790307bd797c4465c6703975234ad3fcd0"
+        },
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Step 3 read (jobs 0926, 0914-0921; headline resumed as 0945; 2026-11-12)",
+          "sha256": "be4ac525d91b88b95d1e5dac5276c17a77b7f7318628a6ba6444f8c1938f9cd3"
+        },
+        {
+          "path": "results/mutate/gen-wide-gp1-tsl1.json",
+          "sha256": "d96fc131cbbff776fe13cc8c28a36a28fe7bcb509df0a7a4aa16e20d207b2af9"
+        },
+        {
+          "path": "results/mutate/gen-wide-pns1-tsl1.json",
+          "sha256": "3477532fc835a2bc8af5f706864805a1a3c411914960a01ad0709dfef269967b"
+        },
+        {
+          "path": "results/mutate/gen-wide-wp1-tsl1.json",
+          "sha256": "2dc54cd0c92d7a71195da08e6e0ac2c92a330bc50be6b97343e4604d7c8b2cca"
+        },
+        {
+          "path": "results/mutate/gen-wp1-tsl1-all24.json",
+          "sha256": "95c467839edfd0e31f81729b59cd726e1164dc8815c69cc7ec775c91007b09f2"
+        },
+        {
+          "path": "results/gauntlet/widepack40k-s1-hpb0.01-cells.json",
+          "sha256": "0084442c0ef640d309f4f17bd1c0bd25bed0ad61a68671f4f93bc8b6e2e7f1f0"
+        },
+        {
+          "path": "results/mutate/rw-nd-wp1-k4.json",
+          "sha256": "83ba61b5bbe19e1c0ab026baf2a180d20652cb288101104ea7f2383227e5da24"
+        },
+        {
+          "path": "jobs/done/0898-genpack-cut.json",
+          "sha256": "2ff9f11403e21b90291c7b6b7afeeb15dd527b0becc2154f816fe01edcd1ecab"
+        },
+        {
+          "path": "jobs/done/0921-genpack-cut.json",
+          "sha256": "a2641b19516005823277842e8d05f1bce20fdcd5295c659c4679473684c3ff86"
+        },
+        {
+          "path": "jobs/done/0917-mutate-monsters.json",
+          "sha256": "3d74429af8f96e7f6043ee14c23d536f21489061d13ae30f10fdd16d4ff51ba4"
+        },
+        {
+          "path": "jobs/done/0918-gauntlet.json",
+          "sha256": "afc9a78ee7a550fba221c43377eaf39c3e3bfcd15ac1163f728d8c57dae46c0f"
+        },
+        {
+          "path": "jobs/done/0920-random-world.json",
+          "sha256": "4eab34d4acd609befc055cf830edb73c41bb933d9f388f0aa12c68a3b2b4a5ff"
+        }
+      ],
+      "owner": false,
+      "by": "c01cbf08-0468-439a-842e-6b1e0abcd95e",
+      "at": "2026-11-12T15:57:13+00:00 @ 37d2453",
+      "until": "2026-11-12T18:36:30+00:00 @ c700ebb"
+    },
+    {
+      "rev": 3,
+      "value": "100-mechanic grid's 76 new rows, 675 official elite starts, one turn deep @tsl1, novelty cost beyond parent. Step 2 (4 seeds): seed-1 generated-pack net vs pack-net-scratch s1: new held-out pairs (17) +1.59 (0.14) vs +4.01, cut 0.60 (0.03); whole trigger Attacked (11) +1.07 vs +5.66, cut 0.81; whole effect Wound (8) +1.10 vs +1.00; new training pairs (40) +1.05 vs +4.21, cut 0.75. Step 3 (2 seeds): wide-pack s1 net vs generated-pack s1: held-out pairs +0.25 (0.15), cut 0.84 (0.09); Attacked +0.52 (0.18), cut 0.51 (0.16); Wound +0.05, cut 0.95; training pairs +0.03, cut 0.97; RoundEnd-Damage uncut (+2.30); OppCard-Artifact +10.8 to +0.3. Wide net on the old 24 rows: held-out 6 +0.98 to +0.10 (gain +0.88 (0.16)), training 18 -1.22 to -0.99 (-0.23 (0.15)); one-turn cells paired end HP -0.25 (0.55); k-4 random worlds at the start-HP cap +3.16 to +2.48, paired -0.67 (0.14). Post-C6 pack headline at n 500 against the seed-1 generated-pack net: paired end HP -0.80 (1.05) (train -0.66, held-out -0.94), clears 0.654 to 0.642 (held-out 0.736 to 0.652, more Guardian and Slime Boss deaths).",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Step 2 read (jobs 0896, 0897, 0898; 2026-11-11)",
+          "sha256": "92dd62028b8d300450375ee6832320790307bd797c4465c6703975234ad3fcd0"
+        },
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Step 3 read (jobs 0926, 0914-0921; headline resumed as 0945; 2026-11-12)",
+          "sha256": "be4ac525d91b88b95d1e5dac5276c17a77b7f7318628a6ba6444f8c1938f9cd3"
+        },
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Step 3 headline and verdict (job 0945; 2026-11-13)",
+          "sha256": "1a144a8c8ba2a61e8006a3fd2afa3a1026f37ea9c7461f610c5c61e23cd45563"
+        },
+        {
+          "path": "results/mutate/gen-wide-gp1-tsl1.json",
+          "sha256": "d96fc131cbbff776fe13cc8c28a36a28fe7bcb509df0a7a4aa16e20d207b2af9"
+        },
+        {
+          "path": "results/mutate/gen-wide-pns1-tsl1.json",
+          "sha256": "3477532fc835a2bc8af5f706864805a1a3c411914960a01ad0709dfef269967b"
+        },
+        {
+          "path": "results/mutate/gen-wide-wp1-tsl1.json",
+          "sha256": "2dc54cd0c92d7a71195da08e6e0ac2c92a330bc50be6b97343e4604d7c8b2cca"
+        },
+        {
+          "path": "results/mutate/gen-wp1-tsl1-all24.json",
+          "sha256": "95c467839edfd0e31f81729b59cd726e1164dc8815c69cc7ec775c91007b09f2"
+        },
+        {
+          "path": "results/gauntlet/widepack40k-s1-hpb0.01-cells.json",
+          "sha256": "0084442c0ef640d309f4f17bd1c0bd25bed0ad61a68671f4f93bc8b6e2e7f1f0"
+        },
+        {
+          "path": "results/mutate/rw-nd-wp1-k4.json",
+          "sha256": "83ba61b5bbe19e1c0ab026baf2a180d20652cb288101104ea7f2383227e5da24"
+        },
+        {
+          "path": "results/gauntlet/widepack40k-s1-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "af798bf6e4b11ae5666a4d422c6daacde93a8015b39a19fe3621440172d4114f"
+        },
+        {
+          "path": "jobs/done/0898-genpack-cut.json",
+          "sha256": "2ff9f11403e21b90291c7b6b7afeeb15dd527b0becc2154f816fe01edcd1ecab"
+        },
+        {
+          "path": "jobs/done/0921-genpack-cut.json",
+          "sha256": "a2641b19516005823277842e8d05f1bce20fdcd5295c659c4679473684c3ff86"
+        },
+        {
+          "path": "jobs/done/0917-mutate-monsters.json",
+          "sha256": "3d74429af8f96e7f6043ee14c23d536f21489061d13ae30f10fdd16d4ff51ba4"
+        },
+        {
+          "path": "jobs/done/0918-gauntlet.json",
+          "sha256": "afc9a78ee7a550fba221c43377eaf39c3e3bfcd15ac1163f728d8c57dae46c0f"
+        },
+        {
+          "path": "jobs/done/0920-random-world.json",
+          "sha256": "4eab34d4acd609befc055cf830edb73c41bb933d9f388f0aa12c68a3b2b4a5ff"
+        },
+        {
+          "path": "jobs/done/0945-gauntlet.json",
+          "sha256": "972ff98ed59bcb6a9c8e050a8eea4036f416791f075e841a1a0e17ca9f2c6f4a"
+        }
+      ],
+      "owner": false,
+      "by": "33695b98-4ae0-4b2f-9501-30e79c24e02c",
+      "at": "2026-11-12T18:36:30+00:00 @ c700ebb",
+      "until": "2026-11-13T02:31:39+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "d0feafd4564bc61deddcc2f38195f3749a41ee153ab49901e2bcf0073e9c8aaa"
+}

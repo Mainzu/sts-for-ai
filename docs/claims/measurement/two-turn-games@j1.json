@@ -1,0 +1,63 @@
+{
+  "key": "measurement/two-turn-games@j1",
+  "rev": 1,
+  "value": "Two-turn round J1 dataset (closed lane two-turn-round): 3000 elite+boss games (1500 per group, seed 41) on varied training decks at HP 40-100% played by the stepped two-turn product @hpe0.01, registry dataset b8f20446f1a7, 327 min at 3 threads (0067); validation 300 games (seed 42) dataset df744b2216fe, 40 min (0068). A dataset, not a read: its value was read through the fine-tune arms 0069-0071 (measurement/two-turn-round@cells, null on both seeds); kept for a future stronger-teacher read.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "jobs/done/0067-two-turn-games.json",
+      "sha256": "34dd2cc073bc79d0531b1593caf88692e09497ca81541c877bb45e3602af5bdd"
+    },
+    {
+      "path": "jobs/done/0068-two-turn-games.json",
+      "sha256": "39d8c8557275403cf2f6dd9355ba4744a6d1e835f559f5a6f3fbaacca6c86319"
+    },
+    {
+      "key": "measurement/two-turn-round@cells",
+      "rev": 1
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Backlog re-ranked for the owner's direction of 2026-11-04; small defaults (on the owner's behalf, 2026-11-04)",
+      "sha256": "5a4c85d44e22f9107a8a2485787fea2aecabc137c87f1190e9970cb026e51018"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "e1d8aca3-bf85-47fa-949b-a0192894458e",
+  "at": "2026-11-04T12:58:21+00:00 @ 8fc9083",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Two-turn round J1 dataset (closed lane two-turn-round): 3000 elite+boss games (1500 per group, seed 41) on varied training decks at HP 40-100% played by the stepped two-turn product @hpe0.01, registry dataset b8f20446f1a7, 327 min at 3 threads (0067); validation 300 games (seed 42) dataset df744b2216fe, 40 min (0068). A dataset, not a read: its value was read through the fine-tune arms 0069-0071 (measurement/two-turn-round@cells, null on both seeds); kept for a future stronger-teacher read.",
+      "sources": [
+        {
+          "path": "jobs/done/0067-two-turn-games.json",
+          "sha256": "34dd2cc073bc79d0531b1593caf88692e09497ca81541c877bb45e3602af5bdd"
+        },
+        {
+          "path": "jobs/done/0068-two-turn-games.json",
+          "sha256": "39d8c8557275403cf2f6dd9355ba4744a6d1e835f559f5a6f3fbaacca6c86319"
+        },
+        {
+          "key": "measurement/two-turn-round@cells",
+          "rev": 1
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Backlog re-ranked for the owner's direction of 2026-11-04; small defaults (on the owner's behalf, 2026-11-04)",
+          "sha256": "5a4c85d44e22f9107a8a2485787fea2aecabc137c87f1190e9970cb026e51018"
+        }
+      ],
+      "owner": false,
+      "by": "e1d8aca3-bf85-47fa-949b-a0192894458e",
+      "at": "2026-11-04T12:58:21+00:00 @ 8fc9083",
+      "until": "2026-11-10T07:03:41+00:00 @ f97b79c",
+      "retired": "a dataset record; its read is measurement/two-turn-round@cells"
+    }
+  ],
+  "seal": "ebf630cb51f39db99e6bc8594fca101e3a3b7696a1f479708a986dc2e7ce267b"
+}

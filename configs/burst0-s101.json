@@ -1,0 +1,13 @@
+{
+ "content": {
+  "cards": [],
+  "pack": "data/bench/gen_powers_pack.json"
+ },
+ "game_seed": 31,
+ "games": 4000,
+ "n_val": 300,
+ "name": "burst0-s101",
+ "player": "net",
+ "pool": 10000,
+ "seed": 101
+}

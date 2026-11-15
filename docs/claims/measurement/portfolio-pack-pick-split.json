@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-pack-pick-split",
+  "rev": 2,
+  "value": "pred even; fail: barring pack picks lost 0.124 (heuristic) / 0.140 (one-turn net) clears more than the pack (share recovered -1.17/-0.89): the drop is dilution; 2.1 of 5 cpu-h. Reopen: a chooser change gaining on the plain headline, or a pack whose cards the chooser takes >4 per sequence.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane pack-pick-split closed (2026-11-08)",
+      "sha256": "b2e4b1b2ab9ffac16dffa49f14ab92daed4fffa82a37ce53d09f0a4eb49ed9c7"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:07+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even that barring pack picks recovers half the Act 1 pack drop for either player, a chooser target near 0.07 clears, 3.3 CPU-h; actual fail: barring lost 0.124 (heuristic) and 0.140 (one-turn net) clears more than the pack, share recovered -1.17 / -0.89, the drop is dilution; 2.1 CPU-h of 5; reopen if: a chooser change gains on the plain headline setting, or a pack whose cards the chooser takes more than 4 a sequence (the originals-only read is built, one run per player)",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane pack-pick-split closed (2026-11-08)",
+          "sha256": "b2e4b1b2ab9ffac16dffa49f14ab92daed4fffa82a37ce53d09f0a4eb49ed9c7"
+        }
+      ],
+      "owner": false,
+      "by": "aea48cb6-f099-47f2-b2ee-3b82d159bb02",
+      "at": "2026-11-08T16:43:49+00:00 @ c8414ef",
+      "until": "2026-11-13T02:31:07+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "0e88d3450249e3438df73044ed872202997ab4c8f47950532e18ea3adf3ce62f"
+}

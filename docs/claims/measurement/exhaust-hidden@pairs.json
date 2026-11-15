@@ -1,0 +1,74 @@
+{
+  "key": "measurement/exhaust-hidden@pairs",
+  "rev": 3,
+  "value": "@xh1 (exhaust pile counts zeroed) zero-shot on the 10-29 net: correlation with the played-out change on 4,448 pile-move pairs 0.178 -> 0.203 (+0.024 (0.011)); 0.221 with @sn1 too on the old floor-the-total shown arithmetic; Slimed +1.54 vs +1.53 played out; level error 31.9 -> 32.4 HP. Only Exhume reads the exhaust pile. No play read. Not re-runnable: zero-shot @xh1 is now refused.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pile-prices-2026-11-09.md",
+      "anchor": "Exhaust pile hidden: a second zero-shot gain",
+      "sha256": "befa263450ba35733838b617a796e29f48ac916340cae32d617e59b27b853f5f"
+    },
+    {
+      "path": "results/probes/pile-prices/pairs.jsonl",
+      "sha256": "700ba5ad57c20535820b9df92d82db6119e68613b97fd47269d239dadfc70671"
+    },
+    {
+      "path": "docs/research/engine-audit.md",
+      "anchor": "1. Encoder value flags aren't in the net's meta; shown numbers use their own arithmetic",
+      "sha256": "3ec8cb53327fb342e934c264f6d4602e162942ce18302f5068d266e820d9f001"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "navigator 2026-11-13: audit 1 flag resolved; numbers stand as a record of the old arithmetic",
+  "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+  "at": "2026-11-13T13:43:48+00:00 @ d240a173",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Hiding the exhaust pile from the unchanged 10-29 net (its card counts set to 0) lifts its pile pricing with no games: correlation with the played-out change on the 4,448 pile-move pairs 0.178 to 0.203 (+0.024 (0.011), bootstrap over positions), 0.221 (+0.043 (0.013)) with shown card numbers too; Slimed +1.54 against +1.53 played out (today +0.15), Pummel -2.01 against -4.38 (today -0.65); level error 31.9 to 32.4 HP and the mean change further from played out (-2.38 against -0.70). Only Exhume (pack) reads the exhaust pile's contents. No play read.",
+      "sources": [
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Exhaust pile hidden: a second zero-shot gain",
+          "sha256": "befa263450ba35733838b617a796e29f48ac916340cae32d617e59b27b853f5f"
+        },
+        {
+          "path": "results/probes/pile-prices/pairs.jsonl",
+          "sha256": "700ba5ad57c20535820b9df92d82db6119e68613b97fd47269d239dadfc70671"
+        },
+        {
+          "path": "results/probes/pile-prices/scripts/zs_noex.py",
+          "sha256": "59e9903f5cecf13dc8ae604fcc8f96b90f2f8de1cd47868986489e9741af996a"
+        }
+      ],
+      "owner": false,
+      "by": "0804bcc5-cde8-4829-ac5c-3f208429ea29",
+      "at": "2026-11-09T10:53:40+00:00 @ 49c436c",
+      "until": "2026-11-13T02:30:13+00:00 @ 3123201a"
+    },
+    {
+      "rev": 2,
+      "value": "@xh1 (exhaust pile counts zeroed) on the unchanged 10-29 net: correlation with the played-out change on 4,448 pile-move pairs 0.178 -> 0.203 (+0.024 (0.011)), 0.221 with @sn1 too; Slimed +1.54 vs +1.53 played out; level error 31.9 -> 32.4 HP. Only Exhume reads the exhaust pile's contents. No play read.",
+      "sources": [
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Exhaust pile hidden: a second zero-shot gain",
+          "sha256": "befa263450ba35733838b617a796e29f48ac916340cae32d617e59b27b853f5f"
+        },
+        {
+          "path": "results/probes/pile-prices/pairs.jsonl",
+          "sha256": "700ba5ad57c20535820b9df92d82db6119e68613b97fd47269d239dadfc70671"
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:30:13+00:00 @ 3123201a",
+      "until": "2026-11-13T13:43:48+00:00 @ d240a173"
+    }
+  ],
+  "seal": "b7d424b0ee500cfd1f1b695011c7bfcdf85850de152d9c3d50ec228f784b17c1"
+}

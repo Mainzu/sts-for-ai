@@ -1,0 +1,92 @@
+{
+  "key": "cause/roundend-blind",
+  "rev": 2,
+  "value": "Enemy powers hooked only on RoundEnd have no net input row: py/src/features.rs writes RoundEnd only as the opt-in countdown kind and every net's row_kinds are triggered/threshold/held. Training on nine RoundEnd mechanics cut nothing (RoundEnd-Damage +2.26/+2.30/+2.48 HP beyond parent). Official RoundEnd use: ReduceSelf countdowns only.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "RoundEnd rows: the power is invisible to the net (navigator, 2026-11-13)",
+      "sha256": "67df1f198071432b84578f0e85ae6293e305759dee90d86f6db8e42964187fdc"
+    },
+    {
+      "path": "py/src/features.rs",
+      "sha256": "76b0deb2c56dc52114e70e16d81bd78a31f6ec5d4158d036b47c37ff7d62ea11"
+    },
+    {
+      "path": "content/powers.json",
+      "sha256": "7a95a139b19b7efc0654dc9c9f507610346290cbe8ce11205a6ec36875a0412c"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:07Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+      "at": "2026-11-13T03:47:01Z @ d08ef5a4",
+      "note": "checked 8f5f3ecb's py/src/features.rs diff: pile access only (s.draw() for s.draw, PileRef); no RoundEnd or row-kind line changed"
+    },
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:43:13Z @ d240a173",
+      "note": "navigator 2026-11-13: features.rs diff since 3123201a changes show_numbers' signature only; RoundEnd still written only as countdown rows (features.rs 1239-1260); official RoundEnd hooks in content/powers.json are Vulnerable/Weak/Frail/Intangible ReduceSelf 1 only"
+    },
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:48:11Z @ 3e463530",
+      "note": "navigator 2026-11-13 20:50: features.rs diff in 047145cd (Madness, ZeroCostRandom) is 4 lines, no row-kind or RoundEnd change"
+    },
+    {
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T04:43:42Z @ 0ccb0f83",
+      "note": "kill-effects 795ff77c touched only check_over/condition_holds (TargetDied), Feed's pack row and an appended condition column; fact still true"
+    },
+    {
+      "by": "24a6e50e-3e7c-42ec-b831-f35d7846c20b",
+      "at": "2026-11-14T15:49:57Z @ 418de4d6",
+      "note": "navigator: features.rs power_rows skips RoundEnd, power_kind_rows writes it only as opt-in KIND_COUNTDOWN, no net meta has countdown; every RoundEnd hook in content/powers.json and the act1 packs (NoBlock, Duplication added) is ReduceSelf 1"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A generated or custom enemy power whose only hook is RoundEnd gives the net no input row: py/src/features.rs writes RoundEnd hooks only as the opt-in countdown kind, and every net's row_kinds are triggered, threshold, held (is_hook_power ignores RoundEnd too). So training on nine RoundEnd mechanics (the wide pack) cut nothing: RoundEnd-Damage +2.26/+2.30 HP beyond parent on the 18-mechanic and wide s1 nets, +2.48 on pns1, where trained turn-start/turn-end damage reads -0.2 to +0.3 and untrained +2.8. Official content uses RoundEnd only for ReduceSelf countdowns (Vulnerable, Weak, Frail, Intangible). Exit: candidate 71 (roundend-rows), 65's step 0.",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "RoundEnd rows: the power is invisible to the net (navigator, 2026-11-13)",
+          "sha256": "67df1f198071432b84578f0e85ae6293e305759dee90d86f6db8e42964187fdc"
+        },
+        {
+          "path": "py/src/features.rs",
+          "sha256": "5d613406f3a3751605061cbd196acfa0a939e612986aafaea3c9d8d4fbfa54ac"
+        },
+        {
+          "path": "content/powers.json",
+          "sha256": "1141684522127465a5d233ab54deb96a1086f8bf7dfaf344bda8682cdf02939e"
+        },
+        {
+          "path": "results/mutate/gen-wide-gp1-tsl1.json",
+          "sha256": "d96fc131cbbff776fe13cc8c28a36a28fe7bcb509df0a7a4aa16e20d207b2af9"
+        },
+        {
+          "path": "results/mutate/gen-wide-pns1-tsl1.json",
+          "sha256": "3477532fc835a2bc8af5f706864805a1a3c411914960a01ad0709dfef269967b"
+        },
+        {
+          "path": "results/mutate/gen-wide-wp1-tsl1.json",
+          "sha256": "2dc54cd0c92d7a71195da08e6e0ac2c92a330bc50be6b97343e4604d7c8b2cca"
+        }
+      ],
+      "owner": false,
+      "by": "ae9ff0cf-bf15-4b21-a701-9e78992176d6",
+      "at": "2026-11-12T18:13:08Z @ 7e526a0",
+      "until": "2026-11-13T02:29:07Z @ 3123201a"
+    }
+  ],
+  "seal": "e337263f362a9161ca577f3b783fcf4b0956342d0e016885f959e3faaf222784"
+}

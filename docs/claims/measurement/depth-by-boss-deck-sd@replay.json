@@ -1,0 +1,26 @@
+{
+  "key": "measurement/depth-by-boss-deck-sd@replay",
+  "rev": 1,
+  "value": "Between-deck sd of the one-turn boss win rate at fixed HP, noise removed: Hexaghost 0.21-0.29, Guardian 0.18-0.24, Slime 0.13-0.19: the deck moves unseen-boss wins 2-3x as far as the second search turn.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Boss replays re-read by boss: on the same decks at the same entry HP the second turn of search wins +0.083 (0.024) more Hexaghost fights, +0.054 (0.026) Guardian, +0.017 (0.016) Slime Boss; decks differ by 0.2-0.3 in win rate at fixed HP on both unseen bosses; Guardian games add about +0.026 over bursts on other content (navigator re-read, 0 CPU; 20:50 2026-11-05, navigator e63fdaaa)",
+      "sha256": "d3c2a41680aeedba3cabc987c74d6cec2b304075066939a5fd3ddaf851bb2c2b"
+    },
+    {
+      "path": "results/boss_replay/net1029-hpe0.01-two-starter-simboss-2026-10-29-seed-check-r2-s1-1a789b2-hpb0.01-12a77a-55cb.json",
+      "sha256": "e988f1c5197d384c7b3f3b731233d8849974bbae6f8b36a9e1020f61272cca27"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:36+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "d3097e6cb48d1a4a68935a3b9bc45737a7f6f0f14cba254c4e7b02e9b65ccc10"
+}

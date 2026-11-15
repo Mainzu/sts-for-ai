@@ -1,0 +1,54 @@
+{
+  "key": "measurement/luck-read@cells",
+  "rev": 2,
+  "value": "Luck-corrected paired read (end HP - 100 x summed luck) on 100 one-turn cell sequences, 10-29 @hpb0.01 vs @tsl1: paired sd 12.05 vs 8.53 raw (ratio 1.41, se 0.50); summed luck sd ~26 HP, r -0.08 with end HP: correction adds noise.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/luck-corrected-labels.md",
+      "anchor": "Step 1b read (2026-11-11, job 0900)",
+      "sha256": "894558e3e2eec5653057567788d1147bc6838275a20762175e10c7eb98707c59"
+    },
+    {
+      "path": "results/luck/luck-read-cells.json",
+      "sha256": "e158513a42d49802862101104186210784d40333886607f30a7d6aa1ac809923"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:34+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Luck-corrected paired read (end HP - 100 x the sequence's summed luck, luck by the unpriced 10-29 net) on the first 100 one-turn cell sequences, net1029-hpb0.01 vs net1029-hpb0.01-tsl1: paired sd 12.05 HP against 8.53 raw, ratio 1.41 (se 0.50); one died (40) 16.01 vs 12.10, both cleared (60) 8.03 vs 4.58; unpaired 37.7 vs 25.3. Summed luck sd about 26 HP per sequence, uncorrelated with end HP (r -0.08): the correction adds noise.",
+      "sources": [
+        {
+          "path": "docs/research/luck-corrected-labels.md",
+          "anchor": "Step 1b read (2026-11-11, job 0900)",
+          "sha256": "894558e3e2eec5653057567788d1147bc6838275a20762175e10c7eb98707c59"
+        },
+        {
+          "path": "results/luck/luck-read-cells.json",
+          "sha256": "e158513a42d49802862101104186210784d40333886607f30a7d6aa1ac809923"
+        },
+        {
+          "path": "jobs/done/0900-luck-read.json",
+          "sha256": "b1e0960e1a86d7bdb9c408ca703a7ae7bc0a4d956fe7f82b9f6252c38c9efd05"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "28d7f02a-1a47-43ea-adce-5092da27c957",
+      "at": "2026-11-11T09:36:22+00:00 @ 47e93b1",
+      "until": "2026-11-13T02:30:34+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "6f9cc4d67f4d3aef152bdcc5fe4c91ec60610bd50a0fe632856b40fa06eb0572"
+}

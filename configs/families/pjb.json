@@ -1,0 +1,60 @@
+{
+ "name": "pjb",
+ "lane": "main",
+ "about": "Navigator probe pack-joint-burst (decisions 'After the bench-retention probes'): one burst over all eight gen batch 1 mechanics at once, 50 fights each on the three elites (400 games), net teacher @hpb0.01@tsl1, two seeds; read one turn deep @tsl1 on the bench (gen batch 1, elites, first 1000 starts x 4 seeds) against the zero-shot 10-29 net. Question: do a pack's own games keep the OppCard-Vulnerable edge the single-mechanic bursts lost, while repairing the punish-an-action family? The table scores AttackLoss-Damage x Nob (half the zero-shot cost cut at 2 se passes); the navigator reads OppCard-Vulnerable x Sentries and the rest by hand.",
+ "parent": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt",
+ "arms": {
+  "net-g50x8": [
+   "configs/pjb-net-g50x8-s1.json",
+   "configs/pjb-net-g50x8-s2.json"
+  ]
+ },
+ "burst": {
+  "threads": 4,
+  "mem_gb": 2.0,
+  "estimate_min": 8
+ },
+ "reads": {
+  "gen": {
+   "cmd": [
+    "scripts/analysis/mutate_monsters.py",
+    "play",
+    "--starts",
+    "1000",
+    "--groups",
+    "elite",
+    "--seeds",
+    "4",
+    "--players",
+    "one",
+    "--net",
+    "{net}@tsl1",
+    "--mods",
+    "gen-batch1",
+    "--threads",
+    "3",
+    "--out",
+    "results/mutate/pjb-{run}.json"
+   ],
+   "threads": 3,
+   "mem_gb": 1.5,
+   "estimate_min": 25
+  }
+ },
+ "table": {
+  "kind": "gen",
+  "book": "gen",
+  "base": "results/mutate/gen-enemies-b1.json",
+  "mechanic": "GE-AttackLoss-Damage",
+  "control": "c-hp1.25",
+  "seeds": 4,
+  "encounters": [
+   "gremlin_nob"
+  ],
+  "min_starts": 200,
+  "rule": {
+   "share": 0.5,
+   "min_se": 2.0
+  }
+ }
+}

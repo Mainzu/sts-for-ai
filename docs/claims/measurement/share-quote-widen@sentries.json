@@ -1,0 +1,78 @@
+{
+  "key": "measurement/share-quote-widen@sentries",
+  "rev": 2,
+  "value": "g33 sh0.9 net-teacher bursts, 3 seeds, @tsl1, x Three Sentries: OppCard-Damage cut +3.29 (0.27), 0.64 of +5.11, parent -0.02 (0.50); OppCard-PlainDamage cut +3.70 (0.12), 0.69 of +5.39, parent +1.68 (0.26), not spared. g99 sh0.5 for comparison: +3.01 (0.59), +4.16 (0.77).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/family-transfer-probes.md",
+      "anchor": "Share-quote-widen probe (0715-0728): two damage-trigger mechanics at 33 games and share 0.9",
+      "sha256": "8856706bfa8777f4618cfafd7cad7589ee0f012595f476fcd8dce210d3381e80"
+    },
+    {
+      "path": "results/families/sc-ocd33.md",
+      "sha256": "7ee8fbe0e0b029468fc57def4c0d56324386d36cbd634cfe6f3a6544f3542dd5"
+    },
+    {
+      "path": "results/families/sc-ocpd33.md",
+      "sha256": "7ea77373d6b10bb21cd10a2b23a5fac21c6c668da629bcdd895ebdb9349a17b0"
+    },
+    {
+      "key": "measurement/gen-adapted@ocd",
+      "rev": 1
+    },
+    {
+      "key": "measurement/gen-adapted@ocpd",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:30+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Net-teacher bursts at 33 games and replay share 0.9 on two damage-trigger generated mechanics x Three Sentries (three seeds each, @tsl1 on gen-adapted-column's starts, its cut rule): OppCard-Damage cut +3.29 (se nets 0.27), 0.64 of +5.11 (99 games at share 0.5: +3.01, 0.59), trained parent -0.02 (0.50) HP per fight (99 games: +0.62); OppCard-PlainDamage cut +3.70 (0.12), 0.69 of +5.39 (99 games: +4.16, 0.77), trained parent +1.68 (0.26) (99 games: +1.08). Both pass the cut; PlainDamage's parent is not spared.",
+      "sources": [
+        {
+          "path": "docs/research/family-transfer-probes.md",
+          "anchor": "Share-quote-widen probe (0715-0728): two damage-trigger mechanics at 33 games and share 0.9",
+          "sha256": "8856706bfa8777f4618cfafd7cad7589ee0f012595f476fcd8dce210d3381e80"
+        },
+        {
+          "path": "results/families/sc-ocd33.md",
+          "sha256": "7ee8fbe0e0b029468fc57def4c0d56324386d36cbd634cfe6f3a6544f3542dd5"
+        },
+        {
+          "path": "results/families/sc-ocpd33.md",
+          "sha256": "7ea77373d6b10bb21cd10a2b23a5fac21c6c668da629bcdd895ebdb9349a17b0"
+        },
+        {
+          "path": "jobs/done/0721-family.json",
+          "sha256": "5a92958ed679537d9f39d9f37033bc068ff4c6bdf7ec92b7424737b9454fd7df"
+        },
+        {
+          "path": "jobs/done/0728-family.json",
+          "sha256": "f83a7782f4e5092b5c7cdad3053e5cb3da1a5834c2bde78b7f6531e1b9061be4"
+        },
+        {
+          "key": "measurement/gen-adapted@ocd",
+          "rev": 1
+        },
+        {
+          "key": "measurement/gen-adapted@ocpd",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "129b8d9d-a225-49d7-abbc-06f8d5f99e19",
+      "at": "2026-11-09T15:27:11+00:00 @ 0ca3bfa",
+      "until": "2026-11-13T02:31:30+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "bd5aebfb3f1320df37e9156d9f3227f23734e06553116165cc22c751d0917f85"
+}

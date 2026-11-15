@@ -1,0 +1,62 @@
+{
+  "key": "measurement/cf-price@probe",
+  "rev": 2,
+  "value": "Counterfactual state price (greedy windows +-each power, k 4, turns_left scale) on 167 held-out cells: 0 of 4 perturbations within 0.5-2x worth. Strength -2 +0.2-5.7 vs +9.8-13 HP; Weak +1 +0.5-1.2 vs +2.2-2.7 (block absorbs it); Ritual 2 -30 to -69 vs -2 to -3; Demon Form 2 overpriced 10-25x.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/counterfactual-state-price.md",
+      "anchor": "Step 1 read (2026-11-11, job 0889; diagnostic re-run with own prices)",
+      "sha256": "b5658316233ac3c345b0a325b79c08af959a7c6c317012e6b9d140e313593007"
+    },
+    {
+      "path": "results/cf_price/probe.json",
+      "sha256": "b9a2fb3f63b1ac58e4688765a78b8ebc1e39a018b8f72cd28a89b35fa62f1a6a"
+    },
+    {
+      "path": "jobs/done/0889-cf-price-probe.json",
+      "sha256": "6016aa7f32c29fd826e93b7891d47ee02dab8861682808ec4f9a505d3bc4d278"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:03+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Counterfactual state price (greedy windows with and without each held power, k 4, scaled by turns_left_estimate; one more round for Strength growth) on the leaf-numbers probe's 167 held-out cells, 501 fights a set: 0 of 4 perturbations inside half to twice their worth with se at most a quarter of it. Term change (sum over elements) is noise, se 3-95 HP, Weak +1 negative on three sets. The edited element's own price: Strength -2 +0.2 to +5.7 HP against +9.8 to +13; Weak +1 +0.5 to +1.2 against +2.2 to +2.7 (greedy blocks, a weaker hit saves block the window prices at 0); Ritual 2 -30 to -69 against a greedy rollout worth of -2 to -3; Demon Form 2 +30 to +185 (se 60-90) against +32 to +46: the growth sum over the heuristic's remaining rounds overprices 10-25 times.",
+      "sources": [
+        {
+          "path": "docs/research/counterfactual-state-price.md",
+          "anchor": "Step 1 read (2026-11-11, job 0889; diagnostic re-run with own prices)",
+          "sha256": "b5658316233ac3c345b0a325b79c08af959a7c6c317012e6b9d140e313593007"
+        },
+        {
+          "path": "results/cf_price/probe.json",
+          "sha256": "b9a2fb3f63b1ac58e4688765a78b8ebc1e39a018b8f72cd28a89b35fa62f1a6a"
+        },
+        {
+          "path": "results/cf_price/probe-own.json",
+          "sha256": "4016ae52a2ee86f148f1ac80fd3b1e219859509493a0bd54961b0b788be5d887"
+        },
+        {
+          "path": "jobs/done/0889-cf-price-probe.json",
+          "sha256": "6016aa7f32c29fd826e93b7891d47ee02dab8861682808ec4f9a505d3bc4d278"
+        },
+        {
+          "key": "measurement/leaf-numbers@probe",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "a1d6386d-19ca-4431-86ef-510884fee922",
+      "at": "2026-11-11T07:28:47+00:00 @ 6a92817",
+      "until": "2026-11-13T02:30:03+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "30164c7873a06ab932041c70a38c5e8fb58b7c2852357971da464f6f854bbf08"
+}

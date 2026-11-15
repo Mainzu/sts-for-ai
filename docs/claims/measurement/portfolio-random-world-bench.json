@@ -1,0 +1,101 @@
+{
+  "key": "measurement/portfolio-random-world-bench",
+  "rev": 3,
+  "value": "pred even; additive: net cost beyond heuristic for k generated enemy mechanics on official elites, one turn, +5.5/+6.5/+5-10 HP at k 2/4/8, under 1.5x summed singles (measurement/random-world@nodeath); raw difficulty compounds (measurement/random-world-raw@pilot); 3.7 cpu-h. Reopen: card singles on shared starts, a two-turn/adapted player's costs differing, or k-8 stalls in winnable fights.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane random-world-bench closed (2026-11-09)",
+      "sha256": "608413423dd0d75d4422a84efb77be089a19721cf520c49e8fb93132cec00e20"
+    },
+    {
+      "key": "measurement/random-world@nodeath",
+      "rev": 2
+    },
+    {
+      "key": "measurement/random-world-raw@pilot",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:11+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:23+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/random-world@nodeath reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted likely it builds, even that 20-40 worlds per k read a slope, a long shot that costs compound; about 6 cpu-h (cap 9); actual additive: the net's cost beyond the heuristic for k generated enemy mechanics on the official elites, one turn deep, is +5.5/+6.5/+5-10 HP at k 2/4/8 (HP bounded per game), far under 1.5 x summed singles (z -10 to -37, 40 worlds per k); raw difficulty compounds for both players; about 3.7 cpu-h; reopen if: card items' singles are measured on shared starts so worlds mix cards and enemies, or a two-turn or adapted player's per-mechanic costs differ from the one-turn net's, or the k 8 turn-limit stalls (0.46 vs 0.35) show in fights the net can win (with-death, boss worlds)",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane random-world-bench closed (2026-11-09)",
+          "sha256": "608413423dd0d75d4422a84efb77be089a19721cf520c49e8fb93132cec00e20"
+        }
+      ],
+      "owner": false,
+      "by": "f48aec43-4787-45dc-a7d5-9939c9363717",
+      "at": "2026-11-09T15:06:51+00:00 @ 414cc18",
+      "until": "2026-11-10T07:03:39+00:00 @ f97b79c"
+    },
+    {
+      "rev": 2,
+      "value": "predicted likely it builds, even that 20-40 worlds per k read a slope, a long shot that costs compound; about 6 cpu-h (cap 9); actual additive: the net's cost beyond the heuristic for k generated enemy mechanics on the official elites, one turn deep, is +5.5/+6.5/+5-10 HP at k 2/4/8 (HP bounded per game), far under 1.5 x summed singles (z -10 to -37, 40 worlds per k); raw difficulty compounds for both players; about 3.7 cpu-h; reopen if: card items' singles are measured on shared starts so worlds mix cards and enemies, or a two-turn or adapted player's per-mechanic costs differ from the one-turn net's, or the k 8 turn-limit stalls (0.46 vs 0.35) show in fights the net can win (with-death, boss worlds) The read (was measurement/random-world@pilot): Random-world pilot (20 main worlds of the 21 generated enemy mechanics, 10 side of 24, k 2/4/8 on official Act 1 elites, 50 starts x 4 seeds, heuristic and the 10-29 net @hpb0.01 one turn deep, normal play): raw HP lost compounds for both players: net world +21.3 / +35.9 / +58.2 against summed singles +19.5 / +30.7 / +44.8 at k 2/4/8 (heuristic similar), deaths 2-3x predicted (k 8: 0.78 against 0.24). The net's cost beyond the heuristic adds at k 2 (cost - S -0.06, se 0.38); at k 4 and 8 the HP cap decides this read (uncapped null: additive; capped null: main k 8 g +1.40, z +2.0); measurement/random-world@nodeath settles it (additive). The read (was measurement/random-world-sizing@step1): Random-world bench sizing (gen-enemies-b1, 675 elite starts x 16 seeds, net @hpb0.01@tsl1 one turn deep, novelty = net HP-lost change minus the heuristic's, no ladder control): single-item cost mean +2.32 HP, sd between items 1.77 over 21 mechanics (+1.58, sd 2.76 over all 24); one item on 50 starts x 4 seeds has se about 0.73. Charter's literal read (k worlds vs 1.5 x k x the k=1 worlds' mean) puts additive only 0.7-2.4 se from the line at 20-40 worlds; the paired read (each world against the sum of its own items' singles, same starts and seeds) 5.3/7.9/11.5 se at k 2/4/8 with 20 worlds on 21 items. Saturation: summed single raw costs exceed start HP on 12%/37%/77% of starts at k 2/4/8. Pilot about 0.6 thread-h.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane random-world-bench closed (2026-11-09)",
+          "sha256": "608413423dd0d75d4422a84efb77be089a19721cf520c49e8fb93132cec00e20"
+        },
+        {
+          "path": "docs/research/random-world-bench.md",
+          "anchor": "Step 3: pilot read (jobs 0729-0731, 2026-11-09)",
+          "sha256": "2f6bd8a28b9622c3046f12e20e7ea321f480454fa765e8f8866e924ae285fa7f"
+        },
+        {
+          "path": "results/mutate/rw-pilot.json",
+          "sha256": "e30030c958a7fc36f3715cfc78256ba0e4a54d8b574242e5412a81b629612abb"
+        },
+        {
+          "path": "results/mutate/rw-pilot-table.md",
+          "sha256": "0c70e52cbf021e808a4909901f4a652cc795c28c42a20eff45b938502f523e04"
+        },
+        {
+          "path": "jobs/done/0730-random-world.json",
+          "sha256": "ee395f59ecabe25a5ff551738fbf917188b4a794d6054550c1861fc52556df20"
+        },
+        {
+          "path": "scripts/analysis/rwb_pilot_dig.py",
+          "sha256": "9cf0e94a0fbf6ac67a16a3c9c60f618dc2a15d2874bf0d07a34c2256f5bbc9b2"
+        },
+        {
+          "path": "docs/research/random-world-bench.md",
+          "anchor": "Step 1: sizing from the generated-enemies table (no CPU, 2026-11-09)",
+          "sha256": "a143dc2a2cf47be5df90e21c55039e125b06e953eef2fe8abfc71f2ddc2e6dc6"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        },
+        {
+          "path": "scripts/analysis/rwb_sizing.py",
+          "sha256": "d7face1a8fa98188e43b137d0dce286b4456da86040ba5627520f10e4467b672"
+        }
+      ],
+      "owner": false,
+      "by": "b03f7647-f3c8-4742-857a-e434dfb7a594",
+      "at": "2026-11-10T07:03:39+00:00 @ f97b79c",
+      "until": "2026-11-13T02:31:11+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "e65f1a4f31bc6df6cec4b430c2d50c286d7fa9169d223245c656f46d659a4c2f"
+}

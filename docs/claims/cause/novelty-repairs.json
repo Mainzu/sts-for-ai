@@ -1,0 +1,31 @@
+{
+  "key": "cause/novelty-repairs",
+  "rev": 1,
+  "value": "One turn deep a mechanic's cost is repaired by two-turn search (sharp2 +0.085, thorns2 +0.076 wins) or a burst (cause/bursts-buy-mechanics), not by practice on harder numbers (a 400-game stat burst gains nothing on sharp2/thorns2).",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/stat-burst@one-turn",
+      "rev": 2
+    },
+    {
+      "key": "measurement/adaptation-curve",
+      "rev": 6
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:27:52Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:32Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/stat-burst@one-turn, measurement/adaptation-curve reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "d7f3bd8b069ccb247c83e63c3e197bd8afbebada29264b7206d7bc955fc50f50"
+}

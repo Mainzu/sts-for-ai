@@ -1,0 +1,168 @@
+{
+  "key": "measurement/act1-monsters@files",
+  "rev": 5,
+  "value": "All 7 Act 1 monsters the engine lacked (Blue/Red Slaver, Fat/Sneaky/Mad/Shield Gremlin, Gremlin Wizard) load from content/packs/act1-monsters.json with wiki values; engine/tests/act1_packs.rs pass. Pack encounters: Blue Slaver, Gremlin Gang (4 of 8), Red Slaver, Exordium Thugs.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/act1-inventory.md",
+      "anchor": "Blocks M6 and M7 as built",
+      "sha256": "35ef92f8500d21dbba3f7d2c34b59b4827eb76e2c3fd3aba389990771e700c6b"
+    },
+    {
+      "path": "docs/research/act1-inventory.md",
+      "anchor": "Step 2: the four writable monsters as pack data",
+      "sha256": "8f373e0c21ca7502997dfd873ffd47dfaad5ef588758765ef1faeb66f4b1b689"
+    },
+    {
+      "path": "content/packs/act1-monsters.json",
+      "sha256": "b06aa5bf09f02be2502cd195c39bbc071627e13c764483493fa9e23e60fd4fb2"
+    },
+    {
+      "path": "engine/tests/act1_packs.rs",
+      "sha256": "39f90956c4b1b4e2f488530c5f1b42a4aa69be467edaaf1f7c19a75b63b0229a"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:39+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Act 1 monsters loaded from pack files with values checked: 4 of the 7 the engine lacked (Blue Slaver 46-50 HP, Stab 12, Rake 7 + Weak 1, Stab on a roll of 40+ with two-in-a-row limits; Fat Gremlin 13-17, Smash 4 + Weak 1; Sneaky Gremlin 10-14, Puncture 9; Gremlin Wizard 23-25, Blast 25 on turn 3 then every fourth turn), in content/packs/act1-monsters.json; tests pass (Blue Slaver Stab 0.542 of moves against the rule's 0.541; greedy starter deck wins each alone on 10 seeds). Two Wizard mismatches settled for the wiki: HP (lightspeed 21-25) and the first cycle (lightspeed charges three times). Red Slaver, Mad and Shield Gremlin still blocked (M7, M5, M6); encounters still code (E1).",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Step 2: the four writable monsters as pack data",
+          "sha256": "8f373e0c21ca7502997dfd873ffd47dfaad5ef588758765ef1faeb66f4b1b689"
+        },
+        {
+          "path": "content/packs/act1-monsters.json",
+          "sha256": "a791e7ebc6af5628e5d196d79981f3377592595f87a0fafc59aae1cb588c5e2a"
+        },
+        {
+          "path": "engine/tests/act1_packs.rs",
+          "sha256": "101cc2352aa07eee36c45b175a1a4aa17bd789c9b73e125845314738f44853bc"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Gremlin Wizard's first Blast on turn 3 (on the owner's behalf, 2026-11-06)",
+          "sha256": "023cfa360b31dc796943ba40b6978cc2e57059f0f83375e4fc8978b7a3b5fcbd"
+        }
+      ],
+      "owner": false,
+      "by": "f894de12-5ce3-419a-b665-36079db5b1fb",
+      "at": "2026-11-06T11:41:51+00:00 @ ae5ef60",
+      "until": "2026-11-07T07:36:13+00:00 @ 8e9e5c2"
+    },
+    {
+      "rev": 2,
+      "value": "Act 1 monsters loaded from pack files with values checked: 5 of the 7 the engine lacked (Blue Slaver 46-50 HP, Stab 12, Rake 7 + Weak 1, Stab on a roll of 40+ with two-in-a-row limits; Fat Gremlin 13-17, Smash 4 + Weak 1; Sneaky Gremlin 10-14, Puncture 9; Gremlin Wizard 23-25, Blast 25 on turn 3 then every fourth turn; Mad Gremlin 20-24, Angry 1, a pack power gaining Strength on attack HP loss, the game's rule where the wiki and sts_lightspeed differ on fully blocked hits), in content/packs/act1-monsters.json; tests pass (Blue Slaver Stab 0.542 of moves against the rule's 0.541; greedy starter deck wins each alone on 10 seeds). Two Wizard mismatches settled for the wiki: HP (lightspeed 21-25) and the first cycle (lightspeed charges three times). Red Slaver and Shield Gremlin still blocked (M7, M6); encounters still code (E1).",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Step 2: the four writable monsters as pack data",
+          "sha256": "8f373e0c21ca7502997dfd873ffd47dfaad5ef588758765ef1faeb66f4b1b689"
+        },
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block M5: pack powers on pack monsters (the Mad Gremlin)",
+          "sha256": "a735279994d50f1536dfc99a7f9d8ad0bf7eb8a8df149a940bd59678ff534d93"
+        },
+        {
+          "path": "content/packs/act1-monsters.json",
+          "sha256": "d03bbcb892152f11d17843ef55a1dbd361d1079d1f1d19fc7abe9985112ff393"
+        },
+        {
+          "path": "engine/tests/act1_packs.rs",
+          "sha256": "101cc2352aa07eee36c45b175a1a4aa17bd789c9b73e125845314738f44853bc"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Gremlin Wizard's first Blast on turn 3 (on the owner's behalf, 2026-11-06)",
+          "sha256": "023cfa360b31dc796943ba40b6978cc2e57059f0f83375e4fc8978b7a3b5fcbd"
+        }
+      ],
+      "owner": false,
+      "by": "7abcebd5-4bd6-45fc-a17f-1ca2ed6eb268",
+      "at": "2026-11-07T07:36:13+00:00 @ 8e9e5c2",
+      "until": "2026-11-07T17:35:23+00:00 @ 9e47587"
+    },
+    {
+      "rev": 3,
+      "value": "Act 1 monsters loaded from pack files with values checked: 5 of the 7 the engine lacked (Blue Slaver 46-50 HP, Stab 12, Rake 7 + Weak 1, Stab on a roll of 40+ with two-in-a-row limits; Fat Gremlin 13-17, Smash 4 + Weak 1; Sneaky Gremlin 10-14, Puncture 9; Gremlin Wizard 23-25, Blast 25 on turn 3 then every fourth turn; Mad Gremlin 20-24, Angry 1, a pack power gaining Strength on attack HP loss, the game's rule where the wiki and sts_lightspeed differ on fully blocked hits), in content/packs/act1-monsters.json; tests pass (Blue Slaver Stab 0.542 of moves against the rule's 0.541; greedy starter deck wins each alone on 10 seeds). Two Wizard mismatches settled for the wiki: HP (lightspeed 21-25) and the first cycle (lightspeed charges three times). Red Slaver and Shield Gremlin still blocked (M7, M6). Since E1 the pack also holds the Blue Slaver encounter (gen:Blue Slaver, hallway); Gremlin Gang, Red Slaver and the full Exordium Thugs wait for M6 and M7.",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Step 2: the four writable monsters as pack data",
+          "sha256": "8f373e0c21ca7502997dfd873ffd47dfaad5ef588758765ef1faeb66f4b1b689"
+        },
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block M5: pack powers on pack monsters (the Mad Gremlin)",
+          "sha256": "a735279994d50f1536dfc99a7f9d8ad0bf7eb8a8df149a940bd59678ff534d93"
+        },
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block E1: encounters as data",
+          "sha256": "d76d8eb972a72dff163511a21a7be37da53844f058f74b9f127f749db2c52517"
+        },
+        {
+          "path": "content/packs/act1-monsters.json",
+          "sha256": "a4c154110a01f071392ec4bfa9bf484934f74f6cd76dc75bd4964943e2653103"
+        },
+        {
+          "path": "engine/tests/act1_packs.rs",
+          "sha256": "101cc2352aa07eee36c45b175a1a4aa17bd789c9b73e125845314738f44853bc"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Gremlin Wizard's first Blast on turn 3 (on the owner's behalf, 2026-11-06)",
+          "sha256": "023cfa360b31dc796943ba40b6978cc2e57059f0f83375e4fc8978b7a3b5fcbd"
+        }
+      ],
+      "owner": false,
+      "by": "44e90a22-d852-4690-bf34-f6fb10c5c34e",
+      "at": "2026-11-07T17:35:23+00:00 @ 9e47587",
+      "until": "2026-11-08T08:26:25+00:00 @ c575ce4"
+    },
+    {
+      "rev": 4,
+      "value": "Act 1 monsters loaded from pack files with values checked: all 7 the engine lacked (Blue Slaver 46-50 HP, Stab 12, Rake 7 + Weak 1, Stab on a roll of 40+ with two-in-a-row limits; Fat Gremlin 13-17, Smash 4 + Weak 1; Sneaky Gremlin 10-14, Puncture 9; Gremlin Wizard 23-25, Blast 25 on turn 3 then every fourth turn; Mad Gremlin 20-24, Angry 1; Shield Gremlin 12-15, Protect 7 block to a random other living monster while one lives, else Shield Bash 6 for good; Red Slaver 46-50, Stab 13, Scrape 8 + Vulnerable 1, Entangle once (pack power Entangled: no Attacks the player's next turn) on a roll of 75+, after it Stab on 50+), in content/packs/act1-monsters.json; tests pass (Blue Slaver Stab 0.542 of moves against the rule's 0.541; Red Slaver second-move Entangle and post-Entangle Stab within range over 400 seeds; greedy starter deck wins each of the first four alone on 10 seeds). Two Wizard mismatches settled for the wiki (HP, first cycle). The pack's encounters: Blue Slaver, Gremlin Gang (4 of 8), Red Slaver, Exordium Thugs (with the slavers); recorded deviations: the ally's block lands after all monsters acted; the net has no column for Protect or Entangle intents.",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Blocks M6 and M7 as built",
+          "sha256": "35ef92f8500d21dbba3f7d2c34b59b4827eb76e2c3fd3aba389990771e700c6b"
+        },
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Step 2: the four writable monsters as pack data",
+          "sha256": "8f373e0c21ca7502997dfd873ffd47dfaad5ef588758765ef1faeb66f4b1b689"
+        },
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block M5: pack powers on pack monsters (the Mad Gremlin)",
+          "sha256": "a735279994d50f1536dfc99a7f9d8ad0bf7eb8a8df149a940bd59678ff534d93"
+        },
+        {
+          "path": "content/packs/act1-monsters.json",
+          "sha256": "b06aa5bf09f02be2502cd195c39bbc071627e13c764483493fa9e23e60fd4fb2"
+        },
+        {
+          "path": "engine/tests/act1_packs.rs",
+          "sha256": "39f90956c4b1b4e2f488530c5f1b42a4aa69be467edaaf1f7c19a75b63b0229a"
+        }
+      ],
+      "owner": false,
+      "by": "57a4cf21-22b4-4d6e-aa4d-e564532229fe",
+      "at": "2026-11-08T08:26:25+00:00 @ c575ce4",
+      "until": "2026-11-13T02:29:39+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "ff5c048b806df7184af4d2c4cfafdf01b968280b9ec67b699a7b45ef8d4a426a"
+}

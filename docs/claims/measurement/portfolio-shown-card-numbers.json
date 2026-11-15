@@ -1,0 +1,168 @@
+{
+  "key": "measurement/portfolio-shown-card-numbers",
+  "rev": 4,
+  "value": "pred even/long shot; fail: 10-29 net zero-shot @sn1 / @xh1 / both level on one-turn cells (-0.24/-0.24/-0.34 HP, se ~0.25, n 500; old shown arithmetic); Weak bench rows cut 0.54/0.40, not halved at 2 se; 2.0 cpu-h. Reopen: a net trained with shown_numbers / exhaust_hidden in its meta read against its twin without (backlog 75(d)), or a stronger-debuff bench halving the Weak rows.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane shown-card-numbers closed (2026-11-10)",
+      "sha256": "938c666a1b7efb3d29aee9fef11dde077d90b9f2feb580a10a97dc67b235d6be"
+    },
+    {
+      "path": "docs/research/shown-card-numbers-2026-11-10.md",
+      "anchor": "Cell gauntlet, one turn deep (jobs 0757-0759)",
+      "sha256": "6dc74ee93bc267b0cdebb7607f6794119602b809e766dd536650a9bf87001400"
+    },
+    {
+      "path": "docs/research/shown-card-numbers-2026-11-10.md",
+      "anchor": "Generated bench, Weak and Frail turn rows (jobs 0760-0761)",
+      "sha256": "6ffe27e22870b857b89a4fded958da813578d208d1647a3d838da6868027259c"
+    },
+    {
+      "key": "measurement/shown-numbers-pricing@pairs",
+      "rev": 2
+    },
+    {
+      "path": "docs/research/engine-audit.md",
+      "anchor": "1. Encoder value flags aren't in the net's meta; shown numbers use their own arithmetic",
+      "sha256": "3ec8cb53327fb342e934c264f6d4602e162942ce18302f5068d266e820d9f001"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "navigator 2026-11-13: audit 1 flag resolved; reopen path now through a trained net",
+  "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+  "at": "2026-11-13T13:43:50+00:00 @ d240a173",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even on the Strength stratum one turn deep, a long shot on the headline; about 4 cpu-h (cap 6); actual fail: the 10-29 net zero-shot with shown numbers, exhaust hidden or both is level on the one-turn cell gauntlet (-0.24/-0.24/-0.34 HP, se about 0.25, n 500), Weak bench rows cut partly (0.54, 0.40) but not halved at 2 se; about 2.0 cpu-h; reopen if: a net trained with @sn1 on shows the inputs matter against its own @sn1-off read, or a stronger-debuff bench halves the Weak rows at 2 se",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane shown-card-numbers closed (2026-11-10)",
+          "sha256": "938c666a1b7efb3d29aee9fef11dde077d90b9f2feb580a10a97dc67b235d6be"
+        }
+      ],
+      "owner": false,
+      "by": "22671add-cd16-4d99-9e2e-3a0bd4f9f071",
+      "at": "2026-11-09T21:10:23+00:00 @ 30aa133",
+      "until": "2026-11-10T07:04:28+00:00 @ f97b79c"
+    },
+    {
+      "rev": 2,
+      "value": "predicted even on the Strength stratum one turn deep, a long shot on the headline; about 4 cpu-h (cap 6); actual fail: the 10-29 net zero-shot with shown numbers, exhaust hidden or both is level on the one-turn cell gauntlet (-0.24/-0.24/-0.34 HP, se about 0.25, n 500), Weak bench rows cut partly (0.54, 0.40) but not halved at 2 se; about 2.0 cpu-h; reopen if: a net trained with @sn1 on shows the inputs matter against its own @sn1-off read, or a stronger-debuff bench halves the Weak rows at 2 se The read (was measurement/shown-numbers@cells): 10-29 net one turn deep @hpb0.01 on the one-turn cell gauntlet, sequences 0-499, fixed n 500 against results/gauntlet/net1029-hpb0.01.json: @sn1 -0.24 (0.21) HP, @xh1 -0.24 (0.22), @sn1@xh1 -0.34 (0.26); clears within +0.005; Strength/multi-hit stratum (436 of 500) the same; flags change about a third of sequences; level zero-shot The read (was measurement/shown-numbers@pairs): Card numbers as the game shows them (damage + Strength x hits, x0.75 under Weak; block + Dexterity, x0.75 under Frail) written into the existing columns lift the unchanged 10-29 net's pricing of attack cards when the player's Strength or Weak is up, with no games: correlation with the played-out change 0.156 to 0.218 (+0.060 (0.025), 1,324 pairs, bootstrap over positions), other pairs +0.009 (0.012); those pairs carry 31% of the net's squared error and priced perfectly would lift the overall correlation 0.18 to 0.53. Fine-tuning on paired labels showed no clear difference between the encodings (held-out noise about 0.05). No play read. The read (was measurement/shown-numbers@weak-frail-bench): 10-29 net one turn deep @tsl1 with @sn1 against without, generated bench elites (675 starts x 8 seeds), win rate: TurnStart-Weak cost -0.011 (0.003), gain +0.006 (0.002), cut 0.54; TurnEnd-Weak -0.013 (0.003), +0.005 (0.001), cut 0.40; Frail rows' costs -0.002 within noise; parents unchanged; neither Weak row halved at 2 se",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane shown-card-numbers closed (2026-11-10)",
+          "sha256": "938c666a1b7efb3d29aee9fef11dde077d90b9f2feb580a10a97dc67b235d6be"
+        },
+        {
+          "path": "docs/research/shown-card-numbers-2026-11-10.md",
+          "anchor": "Cell gauntlet, one turn deep (jobs 0757-0759)",
+          "sha256": "6dc74ee93bc267b0cdebb7607f6794119602b809e766dd536650a9bf87001400"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-sn1.json",
+          "sha256": "baab7323d4e4b31b7726d5bd722f6cbdea15ad0622b4d75185ab7389c981f083"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-xh1.json",
+          "sha256": "d2264a7aee05f249ce592f6841e5b20d7d6561b059e576b3e35f4ab80977ea8c"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-sn1xh1.json",
+          "sha256": "a9e01829828092b040ed5dd3e8e1ed15c1768a5af8cc2dfc834a96c7beb1d6a6"
+        },
+        {
+          "path": "jobs/done/0757-gauntlet.json",
+          "sha256": "294ed74672b81a68c375bd975d2108edd0a7acf7cb75ebed1ad5dc159438af3b"
+        },
+        {
+          "path": "jobs/done/0758-gauntlet.json",
+          "sha256": "3b4f4592ee0df83c36b2e1210b6dcb74e35bd6eca7f9073a0f14cc28c85780b7"
+        },
+        {
+          "path": "jobs/done/0759-gauntlet.json",
+          "sha256": "553d5b8d70796914f60a4f7d2feb822bbae76a43fffd8968922007ab63bd5159"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        },
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Shown card numbers: a zero-shot gain where Strength or Weak is up",
+          "sha256": "6b55b8b0cf3d3418b52904b52c107d41ceda8f86fd8b8e0887f057c7c1baeace"
+        },
+        {
+          "path": "results/probes/pile-prices/pairs.jsonl",
+          "sha256": "700ba5ad57c20535820b9df92d82db6119e68613b97fd47269d239dadfc70671"
+        },
+        {
+          "path": "results/probes/pile-prices/shown.log",
+          "sha256": "24149b755e89e96d2e335573c1b84148e0b5015baeffe17c28ca5bc5f743b335"
+        },
+        {
+          "path": "docs/research/shown-card-numbers-2026-11-10.md",
+          "anchor": "Generated bench, Weak and Frail turn rows (jobs 0760-0761)",
+          "sha256": "6ffe27e22870b857b89a4fded958da813578d208d1647a3d838da6868027259c"
+        },
+        {
+          "path": "results/mutate/gen-wf-tsl1.json",
+          "sha256": "7ef04a25c167bd3e4b69e5e75154e6f4c50f260aa2a98b34fb44b91924ef81e9"
+        },
+        {
+          "path": "results/mutate/gen-wf-sn1-tsl1.json",
+          "sha256": "5ee457d6e37aa5310d52c91f0d991d03e99bcb466955c9c1cfaa00d485e179dc"
+        },
+        {
+          "path": "jobs/done/0760-mutate-monsters.json",
+          "sha256": "e7a6e343ba539466ddb8bb3f5d82cb9765b3cdab4f0a0847481d213703cf2abe"
+        },
+        {
+          "path": "jobs/done/0761-mutate-monsters.json",
+          "sha256": "32adf1d8545af303b68f2bbf6c4c011e9f3def71673fef111b37759adcafe3c6"
+        }
+      ],
+      "owner": false,
+      "by": "b03f7647-f3c8-4742-857a-e434dfb7a594",
+      "at": "2026-11-10T07:04:28+00:00 @ f97b79c",
+      "until": "2026-11-13T02:31:15+00:00 @ 3123201a"
+    },
+    {
+      "rev": 3,
+      "value": "pred even/long shot; fail: 10-29 net zero-shot @sn1 / @xh1 / both level on one-turn cells (-0.24/-0.24/-0.34 HP, se ~0.25, n 500); Weak bench rows cut 0.54/0.40, not halved at 2 se; pricing gain measurement/shown-numbers-pricing@pairs; 2.0 cpu-h. Reopen: a net trained with @sn1 on showing the inputs matter vs its own @sn1-off read, or a stronger-debuff bench halving the Weak rows.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane shown-card-numbers closed (2026-11-10)",
+          "sha256": "938c666a1b7efb3d29aee9fef11dde077d90b9f2feb580a10a97dc67b235d6be"
+        },
+        {
+          "path": "docs/research/shown-card-numbers-2026-11-10.md",
+          "anchor": "Cell gauntlet, one turn deep (jobs 0757-0759)",
+          "sha256": "6dc74ee93bc267b0cdebb7607f6794119602b809e766dd536650a9bf87001400"
+        },
+        {
+          "path": "docs/research/shown-card-numbers-2026-11-10.md",
+          "anchor": "Generated bench, Weak and Frail turn rows (jobs 0760-0761)",
+          "sha256": "6ffe27e22870b857b89a4fded958da813578d208d1647a3d838da6868027259c"
+        },
+        {
+          "key": "measurement/shown-numbers-pricing@pairs",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:31:15+00:00 @ 3123201a",
+      "until": "2026-11-13T13:43:50+00:00 @ d240a173"
+    }
+  ],
+  "seal": "0a10275c8d63888b4639884d60cd3111bff859b1aacde11a8f8a860ee6cbce9b"
+}

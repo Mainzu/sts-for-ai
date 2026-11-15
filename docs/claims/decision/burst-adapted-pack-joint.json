@@ -1,0 +1,41 @@
+{
+  "key": "decision/burst-adapted-pack-joint",
+  "rev": 1,
+  "value": "A pack's net is one joint burst over its mechanics, retention read on every bench mechanic per parent; a net failing the per-parent guard doesn't ship (zero-shot stays). Separate bursts lose OppCard-Vulnerable x Sentries (0.765 to 0.42-0.63); joint holds it (0.787).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After the pack-joint-burst probe: a pack's net is one joint burst; pack-adapt-pipeline gets a ready charter (on the owner's behalf, 2026-11-08)",
+      "sha256": "f7ae48061db680c2b10c39d1a8a81d799e32f884d73b0c98dce7f36fab168339"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After the bench-retention probes: a pack's net reads retention on the whole bench, per parent; a joint-burst probe queued (on the owner's behalf, 2026-11-08)",
+      "sha256": "85d11377dfac93b56a584be67e10faea63e9b73025fae8bd5c917ede3502affa"
+    },
+    {
+      "key": "measurement/pack-joint-burst@gen-b1",
+      "rev": 2
+    },
+    {
+      "key": "measurement/bench-retention@gen-b1",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:15Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:11Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/pack-joint-burst@gen-b1, measurement/bench-retention@gen-b1 reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "a4ee80fc192a64b7a3d202d649e4a0c06c030979187e995b515d9276ea4d2446"
+}

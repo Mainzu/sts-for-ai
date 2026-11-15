@@ -1,0 +1,45 @@
+{
+  "key": "measurement/gen-adapted@ocd",
+  "rev": 1,
+  "value": "99-game bursts on GE-OppCard-Damage x Sentries, one turn @hpb0.01@tsl1, read on the 0472 starts x 4 seeds: net teacher cut +3.01 (se nets 0.02), 0.59 of the +5.11 cost; heuristic +2.86 (0.17), 0.56; both pass, level; the trained parent Sentries +0.62 HP per fight with the net teacher, -0.03 with the heuristic; the control moved -2.5 to -3.0 HP in both",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/gen-adapted-column.md",
+      "anchor": "Step 3 read: family gac-ocd table (job 0545, 2026-11-08)",
+      "sha256": "2509a4d92cc34638c1d90c6bb604ad80d6391dfe5e7829317f6109eb83e12461"
+    },
+    {
+      "path": "results/families/gac-ocd.md",
+      "sha256": "871a17df6a12c603c390f7718daf3a45529e39bd74111a6801bff71cc788d188"
+    },
+    {
+      "path": "jobs/done/0545-family.json",
+      "sha256": "28ac92d724e948efe0719f89576e9ea4e0ed4bc8337342ffee6ec31220d577ae"
+    },
+    {
+      "key": "measurement/gen-adapted@ocpd",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "71bd303c-1f59-45cf-8b2f-211d03b8fa6d",
+  "at": "2026-11-08T01:14:30+00:00 @ 82bd92c",
+  "confirms": [
+    {
+      "by": "39a51ba0-c0c3-4eaf-863c-47ea9435815c",
+      "at": "2026-11-08T01:25:26+00:00 @ 2f5aeb9",
+      "note": "navigator 2026-11-08: the record changed after filing only by the runner's verdict (pass, from family.py verdict), which agrees; cuts, shares and parent changes match docs/research/gen-adapted-column.md's gac-ocd table"
+    },
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:19+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/gen-adapted@ocpd reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "73dce5defc28cc8e60a44222b7597f13b895a279227783e4d03899b2788fe0ba"
+}

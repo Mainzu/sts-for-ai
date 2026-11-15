@@ -1,0 +1,27 @@
+{
+  "key": "decision/no-c-raise",
+  "rev": 1,
+  "value": "The leaf HP price c stays at 0.01: raising c (0.02: -0.032 clears) and flat hand prices on per-turn effects (@esp0.04: -0.020 clears) are stopped as goal-2 levers; a state-dependent price belongs to the survival arms or the fitted run value.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/approach-review-2026-11-02.md",
+      "anchor": "Stop or pause",
+      "sha256": "f8fad2ee653f87f858fa73d5392004e0adf2238488ba7bdc9f42e81a2480fa2f"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Next re-ranked from the approach review (owner away, 2026-11-02)",
+      "sha256": "f15c7c1650e61c31caf73e006c3d7c085e2e513df33b2ee6fe63a89486f8fc52"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:11:30Z @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "411e9ac5061320fee7e459ec4e372703b9a49ed0b5a0e7c673bc5b5eeea6ef51"
+}

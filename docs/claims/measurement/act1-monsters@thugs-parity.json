@@ -1,0 +1,54 @@
+{
+  "key": "measurement/act1-monsters@thugs-parity",
+  "rev": 2,
+  "value": "Pack Exordium Thugs minus official exordium_thugs, 10-29 net @hpb0.01 one turn, 3,504 paired fights: +3.28 (0.15) HP lost, wins -0.009 (0.002). The gap is the Slavers the real Thugs hold (Blue 14.33, Red 17.59 HP lost); no pack bug, parity closed.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/act1-inventory.md",
+      "anchor": "Thugs parity replay (0676)",
+      "sha256": "f6630956c63b7ccd97ea3bce2188977467ebea0970bc8e4ebc939fe717ac6308"
+    },
+    {
+      "path": "results/parity/thugs-net1029-hpb0.01.json",
+      "sha256": "39b4e364efd8617128e9836fc0808d14f6bd754d3fff7d7b91e0cf524921707d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:41+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Thugs parity replay one turn deep (10-29 net @hpb0.01, 584 Thugs floors from the pack and control one-turn files, 6 seeds, 3,504 pairs on the same deck and arrival HP): pack Exordium Thugs minus official exordium_thugs +3.28 (0.15) HP lost, wins -0.009 (0.002); with Cultist in slot 2 3.65 against 3.73, Looter 7.01 against 7.23 (level); the pack's Blue Slaver 14.33, Red Slaver 17.59. The gap is the Slavers the real game's Thugs hold and the official-only encounter lacks: no pack bug, parity closed.",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Thugs parity replay (0676)",
+          "sha256": "f6630956c63b7ccd97ea3bce2188977467ebea0970bc8e4ebc939fe717ac6308"
+        },
+        {
+          "path": "results/parity/thugs-net1029-hpb0.01.json",
+          "sha256": "39b4e364efd8617128e9836fc0808d14f6bd754d3fff7d7b91e0cf524921707d"
+        },
+        {
+          "path": "jobs/done/0676-encounter-parity.json",
+          "sha256": "ddeaa5abde819be033d5f46319b86e5be8c0b98a6ece2b45a7efcd4bf170a6f9"
+        },
+        {
+          "key": "measurement/act1-monsters@product",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "4d3eebcd-96d4-4aac-97c5-df8338776841",
+      "at": "2026-11-09T07:20:41+00:00 @ ef107b3",
+      "until": "2026-11-13T02:29:41+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "56a26b59adbc44c07ed48e6df412c6068315a554b775376828fbd4496c98078b"
+}

@@ -1,0 +1,68 @@
+{
+  "key": "measurement/crossed-player@two-turn",
+  "rev": 2,
+  "value": "Burst net (SharpHide->stage B @hpe0.01, two-turn line-seed step-line) on the product's decks (--match), seq 0-499 vs headline control: +1.08 (0.47) HP, z 2.28; clears -0.006 (0.014); elite HP lost -1.39 (0.33); one seed.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Crossed player, two turns deep: the burst net as the product plays it, on the product's decks, gains +1.08 (0.47) paired end-HP over 500 headline sequences (z 2.28), clears -0.006 (0.014), so step 2 passes and the lane ends on go; depth takes about half of the one-turn matched gain (+2.47) (crossed-player step 2; 0204; read 08:20 2026-11-06, lanes 51ea5bcd)",
+      "sha256": "d006e7f62005db7659bcd0daa2c96b0de64088f968a30684f95a107a1041def7"
+    },
+    {
+      "path": "results/gauntlet/match-seq-sharp-then-stageb-s1-hpe0.01-two-line-step-starter-simboss.json",
+      "sha256": "9fcae500ffe2cebb978aa2a9294d9bd1bd346fb8d56aa4bc1aa1fb4bddb5e1cd"
+    },
+    {
+      "key": "yardstick/headline-control",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:06+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:41:37+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "burst net (SharpHide-then-stage-B @hpe0.01, --two-turn --line-seed --step-line) on the headline control's decks (--match), sequences 0-499, against yardstick/headline-control at fixed n 500: paired end-HP +1.08 (0.47), z 2.28 (train +0.54 (0.62), held-out +1.62 (0.72)); clears -0.006 (0.014) (0.834 to 0.828); HP lost at elites -1.39 (0.33), boss -0.15 (0.46), hallways +0.10 (0.19); deaths move from the second elite (13 to 6) to the next hallway (6 to 15); one training seed",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Crossed player, two turns deep: the burst net as the product plays it, on the product's decks, gains +1.08 (0.47) paired end-HP over 500 headline sequences (z 2.28), clears -0.006 (0.014), so step 2 passes and the lane ends on go; depth takes about half of the one-turn matched gain (+2.47) (crossed-player step 2; 0204; read 08:20 2026-11-06, lanes 51ea5bcd)",
+          "sha256": "d006e7f62005db7659bcd0daa2c96b0de64088f968a30684f95a107a1041def7"
+        },
+        {
+          "path": "results/gauntlet/match-seq-sharp-then-stageb-s1-hpe0.01-two-line-step-starter-simboss.json",
+          "sha256": "9fcae500ffe2cebb978aa2a9294d9bd1bd346fb8d56aa4bc1aa1fb4bddb5e1cd"
+        },
+        {
+          "path": "jobs/done/0204-gauntlet.json",
+          "sha256": "823eb68cbf191bc8243d76deb8a5c381dbc8ec2692fa15deb084e6850ebecb07"
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "51ea5bcd-6951-43bd-b6a4-af2bc9718d90",
+      "at": "2026-11-06T01:05:11+00:00 @ 275dfcb",
+      "until": "2026-11-13T02:30:06+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "2f9e17640490b4eeac374a352e4a4a397dba7d9d73cded80a823be7e8ff3fef9"
+}

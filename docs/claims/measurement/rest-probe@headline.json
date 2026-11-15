@@ -1,0 +1,53 @@
+{
+  "key": "measurement/rest-probe@headline",
+  "rev": 1,
+  "value": "Rest sim chooser with 64 fights per option and a 2-se margin (headline setting, one turn, rest right before the boss): protocol fail at n 50, end-HP -0.10 (se 0.10), clears 0.720 vs 0.720; upgrades in 2 of 50 sequences, so the rest decision is worth about 0 HP on this setting; the margin removes the 16-fight chooser's winner's curse (-1.22 HP).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Rest probe with 64 fights and a 2-se margin: null, the rest probe closes on this setting (run-decisions lane; 0081; read 23:30 2026-11-03, lanes 90dc0150)",
+      "sha256": "8d8979d141e696b780c625a81ac53748218ed478b1f922e0e0c877a083081e9f"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss-restsim-f64-m2.json",
+      "sha256": "d757e5fa62bff0c01ac9d5f9bbc6d59a511e8d135238fd31d04bcf1ba061e018"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+      "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+    },
+    {
+      "path": "jobs/done/0081-gauntlet.json",
+      "sha256": "a6806ad5ebde5be779cba92055aa61b9af8b205d0ec64ae344f4591c14f7c0f5"
+    },
+    {
+      "key": "yardstick/one-turn-controls",
+      "rev": 3
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "90dc0150-fbde-4aaf-a6d2-09bea6a12dae",
+  "at": "2026-11-03T16:22:59+00:00 @ 8c2c101",
+  "confirms": [
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:57:57+00:00 @ a875850",
+      "note": "yardstick/headline-setting rev 2 changed only which depth judges a change (one turn; the two-turn product is the reported score); the setting's flags this fact relies on (--start starter --rewards sim --sim-boss, 500 sequences) are unchanged"
+    },
+    {
+      "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+      "at": "2026-11-13T04:30:12+00:00 @ 28c50af5",
+      "note": "the fact was read against the old one-turn control files (net1029-hpb0.01-starter-simboss.json / net1029-hpb0.01.json), which are unchanged; only the yardstick pointer moved (decisions 'Combined one-turn control ... read', 2026-11-13)"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "150bac3339c69226307a484e8ca4269b2d6169035c96a2c730f4ba178ce27e26"
+}

@@ -1,0 +1,81 @@
+{
+  "key": "measurement/later-ticks-pool@cells",
+  "rev": 2,
+  "value": "allcontent40k r1 (deck_pool all) minus data40k r1, s1+s101, @hpb0.01@tsl1, cells 0-999: DF decks +4.56 (0.78/0.86) HP, other held-out +1.66, train +0.98; data40k minus 10-29: DF -1.26 (0.84/0.51). The later-tick gain comes from the card in the pool, not the from-scratch recipe.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/from-scratch-later-ticks.md",
+      "anchor": "Step 1 (0798-0801): the pool, not the recipe; branch pool (read 2026-11-10 17:00, lanes d39a52bc)",
+      "sha256": "e8b88d708e542dee3852a6bcd087b4032d6551cc1cdd9f692a5030cf03c06d62"
+    },
+    {
+      "key": "measurement/pack-net-twin@one-turn",
+      "rev": 5
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:29+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:20+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/pack-net-twin@one-turn reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Cells @hpb0.01@tsl1, both books (sequences 0-999), two seeds (s1, s101), se over sequences / over nets: all-content twins (allcontent40k r1, deck_pool all) minus data40k r1 (same configs without the pool; bosses differ) on held-out Demon Form decks (n 174) +4.56 (0.78 / 0.86) HP (seeds +5.42, +3.70), other held-out +1.66 (0.58 / 0.44), train +0.98 (0.40 / 0.42); data40k minus the 10-29 net @tsl1: Demon Form decks -1.26 (0.84 / 0.51), other held-out -1.70, train -0.42. The later-tick gain on Demon Form comes from the card in the pool, not the one-round from-scratch recipe. Exposure (step 1b, approximate sampling): the twins' data hold Demon Form in 31-36% of states on Demon Form decks (about 24% of games, ~29k of 120k round-0 games), against bursts' 8-52% share at up to 1.6k games: volume, not share, differs; data40k never meets the card.",
+      "sources": [
+        {
+          "path": "docs/research/from-scratch-later-ticks.md",
+          "anchor": "Step 1 (0798-0801): the pool, not the recipe; branch pool (read 2026-11-10 17:00, lanes d39a52bc)",
+          "sha256": "e8b88d708e542dee3852a6bcd087b4032d6551cc1cdd9f692a5030cf03c06d62"
+        },
+        {
+          "path": "docs/research/from-scratch-later-ticks.md",
+          "anchor": "Step 1b: Demon Form's exposure in the twins' training data (read 2026-11-10 16:40, lanes d39a52bc)",
+          "sha256": "1e940b3957bf95ff355ad736b2adc1b47061d8c0c35156cdeb236600964b9f23"
+        },
+        {
+          "path": "jobs/done/0798-gauntlet.json",
+          "sha256": "1fcaf065d00240d15ac20378870441adad066a62e419db26cf642dd5770e55e1"
+        },
+        {
+          "path": "jobs/done/0799-gauntlet.json",
+          "sha256": "15046832cb351afff1e278247eca83709c7cfd29b5a0a4809c1795cae47afa54"
+        },
+        {
+          "path": "jobs/done/0800-gauntlet.json",
+          "sha256": "3e07c05f2340f076cc6296c75a07f9fee82fdabef5f754fa162bb6c1c4e5bc0c"
+        },
+        {
+          "path": "jobs/done/0801-gauntlet.json",
+          "sha256": "e24a4a0d5387a4a25a370c2905199818e9bf5e3d79f582859837b42526416b32"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-10-31-data40k-s1-r1-72d8ced-hpb0.01-tsl1.json",
+          "sha256": "5f9956f45d74367b5cd720ba0025ed0f567169355c2b10366ebfb8564d51d9b1"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-10-31-data40k-s101-r1-606ebe3-hpb0.01-tsl1-b500.json",
+          "sha256": "2495ecc31deb279313ccb51846bbe1d232e41aae625b3be979484fd88d7f926a"
+        },
+        {
+          "key": "measurement/pack-net-twin@one-turn",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "d39a52bc-801d-4e26-ab71-88de22748b97",
+      "at": "2026-11-10T09:57:50+00:00 @ c306ff0",
+      "until": "2026-11-13T02:30:29+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "db2eafbf9ca2a32ce92b96d4c752bd62b89c8af92dddedd5b9e01f99207dd8cf"
+}

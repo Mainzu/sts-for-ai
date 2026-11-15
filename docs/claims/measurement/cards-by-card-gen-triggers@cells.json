@@ -1,0 +1,30 @@
+{
+  "key": "measurement/cards-by-card-gen-triggers@cells",
+  "rev": 1,
+  "value": "Generated power bench (elite+boss, 3 copies), 10-29 net minus heuristic wins: turn-start powers -0.292 (0.049), turn-end -0.061 (0.054), card-played +0.005 (0.047); original Demon Form -0.140 (0.033), Metallicize -0.083 (0.030).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Cards by card and by stratum (step 1b): the script reproduces the navigator's strata to the digit; Demon Form costs every net group 6-9 HP against the heuristic per copy, its Strength lands after the one-turn leaf, and its row is a combination no training game held (yardstick-cards step 1b; no jobs; read 14:30 2026-11-06, lanes d6ed878a)",
+      "sha256": "d06516b62b1d57a90093ec6c616a99b6e63281b02318dd047535eaf974a4a9e0"
+    },
+    {
+      "path": "results/gen_powers/depth/heuristic-elite_boss.json",
+      "sha256": "5d1edb706bbf107a111c5415ece5c00063196583d6c588a10e2cfb8131d51c0d"
+    },
+    {
+      "path": "results/gen_powers/depth/2026-10-29-seed-check-r2-s1-1a789b2-elite_boss.json",
+      "sha256": "c520e86cc2f34a78d90e010554f36ee412ab5261f9dac6a30dd639d5ef4089b6"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:34+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "bfe8652f821f748a333012c83d844df614cba28968d8fe51fc3e8de98db850ce"
+}

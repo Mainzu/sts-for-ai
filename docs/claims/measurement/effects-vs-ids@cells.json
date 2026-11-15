@@ -1,0 +1,52 @@
+{
+  "key": "measurement/effects-vs-ids@cells",
+  "rev": 1,
+  "value": "One turn deep on cell decks, 0-499, 3 seeds paired against the 10-29 recipe twin: ids minus effects (same 5k games) -0.043 clears (seed sd 0.046), -2.47 end-HP (1.21); lean minus 10-29 (no solve step) +0.001 clears (0.002), -0.22 HP (0.48): the solve step is worth nothing on cells; threshold rows (lean-thr minus lean) -0.008 (0.031), a null.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Effects vs ids, the solve step and threshold rows at run level (approach review cheap reads 2, 3, 5; b39abb; read 16:20 2026-11-02, manager 3a78b41d)",
+      "sha256": "16efe814f2279c6975b4434f848f5edfc5786e26d872dbe319e6d9eb6d593619"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01.json",
+      "sha256": "5f09012adeffb8c5b718928048b7950077787540398f0bfb9e456e3b10345c1f"
+    },
+    {
+      "path": "results/gauntlet/rerank-2026-10-31-ids5k-s1-r1-22d423c-hpb0.01.json",
+      "sha256": "03413912b0b949f1545fce14c2a94e4dc01e56bf56b61c04ab21be8b317b3711"
+    },
+    {
+      "path": "results/gauntlet/rerank-2026-10-31-data5k-s1-r1-965c6cc-hpb0.01.json",
+      "sha256": "92d6c54dab1e091f89d6e08aa527fbe606cc222110536f7f1c399dea9dce13b8"
+    },
+    {
+      "path": "results/gauntlet/rerank-2026-10-30-lean-s1-r2-9952dd3-hpb0.01.json",
+      "sha256": "7b9cb8ebca926216421a7015fb72049bc01a8cb5f360fe327aefc3ce797921e3"
+    },
+    {
+      "key": "yardstick/gauntlet",
+      "rev": 1
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:14:05+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:38:01+00:00 @ 80d6c86",
+      "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "ea13410d5eca4baa50299dee9f056ca12f4fd467ab18aaec8aecc8e13299848c"
+}

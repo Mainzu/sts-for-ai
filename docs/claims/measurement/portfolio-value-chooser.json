@@ -1,0 +1,22 @@
+{
+  "key": "measurement/portfolio-value-chooser",
+  "rev": 1,
+  "value": "predicted even for level, about 0.5 cpu-h of reads (cap 3); actual go at the bar: four hands level overall (+0.08 HP, +0.024 clears) and without Demon Form (-0.99 HP), at 2.5-4.6 min against 16+, as train +4-5 HP and held-out -4 HP; about 0.4 cpu-h; reopen if: a chooser that values unseen cards makes the held-out half level, or the train-half lead is confirmed on sequences 500-999",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane value-chooser closed (2026-11-06)",
+      "sha256": "c3a98614f7ac990e88729f07fb2bb3fdfe70cd31697891c514b98561b35848ca"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "7cab620c-2ca4-4889-946a-02d166259c0a",
+  "at": "2026-11-06T07:49:19+00:00 @ eff1b78",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "1e8a76c2ef24643457061271217c6d5fa177e67e85392ddcf0139a4c5b255bf4"
+}

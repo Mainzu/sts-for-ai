@@ -1,0 +1,107 @@
+{
+  "key": "measurement/act1-relics-potions@files",
+  "rev": 3,
+  "value": "Potions: 33 of 33 load: 32 from content/packs/act1-potions.json, Colorless Potion from content/packs/act1-colorless.json (Discover Colorless, free, no skip), each tested vs its decompiled class (engine/tests/act1_potions.rs, snecko.rs, colorless.rs); Snecko Oil draws 5 then rolls each hand card's cost 0-3 for the combat. The run layer holds no potions (P2).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "content/packs/act1-potions.json",
+      "sha256": "1d5a2096cb1bf8f964bc424c14be2cf62cf4494af54ebd9dcf7dd2a75f989f00"
+    },
+    {
+      "path": "content/packs/act1-colorless.json",
+      "sha256": "a6248bae58fd0094ac62095c0c8b42fe07f75c86ecbeffc8dd2eca8d9ebaf338"
+    },
+    {
+      "path": "engine/tests/act1_potions.rs",
+      "sha256": "0446e0dbbc6c5de15c8a94709ac30138df204d2a0dfdf8f168786c1f38ee61ae"
+    },
+    {
+      "path": "engine/tests/snecko.rs",
+      "sha256": "02a9914af0a447601a0d649f34834706c07b52e1701022cc6c6382928c3af806"
+    },
+    {
+      "path": "engine/tests/colorless.rs",
+      "sha256": "a59fad745e3335f03d4907b4c3056a73bb98b364b9ff22f188654251fb3cc44b"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "61166b4e-f6ea-4e10-8934-4aa3e752f9cd",
+  "at": "2026-11-13T13:12:19+00:00 @ cbadc349",
+  "confirms": [
+    {
+      "by": "7f40d6e4-69d1-4b13-a29e-284dff8cfde9",
+      "at": "2026-11-13T13:28:27+00:00 @ 9108cf87",
+      "note": "step 4 added cards only; Colorless Potion entry and its colorless.rs test unchanged and passing"
+    },
+    {
+      "by": "b223e90e-b9f7-42c5-aee5-ad1cd1534cb5",
+      "at": "2026-11-13T13:38:32+00:00 @ d093795d",
+      "note": "step 2 added three cards and two powers to act1-colorless; Colorless Potion and its test unchanged"
+    },
+    {
+      "by": "712aba8b-e6ed-4a5f-83a6-568c1e11015e",
+      "at": "2026-11-13T13:42:56+00:00 @ e402b42b",
+      "note": "colorless step 5 added Madness only; Colorless Potion and potion counts unchanged"
+    },
+    {
+      "by": "7dc07ed2-ae25-4d63-bdd8-6b03a4001381",
+      "at": "2026-11-13T13:52:08+00:00 @ b9a755f2",
+      "note": "colorless step 3 added cards only; Colorless Potion entry and its colorless.rs test unchanged and passing"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Potions: 31 of 33 load from content/packs/act1-potions.json, each tested vs its decompiled class (engine/tests/act1_potions.rs); out: Colorless Potion (no colorless cards), Snecko Oil (C5 with chance). The run layer holds no potions (P2).",
+      "sources": [
+        {
+          "path": "content/packs/act1-potions.json",
+          "sha256": "bf1e3b2459a9c60fe06a02cd8e7d1c48e9fc632935e7210c43c4a57b3052c1c5"
+        },
+        {
+          "path": "engine/tests/act1_potions.rs",
+          "sha256": "af05b42ad1b5e946564b659bbf995811fa8ad7ca90cce0496b83ce8010794c69"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "961889bbf086289109138f8c2afb577053bde783b90660f054c08f1ba5bd2d08"
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:28:26+00:00 @ 3123201a",
+      "until": "2026-11-13T06:46:13+00:00 @ 5240b8fb"
+    },
+    {
+      "rev": 2,
+      "value": "Potions: 32 of 33 load from content/packs/act1-potions.json, each tested vs its decompiled class (engine/tests/act1_potions.rs, snecko.rs); Snecko Oil since 2026-11-13 (draw 5, then each card in hand a random cost 0-3 for the combat); out: Colorless Potion (no colorless cards). The run layer holds no potions (P2).",
+      "sources": [
+        {
+          "path": "content/packs/act1-potions.json",
+          "sha256": "5d6cd4138071d26adfa94175b8df83c6e2b905be6a4a05905ebf6d3ea2139153"
+        },
+        {
+          "path": "engine/tests/act1_potions.rs",
+          "sha256": "bd663efad4b941d391c5b994e963a111e6538faf940dc4bad74503b18c40f9ad"
+        },
+        {
+          "path": "engine/tests/snecko.rs",
+          "sha256": "2d95924819d0dca855a73bc72fe1357b4b2f5b85bd46a9350e917bc7ff8d23bb"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "d2e1a6b677c76f6760f9098ea5d6be49148e8257bfc642672642471a1c719da2"
+        }
+      ],
+      "owner": false,
+      "by": "a8f31275-1ed7-44ce-95f2-c3f7d8378390",
+      "at": "2026-11-13T06:46:13+00:00 @ 5240b8fb",
+      "until": "2026-11-13T13:12:19+00:00 @ cbadc349"
+    }
+  ],
+  "seal": "2bc8e9d9cd251c584c328d447470809dc2837a09b39903368bb560859ad69cce"
+}

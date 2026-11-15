@@ -1,0 +1,87 @@
+{
+  "key": "measurement/portfolio-finish-faster-tiebreak",
+  "rev": 3,
+  "value": "predicted even, ~4.5 thread-h; actual fail at step 2: @tb1 on product, 330 headline fights paired vs off: nodes -0.003%, turns -2.6%, end HP and wins identical in every fight; 1.0 cpu-h; reopen if a score/content where costly fights' top options tie exactly, go on 3% nodes cut by the same replay.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane finish-faster-tiebreak closed (2026-11-09)",
+      "sha256": "8268ba5a164a9d5c3d7d5ffb0930878950d456cdaaf816a5a5c2523b8daebee0"
+    },
+    {
+      "path": "docs/research/finish-faster-tiebreak-2026-11-09.md",
+      "anchor": "Result",
+      "sha256": "376a92bfcd12cac548be2ce411e527b6938f2bbe0975c8df824455b59cc1e84f"
+    },
+    {
+      "path": "results/depth_probe/tiebreak-on.json",
+      "sha256": "7b44b3c35504ef82359b9980ea2ccedcb9e62536d0996c3931e1eb2ad99e7dd6"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:55+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even (cuts a measurable share of easy-fight turns; under 1 thread-h of replays, then about 3.5 thread-h); actual fail at step 2: nodes -0.003%, turns -2.6%, end HP identical over 330 replayed headline fights, about 1.0 cpu-h of 7; reopen if: a score or content where costly fights' top options tie exactly (a win-only or survival score, a capped heal every floor), checked by the same replay, go on 3% of nodes cut",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane finish-faster-tiebreak closed (2026-11-09)",
+          "sha256": "8268ba5a164a9d5c3d7d5ffb0930878950d456cdaaf816a5a5c2523b8daebee0"
+        }
+      ],
+      "owner": false,
+      "by": "158844d7-7158-4aaf-9220-7fc1b175ca38",
+      "at": "2026-11-09T08:02:23+00:00 @ df77135",
+      "until": "2026-11-10T07:03:35+00:00 @ f97b79c"
+    },
+    {
+      "rev": 2,
+      "value": "predicted even (cuts a measurable share of easy-fight turns; under 1 thread-h of replays, then about 3.5 thread-h); actual fail at step 2: nodes -0.003%, turns -2.6%, end HP identical over 330 replayed headline fights, about 1.0 cpu-h of 7; reopen if: a score or content where costly fights' top options tie exactly (a win-only or survival score, a capped heal every floor), checked by the same replay, go on 3% of nodes cut The read (was measurement/finish-faster-tiebreak@replay): Tie break @tb1 on the product, headline control sequences 0-29, every floor (330 fights), paired against @tb1 off (which reproduces all 330): search nodes 92,157,488 -> 92,159,957 (-0.003%; easy floors -0.74%, 1.3% of all nodes), turns 1,513 -> 1,473 (-2.6%), end HP and wins identical in every fight; the saved turns are near-free last turns of won fights",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane finish-faster-tiebreak closed (2026-11-09)",
+          "sha256": "8268ba5a164a9d5c3d7d5ffb0930878950d456cdaaf816a5a5c2523b8daebee0"
+        },
+        {
+          "path": "docs/research/finish-faster-tiebreak-2026-11-09.md",
+          "anchor": "Result",
+          "sha256": "376a92bfcd12cac548be2ce411e527b6938f2bbe0975c8df824455b59cc1e84f"
+        },
+        {
+          "path": "results/depth_probe/tiebreak-off.json",
+          "sha256": "acdfd4a3447df2a9ff0fb0b2b0c9bbaddb4febdeaeaa61a3922efd567add4e6c"
+        },
+        {
+          "path": "results/depth_probe/tiebreak-on.json",
+          "sha256": "7b44b3c35504ef82359b9980ea2ccedcb9e62536d0996c3931e1eb2ad99e7dd6"
+        },
+        {
+          "path": "jobs/done/0680-depth-probe.json",
+          "sha256": "76a3075e58a3d35cc73f8272a0e0be5e25bc078a3c072280bb217c47f74b569d"
+        },
+        {
+          "path": "jobs/done/0681-depth-probe.json",
+          "sha256": "06549cc61e1a81cb7e5210e272fcb198c0b4a95294fdcab1f6f09d82a6dd467b"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "b03f7647-f3c8-4742-857a-e434dfb7a594",
+      "at": "2026-11-10T07:03:35+00:00 @ f97b79c",
+      "until": "2026-11-13T02:30:55+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "9e7a88e5561ab6d5dabfc6f15c0fe50bcc80dc9692a2582a449c53f371d9aa76"
+}

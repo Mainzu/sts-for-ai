@@ -1,0 +1,36 @@
+{
+  "key": "measurement/depth-by-boss-guardian-bursts@replay",
+  "rev": 1,
+  "value": "Guardian win gain on the boss replay: bursts on other content mean +0.014 (+0.034, -0.006, +0.032, -0.003), bursts on Guardian/Hexaghost games +0.030 to +0.055 (mean +0.040), seed twins +0.011 / +0.020.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Boss replays re-read by boss: on the same decks at the same entry HP the second turn of search wins +0.083 (0.024) more Hexaghost fights, +0.054 (0.026) Guardian, +0.017 (0.016) Slime Boss; decks differ by 0.2-0.3 in win rate at fixed HP on both unseen bosses; Guardian games add about +0.026 over bursts on other content (navigator re-read, 0 CPU; 20:50 2026-11-05, navigator e63fdaaa)",
+      "sha256": "d3c2a41680aeedba3cabc987c74d6cec2b304075066939a5fd3ddaf851bb2c2b"
+    },
+    {
+      "key": "measurement/unseen-boss-burst@replay",
+      "rev": 2
+    },
+    {
+      "key": "measurement/burst-bosses@replay",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:37+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:19+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/unseen-boss-burst@replay, measurement/burst-bosses@replay reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "ec3e60fa398d0e456861c096ee9b260ce795692eb828f686cafcf5c60ba669ce"
+}

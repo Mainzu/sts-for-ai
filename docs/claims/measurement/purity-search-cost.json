@@ -1,0 +1,41 @@
+{
+  "key": "measurement/purity-search-cost",
+  "rev": 2,
+  "value": "Purity+ on the 10-card Jaw Worm hand: search 300,645 nodes uncapped (99,597 leaves; 14,623 with Good Instincts), 20 cuts at the 50,000 cap since picks past it follow their first option; 34,867 distinct end-of-turn states. Nodes are distinct states, so no exact reduction lowers them: the 6a play-last rule kept all 74,092 pre-chance states with 2.3x the applies.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "engine/tests/play_last_probe.rs",
+      "sha256": "2022d594763526195d261af7382253fb22a04533b673511731dc8a820b4ac21d"
+    },
+    {
+      "path": "docs/research/build-plans-2026-11-14/purity-play-last.md",
+      "anchor": "Step 0 result (2026-11-14)",
+      "sha256": "b5c44998f465b96ae594ea17f000e8bdf163d5ff037641b4cbfafb60318a6d96"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "debug run of play_last_probe (#[ignore]) 2026-11-14, heuristic evaluator, default SearchConfig; 34,867 and 14,623 from the 2026-11-13 probe",
+  "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+  "at": "2026-11-14T13:17:06+00:00 @ d661984c",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Purity+ on a 10-card hand (with Strike, Defend, Bash, Anger, Clash, Cleave, Pommel Strike, Twin Strike, Flex vs Jaw Worm, empty piles): 34,867 distinct end-of-turn states vs 912 with Good Instincts in its place; 617 pick starts (one per position it can be played from); search 300,645 nodes uncapped vs 14,623, so the 50,000 cap cuts 957 states. Unsolved: a way to search Purity-like any-number picks cheaply.",
+      "sources": [
+        {
+          "path": "docs/specs/colorless-cards.md",
+          "sha256": "c9436ee7c89df974bcfe9f59d2f11d6a083fa128de0b43e2fc438c1431c983ef"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-13T14:20:38+00:00 @ 5ae86a77",
+      "until": "2026-11-14T13:17:06+00:00 @ d661984c"
+    }
+  ],
+  "seal": "3daf05713eff04dff19ebca5bc896adfb6f6a5dcbf32ea4fadfb243a01da1f52"
+}

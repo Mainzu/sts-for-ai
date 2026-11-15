@@ -1,0 +1,46 @@
+{
+  "key": "how/act1-monsters-deviations",
+  "rev": 2,
+  "value": "Pack monster deviation: the net has no input column for Protect (BlockAlly) or Entangle (ApplyPack) intents (py/src/features.rs). Shield Gremlin's Protect lands when it runs and a lone one opens with Protect, as in the game (378e2a40).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/act1-inventory.md",
+      "anchor": "Blocks M6 and M7 as built",
+      "sha256": "bd073808f9a500a3598cd0541d6c57219576d5667a1053b4856bc5950cfd0940"
+    },
+    {
+      "path": "content/packs/act1-monsters.json",
+      "sha256": "e893452dc52b1a10e3f870c6ac462b69bb96427baedce141ac9fc2cee5fb4411"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "b8a9db13-f74c-4d56-b794-25229c64f682",
+  "at": "2026-11-14T17:00:15Z @ 5b383266",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Pack monster deviations: Shield Gremlin's Protect block lands after all monsters act; the net has no input column for Protect or Entangle intents.",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Blocks M6 and M7 as built",
+          "sha256": "35ef92f8500d21dbba3f7d2c34b59b4827eb76e2c3fd3aba389990771e700c6b"
+        },
+        {
+          "path": "content/packs/act1-monsters.json",
+          "sha256": "b06aa5bf09f02be2502cd195c39bbc071627e13c764483493fa9e23e60fd4fb2"
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:28:23Z @ 3123201a",
+      "until": "2026-11-14T17:00:15Z @ 5b383266"
+    }
+  ],
+  "seal": "69e7cba8a97d0cb97d208c4d9406118e87b436686309e309c47deb049ee0b891"
+}

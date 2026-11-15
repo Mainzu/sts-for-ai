@@ -1,0 +1,159 @@
+{
+ "batches": {
+  "effects": {
+   "card_count": {
+    "dtype": "float32",
+    "sha256": "40f595be398e5e3f4024cd9d9cd4f432eddfabb4de0c1eca3edc0e4c0db76c72",
+    "shape": [
+     33240
+    ]
+   },
+   "card_pile": {
+    "dtype": "int64",
+    "sha256": "98925c8bf26acf984769922a5a3e08d124344d20dfbdca3bedc462af74cced10",
+    "shape": [
+     33240
+    ]
+   },
+   "card_state": {
+    "dtype": "int64",
+    "sha256": "b54d516a37a4a2ed05571f1492b1872826d0fd4cc14400adb0250bd46f3eb926",
+    "shape": [
+     33240
+    ]
+   },
+   "cards": {
+    "dtype": "float32",
+    "sha256": "17ef688c8cbd6b29cd2af2d57577201f1626574758cd28fda3f03a3f67c234cd",
+    "shape": [
+     33240,
+     100
+    ]
+   },
+   "monsters": {
+    "dtype": "float32",
+    "sha256": "35819cbc3326153540313774422924c2f200229a24dd88c277e23e19f67af38e",
+    "shape": [
+     3104,
+     5,
+     101
+    ]
+   },
+   "player": {
+    "dtype": "float32",
+    "sha256": "27c9a367c00c088ecb20ccd8e07628bcd06c6fe03c1422cfb74f134d2fbea53d",
+    "shape": [
+     3104,
+     35
+    ]
+   },
+   "row_card": {
+    "dtype": "int64",
+    "sha256": "1390719fa26acf66818c89f8f83ffc27c8168045f5be29c54e6e297d82d90019",
+    "shape": [
+     37314
+    ]
+   },
+   "row_entity": {
+    "dtype": "int64",
+    "sha256": "3828fca7cf81236dff8b0cf85179d2d22b17fdecac6b67493ed13f19db34b232",
+    "shape": [
+     37314
+    ]
+   },
+   "row_state": {
+    "dtype": "int64",
+    "sha256": "8068ab96593d9f1c308ebf7d344ba10fcb255341b68eead3bbddc73727901186",
+    "shape": [
+     37314
+    ]
+   },
+   "rows": {
+    "dtype": "float32",
+    "sha256": "cb98bee130f7bd5d3ed791899af6494111c8b16e3a43b48fc52a1ac48c3be5b2",
+    "shape": [
+     37314,
+     315
+    ]
+   }
+  },
+  "ids": {
+   "card_count": {
+    "dtype": "float32",
+    "sha256": "40f595be398e5e3f4024cd9d9cd4f432eddfabb4de0c1eca3edc0e4c0db76c72",
+    "shape": [
+     33240
+    ]
+   },
+   "card_pile": {
+    "dtype": "int64",
+    "sha256": "98925c8bf26acf984769922a5a3e08d124344d20dfbdca3bedc462af74cced10",
+    "shape": [
+     33240
+    ]
+   },
+   "card_state": {
+    "dtype": "int64",
+    "sha256": "b54d516a37a4a2ed05571f1492b1872826d0fd4cc14400adb0250bd46f3eb926",
+    "shape": [
+     33240
+    ]
+   },
+   "cards": {
+    "dtype": "float32",
+    "sha256": "5f4f2edec3f4a515648c9ff7aaff640fdde585cd3209fff4fd24cbeaa82eee51",
+    "shape": [
+     33240,
+     131
+    ]
+   },
+   "monsters": {
+    "dtype": "float32",
+    "sha256": "a15524bced0f784baed864438c984c93595aa30389b2a5218b1e5a9e6e0e98a3",
+    "shape": [
+     3104,
+     5,
+     189
+    ]
+   },
+   "player": {
+    "dtype": "float32",
+    "sha256": "2b9f0c7cb854a535b780311c2429727a450958b42d30b10733d14037d69e30f3",
+    "shape": [
+     3104,
+     57
+    ]
+   },
+   "row_card": {
+    "dtype": "int64",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shape": [
+     0
+    ]
+   },
+   "row_entity": {
+    "dtype": "int64",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shape": [
+     0
+    ]
+   },
+   "row_state": {
+    "dtype": "int64",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shape": [
+     0
+    ]
+   },
+   "rows": {
+    "dtype": "float32",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shape": [
+     0,
+     381
+    ]
+   }
+  }
+ },
+ "states": 3104
+}

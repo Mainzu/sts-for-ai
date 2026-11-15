@@ -1,0 +1,95 @@
+{
+  "key": "measurement/rollout-leaf@decisive-elites",
+  "rev": 3,
+  "value": "Rollout leaf (n 16, product policy) on the 237 floor-9 elites the two-turn product lost 15+ HP on: -1.54 (0.46) HP lost, wins equal; selected on the outcome, so regression to the mean (measurement/rollout-leaf@elites). Description only.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Rollout leaf on all 498 floor-9 elites: +0.67 HP lost (se 0.31), worse than two turns; the decisive-elite gain was regression to the mean; no go for rollouts (depth-headroom lane; 0108 with 0093; read 18:10 2026-11-04, lanes ed05eb9c)",
+      "sha256": "d8cf78bdcb2c5b37da0f53287db2468e35845accc39b6d2b243e81f2ccf54f0a"
+    },
+    {
+      "path": "results/depth_probe/rollout-elite.json",
+      "sha256": "f2f40f787e3e1f08e6e12b96426a990e62097019491ee8c967862f675bd0864e"
+    },
+    {
+      "key": "measurement/rollout-leaf@elites",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:25+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:24+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/rollout-leaf@elites reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Rollout leaf (n 16, product net policy) on the 237 floor-9 elites where the two-turn product lost 15+ HP on the headline control: -1.54 HP lost (se 0.46), wins equal (0.954); Lagavulin -2.93 (se 0.65), Sentries +0.30, Nob -1.31; the gain grows with the control's loss (-0.56 / -1.88 / -7.36 for 15-19 / 20-29 / 30+), so it is biased by selection on the control's outcome and is a description, not a go read; the go read is all 498 elites (0108 with this file).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Rollout leaf on the 237 decisive elites: -1.54 HP lost (se 0.46), at the 1.5 bar, but the gain grows with the control's own loss: selection on the outcome, not yet a read (depth-headroom lane; 0093; read 17:20 2026-11-04, lanes fc5c2804)",
+          "sha256": "86f3a89491b98064e7eacd47604ca1ed806a47d6c8def95594081053a90bad9f"
+        },
+        {
+          "path": "results/depth_probe/rollout-elite.json",
+          "sha256": "f2f40f787e3e1f08e6e12b96426a990e62097019491ee8c967862f675bd0864e"
+        },
+        {
+          "path": "jobs/done/0093-depth-probe.json",
+          "sha256": "4e5034a342a5b462f72c4afe2fe6b34681d9412dfc9dd446bffbd80d06d46e4d"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "fc5c2804-8208-4855-b0c6-e5cd7afafed9",
+      "at": "2026-11-04T10:08:09+00:00 @ e3e711d",
+      "until": "2026-11-04T11:08:37+00:00 @ f093f1c"
+    },
+    {
+      "rev": 2,
+      "value": "Rollout leaf (n 16, product net policy) on the 237 floor-9 elites where the two-turn product lost 15+ HP on the headline control: -1.54 HP lost (se 0.46), wins equal (0.954); Lagavulin -2.93 (se 0.65), Sentries +0.30, Nob -1.31; the gain grows with the control's loss, the pattern of selection on the outcome, and the outcome-blind read over all 498 elites (measurement/rollout-leaf@elites) shows it was regression to the mean; a description only.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Rollout leaf on all 498 floor-9 elites: +0.67 HP lost (se 0.31), worse than two turns; the decisive-elite gain was regression to the mean; no go for rollouts (depth-headroom lane; 0108 with 0093; read 18:10 2026-11-04, lanes ed05eb9c)",
+          "sha256": "d8cf78bdcb2c5b37da0f53287db2468e35845accc39b6d2b243e81f2ccf54f0a"
+        },
+        {
+          "path": "results/depth_probe/rollout-elite.json",
+          "sha256": "f2f40f787e3e1f08e6e12b96426a990e62097019491ee8c967862f675bd0864e"
+        },
+        {
+          "path": "jobs/done/0093-depth-probe.json",
+          "sha256": "4e5034a342a5b462f72c4afe2fe6b34681d9412dfc9dd446bffbd80d06d46e4d"
+        },
+        {
+          "key": "measurement/rollout-leaf@elites",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "ed05eb9c-8eb3-446d-8f37-09e8ef4beb58",
+      "at": "2026-11-04T11:08:37+00:00 @ f093f1c",
+      "until": "2026-11-13T02:31:25+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "a6a1393bd9564a8ec4c8914ed4416eca7f9f5d269993866907b7ae396030dafd"
+}

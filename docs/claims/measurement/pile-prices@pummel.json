@@ -1,0 +1,47 @@
+{
+  "key": "measurement/pile-prices@pummel",
+  "rev": 1,
+  "value": "The 10-29 net prices an exhausted Pummel at about a quarter of its worth: on 200 turn-start positions with Pummel in draw or discard, moving one copy to exhaust changes the net's value by -0.6 HP against -2.2 (0.7) played out by the same player (32 paired futures); the net's change does not grow with the player's Strength (slope 0.00 HP per point against about -2), bosses -3.7 against -13.0; a Strike moved instead: net -0.7, played out +0.35 (0.33).",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/pile-prices-2026-11-09.md",
+      "anchor": "Exhausting Pummel: the net prices it at a quarter of its worth",
+      "sha256": "f31d28b067fc4a8a1ea58639f01c6dd1aa95a1087c7ec813c2100872d58c886a"
+    },
+    {
+      "path": "results/probes/pile-prices/exval.json",
+      "sha256": "73c5070465785d1f474789d554582742d06811ab3975623526846046200b84a6"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "0804bcc5-cde8-4829-ac5c-3f208429ea29",
+  "at": "2026-11-09T10:46:21+00:00 @ 5af5c88",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The 10-29 net prices an exhausted Pummel at about a quarter of its worth: on 200 turn-start positions with Pummel in draw or discard, moving one copy to exhaust changes the net's value by -0.6 HP against -2.2 (0.7) played out by the same player (32 paired futures); the net's change does not grow with the player's Strength (slope 0.00 HP per point against about -2), bosses -3.7 against -13.0; a Strike moved instead: net -0.7, played out +0.35 (0.33).",
+      "sources": [
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Exhausting Pummel: the net prices it at a quarter of its worth",
+          "sha256": "f31d28b067fc4a8a1ea58639f01c6dd1aa95a1087c7ec813c2100872d58c886a"
+        },
+        {
+          "path": "results/probes/pile-prices/exval.json",
+          "sha256": "73c5070465785d1f474789d554582742d06811ab3975623526846046200b84a6"
+        }
+      ],
+      "owner": false,
+      "by": "0804bcc5-cde8-4829-ac5c-3f208429ea29",
+      "at": "2026-11-09T10:46:21+00:00 @ 5af5c88",
+      "until": "2026-11-11T07:25:13+00:00 @ d5db794",
+      "retired": "merged into measurement/pile-prices@pairs (STATUS cap)"
+    }
+  ],
+  "seal": "09d5fb380f2e93c42ee07602e3e8c8dc60ffdc56763d1f00f5e813ec09cc7151"
+}

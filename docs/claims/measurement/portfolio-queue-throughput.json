@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-queue-throughput",
+  "rev": 2,
+  "value": "pred likely/even; fail: backfill replay recovers 0.0-1.1 of 19.8 idle-pending h (idle held by mem_gb above peak and 14-thread timing jobs); 0.05 cpu-h. Reopen: small jobs (<=2 GB, <=3 threads) pend behind a reservation holder and scripts/queue_replay.py --consistency necessary recovers >=2 h.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane queue-throughput closed (2026-11-09)",
+      "sha256": "5ecca708e0191ab4c092793ef2653f709b1306509860c0d280717b357df73837"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:10+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted likely to build, even that the replay recovers 5 h, about 2 cpu-h (cap 3); actual fail at step 1: the backfill replay recovers 0.0-1.1 of 19.8 idle-pending hours (idle held by mem_gb above peak and 14-thread timing jobs), about 0.05 cpu-h; reopen if: small jobs (<= 2 GB, <= 3 threads) pend behind a reservation holder and a re-run of scripts/queue_replay.py on the new window recovers 2 h or more under --consistency necessary",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane queue-throughput closed (2026-11-09)",
+          "sha256": "5ecca708e0191ab4c092793ef2653f709b1306509860c0d280717b357df73837"
+        }
+      ],
+      "owner": false,
+      "by": "64c172a1-04ba-4a3e-8b8e-c6bdfc6e543f",
+      "at": "2026-11-09T09:47:57+00:00 @ 522bbd0",
+      "until": "2026-11-13T02:31:10+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "2201af84e52aca08e828834c23a14bde193530f78780f782844bab4cfca32dda"
+}

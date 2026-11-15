@@ -1,0 +1,67 @@
+{
+  "key": "how/monster-attack-damage",
+  "rev": 2,
+  "value": "Every reader of a monster's attack damage (intent_damage, lookahead rate_damage, the heuristic damage rate, board's hits) goes through CombatState::move_attacks (engine/src/state.rs): attack_shape, then attack_damage, so generic statics (DamageDown) count. Stage B dmg0.8 reads (measurement/mutated-monsters@stage-b, adaptation-stage-b) predate it: their lookahead and heuristic rates ran 25% high.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "engine/src/state.rs",
+      "sha256": "9200c10a087b9452251f58354c1e5ef39c2635f1bab9e62a7374db793f243ba6"
+    },
+    {
+      "path": "docs/research/engine-audit.md",
+      "anchor": "5. Monster attack damage hand-computed in two more copies",
+      "sha256": "5ed240c040ad0691d7b0afd16e84fad11bcd048f8db83da8fa3617595cf61dec"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "commit 3e792c0c",
+  "by": "927c8823-cdb0-4507-88b0-7bb88b122117",
+  "at": "2026-11-13T11:16:31Z @ 472bc3c9",
+  "confirms": [
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:43:15Z @ d240a173",
+      "note": "navigator 2026-11-13: engine/src/state.rs changes after 472bc3c9 are colorless conditions and pile words; move_attacks and its readers unchanged"
+    },
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:48:12Z @ 3e463530",
+      "note": "navigator 2026-11-13 20:50: state.rs diff in colorless step 5 adds the RandomZeroCost chance event only; move_attacks untouched"
+    },
+    {
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T04:43:44Z @ 0ccb0f83",
+      "note": "kill-effects 795ff77c touched only check_over/condition_holds (TargetDied), Feed's pack row and an appended condition column; fact still true"
+    },
+    {
+      "by": "24a6e50e-3e7c-42ec-b831-f35d7846c20b",
+      "at": "2026-11-14T15:50:00Z @ 418de4d6",
+      "note": "navigator: CombatState::move_attacks (state.rs) is called by agent::intent_damage, agent::move_damage (rate_damage), heuristic::move_damage and the board's hits (py/src/lib.rs); engine-audit.md section 5 unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Every reader of a monster's attack damage (intent_damage, the lookahead rate_damage, the heuristic damage rate, board's hits) goes through CombatState::move_attacks (engine/src/state.rs): attack_shape, then attack_damage, so generic statics (DamageDown) count. The stage B dmg0.8 reads (measurement/mutated-monsters@stage-b, adaptation-stage-b) predate it: their lookahead and heuristic rates ran 25% high.",
+      "sources": [
+        {
+          "path": "engine/src/state.rs",
+          "sha256": "339318e85118b28a7cfd8084375019547cfde2fdba8b09565e500cd511024cf9"
+        },
+        {
+          "path": "docs/research/engine-audit.md",
+          "anchor": "5. Monster attack damage hand-computed in two more copies",
+          "sha256": "5ed240c040ad0691d7b0afd16e84fad11bcd048f8db83da8fa3617595cf61dec"
+        }
+      ],
+      "owner": false,
+      "by": "927c8823-cdb0-4507-88b0-7bb88b122117",
+      "at": "2026-11-13T11:16:13Z @ 3e792c0c",
+      "until": "2026-11-13T11:16:31Z @ 472bc3c9"
+    }
+  ],
+  "seal": "3fd4408dcd8eb95195dfc2d8825df621b80bc9f75a108b26713b817af03b06a8"
+}

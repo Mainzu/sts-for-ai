@@ -1,0 +1,50 @@
+{
+  "key": "measurement/solver-memory-per-node",
+  "rev": 2,
+  "value": "sts.solve holds ~21 KB per node: one failing tail position added 0.06/0.42/1.14 GB at max_nodes 5k/20k/50k; 1M nodes ~20 GB. A failed solve with SolveStore(min_nodes=0) still stores its finished subtrees (curriculum fixture: 343k of 380k rows).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/test-full-memory-2026-11-06.md",
+      "anchor": "Why",
+      "sha256": "93b282f20f62b0e54ed290b03da7cc1824247013bd9713b9c820094da41990c4"
+    },
+    {
+      "path": "scripts/tests/test_solve.py",
+      "sha256": "f7ecb7c020331cfa5a99ffa62e97afb7484b328f920de6468ee56d96043eb504"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:32+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The exact solver (sts.solve) holds about 21 KB per node in its table: one failing tail position from test_solve's game set added 0.06 / 0.42 / 1.14 GB at max_nodes 5k / 20k / 50k (fresh process each; working set of the process tree). A solve that runs to 1M nodes would need ~20 GB. A failed solve with a SolveStore(min_nodes=0) still stores the subtrees it finished: in the curriculum test fixture they were 343k of 380k decision rows.",
+      "sources": [
+        {
+          "path": "docs/research/test-full-memory-2026-11-06.md",
+          "anchor": "Why",
+          "sha256": "93b282f20f62b0e54ed290b03da7cc1824247013bd9713b9c820094da41990c4"
+        },
+        {
+          "path": "scripts/tests/test_solve.py",
+          "sha256": "f7ecb7c020331cfa5a99ffa62e97afb7484b328f920de6468ee56d96043eb504"
+        },
+        {
+          "path": "jobs/done/0295-test-full.json",
+          "sha256": "7e8ed78d3b53ecff36b4166f958b473fcb43fbfc9f5eae5dd52b9f271dc9e464"
+        }
+      ],
+      "owner": false,
+      "by": "584253c0-1e9d-4fca-a67d-45d05851b041",
+      "at": "2026-11-06T15:47:24+00:00 @ 3fd00de",
+      "until": "2026-11-13T02:31:32+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "83ba6868132303425047cd2bfc5ebdc6c11c1689a69ca0b7c4cc64a07d9a25ed"
+}

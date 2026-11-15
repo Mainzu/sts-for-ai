@@ -1,0 +1,38 @@
+{
+  "key": "decision/headline-pool-after-act1",
+  "rev": 2,
+  "value": "After Act 1: headline offer pool widens to all engine cards, controls built once then; new-content nets read by cross comparison (--match or crossed arms); value chooser becomes its chooser after value-chooser-path and a net trained on the pool; exact-over-hands chooser rejected.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Headline card pool and choosers after Act 1 (owner, 2026-11-09)",
+      "sha256": "555f892e75f130df4ac90f8a722e9b98b3db28b93e33b6561fa85150f3bbf5c1"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:27Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "After Act 1 is done the headline's offer pool widens to the cards the engine holds, with its controls built once then (not before); reads of nets trained on new content on it use cross comparison (--match or crossed arms); the value chooser is its chooser once a net has trained on the pool, after backlog value-chooser-path (every encounter the sequence can still meet, states valued before the opening hand); an exact-over-hands chooser is rejected; what the held-out half becomes is open.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Headline card pool and choosers after Act 1 (owner, 2026-11-09)",
+          "sha256": "555f892e75f130df4ac90f8a722e9b98b3db28b93e33b6561fa85150f3bbf5c1"
+        }
+      ],
+      "owner": false,
+      "by": "2d4856a3-c740-4498-8aa9-96e58ec8a2f2",
+      "at": "2026-11-09T15:53:38Z @ c4931ef",
+      "until": "2026-11-13T02:29:27Z @ 3123201a"
+    }
+  ],
+  "seal": "631e1450e6d24047551aefaa7edfe63dd26ccfc3a8468d453e6cc7f0b6d62dba"
+}

@@ -1,0 +1,66 @@
+{
+  "key": "measurement/depth-by-boss@replay",
+  "rev": 2,
+  "value": "Same decks, same entry HP: the second search turn wins Hexaghost +0.083 (0.024), Guardian +0.054 (0.026), Slime +0.017 (0.016) (two-turn product's boss vs one-turn replay interpolated; seeds and HP price differ: a lead).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Boss replays re-read by boss: on the same decks at the same entry HP the second turn of search wins +0.083 (0.024) more Hexaghost fights, +0.054 (0.026) Guardian, +0.017 (0.016) Slime Boss; decks differ by 0.2-0.3 in win rate at fixed HP on both unseen bosses; Guardian games add about +0.026 over bursts on other content (navigator re-read, 0 CPU; 20:50 2026-11-05, navigator e63fdaaa)",
+      "sha256": "d3c2a41680aeedba3cabc987c74d6cec2b304075066939a5fd3ddaf851bb2c2b"
+    },
+    {
+      "path": "results/boss_replay/net1029-hpe0.01-two-starter-simboss-2026-10-29-seed-check-r2-s1-1a789b2-hpb0.01-12a77a-55cb.json",
+      "sha256": "e988f1c5197d384c7b3f3b731233d8849974bbae6f8b36a9e1020f61272cca27"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json",
+      "sha256": "18cd9996abd64a927459287bf456a4b974f7956884d4d9f5fb551745bb1162ed"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:12+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Re-read of the 10-29 net's boss replay file, 0 CPU: for the 474 decks the plain two-turn product built on the headline, its own boss result at its arrival HP (one game, two turns deep, @hpe0.01) minus the one-turn replay of the same deck interpolated to that HP (4 seeds per level, @hpb0.01), se over decks: Hexaghost +0.083 (0.024; 0.820 against 0.737, 161 decks), the Guardian +0.054 (0.026; 148), Slime Boss +0.017 (0.016; 165); Hexaghost's gain sits at 40-59 HP (+0.164 and +0.142). Seeds are not shared and the HP price differs, so the sizes are a lead. Between-deck sd of the one-turn win rate at a fixed HP, sampling noise removed: Hexaghost 0.21-0.29 at 30-60 HP, the Guardian 0.18-0.24 at 40-60, Slime Boss 0.13-0.19 at 30-50: on the unseen bosses the deck moves wins two to three times as far as the second turn of search. Guardian gain of all burst nets beside each other: bursts on other content +0.034, -0.006, +0.032, -0.003 (mean +0.014), bursts on Guardian and Hexaghost games +0.030 to +0.055 (mean +0.040), seed twins +0.011 and +0.020. depth_probe.py play --kind boss plays the headline control's 203 bosses entered at 50-69 HP (Hexaghost 77 with 61 won, the Guardian 63 with 51, Slime Boss 63 with 62); a three-turn read of the 77 detects about 0.11 wins.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Boss replays re-read by boss: on the same decks at the same entry HP the second turn of search wins +0.083 (0.024) more Hexaghost fights, +0.054 (0.026) Guardian, +0.017 (0.016) Slime Boss; decks differ by 0.2-0.3 in win rate at fixed HP on both unseen bosses; Guardian games add about +0.026 over bursts on other content (navigator re-read, 0 CPU; 20:50 2026-11-05, navigator e63fdaaa)",
+          "sha256": "d3c2a41680aeedba3cabc987c74d6cec2b304075066939a5fd3ddaf851bb2c2b"
+        },
+        {
+          "path": "results/boss_replay/net1029-hpe0.01-two-starter-simboss-2026-10-29-seed-check-r2-s1-1a789b2-hpb0.01-12a77a-55cb.json",
+          "sha256": "e988f1c5197d384c7b3f3b731233d8849974bbae6f8b36a9e1020f61272cca27"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json",
+          "sha256": "18cd9996abd64a927459287bf456a4b974f7956884d4d9f5fb551745bb1162ed"
+        },
+        {
+          "key": "measurement/unseen-boss-burst@replay",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "cause/boss-deaths",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "e63fdaaa-91f4-4e3b-b7d3-22c1f840fbed",
+      "at": "2026-11-05T13:54:35+00:00 @ 53d26c9",
+      "until": "2026-11-13T02:30:12+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "2e78a042387ba5c07d3ed4e8843a82b756f2134a90934fee28edd6db184f9183"
+}

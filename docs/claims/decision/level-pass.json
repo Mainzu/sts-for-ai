@@ -1,0 +1,58 @@
+{
+  "key": "decision/level-pass",
+  "rev": 2,
+  "value": "Changes that fix a misprice, read the game as shown, or hold across unvaried content pass on level-or-better: paired end HP - 2 se >= -1 HP, paired clears >= -0.02, no goal-1 row <= -1 HP and > 2 se below 0. A protocol fail alone doesn't close one.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/direction.md",
+      "anchor": "Level and more general is a pass",
+      "sha256": "153150fa40eb68cc0b139e871433e13dc9edb867b34206329342371f0feae553"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Level and more general is a pass (owner, 2026-11-13)",
+      "sha256": "9e2b7a9df74a8271aec0642fd64b19db6a396ceaca0e03222dc7cd202349cb2e"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Level-defaults reads queued; how the level rule's bars are read (on the owner's behalf, 2026-11-13)",
+      "sha256": "e195bc87e3a007c5ceba8bc8213503aeadca82d00a16af57dbc8abb9023aa96b"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:36Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A change that fixes a misprice, reads the game as it shows itself, or holds across content today's fights don't vary passes on a level-or-better read, not the protocol's +1.5 HP (owner, docs/direction.md 'Level and more general is a pass'): paired end HP minus 2 se not below -1 HP and paired clears (point estimate) not below -0.02 against the control, and no goal-1 row worse, a row failing when its paired difference is -1 HP or worse and more than 2 se below zero. A protocol fail alone does not close such a change.",
+      "sources": [
+        {
+          "path": "docs/direction.md",
+          "anchor": "Level and more general is a pass",
+          "sha256": "153150fa40eb68cc0b139e871433e13dc9edb867b34206329342371f0feae553"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Level and more general is a pass (owner, 2026-11-13)",
+          "sha256": "9e2b7a9df74a8271aec0642fd64b19db6a396ceaca0e03222dc7cd202349cb2e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Level-defaults reads queued; how the level rule's bars are read (on the owner's behalf, 2026-11-13)",
+          "sha256": "e195bc87e3a007c5ceba8bc8213503aeadca82d00a16af57dbc8abb9023aa96b"
+        }
+      ],
+      "owner": false,
+      "by": "2fda0390-ebf2-4956-a49b-b93252b1ac30",
+      "at": "2026-11-13T01:42:51Z @ 2d152e05",
+      "until": "2026-11-13T02:29:36Z @ 3123201a"
+    }
+  ],
+  "seal": "5bb6c33074dc901b3b77c3d857b459ad6e6c5621c130d60dbcc4c060a892fd41"
+}

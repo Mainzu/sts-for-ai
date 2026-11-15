@@ -1,0 +1,471 @@
+{
+ "evaluator": "heuristic",
+ "quick": true,
+ "representation": {
+  "aliasing": {
+   "effects": {
+    "features": "effects",
+    "gap": 0.05,
+    "halves": {
+     "held_out": {
+      "aliased": 0,
+      "decisions": 50,
+      "examples": [],
+      "pairs": 793
+     },
+     "train": {
+      "aliased": 0,
+      "decisions": 50,
+      "examples": [],
+      "pairs": 559
+     }
+    }
+   }
+  },
+  "probes": {
+   "pass": [
+    1.0,
+    0.784689,
+    1.0
+   ],
+   "probes": {
+    "aoe_on_sentries": {
+     "bad": 1.380648,
+     "good": 1.486762,
+     "pass": 1.0,
+     "ref_bad": 1.554524,
+     "ref_good": 1.635552
+    },
+    "aoe_on_slimes": {
+     "bad": 2.5e-05,
+     "good": 9.5e-05,
+     "pass": 1.0,
+     "ref_bad": 1.68126,
+     "ref_good": 1.95
+    },
+    "block_matches_hit": {
+     "bad": 1.061009,
+     "good": 1.176995,
+     "pass": 1.0,
+     "ref_bad": 1.845379,
+     "ref_good": 1.916831
+    },
+    "block_needed": {
+     "bad": 0.007401,
+     "good": 0.409272,
+     "pass": 1.0,
+     "ref_bad": 0.004191,
+     "ref_good": 0.232529
+    },
+    "block_no_attack": {
+     "bad": 0.188367,
+     "good": 0.417553,
+     "pass": 1.0,
+     "ref_bad": 0.358946,
+     "ref_good": 0.774724
+    },
+    "block_without_enrage": {
+     "bad": 1.87233,
+     "good": 1.933087,
+     "pass": 1.0,
+     "ref_bad": 1.650253,
+     "ref_good": 1.809122
+    },
+    "debuff_into_artifact": {
+     "bad": 0.447717,
+     "good": 0.735702,
+     "pass": 1.0,
+     "ref_bad": 0.474349,
+     "ref_good": 0.841959
+    },
+    "debuff_no_artifact": {
+     "bad": 1.864616,
+     "good": 1.867892,
+     "pass": 1.0,
+     "ref_bad": 1.853784,
+     "ref_good": 1.95
+    },
+    "kill_attacker_first": {
+     "bad": 0.0,
+     "good": 0.851374,
+     "pass": 1.0,
+     "ref_bad": 0.0,
+     "ref_good": 1.287694
+    },
+    "lethal_now": {
+     "bad": 0.0,
+     "good": 2.0,
+     "pass": 1.0,
+     "ref_bad": 0.0,
+     "ref_good": 2.0
+    },
+    "multihit_unblocked": {
+     "bad": 1.336454,
+     "good": 1.533844,
+     "pass": 1.0,
+     "ref_bad": 1.633453,
+     "ref_good": 1.749863
+    },
+    "setup_early": {
+     "bad": 1.953092,
+     "good": 1.985891,
+     "pass": 1.0,
+     "ref_bad": 1.804252,
+     "ref_good": 1.933582
+    },
+    "setup_while_asleep": {
+     "bad": 0.361675,
+     "good": 1.027245,
+     "pass": 1.0,
+     "ref_bad": 0.086081,
+     "ref_good": 0.348631
+    },
+    "vulnerable_before_multihit": {
+     "bad": 0.050356,
+     "good": 0.150422,
+     "pass": 1.0,
+     "ref_bad": 1.381516,
+     "ref_good": 1.890036
+    }
+   }
+  }
+ },
+ "sets": {
+  "standard": {
+   "gaps": {
+    "held_out": {
+     "hp_lost": [
+      -5.583333,
+      -19.166667,
+      8.835417
+     ],
+     "mse": null,
+     "win": [
+      0.083333,
+      -0.073044,
+      0.23971
+     ]
+    },
+    "silent_a": {
+     "hp_lost": [
+      7.25,
+      0.33125,
+      15.252083
+     ],
+     "mse": null,
+     "win": [
+      -0.083333,
+      -0.34585,
+      0.179183
+     ]
+    },
+    "silent_b": {
+     "hp_lost": [
+      -1.083333,
+      -6.835417,
+      5.085417
+     ],
+     "mse": null,
+     "win": [
+      0.0,
+      -0.22115,
+      0.22115
+     ]
+    }
+   },
+   "halves": {
+    "held_out": {
+     "counts": {
+      "games": 12
+     },
+     "metrics": {
+      "hp_lost": [
+       19.25,
+       8.25,
+       31.591667
+      ],
+      "mse": null,
+      "win": [
+       1.0,
+       0.757506,
+       1.0
+      ]
+     }
+    },
+    "silent_a": {
+     "counts": {
+      "games": 12
+     },
+     "metrics": {
+      "hp_lost": [
+       32.083333,
+       17.666667,
+       46.752083
+      ],
+      "mse": null,
+      "win": [
+       0.833333,
+       0.551969,
+       0.953035
+      ]
+     }
+    },
+    "silent_b": {
+     "counts": {
+      "games": 12
+     },
+     "metrics": {
+      "hp_lost": [
+       23.75,
+       10.25,
+       38.260417
+      ],
+      "mse": null,
+      "win": [
+       0.916667,
+       0.64612,
+       0.985135
+      ]
+     }
+    },
+    "train": {
+     "counts": {
+      "games": 12
+     },
+     "metrics": {
+      "hp_lost": [
+       24.833333,
+       11.666667,
+       38.8375
+      ],
+      "mse": null,
+      "win": [
+       0.916667,
+       0.64612,
+       0.985135
+      ]
+     }
+    }
+   }
+  },
+  "tight": {
+   "gaps": {
+    "held_out": {
+     "hp_lost": [
+      -0.26152,
+      -8.890899,
+      9.082056
+     ],
+     "mse": null,
+     "mse_search.all": [
+      0.012118,
+      -0.601146,
+      0.645227
+     ],
+     "mse_search.contested": [
+      0.44274,
+      -0.530772,
+      1.359603
+     ],
+     "mse_search.uncapped": [
+      -0.087816,
+      -0.817909,
+      0.569088
+     ],
+     "ranking.all": [
+      -0.04428,
+      -0.171742,
+      0.061223
+     ],
+     "ranking.contested": [
+      -0.04428,
+      -0.176767,
+      0.056619
+     ],
+     "ranking.uncapped": [
+      0.020206,
+      -0.067245,
+      0.080811
+     ],
+     "regret.all": [
+      0.016992,
+      -0.002344,
+      0.041842
+     ],
+     "regret.contested": [
+      0.047287,
+      -0.003035,
+      0.115098
+     ],
+     "regret.uncapped": [
+      0.015125,
+      -0.00425,
+      0.04353
+     ],
+     "win": [
+      0.051843,
+      -0.203247,
+      0.306934
+     ]
+    }
+   },
+   "halves": {
+    "held_out": {
+     "counts": {
+      "decisions.all": 50,
+      "decisions.contested": 18,
+      "decisions.uncapped": 39,
+      "games": 28
+     },
+     "metrics": {
+      "hp_lost": [
+       9.964286,
+       4.071429,
+       16.897321
+      ],
+      "mse": null,
+      "mse_search.all": [
+       1.265673,
+       0.809628,
+       1.699625
+      ],
+      "mse_search.contested": [
+       1.974776,
+       1.306322,
+       2.641483
+      ],
+      "mse_search.uncapped": [
+       1.26894,
+       0.766659,
+       1.776754
+      ],
+      "ranking.all": [
+       0.88009,
+       0.754757,
+       0.968912
+      ],
+      "ranking.contested": [
+       0.88009,
+       0.762374,
+       0.96519
+      ],
+      "ranking.uncapped": [
+       0.966443,
+       0.903194,
+       1.0
+      ],
+      "regret.all": [
+       0.021213,
+       0.001973,
+       0.045544
+      ],
+      "regret.contested": [
+       0.058396,
+       0.008474,
+       0.1262
+      ],
+      "regret.uncapped": [
+       0.018214,
+       0.0,
+       0.044611
+      ],
+      "win": [
+       0.535714,
+       0.358127,
+       0.704684
+      ]
+     }
+    },
+    "train": {
+     "counts": {
+      "decisions.all": 50,
+      "decisions.contested": 19,
+      "decisions.uncapped": 46,
+      "games": 31
+     },
+     "metrics": {
+      "hp_lost": [
+       10.225806,
+       4.740323,
+       16.484677
+      ],
+      "mse": null,
+      "mse_search.all": [
+       1.253555,
+       0.818218,
+       1.699383
+      ],
+      "mse_search.contested": [
+       1.532036,
+       0.821277,
+       2.280669
+      ],
+      "mse_search.uncapped": [
+       1.356756,
+       0.896702,
+       1.850258
+      ],
+      "ranking.all": [
+       0.92437,
+       0.872721,
+       0.976764
+      ],
+      "ranking.contested": [
+       0.92437,
+       0.872714,
+       0.973466
+      ],
+      "ranking.uncapped": [
+       0.946237,
+       0.898868,
+       1.0
+      ],
+      "regret.all": [
+       0.004221,
+       0.0,
+       0.009822
+      ],
+      "regret.contested": [
+       0.011109,
+       0.0,
+       0.024555
+      ],
+      "regret.uncapped": [
+       0.003089,
+       0.0,
+       0.008304
+      ],
+      "win": [
+       0.483871,
+       0.319703,
+       0.651596
+      ]
+     }
+    }
+   }
+  }
+ },
+ "settings": {
+  "boot": 1000,
+  "boot_seed": 0,
+  "contested": 0.05,
+  "limit": 16,
+  "reference": {
+   "decisions_sha256": "2977a018c7c1df9c0d2a6a050f0101221caf2c1fd61c93815fee7edfe058562f",
+   "max_nodes": 50000,
+   "seeds": [
+    1,
+    2,
+    3
+   ],
+   "settings": {
+    "limit": 32,
+    "sample_k": 8,
+    "turns": 2
+   }
+  },
+  "sample_k": 0,
+  "turns": 1
+ },
+ "version": 1
+}

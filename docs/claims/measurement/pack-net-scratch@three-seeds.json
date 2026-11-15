@@ -1,0 +1,175 @@
+{
+  "key": "measurement/pack-net-scratch@three-seeds",
+  "rev": 3,
+  "value": "From-scratch all-content nets + 31 Act 1 pack cards, s1/101/201 @hpb0.01, one turn, 0-499, n 500: pack headline +3.33 (0.83) HP, clears +0.065 vs 10-29 on the same pack (seeds +2.69 to +4.05); official cells +1.58 (0.52), clears +0.014. Official ruler: measurement/pack-net-scratch-ruler@three-seeds.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pack-net-scratch.md",
+      "anchor": "Three-seed read 0767-0769: checkpoint three-seed-read passed (go)",
+      "sha256": "b1b74543c4fecb1d766e9214908f629122f5cf413b6929599abcc4aab63320dc"
+    },
+    {
+      "key": "yardstick/protocol",
+      "rev": 1
+    },
+    {
+      "key": "measurement/pack-net-scratch-ruler@three-seeds",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:41+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "From-scratch all-content nets with the 31 Act 1 pack cards, seeds 1/101/201 (runs/2026-11-10-packnet40k-s*-r1 @hpb0.01), one turn deep, sequences 0-499, fixed n 500, three seeds averaged per sequence: pack headline +3.33 end-HP (se 0.83, z 3.99), clears +0.065 against the 10-29 net on the same pack (each seed alone +2.69 to +4.05, z 2.7-3.8); official cells +1.58 end-HP (se 0.52), clears +0.014 (seeds +0.86 to +2.26). Gains at the bosses and Lagavulin; seed spread is the honest error. One turn deep, not a product read.",
+      "sources": [
+        {
+          "path": "docs/research/pack-net-scratch.md",
+          "anchor": "Three-seed read 0767-0769: checkpoint three-seed-read passed (go)",
+          "sha256": "b1b74543c4fecb1d766e9214908f629122f5cf413b6929599abcc4aab63320dc"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s1-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "9b35563859e64169557b7c64df45fa9dd37c4f784bbd80acedd46a87ce545b9c"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s101-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "1d1c2ac4523207621c61ad125c7e9077f478e1de7b9cfef9b97cf495b063e808"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s201-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "6a2e2ee6e52c0078758d96198a522a9cdd2ecbbaaa9b4fc18fd3b5e81babc057"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s101-hpb0.01-cells.json",
+          "sha256": "58f143fc3eb382c4cf60edd604c0c66ecd43315f7ce0071399afb34465304e6f"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s201-hpb0.01-cells.json",
+          "sha256": "6099ceec8dc9cf9cd1f0d1ef64d08377a7d43716f0e6911b826aeba24c542985"
+        },
+        {
+          "path": "jobs/done/0767-gauntlet.json",
+          "sha256": "cc3b11b1f05055632704ed65ae4eac043f5a63857af7b85167880ce170bc2785"
+        },
+        {
+          "path": "jobs/done/0768-gauntlet.json",
+          "sha256": "fac9d1cb609de39ea12072b2e01689cf5eda12a2060d5ce216cc5323e59a686b"
+        },
+        {
+          "path": "jobs/done/0769-gauntlet.json",
+          "sha256": "1496ad0bc7f701150c9c6c3012189aac5fd8dc6d023a4a39cf466c8c7d8a7db4"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "27e6a8f8-85be-4e52-9ae1-9c3093a6429b",
+      "at": "2026-11-10T01:55:26+00:00 @ 3866a00",
+      "until": "2026-11-10T07:29:48+00:00 @ 935b7b0"
+    },
+    {
+      "rev": 2,
+      "value": "From-scratch all-content nets with the 31 Act 1 pack cards, seeds 1/101/201 (runs/2026-11-10-packnet40k-s*-r1 @hpb0.01), one turn deep, sequences 0-499, fixed n 500, three seeds averaged per sequence: pack headline +3.33 end-HP (se 0.83, z 3.99), clears +0.065 against the 10-29 net on the same pack (each seed alone +2.69 to +4.05, z 2.7-3.8); official cells +1.58 end-HP (se 0.52), clears +0.014 (seeds +0.86 to +2.26). Gains at the bosses and Lagavulin; seed spread is the honest error. One turn deep, not a product read. Ruler (0774-0776, pns-official: yardstick/headline-setting, own picks, against yardstick/one-turn-controls, fixed n 500): s1 +0.59 (1.05), s101 +0.15 (1.06), s201 +1.61 (1.06), pooled +0.78 (0.89) HP, clears +0.011 (bar +1.5 at 2 se: fail); Demon Form picks 0.60-0.62 against 0.19; both took it +17.7 to +20.2 HP; where no player took it (345) -2.14 (0.97), deaths from the boss (107 to 78-91) to the second elite (31 to 38-45): the one-round recipe's picks, as the twins' (measurement/pack-net-twin@one-turn).",
+      "sources": [
+        {
+          "path": "docs/research/pack-net-scratch.md",
+          "anchor": "Three-seed read 0767-0769: checkpoint three-seed-read passed (go)",
+          "sha256": "b1b74543c4fecb1d766e9214908f629122f5cf413b6929599abcc4aab63320dc"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s1-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "9b35563859e64169557b7c64df45fa9dd37c4f784bbd80acedd46a87ce545b9c"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s101-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "1d1c2ac4523207621c61ad125c7e9077f478e1de7b9cfef9b97cf495b063e808"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s201-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "6a2e2ee6e52c0078758d96198a522a9cdd2ecbbaaa9b4fc18fd3b5e81babc057"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s101-hpb0.01-cells.json",
+          "sha256": "58f143fc3eb382c4cf60edd604c0c66ecd43315f7ce0071399afb34465304e6f"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s201-hpb0.01-cells.json",
+          "sha256": "6099ceec8dc9cf9cd1f0d1ef64d08377a7d43716f0e6911b826aeba24c542985"
+        },
+        {
+          "path": "jobs/done/0767-gauntlet.json",
+          "sha256": "cc3b11b1f05055632704ed65ae4eac043f5a63857af7b85167880ce170bc2785"
+        },
+        {
+          "path": "jobs/done/0768-gauntlet.json",
+          "sha256": "fac9d1cb609de39ea12072b2e01689cf5eda12a2060d5ce216cc5323e59a686b"
+        },
+        {
+          "path": "jobs/done/0769-gauntlet.json",
+          "sha256": "1496ad0bc7f701150c9c6c3012189aac5fd8dc6d023a4a39cf466c8c7d8a7db4"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        },
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-official (0774-0776): the pack nets' ruler gain is Demon Form; outside it they lose 2.1 HP",
+          "sha256": "6eb7c9550511567036b01f8a351eb95ab174228b30e87390e783e710aea207f1"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Probe pns-official read: the pack nets' ruler gain is Demon Form; no two-turn official read (on the owner's behalf, 2026-11-10)",
+          "sha256": "d36f102c4ec13396b89037c57de7d0d09e730b38420249e4d4cf8ed5195740fc"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s1-hpb0.01-starter-simboss.json",
+          "sha256": "4d2fd4d902810f39de067f3d305b71d025545279a9788d143a92632af467415d"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s101-hpb0.01-starter-simboss.json",
+          "sha256": "787b495e32f0804f41c2e56f1260b4da4ddd6e92193e68c4c1c08bfce7013d5b"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s201-hpb0.01-starter-simboss.json",
+          "sha256": "e8d69cb0246893f8a802b7fbf6ef1d2641062c03d4f0156e0104f104c60ae45d"
+        },
+        {
+          "path": "jobs/done/0774-gauntlet.json",
+          "sha256": "a4206700204360dd04eee2291e0bae97eefca0f3a95afe836ab7386d3154cfbb"
+        },
+        {
+          "path": "jobs/done/0775-gauntlet.json",
+          "sha256": "70b0e22b85b2b0c47512098e4b1ce1028d9b714a8b55d97d621e8ddb3ca29ef4"
+        },
+        {
+          "path": "jobs/done/0776-gauntlet.json",
+          "sha256": "7136cb0d0a2763674fed82b40c02d02580a81eda421b22d32db4c3308ecfd011"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/headline-setting",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "b03f7647-f3c8-4742-857a-e434dfb7a594",
+      "at": "2026-11-10T07:29:48+00:00 @ 935b7b0",
+      "until": "2026-11-13T02:30:41+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "0f40e94855d6ca5c411ad890d3ea4d9c1ed6cc5627269c624d2be98d6f3d452f"
+}

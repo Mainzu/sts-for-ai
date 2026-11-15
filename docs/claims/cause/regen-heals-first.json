@@ -1,0 +1,60 @@
+{
+  "key": "cause/regen-heals-first",
+  "rev": 2,
+  "value": "The game's Regeneration queues its turn-end heal with addToTop, so it heals before other turn-end effects (Combust's HP loss; live run 12: game 84 at the HP cap). Fixed in cd9a501d: hook option acts_first (OwnerTurnEnd/RoundEnd; the hook acts before its pass's earlier hooks, last called first), set on Regen and Orichalcum, the only Act 1 end-of-turn addToTop users.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/real-game-runs.md",
+      "anchor": "Bugs the live runs found",
+      "sha256": "d7bf1c42d0fdce346a4437d4d699b5efa184225f6c4d39e64fe17b3ac7205373"
+    },
+    {
+      "path": "content/packs/act1-potions.json",
+      "sha256": "ae84a0a9d236b8001f42aca34689c6f79086ec5ee210a1dd81c7024db76f474c"
+    },
+    {
+      "path": "content/packs/act1-relics.json",
+      "sha256": "7f9344d8dca6c8eb55bfdd0d4d1deaede35f257991838a3c6dbeac616d3dc298"
+    },
+    {
+      "path": "engine/tests/turn_end_first.rs",
+      "sha256": "b3106a85a65fa22a16ffe4dd62c855fab0d8813e9da36dec0da4391ac7a93d98"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+  "at": "2026-11-14T01:58:33Z @ cd9a501d",
+  "confirms": [
+    {
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T04:43:40Z @ 0ccb0f83",
+      "note": "kill-effects 795ff77c touched only check_over/condition_holds (TargetDied), Feed's pack row and an appended condition column; fact still true"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The game's Regeneration queues its turn-end heal with addToTop, so it heals before other turn-end effects (Combust's HP loss); the engine runs OwnerTurnEnd hooks in order and lost HP first (live run 2026-11-14, run 12: game 84, engine 85 at the HP cap). Fix: a hook option to act before the turn-end effects already queued. Not done.",
+      "sources": [
+        {
+          "path": "docs/research/real-game-runs.md",
+          "anchor": "Bugs the live runs found",
+          "sha256": "963cab810615391a8e451916eed616a3ae0123edc53429e9769b4af926a95681"
+        },
+        {
+          "path": "content/packs/act1-potions.json",
+          "sha256": "1d5a2096cb1bf8f964bc424c14be2cf62cf4494af54ebd9dcf7dd2a75f989f00"
+        }
+      ],
+      "owner": false,
+      "by": "12ae5317-5033-4622-ad4c-f74f4df39f7e",
+      "at": "2026-11-14T01:25:28Z @ 924d16c4",
+      "until": "2026-11-14T01:58:33Z @ cd9a501d"
+    }
+  ],
+  "seal": "6d36689e17ee3e9b313a8c5f16fec6d12d934724f469a442df8b62103f3dee61"
+}

@@ -1,0 +1,22 @@
+{
+  "key": "decision/goal1-yardstick",
+  "rev": 1,
+  "value": "Goal-1 yardstick (owner): mutations as boon + bane pairs on official parents; each modifier's strength change is measured on its parent fights, and the player's drop beyond the parent's difficulty is the novelty cost, measured per modifier.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Goal-1 yardstick: paired modifiers, measured per modifier (owner, 2026-11-02)",
+      "sha256": "4077588c35194ffe48412b7d20bce16155250bf094f372f82da18eead4b035e2"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:11:36Z @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "44f9b31a3140b8a952b12f9f9587f576f3e969195fbd33c0243117c83c1eb7e0"
+}

@@ -1,0 +1,53 @@
+{
+  "key": "measurement/elite-skip@headline",
+  "rev": 1,
+  "value": "Skipping every elite for a hard hallway (headline, one turn) is worth +14.0 end-HP (se 2.3, protocol pass at n 50; 0.920 vs 0.720 clears): the gauntlet pays nothing for elites, so this is the path ceiling. The plain rule 'skip under 40 HP' takes about a tenth: +1.53 HP (se 0.61, pass at n 83), firing on 11% of elite floors.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Elite skip: the path ceiling is large, a plain HP rule takes about a tenth of it (Q3; b39ab / b39ac; read 14:35 2026-11-02, manager 837a5e68)",
+      "sha256": "207ef4785bff6cbdaba5a9c7f0d75e346dd4a3d0da41362e2b3cc869da4645d7"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss-eliteskip.json",
+      "sha256": "c1cfed380ed830a7e9bf1ab7518703604bf608da7bf6ebc51276bf37c80e03b3"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss-elitehp40.json",
+      "sha256": "a7671177bc4b8f049391f941eafbfa7dfedbb259fea8ee4fd68ddc806e7b758f"
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    },
+    {
+      "key": "yardstick/protocol",
+      "rev": 1
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:13:11+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:57:56+00:00 @ a875850",
+      "note": "yardstick/headline-setting rev 2 changed only which depth judges a change (one turn; the two-turn product is the reported score); the setting's flags this fact relies on (--start starter --rewards sim --sim-boss, 500 sequences) are unchanged"
+    },
+    {
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:38:03+00:00 @ 80d6c86",
+      "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "de90140146a627b36088e451ed75383db742dae98f5abd7e5f358251b1eddc92"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "0002-python",
+ "cmd": [
+  "python",
+  "x.py"
+ ],
+ "threads": 2,
+ "estimate_min": 60.0,
+ "lane": "alpha",
+ "added": "2026-11-03T08:00:00+00:00",
+ "started": "2026-11-03T09:00:00+00:00",
+ "ended": "2026-11-03T10:00:00+00:00",
+ "status": "failed",
+ "exit_code": 1
+}

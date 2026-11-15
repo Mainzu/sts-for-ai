@@ -1,0 +1,32 @@
+{
+  "key": "measurement/rollout-ceiling",
+  "rev": 1,
+  "value": "Rollout probe on the 117 never-cleared gauntlet sequences, replayed at the product's fatal fight and entry HP with per-action play-outs by the one-turn champion: 3 of 117 won at n 16 and 7 of 117 at n 64 (sanity: 23-27 of 30 cleared boss fights): the fatal fight is rarely savable, losses are decided earlier (HP, deck). The play-out policy is weaker than the product, so this bounds little.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Rollout ceiling probe (0059l7r3b27-b29b; read 03:05 2026-11-02, manager c3513fb5)",
+      "sha256": "3cbf38ecf18ce4d401e1ea2cb646d6728904e6ceaef207831ea1e691ebdb3f70"
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "the 'bounds little' caveat is from big-picture-2026-11-02b direction 5",
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:14:07+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:38:08+00:00 @ 80d6c86",
+      "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "0d51f3f7b3cabcefbdf773faa6b1c625b08cc711194b902378bf5bc71baad572"
+}

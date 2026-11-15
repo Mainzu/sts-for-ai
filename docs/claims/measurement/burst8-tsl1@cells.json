@@ -1,0 +1,104 @@
+{
+  "key": "measurement/burst8-tsl1@cells",
+  "rev": 2,
+  "value": "burst8 nets (3 seeds) @tsl1 minus 10-29 @tsl1, both cell books one turn: train -0.68 (0.39) HP / -0.029 clears, other held-out -0.99 (0.48), Demon Form decks +0.48 (0.81): with @tsl1 the plain-leaf +6.10 vanishes (it was the first tick); the retention cost stays.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After burst8 x turn-start leaf: what burst8 learned on Demon Form decks is the first tick; coverage-pretrain folds into the enemies bench; step-2 nets read against the turn-start leaf (on the owner's behalf, 2026-11-07)",
+      "sha256": "5f383d9c05c004b7a5b1444d415574df963b36587f185f1a65523bea4f4dfc8a"
+    },
+    {
+      "path": "results/gauntlet/rerank-2026-11-01-burst8-s1-d4b65b6-hpb0.01-tsl1.json",
+      "sha256": "40befd59e14c40c9e436d08da2419d92537c543321e3ccd747085912c6fdcd88"
+    },
+    {
+      "key": "measurement/turn-start-leaf@cells",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:55+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:18+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/turn-start-leaf@cells reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The three burst8 nets @hpb0.01@tsl1 minus the 10-29 net @hpb0.01@tsl1, both cell books one turn deep, paired by sequence, three seeds pooled (se over sequences, se over nets): train -0.68 (0.39, 0.52) HP and -0.029 clears (n 500); other held-out -0.99 (0.48, 0.11) and -0.020 (n 326); held-out Demon Form decks +0.48 (0.81, 0.67) and +0.015 (n 174; seeds +1.66, -0.67, +0.45). With the turn-start leaf the burst nets keep their retention cost and lose their Demon Form gain: what they learned there (+6.10 on the plain leaf) is the first tick. Against the heuristic: +2.98, +4.46, +3.91 on the three strata.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After burst8 x turn-start leaf: what burst8 learned on Demon Form decks is the first tick; coverage-pretrain folds into the enemies bench; step-2 nets read against the turn-start leaf (on the owner's behalf, 2026-11-07)",
+          "sha256": "5f383d9c05c004b7a5b1444d415574df963b36587f185f1a65523bea4f4dfc8a"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s1-d4b65b6-hpb0.01-tsl1.json",
+          "sha256": "40befd59e14c40c9e436d08da2419d92537c543321e3ccd747085912c6fdcd88"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s1-d4b65b6-hpb0.01-tsl1-b500.json",
+          "sha256": "2fd84e7a5d38ce72ba1e78a7aee2adc27056c8a54a6131d76181bbd6e5aec06e"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s101-d414c13-hpb0.01-tsl1.json",
+          "sha256": "603d944da2d968727a5f7badaa07a11cd600df01609fd2c174935bba02ca7523"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s101-d414c13-hpb0.01-tsl1-b500.json",
+          "sha256": "7b7ed60e484d9a04745338facbf4f0517d069caa05f1a0c257e06b80fe7453c8"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s201-5c7bb5c-hpb0.01-tsl1.json",
+          "sha256": "e848aa0466d1cf15b6f37ddec24ecea4d2ed064d3e454d8d7be98f7585a4c5c1"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s201-5c7bb5c-hpb0.01-tsl1-b500.json",
+          "sha256": "3ead0c4a547cdbdda31df91a443fdc4d3057858f16e860b4ecf018b33f6f3939"
+        },
+        {
+          "path": "jobs/done/0327-gauntlet.json",
+          "sha256": "37c8054a5b632c94c09dec57db2e79089414c08c268b9ef078f01e5672dfbef0"
+        },
+        {
+          "path": "jobs/done/0328-gauntlet.json",
+          "sha256": "8333f51678d44d279e93b213e405782ac05ddf9f75449ebc9819e70bec8273a7"
+        },
+        {
+          "path": "jobs/done/0329-gauntlet.json",
+          "sha256": "479d67f0a903031416cb472a44fc001d059d2023f2130fd8b26a985b26ea3906"
+        },
+        {
+          "path": "jobs/done/0330-gauntlet.json",
+          "sha256": "3fd4d5f35f85f3540a73d8d856ca8edb35db2a55c4cdacee6210b7e7918880be"
+        },
+        {
+          "path": "jobs/done/0331-gauntlet.json",
+          "sha256": "1f350fa1abe13c1d204f9793a0e2be9fe6e27910e00fc7f9222fadf7171d31c1"
+        },
+        {
+          "path": "jobs/done/0332-gauntlet.json",
+          "sha256": "433f280fe239e2863b7fd49d9c22d7026e571b876642dd75d5021b99fdfa2fc7"
+        },
+        {
+          "key": "measurement/turn-start-leaf@cells",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "11322cec-67d1-4203-ab9e-e656f1d0a61c",
+      "at": "2026-11-06T23:38:27+00:00 @ cdd1d7d",
+      "until": "2026-11-13T02:29:55+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "5fc5bfbe6aa6b270ab9499c650c40afa6aee6e04fb4c63aa469f5fb704a24ec2"
+}

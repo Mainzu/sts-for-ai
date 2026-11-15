@@ -1,0 +1,70 @@
+{
+  "key": "measurement/depth-anchor@headline",
+  "rev": 2,
+  "value": "Heuristic leaf two-turn with the product's chooser, headline seq 500-749: 0.548 clears; the product +9.32 (1.09) HP, +0.200 (0.031) clears; the one-turn net beats it by +5.41 (1.15) HP, +0.128 clears: two turns deep the leaf carries most of the edge.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Depth-headroom anchor: the heuristic two turns deep with the product's picks is 9.3 HP and 0.200 clears behind the product, and 5.4 HP behind the net one turn deep (depth-headroom lane; 0090; read 15:20 2026-11-04, lanes c4b0f7e7)",
+      "sha256": "3cada80a683ba2a43d8ac92e1200466e9579ee30376f3ee7be5bea02f42c882a"
+    },
+    {
+      "path": "results/gauntlet/heuristic-two-line-step-ch-net1029-starter-simboss-500.json",
+      "sha256": "76a7bf3055076ea6a9765ab87ee610c7d8ee667472591bb2e15439c3b722d1ee"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-500.json",
+      "sha256": "2a31bbfc413754b45e4638038b96d3fa086b5b79e71e368bda3f99e504104fa2"
+    },
+    {
+      "path": "jobs/done/0090-gauntlet.json",
+      "sha256": "0ed35d5f1c6523780940a12dd4a2227702aef1e86b5a41dc901d02b062fcdcc1"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:11+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Heuristic leaf two turns deep (--line-seed --step-line) with the product's chooser, headline setting, sequences 500-749, fixed n 250: 0.548 clears; the product (net leaf) +9.32 end-HP (se 1.09) and +0.200 clears (se 0.031), equal on train and held-out; the one-turn net beats it by 5.41 end-HP (se 1.15) and 0.128 clears. Two turns deep the leaf carries most of the edge (elites: 4.35 HP less lost per fight; boss wins 0.851 vs 0.663).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Depth-headroom anchor: the heuristic two turns deep with the product's picks is 9.3 HP and 0.200 clears behind the product, and 5.4 HP behind the net one turn deep (depth-headroom lane; 0090; read 15:20 2026-11-04, lanes c4b0f7e7)",
+          "sha256": "3cada80a683ba2a43d8ac92e1200466e9579ee30376f3ee7be5bea02f42c882a"
+        },
+        {
+          "path": "results/gauntlet/heuristic-two-line-step-ch-net1029-starter-simboss-500.json",
+          "sha256": "76a7bf3055076ea6a9765ab87ee610c7d8ee667472591bb2e15439c3b722d1ee"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-500.json",
+          "sha256": "2a31bbfc413754b45e4638038b96d3fa086b5b79e71e368bda3f99e504104fa2"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-starter-simboss-500.json",
+          "sha256": "a038653cc52bf2749b1341c98c923bc3f7a9cac28f003eeb8c981ba95468eb81"
+        },
+        {
+          "path": "jobs/done/0090-gauntlet.json",
+          "sha256": "0ed35d5f1c6523780940a12dd4a2227702aef1e86b5a41dc901d02b062fcdcc1"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "c4b0f7e7-0029-4f16-81af-e4a296206ec4",
+      "at": "2026-11-04T08:05:03+00:00 @ d5d73fe",
+      "until": "2026-11-13T02:30:11+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "48f7b91f45aca72f4f10aea5e5e0f75dabe8d564c029d15ceca86d857d1b7ad5"
+}

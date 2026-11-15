@@ -1,0 +1,31 @@
+{
+  "key": "how/gauntlet-match",
+  "rev": 1,
+  "value": "--match <file> replays that file's card picks, rest and removal choices, so only the fighter varies (matched floors carry matched: true); it can't see a chooser change and refuses a file of another pack setting. Which read to use: decision/matched-reads.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "scripts/gauntlet.py",
+      "sha256": "467b6f22c066a4a78f8019ed186148284ee0f5a59db9b36d35259864fa98e688"
+    },
+    {
+      "path": "docs/specs/pack-pick-split.md",
+      "sha256": "87ec99ca43c89774905e85a886f5287fbdd1f0b42c351226054df7642431260f"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:05Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:43:12Z @ d240a173",
+      "note": "navigator 2026-11-13: scripts/gauntlet.py diff since 3123201a is only RUST_MIN_STACK 64 MB; --match unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "22e168b489e4b7fc1d7d9f8d17852b0db8a83b2cc90fc20b4afe41a9d21e205f"
+}

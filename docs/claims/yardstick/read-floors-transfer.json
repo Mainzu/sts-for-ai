@@ -1,0 +1,32 @@
+{
+  "key": "yardstick/read-floors-transfer",
+  "rev": 1,
+  "value": "A cell gain reaches the headline at ~0.5x; a one-turn gain reaches the two-turn product at 0.2-0.46x in-horizon, ~1x past-horizon (cause/leaf-gain-third). A charter or probe states its predicted effect beside the floor and doesn't open below it.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "cause/leaf-gain-third",
+      "rev": 7
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After the big-picture review of 2026-11-10: read floors for charters; counterfactual pricing, product-depth worlds and wider generators ranked; 0780 cancelled; generated-pack-scratch's reroute written in advance (on the owner's behalf, 2026-11-10)",
+      "sha256": "04d4d7f9352e4975a4c7f8e97179294d67f74eddd5419f0bf6216353b2b11a37"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:10Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:26Z @ 3123201a",
+      "note": "fact split 2026-11-13: cause/leaf-gain-third reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "edce7321cc1711298974f1a7bb9ad2d6372fce4040f36501b7ddd38cfb66b4a3"
+}

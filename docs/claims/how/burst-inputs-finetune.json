@@ -1,0 +1,21 @@
+{
+  "key": "how/burst-inputs-finetune",
+  "rev": 1,
+  "value": "finetune.py widens the parent to today's vocabulary for source configs and Silent content (vocab_for) but keeps it for mutated monsters and generated packs (kept_vocab): a pack burst on newer atoms (static/countdown/replacement/pattern rows, picks, expression amounts, RoundEnd, OwnerAttacked, OwnerPlaysCard, OwnerAttackHit) can't see them.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "scripts/finetune.py",
+      "sha256": "9c71161cbb40e56e497ba4ea81b376354c912c03c55d3b190fbc4a964e6df517"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:03Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "ddd8c38851a015602d5386e76e7448cc571dbd457a6901f2b196a4ee18310010"
+}

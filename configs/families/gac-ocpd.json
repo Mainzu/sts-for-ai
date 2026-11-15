@@ -1,0 +1,66 @@
+{
+ "name": "gac-ocpd",
+ "lane": "gen-adapted-column",
+ "about": "gen-adapted-column step 3 (docs/research/gen-adapted-column.md#Step 3): OppCard-PlainDamage on Sentries (bench worst parent +4.58 (0.54)); 99-game bursts (training fights cycled with fresh play seeds, repeat) from the 10-29 net, net (@hpb0.01@tsl1) and heuristic teachers, three seeds; read one turn deep @tsl1 on the bench's first 1000 starts x 4 seeds against the zero-shot 10-29 net; an arm passes when its cut is at least half the zero-shot cost and 2 se over nets",
+ "parent": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt",
+ "arms": {
+  "net-g99": [
+   "configs/gac-ocpd-net-g99-s1.json",
+   "configs/gac-ocpd-net-g99-s2.json",
+   "configs/gac-ocpd-net-g99-s3.json"
+  ],
+  "heur-g99": [
+   "configs/gac-ocpd-heur-g99-s1.json",
+   "configs/gac-ocpd-heur-g99-s2.json",
+   "configs/gac-ocpd-heur-g99-s3.json"
+  ]
+ },
+ "burst": {
+  "threads": 4,
+  "mem_gb": 3.0,
+  "estimate_min": 4
+ },
+ "reads": {
+  "gen": {
+   "cmd": [
+    "scripts/analysis/mutate_monsters.py",
+    "play",
+    "--starts",
+    "1000",
+    "--groups",
+    "elite",
+    "--seeds",
+    "4",
+    "--players",
+    "one",
+    "--net",
+    "{net}@tsl1",
+    "--mods",
+    "GE-OppCard-PlainDamage,c-hp1.5-str2",
+    "--threads",
+    "3",
+    "--out",
+    "results/mutate/gac-{run}.json"
+   ],
+   "threads": 3,
+   "mem_gb": 1.5,
+   "estimate_min": 7
+  }
+ },
+ "table": {
+  "kind": "gen",
+  "book": "gen",
+  "base": "results/mutate/gen-enemies-b1.json",
+  "mechanic": "GE-OppCard-PlainDamage",
+  "control": "c-hp1.5-str2",
+  "seeds": 4,
+  "encounters": [
+   "three_sentries"
+  ],
+  "min_starts": 200,
+  "rule": {
+   "share": 0.5,
+   "min_se": 2.0
+  }
+ }
+}

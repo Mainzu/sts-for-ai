@@ -1,0 +1,50 @@
+{
+  "key": "measurement/ledger@cells",
+  "rev": 2,
+  "value": "ledger.py, one turn @hpb0.01, cell books 0-999, end-HP edge over 10-29: effects 5k -3.30, 20k -1.45, 40k -0.16, 80k -0.95; ids 5k -5.80; burst8 +0.26; 10-29 seed twins -0.28 (sd 0.22). No recipe beats 10-29 beyond seed noise (between-seed sd 0.6-1.0 > se ~0.5); none has a two-turn cell read.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "The ledger: no recipe trained since 10-29 beats the 10-29 net one turn deep on the cell books; the best are level (burst8 +0.26, seed twins -0.28, effects 40k -0.16), and none has a two-turn cell read (session-free-reads step 3; no jobs; 2026-11-07, lanes ea911692)",
+      "sha256": "b5e599820fc42429681dcf367183bf98c6877f374ab818956dd365fc038bcd13"
+    },
+    {
+      "path": "scripts/analysis/ledger.py",
+      "sha256": "e68ca2524a761a5b3690e46d4ead151e585c0fc55d9c6f0df0447b720acce496"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:32+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Ledger (scripts/analysis/ledger.py, one turn deep @hpb0.01, cell books 0-499 and 500-999, paired end-HP edge over the 10-29 net, mean over (net, book) files): effects 5k -3.30, 20k -1.45, 40k -0.16, 80k -0.95 (2 nets); ids 5k -5.80; burst8 +0.26; 1029 seed twins -0.28 (sd 0.22); no recipe is above the 10-29 net by more than seed noise; between-seed sd 0.6-1.0 exceeds the se over sequences (~0.5); no recipe has a two-turn cell read.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "The ledger: no recipe trained since 10-29 beats the 10-29 net one turn deep on the cell books; the best are level (burst8 +0.26, seed twins -0.28, effects 40k -0.16), and none has a two-turn cell read (session-free-reads step 3; no jobs; 2026-11-07, lanes ea911692)",
+          "sha256": "b5e599820fc42429681dcf367183bf98c6877f374ab818956dd365fc038bcd13"
+        },
+        {
+          "path": "scripts/analysis/ledger.py",
+          "sha256": "e68ca2524a761a5b3690e46d4ead151e585c0fc55d9c6f0df0447b720acce496"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "ea911692-ee4e-4a79-a6d7-5584fdac11b2",
+      "at": "2026-11-06T21:38:52+00:00 @ be768d2",
+      "until": "2026-11-13T02:30:32+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "71cbf5d4e9b8d67786091282de5818e129444a292fc1dd228bfae72927cd1ffa"
+}

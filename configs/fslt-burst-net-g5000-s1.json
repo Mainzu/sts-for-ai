@@ -1,0 +1,14 @@
+{
+ "source": {
+  "kind": "one-turn",
+  "player": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpb0.01",
+  "decks": "held-out"
+ },
+ "game_seed": 51,
+ "games": 5000,
+ "top": 5000,
+ "n_val": 150,
+ "name": "fslt-burst-net-g5000-s1",
+ "pool": 10000,
+ "seed": 1
+}

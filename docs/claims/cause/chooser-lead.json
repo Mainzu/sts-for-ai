@@ -1,0 +1,22 @@
+{
+  "key": "cause/chooser-lead",
+  "rev": 1,
+  "value": "One turn deep on the headline setting, the card chooser holds most of the 10-29 net's 0.156 lead over the heuristic (~0.09 chooser, ~0.06 fighter, interacting), and nearly all of it on held-out cards where the heuristic can't price unknown cards; two turns deep the fighter's share likely grows (not read).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Crossed chooser arms: the chooser holds most of the one-turn headline lead, and nearly all of it on held-out cards (approach review cheap read 10; b39d3; read 19:20 2026-11-02, manager 2b40a321)",
+      "sha256": "e3d7f75953e91fa7c3e1e9662f60e9b4dddc171c556ccf04824c566793cc8c35"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:10:34Z @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "320c88430bd7a2f0c400b2ebcebbdf97cf28b27e175a4ee16abedafe5942912a"
+}

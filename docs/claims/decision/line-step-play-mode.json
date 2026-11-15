@@ -1,0 +1,71 @@
+{
+  "key": "decision/line-step-play-mode",
+  "rev": 3,
+  "value": "Two-turn reads and the product play --line-seed --step-line (~0.55x plain two-turn time, level on 500 headline sequences); a control without them needs --vary line_seed --vary step_line under --against; the stepped file is the headline control (0.834).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Line step is the two-turn play mode (owner away, 2026-11-03)",
+      "sha256": "b9128f17997a157bca86e2f61ec1765ebc065b0419fac54dcf3b413184e3f0cf"
+    },
+    {
+      "key": "measurement/line-step@headline",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:35Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:15Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/line-step@headline reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Every two-turn read and the product's play flags use --line-seed --step-line from 2026-11-03 (same net and price; ~0.55 of plain two-turn's wall time, level at fixed n 250 on the headline, row-identical to the stage-1 player on cells); a control played without the flags needs --vary line_seed --vary step_line under --against; the 0.804 headline number stays until the stepped file holds 500 sequences (job 0066) and becomes the control.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Line step is the two-turn play mode (owner away, 2026-11-03)",
+          "sha256": "b9128f17997a157bca86e2f61ec1765ebc065b0419fac54dcf3b413184e3f0cf"
+        },
+        {
+          "key": "measurement/line-step@headline",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T00:34:22Z @ da67084",
+      "until": "2026-11-03T05:42:33Z @ b47437a"
+    },
+    {
+      "rev": 2,
+      "value": "Every two-turn read and the product's play flags use --line-seed --step-line from 2026-11-03 (same net and price; ~0.55 of plain two-turn's wall time, level over all 500 headline sequences, row-identical to the stage-1 player on cells); a control played without the flags needs --vary line_seed --vary step_line under --against; the stepped 500-sequence file is the headline control (0.834) since the 0066 read.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Line step is the two-turn play mode (owner away, 2026-11-03)",
+          "sha256": "b9128f17997a157bca86e2f61ec1765ebc065b0419fac54dcf3b413184e3f0cf"
+        },
+        {
+          "key": "measurement/line-step@headline",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "f1fb0f59-8b60-4c54-a39e-129739c75134",
+      "at": "2026-11-03T05:42:33Z @ b47437a",
+      "until": "2026-11-13T02:29:35Z @ 3123201a"
+    }
+  ],
+  "seal": "e3fb491b40694a3f2f4b5155542e7809ff9ecca659fa5170facd96e6cfb8882e"
+}

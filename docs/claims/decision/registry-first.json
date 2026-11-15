@@ -1,0 +1,53 @@
+{
+  "key": "decision/registry-first",
+  "rev": 3,
+  "value": "Runtime registry (docs/specs/runtime-registry.md stages 2-5) before Act 1 content; Act 1 enters as content files, an unwritable card names a missing building block. Rust tables removed once files check equal. Speed budget: series_speed.py <= +10% per step.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Runtime registry first: Act 1 enters as content files (owner, 2026-11-04)",
+      "sha256": "319d76e822054c9b0eb3dc8d8eedee41be833cc64734a70e9b83493cba5db228"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:31Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Finish the runtime registry (docs/specs/runtime-registry.md stages 2-5: content in the version hashes, monsters from files, official content as files, the new state layout) before any Act 1 content; it supersedes the static Rust tables decision. After stage 4 the Rust tables are removed once the files are checked equal. Act 1 then enters as content files; a card that can't be written as data names a missing building block (goal-1 work). Speed budget: series_speed.py, at most 10% per step.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Runtime registry first: Act 1 enters as content files (owner, 2026-11-04)",
+          "sha256": "887e55101842c17f1d52f39a6d14f9e7c14fc20c63e2358f1e345db49bf8c311"
+        }
+      ],
+      "owner": false,
+      "by": "ea89a8f4-8c59-4b7d-bec0-35b31ed878d6",
+      "at": "2026-11-04T12:45:07Z @ fe27ec2",
+      "until": "2026-11-04T12:55:43Z @ f4ea31c"
+    },
+    {
+      "rev": 2,
+      "value": "Finish the runtime registry (docs/specs/runtime-registry.md stages 2-5: content in the version hashes, monsters from files, official content as files, the new state layout) before any Act 1 content; it supersedes the static Rust tables decision. After stage 4 the Rust tables are removed once the files are checked equal. Act 1 then enters as content files; a card that can't be written as data names a missing building block (goal-1 work). Speed budget: series_speed.py, at most 10% per step. Content identity: strings name content; numbers exist only inside a running engine, in the loaded pack's order; every net, dataset, recorded game, run result and solved value records the content pack it used by hash, and packs are stored however is cheapest as long as any recorded hash recovers the exact pack.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Runtime registry first: Act 1 enters as content files (owner, 2026-11-04)",
+          "sha256": "319d76e822054c9b0eb3dc8d8eedee41be833cc64734a70e9b83493cba5db228"
+        }
+      ],
+      "owner": false,
+      "by": "ea89a8f4-8c59-4b7d-bec0-35b31ed878d6",
+      "at": "2026-11-04T12:55:43Z @ f4ea31c",
+      "until": "2026-11-13T02:29:31Z @ 3123201a"
+    }
+  ],
+  "seal": "d6f415701f058ac757dcb11f6aea679a7a2089eb89630bdf1ddd1ae48841ed0d"
+}

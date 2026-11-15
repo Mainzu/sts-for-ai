@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-unseen-boss-burst",
+  "rev": 2,
+  "value": "pred even/long shot; fail one turn: Guardian+Hexaghost +0.021/+0.016 (400 games), +0.034/+0.017 (1600); Guardian lifts like any burst, Hexaghost not at all; retention held; 1.9 cpu-h. Reopen: boss-state inputs (Hexaghost cycle, HP-scaled Divider, Burn rows), a two-turn teacher, or a headroom probe showing Hexaghost decks can gain; a rerun must beat the generic Guardian gain +0.032-0.034.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane unseen-boss-burst closed (2026-11-05)",
+      "sha256": "40101dbfc9900bc611f4aabad943f7d8b2287d2600b458253237f4c854308f46"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:19+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even for a one-turn gain of 0.05 on two training seeds, a long shot for a headline pass, about 20 cpu-h; actual fail one turn deep: Guardian plus Hexaghost +0.021/+0.016 (400 games), +0.034/+0.017 (1600 games), the Guardian lifting like any burst and Hexaghost not at all, retention held, 1.9 cpu-h; reopen if: the net gains inputs for the boss state (Hexaghost move cycle, HP-scaled Divider, Burn rows), the games come from a stronger teacher (two-turn), or a headroom probe shows Hexaghost decks have play to gain; a rerun must beat the generic burst gain on the Guardian (+0.032-0.034)",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane unseen-boss-burst closed (2026-11-05)",
+          "sha256": "40101dbfc9900bc611f4aabad943f7d8b2287d2600b458253237f4c854308f46"
+        }
+      ],
+      "owner": false,
+      "by": "25f7f4c2-6ccc-4a24-9d2d-2a5041e41c67",
+      "at": "2026-11-05T13:42:58+00:00 @ 8644d49",
+      "until": "2026-11-13T02:31:19+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "640e7451dd7a057d7a55b420fcdb65bf2c3cf41c3669db2d80579873a95f64c5"
+}

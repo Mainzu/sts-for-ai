@@ -1,0 +1,141 @@
+{
+  "key": "cause/gains-from-search",
+  "rev": 5,
+  "value": "Every gauntlet gain since 10-29 came from search-time or run-layer changes (@hpb, @hpe, two-turn, sim rewards, boss horizon, Strike removal, @tsl1); no recipe since beats the 10-29 net one turn deep on cells beyond seed noise (best burst8 +0.26; its first-tick Demon Form gain: measurement/burst8-tsl1@cells).",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/fresh-control@cells",
+      "rev": 2
+    },
+    {
+      "key": "measurement/burst8-tsl1@cells",
+      "rev": 2
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After turn-start-leaf: the turn-start leaf for goal-1 card reads, the product unchanged, probes on burst8 and the headline (on the owner's behalf, 2026-11-07)",
+      "sha256": "37746dbcfc72e78b90164b489edbe9c42ecf8361749837eb61e059f54524e05a"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:02Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:31Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/fresh-control@cells, measurement/burst8-tsl1@cells reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Every measured gauntlet gain since 10-29 came from a search-time or run-layer change (@hpb, @hpe, two-turn search, sim rewards, the boss horizon, Strike removal); none of the eight post-10-29 nets read on the gauntlet is shown to beat the 10-29 net (burst8 s1 about +1 HP at one seed is undecided, and most recipes were never played there).",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Where the project stands",
+          "sha256": "22a11ddea40118d69f10d49f09c54194115966ae1ded75d88cc945ab67613aa0"
+        },
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Key claims and what the skeptics did to them",
+          "sha256": "00b390804f33edd0e9c6a44652e6b6bba76252828e2f1646a2be3f95e26319c9"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:10:31Z @ fc9cdd8",
+      "until": "2026-11-06T04:28:12Z @ 6e7b860"
+    },
+    {
+      "rev": 2,
+      "value": "Every measured gauntlet gain since 10-29 came from a search-time or run-layer change (@hpb, @hpe, two-turn search, sim rewards, the boss horizon, Strike removal); none of the eight post-10-29 nets read on the gauntlet is shown to beat the 10-29 net on trained content (most recipes were never played there). The one exception is content, not recipe: burst8 s1, fine-tuned on generated power cards, reads +0.82 (0.55) HP on the cells because it plays Demon Form decks +6.13 (1.94) HP better and is level elsewhere (cause/unseen-cards-half-edge); two turns deep the search already plays that card.",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Where the project stands",
+          "sha256": "22a11ddea40118d69f10d49f09c54194115966ae1ded75d88cc945ab67613aa0"
+        },
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Key claims and what the skeptics did to them",
+          "sha256": "00b390804f33edd0e9c6a44652e6b6bba76252828e2f1646a2be3f95e26319c9"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Cards rung: nets that learned other turn-start powers already play Demon Form better; step 1c added (on the owner's behalf, 2026-11-06)",
+          "sha256": "4ab5a1d2fced9074991326196821fdd9e961cf76d9c68b8d01ec2dfa1f0e9f0c"
+        },
+        {
+          "key": "cause/unseen-cards-half-edge",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "0e7447e6-d56a-4040-b055-879ac14dbf6e",
+      "at": "2026-11-06T04:28:12Z @ 6e7b860",
+      "until": "2026-11-06T23:02:38Z @ c526be3"
+    },
+    {
+      "rev": 3,
+      "value": "Every measured gauntlet gain since 10-29 came from a search-time or run-layer change (@hpb, @hpe, two-turn search, sim rewards, the boss horizon, Strike removal, the turn-start leaf); no recipe trained since 10-29 beats the 10-29 net one turn deep on the cell books beyond seed noise (measurement/ledger@cells: the best, burst8, +0.26; the product recipe's seed twins -0.28 there and -0.21 / +0.25 on 5000 fresh sequences, measurement/fresh-control@cells). The one content-driven training gain, burst8 on Demon Form decks (+6.10 HP), is smaller than what the turn-start leaf gets there with no games (+7.54 (1.10), cause/unseen-cards-half-edge).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After turn-start-leaf: the turn-start leaf for goal-1 card reads, the product unchanged, probes on burst8 and the headline (on the owner's behalf, 2026-11-07)",
+          "sha256": "37746dbcfc72e78b90164b489edbe9c42ecf8361749837eb61e059f54524e05a"
+        },
+        {
+          "key": "measurement/ledger@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/fresh-control@cells",
+          "rev": 1
+        },
+        {
+          "key": "cause/unseen-cards-half-edge",
+          "rev": 5
+        }
+      ],
+      "owner": false,
+      "by": "11322cec-67d1-4203-ab9e-e656f1d0a61c",
+      "at": "2026-11-06T23:02:38Z @ c526be3",
+      "until": "2026-11-06T23:38:29Z @ cdd1d7d"
+    },
+    {
+      "rev": 4,
+      "value": "Every measured gauntlet gain since 10-29 came from a search-time or run-layer change (@hpb, @hpe, two-turn search, sim rewards, the boss horizon, Strike removal, the turn-start leaf); no recipe trained since 10-29 beats the 10-29 net one turn deep on the cell books beyond seed noise (the ledger in docs/research/learned-play-results.md: the best, burst8, +0.26; the product recipe's seed twins -0.28 there and -0.21 / +0.25 on 5000 fresh sequences, measurement/fresh-control@cells). The one content-driven training gain on file, burst8 on Demon Form decks (+6.10 HP on the plain leaf), was the first tick of a turn-start power: with the turn-start leaf it is +0.48 (0.81) and the burst nets lose 0.7-1.0 HP elsewhere (measurement/burst8-tsl1@cells).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After turn-start-leaf: the turn-start leaf for goal-1 card reads, the product unchanged, probes on burst8 and the headline (on the owner's behalf, 2026-11-07)",
+          "sha256": "37746dbcfc72e78b90164b489edbe9c42ecf8361749837eb61e059f54524e05a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After burst8 x turn-start leaf: what burst8 learned on Demon Form decks is the first tick; coverage-pretrain folds into the enemies bench; step-2 nets read against the turn-start leaf (on the owner's behalf, 2026-11-07)",
+          "sha256": "5f383d9c05c004b7a5b1444d415574df963b36587f185f1a65523bea4f4dfc8a"
+        },
+        {
+          "key": "measurement/fresh-control@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst8-tsl1@cells",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "11322cec-67d1-4203-ab9e-e656f1d0a61c",
+      "at": "2026-11-06T23:38:29Z @ cdd1d7d",
+      "until": "2026-11-13T02:29:02Z @ 3123201a"
+    }
+  ],
+  "seal": "e48767c1ac7a0d4235380fbabbc6e6cacf420f61c892db7380c6d00f4c9aa76c"
+}

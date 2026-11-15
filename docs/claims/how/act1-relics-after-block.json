@@ -1,0 +1,41 @@
+{
+  "key": "how/act1-relics-after-block",
+  "rev": 1,
+  "value": "After-block passes run in the game's damage order while the amount > 0, before the save: DealtAfterBlock (The Boot), TakenAfterBlock (Buffer), AttackedAfterBlock (Torii), HpLossLast (Tungsten Rod). docs/specs/after-block.md.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/specs/after-block.md",
+      "sha256": "4a5d98c5299451266db54ac69964b52b6ff9ead4bcba91397ae9ed861e82fd8c"
+    },
+    {
+      "path": "engine/tests/after_block.rs",
+      "sha256": "63dc7562b9cf706125efd05360f831709ec2989c7d8159c2fa8b11fa2041547a"
+    },
+    {
+      "path": "docs/research/act1-relics-potions.md",
+      "anchor": "After block (2026-11-12, session act1-r12)",
+      "sha256": "9ca42d67c8a0f68ae46db90e5011c982f584af30c7505e4f3d6f176a0cbdebe3"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:24Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:24:17Z @ c4fb1faf",
+      "note": "after-block.md changed only its Status line (docs cleanup 8b0ba903); the after-block order is unchanged in the spec and engine/tests/after_block.rs"
+    },
+    {
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T07:18:50Z @ 3f5a7327",
+      "note": "after_block.rs at 6c4f392b: the four passes unchanged; added tests only (Hemokinesis with Tungsten Rod, Rupture on Burn), 13 pass"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "5e82b2bb58baaaae4fd21ec7dd47d6e8659bd2d2f29d4d42ca46925fe1d10309"
+}

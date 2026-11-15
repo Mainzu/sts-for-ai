@@ -1,0 +1,36 @@
+{
+  "key": "how/main-checkout-data",
+  "rev": 2,
+  "value": "results/, runs/ (except sweep-*.md; runs/index.csv is local too since b68ac7b: registry.py appends to it and nothing reads it), datasets/, cache/, db/, models/, jobs/ and logs/ are gitignored and live only in the main checkout (the repo root); worktrees don't have them, so read and write them there (kb resolves ignored sources there itself).",
+  "status": "active",
+  "sources": [
+    {
+      "path": ".gitignore",
+      "sha256": "1439713247d348bb185e72d25462cbcbafba292c36a7641ed447d650de6a0044"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "5e86a929-9b8b-4b8a-b9fb-57d824701457",
+  "at": "2026-11-06T05:53:26Z @ d9269fa",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "results/, runs/ (except index.csv and sweep-*.md), datasets/, cache/, db/, models/, jobs/ and logs/ are gitignored and live only in the main checkout (the repo root); worktrees don't have them, so read and write them there (kb resolves ignored sources there itself).",
+      "sources": [
+        {
+          "path": ".gitignore",
+          "sha256": "3b10bc5d802ea296377948de18f061f3c5cbb2a8bcf9ac0605af80330768f407"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:24Z @ fc9cdd8",
+      "until": "2026-11-06T05:53:26Z @ d9269fa"
+    }
+  ],
+  "seal": "30856fe8876981721d1bb027aeb545fd7a80503d3273e3602e7ab0e19bb8e6aa"
+}

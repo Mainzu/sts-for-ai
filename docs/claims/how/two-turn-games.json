@@ -1,0 +1,105 @@
+{
+  "key": "how/two-turn-games",
+  "rev": 5,
+  "value": "scripts/two_turn_games.py stores elite+boss fights (varied decks, HP uniform 40-100% of max) played two turns deep (stepped fallback player) or one (--depth one) as a registry dataset with real-outcome labels, no search values; its config is the dataset identity (resumes from cache/). --encounters <bosses> stores boss fights only; --decks varied|held-out picks the deck kind.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "scripts/two_turn_games.py",
+      "sha256": "491471e564ccb9429e3be17cc723dde7070b39668e5736da9ddcfecf81b424d1"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:16Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "scripts/two_turn_games.py dataset(player, n_per_group, seed, depth, threads) stores elite and boss fights (selfplay.make_specs varied decks, hallway group dropped, HP uniform 40-100% of max) played by the player two turns deep (depth_paired.run_guarded stepped fallback player with record=True, resumable partial under cache/, first-chunk pace logged) or one turn deep (sts.run search with the player's evaluator) as a registry dataset with real-outcome labels and no search values; its config is the dataset's identity (a smoke --max-nodes changes it). finetune.py takes source {kind: two-turn|one-turn, player} instead of content and uses the varied kind for the Ironclad validation and pool; two_turn_round.py arm fine-tunes then reads the run one turn deep @hpb0.01 on the cell gauntlet with the protocol. Measured pace 2026-11-03: 7.2 stepped fights per thread-minute (job 0067).",
+      "sources": [
+        {
+          "path": "README.md",
+          "anchor": "Fine-tuning on new content (warm start)",
+          "sha256": "469fb92b6b6727103f0ad77af09b0c824f619ac53b2eae9a5bf9ba00cf178691"
+        },
+        {
+          "path": "scripts/two_turn_games.py",
+          "sha256": "028004c948fbcf0bbf95ea791ba16d68f68c2743e0d7a8beab256648009e0482"
+        },
+        {
+          "path": "scripts/two_turn_round.py",
+          "sha256": "412031c877ea2768d21c807a824971e5f3ed50d1f794d51607c4fac29f97fbb2"
+        },
+        {
+          "path": "jobs/pending/0068-two-turn-games.json",
+          "sha256": "b3dec76a46c389896fe449d066eecedfac6a05711ea3aa9b737a24399af35168"
+        }
+      ],
+      "owner": false,
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T01:28:25Z @ f41b94c",
+      "until": "2026-11-03T01:29:34Z @ f41b94c"
+    },
+    {
+      "rev": 2,
+      "value": "scripts/two_turn_games.py dataset(player, n_per_group, seed, depth, threads) stores elite and boss fights (selfplay.make_specs varied decks, hallway group dropped, HP uniform 40-100% of max) played by the player two turns deep (depth_paired.run_guarded stepped fallback player with record=True, resumable partial under cache/, first-chunk pace logged) or one turn deep (sts.run search with the player's evaluator) as a registry dataset with real-outcome labels and no search values; its config is the dataset's identity (a smoke --max-nodes changes it). finetune.py takes source {kind: two-turn|one-turn, player} instead of content and uses the varied kind for the Ironclad validation and pool; two_turn_round.py arm fine-tunes then reads the run one turn deep @hpb0.01 on the cell gauntlet with the protocol. Measured pace 2026-11-03: 7.2 stepped fights per thread-minute at 400k nodes (job 0067's log).",
+      "sources": [
+        {
+          "path": "README.md",
+          "anchor": "Fine-tuning on new content (warm start)",
+          "sha256": "469fb92b6b6727103f0ad77af09b0c824f619ac53b2eae9a5bf9ba00cf178691"
+        },
+        {
+          "path": "scripts/two_turn_games.py",
+          "sha256": "028004c948fbcf0bbf95ea791ba16d68f68c2743e0d7a8beab256648009e0482"
+        },
+        {
+          "path": "scripts/two_turn_round.py",
+          "sha256": "412031c877ea2768d21c807a824971e5f3ed50d1f794d51607c4fac29f97fbb2"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Two-turn round built (owner away, 2026-11-03)",
+          "sha256": "4af2374da03093839c85842ba4841770caa42ae33108c63b3b1b8cac3e38dfd4"
+        }
+      ],
+      "owner": false,
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T01:29:34Z @ f41b94c",
+      "until": "2026-11-05T13:57:11Z @ 909f856"
+    },
+    {
+      "rev": 3,
+      "value": "scripts/two_turn_games.py dataset(player, n_per_group, seed, depth, threads, encounters=None) stores elite and boss fights (selfplay.make_specs varied decks, hallway group dropped, HP uniform 40-100% of max) played by the player two turns deep (depth_paired.run_guarded stepped fallback player with record=True, resumable partial under cache/, first-chunk pace logged) or one turn deep (sts.run search with the player's evaluator) as a registry dataset with real-outcome labels and no search values; its config is the dataset's identity (a smoke --max-nodes changes it). With encounters (--encounters, a comma list of boss encounters such as the_guardian,hexaghost) it stores boss fights only, n_per_group of them, on those encounters in turn with decks, seeds and HP unchanged; the list is part of the identity only when given, and an unknown name raises. finetune.py takes source {kind: two-turn|one-turn, player, encounters (optional)} instead of content and uses the varied kind for the Ironclad validation and pool; two_turn_round.py arm fine-tunes then reads the run one turn deep @hpb0.01 on the cell gauntlet with the protocol. Measured pace 2026-11-03: 7.2 stepped fights per thread-minute at 400k nodes (job 0067's log).",
+      "sources": [
+        {
+          "path": "scripts/two_turn_games.py",
+          "sha256": "089ce18221f5bc9c292c4b6417271881b68a39cc4d92463aa104c8f3b6a980c7"
+        }
+      ],
+      "owner": false,
+      "by": "e63fdaaa-91f4-4e3b-b7d3-22c1f840fbed",
+      "at": "2026-11-05T13:57:11Z @ 909f856",
+      "until": "2026-11-06T08:00:30Z @ b77d1d6"
+    },
+    {
+      "rev": 4,
+      "value": "scripts/two_turn_games.py dataset(player, n_per_group, seed, depth, threads, encounters=None) stores elite and boss fights (selfplay.make_specs varied decks, hallway group dropped, HP uniform 40-100% of max) played by the player two turns deep (depth_paired.run_guarded stepped fallback player with record=True, resumable partial under cache/, first-chunk pace logged) or one turn deep (sts.run search with the player's evaluator) as a registry dataset with real-outcome labels and no search values; its config is the dataset's identity (a smoke --max-nodes changes it). With encounters (--encounters, a comma list of boss encounters such as the_guardian,hexaghost) it stores boss fights only, n_per_group of them, on those encounters in turn with decks, seeds and HP unchanged; the list is part of the identity only when given, and an unknown name raises. With decks (--decks, a key of DECKS: varied, the training pool and the default, or held-out, selfplay.varied_held_out_deck: varied decks holding at least two held-out cards, Demon Form in about 40%) the decks are drawn from that kind, recorded as the config's setups. finetune.py takes source {kind: two-turn|one-turn, player, encounters (optional), decks (optional)} instead of content and uses the varied kind for the Ironclad validation and pool; two_turn_round.py arm fine-tunes then reads the run one turn deep @hpb0.01 on the cell gauntlet with the protocol. Measured pace 2026-11-03: 7.2 stepped fights per thread-minute at 400k nodes (job 0067's log).",
+      "sources": [
+        {
+          "path": "scripts/two_turn_games.py",
+          "sha256": "491471e564ccb9429e3be17cc723dde7070b39668e5736da9ddcfecf81b424d1"
+        }
+      ],
+      "owner": false,
+      "by": "5318d280-ece7-4e67-8dec-aa22f7895409",
+      "at": "2026-11-06T08:00:30Z @ b77d1d6",
+      "until": "2026-11-13T02:29:16Z @ 3123201a"
+    }
+  ],
+  "seal": "47b98c8e62153d4dcf2645d5d792cc8eb0cecb86c644b5157ed7562488eb8982"
+}

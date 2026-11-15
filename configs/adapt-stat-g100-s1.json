@@ -1,0 +1,16 @@
+{
+ "content": {
+  "mutated": [
+   "hp0.8",
+   "hp1.25",
+   "str2",
+   "hp1.3-str-1"
+  ]
+ },
+ "game_seed": 41,
+ "games": 100,
+ "n_val": 300,
+ "name": "adapt-stat-g100-s1",
+ "pool": 10000,
+ "seed": 1
+}

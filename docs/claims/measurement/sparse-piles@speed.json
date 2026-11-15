@@ -1,0 +1,70 @@
+{
+  "key": "measurement/sparse-piles@speed",
+  "rev": 4,
+  "value": "Sparse piles, all three steps (u16 card ids, one shared 64-entry list for draw/discard/exhaust, changed copies by value, cost for the combat) vs main e44c3d42 before it: search per-run ratio medians +0.7% / +2.7% (1 / 16 threads, job 1007, 16 pairs) and +3.6% / +1.8% (job 1013, 22 pairs), random combats -8.9% / -4.4%, clone faster; both jobs crashed partway (1007's old search_speed.exe 0xC0000409, 1013's new bench.exe exit 101) while three learn jobs died out of memory; the same benches built from d45a2e9c pass 6 bench and 2 search runs, so memory, not the code. Step (a) alone: 0974 +3.8% / +3.1%. CombatState 860 -> 816 bytes at (a). Within the 10% bar.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/specs/sparse-piles.md",
+      "sha256": "6264feebf1c6c72ba835123fe4c99897be2bf6f861632ea86ab482b93e29095b"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "b47ae5b8-93cc-409c-beca-3df17afa9ecf",
+  "at": "2026-11-13T07:49:36+00:00 @ d45a2e9c",
+  "confirms": [
+    {
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:24:22+00:00 @ c4fb1faf",
+      "note": "sparse-piles.md changed only its Status line (8b0ba903)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Step (a) of sparse piles (u16 card ids, one shared 96-entry list for draw/discard/exhaust, 10-entry hand, used-only hashing) vs main e44c3d42, series_speed job 0971, 25 runs on a loaded machine: search per-run ratio 1 thread -4.3%, 16 threads -4.1%; random combats -9.7%; clone 37.0 -> 50.3 ns; CombatState 860 -> 912 bytes. Within the 10% bar.",
+      "sources": [
+        {
+          "path": "docs/specs/sparse-piles.md",
+          "sha256": "7ac8098ffa2059d3830dcf167e535188e8d1716b961696f1810f874a3fb78c1c"
+        }
+      ],
+      "owner": false,
+      "by": "a8f31275-1ed7-44ce-95f2-c3f7d8378390",
+      "at": "2026-11-13T03:35:43+00:00 @ 8f5f3ecb",
+      "until": "2026-11-13T04:22:40+00:00 @ d4b88729"
+    },
+    {
+      "rev": 2,
+      "value": "Step (a) of sparse piles as landed: S64 (u16 card ids, one shared 64-entry list for draw/discard/exhaust, 10-entry hand, used-only hashing), CombatState 860 -> 816 bytes. series_speed 0974 vs e44c3d42, loaded machine: search per-run +3.8% (1 thr) / +3.1% (16 thr), random combats -10.8%. 0985 S96 vs S64: search +0.8% / +0.4%, clone +12.4% for S64. Within the 10% bar.",
+      "sources": [
+        {
+          "path": "docs/specs/sparse-piles.md",
+          "sha256": "c2b6f12879c2acbcca88aa376b97ac6f727ae740da46888dd33377edf15148cc"
+        }
+      ],
+      "owner": false,
+      "by": "a8f31275-1ed7-44ce-95f2-c3f7d8378390",
+      "at": "2026-11-13T04:22:40+00:00 @ d4b88729",
+      "until": "2026-11-13T07:45:41+00:00 @ f579570d"
+    },
+    {
+      "rev": 3,
+      "value": "Sparse piles, all three steps (u16 card ids, one shared 64-entry list for draw/discard/exhaust, changed copies by value, cost for the combat) vs main e44c3d42 before it: search per-run ratio medians +0.7% / +2.7% (1 / 16 threads, job 1007, 16 pairs) and +3.6% / +1.8% (job 1013, 22 pairs), random combats -8.9% / -4.4%, clone faster; both jobs stopped early on a loaded machine. Step (a) alone: 0974 +3.8% / +3.1%. CombatState 860 -> 816 bytes at (a). Within the 10% bar.",
+      "sources": [
+        {
+          "path": "docs/specs/sparse-piles.md",
+          "sha256": "d53b7deea9d7c1247b8ed6dc5489258f6dabb726d7c42fcc698af3e881a6f628"
+        }
+      ],
+      "owner": false,
+      "by": "a8f31275-1ed7-44ce-95f2-c3f7d8378390",
+      "at": "2026-11-13T07:45:41+00:00 @ f579570d",
+      "until": "2026-11-13T07:49:36+00:00 @ d45a2e9c"
+    }
+  ],
+  "seal": "d2ee5f4984ef8434bd0a8fb81cda7dddfc5f638d3f083cdfd727433e478d2b73"
+}

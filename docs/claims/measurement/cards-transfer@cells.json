@@ -1,0 +1,90 @@
+{
+  "key": "measurement/cards-transfer@cells",
+  "rev": 2,
+  "value": "burst8 nets (8 generated power cards, never Demon Form, 3 seeds) minus 10-29 net, cell books one turn, plain leaf: Demon Form decks +6.10 (1.16) HP, +0.149 (0.030) clears; train -0.88 (0.37), other held-out -1.12 (0.46). By card a Demon Form copy costs -1.83 (1.00) vs -7.54.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Transfer column (step 1c): nets fine-tuned on eight generated power cards, never on Demon Form, gain +6.10 (1.16) HP and +0.149 (0.030) clears on Demon Form decks over the 10-29 net, alike on three seeds; elsewhere they lose about 1 HP and 0.02-0.04 clears (yardstick-cards steps 1b+1c checkpoint; 0256-0260; read 14:30 2026-11-06, lanes d6ed878a)",
+      "sha256": "6713eb249f9466661501d7c503b819516301b4bffe7028728dd16c5a68d51425"
+    },
+    {
+      "path": "results/gauntlet/rerank-2026-11-01-burst8-s1-d4b65b6-hpb0.01.json",
+      "sha256": "9084e2c2fb02a01e55930a86d7dbbe81c8f1fa3a8c56794274f0aedbee842e06"
+    },
+    {
+      "path": "jobs/done/0260-gauntlet.json",
+      "sha256": "07967f7e3d4e48b9d23b85af5ee83a276afcd84b8c2d6477e0c013ea5fbee1c2"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:02+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Transfer column, cell gauntlet both books one turn deep: the three burst8 nets (eight generated power cards, never Demon Form; s1, s101, s201) minus the one-turn 10-29 net by stratum (se over sequences / nets): train decks -0.88 (0.37 / 0.59) HP, -0.041 (0.012) clears; held-out without Demon Form -1.12 (0.46 / 0.07), -0.021 (0.012); held-out with Demon Form +6.10 (1.16 / 0.16), +0.149 (0.030); per file +5.88 to +6.74. Against the heuristic the Demon Form stratum goes from -4.26 to +1.99 (1.02), about two thirds of the 9.5 HP headroom to the two-turn product; by card a Demon Form copy costs -1.83 (1.00) against -7.54. Retention: s101 loses about 2 HP on train decks, the others 0.3-0.8.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Transfer column (step 1c): nets fine-tuned on eight generated power cards, never on Demon Form, gain +6.10 (1.16) HP and +0.149 (0.030) clears on Demon Form decks over the 10-29 net, alike on three seeds; elsewhere they lose about 1 HP and 0.02-0.04 clears (yardstick-cards steps 1b+1c checkpoint; 0256-0260; read 14:30 2026-11-06, lanes d6ed878a)",
+          "sha256": "6713eb249f9466661501d7c503b819516301b4bffe7028728dd16c5a68d51425"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s1-d4b65b6-hpb0.01.json",
+          "sha256": "9084e2c2fb02a01e55930a86d7dbbe81c8f1fa3a8c56794274f0aedbee842e06"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s1-d4b65b6-hpb0.01-b500.json",
+          "sha256": "a9386cb75dc22df0016c663443f50871999b2e8b3e6a5bcfca73d7e8ba4d07ee"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s101-d414c13-hpb0.01.json",
+          "sha256": "e3471cd136f529551eae21a6424fec6dcb837b68edc981cf0ca20b41d60b5e99"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s101-d414c13-hpb0.01-b500.json",
+          "sha256": "1249a8da3c3ab2ab147ec25763caedcf9ca48c8e57a15efabad28bcbffc68370"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s201-5c7bb5c-hpb0.01.json",
+          "sha256": "f53977eb7ebc78ea7015c0f2486309595973d8a79a8eb1bb5e21648880a394f8"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s201-5c7bb5c-hpb0.01-b500.json",
+          "sha256": "15ff0f7874137155fc3bb7a529cf2ee52b2c622bdf49b200067de369759d634d"
+        },
+        {
+          "path": "jobs/done/0256-gauntlet.json",
+          "sha256": "a91c8dad8533488b240204c5f02b34bda4cba4ac539c0ed87c5227bd3f2a644e"
+        },
+        {
+          "path": "jobs/done/0257-gauntlet.json",
+          "sha256": "66a315e2cba52870bd47ad0e2940976abc3c0272e7d58c457dfbaacfb6c802f3"
+        },
+        {
+          "path": "jobs/done/0258-gauntlet.json",
+          "sha256": "2274c379a071e2d9884cc3f9e82ba32ec7ca631a08df64755ebd729792cba98a"
+        },
+        {
+          "path": "jobs/done/0259-gauntlet.json",
+          "sha256": "1f2a10b45cb63763e489c40b3a063f6d6e61768c8a1b63c0dd5a5de343651437"
+        },
+        {
+          "path": "jobs/done/0260-gauntlet.json",
+          "sha256": "07967f7e3d4e48b9d23b85af5ee83a276afcd84b8c2d6477e0c013ea5fbee1c2"
+        }
+      ],
+      "owner": false,
+      "by": "d6ed878a-ac65-4d6c-8c01-1bbdbb7aad52",
+      "at": "2026-11-06T07:25:29+00:00 @ 61fc97b",
+      "until": "2026-11-13T02:30:02+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "9fbff0ae1722876b4298ad28ca448655664285efd5bb3118102413b4ebf3e7dd"
+}

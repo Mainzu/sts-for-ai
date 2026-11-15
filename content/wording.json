@@ -1,0 +1,260 @@
+{
+ "version": 1,
+ "_about": "One game-worded description per content element (docs/specs/element-wording.md). {name} is a field, {0} a bare value; {to} {target} {subject} {s} {per} depend on who uses the effect (card, monster, power); {x|word} is 'N word(s)', {x|move} a move's name, {hits} ' N times' above 1, {cards} '1 copy of Shiv' / 'N copies of Shiv' / '1 copy of this card'.",
+ "effect": {
+  "Damage": "deal {amount} damage{per}{to}{hits}",
+  "PlainDamage": "deal {amount} damage{per} to {target}",
+  "ScaledDamage": "deal {amount} damage{to}{hits}",
+  "RandomDamage": "deal {amount} damage to a random enemy{hits}",
+  "RandomApply": "apply {amount} {power} to a random enemy{hits}",
+  "RolledAttack": "deal its rolled damage",
+  "Block": "{subject}gain{s} {0} Block{per}",
+  "BlockAlly": "give {0} Block to a random other enemy",
+  "BlockOf": "gain Block equal to {0}",
+  "ScaledBlock": "gain {amount} Block, {times} times",
+  "ExhaustHand": "exhaust your hand{except}",
+  "ExhaustRandom": "exhaust a random card in your hand",
+  "ZeroCostRandom": "a random card in your hand costs 0 for the rest of combat",
+  "ZeroCostRandomTurn": "a random card in your hand costs 0 this turn",
+  "UpgradeRandom": "upgrade a random card in your hand for the rest of combat",
+  "Draw": "draw {0|card}{per}",
+  "RandomizeCost": "give {0} a random cost of 0 to 3 for the rest of combat",
+  "GainEnergy": "gain {0} energy{per}",
+  "LoseHp": "{subject}lose{s} {0} HP{per}",
+  "Heal": "{subject}heal{s} {0} HP{per}",
+  "HealOf": "{subject}heal{s} HP equal to {0}{per}",
+  "CapHp": "lower the HP of {target} to {cap} if it is higher",
+  "WinHeal": "heal {0} more HP when this combat is won{per}",
+  "GainMaxHp": "raise max HP by {0} and heal as much{per}",
+  "Apply": "apply {amount} {power}{to}{per}",
+  "ApplyOf": "apply {amount} {power}{to}{per}",
+  "AddCard": "add {cards} to your {pile}",
+  "Split": "split into two smaller monsters with its current HP",
+  "Escape": "escape",
+  "RemoveSelf": "the power ends",
+  "ReduceSelf": "the power loses {0|stack}",
+  "Pick": "{kind}",
+  "ReplayCard": "play that card again",
+  "GrowDamage": "increase this card's damage by {0} this combat",
+  "UpgradeHand": "upgrade every card in your hand for the rest of combat",
+  "UpgradeAll": "upgrade every card in your hand, draw pile, discard pile and exhaust pile for the rest of combat",
+  "ShuffleDiscardIntoDraw": "shuffle your discard pile into your draw pile",
+  "RemoveDebuffs": "remove all of your debuffs",
+  "LoseHpOf": "{subject}lose{s} HP equal to {0}{per}",
+  "ApplyAsMonster": "apply {amount} {power}{to}{per}, as an enemy does (it lasts through the next round's end)",
+  "AddCopy": "add {cards} to your {pile}",
+  "DrawPicked": "draw as many cards as were picked{per}",
+  "PlayTop": "play the top {n|card} of your draw pile{exhaust}",
+  "Discover": "choose 1 of {offer} random {type}cards from the {pool} pool{skip} and add {copies|copy} of it to your hand{free}",
+  "MakeRandom": "add {n} random {type}{cards} from the {pool} pool to your {pile}{spot}{upgraded}{zero_cost}{free}",
+  "ObtainRandomPotions": "fill every empty potion slot with a random potion{except}",
+  "SetCounter": "set this relic's counter to {0}",
+  "AddCounter": "add {0} to this relic's counter"
+ },
+ "target": {
+  "Opponent": {"card": "the enemy", "monster": "you", "power": "its owner's opponent"},
+  "AllOpponents": {"card": "all enemies", "monster": "you", "power": "every opponent of its owner"},
+  "Me": {"card": "you", "monster": "itself", "power": "its owner"},
+  "Attacker": {"card": "the attacker", "monster": "the attacker", "power": "the attacker"},
+  "RandomOpponent": {"card": "a random enemy", "monster": "you", "power": "a random enemy"}
+ },
+ "quantity": {
+  "OwnBlock": "your Block",
+  "OwnStrength": "your Strength",
+  "EnergySpent": "X",
+  "CardsTagged": "card tagged {0} in your hand, draw pile and discard pile",
+  "HandCards": "card in your hand{except}",
+  "OwnMaxHp": "your max HP",
+  "DrawPileSize": "the number of cards in your draw pile",
+  "CardsOfType": "{0} in your hand, draw pile and discard pile",
+  "HpDealt": "the HP the damage before it took"
+ },
+ "pick": {
+  "DiscardFromHand": "discard {n|card} from your hand",
+  "ReturnFromDiscard": "put {n|card} from your discard pile into your hand",
+  "DiscardToTop": "put {n|card} from your discard pile on top of your draw pile",
+  "ExhaustFromHand": "exhaust {n|card} from your hand",
+  "ReturnFromExhaust": "put {n|card} from your exhaust pile into your hand",
+  "UpgradeFromHand": "upgrade {n|card} in your hand for the rest of combat",
+  "HandToTop": "put {n|card} from your hand on top of your draw pile",
+  "CopyInHand": "choose {n|card} in your hand and add {copies|copy} of it to your hand"
+ },
+ "pick_rule": {"free_this_turn": "; it costs 0 this turn", "of": "; only {of} cards"},
+ "pile": {"Draw": "draw pile", "Discard": "discard pile", "Hand": "hand"},
+ "cost_roll": {"Hand": "each card in your hand", "Drawn": "the card drawn"},
+ "trigger": {
+  "OwnerTurnStart": "At the start of its owner's turn",
+  "OwnerTurnStartPostDraw": "At the start of its owner's turn, after the draw",
+  "OwnerTurnEnd": "At the end of its owner's turn",
+  "CardPlayed": {"Owner": "When its owner plays a card", "Opponent": "When its owner's opponent plays a card"},
+  "OwnerLostHp": {"Attack": "When its owner loses HP to an attack", "Card": "When its owner loses HP from a card",
+                  "Any": "When its owner loses HP"},
+  "OwnerDied": "When its owner's HP reaches 0",
+  "RoundEnd": "At the end of each round",
+  "OwnerAttacked": "Each time its owner is hit by an attack",
+  "OwnerPlaysCard": "When its owner plays a card",
+  "OwnerAttackHit": "Each time its owner's attack hits unblocked",
+  "CardExhausted": "Each time a card is exhausted",
+  "CardDrawn": "Each time its owner draws a card",
+  "OwnerBloodied": "When its owner's HP drops to half or below",
+  "OwnerUnbloodied": "When a heal brings its owner's HP above half",
+  "CombatStartPreDraw": "At the start of combat, before the opening draw",
+  "CombatStart": "At the start of combat",
+  "OpponentDied": "When an enemy dies and another still lives",
+  "CombatWon": "When you win the combat, before its end heal",
+  "OwnerApplied": "Each time you apply a power to an enemy",
+  "Shuffled": "Each time your discard pile is shuffled into your draw pile",
+  "OwnerUsedPotion": "Each time you use a potion",
+  "OpponentBlockBroken": "Each time you break an enemy's block",
+  "OwnerHandEmpty": "Whenever you have no cards in hand during your turn",
+  "OwnerGainedBlock": "Each time you gain Block"
+ },
+ "condition": {
+  "Always": "",
+  "CardType": "if it is a {0}",
+  "TargetIntendsAttack": "if the enemy intends to attack",
+  "TargetHas": "if the enemy has {0}",
+  "CardsPlayedThisTurnBelow": "if fewer than {0} cards were played this turn",
+  "HandAll": "if every card in your hand is a {0}",
+  "OwnerHpAtMostHalf": "if its owner's HP is at most half",
+  "CounterIs": "if this relic's counter is {0}",
+  "OwnerBlockIs": "if its owner has exactly {0} block",
+  "Applying": "if the power is {0}",
+  "HandNone": "if no {0} is in your hand",
+  "TargetLacks": "if the enemy has no {0}",
+  "TargetDied": "if this kills the enemy",
+  "CounterAtMost": "if this relic's counter is at most {0}",
+  "NotFirstTurn": "if it isn't the combat's first turn",
+  "ApplyingDebuff": "if the power is a debuff"
+ },
+ "static_condition": {
+  "Always": "",
+  "CardInPlayTagged": "with a card tagged {0}",
+  "OwnerHpAtMostHalf": "while its owner is at half HP or less",
+  "Holds": {"Owner": "while its owner has {power}", "Opponent": "against a creature that has {power}"}
+ },
+ "modifies": {
+  "DamageDealt": "the attack damage its owner deals",
+  "DamageTaken": "the attack damage its owner takes",
+  "BlockGained": "the block its owner gains from cards"
+ },
+ "stage": {"Add": "{what}: {amount} per stack", "Multiply": "{what}: × {factor}"},
+ "replacement_event": {
+  "DamageTaken": "attack damage its owner takes",
+  "HpLoss": "HP its owner loses",
+  "DebuffApplied": "a debuff applied to its owner",
+  "DealtAfterBlock": "unblocked attack damage its owner deals",
+  "TakenAfterBlock": "damage or HP loss its owner takes after block",
+  "AttackedAfterBlock": "unblocked attack damage its owner takes",
+  "HpLossLast": "final HP its owner loses",
+  "Draw": "draws by its owner"
+ },
+ "replacement_action": {
+  "Cancel": "Cancels {event}",
+  "Cap": "The {event} is capped at {0} each time",
+  "Add": "Adds {0} to the {event} each time",
+  "Multiply": "Multiplies the {event} by {num}/{den}",
+  "AtLeast": "The {event}, when below {0}, becomes {0}"
+ },
+ "replacement_rule": {
+  "upTo": "only when it is {0} or less"
+ },
+ "pattern_condition": {
+  "FirstTurn": "on its first turn",
+  "Allies": "while another enemy is alive",
+  "LastMove": "after {0|move}",
+  "LastTwo": "after {0|move} twice in a row",
+  "Window": "after {0|move} with {1|move} before it",
+  "Slot": "in slot {0}",
+  "RollBelow": "{0}% of the time"
+ },
+ "pattern_pick": {
+  "Move": "{0|move}",
+  "Chance": "{yes|move} {percent}% of the time, else {no|move}"
+ },
+ "encounter_slot": {
+  "one_of": "One of: {options}",
+  "draw": "{draw} drawn from {from}"
+ },
+ "relic_rarity": {
+  "starter": "Starter relic",
+  "common": "Common relic",
+  "uncommon": "Uncommon relic",
+  "rare": "Rare relic",
+  "boss": "Boss relic",
+  "shop": "Shop relic",
+  "event": "Event relic"
+ },
+ "fight_kind": {
+  "hallway": "hallway fights",
+  "elite": "elite fights",
+  "boss": "boss fights"
+ },
+ "monster_field": {
+  "rolled_attack": "its RolledAttack damage is rolled once per monster, {0}–{1}, at the start of the fight",
+  "rolled_powers": "it starts with {amount} {power}, the amount rolled once per monster at the start of the fight",
+  "ascension": "from ascension {from} up, these numbers and rules replace its own"
+ },
+ "code_monster": {
+  "louse": "Bite's damage is rolled once per louse, 5–7, at the start of the fight, and it starts with 3–7 Curl Up; no move three times in a row.",
+  "lagavulin": "Asleep for 3 turns; the third wakes it and takes 8 off its Metallicize. HP damage wakes it early, stunned for a turn, with the same 8 off. Then Attack, Attack, Siphon Soul, repeating.",
+  "hexaghost": "Activate, then Divider: 6 hits of your HP / 12 + 1, fixed when it is chosen; then Sear, Tackle, Sear, Inflame, Tackle, Sear, Inferno, repeating. The first Inferno upgrades every Burn, and from then on Sear adds Burn+.",
+  "guardian": "Offensive mode cycles Charging Up, Fierce Bash, Vent Steam, Whirlwind. Losing its Mode Shift HP switches it to Defensive mode: 20 block and Close Up, then Roll Attack, then Twin Slam, which returns it to Offensive mode with Whirlwind next. Mode Shift comes back at 30, +10 per switch."
+ },
+ "card_rule": {
+  "cost_less_per_hp_loss": "costs 1 less energy for each time you lost HP this combat",
+  "playable_if": "can only be played {0}",
+  "plays_per_turn": "while this is in your hand, you can't play more than {0} cards a turn"
+ },
+ "power_rule": {
+  "forbids": "its owner can't play {0} cards",
+  "sets_cost": "its owner's {type} cards cost {cost}",
+  "exhausts_played": "whenever its owner plays a {0}, exhaust it",
+  "plays_unplayable": "its owner can play its unplayable {0} cards, for 0 energy"
+ },
+ "power_field": {
+  "debuff_if_negative": "applying a negative amount of it is a debuff",
+  "can_go_negative": "its amount can go below 0; without this, a negative amount only lowers it, never below 0",
+  "skips_first_round": {
+   "from_monster": "applied by a monster, it skips the end of the round it lands in",
+   "from_monster_after_turn_end": "applied by a monster after your turn has ended, it skips the end of the round it lands in",
+   "on_monster": "gained by a monster, it skips the end of the round it lands in"
+  },
+  "attack_shape": "a monster holding it attacks with {0} times the hits at the base damage divided by {0}, rounded down, before Strength",
+  "block_loss": "its owner loses at most {0} block at the start of their turn",
+  "cap": "its amount stays between -{0} and {0}"
+ },
+ "hook_field": {
+  "hp_loss_source": "the HP its LoseHp takes counts as lost to {0} (Card: the owner's own doing; Any: someone else's, as Poison's)",
+  "acts_first": "acts before the effects its turn-end pass set going earlier (the game's addToTop)",
+  "before_hand": "acts at End Turn before the hand's turn-end cards (Burn), with the relics' turn-end effects (the game's atEndOfTurnPreEndTurnCards); without it a power's turn-end hook acts after them"
+ },
+ "relic_rule": {
+  "start_power": "Start each fight with {amount} {power}.",
+  "fights": "Acts only in {kinds}.",
+  "win_heal": "Heal {amount} HP when you win a combat.",
+  "counter": "Its counter starts at {0}.",
+  "potion_potency": "Potions with a potency act {0} times as strongly.",
+  "potion_slots": "Gain {0} potion slots.",
+  "draw_per_turn": "Draw {0} additional cards each turn.",
+  "x_bonus": "X-cost cards act as if {0} more energy were spent.",
+  "keeps_energy": "Unspent energy carries into the next turn.",
+  "plays_per_turn": "You can't play more than {0} cards a turn.",
+  "keeps_hand": "Your hand isn't discarded at the end of your turn.",
+  "heal_scale": "Your healing in combat is multiplied by {0}/{1}, rounded.",
+  "exhaust_save": "A card you play that would exhaust has a {0} in {1} chance to go to your discard pile instead."
+ },
+ "potion_rarity": {
+  "common": "Common potion",
+  "uncommon": "Uncommon potion",
+  "rare": "Rare potion"
+ },
+ "potion_rule": {
+  "potency": "Potency {0} (Sacred Bark doubles it).",
+  "trigger": "Can't be drunk: used up on its own when your HP would reach 0, then:",
+  "fights": "Can be drunk only in {kinds}."
+ },
+ "code_power": {
+  "ModeShift": "HP The Guardian can still lose before it switches to Defensive mode."
+ }
+}

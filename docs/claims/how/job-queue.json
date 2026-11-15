@@ -1,0 +1,59 @@
+{
+  "key": "how/job-queue",
+  "rev": 3,
+  "value": "Queue state is jobs.py status (lanes, pins, peaks), never a fact; a job's measurement cites jobs/done/<id>.json. jobs.py add (pins HEAD), first <id>, estimate <id> <min>, unpark, verdict <id> pass|fail; scripts/dashboard.py serves http://127.0.0.1:8766.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "README.md",
+      "anchor": "Job queue",
+      "sha256": "22db25a4e64089e114803eea019f720d76b546e2313d3379db1f3d432bbfcaa7"
+    }
+  ],
+  "owner": false,
+  "pinned": true,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:13Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:24:19Z @ c4fb1faf",
+      "note": "README 'Job queue' changed only a dead spec link (e901624c); commands unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "What is running, queued, parked or done is jobs.py status (lanes, pins, peaks), never a fact or hand-over prose; a measurement from a job cites its record jobs/done/<id>.json. Add jobs with jobs.py add (pinned to HEAD by default), reorder with first <id>.",
+      "sources": [
+        {
+          "path": "README.md",
+          "anchor": "Job queue",
+          "sha256": "cae73d38b959f1f5ffd9f4fe667472141b67708f9eea99bfc9435b288528d31b"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:12:26Z @ fc9cdd8",
+      "until": "2026-11-04T07:16:35Z @ cfe7e3d"
+    },
+    {
+      "rev": 2,
+      "value": "What is running, queued, parked or done is jobs.py status (lanes, pins, peaks), never a fact or hand-over prose; a measurement from a job cites its record jobs/done/<id>.json. Add jobs with jobs.py add (pinned to HEAD by default), reorder with first <id>, re-estimate a pending or running job with estimate <id> <minutes> (history kept in estimates), settle a parked chain with unpark and verdict <id> pass|fail; python scripts/dashboard.py serves a read-only page (health, sessions, jobs, lanes) on http://127.0.0.1:8766.",
+      "sources": [
+        {
+          "path": "README.md",
+          "anchor": "Job queue",
+          "sha256": "5e30fad619173289960b699d0361a9ae4e54b1c4b58ab342ac2069a7eda64634"
+        }
+      ],
+      "owner": false,
+      "by": "4253ac8b-4270-40d7-958b-ef9945166c5b",
+      "at": "2026-11-04T07:16:35Z @ cfe7e3d",
+      "until": "2026-11-13T02:29:13Z @ 3123201a"
+    }
+  ],
+  "seal": "c190c7d58d99fd39b5e12e87e31c298d21f7f5628fe0510e45b298e254f45732"
+}

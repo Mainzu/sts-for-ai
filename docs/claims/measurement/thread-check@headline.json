@@ -1,0 +1,77 @@
+{
+  "key": "measurement/thread-check@headline",
+  "rev": 1,
+  "value": "Product two turns deep on the headline setting, sequences 0-99: 3 threads 74.9 min (2.25 thread-min/sequence, peak 3.31 GB), 8 threads 44.9 min (0.599x; 3.59 thread-min/sequence, 1.6x; peak 7.76 GB); each beside one 3-thread job; rows identical across thread counts and to the headline control's first 100. 63% parallel efficiency from 3 to 8 threads.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Thread check: 8 threads take 0.599x the 3-thread wall time, at the bar; adopted only for a read that has the machine alone (cheaper-reads lane; 0095-0096; read 20:30 2026-11-04, lanes 40c7fd32)",
+      "sha256": "ba22a039fe53edcf8f60b19c7c42f95c164db3e014546151889ca7ebfafda24d"
+    },
+    {
+      "path": "jobs/done/0095-gauntlet.json",
+      "sha256": "ac26b86cccc983a4120fa3cba3a9deec2f320189e699737d53dc6295bfffc5bc"
+    },
+    {
+      "path": "jobs/done/0096-gauntlet.json",
+      "sha256": "6ad62a5c9f616f12e8a51bd4aec3fd6ba145061fbb7ceb596afecd1740ecf795"
+    },
+    {
+      "key": "product/net",
+      "rev": 4
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "40c7fd32-465f-466d-b406-dffe78633301",
+  "at": "2026-11-04T13:22:21+00:00 @ ac13299",
+  "confirms": [
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:57:58+00:00 @ a875850",
+      "note": "yardstick/headline-setting rev 2 changed only which depth judges a change (one turn; the two-turn product is the reported score); the setting's flags this fact relies on (--start starter --rewards sim --sim-boss, 500 sequences) are unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Product two turns deep on the headline setting, sequences 0-99: 3 threads 74.9 min (2.25 thread-min/sequence, peak 3.31 GB), 8 threads 44.9 min (0.599x; 3.59 thread-min/sequence, 1.6x; peak 7.76 GB); each beside one 3-thread job; rows identical across thread counts and to the headline control's first 100. 63% parallel efficiency from 3 to 8 threads.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Thread check: 8 threads take 0.599x the 3-thread wall time, at the bar; adopted only for a read that has the machine alone (cheaper-reads lane; 0095-0096; read 20:30 2026-11-04, lanes 40c7fd32)",
+          "sha256": "ba22a039fe53edcf8f60b19c7c42f95c164db3e014546151889ca7ebfafda24d"
+        },
+        {
+          "path": "jobs/done/0095-gauntlet.json",
+          "sha256": "ac26b86cccc983a4120fa3cba3a9deec2f320189e699737d53dc6295bfffc5bc"
+        },
+        {
+          "path": "jobs/done/0096-gauntlet.json",
+          "sha256": "6ad62a5c9f616f12e8a51bd4aec3fd6ba145061fbb7ceb596afecd1740ecf795"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/headline-setting",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "40c7fd32-465f-466d-b406-dffe78633301",
+      "at": "2026-11-04T13:22:21+00:00 @ ac13299",
+      "until": "2026-11-11T08:47:40+00:00 @ 2b6131f",
+      "retired": "merged into measurement/cost@gauntlet (STATUS cap)"
+    }
+  ],
+  "seal": "2aa974a63e18c11b67645ab819862e173c773ccdfd744cdf694dbc0723e2c3c8"
+}

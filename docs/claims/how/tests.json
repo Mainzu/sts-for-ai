@@ -1,0 +1,131 @@
+{
+  "key": "how/tests",
+  "rev": 5,
+  "value": "pytest isn't in .venv: PYTHONPATH=.venv/Lib/site-packages <system python> -m pytest -q -p no:cacheprovider scripts/tests/<file>. Full run = queue job test-full (~130 min at 4 threads). cargo test skips the py crate: add cargo test -p sts-py. Test a worktree's binding from its unpacked wheel on PYTHONPATH.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/operating.md",
+      "anchor": "Machine limits",
+      "sha256": "b8b0814b618a2c7dc076ba73f50f8f4faf9184fb54813f75e681b17ab444374f"
+    },
+    {
+      "path": "docs/filler.md",
+      "sha256": "d36f8fafe8e7b3d4f7de6c20194f2e2b56a0a316638e0259eeb7e412a849fb8a"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "e9abadedf7b6ff5ac31366a48c7b7f1e0a6bc383714460e61bea95071785546d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:15Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:24:20Z @ c4fb1faf",
+      "note": "filler.md lost only the done engine-next chore (c4fb1faf)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "pytest is not in .venv: run tests with the system interpreter over the venv's packages, PYTHONPATH=.venv/Lib/site-packages <system python> -m pytest -q -p no:cacheprovider scripts/tests/<file>; test suites that train nets wait until the CPU is free.",
+      "sources": [
+        {
+          "path": "docs/manager.md",
+          "anchor": "Machine limits",
+          "sha256": "0e9efd1f6131cdcf4c75c37126c0c9155d17e6cd1cbc3f465214591bade036d3"
+        },
+        {
+          "path": "docs/manager.md",
+          "anchor": "Machine time is the bottleneck (owner, 2026-10-29)",
+          "sha256": "d878e7fab9b7c1763a99acc9535576e2a19600eacfb753e99256eb4b07044598"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:19Z @ fc9cdd8",
+      "until": "2026-11-03T05:23:13Z @ 0d052e3"
+    },
+    {
+      "rev": 2,
+      "value": "pytest is not in .venv: run tests with the system interpreter over the venv's packages, PYTHONPATH=.venv/Lib/site-packages <system python> -m pytest -q -p no:cacheprovider scripts/tests/<file>; the full run is the queue job test-full (docs/filler.md); suites that train nets wait until the CPU is free.",
+      "sources": [
+        {
+          "path": "docs/operating.md",
+          "anchor": "Machine limits",
+          "sha256": "beec2fbfdc8b15c6679c253bf73bca5f23116fe0be9cad29387fd884a910a1d9"
+        },
+        {
+          "path": "docs/operating.md",
+          "anchor": "Machine time is the bottleneck (owner)",
+          "sha256": "206365ff2444b31f68e64ba0fef9c93c120919bb25d4c8a7a5212151a82f3bcc"
+        },
+        {
+          "path": "docs/filler.md",
+          "sha256": "3f0e1d8e5d3623c63a9ad136408a0bd83c8864a4d9f5c7ef07c04f32a75b268d"
+        }
+      ],
+      "owner": false,
+      "by": "4c7c253c-5b5e-41ad-9b86-9fe7a2e430cb",
+      "at": "2026-11-03T05:23:13Z @ 0d052e3",
+      "until": "2026-11-12T01:14:47Z @ 8a23720"
+    },
+    {
+      "rev": 3,
+      "value": "pytest is not in .venv: run single files with the system interpreter over the venv's packages, PYTHONPATH=.venv/Lib/site-packages <system python> -m pytest -q -p no:cacheprovider scripts/tests/<file>; the full run (~5 h) is the queue job test-full (docs/filler.md). `cargo test` skips the py crate: also run `cargo test -p sts-py`. Test a worktree's binding from its wheel unpacked on PYTHONPATH, never installed into main's .venv.",
+      "sources": [
+        {
+          "path": "docs/operating.md",
+          "anchor": "Machine limits",
+          "sha256": "b8b0814b618a2c7dc076ba73f50f8f4faf9184fb54813f75e681b17ab444374f"
+        },
+        {
+          "path": "docs/filler.md",
+          "sha256": "3f0e1d8e5d3623c63a9ad136408a0bd83c8864a4d9f5c7ef07c04f32a75b268d"
+        },
+        {
+          "path": "Cargo.toml",
+          "sha256": "e9abadedf7b6ff5ac31366a48c7b7f1e0a6bc383714460e61bea95071785546d"
+        }
+      ],
+      "owner": false,
+      "by": "578cb1d3-42c7-4775-a3cb-3deabe5a8af9",
+      "at": "2026-11-12T01:14:47Z @ 8a23720",
+      "until": "2026-11-12T18:13:09Z @ 7e526a0"
+    },
+    {
+      "rev": 4,
+      "value": "pytest is not in .venv: run single files with the system interpreter over the venv's packages, PYTHONPATH=.venv/Lib/site-packages <system python> -m pytest -q -p no:cacheprovider scripts/tests/<file>; the full run is the queue job test-full (docs/filler.md; estimated 130 min at 4 threads). `cargo test` skips the py crate: also run `cargo test -p sts-py`. Test a worktree's binding from its wheel unpacked on PYTHONPATH, never installed into main's .venv.",
+      "sources": [
+        {
+          "path": "docs/operating.md",
+          "anchor": "Machine limits",
+          "sha256": "b8b0814b618a2c7dc076ba73f50f8f4faf9184fb54813f75e681b17ab444374f"
+        },
+        {
+          "path": "docs/filler.md",
+          "sha256": "07fda26ada6b137d2e28f43c2a23eeb9b50f089b91c2a037f24dd31930daae29"
+        },
+        {
+          "path": "Cargo.toml",
+          "sha256": "e9abadedf7b6ff5ac31366a48c7b7f1e0a6bc383714460e61bea95071785546d"
+        },
+        {
+          "path": "jobs/done/0943-test-full.json",
+          "sha256": "de68d0cd9f501944392468bb2a489560a3a86ced4b04994bd03e64c16ac367dc"
+        }
+      ],
+      "owner": false,
+      "by": "ae9ff0cf-bf15-4b21-a701-9e78992176d6",
+      "at": "2026-11-12T18:13:09Z @ 7e526a0",
+      "until": "2026-11-13T02:29:15Z @ 3123201a"
+    }
+  ],
+  "seal": "a11abf4d673fd5bec30af8e88ad100d07009b8d6a0fcc90a05dcd80b8e9596f4"
+}

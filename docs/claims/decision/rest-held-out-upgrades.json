@@ -1,0 +1,53 @@
+{
+  "key": "decision/rest-held-out-upgrades",
+  "rev": 1,
+  "value": "The gauntlet's rest site never upgrades held-out check9 or proving cards (upgradable() requires the + in sts.deck_card_names()); an accident of the rest-site spec, fixed only with the headline change after Act 1 (decision/headline-pool-after-act1), controls built once then; until then the rule stays so headline reads stay comparable.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Rest-site upgrades of held-out cards wait for the headline change after Act 1 (owner, 2026-11-10)",
+      "sha256": "f57200db1d6dc6ab912c969d9d7bd8a518f7ce9c16c4770bda0aa9028b09e629"
+    },
+    {
+      "path": "scripts/gauntlet.py",
+      "sha256": "84268fd30752654132d3d97d31f3f106ccae83e3bb4e8a7cad2be55ec6d8cdbe"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "5c05598a-e481-4462-8671-1b83efbc36a8",
+  "at": "2026-11-10T05:43:15Z @ 856b9c3",
+  "confirms": [
+    {
+      "by": "5c05598a-e481-4462-8671-1b83efbc36a8",
+      "at": "2026-11-10T06:12:46Z @ 8243021",
+      "note": "upgradable() in scripts/gauntlet.py still requires the + in sts.deck_card_names() for official cards (Amendment 1 changed only base_ids)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The gauntlet's rest site never upgrades held-out check9 or proving cards (upgradable() requires the + in sts.deck_card_names()); an accident of the rest-site spec, fixed only with the headline change after Act 1 (decision/headline-pool-after-act1), controls built once then; until then the rule stays so headline reads stay comparable.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rest-site upgrades of held-out cards wait for the headline change after Act 1 (owner, 2026-11-10)",
+          "sha256": "f57200db1d6dc6ab912c969d9d7bd8a518f7ce9c16c4770bda0aa9028b09e629"
+        },
+        {
+          "path": "scripts/gauntlet.py",
+          "sha256": "84268fd30752654132d3d97d31f3f106ccae83e3bb4e8a7cad2be55ec6d8cdbe"
+        }
+      ],
+      "owner": false,
+      "by": "5c05598a-e481-4462-8671-1b83efbc36a8",
+      "at": "2026-11-10T05:43:15Z @ 856b9c3",
+      "until": "2026-11-10T06:13:40Z @ 8243021",
+      "retired": "the same fact under the shorter key decision/rest-held-out (STATUS.md's length cap)"
+    }
+  ],
+  "seal": "254cb7c0a4ac823a45e25590b764f24398b60755e8df886e2c7594d965b7b43a"
+}

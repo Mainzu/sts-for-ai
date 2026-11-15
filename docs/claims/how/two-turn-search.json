@@ -1,0 +1,97 @@
+{
+  "key": "how/two-turn-search",
+  "rev": 3,
+  "value": "--two-turn: fallback player, max nodes 400k, sample k 4, ~1.4-1.6 GB/thread, ~115-140x one-turn per cell sequence plain. Two-turn reads and the product play --line-seed --step-line (same decisions as committed-line at 0.55-0.70 cost); a control without them needs --vary line_seed --vary step_line. --one-turn-floors 3: screens only.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "README.md",
+      "anchor": "Act-1 gauntlet",
+      "sha256": "aea93b5ad2affc6f62998f17d4b5989b712158849ce208aaa1f0f947c33b46a2"
+    },
+    {
+      "key": "decision/line-step-play-mode",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:17Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:17Z @ 3123201a",
+      "note": "fact split 2026-11-13: decision/line-step-play-mode reworded to a shorter single claim; the claim this fact cites kept its key"
+    },
+    {
+      "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+      "at": "2026-11-13T03:47:04Z @ d08ef5a4",
+      "note": "checked c98e084d's README diff: no two-turn flag or cost text changed"
+    },
+    {
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:24:21Z @ c4fb1faf",
+      "note": "README 'Act-1 gauntlet' changed only dead spec links (e901624c); --two-turn text unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Two-turn search (--two-turn) uses the fallback player, max nodes 400k and sample k 4 (four sampled next-turn hands); it rebuilds about four trees per turn and costs about 115-140x one-turn per gauntlet sequence and ~1.4-1.6 GB per thread. --one-turn-floors 3 plays floors 1-3 one turn deep; --line-seed gives a turn's searches one sample seed so they follow the first tree's line.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Two-turn @hpe is the product player (owner away, 2026-11-02)",
+          "sha256": "ca044c0831da6c8b37ee12319b5441efe72230d04e34260cd9073954e827b5b9"
+        },
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "08dc942ddc309340c4705a66c768f7f3fb1caf7e277cf1d38c183e2b43c6e65e"
+        },
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "The patterns behind the record",
+          "sha256": "16de4c3c7820337ce8999ae598c89f0472ecea8c15e5da9370798defb26d5f14"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:16Z @ fc9cdd8",
+      "until": "2026-11-03T00:34:23Z @ da67084"
+    },
+    {
+      "rev": 2,
+      "value": "Two-turn search (--two-turn) uses the fallback player, max nodes 400k and sample k 4 (four sampled next-turn hands), ~1.4-1.6 GB per thread; plain, it rebuilds about four trees per turn and costs about 115-140x one-turn per cell gauntlet sequence. The play mode for two-turn reads and the product since 2026-11-03 is --line-seed --step-line: one sample seed per combat turn (the committed-line player) and each uncut tree's principal line (sts.search(...)['line']) played without re-searching; the same decisions as the committed-line player at ~0.55-0.70 of the cost. A control played without those flags needs --vary line_seed --vary step_line under --against. --one-turn-floors 3 plays floors 1-3 one turn deep (screens only).",
+      "sources": [
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "23230d7cf85f5922c8c78cd60db98b5b53231df7c7afc409e16c83f7a80359eb"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Line step is the two-turn play mode (owner away, 2026-11-03)",
+          "sha256": "b9128f17997a157bca86e2f61ec1765ebc065b0419fac54dcf3b413184e3f0cf"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Two-turn @hpe is the product player (owner away, 2026-11-02)",
+          "sha256": "ca044c0831da6c8b37ee12319b5441efe72230d04e34260cd9073954e827b5b9"
+        },
+        {
+          "key": "decision/line-step-play-mode",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T00:34:23Z @ da67084",
+      "until": "2026-11-13T02:29:17Z @ 3123201a"
+    }
+  ],
+  "seal": "d5f0540fc38bb83065f5970935dcb5f27ec3a9583b2ff7c6a2adf6630ad2a50c"
+}

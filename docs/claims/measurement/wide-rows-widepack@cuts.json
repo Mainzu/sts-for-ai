@@ -1,0 +1,30 @@
+{
+  "key": "measurement/wide-rows-widepack@cuts",
+  "rev": 1,
+  "value": "Wide-pack s1 vs generated-pack s1 (2 seeds) on the 100-mechanic grid's 76 new rows, 675 official elites, one turn @tsl1: held-out pairs cut 0.84 (0.09), whole trigger Attacked 0.51 (0.16), whole effect Wound 0.95, training pairs 0.97; RoundEnd-Damage uncut (+2.30); OppCard-Artifact +10.8 -> +0.3.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Step 3 read (jobs 0926, 0914-0921; headline resumed as 0945; 2026-11-12)",
+      "sha256": "be4ac525d91b88b95d1e5dac5276c17a77b7f7318628a6ba6444f8c1938f9cd3"
+    },
+    {
+      "path": "results/mutate/gen-wide-wp1-tsl1.json",
+      "sha256": "2dc54cd0c92d7a71195da08e6e0ac2c92a330bc50be6b97343e4604d7c8b2cca"
+    },
+    {
+      "path": "results/mutate/gen-wp1-tsl1-all24.json",
+      "sha256": "95c467839edfd0e31f81729b59cd726e1164dc8815c69cc7ec775c91007b09f2"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:56+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "1cab0b336d91037d9c0e30fa2afff3fc561549b6ebf1a3953983ef3796cd6175"
+}

@@ -1,0 +1,74 @@
+{
+  "key": "measurement/cards-by-card@cells",
+  "rev": 2,
+  "value": "Cell gauntlet by card (copies of each non-starter card; nets minus heuristic, HC1 se): Demon Form -7.54 (1.23) HP on the product nets, -6.2 to -9.2 in every net group; no other card below 2 se; FTL +3.49 (1.33), Brutality +2.38, Inflame +1.94 in the nets' favour.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Cards by card and by stratum (step 1b): the script reproduces the navigator's strata to the digit; Demon Form costs every net group 6-9 HP against the heuristic per copy, its Strength lands after the one-turn leaf, and its row is a combination no training game held (yardstick-cards step 1b; no jobs; read 14:30 2026-11-06, lanes d6ed878a)",
+      "sha256": "d06516b62b1d57a90093ec6c616a99b6e63281b02318dd047535eaf974a4a9e0"
+    },
+    {
+      "path": "scripts/analysis/cards_by_half.py",
+      "sha256": "c0a20d0e7b96a024e40f5f2502484ee2454f3b379e4b972fe3ce8010e6ef7d14"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:00+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Cell gauntlet, both books, paired end-HP edge over the heuristic by stratum (train 500 / held-out without Demon Form 326 / held-out with it 174 sequences; se over sequences): effects 5k +0.56 / +1.74 / -7.23 (1.19); 20k +2.74 / +3.64 / -6.41 (1.24); 40k +3.74 / +4.30 / -3.08 (1.24); ids 5k -0.68 / -1.28 / -12.40 (1.28); product recipe (3) +3.44 / +5.28 / -4.26 (1.32), clears +0.080 / +0.078 / -0.117. By card (copies of each non-starter card, covariates book and upgrades, HC1 se), nets minus heuristic: Demon Form -7.54 (1.23) on the product nets (heuristic +2.35, nets -5.19), -6.2 to -9.2 in every group; no other card below 2 se; FTL +3.49 (1.33), Brutality +2.38, Inflame +1.94 in the nets' favour. Two turns deep the Demon Form stratum gains +6.4 to +10.4 HP over the one-turn 10-29 net. Generated bench (elite+boss, 3 copies, 10-29 net minus heuristic wins, se over cells): turn start -0.292 (0.049), turn end -0.061 (0.054), card played +0.005 (0.047), original Demon Form -0.140 (0.033), original Metallicize -0.083 (0.030). Code read: the net's rows carry Demon Form (OwnerTurnStart x apply Strength to me), a combination no training game held on the player's side; the one-turn leaf is the state at the next turn's draw, before turn-start hooks, so its Strength never lands inside the search: seen and not learned, payoff outside the leaf. Disagreements with cause/unseen-cards-half-edge: FTL differs by 3.49 HP (the fact says no card but Demon Form beyond 2.4); its bench se are per fight, smaller than per cell.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Cards by card and by stratum (step 1b): the script reproduces the navigator's strata to the digit; Demon Form costs every net group 6-9 HP against the heuristic per copy, its Strength lands after the one-turn leaf, and its row is a combination no training game held (yardstick-cards step 1b; no jobs; read 14:30 2026-11-06, lanes d6ed878a)",
+          "sha256": "d06516b62b1d57a90093ec6c616a99b6e63281b02318dd047535eaf974a4a9e0"
+        },
+        {
+          "path": "scripts/analysis/cards_by_half.py",
+          "sha256": "c0a20d0e7b96a024e40f5f2502484ee2454f3b379e4b972fe3ce8010e6ef7d14"
+        },
+        {
+          "path": "results/gauntlet/heuristic-bcbb0e.json",
+          "sha256": "fe5097ae69c33599c77c748cdb97a7c69da8204b677d3d46c1444cafbdeb2c7a"
+        },
+        {
+          "path": "results/gauntlet/heuristic-b500.json",
+          "sha256": "a7ac58808c88c5c68428594c6b2ea5202f2e8cfcabd3397dff9a761dd44e9f30"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01.json",
+          "sha256": "5f09012adeffb8c5b718928048b7950077787540398f0bfb9e456e3b10345c1f"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-b500.json",
+          "sha256": "a47fa34511bab4894243e619bf0206aa85e4644cdb8293fb92418d5799f2995e"
+        },
+        {
+          "path": "results/gen_powers/depth/heuristic-elite_boss.json",
+          "sha256": "5d1edb706bbf107a111c5415ece5c00063196583d6c588a10e2cfb8131d51c0d"
+        },
+        {
+          "path": "results/gen_powers/depth/2026-10-29-seed-check-r2-s1-1a789b2-elite_boss.json",
+          "sha256": "c520e86cc2f34a78d90e010554f36ee412ab5261f9dac6a30dd639d5ef4089b6"
+        },
+        {
+          "key": "cause/unseen-cards-half-edge",
+          "rev": 9
+        }
+      ],
+      "owner": false,
+      "by": "d6ed878a-ac65-4d6c-8c01-1bbdbb7aad52",
+      "at": "2026-11-06T07:01:24+00:00 @ 53a8eaf",
+      "until": "2026-11-13T02:30:00+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "2cc87af66ef61cf796a59b9489598850c1a4eba9c7c6dc35bb49995b8a04ef6e"
+}

@@ -1,0 +1,27 @@
+{
+  "key": "yardstick/screen-depth",
+  "rev": 1,
+  "value": "Two-turn screening reads (cost-saving reads, arms compared with each other) use --one-turn-floors 3 on the cell gauntlet and on the headline setting; headline reads of product candidates keep full depth, and a paired read never mixes the two between its arms.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Mixed depth for screens (owner away, 2026-11-02)",
+      "sha256": "3f6e53c28ce37e257bf4aaf3785c0f7b7cd106f4ef193fdba745000f854d25c4"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Mixed depth on the headline: screening default, headline reads keep full depth (owner away, 2026-11-02)",
+      "sha256": "1f63c1d7164803b96bd73389cf32358c9d46c2762a2abd0ca81a38c9d75792c7"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:09:16Z @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "46083846896d8a87d6a41d90eb332de5d46261bd58f22a695bf4f846c2c6b39d"
+}

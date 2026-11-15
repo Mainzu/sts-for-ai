@@ -1,0 +1,55 @@
+{
+  "key": "yardstick/twin-reads",
+  "rev": 2,
+  "value": "A twin read (nets differing in one config key, on the mutated bench) needs three training seeds: per-seed twin difference sd ~0.03 win rate (~2.5x a seed's se at 200x8); pool per-start means over seeds, pooled se ~0.008-0.009.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/rate-columns@ritual2",
+      "rev": 3
+    },
+    {
+      "key": "measurement/seed-sd@gauntlet",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:20Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:26Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/rate-columns@ritual2, measurement/seed-sd@gauntlet reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A twin read (two nets whose training differs in one config key, read on the mutated bench) needs three training seeds before it says anything: the per-seed twin difference has a training-seed sd of about 0.03 win rate (rate columns against their twins on sharp2: +0.033, -0.028, -0.016), about 2.5x a seed's own se at 200 starts x 8, so one pair mostly reads that seed's luck on unfamiliar hook powers; pool the per-start means over seeds and read the pooled se (about 0.008-0.009 at three seeds).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Rate columns over three seeds: no repair of Ritual 2 (rates minus twin -0.005, se 0.008; bosses -0.006); the s1 lead was training-seed luck; Guardian guard passes (adaptation lane step 4; 0128, 0129, 0132-0135; read 00:50 2026-11-05, lanes 4ccb3148)",
+          "sha256": "040054a763bd8fa4d7bf5439e0432758188c18affac6f1ab89150befbcf9a089"
+        },
+        {
+          "key": "measurement/rate-columns@ritual2",
+          "rev": 2
+        },
+        {
+          "key": "measurement/seed-sd@gauntlet",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "d324392d-c74c-40b3-8e96-6301e0fb4db6",
+      "at": "2026-11-04T17:59:37Z @ 011f7f1",
+      "until": "2026-11-13T02:29:20Z @ 3123201a"
+    }
+  ],
+  "seal": "cb6cae9c30e07ba53dc719772586729eedc2d902cca1c3bf00d4c93919e482fd"
+}

@@ -1,0 +1,84 @@
+{
+  "key": "measurement/leaf-clear-block@cells",
+  "rev": 2,
+  "value": "@lcb1 on 10-29 @hpb0.01: card tsl1 win leads Disarm -0.130, Impervious -0.120, Intimidate -0.072 vs -0.118/-0.122/-0.062 without (167 cells); one-turn cell gauntlet n 500 clears 0.636 vs 0.634 (+0.002, 0.003), end HP +0.04 (0.07); 10-24 of 501 fights per deck change.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/leaf-blind-numbers-2026-11-07.md",
+      "anchor": "Step 3 read: leaf_clear_block (2026-11-07, jobs 0451-0453)",
+      "sha256": "c7a2ed1ef2f3c9565f82adc93d47d17a735ece19ecaab3d567b7fc123f97d4b6"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-lcb1.json",
+      "sha256": "28ac691450adccc098a78410aa1442aaa7766a06564ff276ed1a7dcff7819acb"
+    },
+    {
+      "key": "measurement/leaf-numbers@probe",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:30+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:20+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/leaf-numbers@probe reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "leaf_clear_block (@lcb1, clear the player's block at a monster_rolls leaf) on the 10-29 net @hpb0.01 changes almost nothing: the three cards' tsl1 win leads Disarm -0.130 (0.032), Impervious -0.120 (0.035), Intimidate -0.072 (0.028) against -0.118, -0.122, -0.062 without it (167 cells); one-turn cell gauntlet n 500 clears 0.636 vs 0.634 (+0.002, se 0.003), paired end HP +0.04 (0.07), protocol fail; only 10-24 of 501 fights per deck change. The surplus-block markdown acts on lines the search rejects anyway.",
+      "sources": [
+        {
+          "path": "docs/research/leaf-blind-numbers-2026-11-07.md",
+          "anchor": "Step 3 read: leaf_clear_block (2026-11-07, jobs 0451-0453)",
+          "sha256": "c7a2ed1ef2f3c9565f82adc93d47d17a735ece19ecaab3d567b7fc123f97d4b6"
+        },
+        {
+          "path": "results/pack_cards/act1-lcb/table.json",
+          "sha256": "5b211574b2ac2d46d636a91edd4171d48d9c01c8ea378def6df3887789e1c6f0"
+        },
+        {
+          "path": "results/pack_cards/act1/table.json",
+          "sha256": "bf3c5b872fc8b36cb7e0174335252c8ec6d09e98621386d475ba0e82143e183d"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-lcb1.json",
+          "sha256": "28ac691450adccc098a78410aa1442aaa7766a06564ff276ed1a7dcff7819acb"
+        },
+        {
+          "path": "jobs/done/0451-pack-cards-read.json",
+          "sha256": "541c1e988d7b718d62c9ab684c6574b79eada96ee9a8c8b115cda973f6581d03"
+        },
+        {
+          "path": "jobs/done/0452-pack-cards-read.json",
+          "sha256": "42327397ab577f567a612a229250c6de3f712ecfd8891d0f5735df5bb0bc9ef0"
+        },
+        {
+          "path": "jobs/done/0453-gauntlet.json",
+          "sha256": "5135c0e9d23ef81be914e9069565d28e43d848a39f363c241e15f56cbacba2da"
+        },
+        {
+          "key": "measurement/leaf-numbers@probe",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "df1dd138-05b0-40d9-b4aa-97d496908a18",
+      "at": "2026-11-07T05:07:12+00:00 @ ff66de4",
+      "until": "2026-11-13T02:30:30+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "844f7e06e6dc8359dc1c5bd22dda9492eeb3bd5a39536868250ca7d24a5f8677"
+}

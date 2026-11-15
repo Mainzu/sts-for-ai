@@ -1,0 +1,71 @@
+{
+  "key": "measurement/shown-numbers@weak-frail-bench",
+  "rev": 1,
+  "value": "10-29 net one turn deep @tsl1 with @sn1 against without, generated bench elites (675 starts x 8 seeds), win rate: TurnStart-Weak cost -0.011 (0.003), gain +0.006 (0.002), cut 0.54; TurnEnd-Weak -0.013 (0.003), +0.005 (0.001), cut 0.40; Frail rows' costs -0.002 within noise; parents unchanged; neither Weak row halved at 2 se",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/shown-card-numbers-2026-11-10.md",
+      "anchor": "Generated bench, Weak and Frail turn rows (jobs 0760-0761)",
+      "sha256": "6ffe27e22870b857b89a4fded958da813578d208d1647a3d838da6868027259c"
+    },
+    {
+      "path": "results/mutate/gen-wf-tsl1.json",
+      "sha256": "7ef04a25c167bd3e4b69e5e75154e6f4c50f260aa2a98b34fb44b91924ef81e9"
+    },
+    {
+      "path": "results/mutate/gen-wf-sn1-tsl1.json",
+      "sha256": "5ee457d6e37aa5310d52c91f0d991d03e99bcb466955c9c1cfaa00d485e179dc"
+    },
+    {
+      "path": "jobs/done/0760-mutate-monsters.json",
+      "sha256": "e7a6e343ba539466ddb8bb3f5d82cb9765b3cdab4f0a0847481d213703cf2abe"
+    },
+    {
+      "path": "jobs/done/0761-mutate-monsters.json",
+      "sha256": "32adf1d8545af303b68f2bbf6c4c011e9f3def71673fef111b37759adcafe3c6"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "22671add-cd16-4d99-9e2e-3a0bd4f9f071",
+  "at": "2026-11-09T21:10:11+00:00 @ 30aa133",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "10-29 net one turn deep @tsl1 with @sn1 against without, generated bench elites (675 starts x 8 seeds), win rate: TurnStart-Weak cost -0.011 (0.003), gain +0.006 (0.002), cut 0.54; TurnEnd-Weak -0.013 (0.003), +0.005 (0.001), cut 0.40; Frail rows' costs -0.002 within noise; parents unchanged; neither Weak row halved at 2 se",
+      "sources": [
+        {
+          "path": "docs/research/shown-card-numbers-2026-11-10.md",
+          "anchor": "Generated bench, Weak and Frail turn rows (jobs 0760-0761)",
+          "sha256": "6ffe27e22870b857b89a4fded958da813578d208d1647a3d838da6868027259c"
+        },
+        {
+          "path": "results/mutate/gen-wf-tsl1.json",
+          "sha256": "7ef04a25c167bd3e4b69e5e75154e6f4c50f260aa2a98b34fb44b91924ef81e9"
+        },
+        {
+          "path": "results/mutate/gen-wf-sn1-tsl1.json",
+          "sha256": "5ee457d6e37aa5310d52c91f0d991d03e99bcb466955c9c1cfaa00d485e179dc"
+        },
+        {
+          "path": "jobs/done/0760-mutate-monsters.json",
+          "sha256": "e7a6e343ba539466ddb8bb3f5d82cb9765b3cdab4f0a0847481d213703cf2abe"
+        },
+        {
+          "path": "jobs/done/0761-mutate-monsters.json",
+          "sha256": "32adf1d8545af303b68f2bbf6c4c011e9f3def71673fef111b37759adcafe3c6"
+        }
+      ],
+      "owner": false,
+      "by": "22671add-cd16-4d99-9e2e-3a0bd4f9f071",
+      "at": "2026-11-09T21:10:11+00:00 @ 30aa133",
+      "until": "2026-11-10T07:04:30+00:00 @ f97b79c",
+      "retired": "merged into measurement/portfolio-shown-card-numbers"
+    }
+  ],
+  "seal": "5561ff56bff844a20313809f579d861be4cd1d711aba923473092a54e99d0186"
+}

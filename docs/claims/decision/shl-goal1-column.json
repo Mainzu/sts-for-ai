@@ -1,0 +1,52 @@
+{
+  "key": "decision/shl-goal1-column",
+  "rev": 2,
+  "value": "@shl0.005: goal-1 candidate leaf only (level on headline). New goal-1 bench tables read it as a second column beside @tsl1; it replaces @tsl1 only after a table shows no mechanic or parent worse by 1.5 HP. Controls and product unchanged.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After shl-headline: @shl0.005 level on the headline; goal-1 bench tables read it beside @tsl1; running chains keep their leaf (on the owner's behalf, 2026-11-08)",
+      "sha256": "7894549c23aebc731b59c4298d50545d4c8e0011b35a47c4a44c751c1ed49e0c"
+    },
+    {
+      "key": "measurement/shl0.005@headline",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:32Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:16Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/shl0.005@headline reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "@shl0.005 is goal 1's candidate leaf, nothing for goal 2 (level on the headline, measurement/shl0.005@headline): goal-1 bench tables started from 2026-11-08 on (new pack, batch or zero-shot base) read @shl0.005 as a second column beside their @tsl1 reading player, which it replaces only after a table shows no mechanic or parent worse by 1.5 HP; tables queued or under way keep their leaf (pack-retention's chains, paired with the reused @tsl1 base) and pack-retention keeps its net teacher; a price-teacher arm is a candidate for the pack chain after that lane; the one-turn controls and the product are unchanged.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After shl-headline: @shl0.005 level on the headline; goal-1 bench tables read it beside @tsl1; running chains keep their leaf (on the owner's behalf, 2026-11-08)",
+          "sha256": "7894549c23aebc731b59c4298d50545d4c8e0011b35a47c4a44c751c1ed49e0c"
+        },
+        {
+          "key": "measurement/shl0.005@headline",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "0c5cb0c7-6e7e-4957-b99e-736fdb238ae0",
+      "at": "2026-11-08T09:16:19Z @ 1f37c73",
+      "until": "2026-11-13T02:29:32Z @ 3123201a"
+    }
+  ],
+  "seal": "9ee2711c700a861e926805d739a47c589d661f76ceee4b9eb7e083dcbe1b4573"
+}

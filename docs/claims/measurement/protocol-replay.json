@@ -1,0 +1,46 @@
+{
+  "key": "measurement/protocol-replay",
+  "rev": 2,
+  "value": "Replaying the gauntlet protocol over 81 ordered pairs of existing files: no verdict changed direction and no pass went to a player worse on clears; real effects stop at 54-119 sequences (about 1/4 to 1/5 of the 500 fixed n), level pairs run to 500 or fail at 50-440. H1 +1.5 HP is roughly +0.02-0.03 clears.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Gauntlet protocol replay: sequential end-HP with a clears guard (02:20 2026-11-02, manager c3513fb5)",
+      "sha256": "5345110cc04e48ebfafff75a305da2e80da14cdd6466fbaac77d5ef329e1dfa5"
+    },
+    {
+      "key": "yardstick/protocol",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "corrected same session: the first value quoted decisions' '2.5x more sample-efficient', which this section doesn't hold",
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:14:34+00:00 @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Replaying the gauntlet protocol (paired end-HP SPRT, H1 +1.5 HP, clears guard) over the existing files: no direction errors, and real effects stop at 50-160 sequences instead of 500, about 2-3x less CPU per goal-2 read; end-HP is ~2.5x more sample-efficient than a trinomial test on clears.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Gauntlet protocol replay: sequential end-HP with a clears guard (02:20 2026-11-02, manager c3513fb5)",
+          "sha256": "5345110cc04e48ebfafff75a305da2e80da14cdd6466fbaac77d5ef329e1dfa5"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:14:24+00:00 @ fc9cdd8",
+      "until": "2026-11-02T16:14:34+00:00 @ fc9cdd8"
+    }
+  ],
+  "seal": "31f67c3417348fcb3d635729a31c3bb57c76f62a0ffc8986931e48358d9cde54"
+}

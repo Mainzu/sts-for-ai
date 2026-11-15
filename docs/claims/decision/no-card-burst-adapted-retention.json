@@ -1,0 +1,27 @@
+{
+  "key": "decision/no-card-burst-adapted-retention",
+  "rev": 1,
+  "value": "Card-burst retention not pursued: six 400-game card bursts lose 0.4-2.4 HP per elite on the parent copy (wins level); parent copy in the decks raises it (metal +2.61 vs +1.43); no card burst repairs a cost @tsl1.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Copy-rehearsal stopped: card bursts' elite cost is not missing rehearsal; no follow-up on card-burst retention (on the owner's behalf, 2026-11-07)",
+      "sha256": "29d8aee75b8fc882e1fadcb7d943ee0311499b09055a6d281f14391f204ed393"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After the cards adapted column: yardstick-cards stays closed; a copy-rehearsal probe queued; burst-adapted-column re-set (on the owner's behalf, 2026-11-07)",
+      "sha256": "420cfbcd2affac5fd334eb4c14c5704bf74fd4136e64360c33f4646348d9fb73"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:14Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "38217e21b6e8657895ed70b781f17494426f9d79fa24d95fc03344b4aef78e3f"
+}

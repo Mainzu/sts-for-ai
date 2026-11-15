@@ -1,0 +1,58 @@
+{
+  "key": "measurement/gen-adapted@alw33",
+  "rev": 2,
+  "value": "33-game bursts on GE-AttackLoss-Weak @tsl1, share 0.5: net teacher cut +1.20 (0.05) = 0.20 of +6.03; heuristic +1.84 (0.08) = 0.30; both fail half-cost, so games to adapt is 33-99; every 33-game burst kept its epoch-1 weights (one pass over ~240 states).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/gen-adapted-column.md",
+      "anchor": "Step 3 read: family gac-alw33 table (job 0506, 2026-11-08)",
+      "sha256": "85e3b87723200d014a91a517fcc0a9f45fc29d660f9673f3030c91d42820387a"
+    },
+    {
+      "path": "results/families/gac-alw33.md",
+      "sha256": "ce6bfd8dcea4636980f5dd0b60576b3c6b8c2ca8d5cb1b5c475efac7a786b5e5"
+    },
+    {
+      "key": "measurement/gen-adapted@alw-g99",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:17+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "33-game bursts on GE-AttackLoss-Weak (Lagavulin+Sentries), one turn @hpb0.01@tsl1, 1000 starts x 4 seeds: net teacher cut +1.20 (se nets 0.05), 0.20 of the +6.03 cost; heuristic +1.84 (0.08), 0.30; both fail the half-cost rule, so games to adapt is 33-99 for both teachers (99: net 1.05, heuristic 0.56); parents held (-0.24, -0.26); every 33-game burst kept its epoch-1 weights (val MSE rose after), so 33 games means one pass over ~240 states",
+      "sources": [
+        {
+          "path": "docs/research/gen-adapted-column.md",
+          "anchor": "Step 3 read: family gac-alw33 table (job 0506, 2026-11-08)",
+          "sha256": "85e3b87723200d014a91a517fcc0a9f45fc29d660f9673f3030c91d42820387a"
+        },
+        {
+          "path": "results/families/gac-alw33.md",
+          "sha256": "ce6bfd8dcea4636980f5dd0b60576b3c6b8c2ca8d5cb1b5c475efac7a786b5e5"
+        },
+        {
+          "path": "jobs/done/0506-family.json",
+          "sha256": "22eb105c0742d2a1aab3aaeb37bf3912156330423504b01463c8a9e8a480886e"
+        },
+        {
+          "key": "measurement/gen-adapted@alw-g99",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "71bd303c-1f59-45cf-8b2f-211d03b8fa6d",
+      "at": "2026-11-07T22:08:10+00:00 @ dcb25f1",
+      "until": "2026-11-13T02:30:17+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "d78705b25814b7e32fe8fb2af0d1c3c726616810bb81694566e8c42f6e81451b"
+}

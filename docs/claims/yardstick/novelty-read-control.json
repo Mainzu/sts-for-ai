@@ -1,0 +1,46 @@
+{
+  "key": "yardstick/novelty-read-control",
+  "rev": 2,
+  "value": "A modifier counts as novel only against a plain control about as hard (a stat-only variant); the heuristic is as new to it as the net (engine/src/heuristic.rs reads patched powers only through generic hook rates and move_attacks, with no term tuned to them), so beyond-heuristic means beyond another unadapted player.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
+      "sha256": "64e5d7322445698604f5a58975f2058c2e8ebf0152f463504e0e7c7511e88081"
+    },
+    {
+      "path": "engine/src/heuristic.rs",
+      "sha256": "a735ca0c2618a1cdeeedb09786a86d16f4a8e47011780ae17a46d1e60cce088d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "24a6e50e-3e7c-42ec-b831-f35d7846c20b",
+  "at": "2026-11-14T15:50:01Z @ 418de4d6",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A modifier counts as novel only against a plain control about as hard (a stat-only variant); the heuristic is as new to it as the net (engine/src/heuristic.rs has no term for patched powers), so beyond-heuristic means beyond another unadapted player.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "64e5d7322445698604f5a58975f2058c2e8ebf0152f463504e0e7c7511e88081"
+        },
+        {
+          "path": "engine/src/heuristic.rs",
+          "sha256": "bba1a9869681d0ec28a03f65c4b1f009c53e2e2429662a61910257bd30d43ebb"
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:28:08Z @ 3123201a",
+      "until": "2026-11-14T15:50:01Z @ 418de4d6"
+    }
+  ],
+  "seal": "27d75c7577f39fa1c1fe839102b81177b0af253614c77114544807ba69292580"
+}

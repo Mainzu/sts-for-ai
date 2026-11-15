@@ -1,0 +1,66 @@
+{
+  "key": "measurement/share-curve@ocw",
+  "rev": 2,
+  "value": "Replay share, GE-OppCard-Weak x Lagavulin (zero-shot +7.36), recipe as measurement/share-curve@alw: g33 sh0.5 +2.97 (0.25/0.62), parent +1.53, fail; g33 sh0.8 +4.09 (0.29/0.03), parent +0.15, pass; g33 sh0.9 +4.51 (0.28/0.42), parent -0.04, pass (= g99's +4.13); g11 sh0.8 +2.54 fail. Cut caps near 0.6 of the cost; higher shares spare the parent.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/share-curve.md",
+      "anchor": "Step 1, second half: OppCard-Weak table (job 0674, 2026-11-09); checkpoint recipe-tables passed",
+      "sha256": "ceedb0e0d8b1a69f9f79d29cd0a5c40ff9aec40036048e7378c6f66ee76310ce"
+    },
+    {
+      "path": "results/families/sc-ocw.json",
+      "sha256": "8da19ab982cca51823fff21a3743882c48ea758932cc14a7be7efd8a34d12ad0"
+    },
+    {
+      "key": "measurement/gen-adapted@ocw",
+      "rev": 3
+    },
+    {
+      "key": "measurement/share-curve@alw",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:29+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Replay share at few games on GE-OppCard-Weak x Lagavulin (zero-shot cost +7.36), net-teacher bursts from the 10-29 net, 3 seeds, one turn @hpb0.01@tsl1, cut beyond c-hp1.25-str1 (se starts / se nets), share of cost, parent change (negative better): g33 sh0.5 +2.97 (0.25/0.62) 0.40 +1.53, fail; g33 sh0.8 +4.09 (0.29/0.03) 0.56 +0.15, pass; g33 sh0.9 +4.51 (0.28/0.42) 0.61 -0.04, pass, at the 99-game default's +4.13; g11 sh0.8 +2.54 (0.24/0.46) 0.34 +1.15, fail; the share gain is smaller than on AttackLoss-Weak (mechanic caps near 0.6 of its cost), and the higher shares spare the parent, which share 0.5 costs 1.5 HP; with measurement/share-curve@alw the go of lane/share-curve's step 1 holds on both mechanics",
+      "sources": [
+        {
+          "path": "docs/research/share-curve.md",
+          "anchor": "Step 1, second half: OppCard-Weak table (job 0674, 2026-11-09); checkpoint recipe-tables passed",
+          "sha256": "ceedb0e0d8b1a69f9f79d29cd0a5c40ff9aec40036048e7378c6f66ee76310ce"
+        },
+        {
+          "path": "results/families/sc-ocw.json",
+          "sha256": "8da19ab982cca51823fff21a3743882c48ea758932cc14a7be7efd8a34d12ad0"
+        },
+        {
+          "path": "jobs/done/0674-family.json",
+          "sha256": "d0c6b2298979954337465a852e9a59d26390b36f311b1cffbdde2fea4d9b8f0b"
+        },
+        {
+          "key": "measurement/gen-adapted@ocw",
+          "rev": 2
+        },
+        {
+          "key": "measurement/share-curve@alw",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "fe02d2dc-9024-4b2e-b27c-382b67b6cb89",
+      "at": "2026-11-09T11:01:35+00:00 @ fae33d8",
+      "until": "2026-11-13T02:31:29+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "cf03ebf9c8e7be937f95cc76a224d11ca032a926fc9f86a701f7912b15c5fc2b"
+}

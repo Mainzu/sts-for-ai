@@ -1,0 +1,132 @@
+{
+  "key": "measurement/all-content-s1@boss-replay",
+  "rev": 4,
+  "value": "allcontent40k s1 on the boss replay minus twin data40k-s1: Guardian +0.048 (0.011), Hexaghost +0.093 (0.015), Slime -0.004 (0.008); gain mostly held-out-card decks (Demon Form +0.314); outside Demon Form vs 10-29 net Guardian +0.023 (0.009), Hexaghost +0.023 (0.009).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "All-content net seed 1 on the boss replay: Guardian +0.048 (0.011), Hexaghost +0.093 (0.015) wins against its twin, so checkpoint seed1-bosses passes; the gain sits almost all on held-out-card decks (Guardian +0.004 on train decks, +0.085 on held-out), and Slime Boss loses 0.027 (0.008) on train decks (all-content-net step 2; 0574; read 15:45 2026-11-08, lanes)",
+      "sha256": "0cfa117f086d6e01bacc368069b96e89ce36b7761c3a29350faed3e9d7ab9a76"
+    },
+    {
+      "path": "results/boss_replay/allcontent40k-s1-hpb0.01.json",
+      "sha256": "01015cb7c33e922bb74bd7a3eaaf9b54934f134ae68125b5aa8a7c42cd32e828"
+    },
+    {
+      "path": "results/boss_replay/data40k-s1-r1-hpb0.01.json",
+      "sha256": "ef2f038e95312ca2458072004a9840080569a2fe1eb91d1ae20896b54ea7d904"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:48+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "allcontent40k seed 1 (runs/2026-11-08-allcontent40k-s1-r1-887ca04@hpb0.01) on the boss replay (474 headline boss fights, HP 30-80 x 4 seeds, one turn deep) minus its twin data40k-s1 r1, paired by deck: Guardian +0.048 (0.011), Hexaghost +0.093 (0.015), Slime Boss -0.004 (0.008); on train-card decks Guardian +0.004, Hexaghost +0.030, Slime Boss -0.027 (0.008); on held-out-card decks +0.085, +0.146, +0.026: the gain is mostly the held-out cards (and today's inputs) entering training, not the bosses. One seed.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "All-content net seed 1 on the boss replay: Guardian +0.048 (0.011), Hexaghost +0.093 (0.015) wins against its twin, so checkpoint seed1-bosses passes; the gain sits almost all on held-out-card decks (Guardian +0.004 on train decks, +0.085 on held-out), and Slime Boss loses 0.027 (0.008) on train decks (all-content-net step 2; 0574; read 15:45 2026-11-08, lanes)",
+          "sha256": "0cfa117f086d6e01bacc368069b96e89ce36b7761c3a29350faed3e9d7ab9a76"
+        },
+        {
+          "path": "results/boss_replay/allcontent40k-s1-hpb0.01.json",
+          "sha256": "01015cb7c33e922bb74bd7a3eaaf9b54934f134ae68125b5aa8a7c42cd32e828"
+        },
+        {
+          "path": "results/boss_replay/data40k-s1-r1-hpb0.01.json",
+          "sha256": "ef2f038e95312ca2458072004a9840080569a2fe1eb91d1ae20896b54ea7d904"
+        },
+        {
+          "path": "jobs/done/0574-boss-replay.json",
+          "sha256": "3a54374db849fc037e3762e60cda5b5d3207d0caba332e3263d83cc0be8d7d2d"
+        }
+      ],
+      "owner": false,
+      "by": "28bcbba4-c373-4a01-8587-20e05450dbbb",
+      "at": "2026-11-08T08:37:59+00:00 @ ab55c4c",
+      "until": "2026-11-08T14:15:56+00:00 @ 5c32e9b"
+    },
+    {
+      "rev": 2,
+      "value": "allcontent40k seed 1 (runs/2026-11-08-allcontent40k-s1-r1-887ca04@hpb0.01) on the boss replay (474 headline boss fights, HP 30-80 x 4 seeds, one turn deep) minus its twin data40k-s1 r1, paired by deck: Guardian +0.048 (0.011), Hexaghost +0.093 (0.015), Slime Boss -0.004 (0.008). Guardian+Hexaghost by stratum against the twin / the 10-29 net: train +0.017 / +0.024, other held-out -0.005 / -0.004, Metallicize +0.217 / +0.064 (the twin's own weakness there: twin minus the 10-29 net -0.155), Demon Form +0.31 / +0.344 (Demon Form's first tick); outside Demon Form against the 10-29 net Guardian +0.023 (0.009), Hexaghost +0.023 (0.009). Seed 101 repeats it (measurement/all-content-s101@boss-replay).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "All-content net seed 1 on the boss replay: Guardian +0.048 (0.011), Hexaghost +0.093 (0.015) wins against its twin, so checkpoint seed1-bosses passes; the gain sits almost all on held-out-card decks (Guardian +0.004 on train decks, +0.085 on held-out), and Slime Boss loses 0.027 (0.008) on train decks (all-content-net step 2; 0574; read 15:45 2026-11-08, lanes)",
+          "sha256": "0cfa117f086d6e01bacc368069b96e89ce36b7761c3a29350faed3e9d7ab9a76"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After seed1-bosses: the gain split by deck; the pooled read gets a second control and the split; the two-turn call needs a gain outside Demon Form decks (on the owner's behalf, 2026-11-08)",
+          "sha256": "5f32457cee4f9f3bd65ed3427a5b5ae393753a93df365d624c5ea8e014e87484"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "All-content net seed 101 on the boss replay repeats seed 1: Guardian +0.050 (0.009), Hexaghost +0.054 (0.012) wins against its twin; pooled over seeds 1 and 101, outside Demon Form decks against the 10-29 net, the Guardian gains +0.035 (0.007) and Hexaghost +0.017 (0.008); the lane closed at its cap before seed 201 and the one-turn headline (all-content-net close; 0581, 0583, 0601; read 21:20 2026-11-08, lanes)",
+          "sha256": "58c267ddae3b79fc3691d0f84d031e46ea7f51c9893682acf98061274b09e700"
+        },
+        {
+          "path": "results/boss_replay/allcontent40k-s1-hpb0.01.json",
+          "sha256": "01015cb7c33e922bb74bd7a3eaaf9b54934f134ae68125b5aa8a7c42cd32e828"
+        },
+        {
+          "path": "results/boss_replay/data40k-s1-r1-hpb0.01.json",
+          "sha256": "ef2f038e95312ca2458072004a9840080569a2fe1eb91d1ae20896b54ea7d904"
+        },
+        {
+          "path": "jobs/done/0574-boss-replay.json",
+          "sha256": "3a54374db849fc037e3762e60cda5b5d3207d0caba332e3263d83cc0be8d7d2d"
+        }
+      ],
+      "owner": false,
+      "by": "eda5a964-10e9-4dbc-9772-27ee36c8c96a",
+      "at": "2026-11-08T14:15:56+00:00 @ 5c32e9b",
+      "until": "2026-11-08T14:16:15+00:00 @ 5c32e9b"
+    },
+    {
+      "rev": 3,
+      "value": "allcontent40k seed 1 (runs/2026-11-08-allcontent40k-s1-r1-887ca04@hpb0.01) on the boss replay (474 headline boss fights, HP 30-80 x 4 seeds, one turn deep) minus its twin data40k-s1 r1, paired by deck: Guardian +0.048 (0.011), Hexaghost +0.093 (0.015), Slime Boss -0.004 (0.008). Guardian+Hexaghost by stratum against the twin / the 10-29 net: train +0.017 / +0.024, other held-out +0.004 / -0.004, Metallicize +0.219 / +0.064 (mostly the twin's own weakness there: twin minus the 10-29 net -0.155), Demon Form +0.314 / +0.344 (Demon Form's first tick); outside Demon Form against the 10-29 net Guardian +0.023 (0.009), Hexaghost +0.023 (0.009). Seed 101 repeats it (measurement/all-content-s101@boss-replay).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "All-content net seed 1 on the boss replay: Guardian +0.048 (0.011), Hexaghost +0.093 (0.015) wins against its twin, so checkpoint seed1-bosses passes; the gain sits almost all on held-out-card decks (Guardian +0.004 on train decks, +0.085 on held-out), and Slime Boss loses 0.027 (0.008) on train decks (all-content-net step 2; 0574; read 15:45 2026-11-08, lanes)",
+          "sha256": "0cfa117f086d6e01bacc368069b96e89ce36b7761c3a29350faed3e9d7ab9a76"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After seed1-bosses: the gain split by deck; the pooled read gets a second control and the split; the two-turn call needs a gain outside Demon Form decks (on the owner's behalf, 2026-11-08)",
+          "sha256": "5f32457cee4f9f3bd65ed3427a5b5ae393753a93df365d624c5ea8e014e87484"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "All-content net seed 101 on the boss replay repeats seed 1: Guardian +0.050 (0.009), Hexaghost +0.054 (0.012) wins against its twin; pooled over seeds 1 and 101, outside Demon Form decks against the 10-29 net, the Guardian gains +0.035 (0.007) and Hexaghost +0.017 (0.008); the lane closed at its cap before seed 201 and the one-turn headline (all-content-net close; 0581, 0583, 0601; read 21:20 2026-11-08, lanes)",
+          "sha256": "58c267ddae3b79fc3691d0f84d031e46ea7f51c9893682acf98061274b09e700"
+        },
+        {
+          "path": "results/boss_replay/allcontent40k-s1-hpb0.01.json",
+          "sha256": "01015cb7c33e922bb74bd7a3eaaf9b54934f134ae68125b5aa8a7c42cd32e828"
+        },
+        {
+          "path": "results/boss_replay/data40k-s1-r1-hpb0.01.json",
+          "sha256": "ef2f038e95312ca2458072004a9840080569a2fe1eb91d1ae20896b54ea7d904"
+        },
+        {
+          "path": "jobs/done/0574-boss-replay.json",
+          "sha256": "3a54374db849fc037e3762e60cda5b5d3207d0caba332e3263d83cc0be8d7d2d"
+        }
+      ],
+      "owner": false,
+      "by": "eda5a964-10e9-4dbc-9772-27ee36c8c96a",
+      "at": "2026-11-08T14:16:15+00:00 @ 5c32e9b",
+      "until": "2026-11-13T02:29:48+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "f7973a81b6f735de9ef8d85eb2d1c79c910e20bd032cd1a7262150ae104c805d"
+}

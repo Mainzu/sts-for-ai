@@ -1,0 +1,30 @@
+{
+ "content": {
+  "cards": [
+   "gc1_003",
+   "gc1_006",
+   "gc1_012",
+   "gc1_014",
+   "gc1_027",
+   "gc1_031",
+   "gc1_040",
+   "gc1_046",
+   "gc1_055",
+   "gc1_070",
+   "gc1_073",
+   "gc1_074",
+   "gc1_081",
+   "gc1_092",
+   "gc1_115",
+   "gc1_116"
+  ],
+  "pack": "data/bench/gen_powers_pack.json"
+ },
+ "game_seed": 31,
+ "games": 4000,
+ "n_val": 300,
+ "name": "burst16tr-s101",
+ "player": "net",
+ "pool": 10000,
+ "seed": 101
+}

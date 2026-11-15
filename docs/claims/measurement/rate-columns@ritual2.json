@@ -1,0 +1,129 @@
+{
+  "key": "measurement/rate-columns@ritual2",
+  "rev": 3,
+  "value": "Rate columns minus no-columns twin, 3 seeds, one turn, mutated bench 200x8, novelty cost pooled: ritual2 -0.005 (0.008), bosses -0.006 (0.015), sharp2 -0.004 (0.009): no Ritual 2 repair. Per seed sharp2 +0.033/-0.028/-0.016: twin-difference seed sd ~0.03, ~2.5x a seed's se, so one twin pair reads nothing. Guardian guard +0.028 (0.018).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Rate columns over three seeds: no repair of Ritual 2 (rates minus twin -0.005, se 0.008; bosses -0.006); the s1 lead was training-seed luck; Guardian guard passes (adaptation lane step 4; 0128, 0129, 0132-0135; read 00:50 2026-11-05, lanes 4ccb3148)",
+      "sha256": "040054a763bd8fa4d7bf5439e0432758188c18affac6f1ab89150befbcf9a089"
+    },
+    {
+      "path": "results/mutate/rates-s1.json",
+      "sha256": "73717a2cb2e139fccb5b14cca2cf14b9750f440cae055fe40b6f9649d56e746f"
+    },
+    {
+      "path": "results/mutate/rates-s101.json",
+      "sha256": "891a92476d6eabc7bd12848e00550d107d0f5cd5b8ac02107d2aba5715a17bc0"
+    },
+    {
+      "path": "results/mutate/rates-s201.json",
+      "sha256": "4339429fd2b2226ebdcc377b7fe4f3ad4bc15d6f0a72c61ee02294a71d84a494"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:23+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Rate columns on the mutated bench, seed s1 only (a lead): one turn deep, 200 starts x 8, the rates net's novelty cost (beyond the heuristic, paired by start) minus its no-columns twin's: ritual2 +0.014 (0.010), elites +0.025 (0.013), bosses -0.009 (0.018); ritual2-hp0.7 +0.001 (0.008); sharp2 +0.033 (0.013), elites +0.052. The columns do not repair Ritual 2 on bosses at s1, where its cost lies; their gain is on elites and larger on SharpHide, whose payoff they do not describe.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Rate columns on Ritual 2, seed s1: the rates net's novelty cost is 0.014 smaller (se 0.010), all on elites; on bosses, where Ritual 2 costs most, no gain; SharpHide gains more (adaptation lane step 4; 0128, 0129; read 00:15 2026-11-05, lanes 4ccb3148)",
+          "sha256": "510c7abf21cf18370456e13c3ba0b513661838e36b7d75fd379867a770c8c4fc"
+        },
+        {
+          "path": "results/mutate/rates-s1.json",
+          "sha256": "73717a2cb2e139fccb5b14cca2cf14b9750f440cae055fe40b6f9649d56e746f"
+        },
+        {
+          "path": "results/mutate/thr-s1.json",
+          "sha256": "e26f706157ba8a2c59954519eb3fc147d41a7e2d06d054d77d5c55e4e567a630"
+        },
+        {
+          "path": "jobs/done/0128-mutate-monsters.json",
+          "sha256": "d073afdfaa71f6da445d6732981b58bf653b4a9e858a4ca23efb4e06c88eba9a"
+        },
+        {
+          "path": "jobs/done/0129-mutate-monsters.json",
+          "sha256": "d9e03b579ab744bbe5a1646b16743d1db77dd0ae4b46f75a8cd7c56bbdfdb667"
+        }
+      ],
+      "owner": false,
+      "by": "4ccb3148-4683-4db0-b258-c8c6cad7e8a3",
+      "at": "2026-11-04T17:08:40+00:00 @ b4b0735",
+      "until": "2026-11-04T17:45:44+00:00 @ 3c561f3"
+    },
+    {
+      "rev": 2,
+      "value": "Rate columns on the mutated bench, three training seeds (s1, s101, s201), one turn deep, 200 starts x 8 each: the rates net's novelty cost (beyond the heuristic, paired by start) minus its no-columns twin's, pooled over seeds: ritual2 -0.005 (0.008), bosses -0.006 (0.015); ritual2-hp0.7 -0.003 (0.006); sharp2 -0.004 (0.009). Per seed the ritual2 difference was +0.014, -0.010, -0.018 and sharp2 +0.033, -0.028, -0.016: the training-seed sd of a twin difference (about 0.03) is about 2.5x a seed's se, so one twin pair reads nothing. Guardian guard on the parents' 15 Guardian starts: +0.028 (0.018), no side effect. The columns alone do not repair Ritual 2's past-horizon payoff on an enemy.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Rate columns over three seeds: no repair of Ritual 2 (rates minus twin -0.005, se 0.008; bosses -0.006); the s1 lead was training-seed luck; Guardian guard passes (adaptation lane step 4; 0128, 0129, 0132-0135; read 00:50 2026-11-05, lanes 4ccb3148)",
+          "sha256": "040054a763bd8fa4d7bf5439e0432758188c18affac6f1ab89150befbcf9a089"
+        },
+        {
+          "path": "results/mutate/rates-s1.json",
+          "sha256": "73717a2cb2e139fccb5b14cca2cf14b9750f440cae055fe40b6f9649d56e746f"
+        },
+        {
+          "path": "results/mutate/thr-s1.json",
+          "sha256": "e26f706157ba8a2c59954519eb3fc147d41a7e2d06d054d77d5c55e4e567a630"
+        },
+        {
+          "path": "results/mutate/rates-s101.json",
+          "sha256": "891a92476d6eabc7bd12848e00550d107d0f5cd5b8ac02107d2aba5715a17bc0"
+        },
+        {
+          "path": "results/mutate/thr-s101.json",
+          "sha256": "e84442535b0823298048fd3bc75d20cc17bb13e24d51a4dbe9fe28393dadeae2"
+        },
+        {
+          "path": "results/mutate/rates-s201.json",
+          "sha256": "4339429fd2b2226ebdcc377b7fe4f3ad4bc15d6f0a72c61ee02294a71d84a494"
+        },
+        {
+          "path": "results/mutate/thr-s201.json",
+          "sha256": "4298e021784b3b9678f7393c1cdfd05b2570558352b821fb8a0e0ccdecfb958f"
+        },
+        {
+          "path": "jobs/done/0128-mutate-monsters.json",
+          "sha256": "d073afdfaa71f6da445d6732981b58bf653b4a9e858a4ca23efb4e06c88eba9a"
+        },
+        {
+          "path": "jobs/done/0129-mutate-monsters.json",
+          "sha256": "d9e03b579ab744bbe5a1646b16743d1db77dd0ae4b46f75a8cd7c56bbdfdb667"
+        },
+        {
+          "path": "jobs/done/0132-mutate-monsters.json",
+          "sha256": "dafd6f4f5c4f31a7ac7f72298003d5cfabfe81d8d9e24a41d478b64a1f822a66"
+        },
+        {
+          "path": "jobs/done/0133-mutate-monsters.json",
+          "sha256": "92f2f75ccc6bb8b51133cd394812c9def679b9d08f9efd3da8e0bef3ed78b397"
+        },
+        {
+          "path": "jobs/done/0134-mutate-monsters.json",
+          "sha256": "874bbaff9c36eb967ef386ed12dad4c174f82300661abaf2e598ccaf8de9e4dc"
+        },
+        {
+          "path": "jobs/done/0135-mutate-monsters.json",
+          "sha256": "d42643f30c2185d98203688888281c235039061e4bef708fb3d374f409cc731c"
+        }
+      ],
+      "owner": false,
+      "by": "4ccb3148-4683-4db0-b258-c8c6cad7e8a3",
+      "at": "2026-11-04T17:45:44+00:00 @ 3c561f3",
+      "until": "2026-11-13T02:31:23+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "9c7be60c7f8da5884faf65b5dff575f6da8ee5861478b26c13aca4391812dba3"
+}

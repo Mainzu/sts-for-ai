@@ -1,0 +1,74 @@
+{
+  "key": "measurement/family-transfer@gen-b1",
+  "rev": 2,
+  "value": "Two 399-game SharpHide bursts @tsl1 on gen b1 (675 elite x4) vs zero-shot: AttackLoss-Damage x Nob cost +13.29 -> +1.91 / +2.02 (wins 0.698 -> 0.93); OppCard-PlainDamage x Sentries +5.39 -> +0.31 / +0.74: transfer across triggers within the punish-attacking family. Two seeds, one recipe.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/family-transfer-probes.md",
+      "anchor": "What it says",
+      "sha256": "a5c7327753ab144d7a9ee943737a7250dcdef96b5daf818bbcccece33d34cfa5"
+    },
+    {
+      "path": "results/mutate/gen-b1-sharp399-s1.json",
+      "sha256": "a76d2118072332057543146dfc768c387b1e9482ffe09adc3ba35a547037e896"
+    },
+    {
+      "path": "results/mutate/gen-b1-sharp399-s2.json",
+      "sha256": "ad3e5a0405168f8ec05ca50e75237a4ae60cc3ea89306ae198e74af13cabb8f9"
+    },
+    {
+      "path": "results/mutate/gen-enemies-b1.json",
+      "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:14+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The two 399-game SharpHide bursts (adaptation-curve, patched sharp2, sharp2-hp0.9, ritual2) @hpb0.01@tsl1 on gen batch 1, elites, 1000 starts (675 elite) x 4 seeds, paired with the bench's first 4 seeds: cost (net - heuristic)(mechanic) - (same)(control), HP lost per elite fight, zero-shot / seed 1 / seed 2: AttackLoss-Damage x Nob +13.29 (0.90) / +1.91 (0.40) / +2.02 (0.46) (wins 0.698 / 0.933 / 0.928, heuristic 0.944); OppCard-PlainDamage x Sentries +5.39 (0.63) / +0.31 / +0.74 (wins 0.636 / 0.803 / 0.800); AttackLoss-Strength all elites +0.74 / -2.06 / -1.08. So a burst on one power that punishes attacking repairs the pack's version and the one that punishes any card played (transfer across triggers inside the family). Interference: OppCard-Vulnerable, the zero-shot net's largest edge (-9.53 (0.58)), goes to +0.36 / -1.72, net wins 0.841 -> 0.670 / 0.707 (heuristic 0.682; Sentries 0.765 -> 0.417 / 0.522), while the official parents' wins held (0.987); seed 2 also loses 4.4 HP on the Lagavulin parent and 2-3 HP on the turn-trigger damage mechanics. Two seeds of one recipe.",
+      "sources": [
+        {
+          "path": "docs/research/family-transfer-probes.md",
+          "anchor": "What it says",
+          "sha256": "a5c7327753ab144d7a9ee943737a7250dcdef96b5daf818bbcccece33d34cfa5"
+        },
+        {
+          "path": "results/mutate/gen-b1-sharp399-s1.json",
+          "sha256": "a76d2118072332057543146dfc768c387b1e9482ffe09adc3ba35a547037e896"
+        },
+        {
+          "path": "results/mutate/gen-b1-sharp399-s2.json",
+          "sha256": "ad3e5a0405168f8ec05ca50e75237a4ae60cc3ea89306ae198e74af13cabb8f9"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        },
+        {
+          "path": "jobs/done/0473-mutate-monsters.json",
+          "sha256": "0c9a4690dea599926f3f2e2d020a1bbb46546e5168f52ddf264c41852c98360c"
+        },
+        {
+          "path": "jobs/done/0474-mutate-monsters.json",
+          "sha256": "89d7f8cd057ea01fb52251f3a867e8fb3f66cc256550168c35ea28a5509b6962"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "526852f3-3b50-437c-8113-26352c8e2a70",
+      "at": "2026-11-07T18:48:14+00:00 @ 69cff00",
+      "until": "2026-11-13T02:30:14+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "86d19ca1efc8806a4e446343af1b6b17a44f9b89e65ea5ab9fb5906fe46b3922"
+}

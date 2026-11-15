@@ -1,0 +1,22 @@
+{
+  "key": "measurement/portfolio-machine-throughput",
+  "rev": 1,
+  "value": "predicted likely to build (a)-(c),(e), 15 cpu-h cap; actual never started (one lane), 0.0 cpu-h; reopen if: a second lane slot opens, or learns become the queue's bottleneck ((a) first)",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane machine-throughput closed (2026-11-15)",
+      "sha256": "cdec4e566dbda480a5740dd5c0106c5777b2f685eec6f11291a3c6ef58e03b1c"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "4bc3ecb5-964f-411c-bde5-fc1d62dd74ae",
+  "at": "2026-11-14T17:03:19+00:00 @ 3ba0e399",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "9e78f9c304cfddb24cde0764c2153abb18ee80c716a5000236e36b45fb174ba6"
+}

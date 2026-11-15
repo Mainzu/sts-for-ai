@@ -1,0 +1,30 @@
+{
+  "key": "measurement/burst-bosses-seed-sd@replay",
+  "rev": 1,
+  "value": "10-29 recipe training-seed sd on the boss replay: Guardian ~0.010, Hexaghost ~0.017, Slime ~0.008 wins; the product's net is the worst seed on the Guardian, the best on Hexaghost.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Burst nets on the headline decks' boss fights, one turn deep: a fine-tune of 400-1600 games moves wins on the two bosses the net never trained on by -0.054 to +0.034 (the 1602-game SharpHide burst +0.034 (0.008) Guardian, +0.031 (0.010) Hexaghost; the stat burst -0.054 (0.012) Hexaghost) and on Slime Boss by at most +0.012; one training seed each, so a lead (navigator probe; 0157-0160; read 19:25 2026-11-05, navigator 2ef20aae)",
+      "sha256": "9ba305046c66e0bd1e4a321a2045b272901e7db61e93301ad865b14d134ca11a"
+    },
+    {
+      "path": "results/boss_replay/hp-sweep-s101-hpb0.01.json",
+      "sha256": "c6a5320d99dbf566e3db92a69438ed1fadf6f04e51f9ea06c227b9efe4357c7e"
+    },
+    {
+      "path": "results/boss_replay/hp-sweep-s201-hpb0.01.json",
+      "sha256": "5231e63fa506c8b2b1fb70262d06efeb7e2be55626d3aa7eb0fd29bb8356e4d2"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:29+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "2582a68ecce8a603f89411c5f9e84e9a872763d427cecb1f186cd7cc635a0a44"
+}

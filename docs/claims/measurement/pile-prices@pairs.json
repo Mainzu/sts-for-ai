@@ -1,0 +1,147 @@
+{
+  "key": "measurement/pile-prices@pairs",
+  "rev": 4,
+  "value": "10-29 one-card draw/discard -> exhaust, 4,448 pairs on 1,500 positions: value change corr 0.20 with played out (298 held-out; reachable ~0.81); status +0.04 vs +3.35 HP, Hemokinesis -6.00 vs -2.81. Fine-tuned on the pairs: train 1.00, held-out 0.30: a generalisation limit. Piles summed per slot; card summary never sees player state.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pile-prices-2026-11-09.md",
+      "anchor": "1,500 positions: the design fits clean pairs but does not generalise",
+      "sha256": "9584371a629e0d3132e7f8abebf42f5ff2fd051be30a0e7f611596e70d7bb0dc"
+    },
+    {
+      "path": "docs/research/pile-prices-2026-11-09.md",
+      "anchor": "Eight cards: the net reads card identity but prices it wrong",
+      "sha256": "e6dd452b325258fe31c438251b3875f70369b326a03920888e26e63a880a99ab"
+    },
+    {
+      "path": "results/probes/pile-prices/pairs.jsonl",
+      "sha256": "700ba5ad57c20535820b9df92d82db6119e68613b97fd47269d239dadfc70671"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:45+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The 10-29 net reads which cards sit in its piles but prices them poorly: moving one card from draw or discard to exhaust, 4,448 pairs on 1,500 turn-start positions (500 hallway, elite, boss), its value change correlates 0.20 with the played-out change on 298 held-out positions (best reachable about 0.81); status cards +0.04 against +3.35 HP, starter cards -1.04 against +0.09, Hemokinesis -5.25 against +3.04 (180-position eight-card probe). Fine-tuned on the paired labels the design fits its training pairs at 1.00 but reaches only 0.30 held out at 600 positions and 0.29 at 1,202: not a capacity limit, a generalisation one. Piles are summed per pile slot, not merged; a card's summary never sees the player's state.",
+      "sources": [
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "1,500 positions: the design fits clean pairs but does not generalise",
+          "sha256": "9584371a629e0d3132e7f8abebf42f5ff2fd051be30a0e7f611596e70d7bb0dc"
+        },
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Eight cards: the net reads card identity but prices it wrong",
+          "sha256": "3fb9d27ac7779f20630a5e17602decac16a48a5c3168d03c9bf1c53e4aa4df06"
+        },
+        {
+          "path": "results/probes/pile-prices/pairs.jsonl",
+          "sha256": "700ba5ad57c20535820b9df92d82db6119e68613b97fd47269d239dadfc70671"
+        },
+        {
+          "path": "results/probes/pile-prices/exval2.json",
+          "sha256": "c4df4db240ca74c87948a9b40358898b6ffa540b020dd28f3c56b1b5fa43fc01"
+        },
+        {
+          "path": "scripts/stsnet.py",
+          "sha256": "25713337b9ca9f56901eba253e3d34458632f17f307409eb4c770cb2576992d0"
+        }
+      ],
+      "owner": false,
+      "by": "0804bcc5-cde8-4829-ac5c-3f208429ea29",
+      "at": "2026-11-09T10:46:23+00:00 @ 5af5c88",
+      "until": "2026-11-09T10:53:39+00:00 @ 49c436c"
+    },
+    {
+      "rev": 2,
+      "value": "The 10-29 net reads which cards sit in its piles but prices them poorly: moving one card from draw or discard to exhaust, 4,448 pairs on 1,500 turn-start positions (500 hallway, elite, boss), its value change correlates 0.20 with the played-out change on 298 held-out positions (best reachable about 0.81); status cards +0.04 against +3.35 HP, starter cards -1.04 against +0.09, Hemokinesis overpriced about twice (97 pairs, -6.00 against -2.81 HP). Fine-tuned on the paired labels the design fits its training pairs at 1.00 but reaches only 0.30 held out at 600 positions and 0.29 at 1,202: not a capacity limit, a generalisation one. Piles are summed per pile slot, not merged; a card's summary never sees the player's state.",
+      "sources": [
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "1,500 positions: the design fits clean pairs but does not generalise",
+          "sha256": "9584371a629e0d3132e7f8abebf42f5ff2fd051be30a0e7f611596e70d7bb0dc"
+        },
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Eight cards: the net reads card identity but prices it wrong",
+          "sha256": "e6dd452b325258fe31c438251b3875f70369b326a03920888e26e63a880a99ab"
+        },
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Exhaust pile hidden: a second zero-shot gain",
+          "sha256": "befa263450ba35733838b617a796e29f48ac916340cae32d617e59b27b853f5f"
+        },
+        {
+          "path": "results/probes/pile-prices/pairs.jsonl",
+          "sha256": "700ba5ad57c20535820b9df92d82db6119e68613b97fd47269d239dadfc70671"
+        },
+        {
+          "path": "results/probes/pile-prices/exval2.json",
+          "sha256": "c4df4db240ca74c87948a9b40358898b6ffa540b020dd28f3c56b1b5fa43fc01"
+        },
+        {
+          "path": "scripts/stsnet.py",
+          "sha256": "822b8d4177b46c07fa3d8c42bc81e29a8c6e638c0f2a6b7199bdef9ce3f5d47c"
+        }
+      ],
+      "owner": false,
+      "by": "0804bcc5-cde8-4829-ac5c-3f208429ea29",
+      "at": "2026-11-09T10:53:39+00:00 @ 49c436c",
+      "until": "2026-11-11T07:25:12+00:00 @ d5db794"
+    },
+    {
+      "rev": 3,
+      "value": "The 10-29 net reads which cards sit in its piles but prices them poorly: moving one card from draw or discard to exhaust, 4,448 pairs on 1,500 turn-start positions (500 hallway, elite, boss), its value change correlates 0.20 with the played-out change on 298 held-out positions (best reachable about 0.81); status cards +0.04 against +3.35 HP, starter cards -1.04 against +0.09, Hemokinesis overpriced about twice (97 pairs, -6.00 against -2.81 HP). Fine-tuned on the paired labels the design fits its training pairs at 1.00 but reaches only 0.30 held out at 600 positions and 0.29 at 1,202: not a capacity limit, a generalisation one. Piles are summed per pile slot, not merged; a card's summary never sees the player's state. Pummel (merged from pile-prices@pummel): on 200 turn-start positions with Pummel in draw or discard, moving one copy to exhaust changes the net's value by -0.6 HP against -2.2 (0.7) played out by the same player (32 paired futures), about a quarter of its worth; the net's change does not grow with the player's Strength (slope 0.00 HP per point against about -2), bosses -3.7 against -13.0; a Strike moved instead: net -0.7, played out +0.35 (0.33).",
+      "sources": [
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "1,500 positions: the design fits clean pairs but does not generalise",
+          "sha256": "9584371a629e0d3132e7f8abebf42f5ff2fd051be30a0e7f611596e70d7bb0dc"
+        },
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Eight cards: the net reads card identity but prices it wrong",
+          "sha256": "e6dd452b325258fe31c438251b3875f70369b326a03920888e26e63a880a99ab"
+        },
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Exhaust pile hidden: a second zero-shot gain",
+          "sha256": "befa263450ba35733838b617a796e29f48ac916340cae32d617e59b27b853f5f"
+        },
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Exhausting Pummel: the net prices it at a quarter of its worth",
+          "sha256": "f31d28b067fc4a8a1ea58639f01c6dd1aa95a1087c7ec813c2100872d58c886a"
+        },
+        {
+          "path": "results/probes/pile-prices/pairs.jsonl",
+          "sha256": "700ba5ad57c20535820b9df92d82db6119e68613b97fd47269d239dadfc70671"
+        },
+        {
+          "path": "results/probes/pile-prices/exval2.json",
+          "sha256": "c4df4db240ca74c87948a9b40358898b6ffa540b020dd28f3c56b1b5fa43fc01"
+        },
+        {
+          "path": "results/probes/pile-prices/exval.json",
+          "sha256": "73c5070465785d1f474789d554582742d06811ab3975623526846046200b84a6"
+        },
+        {
+          "path": "scripts/stsnet.py",
+          "sha256": "822b8d4177b46c07fa3d8c42bc81e29a8c6e638c0f2a6b7199bdef9ce3f5d47c"
+        }
+      ],
+      "owner": false,
+      "by": "a1d6386d-19ca-4431-86ef-510884fee922",
+      "at": "2026-11-11T07:25:12+00:00 @ d5db794",
+      "until": "2026-11-13T02:30:45+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "309e5671947b89173c05d19112e90a96b8cf5cbdb37f6f97f154686c34629e57"
+}

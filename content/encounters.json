@@ -1,0 +1,19 @@
+{"version": 1, "encounters": [
+{"id": "cultist", "group": "hallway", "monsters": ["Cultist"]},
+{"id": "jaw_worm", "group": "hallway", "monsters": ["Jaw Worm"]},
+{"id": "two_louse", "group": "hallway", "monsters": [{"one_of": [["Red Louse"], ["Green Louse"]]}, {"one_of": [["Red Louse"], ["Green Louse"]]}]},
+{"id": "small_slimes", "group": "hallway", "monsters": [{"one_of": [["Spike Slime (M)", "Acid Slime (S)"], ["Acid Slime (M)", "Spike Slime (S)"]]}]},
+{"id": "large_slime", "group": "hallway", "monsters": [{"one_of": [["Acid Slime (L)"], ["Spike Slime (L)"]]}]},
+{"id": "lots_of_slimes", "group": "hallway", "monsters": ["Spike Slime (S)", "Spike Slime (S)", "Spike Slime (S)", "Acid Slime (S)", "Acid Slime (S)"]},
+{"id": "three_louse", "group": "hallway", "monsters": [{"one_of": [["Red Louse"], ["Green Louse"]]}, {"one_of": [["Red Louse"], ["Green Louse"]]}, {"one_of": [["Red Louse"], ["Green Louse"]]}]},
+{"id": "two_fungi_beasts", "group": "hallway", "monsters": ["Fungi Beast", "Fungi Beast"]},
+{"id": "looter", "group": "hallway", "monsters": ["Looter"]},
+{"id": "exordium_thugs", "group": "hallway", "monsters": [{"one_of": [[{"one_of": [["Red Louse"], ["Green Louse"]]}], [{"one_of": [["Acid Slime (M)"], ["Spike Slime (M)"]]}]]}, {"one_of": [["Cultist"], ["Looter"]]}]},
+{"id": "exordium_wildlife", "group": "hallway", "monsters": [{"one_of": [["Fungi Beast"], ["Jaw Worm"]]}, {"one_of": [[{"one_of": [["Red Louse"], ["Green Louse"]]}], [{"one_of": [["Acid Slime (M)"], ["Spike Slime (M)"]]}]]}]},
+{"id": "gremlin_nob", "group": "elite", "monsters": ["Gremlin Nob"]},
+{"id": "lagavulin", "group": "elite", "monsters": ["Lagavulin"]},
+{"id": "three_sentries", "group": "elite", "monsters": ["Sentry", "Sentry", "Sentry"]},
+{"id": "slime_boss", "group": "boss", "monsters": ["Slime Boss"]},
+{"id": "hexaghost", "group": "boss", "monsters": ["Hexaghost"]},
+{"id": "the_guardian", "group": "boss", "monsters": ["The Guardian"]}
+]}

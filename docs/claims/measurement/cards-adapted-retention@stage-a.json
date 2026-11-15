@@ -1,0 +1,34 @@
+{
+  "key": "measurement/cards-adapted-retention@stage-a",
+  "rev": 1,
+  "value": "Every 400-game card burst (share 0.5) costs the parent copy and official card at elites: per elite fight inflame-turn1 +0.76 (0.17), metal-c2-a5 +1.79 (0.35) HP (per seed +0.36 to +2.38), wins level.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Cards adapted column (step 3, second table): no burst closes a cost on the turn-start leaf; on the plain leaf inflame-turn1's bursts win back 56% of its win cost and metal-c2-a5's nothing on all fights; all six bursts cost the parent copy and the official card 0.4-2.4 HP per elite fight (yardstick-cards step 3, leftover; 0409-0421; read 13:50 2026-11-07, navigator c2b85df5)",
+      "sha256": "f0ca7ef0d3e2ff735ec35d0defddb33cc9846e2aa5460d03a66f319a148b6113"
+    },
+    {
+      "path": "results/mutate/cards-a.json",
+      "sha256": "a7d36555756d30a72576c21492795c8dad422d841289bec48ed4787544deea87"
+    },
+    {
+      "path": "results/mutate/cards-adapt-inflame-turn1-s3.json",
+      "sha256": "5937e1c9879d69d529ff0eebdf6833fea6db86fe12868a472536d467f5fa3abe"
+    },
+    {
+      "path": "results/mutate/cards-adapt-metal-c2-a5-s3.json",
+      "sha256": "d38a58d9f4d243fe3646d7fe135bd48bcb9512d31f564d6deedc737326f354eb"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:35+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "f15a1dcecc5b492fcdf42eb1faf266a53ee69b52bfb19f0e3e3ba5541fa28805"
+}

@@ -1,0 +1,113 @@
+{
+  "key": "measurement/headline@two-turn",
+  "rev": 3,
+  "value": "Product (10-29 @hpe0.01 --two-turn --line-seed --step-line), headline 0-499: 0.834 clears; +0.154 (0.023) clears, +6.14 (0.88) HP over one turn (0.680); +0.300 (0.025), +12.85 (0.98) over one-turn heuristic (0.534); boss win per arrival 0.871, 62/83 deaths at the boss. Plain two-turn 0.804.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Line step on the headline setting, all 500 sequences: level; the stepped file is the headline control, 0.834 clears (cheap-depth lane; 0066; read 13:05 2026-11-03, lanes f1fb0f59)",
+      "sha256": "74409743784def91b15ddf8803930ebb115b8f446282a03e1f27333c2fad3b49"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json",
+      "sha256": "18cd9996abd64a927459287bf456a4b974f7956884d4d9f5fb551745bb1162ed"
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:27+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The product (10-29 net @hpe0.01 --two-turn) clears 0.804 of 500 headline sequences: +0.124 clears (se 0.022) and +5.73 end-HP (se 0.87) over the same net one turn deep (0.680), +0.270 clears (se 0.026) over the one-turn heuristic (0.534); boss win per arrival 0.848, 72 of 98 deaths at the boss.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Two-turn product on the headline setting: 0.804 clears (Q2; b39a / b39b; read 14:30 2026-11-02, manager 837a5e68)",
+          "sha256": "6db5240cce5632a9d581f71f3a39f64895cb7f1e5b2017077934ca9e081c9b10"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-starter-simboss.json",
+          "sha256": "6a788adf75486e786c2d055cfcab9e47732f9ab63695ed072eb6702e6acbf05b"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+          "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+        },
+        {
+          "path": "results/gauntlet/heuristic-starter-simboss.json",
+          "sha256": "637234efef7369804343720ad6fe5bf31f5106f6313c730eb619c3e1daea0cd6"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/headline-setting",
+          "rev": 1
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:12:08+00:00 @ fc9cdd8",
+      "until": "2026-11-03T05:42:03+00:00 @ b47437a"
+    },
+    {
+      "rev": 2,
+      "value": "The product (10-29 net @hpe0.01 --two-turn --line-seed --step-line) clears 0.834 of 500 headline sequences: +0.154 clears (se 0.023) and +6.14 end-HP (se 0.88) over the same net one turn deep (0.680), +0.300 clears (se 0.025) and +12.85 end-HP (se 0.98) over the one-turn heuristic (0.534); boss win per arrival 0.871, 62 of 83 deaths at the boss. Plain two-turn play (no stepped flags) clears 0.804 on the same sequences, its 250-499 half (0.756) probably low by chance.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Line step on the headline setting, all 500 sequences: level; the stepped file is the headline control, 0.834 clears (cheap-depth lane; 0066; read 13:05 2026-11-03, lanes f1fb0f59)",
+          "sha256": "74409743784def91b15ddf8803930ebb115b8f446282a03e1f27333c2fad3b49"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json",
+          "sha256": "18cd9996abd64a927459287bf456a4b974f7956884d4d9f5fb551745bb1162ed"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-starter-simboss.json",
+          "sha256": "6a788adf75486e786c2d055cfcab9e47732f9ab63695ed072eb6702e6acbf05b"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+          "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+        },
+        {
+          "path": "results/gauntlet/heuristic-starter-simboss.json",
+          "sha256": "637234efef7369804343720ad6fe5bf31f5106f6313c730eb619c3e1daea0cd6"
+        },
+        {
+          "path": "jobs/done/0066-gauntlet.json",
+          "sha256": "d7274ebfec66469995c175353e82f216b3cf8b4b0b7ccf58e80d3f8cfad7d6ea"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/headline-setting",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "f1fb0f59-8b60-4c54-a39e-129739c75134",
+      "at": "2026-11-03T05:42:03+00:00 @ b47437a",
+      "until": "2026-11-13T02:30:27+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "58cbc632382ab944092dc5cddbb1720b51201bab77cb8478327b0fee3847ebd0"
+}

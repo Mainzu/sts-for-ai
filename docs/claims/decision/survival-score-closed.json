@@ -1,0 +1,32 @@
+{
+  "key": "decision/survival-score-closed",
+  "rev": 1,
+  "value": "The survival score (learned HP-lost head as the HP price) is closed as an HP lever: both arms fail the pre-registered rule (tight2 -0.06, under the constant bonus by ~0.9 HP); the product's HP price stays the end-HP bonus @hpe0.01; use (d) of the run-value plan (the survival leaf) closes with it; the code (score: survive, @sc, hp_loss labels) stays, the spec is folded.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Survival-score arms fail: the HP price stays the constant bonus (owner away, 2026-11-03)",
+      "sha256": "d20f8c95eb2a745ea88c4037fec80b4b3f02b0b184865822682557a4780ea6ad"
+    },
+    {
+      "key": "measurement/survival-arms@runhp",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
+  "at": "2026-11-02T17:23:53Z @ c3f81f4",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:16Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/survival-arms@runhp reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "92a469f01dd76627b9b5d0267cdafecca79c6e7cf7cb36964990ef34cd75f1a2"
+}

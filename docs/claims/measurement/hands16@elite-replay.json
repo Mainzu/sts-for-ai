@@ -1,0 +1,55 @@
+{
+  "key": "measurement/hands16@elite-replay",
+  "rev": 2,
+  "value": "Two-turn product, 498 floor-9 headline elites, 16 sampled hands vs 4: HP lost -0.34 (0.16) per elite, wins equal (485), 133 fights changed (71 better), gain at 60+ HP starts; 1.60x time.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/hands-where-small.md",
+      "anchor": "Step 2: elite replay at 16 hands (results/depth_probe/two16-elite-all.json, job 0342)",
+      "sha256": "735f8c6fe11b63c4fc9bf9e399c90a007799bd7c8c5e552d8c21ab4b8b9ce4be"
+    },
+    {
+      "path": "results/depth_probe/two16-elite-all.json",
+      "sha256": "82f900baa3aa8ecfc9a5f6a6841ac27b1905a50f3902d4e09727aeb6876e6808"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:40+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "16 sampled hands everywhere against the product's 4, two turns deep, on the 498 floor-9 elites of the headline product file: HP lost -0.34 (se 0.16) per elite, wins unchanged (485 both), 133 fights changed (71 better, 62 worse), trimmed means 0.30/0.25/0.19 (2/5/10 cut per end), gain on starts at 60+ HP; 2,030 s at 3 threads. At the charter's 0.3 bar on the point estimate: a lead, not a result.",
+      "sources": [
+        {
+          "path": "docs/research/hands-where-small.md",
+          "anchor": "Step 2: elite replay at 16 hands (results/depth_probe/two16-elite-all.json, job 0342)",
+          "sha256": "735f8c6fe11b63c4fc9bf9e399c90a007799bd7c8c5e552d8c21ab4b8b9ce4be"
+        },
+        {
+          "path": "results/depth_probe/two16-elite-all.json",
+          "sha256": "82f900baa3aa8ecfc9a5f6a6841ac27b1905a50f3902d4e09727aeb6876e6808"
+        },
+        {
+          "path": "jobs/done/0342-depth-probe.json",
+          "sha256": "b4e81ce82e69cd6dfc1732c924d1f5b7546604d27ab4e9015cbb2fd0462493f4"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "0887ba14-8aa2-4fc9-9eac-bb6789a16d00",
+      "at": "2026-11-07T00:45:57+00:00 @ 9ea0f06",
+      "until": "2026-11-11T05:47:32+00:00 @ bd2ee17",
+      "retired": "merged into measurement/hands-adaptive@elite-replay (STATUS cap)"
+    }
+  ],
+  "seal": "149cf825a214251ae88fa61b753beba1ef47c5d6cabd15edc48a85e5d07c0fc2"
+}

@@ -1,0 +1,26 @@
+{
+  "key": "measurement/leaf-numbers-strength-weak@probe",
+  "rev": 1,
+  "value": "10-29 @hpb0.01 leaf prices on 167 tight2 held-out cells: enemy Strength -2 at draw leaves +4.9 HP vs worth +9.9 to +13; enemy Weak +1 +4.2 to +6.0 vs one-turn worth +2.2 to +2.7. Neither has an exact search-side fix.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/leaf-blind-numbers-2026-11-07.md",
+      "anchor": "Read (2026-11-07, job 0434)",
+      "sha256": "4a5c947ceb6a5b4c9a9aa837fac126745ac872f5f168afcbfee0687223feb6d7"
+    },
+    {
+      "path": "results/leaf_numbers/probe.json",
+      "sha256": "1a3423c0af95353711eee72ffca02c565c13f93b304ae52f5813f77341c1188a"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:41+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "a0c8caa462a63506e6365d2a1e6478b0c3956e2c966c8d7cfb184b6fba4e0c1e"
+}

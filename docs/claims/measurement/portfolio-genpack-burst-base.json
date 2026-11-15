@@ -1,0 +1,22 @@
+{
+  "key": "measurement/portfolio-genpack-burst-base",
+  "rev": 1,
+  "value": "predicted even, about 15 thread-h; actual go (gp 0.60 vs pns 0.10 pooled cut at 11 games, on Artifact), 2.5 cpu-h; reopen if: a second base-seed pair is wanted for goal 1's quote, or RoundEnd rows become visible (65 step 0), or a new-effect custom mechanic costs a base 2 HP+ after a short burst",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane genpack-burst-base closed (2026-11-13)",
+      "sha256": "09ea2523c37fdf386d88123ab6f3994d03125288b269d10526a0268836bbb244"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "fced9664-4ee1-4261-aec3-a7f1f2fc7d15",
+  "at": "2026-11-12T23:52:36+00:00 @ 661a6330",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "5c00dbc0ed6f4f2fa708b1343119b9e18bdb3d0bb6e67e34e6860d2f7acf2842"
+}

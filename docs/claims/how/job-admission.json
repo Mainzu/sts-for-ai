@@ -1,0 +1,88 @@
+{
+  "key": "how/job-admission",
+  "rev": 4,
+  "value": "The runner starts a job when its heavy slot fits (2 slots; light none, heavy <=2 threads half), running threads + its own <=14, idle CPU covers its threads, reserved memory (max of --mem-gb, peak_gb) + its own <= total - 1 GB, and free memory >= --mem-gb + 1; a never-startable job goes to done as refused.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "README.md",
+      "anchor": "Job queue",
+      "sha256": "22db25a4e64089e114803eea019f720d76b546e2313d3379db1f3d432bbfcaa7"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:12Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:24:19Z @ c4fb1faf",
+      "note": "README 'Job queue' changed only a dead spec link (e901624c); admission text unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The job runner starts a job when its heavy slot fits (2 slots; a light job takes none, a heavy job of 2 threads or fewer half), threads fit 14, idle CPU covers them, and free memory is at least --mem-gb + 1 GB; --mem-gb is a reservation, so set it to the job's peak (jobs.py status shows each job's peak_gb).",
+      "sources": [
+        {
+          "path": "README.md",
+          "anchor": "Job queue",
+          "sha256": "cae73d38b959f1f5ffd9f4fe667472141b67708f9eea99bfc9435b288528d31b"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:22Z @ fc9cdd8",
+      "until": "2026-11-04T07:16:35Z @ cfe7e3d"
+    },
+    {
+      "rev": 2,
+      "value": "The job runner starts a job when its heavy slot fits (2 slots; a light job takes none, a heavy job of 2 threads or fewer half), the running jobs' threads plus its own fit 14, the system's idle CPU covers its threads (hand-started runs count as busy), the running jobs' reserved memory (--mem-gb, or the measured peak_gb when higher) plus this job's fits total memory minus 1 GB, and free memory is at least --mem-gb + 1 GB; --mem-gb is a reservation, so set it to the job's peak (jobs.py status shows each job's peak_gb; add warns and records mem_gb_low when --mem-gb is under the last peak of the same script and first argument). A job that can never start (threads over 14, --mem-gb + 1 over total memory, a broken file) is moved to done as refused.",
+      "sources": [
+        {
+          "path": "README.md",
+          "anchor": "Job queue",
+          "sha256": "5e30fad619173289960b699d0361a9ae4e54b1c4b58ab342ac2069a7eda64634"
+        }
+      ],
+      "owner": false,
+      "by": "4253ac8b-4270-40d7-958b-ef9945166c5b",
+      "at": "2026-11-04T07:16:35Z @ cfe7e3d",
+      "until": "2026-11-12T01:14:32Z @ dab75fe"
+    },
+    {
+      "rev": 3,
+      "value": "The job runner starts a job when its heavy slot fits (2 slots; a light job takes none, a heavy job of 2 threads or fewer half), the running jobs' threads plus its own fit 14, the system's idle CPU covers its threads (hand-started runs count as busy), the running jobs' reserved memory (--mem-gb, or the measured peak_gb when higher) plus this job's fits total memory minus 1 GB, and free memory is at least --mem-gb + 1 GB; --mem-gb is a reservation, so set it to the job's peak (jobs.py status shows each job's peak_gb; add warns and records mem_gb_low when --mem-gb is under the last peak of the same script and first argument). A job that can never start (threads over 14, --mem-gb + 1 over total memory, a broken file) is moved to done as refused. Exception: peak_gb is the process tree's working set, mapped file pages included, so for learn.py and other readers of the memory-mapped feature cache it overstates the reservation (a 40k learn: peak_gb 5-6.6, commit about 1 GB); give such jobs --mem-gb 2.5 and ignore add's mem_gb_low warning for them: at 5.5 they could not start and held the queue's reservation.",
+      "sources": [
+        {
+          "path": "README.md",
+          "anchor": "Job queue",
+          "sha256": "5e30fad619173289960b699d0361a9ae4e54b1c4b58ab342ac2069a7eda64634"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Learns 0899 and 0904 re-queued at mem_gb 2.5 (on the owner's behalf, 2026-11-12)",
+          "sha256": "bdd7ec2bf6216f4fc2b9f62dda0afa1546fdbe58d2b46ccfbd8faf090b880112"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "genpack learns re-queued at an admissible mem_gb (on the owner's behalf, 2026-11-11)",
+          "sha256": "92885016e3b3b58a9aa9174c5b8b9ffb5865f98b595459adec9c66f0c00fceab"
+        },
+        {
+          "key": "measurement/learn-memory@40k",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "dbbf57b7-c9db-43bc-b118-76df16e56eb8",
+      "at": "2026-11-12T01:14:32Z @ dab75fe",
+      "until": "2026-11-13T02:29:12Z @ 3123201a"
+    }
+  ],
+  "seal": "75229683bcbcca9025ae10684315df547aeb093e6a3d027b24b9ede23b764674"
+}

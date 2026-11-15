@@ -1,0 +1,21 @@
+{
+ "content": {
+  "encounters": [
+   "lagavulin",
+   "three_sentries"
+  ],
+  "mutated": [
+   "GE-AttackLoss-Weak"
+  ],
+  "skip": 1000,
+  "val_fights": 40
+ },
+ "game_seed": 61,
+ "games": 33,
+ "n_val": 300,
+ "name": "gfr-heur-lr3-s2",
+ "player": "heuristic",
+ "pool": 10000,
+ "seed": 2,
+ "lr": 0.0003333333333333333
+}

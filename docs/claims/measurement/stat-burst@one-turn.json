@@ -1,0 +1,96 @@
+{
+  "key": "measurement/stat-burst@one-turn",
+  "rev": 2,
+  "value": "400-game burst on plain stat shifts (hp0.8, hp1.25, str2, hp1.3-str-1; 1 seed), one turn 200x8 vs the 10-29 net, novelty-cost gain: sharp2 -0.023 (0.013), thorns2 +0.018 (0.016), ritual2 +0.019 (0.011) vs the SharpHide burst's +0.080/+0.066/+0.018; cells -0.85 (0.49) HP, -0.032 (0.016) clears. The cost is the mechanic, not danger.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Stat burst: 400 games on plain stat shifts repair neither SharpHide (-0.023, se 0.013) nor Thorns (+0.018 against the SharpHide burst's +0.066); the unit of novelty is the mechanic, not danger; retention holds on HP (difficulty-shift lane step 2; 0144-0147; read 07:55 2026-11-05, lanes cd29f3fd)",
+      "sha256": "038e766816025e062193466c6fafb8b1c152885786e0a50e9edcc0af210c382c"
+    },
+    {
+      "path": "results/adapt/stat100-s1.json",
+      "sha256": "fa4cc5c9e96994f653db204774571875ef510e5a86618d0a2f2f537d013d1c2a"
+    },
+    {
+      "path": "results/adapt/burst133-s1-transfer.json",
+      "sha256": "49dfeb06dd1a48d6d1bc8992545c41163a4e1158fe43858f7048d15e438a1cef"
+    },
+    {
+      "path": "results/gauntlet/adapt-stat100-s1-hpb0.01.json",
+      "sha256": "5bc51165d5e05c6f21df05c039c2c789d2dcc49fbd54ef7bf7173af5e6193ae5"
+    },
+    {
+      "key": "yardstick/one-turn-controls",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:33+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+      "at": "2026-11-13T04:30:13+00:00 @ 28c50af5",
+      "note": "the fact was read against the old one-turn control files (net1029-hpb0.01-starter-simboss.json / net1029-hpb0.01.json), which are unchanged; only the yardstick pointer moved (decisions 'Combined one-turn control ... read', 2026-11-13)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A 400-game burst on plain stat shifts (hp0.8, hp1.25, str2, hp1.3-str-1; one training seed, runs/2026-11-05-adapt-stat-g100-s1-cf53685), one turn deep at 200 x 8 against the 10-29 net: gain in novelty cost on never-trained powers sharp2 -0.023 (0.013), thorns2 +0.018 (0.016), weakhit1 +0.011 (0.010), ritual2 +0.019 (0.011), against the 399-game SharpHide burst's +0.080 (0.015), +0.066 (0.014), +0.013 (0.007), +0.018 (0.008) on the same starts; parents -0.019 (0.009). Practice on harder numbers does not teach the answer to a power that punishes attacking: the net's cost is the mechanic, not danger. Retention on the one-turn cell gauntlet 0-499: paired end-HP -0.85 (0.49), clears -0.032 (0.016).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Stat burst: 400 games on plain stat shifts repair neither SharpHide (-0.023, se 0.013) nor Thorns (+0.018 against the SharpHide burst's +0.066); the unit of novelty is the mechanic, not danger; retention holds on HP (difficulty-shift lane step 2; 0144-0147; read 07:55 2026-11-05, lanes cd29f3fd)",
+          "sha256": "038e766816025e062193466c6fafb8b1c152885786e0a50e9edcc0af210c382c"
+        },
+        {
+          "path": "results/adapt/stat100-s1.json",
+          "sha256": "fa4cc5c9e96994f653db204774571875ef510e5a86618d0a2f2f537d013d1c2a"
+        },
+        {
+          "path": "results/adapt/burst133-s1-transfer.json",
+          "sha256": "49dfeb06dd1a48d6d1bc8992545c41163a4e1158fe43858f7048d15e438a1cef"
+        },
+        {
+          "path": "results/adapt/burst133-s1.json",
+          "sha256": "1be7168f7da1dd2ea1be4a4b43122e367d4b29d7541a293ad5a7b72661dad3ca"
+        },
+        {
+          "path": "results/gauntlet/adapt-stat100-s1-hpb0.01.json",
+          "sha256": "5bc51165d5e05c6f21df05c039c2c789d2dcc49fbd54ef7bf7173af5e6193ae5"
+        },
+        {
+          "path": "jobs/done/0144-finetune.json",
+          "sha256": "d8329c57c49b1662739fffb0171d0772054cb857edf554d207d0037c7d894cb2"
+        },
+        {
+          "path": "jobs/done/0145-mutate-monsters.json",
+          "sha256": "ef3515aa82f24a214bbffa33fdb837e4885f9d3895a687aae7e4971fa885f678"
+        },
+        {
+          "path": "jobs/done/0146-mutate-monsters.json",
+          "sha256": "795139384535bb6c4e387f4d318066b5d62dfc9e14cc9eb028d200d2656c5c7b"
+        },
+        {
+          "path": "jobs/done/0147-gauntlet.json",
+          "sha256": "5334eb0eaa9b4a122b59c1803c7c07ee6549d93e35a4fb7fd2cc6fdc5aaa9e68"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "cd29f3fd-2074-49a7-a9e5-1ed6d88d144b",
+      "at": "2026-11-05T00:35:57+00:00 @ 2551096",
+      "until": "2026-11-13T02:31:33+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "c07f2ac813f9f1db52d8de2a2bab20703ba070daf16dcc50c5e2efa8cec5fb70"
+}

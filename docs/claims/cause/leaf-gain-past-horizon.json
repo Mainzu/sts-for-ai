@@ -1,0 +1,36 @@
+{
+  "key": "cause/leaf-gain-past-horizon",
+  "rev": 1,
+  "value": "On content paying past both horizons a one-turn gain carries whole to two turns: three from-scratch pack nets +4.57 (1.19) HP/+0.097 (0.030) clears two turns vs +3.38 one, ratio 1.35 (0.50), at the bosses. Mixed content splits by part: the all-content twin keeps 0.56 on Demon Form decks (+11.49 -> +6.46).",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/pack-net-scratch@two-turn",
+      "rev": 3
+    },
+    {
+      "key": "measurement/pack-net-twin@two-turn",
+      "rev": 4
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "pns-two-turn-seeds read: past-horizon content gains carry whole; cause/leaf-gain-third re-set; twin-two-turn-matched queued (on the owner's behalf, 2026-11-10)",
+      "sha256": "30cf80f6929023e8b1db34255a3c2e9369385ced13d7aa1f20f5a1554f1c371e"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:27:48Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:32:57Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/pack-net-scratch@two-turn, measurement/pack-net-twin@two-turn reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "b4acbf6b19f4850ae25aa3be2c68b3c1cc3466bfb95897abfb8e923d0f38a4ad"
+}

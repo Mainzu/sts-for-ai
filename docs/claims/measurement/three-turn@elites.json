@@ -1,0 +1,44 @@
+{
+  "key": "measurement/three-turn@elites",
+  "rev": 1,
+  "value": "Three-turn search (product, guarded, 1.6M nodes, cut 12.7%) on the first 48 floor-9 elites of the headline control, outcome-blind: -0.75 HP lost per elite against the two-turn control (se 0.81), wins 48/48 both; decisive half -2.82 (1.42), non-decisive +1.00 (0.77): regression to the mean as with rollouts; under the 1.5 HP go bar; peak 8.2 GB at 3 threads.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Three turns on the first 48 floor-9 elites: -0.75 HP lost (se 0.81), under the 1.5 bar; the decisive half's gain is again regression to the mean; no go, the depth family closes on the dev machine (depth-headroom lane; 0109; read 21:15 2026-11-04, lanes 096341b9)",
+      "sha256": "b7b184f29088aa54d30da8fa470ad09749c61e0f8bc3e456f13b89f75b9bd747"
+    },
+    {
+      "path": "results/depth_probe/three-elite-all.json",
+      "sha256": "da60de24cb30137406d6aa4d2b3e40da773ae36138c860278cbc8682cafccfe5"
+    },
+    {
+      "path": "jobs/done/0109-depth-probe.json",
+      "sha256": "8f5a3f069b31363ae0d2430b040b714aa0ecef9997d20f42dd4700cf5433c628"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    },
+    {
+      "key": "yardstick/headline-control",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "096341b9-e011-4c28-8fc6-dabe3839b7ea",
+  "at": "2026-11-04T14:07:31+00:00 @ bbd973c",
+  "confirms": [
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:42:42+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "3b95d7fcc6a50989f470161d7fc9ee06234c78e3e1d538b8bc60f97bb7e8f7ea"
+}

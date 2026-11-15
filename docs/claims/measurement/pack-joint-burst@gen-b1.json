@@ -1,0 +1,66 @@
+{
+  "key": "measurement/pack-joint-burst@gen-b1",
+  "rev": 2,
+  "value": "One 400-game joint burst over gen-b1's 8 mechanics (share 0.5, s1-2, @tsl1 bench vs zero-shot): OppCard-Vulnerable x Sentries wins 0.765 -> 0.787 (single-mechanic bursts 0.58-0.63); Nob cost +13.29 -> ~+7 (cut 0.47, bar 0.5); new Lagavulin leak: parent +1.67 (0.37), TurnEnd-Frail +3.25 (0.42). Verdict between.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/family-transfer-probes.md",
+      "anchor": "Pack-joint-burst probe (0549-0553): one burst over gen batch 1's eight mechanics",
+      "sha256": "e018a88d13044cd79568cc356c54b11823212cec5cc4cd99188b4c1e304c8347"
+    },
+    {
+      "path": "results/mutate/gen-enemies-b1.json",
+      "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+    },
+    {
+      "key": "measurement/bench-retention@gen-b1",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:41+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "One joint burst over gen batch 1's eight mechanics (50 fights each over the three elites, 400 games, net teacher @hpb0.01@tsl1, replay share 0.5, seeds 1-2) @tsl1 on the bench (elites, 675 fights x 4 seeds) against the zero-shot 10-29 net, seeds pooled per start: OppCard-Vulnerable x Sentries wins 0.765 to 0.787, HP -2.22 (0.53) (single-mechanic bursts lost it: 0.58-0.63), so rehearsal by the pack's own games keeps the edge; AttackLoss-Damage x Nob cost +13.29 to +6.73 / +7.37, cut 0.47 (bar 0.5, 0553 fail), wins 0.698 to 0.868; OppCard-PlainDamage x Sentries wins 0.636 to 0.756; a new leak on Lagavulin: parent +1.67 (0.37) HP, TurnEnd-Frail +3.25 (0.42), short ladder rows +1.0 to +1.2, wins down 0.008-0.014, both seeds (the AttackLoss-Weak bursts left those rows level); every other mechanic x parent level or better. Between by its read rule.",
+      "sources": [
+        {
+          "path": "docs/research/family-transfer-probes.md",
+          "anchor": "Pack-joint-burst probe (0549-0553): one burst over gen batch 1's eight mechanics",
+          "sha256": "e018a88d13044cd79568cc356c54b11823212cec5cc4cd99188b4c1e304c8347"
+        },
+        {
+          "path": "results/mutate/pjb-2026-11-08-pjb-net-g50x8-s1-7fc419b.json",
+          "sha256": "4c322715faf9309b7723968cc098645982089cc43749694b29a0ad27d83b2165"
+        },
+        {
+          "path": "results/mutate/pjb-2026-11-08-pjb-net-g50x8-s2-e28ee47.json",
+          "sha256": "5327b7ea7072c3ee26d927cf021cd4eb79a1e8742daf2a9352cf5035334f7195"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        },
+        {
+          "path": "jobs/done/0553-family.json",
+          "sha256": "fd4944f19d7152bb813b6dd3b21bd346d8a3bd6495dd9bb21cd19c1defd116bf"
+        },
+        {
+          "key": "measurement/bench-retention@gen-b1",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "37fe1356-fecd-4e50-90ad-560e323abb7c",
+      "at": "2026-11-07T21:16:12+00:00 @ 13c2f6e",
+      "until": "2026-11-13T02:30:41+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "9334af031392a73cf7d1e4d57444e7e515e6ce991e11b7d458b331322dacf734"
+}

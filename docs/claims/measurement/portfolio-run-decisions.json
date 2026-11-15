@@ -1,0 +1,22 @@
+{
+  "key": "measurement/portfolio-run-decisions",
+  "rev": 1,
+  "value": "predicted p ~0.3 that one of three run-level probes (rest, elite skip, path rule) gains +1.5 HP or more, ~40 CPU-h (cap 60); actual all three null (rest -0.10 HP at n 50; elite skip on the mini-run +0.99 HP se 0.86 open at n 500, clears +0.054; HP-40 rule never fires), 6.5 cpu-h by health.py, about 10 thread-h by the lane's count",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane run-decisions closed (2026-11-04)",
+      "sha256": "edf81401716fa7b0ea6985aa6d237bf35116c1a67ec9bc8c9b21fa8f24c4b9b5"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "4253ac8b-4270-40d7-958b-ef9945166c5b",
+  "at": "2026-11-04T07:12:36+00:00 @ 08b53c0",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "88035b1549a8df4a86cb5b96ffe726ada2b9fb139d741e220fd0371be56168fb"
+}

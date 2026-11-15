@@ -1,0 +1,68 @@
+{
+  "key": "measurement/elite-skip@mini-run",
+  "rev": 2,
+  "value": "Mini-run, skip every elite (0088): end HP +0.99 (0.86), protocol open at n 500; clears 0.954 vs 0.900 (+0.054, 0.014), boss deaths 22 vs 40; where both clear skip ends 0.41 HP lower. Skip under 40 HP (0089): fail at n 50, rule rarely fires (20/996 arrivals <40 HP after the mid heal).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Elite skip on the mini-run: open at n 500 on end-HP (+0.99, se 0.86), but +0.054 clears at about 4 se; the elite's card doesn't pay its HP (run-decisions lane; 0088; read 13:55 2026-11-04, lanes 3edeb150)",
+      "sha256": "394d37e22d59bc5a8d7cf30d1d6097ae8be64fb3e061726cdb823201562a1d0a"
+    },
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Skip under 40 HP on the mini-run: fail at n 50, the rule never fires there; the elite and path probes close, all three run-decision probes are no go (run-decisions lane; 0089; read 14:05 2026-11-04, lanes 3edeb150)",
+      "sha256": "3fdeee80381f815addbc82148aff6c5a2bec2ba37266c014b40dbab59390a591"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss-mini-eliteskip.json",
+      "sha256": "7ce07e51b8e8805ca0d593cc031a2391eddf0e7dee04f874ff760e5af3ffd075"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:43+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Skipping every elite on the mini-run (one turn, 10-29 net @hpb0.01, sequences 0-499) against its control: protocol open at n 500, paired end-HP +0.99 (se 0.86), no go by the +1.5 HP bar; clears 0.954 vs 0.900 (+0.054, se 0.014, both halves alike), boss deaths 22 vs 40; where both clear skipping ends 0.41 HP lower. The ceiling shrank from +14.0 HP on the headline but skipping still wins on clears: one extra card doesn't pay an elite's HP.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Elite skip on the mini-run: open at n 500 on end-HP (+0.99, se 0.86), but +0.054 clears at about 4 se; the elite's card doesn't pay its HP (run-decisions lane; 0088; read 13:55 2026-11-04, lanes 3edeb150)",
+          "sha256": "394d37e22d59bc5a8d7cf30d1d6097ae8be64fb3e061726cdb823201562a1d0a"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-starter-simboss-mini-eliteskip.json",
+          "sha256": "7ce07e51b8e8805ca0d593cc031a2391eddf0e7dee04f874ff760e5af3ffd075"
+        },
+        {
+          "path": "jobs/done/0088-gauntlet.json",
+          "sha256": "f804a66a17f60cd64f1fb38ea3fb9300d11fe5f774073c8cf9a8e20c51a517a1"
+        },
+        {
+          "key": "measurement/mini-run@control",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "3edeb150-e3e3-40cf-bb7e-c5b63b73194e",
+      "at": "2026-11-04T06:48:03+00:00 @ bb84159",
+      "until": "2026-11-11T08:58:24+00:00 @ 20449c5",
+      "retired": "merged into measurement/mini-run@control (STATUS cap)"
+    }
+  ],
+  "seal": "ed06bdf872d3be8eb63ec439a0e190db336542393a009d60cf3c7aaac8fd4114"
+}

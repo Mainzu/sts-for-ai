@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-card-later-ticks-burst",
+  "rev": 2,
+  "value": "predicted even, ~16 thread-h; actual fail: 5000-game card bursts close neither @tsl1 win cost (inflame +0.001 of -0.018, metal +0.003 of -0.021), same as 400 games; 5.3 cpu-h; reopen if the two-turn cost is >=0.02 wins and a 400-game burst halves it there, or a target moves @tsl1 line choice >=0.01 wins at 2 se.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane card-later-ticks-burst closed (2026-11-11)",
+      "sha256": "e04b5105acd33a3b84b4bdf4c3b06a9a5754a6a93a5859e3b12bcaf697ad51c8"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:50+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even (for: the recipe that taught Demon Form's later ticks; against: costs about 0.02 wins, parent-copy HP losses), about 16 thread-h; actual fail: 5000-game card bursts close neither variant's @tsl1 win cost (inflame +0.001 of -0.018, metal +0.003 of -0.021), the same as 400 games, 5.3 cpu-h of 24; reopen if: the variants' cost read two turns deep is at least 0.02 wins and a 400-game burst closes half of it there, or a training target changes the @tsl1 player's line choice on the variant decks and moves at least 0.01 wins at 2 se",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane card-later-ticks-burst closed (2026-11-11)",
+          "sha256": "e04b5105acd33a3b84b4bdf4c3b06a9a5754a6a93a5859e3b12bcaf697ad51c8"
+        }
+      ],
+      "owner": false,
+      "by": "98bcf190-8912-4af0-9cb8-61a56797ed0c",
+      "at": "2026-11-11T11:11:03+00:00 @ d3a67dc",
+      "until": "2026-11-13T02:30:50+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "c99e74557caf5e70bf04ad8e7ffd342ad1e3c0a49a5989dfee748215b219f34a"
+}

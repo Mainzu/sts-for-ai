@@ -1,0 +1,70 @@
+{
+  "key": "measurement/copy-rehearsal@stage-a",
+  "rev": 2,
+  "value": "Card bursts with the parent copy in their decks (seed 1/modifier, plain leaf): parent-copy HP lost per elite fight inflame-turn1 +1.54 (0.32), metal-c2-a5 +2.61 (0.63) vs +0.65 / +1.43 without: rehearsal raises the elite cost; both the same sign.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Copy-rehearsal probe: putting the parent copy in the burst's decks doubles the parent cost instead of removing it (metal +2.61 (0.63) HP per elite fight against the plain seed-1 burst's +1.43; inflame +1.54 (0.32) against +0.65); stop (navigator probe sheet; 0456-0460; read 14:25 2026-11-07, navigator c2b85df5)",
+      "sha256": "f63907023ae21062ccdeb6dd7eb5c845486a8909e7d988b4296ee9b493b4ddf7"
+    },
+    {
+      "path": "results/mutate/cards-a.json",
+      "sha256": "a7d36555756d30a72576c21492795c8dad422d841289bec48ed4787544deea87"
+    },
+    {
+      "path": "jobs/done/0460-mutate-cards.json",
+      "sha256": "d7b31764d5f41bb8262169dacbe67fbb9577fbd053469dd6ec3fe99795174fcf"
+    },
+    {
+      "key": "measurement/cards-adapted-retention@stage-a",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:04+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Card bursts with the parent copy added to the burst's decks (seed 1 per modifier, 0456-0460, read on results/mutate/cards-a.json's starts and seeds against the zero-shot net, plain leaf): parent-copy HP lost per elite fight inflame-turn1 +1.54 (0.32), metal-c2-a5 +2.61 (0.63), against the plain seed-1 bursts' +0.65 and +1.43; metal's copy burst also loses parent wins -0.022 (0.008) and its variant gain (-0.006), inflame's variant wins kept (+0.023 (0.006)). Rehearsing the read's decks with the burst's own games raises the elite cost instead of removing it; one seed per modifier, both the same sign.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Copy-rehearsal probe: putting the parent copy in the burst's decks doubles the parent cost instead of removing it (metal +2.61 (0.63) HP per elite fight against the plain seed-1 burst's +1.43; inflame +1.54 (0.32) against +0.65); stop (navigator probe sheet; 0456-0460; read 14:25 2026-11-07, navigator c2b85df5)",
+          "sha256": "f63907023ae21062ccdeb6dd7eb5c845486a8909e7d988b4296ee9b493b4ddf7"
+        },
+        {
+          "path": "results/mutate/cards-a.json",
+          "sha256": "a7d36555756d30a72576c21492795c8dad422d841289bec48ed4787544deea87"
+        },
+        {
+          "path": "results/mutate/cards-adapt-metal-c2-a5-copy-s1.json",
+          "sha256": "c25b0cabafe21481c50850dd01d500260cec629ed68161190e25e4b885f40460"
+        },
+        {
+          "path": "results/mutate/cards-adapt-inflame-turn1-copy-s1.json",
+          "sha256": "450284f8e1ccab2393a870ec997483f9afea2a3c4c705be70c65f8bfa169f8cf"
+        },
+        {
+          "path": "jobs/done/0460-mutate-cards.json",
+          "sha256": "d7b31764d5f41bb8262169dacbe67fbb9577fbd053469dd6ec3fe99795174fcf"
+        },
+        {
+          "key": "measurement/cards-adapted@stage-a",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "c2b85df5-2011-4b4f-a5f1-6d69bec34ea8",
+      "at": "2026-11-07T07:22:45+00:00 @ 9841ce3",
+      "until": "2026-11-13T02:30:04+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "f6089452dfa768b3b36209ae2afd765022d94b0db94e0da0049af84fa806520c"
+}

@@ -1,0 +1,11 @@
+[workspace]
+members = ["engine", "solvedb", "py"]
+# `cargo test` at the root runs the engine and the solved-state database;
+# the Python module is built with maturin and tested from Python (see
+# README.md).
+default-members = ["engine", "solvedb"]
+resolver = "2"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1

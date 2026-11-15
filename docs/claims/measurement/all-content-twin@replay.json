@@ -1,0 +1,58 @@
+{
+  "key": "measurement/all-content-twin@replay",
+  "rev": 2,
+  "value": "data40k s1 r1 @hpb0.01 on the boss replay minus the 10-29 net: Guardian -0.012 (0.008), Hexaghost -0.033 (0.011), Slime -0.006 (0.005), inside the 10-29 recipe's seed spread: a sound control for allcontent40k-s1.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "All-content net's twin on the boss replay: data40k seed 1 (round 1) sits inside the 10-29 net's seed spread on all three bosses (Guardian -0.012 (0.008), Hexaghost -0.033 (0.011), Slime Boss -0.006 (0.005) wins against the 10-29 net), so it is a sound control for allcontent40k-s1 (all-content-net step 2, the twin; 0476; read 00:30 2026-11-08, lanes)",
+      "sha256": "22e74d25eee1406dfea954ea895d32fb8cca6b2478a95753117ef8170d7cc41e"
+    },
+    {
+      "path": "results/boss_replay/data40k-s1-r1-hpb0.01.json",
+      "sha256": "ef2f038e95312ca2458072004a9840080569a2fe1eb91d1ae20896b54ea7d904"
+    },
+    {
+      "path": "jobs/done/0476-boss-replay.json",
+      "sha256": "c5d1a8c0456800d7b5e234343fa11d07e3699c2721a9f082f1096df11d344813"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:49+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The all-content net's twin, data40k seed 1 round 1 @hpb0.01, replayed one turn deep on the 474 headline boss fights (HP 30-80 x 4 seeds): wins Guardian 0.546, Hexaghost 0.608, Slime Boss 0.880, all 0.683; minus the 10-29 net paired by deck Guardian -0.012 (0.008), Hexaghost -0.033 (0.011), Slime Boss -0.006 (0.005), inside the 10-29 recipe's seed spread (s101, s201), weakest of four on the Guardian. It is the control for allcontent40k-s1's per-boss read (lane all-content-net, +0.03 bar on the Guardian or Hexaghost).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "All-content net's twin on the boss replay: data40k seed 1 (round 1) sits inside the 10-29 net's seed spread on all three bosses (Guardian -0.012 (0.008), Hexaghost -0.033 (0.011), Slime Boss -0.006 (0.005) wins against the 10-29 net), so it is a sound control for allcontent40k-s1 (all-content-net step 2, the twin; 0476; read 00:30 2026-11-08, lanes)",
+          "sha256": "22e74d25eee1406dfea954ea895d32fb8cca6b2478a95753117ef8170d7cc41e"
+        },
+        {
+          "path": "results/boss_replay/data40k-s1-r1-hpb0.01.json",
+          "sha256": "ef2f038e95312ca2458072004a9840080569a2fe1eb91d1ae20896b54ea7d904"
+        },
+        {
+          "path": "jobs/done/0476-boss-replay.json",
+          "sha256": "c5d1a8c0456800d7b5e234343fa11d07e3699c2721a9f082f1096df11d344813"
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "4333412f-9712-4e95-b745-c5d3b50f62e1",
+      "at": "2026-11-07T17:28:12+00:00 @ e56ed91",
+      "until": "2026-11-13T02:29:49+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "502a03783d7d9581075b59c902c09c62e2f765863c9b5fe816b4da31f78bc2db"
+}

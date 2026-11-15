@@ -1,0 +1,25 @@
+{
+ "content": {
+  "encounters": [
+   "gremlin_nob",
+   "lagavulin",
+   "three_sentries"
+  ],
+  "mutated": [
+   "GE-OppCard-Artifact",
+   "GE-Attacked-Wound"
+  ],
+  "net_settings": "@tsl1",
+  "skip": 1000,
+  "val_fights": 40,
+  "repeat": true
+ },
+ "game_seed": 61,
+ "games": 11,
+ "n_val": 300,
+ "name": "gbb-pns1-g11-sh9-s2",
+ "player": "net",
+ "pool": 10000,
+ "seed": 2,
+ "share": 0.9
+}

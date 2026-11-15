@@ -1,0 +1,38 @@
+{
+ "name": "gen-b1-heur",
+ "lane": "pack-retention",
+ "about": "Lane pack-retention step 1 (kb lane/pack-retention): gen-b1's g99 arm with the heuristic as burst teacher (burst player heuristic), two seeds, read on the same bench against the same zero-shot base (results/mutate/gen-enemies-b1.json, reused). Question: does the net teacher's play on Lagavulin cause the TurnEnd-Frail x Lagavulin leak (measurement/pack-chain@gen-b1)?",
+ "parent": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt",
+ "pack": {
+  "mechanics": [
+   "GE-TurnStart-Strength",
+   "GE-TurnStart-Damage",
+   "GE-TurnEnd-Frail",
+   "GE-TurnEnd-Damage",
+   "GE-OppCard-Vulnerable",
+   "GE-OppCard-PlainDamage",
+   "GE-AttackLoss-Strength",
+   "GE-AttackLoss-Damage"
+  ],
+  "encounters": [
+   "gremlin_nob",
+   "lagavulin",
+   "three_sentries"
+  ],
+  "base": "results/mutate/gen-enemies-b1.json",
+  "arms": {
+   "g99": {
+    "games": 99
+   }
+  },
+  "target": {
+   "mechanic": "GE-AttackLoss-Damage",
+   "encounter": "gremlin_nob",
+   "share": 0.5,
+   "min_se": 2.0
+  },
+  "burst": {
+   "player": "heuristic"
+  }
+ }
+}

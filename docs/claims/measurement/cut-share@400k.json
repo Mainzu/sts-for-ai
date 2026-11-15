@@ -1,0 +1,38 @@
+{
+  "key": "measurement/cut-share@400k",
+  "rev": 1,
+  "value": "Share of two-turn searches that hit the 400k node cap depends on the set: 0-3% on boss and train-half cells and Silent (results/depth bosses-*, guardian-*, silent-*), 1.4% at a turn's first search and ~0.6% overall in the line probe (10-29 net, 20 held-out elite and boss cells), but 14-16% in the depth pilot's cut probe on held-out tight2 elite and boss fights (23% at the old 50k cap).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "results/depth/line-probe.json",
+      "sha256": "81bee24c17341b166ef3913b7999378db79168bc5525f3021795229370801ca5"
+    },
+    {
+      "path": "results/depth/paired-net-held_out-cap400k-fallback.json",
+      "sha256": "8ccd51779105c0c5a9959eff68cc1944537162e989a14e1baf935341771630be"
+    },
+    {
+      "path": "results/depth/bosses-held_out-2026-10-31-lean-thr-s101-r2-d16ae2b.json",
+      "sha256": "e8be11cac8c031de2a3dce710d7615ba55c9cd9c497e2f000ee0a4ddeb0b02f5"
+    },
+    {
+      "path": "results/depth/paired-net-train-cap400k-fallback-pc4.json",
+      "sha256": "84b82ea129097da64b880df794b4c3a408d0e01fc0528cf17c5188bf656f92a1"
+    },
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Where a turn's two-turn cost goes by decision index (line-seed.md step 2, `line_probe.py`; 14:35 2026-11-02, manager 837a5e68)",
+      "sha256": "81de2f44417c44acdb4bf3a2a5b12acfeeecc4e37b792964d8bb9f83ba94ce44"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "resolves 'cut shares 1-5%' (approach review, from the bosses/train/silent probes) vs '1.4%' (line probe index 0): both true for their sets; the held-out tight2 cut probe is the outlier at 14-16%. Read from cut_probe.cut_share and summary.per_index in the files, 2026-11-02",
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:12:49+00:00 @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "00f72114721759d28b55bf7d7eace555c2e40e78b5777b1e8e86f82d22741f9e"
+}

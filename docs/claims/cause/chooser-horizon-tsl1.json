@@ -1,0 +1,36 @@
+{
+  "key": "cause/chooser-horizon-tsl1",
+  "rev": 1,
+  "value": "With @tsl1 in trial fights and fight, sim-chooser Demon Form picks rise 0.17->0.49 of offers and the extra picks lose -0.115 (0.066) clears; nets that learned Demon Form (all-content twins) pick it 0.62-0.69 and gain (+3.23/+0.41 HP, +0.118/+0.086 clears). A leaf repair of a later-paying card doesn't reach own-pick headline reads via this chooser.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/turn-start-leaf@headline",
+      "rev": 2
+    },
+    {
+      "key": "measurement/pack-net-twin@one-turn",
+      "rev": 5
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Probe pns-twin-official read: the all-content gain on the ruler is Demon Form; twin-tsl1 and pns-twin-matched queued (on the owner's behalf, 2026-11-10)",
+      "sha256": "e91fbab6d54310d7327eb316b4782e62b7a9f8e099d3aa7544e0489600e45610"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:27:45Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:32:55Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/turn-start-leaf@headline, measurement/pack-net-twin@one-turn reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "46ec96527f273bfdb395df95bc3a8357fcaa714677e7de1c7e4ff480bc540098"
+}

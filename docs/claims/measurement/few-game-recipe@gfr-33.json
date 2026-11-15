@@ -1,0 +1,58 @@
+{
+  "key": "measurement/few-game-recipe@gfr-33",
+  "rev": 2,
+  "value": "33-game bursts on GE-AttackLoss-Weak (zero-shot cost +6.03), cut beyond control (HP): net teacher share 0.8 +4.77 (0.22), heuristic share 0.8 +3.13 (0.21); lr/3 +0.41 / +1.15; defaults (share 0.5, lr 1e-3) +1.20 / +1.84; parent change at share 0.8 -0.41 / +0.31. Share 0.8 = 2.5x the gradient steps per pass.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/few-game-recipe.md",
+      "anchor": "Step 1 result: both teachers (table 0626, 2026-11-08)",
+      "sha256": "49917bcb528c1fdbd27c43db7f4d57c097373c88d70ff31efd1da1e9b2d023e0"
+    },
+    {
+      "path": "results/families/gfr-33.json",
+      "sha256": "79c8c1524861d871c01b664bfe655bc861212a8475decf7a9368e2d302543df6"
+    },
+    {
+      "path": "jobs/done/0626-family.json",
+      "sha256": "cdd313cfbcc08c9cd0baa097a1f3e86f6cfd5eb1e229df2575b66a1f174ac1ef"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:15+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "33-game bursts on GE-AttackLoss-Weak (lagavulin, three_sentries; zero-shot cost +6.03), cut beyond c-hp1.25-str1 (se starts / se nets), parent change (burst minus zero-shot HP lost, negative better): net-lr3 +0.41 (0.10/0.09) -0.13; net-sh8 +4.77 (0.22/0.68) -0.41; heur-lr3 +1.15 (0.11/0.03) -0.23; heur-sh8 +3.13 (0.21/0.10) +0.31; defaults (share 0.5, lr 1e-3) net +1.20 (0.05) -0.24, heur +1.84 (0.08) -0.26. share is the replay share: 0.8 = 2.5x the gradient steps per pass",
+      "sources": [
+        {
+          "path": "docs/research/few-game-recipe.md",
+          "anchor": "Step 1 result: both teachers (table 0626, 2026-11-08)",
+          "sha256": "49917bcb528c1fdbd27c43db7f4d57c097373c88d70ff31efd1da1e9b2d023e0"
+        },
+        {
+          "path": "results/families/gfr-33.json",
+          "sha256": "79c8c1524861d871c01b664bfe655bc861212a8475decf7a9368e2d302543df6"
+        },
+        {
+          "path": "jobs/done/0626-family.json",
+          "sha256": "cdd313cfbcc08c9cd0baa097a1f3e86f6cfd5eb1e229df2575b66a1f174ac1ef"
+        },
+        {
+          "path": "results/families/gac-alw33.json",
+          "sha256": "8bd70e870391f9530b6ec7356bf2d41e41d9a733b4c021417b4e018831c10fbe"
+        }
+      ],
+      "owner": false,
+      "by": "7373bcc8-9186-471c-a7a8-51989104b4c2",
+      "at": "2026-11-08T15:49:29+00:00 @ f4d6205",
+      "until": "2026-11-13T02:30:15+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "dd44132ea4b744e59cb0f3a7b7f40e051f5d9e79cda2ba7efa82982e90d87c82"
+}

@@ -1,0 +1,14 @@
+{
+ "name": "gen-b1-dose99s9",
+ "lane": "main",
+ "about": "Navigator probe sheet, candidate pack-dose-33 (docs/backlog.md 38) second read: gen batch 1's pack chain at 99 games per mechanic and replay share 0.9. g33-sh9 (results/families/gen-b1-dose33.md) closed the TurnEnd-Frail x lagavulin leak (+0.54 (0.33) against g99's +3.01 (0.39)) but cut only +4.24 of Nob's +13.29 and lost the OppCard-Vulnerable x three_sentries edge (+7.06 HP, wins -0.213), which g99 at share 0.5 kept (-3.47). Read against both: go if the leak is under +1.5 HP pooled, both nets pass the guard and the target cut is half the cost or more (the chain's default arm becomes g99-sh9); stop otherwise (the default stays g99 at share 0.5 and the leak stays pack-retention's trade).",
+ "parent": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt",
+ "pack": {
+  "mechanics": ["GE-TurnStart-Strength", "GE-TurnStart-Damage", "GE-TurnEnd-Frail", "GE-TurnEnd-Damage",
+                "GE-OppCard-Vulnerable", "GE-OppCard-PlainDamage", "GE-AttackLoss-Strength", "GE-AttackLoss-Damage"],
+  "encounters": ["gremlin_nob", "lagavulin", "three_sentries"],
+  "base": "results/mutate/gen-enemies-b1.json",
+  "arms": {"g99-sh9": {"games": 99, "share": 0.9}},
+  "target": {"mechanic": "GE-AttackLoss-Damage", "encounter": "gremlin_nob", "share": 0.5, "min_se": 2.0}
+ }
+}

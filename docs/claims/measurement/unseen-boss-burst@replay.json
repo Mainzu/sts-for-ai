@@ -1,0 +1,136 @@
+{
+  "key": "measurement/unseen-boss-burst@replay",
+  "rev": 2,
+  "value": "10-29 net fine-tuned on one-turn official Guardian+Hexaghost games, one turn @hpb0.01, 474 headline boss fights, wins vs the 10-29 net: 400 games s1/s2 Guardian +0.030/+0.035 (0.007), Hexaghost +0.013 (0.010)/-0.002 (0.009); 1600 games Guardian +0.055/+0.039, Hexaghost +0.015/-0.003. Guardian gain = generic burst gain (+0.032-0.034); Hexaghost doesn't move.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Unseen-boss bursts, one turn deep: training on Guardian and Hexaghost games lifts the Guardian (+0.030 to +0.055 on all four nets) but not Hexaghost (-0.003 to +0.015); Guardian plus Hexaghost +0.016 to +0.034, under the 0.03 fail bar on one seed of each size, so the lane fails; retention holds (unseen-boss-burst lane step 2; 0170-0181; read 20:45 2026-11-05, lanes 25f7f4c2)",
+      "sha256": "2f52cae93b5b9a3dfa238d382cc703785b57ac5c447369d4cbb077b956f7b409"
+    },
+    {
+      "path": "results/boss_replay/ubb-g400-s1-hpb0.01.json",
+      "sha256": "2c68214f2de3574d896aaf4d3920afeb6e5d0a295a915e59a143fc0b79ee7dc7"
+    },
+    {
+      "path": "results/boss_replay/ubb-g1600-s1-hpb0.01.json",
+      "sha256": "c93e17f8797342e0bbe28c1197131cb14c0de160b76d3228518edac86511cad1"
+    },
+    {
+      "key": "measurement/burst-bosses@replay",
+      "rev": 4
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:37+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:42:49+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Fine-tunes of the 10-29 net on one-turn games of official Guardian and Hexaghost (varied decks, HP 40-100%, none a bench start), read one turn deep @hpb0.01 on the 474 headline boss fights (HP 30-80 x 4 seeds) minus the 10-29 net, paired by deck: 400 games s1/s2 Guardian +0.030 (0.007)/+0.035 (0.007), Hexaghost +0.013 (0.010)/-0.002 (0.009), G+H +0.021/+0.016, Slime Boss +0.012/+0.008; 1600 games s1/s2 Guardian +0.055 (0.008)/+0.039 (0.007), Hexaghost +0.015 (0.011)/-0.003 (0.009), G+H +0.034/+0.017, Slime Boss +0.007/+0.005. One-turn cell gauntlet 0-499 vs net1029-hpb0.01 at n 500: +1.59 (0.46), +1.18 (0.49), +0.78 (0.50), +0.42 (0.46) HP, clears z +0.7 to +2.1. The Guardian gain is about what bursts on other content give (+0.032-0.034) and sits at entry HP 40-60; Hexaghost does not move on its own games (inside the seed sd 0.017); 1600 games add +0.007 G+H over 400. Lane unseen-boss-burst failed by its rule (a seed under +0.03).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Unseen-boss bursts, one turn deep: training on Guardian and Hexaghost games lifts the Guardian (+0.030 to +0.055 on all four nets) but not Hexaghost (-0.003 to +0.015); Guardian plus Hexaghost +0.016 to +0.034, under the 0.03 fail bar on one seed of each size, so the lane fails; retention holds (unseen-boss-burst lane step 2; 0170-0181; read 20:45 2026-11-05, lanes 25f7f4c2)",
+          "sha256": "2f52cae93b5b9a3dfa238d382cc703785b57ac5c447369d4cbb077b956f7b409"
+        },
+        {
+          "path": "results/boss_replay/ubb-g400-s1-hpb0.01.json",
+          "sha256": "2c68214f2de3574d896aaf4d3920afeb6e5d0a295a915e59a143fc0b79ee7dc7"
+        },
+        {
+          "path": "results/gauntlet/ubb-g400-s1-hpb0.01.json",
+          "sha256": "145ab923fb299720a61dfbd92c086c5c824cc779cd185dd65f666753ea0f2424"
+        },
+        {
+          "path": "results/boss_replay/ubb-g400-s2-hpb0.01.json",
+          "sha256": "3f27d218fa8fef1002dd2ac6b193b161b0ef57475005d23b86fc38ca7f2b6470"
+        },
+        {
+          "path": "results/gauntlet/ubb-g400-s2-hpb0.01.json",
+          "sha256": "f850e03e73074f25c512def03b98feaa27f9218cb83132ae61f61ac1f87206c6"
+        },
+        {
+          "path": "results/boss_replay/ubb-g1600-s1-hpb0.01.json",
+          "sha256": "c93e17f8797342e0bbe28c1197131cb14c0de160b76d3228518edac86511cad1"
+        },
+        {
+          "path": "results/gauntlet/ubb-g1600-s1-hpb0.01.json",
+          "sha256": "4c8459f7186590affbd939fc734f63b5af6b9c904e0ea9e5f883bec4864f63bc"
+        },
+        {
+          "path": "results/boss_replay/ubb-g1600-s2-hpb0.01.json",
+          "sha256": "40d986e4256bd519ce866e04bdd01281fb42705829236e130aa8a31ec1a36764"
+        },
+        {
+          "path": "results/gauntlet/ubb-g1600-s2-hpb0.01.json",
+          "sha256": "7299ccb893cc2ea2787f2bbba32be11b0428594263ccb91034d77cce682cb66f"
+        },
+        {
+          "path": "jobs/done/0174-boss-replay.json",
+          "sha256": "b4b429a0d8f4d0539a3bd82cf82966f9cf3605fa496f3552c78c6cb493a39b5d"
+        },
+        {
+          "path": "jobs/done/0175-gauntlet.json",
+          "sha256": "f60edaa80788b4704e97cef7cd5976a279963f88ae82bc7769bc0b7826da3677"
+        },
+        {
+          "path": "jobs/done/0176-boss-replay.json",
+          "sha256": "706e1f6f279ec61b89ccbbe61b3ea4360c4ad6baca7669e895bfbfeca369e0af"
+        },
+        {
+          "path": "jobs/done/0177-gauntlet.json",
+          "sha256": "5d4589c00ae19eac807ab06d666fe7ba877a489bf9f997004b48131e62520255"
+        },
+        {
+          "path": "jobs/done/0178-boss-replay.json",
+          "sha256": "079d6d9bac443e53c91f95493ada1982898eb1936c8db464ac9676d2a0ef87de"
+        },
+        {
+          "path": "jobs/done/0179-gauntlet.json",
+          "sha256": "a806772598af72ce82fcf6ca0016662e5cff0bf8c61749967d4d2244c4250a04"
+        },
+        {
+          "path": "jobs/done/0180-boss-replay.json",
+          "sha256": "2aabc3eccf7ad52b0625efdf54dd3ea968ccdbdc4c0cc64e706efceda20a6c46"
+        },
+        {
+          "path": "jobs/done/0181-gauntlet.json",
+          "sha256": "8152ee93d8ad3867f4b198ea9bfc86644d9a05f8e91c1d36a681280369f12f9c"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "25f7f4c2-6ccc-4a24-9d2d-2a5041e41c67",
+      "at": "2026-11-05T13:42:30+00:00 @ b1e6f9f",
+      "until": "2026-11-13T02:31:37+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "f6cd3e624b3e644d1d1121b9aab13bbd5042a694f72c494ef4746f2d6a03d455"
+}

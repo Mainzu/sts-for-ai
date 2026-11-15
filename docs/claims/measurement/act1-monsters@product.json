@@ -1,0 +1,72 @@
+{
+  "key": "measurement/act1-monsters@product",
+  "rev": 2,
+  "value": "Product with act1-monsters' hallways in the hard floors, seq 0-249 fixed n: clears 0.756 vs 0.836 (-0.080, se 0.024), same cost as the one-turn net (product minus net +0.000, 0.039); order heuristic 0.504 < one-turn 0.608 < product 0.756.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/act1-inventory.md",
+      "anchor": "G2 re-rank, product read (0600) and checkpoint monsters-rerank",
+      "sha256": "f486e6b73fb67b648aeddcecccce7d766a116bda7407805c43fe0fdf60b66a3a"
+    },
+    {
+      "path": "results/gauntlet/g2-net1029-hpe0.01-two-line-step-starter-simboss-pack-monsters.json",
+      "sha256": "0f4736610a8a2c11a838ce97f08dc22acb6b51aa58438a9038a84b3c3685f734"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    },
+    {
+      "key": "yardstick/headline-control",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:40+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:41:25+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Product (10-29 net @hpe0.01 two-turn line-seed step-line) with act1-monsters' hallway encounters in the hard floors, sequences 0-249 fixed n: clears 0.756 vs 0.836 control, -0.080 (se 0.024), the same cost as the one-turn net on 0-249 (-0.080; product minus net +0.000 se 0.039); lead over the one-turn net +0.148 (se 0.034) on the pack vs +0.148 (0.031) on the control; order heuristic 0.504 < one-turn 0.608 < product 0.756; the pack's Exordium Thugs cost about 3 HP more than the official exordium_thugs for all three players (parity open).",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "G2 re-rank, product read (0600) and checkpoint monsters-rerank",
+          "sha256": "f486e6b73fb67b648aeddcecccce7d766a116bda7407805c43fe0fdf60b66a3a"
+        },
+        {
+          "path": "results/gauntlet/g2-net1029-hpe0.01-two-line-step-starter-simboss-pack-monsters.json",
+          "sha256": "0f4736610a8a2c11a838ce97f08dc22acb6b51aa58438a9038a84b3c3685f734"
+        },
+        {
+          "path": "jobs/done/0600-gauntlet.json",
+          "sha256": "eab45edc87e041f1790db10c82beec6a7c8df5a1e905e791c8a1ef1f4e43db5f"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "70f6f749-4814-4641-9282-ae6c535c9b47",
+      "at": "2026-11-08T19:45:33+00:00 @ c875606",
+      "until": "2026-11-13T02:29:40+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "707220949611f2e02bd6172f3bddbacc3b90ada239355a51c21c16788b5ed6ec"
+}

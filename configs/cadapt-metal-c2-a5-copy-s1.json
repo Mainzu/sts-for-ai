@@ -1,0 +1,13 @@
+{
+ "content": {
+  "pack": "data/bench/mutated_cards_pack.json",
+  "cards": ["metal-c2-a5", "Metallicize~copy"]
+ },
+ "game_seed": 71,
+ "games": 400,
+ "n_val": 150,
+ "name": "cadapt-metal-c2-a5-copy-s1",
+ "player": "net",
+ "pool": 10000,
+ "seed": 1
+}

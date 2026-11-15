@@ -1,0 +1,232 @@
+{
+ "product": {
+  "card_count": {
+   "dtype": "float32",
+   "sha256": "e3b35c831b4ccc8850ad170be0715ca8fc73e34a7888d6664862a58fe9b40c99",
+   "shape": [
+    3113
+   ]
+  },
+  "card_pile": {
+   "dtype": "int64",
+   "sha256": "37ac66f695bacfdd46bc4710d2387e728fbe8ea9b6e6f26dd79dbd40afc38935",
+   "shape": [
+    3113
+   ]
+  },
+  "card_state": {
+   "dtype": "int64",
+   "sha256": "3979dd887ae85cac3e54f3aad840589db19f0e0145c73217d567797fa89deeb8",
+   "shape": [
+    3113
+   ]
+  },
+  "cards": {
+   "dtype": "float32",
+   "sha256": "e6d80fe18b4ceee1723ad53998aaa94d770fab2fe53ec05c0ff25f3f12425789",
+   "shape": [
+    3113,
+    59
+   ]
+  },
+  "heuristic": {
+   "dtype": "float32",
+   "sha256": "6aeeebbe0505083398bcca3bc95c2266d5b0150b6b1ed92d4f051c4567aa887f",
+   "shape": [
+    253
+   ]
+  },
+  "heuristic_hp_loss": {
+   "dtype": "float32",
+   "sha256": "962ca2944918b1d4608fc742668f24bc3131acc269a5c1ef3acb5569eb93498d",
+   "shape": [
+    253
+   ]
+  },
+  "hp": {
+   "dtype": "float32",
+   "sha256": "5eb575b5d189308a81a02588ea22ca7eb49137f20378856fe9fc9daa1256bfb4",
+   "shape": [
+    253
+   ]
+  },
+  "max_hp": {
+   "dtype": "float32",
+   "sha256": "6455a7f226733722e3341d7c4ad8e17faee5ce3fca52b6840fe08d60cb4ec588",
+   "shape": [
+    253
+   ]
+  },
+  "monsters": {
+   "dtype": "float32",
+   "sha256": "2316b82839f30a4527d4f41a9aa19e136d9248a0417d4e97d16374379559f777",
+   "shape": [
+    253,
+    5,
+    62
+   ]
+  },
+  "player": {
+   "dtype": "float32",
+   "sha256": "05ac05fd7256c504ae5db0cc25c3fb315a41ccc0099b2c8de2b47fb38852b1ae",
+   "shape": [
+    253,
+    22
+   ]
+  },
+  "row_card": {
+   "dtype": "int64",
+   "sha256": "1087555cacb7a7476ea38a901a68a42a0fcc8428e350d5417553b6bedbda9226",
+   "shape": [
+    3368
+   ]
+  },
+  "row_entity": {
+   "dtype": "int64",
+   "sha256": "0fc42edb2add7a453df5a56aa0ed3caec29a2bea1cada9536365ecd1912a0ec8",
+   "shape": [
+    3368
+   ]
+  },
+  "row_state": {
+   "dtype": "int64",
+   "sha256": "77ffbe5d1fe6b18a06bad9747a0ed2aa817744e8d9539247bebde489876cde20",
+   "shape": [
+    3368
+   ]
+  },
+  "rows": {
+   "dtype": "float32",
+   "sha256": "8907300248d3c153b2237f09d2cb10e480438f2ea41408517483bffebec6aa63",
+   "shape": [
+    3368,
+    88
+   ]
+  },
+  "start_hp": {
+   "dtype": "float32",
+   "sha256": "2d138613d0d00b6ff33938c765ba0577a888d3535ec6552cb64f3c6bac2195f8",
+   "shape": [
+    253
+   ]
+  },
+  "win_heal": {
+   "dtype": "float32",
+   "sha256": "a03dc24f46aecaeaff5443ba1825d631f464eb34f8e656081783708ab33fc73f",
+   "shape": [
+    253
+   ]
+  }
+ },
+ "states": {
+  "codec_sha256": "622eb10f854a81fc62c2ddc797289e96d13af4e1a4e2814687a9523f0dc6e882",
+  "results": [
+   [
+    "jaw_worm",
+    0,
+    80,
+    true,
+    "Turn 2  HP 73/80  Block 8  Energy 0  WON"
+   ],
+   [
+    "jaw_worm",
+    1,
+    45,
+    true,
+    "Turn 2  HP 43/80  Block 0  Energy 0  [Strength 2]  WON"
+   ],
+   [
+    "jaw_worm",
+    2,
+    30,
+    true,
+    "Turn 2  HP 23/80  Block 0  Energy 1  WON"
+   ],
+   [
+    "cultist",
+    0,
+    80,
+    true,
+    "Turn 3  HP 80/80  Block 0  Energy 2  WON"
+   ],
+   [
+    "cultist",
+    1,
+    45,
+    true,
+    "Turn 3  HP 43/80  Block 0  Energy 2  WON"
+   ],
+   [
+    "cultist",
+    2,
+    30,
+    true,
+    "Turn 3  HP 34/80  Block 5  Energy 0  WON"
+   ],
+   [
+    "gremlin_nob",
+    0,
+    80,
+    true,
+    "Turn 5  HP 0/80  Block 0  Energy 0  [Strength 2, Vulnerable 2]  LOST"
+   ],
+   [
+    "gremlin_nob",
+    1,
+    45,
+    true,
+    "Turn 4  HP 0/80  Block 0  Energy 0  [Vulnerable 2]  LOST"
+   ],
+   [
+    "gremlin_nob",
+    2,
+    30,
+    true,
+    "Turn 4  HP 0/80  Block 0  Energy 0  [Vulnerable 2]  LOST"
+   ],
+   [
+    "lagavulin",
+    0,
+    80,
+    true,
+    "Turn 7  HP 30/80  Block 0  Energy 2  [Strength -1, Dexterity -1]  WON"
+   ],
+   [
+    "lagavulin",
+    1,
+    45,
+    true,
+    "Turn 8  HP 0/80  Block 0  Energy 0  [Strength -2, Dexterity -2]  LOST"
+   ],
+   [
+    "lagavulin",
+    2,
+    30,
+    true,
+    "Turn 5  HP 0/80  Block 0  Energy 0  [Strength 1, Dexterity -1]  LOST"
+   ],
+   [
+    "slime_boss",
+    0,
+    80,
+    false,
+    "Turn 10  HP 3/80  Block 6  Energy 0  [Strength 2, Frail 3]"
+   ],
+   [
+    "slime_boss",
+    1,
+    45,
+    true,
+    "Turn 6  HP 0/80  Block 0  Energy 0  [Weak 2, Frail 2]  LOST"
+   ],
+   [
+    "slime_boss",
+    2,
+    30,
+    true,
+    "Turn 3  HP 0/80  Block 0  Energy 0  LOST"
+   ]
+  ],
+  "states": 253
+ }
+}

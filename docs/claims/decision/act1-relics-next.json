@@ -1,0 +1,22 @@
+{
+  "key": "decision/act1-relics-next",
+  "rev": 1,
+  "value": "After Row 1 the act1 work does, in order: Frozen Eye then Runic Dome (each its own landing, golden unmoved); the combat part of the 10 'out-of-combat part blocked' relics plus Cultist Headpiece and Spirit Poop, each checked against its jar class, act1-coverage.json updated; then a draft (unbuilt) R2 run-layer spec for the 45 out-of-combat relics. Rows 8-14 after.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Act 1 relics next after Row 1 (owner, 2026-11-15)",
+      "sha256": "bf3530a69402c377537fe1f87e81d633154425003b0576a492b7df1e611048af"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "c1142259-7d14-431b-b66f-56978019df56",
+  "at": "2026-11-15T01:23:56Z @ 805065dc",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "6de5039deb7d6b504e61f25484dbf68dc584519a635889d5e88db867761946b6"
+}

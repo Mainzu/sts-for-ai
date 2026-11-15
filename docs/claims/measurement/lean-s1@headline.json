@@ -1,0 +1,79 @@
+{
+  "key": "measurement/lean-s1@headline",
+  "rev": 1,
+  "value": "Lean s1 (10-29 recipe without the solve step, same seed) one turn deep on the headline, 0-249: -0.052 clears (se 0.035), -2.48 end-HP (se 1.28) below the 10-29 net, the whole gap boss deaths (65 vs 52); the solve step may carry ~0.05 of the headline lead, but at 1.5-2 se on one seed it is a lead, not a result (seed twins 0063 decide). On cell decks lean is level (+0.001 clears, 3 seeds).",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Lean s1 on the headline: the solve step may carry about 0.05 of the 10-29 net's lead, at 1.5-2 se (headline re-rank's cheap check; 0061; read 22:35 2026-11-02, manager 19428521)",
+      "sha256": "900b6ca4ea2645ad949e7dc1af8a9ee625c5cd280b8cbcc1b6f5f23f5047f529"
+    },
+    {
+      "path": "results/gauntlet/rerank-lean-s1-r2-hpb0.01-starter-simboss.json",
+      "sha256": "44076cffe3d0621857f93144365fdf5ee8f00119564479489e52a1e363595196"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+      "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+    },
+    {
+      "path": "jobs/done/0061-bash.json",
+      "sha256": "d063813f4ad2c0643b3d234539cd81bd0eeed983deca5070496f6bfe7032f883"
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 1
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "re-set when 0063 (seed twins s101/s201) is read",
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:12:17+00:00 @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Lean s1 (10-29 recipe without the solve step, same seed) one turn deep on the headline, 0-249: -0.052 clears (se 0.035), -2.48 end-HP (se 1.28) below the 10-29 net, the whole gap boss deaths (65 vs 52); the solve step may carry ~0.05 of the headline lead, but at 1.5-2 se on one seed it is a lead, not a result (seed twins 0063 decide). On cell decks lean is level (+0.001 clears, 3 seeds).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Lean s1 on the headline: the solve step may carry about 0.05 of the 10-29 net's lead, at 1.5-2 se (headline re-rank's cheap check; 0061; read 22:35 2026-11-02, manager 19428521)",
+          "sha256": "900b6ca4ea2645ad949e7dc1af8a9ee625c5cd280b8cbcc1b6f5f23f5047f529"
+        },
+        {
+          "path": "results/gauntlet/rerank-lean-s1-r2-hpb0.01-starter-simboss.json",
+          "sha256": "44076cffe3d0621857f93144365fdf5ee8f00119564479489e52a1e363595196"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+          "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+        },
+        {
+          "path": "jobs/done/0061-bash.json",
+          "sha256": "d063813f4ad2c0643b3d234539cd81bd0eeed983deca5070496f6bfe7032f883"
+        },
+        {
+          "key": "yardstick/headline-setting",
+          "rev": 1
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:12:17+00:00 @ fc9cdd8",
+      "until": "2026-11-02T17:23:52+00:00 @ c3f81f4",
+      "retired": "superseded by measurement/solve-step@headline (3 seeds pooled)"
+    }
+  ],
+  "seal": "395d3e9744b8f7d6aa511af7cf56f04d2aec26373dc15b60d7a3dbbd58ff4203"
+}

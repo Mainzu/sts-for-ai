@@ -1,0 +1,31 @@
+{
+  "key": "yardstick/protocol",
+  "rev": 1,
+  "value": "Goal-2 candidates are read on the gauntlet with the protocol: paired end-HP against the control's per-sequence file, normal SPRT H1 +1.5 HP, alpha = beta = 0.05, first look at 50 sequences in order; a pass fails if paired clears have z <= -2. Built as gauntlet.py play --against <control> (blocks of 50). Screen on sequences 0-499, confirm finalists on 500-999 at fixed n.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Gauntlet protocol (owner away, 2026-11-02)",
+      "sha256": "b434d937b1a60956c99f0c54a528d9c9262cf654b5885086b121f41622764532"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Gauntlet early stop built (owner away, 2026-11-02)",
+      "sha256": "e92e31d00bd609da64f4e21ba9a444b815032c3b49b2739a74c4d2d882b827ca"
+    },
+    {
+      "path": "scripts/analysis/gauntlet_protocol.py",
+      "sha256": "5425607e411958da957075856d19496f722cc15b3afbb666f399473c7c800e90"
+    }
+  ],
+  "owner": false,
+  "pinned": true,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:09:00Z @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "3939944bbd76ab0026dd5ac40e8b973fcb4c5a0b05ae44914befdde37759cb46"
+}

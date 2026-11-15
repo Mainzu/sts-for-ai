@@ -1,0 +1,82 @@
+{
+  "key": "decision/goal1-meaning",
+  "rev": 4,
+  "value": "Goal 1's number (decision/goal1-yardstick): net's drop beyond measured difficulty of boon+bane modifier pairs on official parents, per modifier, heuristic and net one turn deep, stacking as distance; benches: mutated-monsters stage B, then cards; generated character later.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Goal-1 lane re-aimed at the owner's yardstick; charters re-set (owner's review, 2026-11-03)",
+      "sha256": "c669fdfdc154a0d044876fb57e1615c2b9ec76138c962169080a00d9cd1a600b"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+      "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+    },
+    {
+      "key": "decision/goal1-yardstick",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:26Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Goal 1 means new bundles of the engine's known atoms first (a generated character as the headline, new cards, mutated monsters from existing triggers, effects and patterns), reachable with depth plus a short burst and measured by retention on the generated-character gauntlet; new atoms arriving as data (runtime-registry stages 2-5, a content-agnostic price) are scoped once bundles have a number.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Navigator's first defaults (on the owner's behalf, 2026-11-03)",
+          "sha256": "99ae6081cf923509353550c2ed1894855c6a3e762c8547071e90966717351583"
+        }
+      ],
+      "owner": false,
+      "by": "a5cb4157-4f5b-4229-8f32-e0392c96548e",
+      "at": "2026-11-03T06:47:09Z @ 57e0bea",
+      "until": "2026-11-03T08:58:39Z @ cdd35fd"
+    },
+    {
+      "rev": 2,
+      "value": "Goal 1's number is the owner's yardstick (decision/goal1-yardstick): the net's drop beyond the measured difficulty of boon + bane modifier pairs on official parents, measured per modifier with the heuristic and the two-turn product, stacking as the distance axis; the first bench is mutated-monsters stage B with paired modifiers, then cards; a generated character comes later, built from mutated official parents; new atoms as data are scoped once the paired-modifier number exists.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Goal-1 lane re-aimed at the owner's yardstick; charters re-set (owner's review, 2026-11-03)",
+          "sha256": "c669fdfdc154a0d044876fb57e1615c2b9ec76138c962169080a00d9cd1a600b"
+        }
+      ],
+      "owner": false,
+      "by": "4c7c253c-5b5e-41ad-9b86-9fe7a2e430cb",
+      "at": "2026-11-03T08:58:39Z @ cdd35fd",
+      "until": "2026-11-05T14:57:37Z @ a875850"
+    },
+    {
+      "rev": 3,
+      "value": "Goal 1's number is the owner's yardstick (decision/goal1-yardstick): the net's drop beyond the measured difficulty of boon + bane modifier pairs on official parents, measured per modifier with the heuristic and the net one turn deep, stacking as the distance axis; the first bench is mutated-monsters stage B with paired modifiers, then cards; a generated character comes later, built from mutated official parents; new atoms as data are scoped once the paired-modifier number exists.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Goal-1 lane re-aimed at the owner's yardstick; charters re-set (owner's review, 2026-11-03)",
+          "sha256": "c669fdfdc154a0d044876fb57e1615c2b9ec76138c962169080a00d9cd1a600b"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+          "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+        }
+      ],
+      "owner": false,
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:57:37Z @ a875850",
+      "until": "2026-11-13T02:29:26Z @ 3123201a"
+    }
+  ],
+  "seal": "70470a6d9042225164fdbbf916f5bfa36cb7a101c0c2eefd18bb94b38e9a1541"
+}

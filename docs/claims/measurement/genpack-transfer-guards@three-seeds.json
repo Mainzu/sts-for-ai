@@ -1,0 +1,35 @@
+{
+  "key": "measurement/genpack-transfer-guards@three-seeds",
+  "rev": 1,
+  "value": "Generated-pack nets s1/101/201 guards one turn @hpb0.01 vs pack-net-scratch: cells pooled +0.52 (0.30) HP over 1500 seq; post-C6 31-card pack headline +0.41 (0.63).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Seed-201 read and the pooled verdict (jobs 0885, 0886, 0887; controls 0828, 0768, 0829)",
+      "sha256": "a03b70bf48d3735adf8eca28d3e553576bb0c80a971d49d43f8a73890d9630f9"
+    },
+    {
+      "path": "results/gauntlet/genpack40k-s201-hpb0.01-cells.json",
+      "sha256": "61c18c8e6f75b033c321dcc2df46440926f62eec651a2deec6393cbf2f675277"
+    },
+    {
+      "path": "results/gauntlet/genpack40k-s201-hpb0.01-starter-simboss-pack-act1c6.json",
+      "sha256": "3c305505a68b284ae79636e6c752fba3d3d40e2b8f754fdbf3f333fda111d82d"
+    },
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Seed-101 read (jobs 0851, 0852, 0853; controls 0826, 0769, 0827)",
+      "sha256": "432e91690a827991bfd81440282ce470b782bc30608c6dedb6d77d75108d1d2b"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:38+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "2a94d5857d167fb000717a81a1ffacb359c08f1d783d730045c6f22af5a0dbc2"
+}

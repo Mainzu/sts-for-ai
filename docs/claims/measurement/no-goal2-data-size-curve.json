@@ -1,0 +1,37 @@
+{
+  "key": "measurement/no-goal2-data-size-curve",
+  "rev": 1,
+  "value": "Data size, one-turn cell gauntlet vs 10-29 net: 5k/20k/40k games -3.30/-1.45/-0.16 HP (~3 se a step), ending level, not above; 80k adds nothing over 40k (inside the seed spread).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After the big-picture review of 2026-11-06: code first, the mechanic as goal 1's sample unit, two stored conclusions re-set, probes without lanes (on the owner's behalf, 2026-11-06)",
+      "sha256": "096065a46774079ceb207bb68cfa4dfed4d24ca8580a5ba2438a3b885da0fb30"
+    },
+    {
+      "path": "docs/research/big-picture-2026-11-06.md",
+      "anchor": "Key claims and skeptic verdicts",
+      "sha256": "c59114d491930272819530fccaeefa81decc6681260fde6952cb6e52ee4edbd7"
+    },
+    {
+      "key": "measurement/ledger@cells",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:20+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:21+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/ledger@cells reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "6fe1a78421e4c0c3582a0b6f3a5939ba7f6aa06eda52eaa95b4e626c18dc231b"
+}

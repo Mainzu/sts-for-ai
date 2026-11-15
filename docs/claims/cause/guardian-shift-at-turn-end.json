@@ -1,0 +1,79 @@
+{
+  "key": "cause/guardian-shift-at-turn-end",
+  "rev": 3,
+  "value": "Combust breaking The Guardian's Mode Shift at turn end: the game's 20 Defensive block lands after the monsters' block reset and lasts into the player's next turn (live run 8). Fixed in 626955c6: queued monster block waits in deferred_block during the turn end too (turn_ending flag) and monsters_turn lands it after the reset; golden unchanged.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/real-game-runs.md",
+      "anchor": "Bugs the live runs found",
+      "sha256": "d7bf1c42d0fdce346a4437d4d699b5efa184225f6c4d39e64fe17b3ac7205373"
+    },
+    {
+      "path": "engine/src/state.rs",
+      "sha256": "2e788ec144968cbdc179361e700fb7997e4f96f49254eeff84bc429bfac09899"
+    },
+    {
+      "path": "engine/tests/act1_bosses.rs",
+      "sha256": "dc3454c335e0498bbe94a419408d27286448876017aa486fb42f2a1e26e61995"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+  "at": "2026-11-14T01:32:24Z @ 626955c6",
+  "confirms": [
+    {
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T04:43:36Z @ 0ccb0f83",
+      "note": "kill-effects 795ff77c touched only check_over/condition_holds (TargetDied), Feed's pack row and an appended condition column; fact still true"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "When end-of-turn damage (Combust) breaks The Guardian's Mode Shift, the game queues its 20 Defensive block behind the monsters' turn start, so it keeps the block into the player's next turn; the engine adds it at once and monsters_turn clears it (live run 2026-11-14, run 8). Fix: defer it via deferred_block while the turn ends, land it after the block reset. Not done.",
+      "sources": [
+        {
+          "path": "docs/research/real-game-runs.md",
+          "anchor": "Bugs the live runs found",
+          "sha256": "64a07ac1123162ed2296afa61ed2a5c7fd159e69af36ca1acb64aecc8d04d0d5"
+        },
+        {
+          "path": "engine/src/state.rs",
+          "sha256": "4cfb93d12df70887f3dab98eb576b20ab57b702195e6a51f11629b40965ace3c"
+        }
+      ],
+      "owner": false,
+      "by": "12ae5317-5033-4622-ad4c-f74f4df39f7e",
+      "at": "2026-11-14T00:50:00Z @ fb9e9f16",
+      "until": "2026-11-14T01:32:15Z @ 626955c6"
+    },
+    {
+      "rev": 2,
+      "value": "When end-of-turn damage (Combust) breaks The Guardian's Mode Shift, the game queues its 20 Defensive block behind the monsters' turn start (ChangeStateAction queues GainBlockAction after MonsterStartTurnAction), so it keeps the block into the player's next turn (live run 8). Fixed in 626955c6: monster block queued behind what is queued now waits in deferred_block during a card, potion or the turn end (turn_ending flag, Stage::EndingTurn) and monsters_turn lands it after the block reset; test act1_bosses guardian_shift_at_turn_end_keeps_its_block; golden unchanged.",
+      "sources": [
+        {
+          "path": "docs/research/real-game-runs.md",
+          "anchor": "Bugs the live runs found",
+          "sha256": "a789a0212b8aaaff4b900a623f22cdd05d288ac395b826730167e39c39ad5912"
+        },
+        {
+          "path": "engine/src/state.rs",
+          "sha256": "5ad865f6bd8e48cb5abd35e65c90711deb502fa2f5f3f773f52c176fda44c019"
+        },
+        {
+          "path": "engine/tests/act1_bosses.rs",
+          "sha256": "dc3454c335e0498bbe94a419408d27286448876017aa486fb42f2a1e26e61995"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T01:32:15Z @ 626955c6",
+      "until": "2026-11-14T01:32:24Z @ 626955c6"
+    }
+  ],
+  "seal": "a492a5e24a166cee719bc1fcc9a1070e902a3f338de0bc773d7c35c1a2306daf"
+}

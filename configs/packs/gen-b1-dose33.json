@@ -1,0 +1,14 @@
+{
+ "name": "gen-b1-dose33",
+ "lane": "main",
+ "about": "Navigator probe sheet, candidate pack-dose-33 (docs/backlog.md 38): gen batch 1's pack chain at a third of the games (33 per mechanic) and replay share 0.9, the recipe lane share-curve closed on (measurement/share-curve@retention), against gen-b1's g99 arm at share 0.5 (results/families/gen-b1.md). Read: the pooled GE-TurnEnd-Frail x lagavulin delta (g99: +3.01 (0.39)), the guard per net and the target cut (g99: +11.50). Go if that leak is under +1.5 HP pooled, both nets pass the guard and the cut stays at half the cost or more; stop if the leak is not under +3.01.",
+ "parent": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt",
+ "pack": {
+  "mechanics": ["GE-TurnStart-Strength", "GE-TurnStart-Damage", "GE-TurnEnd-Frail", "GE-TurnEnd-Damage",
+                "GE-OppCard-Vulnerable", "GE-OppCard-PlainDamage", "GE-AttackLoss-Strength", "GE-AttackLoss-Damage"],
+  "encounters": ["gremlin_nob", "lagavulin", "three_sentries"],
+  "base": "results/mutate/gen-enemies-b1.json",
+  "arms": {"g33-sh9": {"games": 33, "share": 0.9}},
+  "target": {"mechanic": "GE-AttackLoss-Damage", "encounter": "gremlin_nob", "share": 0.5, "min_se": 2.0}
+ }
+}

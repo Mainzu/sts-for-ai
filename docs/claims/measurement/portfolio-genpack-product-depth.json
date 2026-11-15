@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-genpack-product-depth",
+  "rev": 2,
+  "value": "predicted even, ~12 thread-h (cap 18); actual between: two-turn pooled cut 0.60 (0.20), 0.27 (0.19) w/o AttackLoss-Weak, +1.23 HP of the product's +2.05 cost; 32.8 cpu-h booked (~23 worked); reopen if more starts are cheap enough to settle 0.27 vs 0.60, an OppCard-PlainDamage fix exists, or a pack net becomes a fighter candidate.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane genpack-product-depth closed (2026-11-12)",
+      "sha256": "7991392b3982ff257c0e1d589a4ec79194a02aacceb90a0bccfef90195872c7d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:00+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even, about 12 thread-h (cap 18): whether the generated-pack recipe's cut of unseen enemy pairings holds two turns deep; actual between: pooled cut 0.60 (0.20) over three seeds, 0.27 (0.19) without AttackLoss-Weak, gain +1.23 HP on the product's +2.05 HP cost; 32.8 cpu-h booked (about 23 did work, the rest stalls); reopen if: a read on more starts is cheap enough to settle 0.27 against 0.60, a recipe or feature for OppCard-PlainDamage exists to read two turns deep, or a pack net becomes the product's fighter candidate on new content",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane genpack-product-depth closed (2026-11-12)",
+          "sha256": "7991392b3982ff257c0e1d589a4ec79194a02aacceb90a0bccfef90195872c7d"
+        }
+      ],
+      "owner": false,
+      "by": "da3de6ee-12e0-465c-83cb-e5d85f04386e",
+      "at": "2026-11-12T14:50:24+00:00 @ ce8466a",
+      "until": "2026-11-13T02:31:00+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "83aa942a8494e97e34045a4eeafbfb92d1a0927acbf93b34e0837c502827350c"
+}

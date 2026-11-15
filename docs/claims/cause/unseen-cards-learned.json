@@ -1,0 +1,35 @@
+{
+  "key": "cause/unseen-cards-learned",
+  "rev": 1,
+  "value": "Learned repairs of the Demon Form cost, plain leaf: effects nets 5k->40k close it -7.2 -> -3.1 HP vs heuristic; burst8 +6.10 (1.16), level under @tsl1 (first tick only). A from-scratch 40k all-content learn goes past it: +3.30 (0.95) HP @tsl1 over the 10-29 net on Demon Form decks.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/cards-transfer@cells",
+      "rev": 2
+    },
+    {
+      "key": "measurement/burst8-tsl1@cells",
+      "rev": 2
+    },
+    {
+      "key": "measurement/pack-net-twin@one-turn",
+      "rev": 5
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:00Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:33Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/cards-transfer@cells, measurement/burst8-tsl1@cells, measurement/pack-net-twin@one-turn reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "eba9cdf464ad6046843d89bb5739451b611df6b2aca78f19ef19006d755dcc50"
+}

@@ -1,0 +1,58 @@
+{
+  "key": "decision/parity-source",
+  "rev": 3,
+  "value": "The real game's own code decides content values and behaviour: the installed desktop-1.0.jar (2022-12-18) read with javap, cited by class and method, and decompiled GitHub copies (com/megacrit/cardcrawl/..., e.g. Li-Binghui/MySlayTheSpire, aeubanks/sts) where bytecode is hard to read; two sources compared where they could differ. sts_lightspeed and the wiki are leads only; the code wins.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Parity source: the game's own code (owner, 2026-11-10)",
+      "sha256": "0d24736db594f9f8d0b2207240255b0aa5cc323b86dec52de3e909837d48edb8"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Parity source and arena after the install: the game's jar first, the real game is arena level 2 (on the owner's behalf, 2026-11-13)",
+      "sha256": "11828ce0f35147a66f7f356124b9c0a96d6440b1420c923f00e38a3527de0cb8"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+  "at": "2026-11-13T09:46:17Z @ 67cbe2e3",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "No StS1 install: content values come from the wiki, behaviour is checked against sts_lightspeed where it covers it and the wiki decides where it doesn't; arena level 2 (the real game through a mod bridge) is dropped.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "No StS1 install; content parity from the wiki and sts_lightspeed (owner, 2026-11-04)",
+          "sha256": "6e29aabe243c873657e19831cc8c9ca5a9388090ab6eb3594adcfd4dff4449f8"
+        }
+      ],
+      "owner": false,
+      "by": "ea89a8f4-8c59-4b7d-bec0-35b31ed878d6",
+      "at": "2026-11-04T12:45:19Z @ fe27ec2",
+      "until": "2026-11-10T11:13:35Z @ ffb48f4"
+    },
+    {
+      "rev": 2,
+      "value": "The real game decides content values and behaviour, through its own code: decompiled copies of the game's Java on GitHub (com/megacrit/cardcrawl/..., e.g. Li-Binghui/MySlayTheSpire, aeubanks/sts), cited by file and line, two copies compared where they could differ. sts_lightspeed and the wiki are leads only; where they disagree with the code, the code wins. No install; arena level 2 stays dropped.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Parity source: the game's own code (owner, 2026-11-10)",
+          "sha256": "0d24736db594f9f8d0b2207240255b0aa5cc323b86dec52de3e909837d48edb8"
+        }
+      ],
+      "owner": false,
+      "by": "ce41a42f-9dd2-4027-be63-31c0673fd7b9",
+      "at": "2026-11-10T11:13:35Z @ ffb48f4",
+      "until": "2026-11-13T09:46:17Z @ 67cbe2e3"
+    }
+  ],
+  "seal": "15454ac5c742ae9b41a0225dd52a1c1ea67f47a7b4678b8117253707387048c4"
+}

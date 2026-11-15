@@ -1,0 +1,108 @@
+{
+  "key": "decision/crossed-player-lead",
+  "rev": 3,
+  "value": "Product stays the 10-29 net: fighter swaps on the curated ruler are ~+1 HP, no clears two turns deep (burst net +1.08 (0.47), all-content twin +0.98 (0.47)); leads, not swaps. New-content gains go in via the widened pool after Act 1.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/crossed-player@two-turn",
+      "rev": 2
+    },
+    {
+      "key": "measurement/pack-net-twin@two-turn",
+      "rev": 4
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "twin-two-turn-matched at 500: between; no second seed; the fighter plateau has two nets (on the owner's behalf, 2026-11-11)",
+      "sha256": "77fe79647243f98fb2827a1e3dc0ab51c94b5633ee3c7b246c0e63ee63ea388b"
+    },
+    {
+      "key": "decision/headline-pool-after-act1",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:23Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:13Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/crossed-player@two-turn, measurement/pack-net-twin@two-turn, decision/headline-pool-after-act1 reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The product stays the 10-29 net after lane crossed-player: the SharpHide-then-stage-B burst net two turns deep on the product's decks gains +1.08 (0.47) end-HP and no clears (-0.006 (0.014)), with the protocol's test open at its 500 cap on one book and matched decks, so it is a lead (measurement/crossed-player@two-turn, decision/headline-unit, yardstick/protocol). No confirm read on sequences 500-999: a pass would swap the fighter for about +1 HP and no clears and owe a new headline control, a fail changes nothing. A fighter-only change earns a two-turn promotion read when it lowers boss deaths two turns deep, or when run choices exist that turn HP after the second elite into clears; a one-turn gain at the bosses does not, because depth takes it (cause/leaf-gain-third). A second training seed of that burst above +1.0 HP one turn deep would show a one-turn recipe, not a product change. The burst lottery (many burst seeds, keep the best) stays closed: the best of 20 further draws is worth about 0.2 HP two turns deep.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "key": "measurement/crossed-player@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/crossed-player@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "decision/headline-unit",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "d348e064-834e-4cae-be51-056e6d1678db",
+      "at": "2026-11-06T01:23:56Z @ aa30d72",
+      "until": "2026-11-11T04:35:14Z @ 9c1ca04"
+    },
+    {
+      "rev": 2,
+      "value": "The product stays the 10-29 net. A fighter swap on the curated ruler is worth about +1 HP and no clears two turns deep, on two nets of different recipes on the product's decks: the SharpHide-then-stage-B burst net +1.08 (0.47) HP, clears -0.006 (0.014) (measurement/crossed-player@two-turn), and the from-scratch all-content twin +0.98 (0.47) HP outside Demon Form, clears level, its second-elite saves dying on the next hallway (measurement/pack-net-twin@two-turn); both are leads, not swaps (decision/headline-unit, yardstick/protocol). A fighter-only change earns a two-turn promotion read when it lowers boss deaths two turns deep at 2 se, or when run choices exist that turn HP after the second elite into clears; a one-turn gain at the bosses does not, because depth takes it (cause/leaf-gain-third). Gains on new content past the horizon (Demon Form decks: the twin +6.46 (1.41) HP on 39) go to the product with the widened pool after Act 1 (decision/headline-pool-after-act1), not by a swap on the curated ruler. The burst lottery (many burst seeds, keep the best) stays closed: the best of 20 further draws is worth about 0.2 HP two turns deep.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "twin-two-turn-matched at 500: between; no second seed; the fighter plateau has two nets (on the owner's behalf, 2026-11-11)",
+          "sha256": "77fe79647243f98fb2827a1e3dc0ab51c94b5633ee3c7b246c0e63ee63ea388b"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "key": "measurement/crossed-player@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/pack-net-twin@two-turn",
+          "rev": 3
+        },
+        {
+          "key": "decision/headline-unit",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "c33c26e2-be6a-40e4-ba5d-4a83e10c1caf",
+      "at": "2026-11-11T04:35:14Z @ 9c1ca04",
+      "until": "2026-11-13T02:29:23Z @ 3123201a"
+    }
+  ],
+  "seal": "4d4ef35828bae53c048a8aa0552e2f54d3214867183a65bd8b8b178572609bd1"
+}

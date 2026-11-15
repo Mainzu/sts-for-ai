@@ -1,0 +1,55 @@
+{
+  "key": "measurement/shown-numbers@pairs",
+  "rev": 1,
+  "value": "Card numbers as the game shows them (damage + Strength x hits, x0.75 under Weak; block + Dexterity, x0.75 under Frail) written into the existing columns lift the unchanged 10-29 net's pricing of attack cards when the player's Strength or Weak is up, with no games: correlation with the played-out change 0.156 to 0.218 (+0.060 (0.025), 1,324 pairs, bootstrap over positions), other pairs +0.009 (0.012); those pairs carry 31% of the net's squared error and priced perfectly would lift the overall correlation 0.18 to 0.53. Fine-tuning on paired labels showed no clear difference between the encodings (held-out noise about 0.05). No play read.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/pile-prices-2026-11-09.md",
+      "anchor": "Shown card numbers: a zero-shot gain where Strength or Weak is up",
+      "sha256": "6b55b8b0cf3d3418b52904b52c107d41ceda8f86fd8b8e0887f057c7c1baeace"
+    },
+    {
+      "path": "results/probes/pile-prices/pairs.jsonl",
+      "sha256": "700ba5ad57c20535820b9df92d82db6119e68613b97fd47269d239dadfc70671"
+    },
+    {
+      "path": "results/probes/pile-prices/shown.log",
+      "sha256": "24149b755e89e96d2e335573c1b84148e0b5015baeffe17c28ca5bc5f743b335"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "0804bcc5-cde8-4829-ac5c-3f208429ea29",
+  "at": "2026-11-09T10:46:24+00:00 @ 5af5c88",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Card numbers as the game shows them (damage + Strength x hits, x0.75 under Weak; block + Dexterity, x0.75 under Frail) written into the existing columns lift the unchanged 10-29 net's pricing of attack cards when the player's Strength or Weak is up, with no games: correlation with the played-out change 0.156 to 0.218 (+0.060 (0.025), 1,324 pairs, bootstrap over positions), other pairs +0.009 (0.012); those pairs carry 31% of the net's squared error and priced perfectly would lift the overall correlation 0.18 to 0.53. Fine-tuning on paired labels showed no clear difference between the encodings (held-out noise about 0.05). No play read.",
+      "sources": [
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Shown card numbers: a zero-shot gain where Strength or Weak is up",
+          "sha256": "6b55b8b0cf3d3418b52904b52c107d41ceda8f86fd8b8e0887f057c7c1baeace"
+        },
+        {
+          "path": "results/probes/pile-prices/pairs.jsonl",
+          "sha256": "700ba5ad57c20535820b9df92d82db6119e68613b97fd47269d239dadfc70671"
+        },
+        {
+          "path": "results/probes/pile-prices/shown.log",
+          "sha256": "24149b755e89e96d2e335573c1b84148e0b5015baeffe17c28ca5bc5f743b335"
+        }
+      ],
+      "owner": false,
+      "by": "0804bcc5-cde8-4829-ac5c-3f208429ea29",
+      "at": "2026-11-09T10:46:24+00:00 @ 5af5c88",
+      "until": "2026-11-10T07:04:29+00:00 @ f97b79c",
+      "retired": "merged into measurement/portfolio-shown-card-numbers"
+    }
+  ],
+  "seal": "5e9e3e287254d717410cc348cbb7b19b6b3cb8f0224e9bd5edb9ebbc04646beb"
+}

@@ -1,0 +1,46 @@
+{
+  "key": "measurement/leaf-vs-heuristic",
+  "rev": 1,
+  "value": "The learned leaf (10-29 net) beats the hand-written heuristic at equal depth: one turn deep on cell decks 0-499 +0.038 clears and +2.55 HP (seed twins +0.024 / +0.038), two turns deep on 0-249 +0.060 and +5.21 HP; on the headline setting, where each player also picks its own cards, +0.146 clears one turn deep and +0.270 for the two-turn product over the one-turn heuristic.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/approach-review-2026-11-02.md",
+      "anchor": "Where the project stands",
+      "sha256": "22a11ddea40118d69f10d49f09c54194115966ae1ded75d88cc945ab67613aa0"
+    },
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Two-turn product on the headline setting: 0.804 clears (Q2; b39a / b39b; read 14:30 2026-11-02, manager 837a5e68)",
+      "sha256": "6db5240cce5632a9d581f71f3a39f64895cb7f1e5b2017077934ca9e081c9b10"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    },
+    {
+      "key": "yardstick/gauntlet",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:14:23+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T00:37:12+00:00 @ da67084",
+      "note": "re-checked 08:00 2026-11-03: product/net rev 4 changed only the play flags (--line-seed --step-line; same net, same price) and yardstick/cost-savers rev 2 only added the line-step verdict; the fact's content is unaffected"
+    },
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:41:54+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "ae04c19adfaa4877a75694b09072508ed3f3f31b19ad1a5e5c82bfa5c77f7a09"
+}

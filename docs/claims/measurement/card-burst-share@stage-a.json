@@ -1,0 +1,92 @@
+{
+  "key": "measurement/card-burst-share@stage-a",
+  "rev": 2,
+  "value": "Card bursts at 33 games, share 0.9 (3 seeds/modifier): parent copy per elite fight inflame-turn1 +0.52 (0.15) HP, metal-c2-a5 -0.33 (0.18) (400 games at 0.5: +0.76, +1.79); @tsl1 variant gains +0.004 vs costs -0.018/-0.021: none closed. Share 0.9 spares the parent; the gain follows the variant's own games.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Card-burst-share probe (0702-0714): the two card modifiers' bursts at 33 games and share 0.9",
+      "sha256": "77bc8f0ad459e8cb5488ca1c4533413ed66a37b481a65843eb0ce0a4e81d4a89"
+    },
+    {
+      "path": "results/mutate/cards-a.json",
+      "sha256": "a7d36555756d30a72576c21492795c8dad422d841289bec48ed4787544deea87"
+    },
+    {
+      "key": "measurement/cards-adapted@stage-a",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:56+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:18+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/cards-adapted@stage-a reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Card modifiers' bursts at 33 games and replay share 0.9 (three seeds per modifier from the 10-29 net, 0702-0714; read on results/mutate/cards-a.json, pooled per start, gain = bursts minus zero-shot): parent copy per elite fight, plain leaf, inflame-turn1 +0.52 (0.15) HP (400 games at share 0.5: +0.76), metal-c2-a5 -0.33 (0.18) (was +1.79); plain leaf all fights inflame-turn1 +0.010 (0.004) wins against a -0.043 cost (400 games: +0.024), metal-c2-a5 +0.012 (0.004) (400 games: +0.009); @tsl1 inflame +0.004 (0.003) against -0.018, metal +0.004 (0.002) against -0.021, none closed. Between by its read rule (inflame's parent and win gain just miss 0.5 HP and +0.012; both parent costs fall below share 0.5's): share 0.9 spares the parent, the variant's gain follows its own games.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Card-burst-share probe (0702-0714): the two card modifiers' bursts at 33 games and share 0.9",
+          "sha256": "77bc8f0ad459e8cb5488ca1c4533413ed66a37b481a65843eb0ce0a4e81d4a89"
+        },
+        {
+          "path": "results/mutate/cards-a.json",
+          "sha256": "a7d36555756d30a72576c21492795c8dad422d841289bec48ed4787544deea87"
+        },
+        {
+          "path": "results/mutate/cards-cs9-inflame-turn1-s1.json",
+          "sha256": "fde3c8c65574115700085b695deffdfb295b280431b8299ed52c51a4a4699a98"
+        },
+        {
+          "path": "results/mutate/cards-cs9-inflame-turn1-s2.json",
+          "sha256": "01be45cc6580f78ef9bc663f3bdbffb7230a55c0695211b8354cb7475707f1ad"
+        },
+        {
+          "path": "results/mutate/cards-cs9-inflame-turn1-s3.json",
+          "sha256": "b44b737d6244cc02d96b31f24bf41c603d195578a415d195a5ce469c6ec0eabe"
+        },
+        {
+          "path": "results/mutate/cards-cs9-metal-c2-a5-s1.json",
+          "sha256": "6d29aadb1fa440d02ff061ec3bdbd53156d2bf9765eb7a497cd6be12ce2fc35e"
+        },
+        {
+          "path": "results/mutate/cards-cs9-metal-c2-a5-s2.json",
+          "sha256": "fcc1e5ee255e7ccc4101654b0325805879517350d5b5f5f1dbe6817d40b53aa0"
+        },
+        {
+          "path": "results/mutate/cards-cs9-metal-c2-a5-s3.json",
+          "sha256": "f9b8b72c19584a504a485706f3a157dddefaa4300fd9668d9802d06beacfee99"
+        },
+        {
+          "path": "jobs/done/0714-mutate-cards.json",
+          "sha256": "8b4a40486dd9ef27604ce7289603823e5dbd178e7316654cacb5f617a6f5ea37"
+        },
+        {
+          "key": "measurement/cards-adapted@stage-a",
+          "rev": 1
+        },
+        {
+          "key": "decision/burst-share",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "129b8d9d-a225-49d7-abbc-06f8d5f99e19",
+      "at": "2026-11-09T14:40:37+00:00 @ 904b706",
+      "until": "2026-11-13T02:29:56+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "d836f24fe9d4b3b4809f3d9332bc2767058728bed842976afe4337fa4b02a135"
+}

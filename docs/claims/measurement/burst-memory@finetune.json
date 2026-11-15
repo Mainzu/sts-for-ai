@@ -1,0 +1,26 @@
+{
+  "key": "measurement/burst-memory@finetune",
+  "rev": 1,
+  "value": "finetune.py burst with memory-mapped replay pool (60cc028): peak 0.70 GB at 4 threads (old code 3.81 GB), training unchanged.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Burst memory (step 2a read): the mapped pool cuts a burst's peak from 3.81 to 0.70 GB at 4 threads; the curve check's 0.00219 gap is the wider input layout, not the pool, so the check is passed by hand and the bursts run (yardstick-cards step 2a; 0304 against 0276; read 05:50 2026-11-07, lanes)",
+      "sha256": "dcfd841ca9540454ceec16c351756a91444a676a41d182c0180495b1db481f96"
+    },
+    {
+      "path": "jobs/done/0304-finetune.json",
+      "sha256": "7867287ba525f908a20a18b035a6dcd3258a941d92c30fdb79d5e12615f08e74"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:42+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "d1c55999b6a89f489414aa68ac34dbf4bab1701a8208163cc77a07be25513eb9"
+}

@@ -1,0 +1,11 @@
+{
+ "id": "0004-gauntlet",
+ "cmd": [
+  "python",
+  "x.py"
+ ],
+ "threads": 2,
+ "estimate_min": 60.0,
+ "lane": "filler",
+ "added": "2026-11-03T08:00:00+00:00"
+}

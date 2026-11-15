@@ -1,0 +1,171 @@
+{
+  "key": "measurement/pack-net-twin@two-turn",
+  "rev": 4,
+  "value": "Twin s1 two-turn (product flags) --match on headline-control decks, 0-499, n 500: +1.41 (0.45) HP, clears 0.848 vs 0.834 (+0.014, 0.015), protocol pass. DF decks (39) +6.46 (1.41); other 461 +0.98 (0.47). Boss deaths 54 vs 62. One seed: a lead.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pns-probes.md",
+      "anchor": "twin-two-turn-matched at 500 (0854): between; the fighter is worth about 1 HP outside Demon Form",
+      "sha256": "8f796b652921ebf2e0cdff086a2ece23050b6ead47849a31e55b3a65bc73d08e"
+    },
+    {
+      "key": "yardstick/headline-control",
+      "rev": 4
+    },
+    {
+      "key": "measurement/pack-net-twin-depth@matched",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:43+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:42:28+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "All-content twin seed 1 (allcontent40k-s1-r1 @hpe0.01, --two-turn --line-seed --step-line) on the headline setting on the headline control's decks (--match), sequences 0-249, against yardstick/headline-control: +1.53 (0.64) HP, clears +0.024 (0.020) (0.860 against 0.836), deaths hallway / elite / boss 5 / 2 / 28 against the product's 2 / 6 / 33. The control's Demon Form decks (21) +4.38 (1.65), 0.38 (0.17) of the one-turn gain on its own control's 25 (+11.40 (2.34)); the 221 others +1.38 (0.69) two turns deep against -0.10 (1.00) one turn deep (decks differ between depths: unpaired). One seed, 250 sequences: a lead; probe rule between, extended to 500 (job 0854).",
+      "sources": [
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "twin-two-turn-matched (0846): the twin fighter gains two turns deep outside Demon Form; between, extended to 500",
+          "sha256": "0713f2ac0e902b71512ecd2df334d79c9e72b5c9a1e56e81464d00f94e6a007d"
+        },
+        {
+          "path": "results/gauntlet/match-allcontent40k-s1-hpe0.01-two-line-step-starter-simboss.json",
+          "sha256": "0cbac090bb34f4d92dd9245cfae53f688e57fe921a30456cb72a6dfc87fc99d0"
+        },
+        {
+          "path": "jobs/done/0846-gauntlet.json",
+          "sha256": "b14f3d90bc551ce4be31e43c60118c50e8dbfa622ec80008bec555e53b433d3a"
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "measurement/pack-net-twin@one-turn",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "e37feecb-a667-4dc5-8e48-0569e8c5a185",
+      "at": "2026-11-11T00:59:08+00:00 @ 05607eb",
+      "until": "2026-11-11T04:35:13+00:00 @ 9c1ca04"
+    },
+    {
+      "rev": 2,
+      "value": "All-content twin seed 1 (allcontent40k-s1-r1 @hpe0.01, --two-turn --line-seed --step-line) on the headline setting on the headline control's decks (--match), sequences 0-499, fixed n 500, against yardstick/headline-control: +1.41 (0.45) HP, clears +0.014 (0.015) (0.848 against 0.834), protocol pass at n 500; halves of the sequence range +1.53 / +1.28. The product's 39 Demon Form decks (all held-out) +6.46 (1.41) HP, clears +0.10 (0.05); the other 461 +0.98 (0.47), clears level (train +0.83 (0.60), held-out +1.16 (0.74)). Deaths by floor twin / product: second elite (floor 8) 8 / 13, the hallway after it (floor 9) 13 / 6, boss 54 / 62 (paired 20 against 28, z 1.15; Hexaghost 23 / 29, the Guardian 26 / 28, Slime Boss 5 / 5). One seed: a lead; probe rule between (boss deaths 8 fewer, go needed 10), no second seed.",
+      "sources": [
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "twin-two-turn-matched at 500 (0854): between; the fighter is worth about 1 HP outside Demon Form",
+          "sha256": "8f796b652921ebf2e0cdff086a2ece23050b6ead47849a31e55b3a65bc73d08e"
+        },
+        {
+          "path": "results/gauntlet/match-allcontent40k-s1-hpe0.01-two-line-step-starter-simboss.json",
+          "sha256": "bdf5f423aaa8eb0ac8a14b78f3c982c7270a74a5a331a3e8954b13fe6662f83a"
+        },
+        {
+          "path": "jobs/done/0854-gauntlet.json",
+          "sha256": "8fe692880f2c407a6a206256cafe969f1250e1f973e95dca3ffbbfd5c6ec8066"
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "measurement/pack-net-twin@one-turn",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "c33c26e2-be6a-40e4-ba5d-4a83e10c1caf",
+      "at": "2026-11-11T04:35:13+00:00 @ 9c1ca04",
+      "until": "2026-11-11T05:21:40+00:00 @ d06e052"
+    },
+    {
+      "rev": 3,
+      "value": "All-content twin seed 1 (allcontent40k-s1-r1 @hpe0.01, --two-turn --line-seed --step-line) on the headline setting on the headline control's decks (--match), sequences 0-499, fixed n 500, against yardstick/headline-control: +1.41 (0.45) HP, clears +0.014 (0.015) (0.848 against 0.834), protocol pass at n 500; halves of the sequence range +1.53 / +1.28. The product's 39 Demon Form decks (all held-out) +6.46 (1.41) HP, clears +0.10 (0.05); the other 461 +0.98 (0.47), clears level (train +0.83 (0.60), held-out +1.16 (0.74)). Deaths by floor twin / product: second elite (floor 8) 8 / 13, the hallway after it (floor 9) 13 / 6, boss 54 / 62 (paired 20 against 28, z 1.15; Hexaghost 23 / 29, the Guardian 26 / 28, Slime Boss 5 / 5). One seed: a lead; probe rule between (boss deaths 8 fewer, go needed 10), no second seed. Paired by depth on the same decks (0855-0857 one turn deep @hpb0.01, --match): outside Demon Form the twin is -0.40 (0.62) HP against the 10-29 net one turn deep (seed 101 -0.92 (0.60)), so its gain grows +1.38 (0.76) with depth, 1.8 se (a lead; probe rule stop); one turn deep both twin seeds lose more at the second elite (33 and 41 deaths against 26), two turns deep fewer (8 against 13). Demon Form decks +11.49 (2.50) one turn deep: two-turn ratio 0.56.",
+      "sources": [
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "twin-two-turn-matched at 500 (0854): between; the fighter is worth about 1 HP outside Demon Form",
+          "sha256": "8f796b652921ebf2e0cdff086a2ece23050b6ead47849a31e55b3a65bc73d08e"
+        },
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "twin-depth-paired (0855-0857 with 0854): stop at 1.8 se; Demon Form splits by tick as predicted",
+          "sha256": "7a618309861f0bbdb4ad88043ceebf299af9f88cb13172889df0ad9e7a164dd7"
+        },
+        {
+          "path": "results/gauntlet/match-allcontent40k-s1-hpe0.01-two-line-step-starter-simboss.json",
+          "sha256": "bdf5f423aaa8eb0ac8a14b78f3c982c7270a74a5a331a3e8954b13fe6662f83a"
+        },
+        {
+          "path": "results/gauntlet/pmatch-allcontent40k-s1-hpb0.01-starter-simboss.json",
+          "sha256": "5f4c365641e445408c12a52d1a9c8076792494f53230f3666e1a38493446421e"
+        },
+        {
+          "path": "results/gauntlet/pmatch-allcontent40k-s101-hpb0.01-starter-simboss.json",
+          "sha256": "1e4a936266fc22ce52ee789c7d1743d5ed225ed7d8aa2f246ae8d28ccd7a2847"
+        },
+        {
+          "path": "results/gauntlet/pmatch-net1029-hpb0.01-starter-simboss.json",
+          "sha256": "3951dc506bab070fdd2ba35dd3b563b36dc7842b3c3b6e79ff9ce41a1549488d"
+        },
+        {
+          "path": "jobs/done/0854-gauntlet.json",
+          "sha256": "8fe692880f2c407a6a206256cafe969f1250e1f973e95dca3ffbbfd5c6ec8066"
+        },
+        {
+          "path": "jobs/done/0855-gauntlet.json",
+          "sha256": "930a2a773d11b90884a7ccaecc8d79431d965e97307a83ffee6093a33337411a"
+        },
+        {
+          "path": "jobs/done/0856-gauntlet.json",
+          "sha256": "2782a308c39413327a4d8266ecdb55883fbecbd5ea39d8be8bce05025e847b67"
+        },
+        {
+          "path": "jobs/done/0857-gauntlet.json",
+          "sha256": "abd337cc78ae304b6d2b88839f3e2ed72b73657715ba64af79e97b17a793ce93"
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "measurement/pack-net-twin@one-turn",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "c33c26e2-be6a-40e4-ba5d-4a83e10c1caf",
+      "at": "2026-11-11T05:21:40+00:00 @ d06e052",
+      "until": "2026-11-13T02:30:43+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "4c349ee2c0acd004525be26ef51c5d27db5212306b5c0a210507e70898596c01"
+}

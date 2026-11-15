@@ -1,0 +1,50 @@
+{
+  "key": "measurement/pack-chain@gen-b1",
+  "rev": 2,
+  "value": "family.py queue configs/packs/gen-b1.json ran 0556-0564 with no session. AttackLoss-Damage x Nob (+13.29) cut +11.50 (g99) / +9.91 (g99-parents); TurnEnd-Frail x Lagavulin +3.01 (0.39) / +5.18 (0.43): parents in the burst worsen the leak. Guard passes 2/4; shipped g99-parents s1 at the bar (+1.99 vs 2.0).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/family-transfer-probes.md",
+      "anchor": "Gen batch 1 through the pack chain (0556-0564): pack-adapt-pipeline step 2",
+      "sha256": "fac95d12b76efbbd225c1f31d105d8cf9cc07dbe14a29c8fa0f6fe3c79972a9b"
+    },
+    {
+      "path": "results/families/gen-b1.json",
+      "sha256": "67d1fc9c3ab62801e02e7150889086969d17df2ad392a3b0a4103646b112fb83"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:39+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "family.py queue configs/packs/gen-b1.json ran 0556-0564 queue to table with no session. AttackLoss-Damage x Nob cost +13.29 cut +11.50 (g99, 99 games/mechanic) and +9.91 (g99-parents); TurnEnd-Frail x Lagavulin delta HP +3.01 (0.39) and +5.18 (0.43), parent x Lagavulin +0.87 / +2.06: parents in the burst worsen the leak. Guard passes 2 of 4 nets; shipped g99-parents s1 sits at the bar (TurnEnd-Frail x Lagavulin +1.99 (0.40) against 2.0). 3.8 thread-h.",
+      "sources": [
+        {
+          "path": "docs/research/family-transfer-probes.md",
+          "anchor": "Gen batch 1 through the pack chain (0556-0564): pack-adapt-pipeline step 2",
+          "sha256": "fac95d12b76efbbd225c1f31d105d8cf9cc07dbe14a29c8fa0f6fe3c79972a9b"
+        },
+        {
+          "path": "results/families/gen-b1.json",
+          "sha256": "67d1fc9c3ab62801e02e7150889086969d17df2ad392a3b0a4103646b112fb83"
+        },
+        {
+          "path": "jobs/done/0564-family.json",
+          "sha256": "ce8a8d31aa40019c91545fd28867361ad9700a7cc62023933afad2b3ff54ed43"
+        }
+      ],
+      "owner": false,
+      "by": "eb5c7398-12ed-4238-ac3a-6385040b2df9",
+      "at": "2026-11-08T07:42:08+00:00 @ fe1bc2e",
+      "until": "2026-11-13T02:30:39+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "322c5bb11ead19491540471f6eb550c229b0ef2d86b722db85a28ac99cd55490"
+}

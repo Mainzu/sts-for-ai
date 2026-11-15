@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-from-scratch-later-ticks",
+  "rev": 2,
+  "value": "predicted even, ~15 cpu-h; actual go then count: from scratch the pool removes DF's unseen-card loss at 5k/20k/40k; 5000-game/group burst on 10-29 +2.69 (0.91) HP on DF decks (dose 1.6k-5k); 10.6 cpu-h; reopen if goal 1 needs the dose tighter, another later-ticks form fails at 5k, or two-turn other held-out clears loss past -0.04.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane from-scratch-later-ticks closed (2026-11-11)",
+      "sha256": "ef3f5610f10ca0fcb97c373fc16f4b5b8f1391423b03dfa4b036407a81b004db"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:56+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even, about 15 cpu-h (cap 23); actual go then count: from scratch the pool removes Demon Form's unseen-card loss at 5k/20k/40k, and a 5000-game-per-group burst on the 10-29 net gains +2.69 (0.91) HP on Demon Form decks (dose between 1.6k and 5k per group), about 10.6 cpu-h; reopen if: goal 1 needs the dose tighter than 1.6k-5k (a 2.5k-3k point, three seeds), another later-ticks form fails at 5000 games per group, or a two-turn read shows the other held-out clears loss past -0.04",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane from-scratch-later-ticks closed (2026-11-11)",
+          "sha256": "ef3f5610f10ca0fcb97c373fc16f4b5b8f1391423b03dfa4b036407a81b004db"
+        }
+      ],
+      "owner": false,
+      "by": "ce7b9068-3647-48a3-8652-6ea06b9ea9c3",
+      "at": "2026-11-11T05:23:35+00:00 @ d9a4422",
+      "until": "2026-11-13T02:30:56+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "33c0cdfdfeedf4e39437674b23e47dd1bed5a775cf22d7824463943c80c28a55"
+}

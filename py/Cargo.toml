@@ -1,0 +1,18 @@
+[package]
+name = "sts-py"
+version = "0.1.0"
+edition = "2021"
+description = "Python bindings for the sts-for-ai combat engine"
+
+[lib]
+name = "sts"
+crate-type = ["cdylib"]
+
+[dependencies]
+sts-engine = { path = "../engine" }
+solvedb = { path = "../solvedb" }
+pyo3 = "0.30"
+numpy = "0.30"
+# Search threads clone states and grow trees constantly; the Windows heap
+# serialises them. mimalloc: 15-40% more games/s, same results.
+mimalloc = { version = "0.1", default-features = false }

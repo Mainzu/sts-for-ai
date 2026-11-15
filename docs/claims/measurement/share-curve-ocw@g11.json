@@ -1,0 +1,30 @@
+{
+  "key": "measurement/share-curve-ocw@g11",
+  "rev": 1,
+  "value": "GE-OppCard-Weak at g11 sh0.9 (sc-ocw11, 3 net-teacher seeds, one turn @hpb0.01@tsl1): cut +3.69 (0.26/0.71), 0.50 of the cost (at the bar); per net +4.88/+2.43/+3.76; parent +0.09.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/share-curve.md",
+      "anchor": "Step 1b and step 2: OppCard-Weak at 11 games (table 0694) and retention (0695, 0696), 2026-11-09; checkpoint retention passed; the go holds",
+      "sha256": "2df19bbc557133e4e3726e65b0ae100889f5266f6b60c9bc5467d07aef2a203d"
+    },
+    {
+      "path": "results/families/sc-ocw11.json",
+      "sha256": "fc818fc63ba8f27fafcceee94b2e899072e1256104ffe3efe44dcf2c0b333a22"
+    },
+    {
+      "path": "jobs/done/0694-family.json",
+      "sha256": "336791a29ba0edfbc1afaf9b3c8d62fd2631d86744e409c534f2f7b8ace10e2f"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:53+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "7cba2291f77f0ae7f1bdd79bf6a36b20382d6bfdb4b5889e9802128e874e6f7f"
+}

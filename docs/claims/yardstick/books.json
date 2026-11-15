@@ -1,0 +1,86 @@
+{
+  "key": "yardstick/books",
+  "rev": 3,
+  "value": "Sequences 0-499 are the screening book (c, @hpe, @esp tuned there), 500-999 confirmation (easier: heuristic 0.632 vs 0.596; compare only within a book), 1000-2999 the pick book: the one-turn control's recorded picks for matched reads (results/gauntlet/net1029-hpb0.01-starter-simboss-1000.json).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Gauntlet protocol (owner away, 2026-11-02)",
+      "sha256": "b434d937b1a60956c99f0c54a528d9c9262cf654b5885086b121f41622764532"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss-1000.json",
+      "sha256": "b6c2affdf36efeee3f4a37ae779b665b3b7e0bbf323f4b7c01ed1d91908aaf06"
+    },
+    {
+      "key": "decision/matched-reads",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:17Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Sequences 0-499 are the screening book (c, @hpe and @esp were tuned there), 500-999 the confirmation book; 500-999 is easier (heuristic clears 0.632 vs 0.596), so only paired differences inside one book compare.",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "sha256": "b624a97a18ed26dd1d3713a28c4bc1530dc86f666713da8ee58d6027aa463d1a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Gauntlet protocol (owner away, 2026-11-02)",
+          "sha256": "b434d937b1a60956c99f0c54a528d9c9262cf654b5885086b121f41622764532"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:09:02Z @ fc9cdd8",
+      "until": "2026-11-11T09:36:04Z @ 88040d6"
+    },
+    {
+      "rev": 2,
+      "value": "Sequences 0-499 are the screening book (c, @hpe and @esp were tuned there), 500-999 the confirmation book; 500-999 is easier (heuristic clears 0.632 vs 0.596), so only paired differences inside one book compare. Sequences 1000-2999 are the pick book: the one-turn control (net1029 @hpb0.01, headline setting) played unmatched to record its card picks for deck-matched fighter reads (decision/matched-reads); its clears 0.680 / 0.694 / 0.668 and end HP 22.5 / 22.0 / 21.7 on 0-499 / 500-999 / 1000-1499 (results/gauntlet/net1029-hpb0.01-starter-simboss-1000.json, job 0895; blocks 1500-2999 queued 0901-0903).",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "sha256": "b624a97a18ed26dd1d3713a28c4bc1530dc86f666713da8ee58d6027aa463d1a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Gauntlet protocol (owner away, 2026-11-02)",
+          "sha256": "b434d937b1a60956c99f0c54a528d9c9262cf654b5885086b121f41622764532"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-11.md",
+          "anchor": "Directions (the synthesis' ranking) and what the navigator did",
+          "sha256": "b128b82c5b84985cc9357ba6cb7034c3d36979fa7877a9ea4e549b70fc5dec5c"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-starter-simboss-1000.json",
+          "sha256": "b6c2affdf36efeee3f4a37ae779b665b3b7e0bbf323f4b7c01ed1d91908aaf06"
+        },
+        {
+          "path": "jobs/done/0895-gauntlet.json",
+          "sha256": "0ba05f7406594a4501d1c66037d1fa8120116d8db9ccb0d6c67b95fe5f86c89f"
+        },
+        {
+          "key": "decision/matched-reads",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "b7755c1b-c846-428e-b225-17f45923e96d",
+      "at": "2026-11-11T09:36:04Z @ 88040d6",
+      "until": "2026-11-13T02:29:17Z @ 3123201a"
+    }
+  ],
+  "seal": "d3f322395b149d656bdc8138f9284b791d2684ef227e3eec75e1f046d38a9135"
+}

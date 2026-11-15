@@ -1,0 +1,61 @@
+{
+ "name": "sc-ocw11",
+ "lane": "share-curve",
+ "about": "share-curve step 1b (lane/share-curve): net-teacher bursts from the 10-29 net on GE-OppCard-Weak x Lagavulin, 11 games at replay share 0.9, three seeds; same reads and table as sc-ocw; judged by hand against the charter beside sc-ocw and sc-alw",
+ "parent": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt",
+ "arms": {
+  "net-g11-sh9": [
+   "configs/sc-ocw-net-g11-sh9-s1.json",
+   "configs/sc-ocw-net-g11-sh9-s2.json",
+   "configs/sc-ocw-net-g11-sh9-s3.json"
+  ]
+ },
+ "burst": {
+  "threads": 4,
+  "mem_gb": 1.5,
+  "estimate_min": 2
+ },
+ "reads": {
+  "gen": {
+   "cmd": [
+    "scripts/analysis/mutate_monsters.py",
+    "play",
+    "--starts",
+    "1000",
+    "--groups",
+    "elite",
+    "--seeds",
+    "4",
+    "--players",
+    "one",
+    "--net",
+    "{net}@tsl1",
+    "--mods",
+    "GE-OppCard-Weak,c-hp1.25-str1",
+    "--threads",
+    "3",
+    "--out",
+    "results/mutate/gac-{run}.json"
+   ],
+   "threads": 3,
+   "mem_gb": 1.5,
+   "estimate_min": 7
+  }
+ },
+ "table": {
+  "kind": "gen",
+  "book": "gen",
+  "base": "results/mutate/gen-enemies-b1.json",
+  "mechanic": "GE-OppCard-Weak",
+  "control": "c-hp1.25-str1",
+  "seeds": 4,
+  "encounters": [
+   "lagavulin"
+  ],
+  "min_starts": 200,
+  "rule": {
+   "share": 0.5,
+   "min_se": 2.0
+  }
+ }
+}

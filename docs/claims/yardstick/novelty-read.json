@@ -1,0 +1,164 @@
+{
+  "key": "yardstick/novelty-read",
+  "rev": 5,
+  "value": "A novelty cost on the mutated bench is read on three columns: win-rate change from parent, player minus heuristic (mutate_monsters.py read); on bosses the start-stratified Mantel-Haenszel log odds ratio vs heuristic, modified minus parent, bootstrap se over starts (mutate_monsters.py odds); on elites (parents won 0.99) HP lost beside wins. Adapted column: decision/burst-adapted-column.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "scripts/analysis/mutate_monsters.py",
+      "sha256": "c866440feccc5b5c8f43793596cdb65212625ecb73c1c49ddc3ad05250ae5f87"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane difficulty-shift closed (2026-11-05)",
+      "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:19Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:44:55Z @ e24c419a",
+      "note": "mutate_monsters.py's only change since rev (3a4033c9) sets RUST_MIN_STACK to 64 MB; read, odds and the parent draw are untouched"
+    },
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:43:14Z @ d240a173",
+      "note": "navigator 2026-11-13: mutate_monsters.py diff since 3123201a: RUST_MIN_STACK and the byte-patch helpers replaced by Combat.with_monster_hp/with_monster_power (same rounding, same living monsters); read columns unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A novelty cost on the mutated bench is read on three columns. (1) The win-rate table (mutate_monsters.py read: each player's change from the parent, the one-turn net minus the heuristic). (2) On bosses, the start-stratified (Mantel-Haenszel) log odds ratio of the player against the heuristic on the modified content minus the same on the parent, bootstrap se over starts: a difference of win-rate differences loses the edge whenever a modifier moves which starts are contested (the net's edge on parent bosses sits in 18 of 66 starts; hp0.8 leaves 22 informative starts and reads -0.057 with every player at 0.85-0.87). (3) On elites, whose parents every player wins 0.99, HP lost. From the next rung on, a modifier counts as novel only against a plain control about as hard (a stat-only variant): a static +2 Strength costs the net its boss edge as much as Ritual 2 does (odds ratio -0.64 (0.24) and -0.82 (0.31) below the parent).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Stage A re-read: the boss cost follows shifted numbers, not growth, and how a novelty cost is read (on the owner's behalf, 2026-11-05)",
+          "sha256": "f63c7066d5d986a9803a94a333fccecba701b9fa0383e29f88786010cee52543"
+        },
+        {
+          "key": "decision/goal1-yardstick",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "1ef7f60b-ed9a-4889-af70-64f5334e6905",
+      "at": "2026-11-04T22:14:32Z @ 99b1561",
+      "until": "2026-11-05T00:48:13Z @ 22b5d9b"
+    },
+    {
+      "rev": 2,
+      "value": "A novelty cost on the mutated bench is read on three columns. (1) The win-rate table (mutate_monsters.py read: each player's change from the parent, the player minus the heuristic). (2) On bosses, the start-stratified (Mantel-Haenszel) log odds ratio of the player against the heuristic on the modified content minus the same on the parent, bootstrap se over starts (mutate_monsters.py odds): a difference of win-rate differences shrinks whenever a modifier moves which starts are contested. (3) On elites, whose parents every player wins 0.99, HP lost. Rules: (a) every modifier of a file is read against the same parent games, so agreement across modifiers is one draw, not several findings (stage A's one-turn boss costs on str2, ritual2 and hp0.8 were one lucky parent draw; the wide bench, results/mutate/wide.json, shows none); a table of M modifiers plays its parent at about sqrt(M) times the seeds of a modifier, and a boss lead becomes a result only on starts or seeds it was not found on; (b) a modifier counts as novel only against a plain control about as hard (a stat-only variant); (c) the bench plays each sequence's cell deck at the product file's entry HP (bias_audit.fights), not the deck the product built, so bench win rates are not headline win rates (bosses two turns deep 0.716 on the bench, 0.909 in the product file on the same starts), and a card modifier reaches only starts whose cell deck holds the card; (d) a column can show a cost without a parent edge (elites one turn deep: parent -0.25 (0.19), sharp2 -1.18 (0.20)); one turn deep the bosses show none.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane difficulty-shift closed (2026-11-05)",
+          "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+        },
+        {
+          "path": "scripts/analysis/mutate_monsters.py",
+          "sha256": "4b7980a89f3dbc67e5a719b745a7c758a076f2ef62296ae3504669a88ee0019e"
+        },
+        {
+          "path": "scripts/analysis/bias_audit.py",
+          "sha256": "cd2fec55882d5361687fb939f3c68692715b0472e4b6dcaad3107e5cab554959"
+        }
+      ],
+      "owner": false,
+      "by": "ff666280-ee25-4103-8011-de5b45cf8e3c",
+      "at": "2026-11-05T00:48:13Z @ 22b5d9b",
+      "until": "2026-11-05T07:13:26Z @ 0518f72"
+    },
+    {
+      "rev": 3,
+      "value": "A novelty cost on the mutated bench is read on three columns. (1) The win-rate table (mutate_monsters.py read: each player's change from the parent, the player minus the heuristic). (2) On bosses, the start-stratified (Mantel-Haenszel) log odds ratio of the player against the heuristic on the modified content minus the same on the parent, bootstrap se over starts (mutate_monsters.py odds): a difference of win-rate differences shrinks whenever a modifier moves which starts are contested. (3) On elites, whose parents every player wins 0.99, HP lost. Rules: (a) every modifier of a file is read against the same parent games, so agreement across modifiers is one draw, not several findings (stage A's one-turn boss costs on str2, ritual2 and hp0.8 were one lucky parent draw; the wide bench, results/mutate/wide.json, shows none); a table of M modifiers plays its parent at about sqrt(M) times the seeds of a modifier, and a boss lead becomes a result only on starts or seeds it was not found on; (b) a modifier counts as novel only against a plain control about as hard (a stat-only variant); (c) the bench plays each sequence's cell deck at the product file's entry HP (bias_audit.fights), not the deck the product built, so bench win rates are not headline win rates (bosses two turns deep 0.716 on the bench, 0.909 in the product file on the same starts), and a card modifier reaches only starts whose cell deck holds the card; (d) a column can show a cost without a parent edge (elites one turn deep: parent -0.25 (0.19), sharp2 -1.18 (0.20)); one turn deep the bosses show none; (e) the heuristic player is as new to a modifier as the net (engine/src/heuristic.rs has no term for the patched powers), so beyond the heuristic means beyond another unadapted player; what an adapted player would win is a separate column, a burst net at the same depth against the zero-shot player on the same starts and seeds (seeds follow from the start, so files pair by start and seed), first read by lane adapted-two-turn.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane difficulty-shift closed (2026-11-05)",
+          "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "3df5b299a54b7341b8f5aece00ba55484f6291bc2dd7bd2594337e4cb90a9f00"
+        },
+        {
+          "path": "scripts/analysis/mutate_monsters.py",
+          "sha256": "befd58205e6df9bae926fc471335572d404cb86359049160bdad13c2aa966faf"
+        },
+        {
+          "path": "scripts/analysis/bias_audit.py",
+          "sha256": "cd2fec55882d5361687fb939f3c68692715b0472e4b6dcaad3107e5cab554959"
+        },
+        {
+          "path": "engine/src/heuristic.rs",
+          "sha256": "1d611b3e6222e7eeba68763285e9583cbf34714214d70526ac62fb098a035d5d"
+        }
+      ],
+      "owner": false,
+      "by": "7341b88a-0947-4f2b-9d60-594698d8eaa7",
+      "at": "2026-11-05T07:13:26Z @ 0518f72",
+      "until": "2026-11-05T12:26:34Z @ 035810b"
+    },
+    {
+      "rev": 4,
+      "value": "A novelty cost on the mutated bench is read on three columns. (1) The win-rate table (mutate_monsters.py read: each player's change from the parent, the player minus the heuristic). (2) On bosses, the start-stratified (Mantel-Haenszel) log odds ratio of the player against the heuristic on the modified content minus the same on the parent, bootstrap se over starts (mutate_monsters.py odds): a difference of win-rate differences shrinks whenever a modifier moves which starts are contested. (3) On elites, whose parents every player wins 0.99, HP lost, read beside wins and not instead of them: the product's cost on reactive powers showed in HP (about 2 HP per elite fight beyond the heuristic, 3.5-5 se) with wins level, and the win column missed it twice. Rules: (a) every modifier of a file is read against the same parent games, so agreement across modifiers is one draw, not several findings (stage A's one-turn boss costs on str2, ritual2 and hp0.8 were one lucky parent draw; the wide bench, results/mutate/wide.json, shows none); a table of M modifiers plays its parent at about sqrt(M) times the seeds of a modifier, and a lead becomes a result only on starts or seeds it was not found on; (b) a modifier counts as novel only against a plain control about as hard (a stat-only variant); (c) the bench plays each sequence's cell deck at the product file's entry HP (bias_audit.fights), not the deck the product built, so bench win rates are not headline win rates (bosses two turns deep 0.716 on the bench, 0.909 in the product file on the same starts), and a card modifier reaches only starts whose cell deck holds the card; (d) a column can show a cost without a parent edge (elites one turn deep: parent -0.25 (0.19), sharp2 -1.18 (0.20)); one turn deep the bosses show none; (e) the heuristic player is as new to a modifier as the net (engine/src/heuristic.rs has no term for the patched powers), so beyond the heuristic means beyond another unadapted player; what an adapted player wins is the adapted column (decision/burst-adapted-column): a net fine-tuned on about 400 games against the modifier, played at the same depth (mutate_monsters.py --two-net) against the zero-shot player on the same starts and seeds, on starts the burst did not train on (seeds follow from the start, so files pair by start and seed), wins and HP lost, with the parent row as the burst's retention; one burst training seed is a lead (yardstick/twin-reads). First read: measurement/adapted-two@elites.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane difficulty-shift closed (2026-11-05)",
+          "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "64e5d7322445698604f5a58975f2058c2e8ebf0152f463504e0e7c7511e88081"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "scripts/analysis/mutate_monsters.py",
+          "sha256": "e94cab0858a29d8a41905448fae19469251b99d0bf7f4e46784ba4246f5adcf5"
+        },
+        {
+          "path": "scripts/analysis/bias_audit.py",
+          "sha256": "cd2fec55882d5361687fb939f3c68692715b0472e4b6dcaad3107e5cab554959"
+        },
+        {
+          "path": "engine/src/heuristic.rs",
+          "sha256": "e774eaefea893d42f6a8901d6cdea740e8d0167127acc8ea6b814d6d088b099b"
+        }
+      ],
+      "owner": false,
+      "by": "2ef20aae-4e81-4598-8ce8-557bca9d73a3",
+      "at": "2026-11-05T12:26:34Z @ 035810b",
+      "until": "2026-11-13T02:29:19Z @ 3123201a"
+    }
+  ],
+  "seal": "3ce3d0df37ce071fdb0236b07665c6cb26273799dbd0868310df2b2ea8f04f56"
+}

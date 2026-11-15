@@ -1,0 +1,58 @@
+{
+  "key": "measurement/cards-by-half@cells",
+  "rev": 2,
+  "value": "Cell gauntlet by half one turn vs heuristic, gap = train edge - held-out edge: effects 5k +1.94 (0.15) HP, 20k +2.60 (0.58), 40k +2.01 (0.65), product recipe +1.48 (0.24), ids 5k +4.47 (0.56); ids minus effects over 5 seed twins +2.54 (0.52) HP. Held-out edge: effects 5k -1.38, 40k +1.73, product +1.96.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Cards by half, step 1 complete: unseen cards cost effects nets about 2 HP and 0.06-0.07 clears at every training size (5k +1.94 (0.15), 20k +2.60 (0.58), 40k +2.01 (0.65), product recipe +1.48 (0.24)) and ids-only nets +4.47 (0.56); paired over five seed twins the effects inputs save +2.54 (0.52) HP (yardstick-cards step-1 checkpoint; 0211-0243; read 10:55 2026-11-06, lanes 5d302627)",
+      "sha256": "b7d0aa0dd0f862aab71ba29ac04f256111093b05b4465ca245e598af5cf0dba4"
+    },
+    {
+      "path": "scripts/analysis/cards_by_half.py",
+      "sha256": "c0a20d0e7b96a024e40f5f2502484ee2454f3b379e4b972fe3ce8010e6ef7d14"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:01+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Cell gauntlet by half, one turn deep, both books (0-499 and --first 500) paired against the heuristic, mean (se over seeds); gap = train edge minus held-out edge: effects 5k (5 seeds) +1.94 (0.15) HP and +0.055 (0.009) clears; 20k (5) +2.60 (0.58), +0.074 (0.008); 40k (3) +2.01 (0.65), +0.070 (0.020); product recipe 10-29 (3) +1.48 (0.24), +0.070 (0.010); ids 5k floor (5) +4.47 (0.56), +0.098 (0.017); ids minus effects gap over five seed twins +2.54 (0.52) HP. Held-out edge: effects 5k -1.38 (0.39), 20k +0.14 (0.52), 40k +1.73 (0.82), product +1.96 (0.07), ids 5k -5.15 (0.39).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Cards by half, step 1 complete: unseen cards cost effects nets about 2 HP and 0.06-0.07 clears at every training size (5k +1.94 (0.15), 20k +2.60 (0.58), 40k +2.01 (0.65), product recipe +1.48 (0.24)) and ids-only nets +4.47 (0.56); paired over five seed twins the effects inputs save +2.54 (0.52) HP (yardstick-cards step-1 checkpoint; 0211-0243; read 10:55 2026-11-06, lanes 5d302627)",
+          "sha256": "b7d0aa0dd0f862aab71ba29ac04f256111093b05b4465ca245e598af5cf0dba4"
+        },
+        {
+          "path": "scripts/analysis/cards_by_half.py",
+          "sha256": "c0a20d0e7b96a024e40f5f2502484ee2454f3b379e4b972fe3ce8010e6ef7d14"
+        },
+        {
+          "path": "jobs/done/0243-gauntlet.json",
+          "sha256": "6e4ef4aca2782dcc05ea25bb914c0608efbd9dba45c2657b903fd8c43b5358c9"
+        },
+        {
+          "path": "jobs/done/0212-learn.json",
+          "sha256": "60ceed172e44dc594185fd80550e7b854662f694957167a360e75eee3e958c22"
+        },
+        {
+          "key": "cause/unseen-cards-half-edge",
+          "rev": 9
+        }
+      ],
+      "owner": false,
+      "by": "5d302627-0b2e-4183-99c2-34c8caeb0fb5",
+      "at": "2026-11-06T03:51:39+00:00 @ fd55481",
+      "until": "2026-11-13T02:30:01+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "f228b1f3578bc68dcf82b6de5c20b91400b72c0fbd126d133a2e9420b733ec7b"
+}

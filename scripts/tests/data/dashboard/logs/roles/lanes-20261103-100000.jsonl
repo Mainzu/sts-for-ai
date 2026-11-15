@@ -1,0 +1,7 @@
+{"type": "system", "subtype": "hook_started", "hook_name": "SessionStart:startup", "session_id": "S1"}
+{"type": "system", "subtype": "init", "session_id": "S1", "model": "m"}
+{"type": "assistant", "message": {"role": "assistant", "content": [{"type": "thinking", "thinking": "secret plan"}]}, "session_id": "S"}
+{"type": "assistant", "message": {"role": "assistant", "content": [{"type": "text", "text": "Claiming lane alpha."}]}, "session_id": "S"}
+{"type": "assistant", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Bash", "input": {"command": "python scripts/health.py lock take lane-alpha\necho second", "description": "claim"}}]}, "session_id": "S"}
+{"type": "user", "message": {"role": "user", "content": [{"type": "tool_result", "tool_use_id": "t1", "content": "lane-alpha: taken"}]}, "session_id": "S"}
+{"type": "system", "subtype": "thinking_tokens", "session_id": "S1"}

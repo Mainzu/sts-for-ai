@@ -1,0 +1,485 @@
+{
+  "key": "cause/unseen-cards-half-edge",
+  "rev": 10,
+  "value": "Unseen cards' zero-shot cost one turn deep is the leaf's horizon: of ten unseen official cards only Demon Form cost (-7.54 (1.23) HP nets minus heuristic), generated turn-start-paying powers -0.292 (0.049) wins; the plain leaf precedes turn-start hooks. @tsl1 repairs it with no games (Demon Form decks -4.12 -> +3.43 HP vs heuristic).",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/turn-start-leaf@cells",
+      "rev": 2
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After yardstick-cards step 1: the unseen-card cost is one card, Demon Form, and on generated cards the powers that pay at turn start; step 2 re-aimed, step 3's first table predicted, cap extended (on the owner's behalf, 2026-11-06)",
+      "sha256": "3de90bb93bfe2af219898724d3d629e9c329d67ebe20105948e961fb1aef007a"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:09Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:08Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/turn-start-leaf@cells reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "On decks holding cards it never trained on, the one-turn net keeps about half of its end-HP edge over the heuristic and none of its clears edge. Cell gauntlet by half, paired against the heuristic on the same sequences: the 10-29 net on train sequences +3.27 (0.83) HP and +0.080 (0.025) clears (0-499), +4.11 (0.87) and +0.100 (0.026) (500-999); on held-out sequences +1.82 (1.05) and -0.004 (0.024), +2.36 (1.03) and +0.008 (0.022); its seed twins s101 and s201 the same (train +2.71, +2.96 HP and +0.072, +0.056 clears; held-out +1.23, +1.41 and +0.004, -0.008). On the headline setting with own picks the net's lead over the heuristic is +0.200 (0.038) clears on train sequences and +0.092 (0.036) on held-out ones. The heuristic plays every card by its rules, so this is a zero-shot cost against a player that is not new to the cards. The effects encoding carries part of the way: at 5k games ids minus effects is -4.1 HP on the held-out half and -0.8 on the train half (three seed pairs), and that gap is structural (an id net sees an unseen card as unknown). The two-turn gain over one turn is the same on both halves of the headline (+0.144, +0.164 clears). Planning rules: the cards rung's zero-shot number is the train edge minus the held-out edge on existing nets; unseen official cards are new content a burst can train on (the adapted column, and a product net trained on every official card). Exits: a burst on held-out cards that does not raise the held-out half on three seeds; a difficulty-matched read showing the gap comes from the held-out decks being easier (the heuristic clears 0.68-0.75 there against 0.51).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "The owner's filler proposal placed: read the held-out half of existing nets, not full-size ids twins; unseen cards cost the net half its edge (on the owner's behalf, 2026-11-05)",
+          "sha256": "547b8f1568a7eaf73a4f2a8711d574c312fe6251bf1317566635535ebb8d4fa7"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01.json",
+          "sha256": "5f09012adeffb8c5b718928048b7950077787540398f0bfb9e456e3b10345c1f"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-b500.json",
+          "sha256": "a47fa34511bab4894243e619bf0206aa85e4644cdb8293fb92418d5799f2995e"
+        },
+        {
+          "path": "results/gauntlet/net1029s101-hpb0.01.json",
+          "sha256": "f4eb6b17c9d13791793f0a01b1abe43234cce7f552045a8bc87ad867089aa3c6"
+        },
+        {
+          "path": "results/gauntlet/net1029s201-hpb0.01.json",
+          "sha256": "270ff2ae51d4aa994cde79e64659994dd3bfd5cfcfbc1ce46d5f2f83555fce3a"
+        },
+        {
+          "path": "results/gauntlet/heuristic-bcbb0e.json",
+          "sha256": "fe5097ae69c33599c77c748cdb97a7c69da8204b677d3d46c1444cafbdeb2c7a"
+        },
+        {
+          "path": "results/gauntlet/heuristic-b500.json",
+          "sha256": "a7ac58808c88c5c68428594c6b2ea5202f2e8cfcabd3397dff9a761dd44e9f30"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+          "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+        },
+        {
+          "path": "results/gauntlet/heuristic-starter-simboss.json",
+          "sha256": "637234efef7369804343720ad6fe5bf31f5106f6313c730eb619c3e1daea0cd6"
+        },
+        {
+          "key": "measurement/effects-vs-ids@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/leaf-vs-heuristic",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "56c5a1d1-29a3-4ae4-b122-773b2e4caee5",
+      "at": "2026-11-05T16:55:26Z @ 266f4c4",
+      "until": "2026-11-06T04:22:13Z @ f4145b8"
+    },
+    {
+      "rev": 2,
+      "value": "The zero-shot cost of unseen cards one turn deep is the cost of one card, Demon Form (3 energy, 2 Strength at each turn start), and on generated cards of the powers whose payoff first comes at the owner's turn start; the key's name is historical. Cell gauntlet, both books, paired edge over the heuristic in end-HP on train decks / held-out decks without Demon Form (326 sequences) / held-out decks with it (174), se over sequences: effects 5k +0.56 / +1.74 (0.67) / -7.23 (1.19); 20k +2.74 / +3.64 / -6.41 (1.24); 40k +3.74 / +4.30 / -3.08 (1.24); product recipe (three seeds) +3.44 (0.55) / +5.28 (0.74) / -4.26 (1.32), clears +0.08 / +0.08 / -0.12 (0.03); ids 5k -0.68 / -1.28 (0.72) / -12.40 (1.28), and -4.35 (1.38) on Metallicize decks without Demon Form. By card (end-HP regressed on the copies of each of 31 cards): a copy of Demon Form is worth +2.4 (1.4) HP to the heuristic and -5.2 (1.4) to the one-turn product nets; no other card differs by more than 2.4. The nine other unseen cards cost nothing, by effects or by id: the search plays the card in the engine and the net reads the state after it. The by-half gap (measurement/cards-by-half@cells, about 2 HP at every training size) is this card averaged over the half. Two turns deep the cost is mostly gone: the 10-29 net gains +8.38 (1.83) HP and +0.22 (0.04) clears over one turn on Demon Form decks against +2.2 to +2.5 HP elsewhere (sequences 0-249 and 500-749), leaving 3.5 (1.9) HP against the heuristic on that net and nothing on a second (burst8hp2, 750 sequences). Generated-power bench (elite and boss fights, three copies of a power, 10-29 net minus heuristic, wins, one turn deep): original Demon Form decks -0.140 (0.024); generated powers triggering at the owner's turn start -0.292 (0.044), at turn end -0.061 (0.034), on a card played +0.005 (0.030), on HP lost -0.02 to +0.13. On the headline the net's chooser takes Demon Form 0.19-0.25 of the times it is offered (the heuristic's 0.68), and where the one-turn net took it it clears 0.405 and 0.480 against 0.70-0.84 elsewhere (the product 0.821 and 0.714 against 0.86-0.89). Why: the heuristic prices a recurring power by rule (hook_rates); one turn deep the payoff never fires inside the search, so the net must have learned the power's worth (the shape of cause/novelty-is-horizon on the player's side). Planning rules: a card or modifier whose effect lands inside the turn has no zero-shot cost to measure; the cards rung spends its fights on powers that pay over later turns; a one-turn read on held-out sequences reports Demon Form decks (or the sequences where it was taken) apart; games-to-learn a recurring power is the rung's adapted column (lane/yardstick-cards step 2). The numbers are the navigator's inline read of existing files; step 1b rebuilds them as measurement/cards-by-card@cells. Exits: step 1b's script disagreeing with these numbers; bursts that raise the Demon Form decks on no game source over three seeds (then games at these sizes do not teach a recurring power).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After yardstick-cards step 1: the unseen-card cost is one card, Demon Form, and on generated cards the powers that pay at turn start; step 2 re-aimed, step 3's first table predicted, cap extended (on the owner's behalf, 2026-11-06)",
+          "sha256": "3de90bb93bfe2af219898724d3d629e9c329d67ebe20105948e961fb1aef007a"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01.json",
+          "sha256": "5f09012adeffb8c5b718928048b7950077787540398f0bfb9e456e3b10345c1f"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-b500.json",
+          "sha256": "a47fa34511bab4894243e619bf0206aa85e4644cdb8293fb92418d5799f2995e"
+        },
+        {
+          "path": "results/gauntlet/heuristic-bcbb0e.json",
+          "sha256": "fe5097ae69c33599c77c748cdb97a7c69da8204b677d3d46c1444cafbdeb2c7a"
+        },
+        {
+          "path": "results/gauntlet/heuristic-b500.json",
+          "sha256": "a7ac58808c88c5c68428594c6b2ea5202f2e8cfcabd3397dff9a761dd44e9f30"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-a.json",
+          "sha256": "c0dad0b375fdd193683f195584606479142f39fc836810eab0ab99e63789d39c"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-c.json",
+          "sha256": "9fe4b3d201d3f723a4c9685158789737c79f16175f8dd439af917b0d8a1cfcd8"
+        },
+        {
+          "path": "results/gauntlet/champion-hpe0.01-two-b.json",
+          "sha256": "4eb568208885c958412331a1c093d7d7571fd737de8552154c63745ecdf97604"
+        },
+        {
+          "path": "results/gen_powers/depth/2026-10-29-seed-check-r2-s1-1a789b2-elite_boss.json",
+          "sha256": "c520e86cc2f34a78d90e010554f36ee412ab5261f9dac6a30dd639d5ef4089b6"
+        },
+        {
+          "path": "results/gen_powers/depth/heuristic-elite_boss.json",
+          "sha256": "5d1edb706bbf107a111c5415ece5c00063196583d6c588a10e2cfb8131d51c0d"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+          "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+        },
+        {
+          "path": "results/gauntlet/heuristic-starter-simboss.json",
+          "sha256": "637234efef7369804343720ad6fe5bf31f5106f6313c730eb619c3e1daea0cd6"
+        },
+        {
+          "key": "cause/novelty-is-horizon",
+          "rev": 9
+        }
+      ],
+      "owner": false,
+      "by": "0e7447e6-d56a-4040-b055-879ac14dbf6e",
+      "at": "2026-11-06T04:22:13Z @ f4145b8",
+      "until": "2026-11-06T04:24:46Z @ 8630396"
+    },
+    {
+      "rev": 3,
+      "value": "The zero-shot cost of unseen cards one turn deep is the cost of one card, Demon Form (3 energy, 2 Strength at each turn start), and on generated cards of the powers whose payoff first comes at the owner's turn start; the key's name is historical. Cell gauntlet, both books, paired edge over the heuristic in end-HP on train decks / held-out decks without Demon Form (326 sequences) / held-out decks with it (174), se over sequences: effects 5k +0.56 / +1.74 (0.67) / -7.23 (1.19); 20k +2.74 / +3.64 / -6.41 (1.24); 40k +3.74 / +4.30 / -3.08 (1.24); product recipe (three seeds) +3.44 (0.55) / +5.28 (0.74) / -4.26 (1.32), clears +0.08 / +0.08 / -0.12 (0.03); ids 5k -0.68 / -1.28 (0.72) / -12.40 (1.28), and -4.35 (1.38) on Metallicize decks without Demon Form. By card (end-HP regressed on the copies of each of 31 cards): a copy of Demon Form is worth +2.4 (1.4) HP to the heuristic and -5.2 (1.4) to the one-turn product nets; no other card differs by more than 2.4. The nine other unseen cards cost nothing, by effects or by id: the search plays the card in the engine and the net reads the state after it. The by-half gap (measurement/cards-by-half@cells, about 2 HP at every training size) is this card averaged over the half. Two turns deep the cost is mostly gone: the 10-29 net gains +8.38 (1.83) HP and +0.22 (0.04) clears over one turn on Demon Form decks against +2.2 to +2.5 HP elsewhere (sequences 0-249 and 500-749), leaving 3.5 (1.9) HP against the heuristic on that net and nothing on a second (burst8hp2, 750 sequences). Generated-power bench (elite and boss fights, three copies of a power, 10-29 net minus heuristic, wins, one turn deep): original Demon Form decks -0.140 (0.024); generated powers triggering at the owner's turn start -0.292 (0.044), at turn end -0.061 (0.034), on a card played +0.005 (0.030), on HP lost -0.02 to +0.13. Transfer from other recurring powers: nets fine-tuned on games with eight generated power cards and never on Demon Form (burst8 s1; burst8hp2 s1 and s101) gain +6.13 (1.94), +3.79 (1.16) and +4.64 (1.87) HP and +0.10 to +0.14 clears over the 10-29 net on Demon Form decks, one turn deep; burst8 s1 is level elsewhere (train +0.28 (0.65), other held-out decks -1.41 (0.76)), so its undecided +0.82 HP on the cells (measurement/rerank@cells) is this card; the hp-weighted bursts lose 2 to 3.7 HP elsewhere. On the headline the net's chooser takes Demon Form 0.19-0.25 of the times it is offered (the heuristic's 0.68), and where the one-turn net took it it clears 0.405 and 0.480 against 0.70-0.84 elsewhere (the product 0.821 and 0.714 against 0.86-0.89). Why: the heuristic prices a recurring power by rule (hook_rates); one turn deep the payoff never fires inside the search, so the net must have learned the power's worth (the shape of cause/novelty-is-horizon on the player's side). Planning rules: a card or modifier whose effect lands inside the turn has no zero-shot cost to measure; the cards rung spends its fights on powers that pay over later turns; a one-turn read on held-out sequences reports Demon Form decks (or the sequences where it was taken) apart; games-to-learn a recurring power is the rung's adapted column, read beside the transfer column (a net that learned other recurring powers; lane/yardstick-cards steps 1c and 2). The numbers are the navigator's inline read of existing files; step 1b rebuilds them as measurement/cards-by-card@cells. Exits: step 1b's script disagreeing with these numbers; bursts that raise the Demon Form decks on no game source over three seeds (then games at these sizes do not teach a recurring power).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After yardstick-cards step 1: the unseen-card cost is one card, Demon Form, and on generated cards the powers that pay at turn start; step 2 re-aimed, step 3's first table predicted, cap extended (on the owner's behalf, 2026-11-06)",
+          "sha256": "3de90bb93bfe2af219898724d3d629e9c329d67ebe20105948e961fb1aef007a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Cards rung: nets that learned other turn-start powers already play Demon Form better; step 1c added (on the owner's behalf, 2026-11-06)",
+          "sha256": "4ab5a1d2fced9074991326196821fdd9e961cf76d9c68b8d01ec2dfa1f0e9f0c"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01.json",
+          "sha256": "5f09012adeffb8c5b718928048b7950077787540398f0bfb9e456e3b10345c1f"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-b500.json",
+          "sha256": "a47fa34511bab4894243e619bf0206aa85e4644cdb8293fb92418d5799f2995e"
+        },
+        {
+          "path": "results/gauntlet/heuristic-bcbb0e.json",
+          "sha256": "fe5097ae69c33599c77c748cdb97a7c69da8204b677d3d46c1444cafbdeb2c7a"
+        },
+        {
+          "path": "results/gauntlet/heuristic-b500.json",
+          "sha256": "a7ac58808c88c5c68428594c6b2ea5202f2e8cfcabd3397dff9a761dd44e9f30"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-a.json",
+          "sha256": "c0dad0b375fdd193683f195584606479142f39fc836810eab0ab99e63789d39c"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-c.json",
+          "sha256": "9fe4b3d201d3f723a4c9685158789737c79f16175f8dd439af917b0d8a1cfcd8"
+        },
+        {
+          "path": "results/gauntlet/champion-hpe0.01-two-b.json",
+          "sha256": "4eb568208885c958412331a1c093d7d7571fd737de8552154c63745ecdf97604"
+        },
+        {
+          "path": "results/gen_powers/depth/2026-10-29-seed-check-r2-s1-1a789b2-elite_boss.json",
+          "sha256": "c520e86cc2f34a78d90e010554f36ee412ab5261f9dac6a30dd639d5ef4089b6"
+        },
+        {
+          "path": "results/gen_powers/depth/heuristic-elite_boss.json",
+          "sha256": "5d1edb706bbf107a111c5415ece5c00063196583d6c588a10e2cfb8131d51c0d"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+          "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+        },
+        {
+          "path": "results/gauntlet/heuristic-starter-simboss.json",
+          "sha256": "637234efef7369804343720ad6fe5bf31f5106f6313c730eb619c3e1daea0cd6"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s1-d4b65b6-hpb0.01.json",
+          "sha256": "9084e2c2fb02a01e55930a86d7dbbe81c8f1fa3a8c56794274f0aedbee842e06"
+        },
+        {
+          "path": "results/gen_powers/burst8.json",
+          "sha256": "c7e3019264c62b126fc2e17f317166a34e08232f06fdf8f69cdb66c8613515df"
+        },
+        {
+          "key": "cause/novelty-is-horizon",
+          "rev": 9
+        }
+      ],
+      "owner": false,
+      "by": "0e7447e6-d56a-4040-b055-879ac14dbf6e",
+      "at": "2026-11-06T04:24:46Z @ 8630396",
+      "until": "2026-11-06T07:59:33Z @ b77d1d6"
+    },
+    {
+      "rev": 4,
+      "value": "The zero-shot cost of unseen cards one turn deep is the cost of one card, Demon Form (3 energy, Strength at each turn start), and on generated cards of the powers whose payoff first comes at the owner's turn start; the key's name is historical. Cell gauntlet, both books, paired end-HP edge over the heuristic on train decks (500 sequences) / held-out decks without Demon Form (326) / held-out decks with it (174), se over sequences: effects 5k +0.56 / +1.74 / -7.23 (1.19); 20k +2.74 / +3.64 / -6.41 (1.24); 40k +3.74 / +4.30 / -3.08 (1.24); product recipe (three seeds) +3.44 / +5.28 / -4.26 (1.32), clears +0.08 / +0.08 / -0.12; ids 5k -0.68 / -1.28 / -12.40 (1.28). By card (end-HP regressed on copies, measurement/cards-by-card@cells): a Demon Form copy is -7.54 (1.23) HP nets minus heuristic on the product nets and -6.2 to -9.2 in every net group; no other card costs the nets (FTL +3.49 (1.33), Brutality, Inflame and Clash about +2 are in the nets' favour; Metallicize -0.91 (1.31)). The nine other unseen cards cost nothing, by effects or by id: the search plays the card in the engine and the net reads the state after it. The by-half gap (measurement/cards-by-half@cells, about 2 HP at every training size) is this card averaged over the half. Why (step 1b's code read): seen and not learned, with the payoff outside the leaf. The net's inputs carry Demon Form's row (trigger OwnerTurnStart, apply Strength to the owner), a pair no training game held on the player's side; the one-turn leaf is the state at the next turn's draw, before turn-start hooks run, so a turn-start power's first tick never lands inside the search (a turn-end power's does); the heuristic prices any recurring power by rule (hook_rates). Two turns deep the cost is mostly gone: the 10-29 net gains +8.4 HP (+10.35 (2.98) and +6.40 (2.11) on two books) and +0.22 clears over one turn on Demon Form decks against +0.8 to +3.7 HP elsewhere. Generated-power bench (elite and boss fights, three copies, 10-29 net minus heuristic wins, one turn deep, se over cells): turn start -0.292 (0.049), turn end -0.061 (0.054), on a card played +0.005 (0.047), on HP lost about 0; original Demon Form decks -0.140 (0.033), original Metallicize decks -0.083 (0.030). Transfer (measurement/cards-transfer@cells): the three burst8 nets, fine-tuned on eight generated power cards and never on Demon Form, gain +6.10 (1.16) HP and +0.149 (0.030) clears on Demon Form decks over the 10-29 net, alike on three seeds, about two thirds of the 9.5 HP headroom, and lose 0.9-1.1 HP and 0.02-0.04 clears on the other strata. Three of those eight cards (gc1_019, gc1_082, gc1_095 of data/bench/gen_powers_pack.json) hold Demon Form's own row, turn start and apply Strength: the column shows a row learned on other cards carrying to a new card with that row, not a trigger and an effect learned apart carrying to their new pair; the only evidence for the latter is the 5k to 40k trend above (-7.2 to -3.1 HP from games that never held the row). lane/yardstick-cards step 2b tests it. On the headline the net's chooser takes Demon Form 0.19-0.25 of the times it is offered (the heuristic's 0.68), and where the one-turn net took it it clears 0.405 and 0.480 against 0.70-0.84 elsewhere. Planning rules: a card or modifier whose effect lands inside the turn has no zero-shot cost to measure; the cards rung spends its fights on powers that pay over later turns; a one-turn read on held-out sequences reports Demon Form decks apart; games-to-learn a recurring power is the rung's adapted column, read beside the transfer column. Exits: bursts that raise the Demon Form decks on no game source over three seeds (then games at these sizes do not teach a recurring power); step 2b's parts arm level with its same-row arm (then the cost of an unseen pair is covered by training its trigger and its effect apart).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After yardstick-cards step 1: the unseen-card cost is one card, Demon Form, and on generated cards the powers that pay at turn start; step 2 re-aimed, step 3's first table predicted, cap extended (on the owner's behalf, 2026-11-06)",
+          "sha256": "3de90bb93bfe2af219898724d3d629e9c329d67ebe20105948e961fb1aef007a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After stage 3 and the value-chooser close: the transfer column is Demon Form's own row learned from other cards; step 2b added; the value chooser stays a tool; generated-enemies-bench waits for powers on pack monsters (on the owner's behalf, 2026-11-06)",
+          "sha256": "00e62169cf9c5b440f097bdc8f50c0246fa8aaee4c9c276fd5f7651da90bf31b"
+        },
+        {
+          "path": "data/bench/gen_powers_pack.json",
+          "sha256": "2000aec90a58db7f5d365ba8f5bb189088c814da63c028e923c40f131545873c"
+        },
+        {
+          "path": "configs/burst8-s1.json",
+          "sha256": "9c8a225d86399d92fed686ad6a12f1bb2c5fb7c51203f995239d808c0ec8a556"
+        },
+        {
+          "key": "measurement/cards-transfer@cells",
+          "rev": 1
+        },
+        {
+          "key": "cause/novelty-is-horizon",
+          "rev": 9
+        }
+      ],
+      "owner": false,
+      "by": "5318d280-ece7-4e67-8dec-aa22f7895409",
+      "at": "2026-11-06T07:59:33Z @ b77d1d6",
+      "until": "2026-11-06T23:02:22Z @ c526be3"
+    },
+    {
+      "rev": 5,
+      "value": "The zero-shot cost of unseen cards one turn deep was the leaf's horizon; the key's name is historical. Of ten unseen official cards only Demon Form cost (a copy -7.54 (1.23) HP nets minus heuristic, measurement/cards-by-card@cells), and on generated cards the powers paying at the owner's turn start (-0.292 (0.049) wins against the heuristic): the plain one-turn leaf is the state at the next turn's draw, before turn-start hooks run, so such a power's first tick never landed inside the search. The turn-start leaf (@tsl1, measurement/turn-start-leaf@cells) repairs it with no games: the 10-29 net minus the heuristic on held-out Demon Form decks goes from -4.12 (1.41) HP and -0.144 clears to +3.43 (1.13) and +0.006, beside +3.67 on train decks and +5.45 on the other held-out decks (both cell books, se over sequences); generated OwnerTurnStart powers +0.243 (0.054) wins. The nine other unseen cards cost nothing by effects or by id: the search plays them in the engine and the net reads the state after. Learned repairs of the same cost, plain leaf: effects nets at 5k to 40k games close Demon Form decks from -7.2 to -3.1 HP against the heuristic; burst8 (eight generated power cards, three holding Demon Form's own row) +6.10 (1.16) over the 10-29 net at -0.9 to -1.1 HP elsewhere (measurement/cards-transfer@cells); two turns of search +8.4 HP. On the headline the net's chooser takes Demon Form 0.19-0.25 of the times offered (the heuristic's 0.68), its trial fights being one turn deep. Planning rules: a card whose effect lands inside the turn, or whose turn-start tick needs no chance, has no zero-shot cost one turn deep with @tsl1; goal-1 card reads play @tsl1 with the plain leaf beside it on turn-start parents (decision/turn-start-leaf-reads); what is left to measure on cards is how the net prices a power's later ticks and content built from atoms it cannot read (how/burst-inputs). Exits: a turn-start hook needing chance (a draw, a random target) costing more than 0.1 wins with @tsl1 on; burst8 ahead of the 10-29 net under @tsl1 on Demon Form decks by 2 se (jobs 0327-0332; then nets learn more than the tick).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After turn-start-leaf: the turn-start leaf for goal-1 card reads, the product unchanged, probes on burst8 and the headline (on the owner's behalf, 2026-11-07)",
+          "sha256": "37746dbcfc72e78b90164b489edbe9c42ecf8361749837eb61e059f54524e05a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After yardstick-cards step 1: the unseen-card cost is one card, Demon Form, and on generated cards the powers that pay at turn start; step 2 re-aimed, step 3's first table predicted, cap extended (on the owner's behalf, 2026-11-06)",
+          "sha256": "3de90bb93bfe2af219898724d3d629e9c329d67ebe20105948e961fb1aef007a"
+        },
+        {
+          "key": "measurement/turn-start-leaf@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/cards-transfer@cells",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "11322cec-67d1-4203-ab9e-e656f1d0a61c",
+      "at": "2026-11-06T23:02:22Z @ c526be3",
+      "until": "2026-11-06T23:38:28Z @ cdd1d7d"
+    },
+    {
+      "rev": 6,
+      "value": "The zero-shot cost of unseen cards one turn deep was the leaf's horizon; the key's name is historical. Of ten unseen official cards only Demon Form cost (a copy -7.54 (1.23) HP nets minus heuristic, measurement/cards-by-card@cells), and on generated cards the powers paying at the owner's turn start (-0.292 (0.049) wins against the heuristic): the plain one-turn leaf is the state at the next turn's draw, before turn-start hooks run, so such a power's first tick never landed inside the search. The turn-start leaf (@tsl1, measurement/turn-start-leaf@cells) repairs it with no games: the 10-29 net minus the heuristic on held-out Demon Form decks goes from -4.12 (1.41) HP and -0.144 clears to +3.43 (1.13) and +0.006, beside +3.67 on train decks and +5.45 on the other held-out decks (both cell books, se over sequences); generated OwnerTurnStart powers +0.243 (0.054) wins. The nine other unseen cards cost nothing by effects or by id: the search plays them in the engine and the net reads the state after. Learned repairs of the same cost, plain leaf: effects nets at 5k to 40k games close Demon Form decks from -7.2 to -3.1 HP against the heuristic; burst8 (eight generated power cards, three holding Demon Form's own row) +6.10 (1.16) over the 10-29 net at -0.9 to -1.1 HP elsewhere (measurement/cards-transfer@cells); two turns of search +8.4 HP. On the headline the net's chooser takes Demon Form 0.19-0.25 of the times offered (the heuristic's 0.68), its trial fights being one turn deep. Planning rules: a card whose effect lands inside the turn, or whose turn-start tick needs no chance, has no zero-shot cost one turn deep with @tsl1; goal-1 card reads play @tsl1 with the plain leaf beside it on turn-start parents (decision/turn-start-leaf-reads); what is left to measure on cards is how the net prices a power's later ticks and content built from atoms it cannot read (how/burst-inputs). Under @tsl1 the burst8 nets are level with the 10-29 net on Demon Form decks (+0.48 (0.81) HP, three seeds) and keep their -0.7 to -1.0 HP cost elsewhere (measurement/burst8-tsl1@cells): what games taught on this row was the first tick. Exit: a turn-start hook needing chance (a draw, a random target) costing more than 0.1 wins with @tsl1 on.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After turn-start-leaf: the turn-start leaf for goal-1 card reads, the product unchanged, probes on burst8 and the headline (on the owner's behalf, 2026-11-07)",
+          "sha256": "37746dbcfc72e78b90164b489edbe9c42ecf8361749837eb61e059f54524e05a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After burst8 x turn-start leaf: what burst8 learned on Demon Form decks is the first tick; coverage-pretrain folds into the enemies bench; step-2 nets read against the turn-start leaf (on the owner's behalf, 2026-11-07)",
+          "sha256": "5f383d9c05c004b7a5b1444d415574df963b36587f185f1a65523bea4f4dfc8a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After yardstick-cards step 1: the unseen-card cost is one card, Demon Form, and on generated cards the powers that pay at turn start; step 2 re-aimed, step 3's first table predicted, cap extended (on the owner's behalf, 2026-11-06)",
+          "sha256": "3de90bb93bfe2af219898724d3d629e9c329d67ebe20105948e961fb1aef007a"
+        },
+        {
+          "key": "measurement/turn-start-leaf@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/cards-transfer@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst8-tsl1@cells",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "11322cec-67d1-4203-ab9e-e656f1d0a61c",
+      "at": "2026-11-06T23:38:28Z @ cdd1d7d",
+      "until": "2026-11-07T03:29:24Z @ 3a2733b"
+    },
+    {
+      "rev": 7,
+      "value": "The zero-shot cost of unseen cards one turn deep was the leaf's horizon; the key's name is historical. Of ten unseen official cards only Demon Form cost (a copy -7.54 (1.23) HP nets minus heuristic, measurement/cards-by-card@cells), and on generated cards the powers paying at the owner's turn start (-0.292 (0.049) wins against the heuristic): the plain one-turn leaf is the state at the next turn's draw, before turn-start hooks run, so such a power's first tick never landed inside the search. The turn-start leaf (@tsl1, measurement/turn-start-leaf@cells) repairs it with no games: the 10-29 net minus the heuristic on held-out Demon Form decks goes from -4.12 (1.41) HP and -0.144 clears to +3.43 (1.13) and +0.006, beside +3.67 on train decks and +5.45 on the other held-out decks (both cell books, se over sequences); generated OwnerTurnStart powers +0.243 (0.054) wins. The nine other unseen cards cost nothing by effects or by id: the search plays them in the engine and the net reads the state after. Learned repairs of the same cost, plain leaf: effects nets at 5k to 40k games close Demon Form decks from -7.2 to -3.1 HP against the heuristic; burst8 (eight generated power cards, three holding Demon Form's own row) +6.10 (1.16) over the 10-29 net at -0.9 to -1.1 HP elsewhere (measurement/cards-transfer@cells); two turns of search +8.4 HP. On the headline the net's chooser takes Demon Form 0.19-0.25 of the times offered (the heuristic's 0.68), its trial fights being one turn deep. Planning rules: a card whose effect lands inside the turn as damage dealt, HP kept or cards played, or whose turn-start tick needs no chance, has no zero-shot cost one turn deep with @tsl1, atoms the net cannot read included (19 of 22 Act 1 pack cards level, among them the six C1 new-atom cards, Double Tap, Flame Barrier and Berserk, measurement/act1-cards@zero-shot); a card whose value sits in a number left in the leaf state is not covered: Disarm (enemy Strength -2), Impervious (30 block) and Intimidate cost 0.06-0.12 wins, cause open (lane/leaf-blind-numbers); goal-1 card reads play @tsl1 with the plain leaf beside it on turn-start parents (decision/turn-start-leaf-reads); what is left to measure on cards is how the net prices a power's later ticks and content built from atoms it cannot read (how/burst-inputs). Under @tsl1 the burst8 nets are level with the 10-29 net on Demon Form decks (+0.48 (0.81) HP, three seeds) and keep their -0.7 to -1.0 HP cost elsewhere (measurement/burst8-tsl1@cells): what games taught on this row was the first tick. Exit: a turn-start hook needing chance (a draw, a random target) costing more than 0.1 wins with @tsl1 on.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After act1-cards-zero-shot: the in-turn rule narrowed; lane leaf-blind-numbers opened as the exploration lane; the two-turn read of the three cards not run; simulated-effect-inputs retired (on the owner's behalf, 2026-11-07)",
+          "sha256": "071d562c63fe14b6ba4539b71d0ccd475c12e33670831fb0bc909f64e4aa6a75"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After turn-start-leaf: the turn-start leaf for goal-1 card reads, the product unchanged, probes on burst8 and the headline (on the owner's behalf, 2026-11-07)",
+          "sha256": "37746dbcfc72e78b90164b489edbe9c42ecf8361749837eb61e059f54524e05a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After burst8 x turn-start leaf: what burst8 learned on Demon Form decks is the first tick; coverage-pretrain folds into the enemies bench; step-2 nets read against the turn-start leaf (on the owner's behalf, 2026-11-07)",
+          "sha256": "5f383d9c05c004b7a5b1444d415574df963b36587f185f1a65523bea4f4dfc8a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After yardstick-cards step 1: the unseen-card cost is one card, Demon Form, and on generated cards the powers that pay at turn start; step 2 re-aimed, step 3's first table predicted, cap extended (on the owner's behalf, 2026-11-06)",
+          "sha256": "3de90bb93bfe2af219898724d3d629e9c329d67ebe20105948e961fb1aef007a"
+        },
+        {
+          "key": "measurement/turn-start-leaf@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/cards-transfer@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst8-tsl1@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/act1-cards@zero-shot",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "e643388f-1fc5-4d97-951f-045738b0a388",
+      "at": "2026-11-07T03:29:24Z @ 3a2733b",
+      "until": "2026-11-09T09:24:42Z @ 2a5a55d"
+    },
+    {
+      "rev": 8,
+      "value": "The zero-shot cost of unseen cards one turn deep was the leaf's horizon; the key's name is historical. Of ten unseen official cards only Demon Form cost (a copy -7.54 (1.23) HP nets minus heuristic, measurement/cards-by-card@cells), and on generated cards the powers paying at the owner's turn start (-0.292 (0.049) wins against the heuristic): the plain one-turn leaf is the state at the next turn's draw, before turn-start hooks run, so such a power's first tick never landed inside the search. The turn-start leaf (@tsl1, measurement/turn-start-leaf@cells) repairs it with no games: the 10-29 net minus the heuristic on held-out Demon Form decks goes from -4.12 (1.41) HP and -0.144 clears to +3.43 (1.13) and +0.006, beside +3.67 on train decks and +5.45 on the other held-out decks (both cell books, se over sequences); generated OwnerTurnStart powers +0.243 (0.054) wins. The nine other unseen cards cost the 10-29 net (effects inputs) nothing against the heuristic: the search plays them in the engine and the net reads the state after; an id-only net does pay there (effects minus ids +3.02 (0.54) HP on held-out decks without Demon Form, +5.16 (0.85) on Demon Form decks, +1.23 (0.64) on train decks, over five 5k twins one turn deep; big-picture-2026-11-09, claim 3, a skeptic's recompute from results/gauntlet/rerank-*data5k* and *ids5k*), so the encoding carries transfer to unseen cards. Learned repairs of the same cost, plain leaf: effects nets at 5k to 40k games close Demon Form decks from -7.2 to -3.1 HP against the heuristic; burst8 (eight generated power cards, three holding Demon Form's own row) +6.10 (1.16) over the 10-29 net at -0.9 to -1.1 HP elsewhere (measurement/cards-transfer@cells); two turns of search +8.4 HP. On the headline the net's chooser takes Demon Form 0.19-0.25 of the times offered (the heuristic's 0.68), its trial fights being one turn deep. Planning rules: a card whose effect lands inside the turn as damage dealt, HP kept or cards played, or whose turn-start tick needs no chance, has no zero-shot cost one turn deep with @tsl1, atoms the net cannot read included (19 of 22 Act 1 pack cards level, among them the six C1 new-atom cards, Double Tap, Flame Barrier and Berserk, measurement/act1-cards@zero-shot); a card whose value sits in a number left in the leaf state is not covered: Disarm (enemy Strength -2), Impervious (30 block) and Intimidate cost 0.06-0.12 wins, cause open (lane/leaf-blind-numbers); goal-1 card reads play @tsl1 with the plain leaf beside it on turn-start parents (decision/turn-start-leaf-reads); what is left to measure on cards is how the net prices a power's later ticks and content built from atoms it cannot read (how/burst-inputs). Under @tsl1 the burst8 nets are level with the 10-29 net on Demon Form decks (+0.48 (0.81) HP, three seeds) and keep their -0.7 to -1.0 HP cost elsewhere (measurement/burst8-tsl1@cells): what games taught on this row was the first tick. Exit: a turn-start hook needing chance (a draw, a random target) costing more than 0.1 wins with @tsl1 on.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After act1-cards-zero-shot: the in-turn rule narrowed; lane leaf-blind-numbers opened as the exploration lane; the two-turn read of the three cards not run; simulated-effect-inputs retired (on the owner's behalf, 2026-11-07)",
+          "sha256": "071d562c63fe14b6ba4539b71d0ccd475c12e33670831fb0bc909f64e4aa6a75"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After turn-start-leaf: the turn-start leaf for goal-1 card reads, the product unchanged, probes on burst8 and the headline (on the owner's behalf, 2026-11-07)",
+          "sha256": "37746dbcfc72e78b90164b489edbe9c42ecf8361749837eb61e059f54524e05a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After burst8 x turn-start leaf: what burst8 learned on Demon Form decks is the first tick; coverage-pretrain folds into the enemies bench; step-2 nets read against the turn-start leaf (on the owner's behalf, 2026-11-07)",
+          "sha256": "5f383d9c05c004b7a5b1444d415574df963b36587f185f1a65523bea4f4dfc8a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After yardstick-cards step 1: the unseen-card cost is one card, Demon Form, and on generated cards the powers that pay at turn start; step 2 re-aimed, step 3's first table predicted, cap extended (on the owner's behalf, 2026-11-06)",
+          "sha256": "3de90bb93bfe2af219898724d3d629e9c329d67ebe20105948e961fb1aef007a"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-09.md",
+          "anchor": "Key claims and skeptic verdicts",
+          "sha256": "5c1b1248ed546d8cbd2731871419afe4b5b244ce9c1c36a0a020cad9b30d238d"
+        },
+        {
+          "key": "measurement/turn-start-leaf@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/cards-transfer@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst8-tsl1@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/act1-cards@zero-shot",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "1e53d6ed-baa0-4367-8ee3-26d3d9d38c35",
+      "at": "2026-11-09T09:24:42Z @ 2a5a55d",
+      "until": "2026-11-10T05:43:19Z @ e77a837"
+    },
+    {
+      "rev": 9,
+      "value": "The zero-shot cost of unseen cards one turn deep was the leaf's horizon; the key's name is historical. Of ten unseen official cards only Demon Form cost (a copy -7.54 (1.23) HP nets minus heuristic, measurement/cards-by-card@cells), and on generated cards the powers paying at the owner's turn start (-0.292 (0.049) wins against the heuristic): the plain one-turn leaf is the state at the next turn's draw, before turn-start hooks run, so such a power's first tick never landed inside the search. The turn-start leaf (@tsl1, measurement/turn-start-leaf@cells) repairs it with no games: the 10-29 net minus the heuristic on held-out Demon Form decks goes from -4.12 (1.41) HP and -0.144 clears to +3.43 (1.13) and +0.006, beside +3.67 on train decks and +5.45 on the other held-out decks (both cell books, se over sequences); generated OwnerTurnStart powers +0.243 (0.054) wins. The nine other unseen cards cost the 10-29 net (effects inputs) nothing against the heuristic: the search plays them in the engine and the net reads the state after; an id-only net does pay there (effects minus ids +3.02 (0.54) HP on held-out decks without Demon Form, +5.16 (0.85) on Demon Form decks, +1.23 (0.64) on train decks, over five 5k twins one turn deep; big-picture-2026-11-09, claim 3, a skeptic's recompute from results/gauntlet/rerank-*data5k* and *ids5k*), so the encoding carries transfer to unseen cards. Learned repairs of the same cost, plain leaf: effects nets at 5k to 40k games close Demon Form decks from -7.2 to -3.1 HP against the heuristic; burst8 (eight generated power cards, three holding Demon Form's own row) +6.10 (1.16) over the 10-29 net at -0.9 to -1.1 HP elsewhere (measurement/cards-transfer@cells); two turns of search +8.4 HP. On the headline the net's chooser takes Demon Form 0.19-0.25 of the times offered (the heuristic's 0.68), its trial fights being one turn deep. Planning rules: a card whose effect lands inside the turn as damage dealt, HP kept or cards played, or whose turn-start tick needs no chance, has no zero-shot cost one turn deep with @tsl1, atoms the net cannot read included (19 of 22 Act 1 pack cards level, among them the six C1 new-atom cards, Double Tap, Flame Barrier and Berserk, measurement/act1-cards@zero-shot); a card whose value sits in a number left in the leaf state is not covered: Disarm (enemy Strength -2), Impervious (30 block) and Intimidate cost 0.06-0.12 wins, cause open (lane/leaf-blind-numbers); goal-1 card reads play @tsl1 with the plain leaf beside it on turn-start parents (decision/turn-start-leaf-reads); what is left to measure on cards is how the net prices a power's later ticks and content built from atoms it cannot read (how/burst-inputs). Under @tsl1 the burst8 nets are level with the 10-29 net on Demon Form decks (+0.48 (0.81) HP, three seeds) and keep their -0.7 to -1.0 HP cost elsewhere (measurement/burst8-tsl1@cells): what games taught on this row was the first tick. Exit: a turn-start hook needing chance (a draw, a random target) costing more than 0.1 wins with @tsl1 on. A from-scratch learn goes past the first tick: the all-content twins (40k games, one round, Demon Form in the pool) @tsl1 beat the 10-29 net @tsl1 on Demon Form decks by +3.30 (0.95) HP with other held-out decks level (-0.04 (0.60)), where bursts of up to 1.6k games on a trained net, at any exposure share read, learned the first tick only (measurement/pack-net-twin@one-turn).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After act1-cards-zero-shot: the in-turn rule narrowed; lane leaf-blind-numbers opened as the exploration lane; the two-turn read of the three cards not run; simulated-effect-inputs retired (on the owner's behalf, 2026-11-07)",
+          "sha256": "071d562c63fe14b6ba4539b71d0ccd475c12e33670831fb0bc909f64e4aa6a75"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After turn-start-leaf: the turn-start leaf for goal-1 card reads, the product unchanged, probes on burst8 and the headline (on the owner's behalf, 2026-11-07)",
+          "sha256": "37746dbcfc72e78b90164b489edbe9c42ecf8361749837eb61e059f54524e05a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After burst8 x turn-start leaf: what burst8 learned on Demon Form decks is the first tick; coverage-pretrain folds into the enemies bench; step-2 nets read against the turn-start leaf (on the owner's behalf, 2026-11-07)",
+          "sha256": "5f383d9c05c004b7a5b1444d415574df963b36587f185f1a65523bea4f4dfc8a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After yardstick-cards step 1: the unseen-card cost is one card, Demon Form, and on generated cards the powers that pay at turn start; step 2 re-aimed, step 3's first table predicted, cap extended (on the owner's behalf, 2026-11-06)",
+          "sha256": "3de90bb93bfe2af219898724d3d629e9c329d67ebe20105948e961fb1aef007a"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-09.md",
+          "anchor": "Key claims and skeptic verdicts",
+          "sha256": "5c1b1248ed546d8cbd2731871419afe4b5b244ce9c1c36a0a020cad9b30d238d"
+        },
+        {
+          "key": "measurement/turn-start-leaf@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/cards-transfer@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst8-tsl1@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/act1-cards@zero-shot",
+          "rev": 1
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Probe twin-tsl1 read: from-scratch games taught Demon Form past its first tick; 0777-0778 released; 49 gets the next exploration charter (on the owner's behalf, 2026-11-10)",
+          "sha256": "367154afd55bb44cac1b66fb0ac1d2e87e642e736e01800de8fb46f18a933d93"
+        },
+        {
+          "key": "measurement/pack-net-twin@one-turn",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "9b2dd76a-ebb7-49f2-a306-4e05e9845de4",
+      "at": "2026-11-10T05:43:19Z @ e77a837",
+      "until": "2026-11-13T02:29:09Z @ 3123201a"
+    }
+  ],
+  "seal": "33012d3dcffdf534caaf304194c9ad8d3d1bc6144de0137b754ded13ae24a466"
+}

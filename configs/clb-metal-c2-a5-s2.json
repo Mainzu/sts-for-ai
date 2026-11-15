@@ -1,0 +1,15 @@
+{
+ "content": {
+  "pack": "data/bench/mutated_cards_pack.json",
+  "cards": [
+   "metal-c2-a5"
+  ]
+ },
+ "game_seed": 71,
+ "games": 5000,
+ "n_val": 150,
+ "name": "clb-metal-c2-a5-s2",
+ "player": "net",
+ "pool": 10000,
+ "seed": 2
+}

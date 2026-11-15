@@ -1,0 +1,56 @@
+{
+  "key": "measurement/search-time-gains",
+  "rev": 2,
+  "value": "Every gauntlet gain since 10-29 came from search time or the run layer: @hpb0.01 +0.168 clears (z 9), @hpe +0.036, two-turn +0.060 (tuning book) / +0.044 and +3.25 HP (500-749), sim rewards +0.184, boss horizon +0.132, Strike removal +1.78 HP; no net trained after 10-29 beats it at run level (8 read).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/approach-review-2026-11-02.md",
+      "anchor": "Where the project stands",
+      "sha256": "22a11ddea40118d69f10d49f09c54194115966ae1ded75d88cc945ab67613aa0"
+    },
+    {
+      "path": "docs/research/approach-review-2026-11-02.md",
+      "anchor": "Key claims and what the skeptics did to them",
+      "sha256": "00b390804f33edd0e9c6a44652e6b6bba76252828e2f1646a2be3f95e26319c9"
+    },
+    {
+      "key": "yardstick/gauntlet",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:26+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Every measured gauntlet gain since 10-29 came from search time or the run layer: @hpb0.01 +0.168 clears (0.448 -> 0.616, z 9), @hpe +0.036 clears, two-turn search +0.060 clears on the tuning book and +0.044 / +3.25 HP on 500-749, sim rewards +0.184, the boss horizon +0.132, Strike removal +1.78 HP. No net trained after 10-29 is shown to beat the 10-29 net at run level (of the eight read; burst8 s1 is an undecided ~+1 HP at one seed).",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Where the project stands",
+          "sha256": "22a11ddea40118d69f10d49f09c54194115966ae1ded75d88cc945ab67613aa0"
+        },
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Key claims and what the skeptics did to them",
+          "sha256": "00b390804f33edd0e9c6a44652e6b6bba76252828e2f1646a2be3f95e26319c9"
+        },
+        {
+          "key": "yardstick/gauntlet",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:14:22+00:00 @ fc9cdd8",
+      "until": "2026-11-13T02:31:26+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "f059cf8ba47ba6d1c2a9ef6163540af2a1a5a378a291e9c27996b0e052f96b11"
+}

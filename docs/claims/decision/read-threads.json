@@ -1,0 +1,37 @@
+{
+  "key": "decision/read-threads",
+  "rev": 1,
+  "value": "Headline reads run at 3 threads, two jobs at once (more sequences per CPU-hour); --threads 8 --mem-gb 8 only for a lone read whose wall time gates the next decision (0.6x the wall time for 1.6x the thread-minutes).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Thread count for headline reads: 3 threads stays the default; 8 only for a read alone on the machine (on the owner's behalf, 2026-11-04)",
+      "sha256": "620b6bdf3adb564b75c88d8736126d2345daf3c0f2fa94703902d55267ce68fa"
+    },
+    {
+      "key": "measurement/cost-threads@gauntlet",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "sources: the thread-count read moved to measurement/cost-threads@gauntlet in the fact split",
+  "by": "40c7fd32-465f-466d-b406-dffe78633301",
+  "at": "2026-11-04T13:22:21Z @ ac13299",
+  "confirms": [
+    {
+      "by": "b7755c1b-c846-428e-b225-17f45923e96d",
+      "at": "2026-11-11T09:00:51Z @ 20449c5",
+      "note": "re-checked after the lane worker's and the navigator's STATUS-cap merges: the merged facts hold their sources' numbers verbatim, this fact's own numbers unchanged"
+    },
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:32:12Z @ 3123201a",
+      "note": "sources: the thread-count read moved to measurement/cost-threads@gauntlet in the fact split"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "1ab7ae54f9ada2f99af966d2eb2c8c3d56bfa26b21af75b9b8b418080389b152"
+}

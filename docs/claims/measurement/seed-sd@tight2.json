@@ -1,0 +1,49 @@
+{
+  "key": "measurement/seed-sd@tight2",
+  "rev": 1,
+  "value": "Training-seed sd on tight2 is 0.010 train / 0.013 held-out, pooled within 16 arm-and-round groups over 66-67 runs (47 df); arms sharing a round-0 net pool to ~0.009 / 0.009, fresh round 0s to 0.012 / 0.018. MDE = 2.8 x sd x sqrt(2/seeds), ~0.02-0.03 at 3 unpaired seeds; paired arms that share data can see ~0.01.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/big-picture-2026-10-31b.md",
+      "anchor": "Recipe comparisons are dominated by training-seed variance. At today's seed sd, 3 seeds cannot detect the 0.01 effects most arms were sized for, and the fight-only gate is not a recipe verdict.",
+      "sha256": "121126993a2833836a989c682895b4a1d485d61c4c83b52413c9a3635b706525"
+    },
+    {
+      "path": "docs/research/big-picture-2026-10-31b.md",
+      "anchor": "Manager's reading (what changes)",
+      "sha256": "80035ee6e9445077abaaed4cb8b79c99fd26e30ce247dca7b51ac7c7e7586f30"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "resolves the docs: '66 runs' (manager.md) and '16 groups' (big-picture-2026-10-31b diagnosis) describe the same pool; the older 0.006-0.0075 came from one shared-draw group (rung-4 seed check) and is wrong as a general sd. Reproduced by two skeptics from runs/*/round.json",
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:12:34+00:00 @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Training-seed sd on tight2 is 0.010 train / 0.013 held-out, pooled within 16 arm-and-round groups over 66-67 runs (47 df); arms sharing a round-0 net pool to ~0.009 / 0.009, fresh round 0s to 0.012 / 0.018. MDE = 2.8 x sd x sqrt(2/seeds), ~0.02-0.03 at 3 unpaired seeds; paired arms that share data can see ~0.01.",
+      "sources": [
+        {
+          "path": "docs/research/big-picture-2026-10-31b.md",
+          "anchor": "Recipe comparisons are dominated by training-seed variance. At today's seed sd, 3 seeds cannot detect the 0.01 effects most arms were sized for, and the fight-only gate is not a recipe verdict.",
+          "sha256": "121126993a2833836a989c682895b4a1d485d61c4c83b52413c9a3635b706525"
+        },
+        {
+          "path": "docs/research/big-picture-2026-10-31b.md",
+          "anchor": "Manager's reading (what changes)",
+          "sha256": "80035ee6e9445077abaaed4cb8b79c99fd26e30ce247dca7b51ac7c7e7586f30"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:12:34+00:00 @ fc9cdd8",
+      "until": "2026-11-11T08:47:39+00:00 @ 2b6131f",
+      "retired": "merged into measurement/seed-sd@gauntlet (STATUS cap)"
+    }
+  ],
+  "seal": "08d310af77772dbfecfd258163cd770b02d84a03f0ec56a295ac210a87fc8a1f"
+}

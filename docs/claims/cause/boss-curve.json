@@ -1,0 +1,22 @@
+{
+  "key": "cause/boss-curve",
+  "rev": 1,
+  "value": "P(win the boss | entry HP) is causal and per boss, not a flat price: boss replays varying only HP give 0.35 at 30 HP to 0.95 at 80 (all bosses; 87% of the observational slope), Slime Boss near-sure from 40, the Guardian a cliff near 50, Hexaghost a slow climb to 0.90; so HP is worth most where a boss's step sits.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Boss replays: the boss curve is causal, and it is a different curve per boss (L2 a; b39d1; read 18:30 2026-11-02, manager 2b40a321)",
+      "sha256": "906d7225706cb7d116aac318334528bd683bfd722f13f6afc25eed9fe0fc4a26"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:10:33Z @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "11ef459b0b451b85ac2500fa336295e40ef8921ae001a26ae2759b65cb0820c5"
+}

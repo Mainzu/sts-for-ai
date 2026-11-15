@@ -1,0 +1,72 @@
+{
+  "key": "yardstick/headline-setting",
+  "rev": 2,
+  "value": "Goal 2's headline setting and final ruler: gauntlet.py play <player> --start starter --rewards sim --sim-boss, 500 sequences. Changes are judged on it one turn deep against the one-turn controls; the product (two turns deep) is the reported headline score. The cell gauntlet is a screen; tight2 and the ladder no longer rank nets for the product.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Sim-boss passes: new headline setting (owner away, 2026-11-02)",
+      "sha256": "2e36e804e75006d903a951558eda042e6ded5647375455e422d15afcf2de3d42"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Headline re-rank: the 10-29 net is the product net, the headline setting is the final ruler (owner away, 2026-11-02)",
+      "sha256": "5fb53628e38af4cc15051b3be295f08e4b7a87003153f8a5b08afdb8e1db7b38"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+      "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    }
+  ],
+  "owner": false,
+  "pinned": true,
+  "note": null,
+  "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+  "at": "2026-11-05T14:57:37Z @ a875850",
+  "confirms": [
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:40:23Z @ e24c419a",
+      "note": "product/net changed only by the 0986 promotion (@tsl1@lcb1, chooser); the setting (starter, sim rewards, sim boss, 500 sequences) and its rule are unchanged; gauntlet.py flags unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Goal 2's headline setting and final ruler: gauntlet.py play <player> --start starter --rewards sim --sim-boss, 500 sequences, the product player at full two-turn depth. The cell gauntlet is a screen; tight2 and the ladder no longer rank nets for the product.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Sim-boss passes: new headline setting (owner away, 2026-11-02)",
+          "sha256": "2e36e804e75006d903a951558eda042e6ded5647375455e422d15afcf2de3d42"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Headline number: two-turn product on starter + rewards + sim-boss clears 0.804 (owner away, 2026-11-02)",
+          "sha256": "6fd360ca1959f689e16f219dcb203d79fccd8a4ce285d021a6a7d8b956820614"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Headline re-rank: the 10-29 net is the product net, the headline setting is the final ruler (owner away, 2026-11-02)",
+          "sha256": "5fb53628e38af4cc15051b3be295f08e4b7a87003153f8a5b08afdb8e1db7b38"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:09:03Z @ fc9cdd8",
+      "until": "2026-11-05T14:57:37Z @ a875850"
+    }
+  ],
+  "seal": "f3d69c14dc9594c39cbc1ed4d133c98a6305e6c711c67dbc98333d75a9bb9da3"
+}

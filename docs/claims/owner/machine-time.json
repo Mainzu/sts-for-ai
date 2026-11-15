@@ -1,0 +1,28 @@
+{
+  "key": "owner/machine-time",
+  "rev": 1,
+  "value": "CPU time is the bottleneck: keep the CPU busy with the most valuable run and the next one queued; a run whose expected effect is below its MDE does not run.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/operating.md",
+      "anchor": "Machine time is the bottleneck (owner)",
+      "sha256": "206365ff2444b31f68e64ba0fef9c93c120919bb25d4c8a7a5212151a82f3bcc"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "source moved from docs/manager.md to docs/operating.md at the operating-model cut-over",
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:11:40Z @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "4c7c253c-5b5e-41ad-9b86-9fe7a2e430cb",
+      "at": "2026-11-03T05:23:10Z @ 0d052e3",
+      "note": "source moved from docs/manager.md to docs/operating.md at the operating-model cut-over"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "2d813ff1c35c0f919e4a831f39d7b0c4dc389a09f47b85c3a6a4fed20e5e72ef"
+}

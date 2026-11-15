@@ -1,0 +1,46 @@
+{
+  "key": "measurement/portfolio-generated-pack-scratch",
+  "rev": 2,
+  "value": "predicted even (cut 0.4 at 2 se), ~54 thread-h (cap 80); actual go: cut 0.76 (0.04) over s1/101/201, cells +0.52 (0.30), pack headline +0.41 (0.63) HP; 82.4 cpu-h; reopen if mechanics outside the 24-cell grid exist, a genpack net is a product candidate, or a leaf/input targets OppCard-PlainDamage (+3.0) / TurnEnd-Weak (+2.0).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane generated-pack-scratch closed (on the owner's behalf, 2026-11-11)",
+      "sha256": "589bce268a626b7f64d4ebdc6e42ed8685e15f911dd1c87d15155a8a3f454447"
+    },
+    {
+      "key": "measurement/genpack-transfer@three-seeds",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:59+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even that the held-out pooled cut reaches 0.4 at 2 se, about 54 thread-h for three seeds (cap 80 cpu-h); actual go: cut 0.76 (se 0.04) over seeds 1/101/201, cells +0.52 (0.30) and pack headline +0.41 (0.63) HP, 82.4 cpu-h used; reopen if: mechanics outside the 24-cell trigger x effect grid exist to hold out (a new trigger or effect), a genpack-trained net is to be read at product depth as a product candidate, or the residual held-out cost (OppCard-PlainDamage +3.0, TurnEnd-Weak +2.0 HP) is targeted by a leaf or input change",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane generated-pack-scratch closed (on the owner's behalf, 2026-11-11)",
+          "sha256": "589bce268a626b7f64d4ebdc6e42ed8685e15f911dd1c87d15155a8a3f454447"
+        },
+        {
+          "key": "measurement/genpack-transfer@three-seeds",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "a0badfba-52e6-4c27-aea0-774b750a3382",
+      "at": "2026-11-11T08:13:38+00:00 @ 79cf1fd",
+      "until": "2026-11-13T02:30:59+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "c998022dd8812032c89af2bb4d3c9ac72e82cce7dfad9814707ae803095ca19d"
+}

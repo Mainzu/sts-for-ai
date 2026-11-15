@@ -1,0 +1,20 @@
+{
+ "content": {
+  "encounters": [
+   "lagavulin",
+   "three_sentries"
+  ],
+  "mutated": [
+   "GE-AttackLoss-Weak"
+  ],
+  "skip": 1000,
+  "val_fights": 40
+ },
+ "game_seed": 61,
+ "games": 99,
+ "n_val": 300,
+ "name": "gac-alw-heur-g99-s1",
+ "player": "heuristic",
+ "pool": 10000,
+ "seed": 1
+}

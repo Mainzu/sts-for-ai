@@ -1,0 +1,127 @@
+{
+  "key": "cause/boss-deaths",
+  "rev": 4,
+  "value": "Headline gaps between players are mostly boss deaths: 10-29 net @hpe0.01 two turns deep with line step (headline setting, runs 0-499) clears 0.834 vs 0.680 one turn deep (@hpb0.01), boss deaths 62 vs 107 of 500 (51/62 and 94/107 arrive <60 HP); lean s1 vs the 10-29 net -0.052 is all boss deaths (65 vs 52/250).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json",
+      "sha256": "18cd9996abd64a927459287bf456a4b974f7956884d4d9f5fb551745bb1162ed"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+      "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+    },
+    {
+      "key": "measurement/headline@two-turn",
+      "rev": 3
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    },
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Lean s1 on the headline: the solve step may carry about 0.05 of the 10-29 net's lead, at 1.5-2 se (headline re-rank's cheap check; 0061; read 22:35 2026-11-02, manager 19428521)",
+      "sha256": "900b6ca4ea2645ad949e7dc1af8a9ee625c5cd280b8cbcc1b6f5f23f5047f529"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "recounted 2026-11-14 from the files' floors (boss floor 11, hp_start of lost boss fights); the earlier value's 72 vs 107 was the plain two-turn file net1029-hpe0.01-two-starter-simboss.json (0.804), which still reads 72 (63 <60)",
+  "by": "d69e5130-a6d4-440b-8a69-a6a19797e7de",
+  "at": "2026-11-13T23:45:52Z @ ba30bac1",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Headline gaps between players are mostly boss deaths: the two-turn product beats one turn by +0.124 clears with boss deaths 72 vs 107 of 500, and lean s1's -0.052 against the 10-29 net is entirely boss deaths (65 vs 52 of 250); 94 of 107 one-turn boss deaths arrive under 60 HP.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Two-turn product on the headline setting: 0.804 clears (Q2; b39a / b39b; read 14:30 2026-11-02, manager 837a5e68)",
+          "sha256": "6db5240cce5632a9d581f71f3a39f64895cb7f1e5b2017077934ca9e081c9b10"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Lean s1 on the headline: the solve step may carry about 0.05 of the 10-29 net's lead, at 1.5-2 se (headline re-rank's cheap check; 0061; read 22:35 2026-11-02, manager 19428521)",
+          "sha256": "900b6ca4ea2645ad949e7dc1af8a9ee625c5cd280b8cbcc1b6f5f23f5047f529"
+        },
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "The patterns behind the record",
+          "sha256": "16de4c3c7820337ce8999ae598c89f0472ecea8c15e5da9370798defb26d5f14"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:10:37Z @ fc9cdd8",
+      "until": "2026-11-05T00:48:14Z @ 22b5d9b"
+    },
+    {
+      "rev": 2,
+      "value": "Headline gaps between players are mostly boss deaths: the two-turn product beats one turn by +0.124 clears with boss deaths 72 vs 107 of 500, and lean s1's -0.052 against the 10-29 net is entirely boss deaths (65 vs 52 of 250); 94 of 107 one-turn boss deaths arrive under 60 HP. By boss, the product over both books (1000 sequences, 193 deaths, 140 at the boss): Hexaghost 70 deaths of 312 arrivals (win 0.776), the Guardian 57 of 299 (0.809), Slime Boss 13 of 336 (0.961). The Guardian and Slime Boss are entry-HP losses (48 of 57 Guardian deaths arrive under 60 HP, win 0.92-0.97 from 60; 12 of 13 Slime Boss deaths under 50). Hexaghost is lost in the fight: 44 of its 70 deaths arrive with 50 HP or more and 22 with 60 or more (win 0.69 at 50-59, 0.80 at 60-69, 0.93 from 70). The HP on the way goes at the two elites (17.3 and 13.8 HP per fight on 0-499; hallway fights 0.5-3.6).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Two-turn product on the headline setting: 0.804 clears (Q2; b39a / b39b; read 14:30 2026-11-02, manager 837a5e68)",
+          "sha256": "6db5240cce5632a9d581f71f3a39f64895cb7f1e5b2017077934ca9e081c9b10"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Lean s1 on the headline: the solve step may carry about 0.05 of the 10-29 net's lead, at 1.5-2 se (headline re-rank's cheap check; 0061; read 22:35 2026-11-02, manager 19428521)",
+          "sha256": "900b6ca4ea2645ad949e7dc1af8a9ee625c5cd280b8cbcc1b6f5f23f5047f529"
+        },
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "The patterns behind the record",
+          "sha256": "16de4c3c7820337ce8999ae598c89f0472ecea8c15e5da9370798defb26d5f14"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json",
+          "sha256": "18cd9996abd64a927459287bf456a4b974f7956884d4d9f5fb551745bb1162ed"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-500.json",
+          "sha256": "2a31bbfc413754b45e4638038b96d3fa086b5b79e71e368bda3f99e504104fa2"
+        }
+      ],
+      "owner": false,
+      "by": "ff666280-ee25-4103-8011-de5b45cf8e3c",
+      "at": "2026-11-05T00:48:14Z @ 22b5d9b",
+      "until": "2026-11-13T02:28:57Z @ 3123201a"
+    },
+    {
+      "rev": 3,
+      "value": "Headline gaps between players are mostly boss deaths: two-turn product vs one-turn +0.124 clears with boss deaths 72 vs 107/500 (94/107 arrive <60 HP); lean s1 vs the 10-29 net -0.052 is all boss deaths (65 vs 52/250).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Two-turn product on the headline setting: 0.804 clears (Q2; b39a / b39b; read 14:30 2026-11-02, manager 837a5e68)",
+          "sha256": "6db5240cce5632a9d581f71f3a39f64895cb7f1e5b2017077934ca9e081c9b10"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Lean s1 on the headline: the solve step may carry about 0.05 of the 10-29 net's lead, at 1.5-2 se (headline re-rank's cheap check; 0061; read 22:35 2026-11-02, manager 19428521)",
+          "sha256": "900b6ca4ea2645ad949e7dc1af8a9ee625c5cd280b8cbcc1b6f5f23f5047f529"
+        },
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "The patterns behind the record",
+          "sha256": "16de4c3c7820337ce8999ae598c89f0472ecea8c15e5da9370798defb26d5f14"
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:28:57Z @ 3123201a",
+      "until": "2026-11-13T23:45:52Z @ ba30bac1"
+    }
+  ],
+  "seal": "889416f21721dae923ea335d586ac6c83d44ffbae559ecfc41a01bc641695940"
+}

@@ -1,0 +1,7596 @@
+{
+ "budget": {
+  "hi": 0.253241,
+  "lo": 0.092102,
+  "official": {
+   "Brutality": {
+    "cost": 0,
+    "gain": -0.087607
+   },
+   "Combust": {
+    "cost": 1,
+    "gain": 0.253241
+   },
+   "Demon Form": {
+    "cost": 3,
+    "gain": 0.276306
+   },
+   "Inflame": {
+    "cost": 1,
+    "gain": 0.141253
+   },
+   "Metallicize": {
+    "cost": 1,
+    "gain": 0.210026
+   },
+   "Rupture": {
+    "cost": 1,
+    "gain": 0.0
+   }
+  },
+  "unpriced_below": 0.01
+ },
+ "cards": [
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_000",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_000",
+   "power": "gp1_000",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_001",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.144214,
+   "id": "gc1_001",
+   "power": "gp1_001",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.144214
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_002",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_002",
+   "power": "gp1_002",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_003",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_003",
+   "power": "gp1_003",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_004",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_004",
+   "power": "gp1_004",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_005",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.458311,
+   "id": "gc1_005",
+   "power": "gp1_005",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.229155
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_006",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.208443,
+   "id": "gc1_006",
+   "power": "gp1_006",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.208443
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_007",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_007",
+   "power": "gp1_007",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_008",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_008",
+   "power": "gp1_008",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_009",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_009",
+   "power": "gp1_009",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_010",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_010",
+   "power": "gp1_010",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_011",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_011",
+   "power": "gp1_011",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_012",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_012",
+   "power": "gp1_012",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_013",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_013",
+   "power": "gp1_013",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_014",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_014",
+   "power": "gp1_014",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_015",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_015",
+   "power": "gp1_015",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_016",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.141253,
+   "id": "gc1_016",
+   "power": "gp1_016",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": 0.141253
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_017",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_017",
+   "power": "gp1_017",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_018",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_018",
+   "power": "gp1_018",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_019",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.141253,
+   "id": "gc1_019",
+   "power": "gp1_019",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": 0.141253
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_020",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_020",
+   "power": "gp1_020",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_021",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_021",
+   "power": "gp1_021",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_022",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_022",
+   "power": "gp1_022",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_023",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_023",
+   "power": "gp1_023",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_024",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_024",
+   "power": "gp1_024",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_025",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_025",
+   "power": "gp1_025",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_026",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_026",
+   "power": "gp1_026",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_027",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_027",
+   "power": "gp1_027",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_028",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_028",
+   "power": "gp1_028",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_029",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_029",
+   "power": "gp1_029",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_030",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_030",
+   "power": "gp1_030",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_031",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_031",
+   "power": "gp1_031",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_032",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_032",
+   "power": "gp1_032",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_033",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_033",
+   "power": "gp1_033",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_034",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_034",
+   "power": "gp1_034",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_035",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_035",
+   "power": "gp1_035",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 3,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_036",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.559277,
+   "id": "gc1_036",
+   "power": "gp1_036",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.186426
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_037",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_037",
+   "power": "gp1_037",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_038",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_038",
+   "power": "gp1_038",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_039",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_039",
+   "power": "gp1_039",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_040",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.113229,
+   "id": "gc1_040",
+   "power": "gp1_040",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.113229
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_041",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_041",
+   "power": "gp1_041",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_042",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_042",
+   "power": "gp1_042",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_043",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_043",
+   "power": "gp1_043",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_044",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_044",
+   "power": "gp1_044",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 3,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_045",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.637574,
+   "id": "gc1_045",
+   "power": "gp1_045",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.212525
+  },
+  {
+   "cost": 3,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_046",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.284738,
+   "id": "gc1_046",
+   "power": "gp1_046",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.094913
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_047",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_047",
+   "power": "gp1_047",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_048",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_048",
+   "power": "gp1_048",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_049",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_049",
+   "power": "gp1_049",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_050",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_050",
+   "power": "gp1_050",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_051",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_051",
+   "power": "gp1_051",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_052",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.141253,
+   "id": "gc1_052",
+   "power": "gp1_052",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": 0.141253
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_053",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.106178,
+   "id": "gc1_053",
+   "power": "gp1_053",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.106178
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_054",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_054",
+   "power": "gp1_054",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_055",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.208443,
+   "id": "gc1_055",
+   "power": "gp1_055",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.208443
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_056",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.141253,
+   "id": "gc1_056",
+   "power": "gp1_056",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.141253
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_057",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_057",
+   "power": "gp1_057",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 3,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_058",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.633085,
+   "id": "gc1_058",
+   "power": "gp1_058",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.211028
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_059",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_059",
+   "power": "gp1_059",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_060",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_060",
+   "power": "gp1_060",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_061",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_061",
+   "power": "gp1_061",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_062",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_062",
+   "power": "gp1_062",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 3,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_063",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.615618,
+   "id": "gc1_063",
+   "power": "gp1_063",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.205206
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_064",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_064",
+   "power": "gp1_064",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_065",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_065",
+   "power": "gp1_065",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 3,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_066",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.559277,
+   "id": "gc1_066",
+   "power": "gp1_066",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.186426
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_067",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_067",
+   "power": "gp1_067",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_068",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_068",
+   "power": "gp1_068",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_069",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_069",
+   "power": "gp1_069",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_070",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.197283,
+   "id": "gc1_070",
+   "power": "gp1_070",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.197283
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_071",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_071",
+   "power": "gp1_071",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_072",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_072",
+   "power": "gp1_072",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_073",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.008344,
+   "id": "gc1_073",
+   "power": "gp1_073",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_074",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_074",
+   "power": "gp1_074",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_075",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_075",
+   "power": "gp1_075",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_076",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.139814,
+   "id": "gc1_076",
+   "power": "gp1_076",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.139814
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_077",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_077",
+   "power": "gp1_077",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_078",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_078",
+   "power": "gp1_078",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_079",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_079",
+   "power": "gp1_079",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_080",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": -0.028266,
+   "id": "gc1_080",
+   "power": "gp1_080",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_081",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.141253,
+   "id": "gc1_081",
+   "power": "gp1_081",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.141253
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_082",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.276306,
+   "id": "gc1_082",
+   "power": "gp1_082",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": 0.138153
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_083",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_083",
+   "power": "gp1_083",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_084",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_084",
+   "power": "gp1_084",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_085",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_085",
+   "power": "gp1_085",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_086",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_086",
+   "power": "gp1_086",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_087",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_087",
+   "power": "gp1_087",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_088",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_088",
+   "power": "gp1_088",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_089",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_089",
+   "power": "gp1_089",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_090",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_090",
+   "power": "gp1_090",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_091",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_091",
+   "power": "gp1_091",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_092",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_092",
+   "power": "gp1_092",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_093",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_093",
+   "power": "gp1_093",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_094",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_094",
+   "power": "gp1_094",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_095",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.208443,
+   "id": "gc1_095",
+   "power": "gp1_095",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": 0.104221
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_096",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_096",
+   "power": "gp1_096",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_097",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_097",
+   "power": "gp1_097",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 3,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_098",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.585698,
+   "id": "gc1_098",
+   "power": "gp1_098",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.195233
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_099",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.09333,
+   "id": "gc1_099",
+   "power": "gp1_099",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.09333
+  },
+  {
+   "cost": 3,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_100",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.633085,
+   "id": "gc1_100",
+   "power": "gp1_100",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.211028
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_101",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.284738,
+   "id": "gc1_101",
+   "power": "gp1_101",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.142369
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_102",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": -0.028266,
+   "id": "gc1_102",
+   "power": "gp1_102",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_103",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.208443,
+   "id": "gc1_103",
+   "power": "gp1_103",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": 0.208443
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_104",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_104",
+   "power": "gp1_104",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_105",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_105",
+   "power": "gp1_105",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_106",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_106",
+   "power": "gp1_106",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_107",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_107",
+   "power": "gp1_107",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_108",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_108",
+   "power": "gp1_108",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_109",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_109",
+   "power": "gp1_109",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_110",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": -0.013867,
+   "id": "gc1_110",
+   "power": "gp1_110",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_111",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_111",
+   "power": "gp1_111",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_112",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_112",
+   "power": "gp1_112",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_113",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_113",
+   "power": "gp1_113",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_114",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.208443,
+   "id": "gc1_114",
+   "power": "gp1_114",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.104221
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_115",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_115",
+   "power": "gp1_115",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 3,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_116",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.615618,
+   "id": "gc1_116",
+   "power": "gp1_116",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.205206
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_117",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_117",
+   "power": "gp1_117",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_118",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_118",
+   "power": "gp1_118",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_119",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.007333,
+   "id": "gc1_119",
+   "power": "gp1_119",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_120",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.411811,
+   "id": "gc1_120",
+   "power": "gp1_120",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.205906
+  },
+  {
+   "cost": 3,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_121",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.568852,
+   "id": "gc1_121",
+   "power": "gp1_121",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": 0.189617
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_122",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_122",
+   "power": "gp1_122",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_123",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_123",
+   "power": "gp1_123",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 2,
+      "power": "gp1_124",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_124",
+   "power": "gp1_124",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 1,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_125",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_125",
+   "power": "gp1_125",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 3,
+      "power": "gp1_126",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_126",
+   "power": "gp1_126",
+   "split": "train",
+   "type": "Power",
+   "value_per_energy": null
+  },
+  {
+   "cost": 2,
+   "effects": [
+    {
+     "Apply": {
+      "amount": 1,
+      "power": "gp1_127",
+      "target": "Me"
+     }
+    }
+   ],
+   "ethereal": false,
+   "exhaust": false,
+   "gain": 0.0,
+   "id": "gc1_127",
+   "power": "gp1_127",
+   "split": "test",
+   "type": "Power",
+   "value_per_energy": null
+  }
+ ],
+ "powers": [
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": {
+      "CardType": "Skill"
+     },
+     "effects": [
+      {
+       "LoseHp": 2
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_000",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "LoseHp"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 2,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_001",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "Damage"
+    ],
+    [
+     "CardPlayed:Owner",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Draw": 1
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_002",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Draw"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_003",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Strength"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_004",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Weak"
+    ],
+    [
+     "OwnerLostHp:Card",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 1
+      },
+      {
+       "PlainDamage": {
+        "amount": 2,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_005",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Block"
+    ],
+    [
+     "OwnerTurnStart",
+     "PlainDamage"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_006",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    }
+   ],
+   "id": "gp1_007",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_008",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerLostHp:Card",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_009",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_010",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 2,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    }
+   ],
+   "id": "gp1_011",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Damage"
+    ],
+    [
+     "OwnerLostHp:Any",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "PlainDamage": {
+        "amount": 3,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_012",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "PlainDamage"
+    ],
+    [
+     "OwnerLostHp:Card",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_013",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      {
+       "Block": 2
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_014",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Strength"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Block"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 3,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_015",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Damage"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "GainEnergy": 1
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_016",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "GainEnergy"
+    ],
+    [
+     "OwnerTurnStart",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_017",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "Damage": {
+        "amount": 3,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_018",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Dexterity"
+    ],
+    [
+     "OwnerTurnEnd",
+     "Damage"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_019",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Apply:Weak"
+    ],
+    [
+     "OwnerTurnStart",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "GainEnergy": 1
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_020",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "GainEnergy"
+    ],
+    [
+     "OwnerTurnStart",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_021",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": {
+      "CardType": "Attack"
+     },
+     "effects": [
+      {
+       "Block": 1
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_022",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "Block"
+    ],
+    [
+     "CardPlayed:Owner",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 4
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    }
+   ],
+   "id": "gp1_023",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Block"
+    ],
+    [
+     "OwnerLostHp:Any",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": {
+      "CardType": "Skill"
+     },
+     "effects": [
+      {
+       "LoseHp": 2
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_024",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "LoseHp"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "Damage": {
+        "amount": 2,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_025",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Dexterity"
+    ],
+    [
+     "OwnerTurnEnd",
+     "Damage"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "PlainDamage": {
+        "amount": 2,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_026",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "PlainDamage"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_027",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Block"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": {
+      "CardType": "Attack"
+     },
+     "effects": [
+      {
+       "Draw": 1
+      },
+      {
+       "LoseHp": 2
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_028",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "Draw"
+    ],
+    [
+     "CardPlayed:Owner",
+     "LoseHp"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_029",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Apply:Weak"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    }
+   ],
+   "id": "gp1_030",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_031",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "PlainDamage": {
+        "amount": 3,
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    }
+   ],
+   "id": "gp1_032",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "PlainDamage"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_033",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Dexterity"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_034",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "LoseHp": 2
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_035",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "LoseHp"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Block": 3
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_036",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerTurnEnd",
+     "Block"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_037",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerLostHp:Card",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": {
+      "CardType": "Attack"
+     },
+     "effects": [
+      {
+       "Damage": {
+        "amount": 4,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "PlainDamage": {
+        "amount": 5,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_038",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "Damage"
+    ],
+    [
+     "CardPlayed:Owner",
+     "PlainDamage"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "PlainDamage": {
+        "amount": 3,
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_039",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "PlainDamage"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_040",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "Apply:Dexterity"
+    ],
+    [
+     "CardPlayed:Owner",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_041",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_042",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 4,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Draw": 1
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_043",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Damage"
+    ],
+    [
+     "OwnerTurnStart",
+     "Draw"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_044",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 4
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_045",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Block"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "PlainDamage": {
+        "amount": 4,
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_046",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "PlainDamage"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_047",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 3,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_048",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Damage"
+    ],
+    [
+     "OwnerLostHp:Any",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "Damage": {
+        "amount": 3,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_049",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Dexterity"
+    ],
+    [
+     "OwnerTurnEnd",
+     "Damage"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 3,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_050",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Damage"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      {
+       "Block": 4
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_051",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Apply:Strength"
+    ],
+    [
+     "OwnerLostHp:Any",
+     "Block"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 3
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_052",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Apply:Strength"
+    ],
+    [
+     "OwnerLostHp:Card",
+     "Block"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 2
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_053",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Block"
+    ],
+    [
+     "CardPlayed:Owner",
+     "Apply:Strength"
+    ],
+    [
+     "CardPlayed:Owner",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_054",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Strength"
+    ],
+    [
+     "OwnerLostHp:Card",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 4
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_055",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Block"
+    ],
+    [
+     "CardPlayed:Owner",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_056",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "PlainDamage": {
+        "amount": 1,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Damage": {
+        "amount": 2,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Draw": 1
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_057",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "PlainDamage"
+    ],
+    [
+     "OwnerLostHp:Any",
+     "Damage"
+    ],
+    [
+     "CardPlayed:Owner",
+     "Draw"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Draw": 1
+      },
+      {
+       "Block": 3
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_058",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Draw"
+    ],
+    [
+     "OwnerTurnStart",
+     "Block"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_059",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 1
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 3,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_060",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Block"
+    ],
+    [
+     "OwnerLostHp:Any",
+     "Apply:Dexterity"
+    ],
+    [
+     "OwnerLostHp:Card",
+     "Damage"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_061",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_062",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "PlainDamage": {
+        "amount": 5,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_063",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "PlainDamage"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_064",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerTurnEnd",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_065",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 2
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_066",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Block"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Damage": {
+        "amount": 2,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_067",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerLostHp:Card",
+     "Damage"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Damage": {
+        "amount": 3,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_068",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Damage"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 2,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_069",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Damage"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_070",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "Apply:Dexterity"
+    ],
+    [
+     "CardPlayed:Owner",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_071",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Dexterity"
+    ],
+    [
+     "OwnerLostHp:Card",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 4
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_072",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Block"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 1,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_073",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "Damage"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_074",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 4
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    }
+   ],
+   "id": "gp1_075",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Block"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 1
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_076",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Block"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      {
+       "Damage": {
+        "amount": 4,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_077",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Apply:Strength"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Strength"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Damage"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 2,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_078",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Damage"
+    ],
+    [
+     "OwnerLostHp:Card",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": {
+      "CardType": "Power"
+     },
+     "effects": [
+      {
+       "Draw": 1
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_079",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "Draw"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": {
+      "CardType": "Power"
+     },
+     "effects": [
+      {
+       "LoseHp": 2
+      },
+      {
+       "Draw": 1
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_080",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "LoseHp"
+    ],
+    [
+     "CardPlayed:Owner",
+     "Draw"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_081",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_082",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerTurnStart",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Damage": {
+        "amount": 4,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_083",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Damage"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_084",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    }
+   ],
+   "id": "gp1_085",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "GainEnergy": 1
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_086",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "GainEnergy"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_087",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Weak"
+    ],
+    [
+     "OwnerLostHp:Any",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "PlainDamage": {
+        "amount": 2,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Block": 3
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_088",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "PlainDamage"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Block"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 1
+      },
+      {
+       "Damage": {
+        "amount": 1,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 3
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    }
+   ],
+   "id": "gp1_089",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Block"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Damage"
+    ],
+    [
+     "OwnerLostHp:Any",
+     "Block"
+    ],
+    [
+     "OwnerLostHp:Any",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_090",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Draw": 1
+      },
+      {
+       "Damage": {
+        "amount": 4,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_091",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Draw"
+    ],
+    [
+     "OwnerTurnStart",
+     "Damage"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_092",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Block"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 2,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_093",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Damage"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 1,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_094",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Damage"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "GainEnergy": 1
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_095",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "GainEnergy"
+    ],
+    [
+     "OwnerTurnStart",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_096",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Block"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_097",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Block": 3
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_098",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Apply:Weak"
+    ],
+    [
+     "OwnerTurnStart",
+     "Block"
+    ],
+    [
+     "CardPlayed:Owner",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": {
+      "CardType": "Power"
+     },
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 4
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_099",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Block"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 3
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_100",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Block"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Draw": 1
+      },
+      {
+       "PlainDamage": {
+        "amount": 4,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_101",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "Draw"
+    ],
+    [
+     "OwnerTurnStart",
+     "PlainDamage"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Draw": 1
+      },
+      {
+       "LoseHp": 2
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_102",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "Draw"
+    ],
+    [
+     "CardPlayed:Owner",
+     "LoseHp"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "GainEnergy": 1
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_103",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "GainEnergy"
+    ],
+    [
+     "OwnerTurnStart",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 1,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_104",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Damage"
+    ],
+    [
+     "OwnerTurnEnd",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": {
+      "CardType": "Attack"
+     },
+     "effects": [
+      {
+       "Draw": 1
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_105",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "Draw"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "PlainDamage": {
+        "amount": 2,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_106",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "PlainDamage"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_107",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Dexterity"
+    ],
+    [
+     "OwnerLostHp:Card",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 4,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_108",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Damage"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "Damage": {
+        "amount": 4,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_109",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Dexterity"
+    ],
+    [
+     "OwnerTurnEnd",
+     "Damage"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "LoseHp": 1
+      },
+      {
+       "Draw": 1
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_110",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "LoseHp"
+    ],
+    [
+     "CardPlayed:Owner",
+     "Draw"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 2
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    }
+   ],
+   "id": "gp1_111",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Block"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 1
+      },
+      {
+       "Damage": {
+        "amount": 3,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    }
+   ],
+   "id": "gp1_112",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Block"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Damage"
+    ],
+    [
+     "OwnerLostHp:Any",
+     "Apply:Dexterity"
+    ],
+    [
+     "OwnerLostHp:Any",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Block": 4
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_113",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerLostHp:Any",
+     "Block"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_114",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_115",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "PlainDamage": {
+        "amount": 5,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_116",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerTurnEnd",
+     "PlainDamage"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 4
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_117",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "Block"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Strength"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_118",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Block": 1
+      }
+     ],
+     "trigger": {
+      "CardPlayed": {
+       "by": "Owner"
+      }
+     }
+    }
+   ],
+   "id": "gp1_119",
+   "keys": [
+    [
+     "CardPlayed:Owner",
+     "Block"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      {
+       "PlainDamage": {
+        "amount": 2,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_120",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Vulnerable"
+    ],
+    [
+     "OwnerTurnEnd",
+     "Apply:Strength"
+    ],
+    [
+     "OwnerTurnEnd",
+     "PlainDamage"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "PlainDamage": {
+        "amount": 3,
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_121",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "PlainDamage"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Strength",
+        "target": "Me"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    }
+   ],
+   "id": "gp1_122",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Strength"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "GainEnergy": 1
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Vulnerable",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "ReduceSelf": 1
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_123",
+   "keys": [
+    [
+     "OwnerTurnStart",
+     "GainEnergy"
+    ],
+    [
+     "OwnerTurnStart",
+     "Apply:Vulnerable"
+    ]
+   ],
+   "lifetime": "wearing_down",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      },
+      {
+       "PlainDamage": {
+        "amount": 4,
+        "target": "AllOpponents"
+       }
+      },
+      "RemoveSelf"
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Attack"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      },
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Dexterity",
+        "target": "Me"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnStart"
+    }
+   ],
+   "id": "gp1_124",
+   "keys": [
+    [
+     "OwnerLostHp:Attack",
+     "Apply:Dexterity"
+    ],
+    [
+     "OwnerLostHp:Attack",
+     "PlainDamage"
+    ],
+    [
+     "OwnerTurnStart",
+     "Apply:Weak"
+    ],
+    [
+     "OwnerTurnStart",
+     "Apply:Dexterity"
+    ]
+   ],
+   "lifetime": "used_up",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "PlainDamage": {
+        "amount": 5,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Any"
+      }
+     }
+    }
+   ],
+   "id": "gp1_125",
+   "keys": [
+    [
+     "OwnerLostHp:Any",
+     "PlainDamage"
+    ]
+   ],
+   "lifetime": "permanent",
+   "split": "test"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Apply": {
+        "amount": 1,
+        "power": "Weak",
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": {
+      "OwnerLostHp": {
+       "from": "Card"
+      }
+     }
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_126",
+   "keys": [
+    [
+     "OwnerLostHp:Card",
+     "Apply:Weak"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "train"
+  },
+  {
+   "debuff": false,
+   "hooks": [
+    {
+     "condition": "Always",
+     "effects": [
+      {
+       "Damage": {
+        "amount": 1,
+        "hits": 1,
+        "target": "AllOpponents"
+       }
+      }
+     ],
+     "trigger": "OwnerTurnEnd"
+    },
+    {
+     "condition": "Always",
+     "effects": [
+      "RemoveSelf"
+     ],
+     "trigger": "OwnerTurnEnd"
+    }
+   ],
+   "id": "gp1_127",
+   "keys": [
+    [
+     "OwnerTurnEnd",
+     "Damage"
+    ]
+   ],
+   "lifetime": "this_turn",
+   "split": "test"
+  }
+ ],
+ "seed": 1,
+ "version": 1
+}

@@ -1,0 +1,79 @@
+{
+  "key": "measurement/pack-net-scratch@seed1",
+  "rev": 1,
+  "value": "From-scratch all-content net with the 31 Act 1 pack cards, seed 1 (runs/2026-11-10-packnet40k-s1-r1-64badf9 @hpb0.01), one turn deep, sequences 0-499, fixed n 500: pack headline +3.25 end-HP (se 0.94, z 3.45), clears 0.600 vs 0.516 against the 10-29 net on the same 31-card pack; official cells +1.61 end-HP (se 0.58), clears 0.648 vs 0.634. Gains at the boss and Lagavulin; Gremlin Nob deaths up (30 vs 23). Held-out halves gain more than train halves on both. Single seed: a lead.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/pack-net-scratch.md",
+      "anchor": "Seed-1 reads 0751-0753: checkpoint seed1-pack-read passed",
+      "sha256": "f370edcd67429aaee04f4cb875cf7fd896b02458a92015a020b2ed8e1d851786"
+    },
+    {
+      "path": "results/gauntlet/packnet40k-s1-hpb0.01-starter-simboss-pack-act1.json",
+      "sha256": "9b35563859e64169557b7c64df45fa9dd37c4f784bbd80acedd46a87ce545b9c"
+    },
+    {
+      "path": "results/gauntlet/packnet40k-s1-hpb0.01-cells.json",
+      "sha256": "cbb96e19e9d72168654f87dc035b157a91570e876186d7f4fa1990c1c629fc1c"
+    },
+    {
+      "path": "jobs/done/0752-gauntlet.json",
+      "sha256": "bba930b656e939091a8100c9c210f8e63920a97e7f44ea2a794a274922918168"
+    },
+    {
+      "path": "jobs/done/0753-gauntlet.json",
+      "sha256": "fb8114472212105227c110a97a6264e9e7e8b074db69956f528e1a0a4c50c9a7"
+    },
+    {
+      "key": "yardstick/protocol",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "8e6ee65c-7e4e-4c51-b846-19d524091e89",
+  "at": "2026-11-09T23:30:04+00:00 @ 2af5b30",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "From-scratch all-content net with the 31 Act 1 pack cards, seed 1 (runs/2026-11-10-packnet40k-s1-r1-64badf9 @hpb0.01), one turn deep, sequences 0-499, fixed n 500: pack headline +3.25 end-HP (se 0.94, z 3.45), clears 0.600 vs 0.516 against the 10-29 net on the same 31-card pack; official cells +1.61 end-HP (se 0.58), clears 0.648 vs 0.634. Gains at the boss and Lagavulin; Gremlin Nob deaths up (30 vs 23). Held-out halves gain more than train halves on both. Single seed: a lead.",
+      "sources": [
+        {
+          "path": "docs/research/pack-net-scratch.md",
+          "anchor": "Seed-1 reads 0751-0753: checkpoint seed1-pack-read passed",
+          "sha256": "f370edcd67429aaee04f4cb875cf7fd896b02458a92015a020b2ed8e1d851786"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s1-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "9b35563859e64169557b7c64df45fa9dd37c4f784bbd80acedd46a87ce545b9c"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s1-hpb0.01-cells.json",
+          "sha256": "cbb96e19e9d72168654f87dc035b157a91570e876186d7f4fa1990c1c629fc1c"
+        },
+        {
+          "path": "jobs/done/0752-gauntlet.json",
+          "sha256": "bba930b656e939091a8100c9c210f8e63920a97e7f44ea2a794a274922918168"
+        },
+        {
+          "path": "jobs/done/0753-gauntlet.json",
+          "sha256": "fb8114472212105227c110a97a6264e9e7e8b074db69956f528e1a0a4c50c9a7"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "8e6ee65c-7e4e-4c51-b846-19d524091e89",
+      "at": "2026-11-09T23:30:04+00:00 @ 2af5b30",
+      "until": "2026-11-11T00:59:40+00:00 @ 05607eb",
+      "retired": "superseded by measurement/pack-net-scratch@three-seeds, which pools seed 1 with seeds 101 and 201 on the same reads; no fact cites it"
+    }
+  ],
+  "seal": "05512b8310039de5d3530ca57c319a24f4f9a46f94966dfd23dca1dd613b5919"
+}

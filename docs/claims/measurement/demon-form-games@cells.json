@@ -1,0 +1,78 @@
+{
+  "key": "measurement/demon-form-games@cells",
+  "rev": 2,
+  "value": "Bursts on held-out-card decks (3 seeds/arm), plain leaf one turn, Demon Form decks minus 10-29 net: own games 100/400/1600 per group -0.42/+0.79/+3.77 (0.90) HP; heuristic's 400 +4.98 (0.67); two-turn product's 400 +4.48 (0.60). Family rule passes net-g1600, two-g400. Step 2b (parts, neither) level or negative.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Step 2, all arms but neither's last two seeds: the net's own games teach Demon Form at 1,600 per group (+3.77 (0.90) HP, all seeds +2.4 to +5.5) and the two-turn product's at 400 (+4.48 (0.60)); both pass the family rule, two-g400 at its clears bar; 2b's parts arm teaches nothing on Demon Form decks (-0.13 (0.66)), so far level with neither's one seed (-1.53) (yardstick-cards steps 2 and 2b, partial; 0310-0322, 0359-0393; read 11:35 2026-11-07, lanes 8d03fc2f)",
+      "sha256": "2ffca75172349386067b2fae3c006a941f52d64c0b3850d6d6645ed6283dca8d"
+    },
+    {
+      "path": "configs/families/ycards-step2.json",
+      "sha256": "7d747afcae345a52964c21e62f04d0683f46eb1c1752f3402066532695122e58"
+    },
+    {
+      "path": "jobs/done/0390-family.json",
+      "sha256": "22decd9df7b040d22550e3e843c1f0e701927479b3900cc8343e1f40ed5e730c"
+    },
+    {
+      "key": "measurement/burst8-tsl1@cells",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:09+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Bursts from the 10-29 net on decks holding the held-out official cards, three training seeds per arm, read @hpb0.01 one turn deep on both cell books minus the 10-29 net, by stratum (train / other held-out / held-out Demon Form decks HP; se over sequences / nets): the net's own games per group 100: -0.58 / -0.59 / -0.42 (0.71/0.32); 400: -0.77 / -0.43 / +0.79 (0.87/0.66); 1600: -0.45 / -0.37 / +3.77 (0.87/0.90), seeds +3.41 +2.41 +5.47, train clears -0.025; the heuristic's 400: -1.39 / -1.59 / +4.98 (1.14/0.67), train clears -0.053; the two-turn product's 400: -0.76 / -0.82 / +4.48 (1.10/0.60), train clears -0.038, 13.8 thread-h of bursts against 1.8 for net 1600. Step 2b on eight generated cards (burst8's recipe): parts (turn-start triggers and owner Strength never paired) -2.35 / -2.51 / -0.13 (0.86/0.66); neither (one seed so far) -2.81 / -2.20 / -1.53. Family rule (DF +2 se over nets, train HP >= -0.9, clears >= -0.04) passes net-g1600 and two-g400 (best). Plain leaf only: whether these gains are more than Demon Form's first tick waits on the @tsl1 gate (burst8's +6.10 fell to +0.48 there, measurement/burst8-tsl1@cells).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Step 2, all arms but neither's last two seeds: the net's own games teach Demon Form at 1,600 per group (+3.77 (0.90) HP, all seeds +2.4 to +5.5) and the two-turn product's at 400 (+4.48 (0.60)); both pass the family rule, two-g400 at its clears bar; 2b's parts arm teaches nothing on Demon Form decks (-0.13 (0.66)), so far level with neither's one seed (-1.53) (yardstick-cards steps 2 and 2b, partial; 0310-0322, 0359-0393; read 11:35 2026-11-07, lanes 8d03fc2f)",
+          "sha256": "2ffca75172349386067b2fae3c006a941f52d64c0b3850d6d6645ed6283dca8d"
+        },
+        {
+          "path": "configs/families/ycards-step2.json",
+          "sha256": "7d747afcae345a52964c21e62f04d0683f46eb1c1752f3402066532695122e58"
+        },
+        {
+          "path": "scripts/family.py",
+          "sha256": "255233f28946e12f5302f9bbd34ed4fce61b286424f94c61d1fd3caaaaabc66b"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01.json",
+          "sha256": "5f09012adeffb8c5b718928048b7950077787540398f0bfb9e456e3b10345c1f"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-b500.json",
+          "sha256": "a47fa34511bab4894243e619bf0206aa85e4644cdb8293fb92418d5799f2995e"
+        },
+        {
+          "path": "jobs/done/0384-family.json",
+          "sha256": "0823b70628bd024fbb284764bb2625b7bb8f51ef722dbeff7c8a3440b397cb15"
+        },
+        {
+          "path": "jobs/done/0390-family.json",
+          "sha256": "22decd9df7b040d22550e3e843c1f0e701927479b3900cc8343e1f40ed5e730c"
+        },
+        {
+          "key": "measurement/burst8-tsl1@cells",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "8d03fc2f-c4a6-4156-b0d9-ceb029724278",
+      "at": "2026-11-07T04:24:49+00:00 @ 1ba0297",
+      "until": "2026-11-13T02:30:09+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "463c24dcf89918e7db3c5cd71b61aa4493697cc4a0ed6fbb219cbf23eaf80ed5"
+}

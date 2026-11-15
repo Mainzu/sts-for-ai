@@ -1,0 +1,76 @@
+{
+  "key": "measurement/card-later-ticks@5k",
+  "rev": 2,
+  "value": "Card variants at 5000 games/group (3 bursts/modifier) @tsl1: inflame-turn1 +0.001 (0.004) vs -0.018 cost, metal-c2-a5 +0.003 (0.004) vs -0.021: fail; parent copy per elite fight +1.13 / +1.03 (0.24) HP; cell guards lose 0.02-0.03 clears. Dose is not the lever for the card column @tsl1.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/card-later-ticks-burst.md",
+      "anchor": "Step 2 read: fail (2026-11-11)",
+      "sha256": "64f81ea3019f1453057a4614bda7e0ce111be30c5ce7b97efccbdf002603451f"
+    },
+    {
+      "path": "results/families/clb-step1.md",
+      "sha256": "eecd124333f20a72573f046999a0be7386123a57d39368ea811b843ade45e90a"
+    },
+    {
+      "key": "measurement/cards-adapted@stage-a",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:58+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:18+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/cards-adapted@stage-a reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Card variants' adapted column at 5000 games per group (0859-0884; three bursts per modifier from the 10-29 net, the 400-game recipe at 5000; read on results/mutate/cards-a.json, pooled per start, gain over zero-shot, wins (se) / HP lost): @tsl1 inflame-turn1 +0.001 (0.004) against a -0.018 cost, metal-c2-a5 +0.003 (0.004) against -0.021 (fail: neither at 2 se); one turn inflame +0.029 (0.007) (400 games: +0.024), metal -0.002; bosses @tsl1 metal +0.020 (0.010) / -1.47 HP, a lead; parent copy per elite fight @tsl1 inflame +1.13 (0.24) HP lost, metal +1.03 (0.24); cell guards lose clears (held-out inflame -0.029, metal -0.021, train metal -0.031). Dose is not the lever for the card column at the turn-start leaf.",
+      "sources": [
+        {
+          "path": "docs/research/card-later-ticks-burst.md",
+          "anchor": "Step 2 read: fail (2026-11-11)",
+          "sha256": "64f81ea3019f1453057a4614bda7e0ce111be30c5ce7b97efccbdf002603451f"
+        },
+        {
+          "path": "results/mutate/cards-adapt5k-clb-inflame-turn1-s1.json",
+          "sha256": "cd9fe2559f0067af9c841112821c58598afab5be7b75d0f8781d3c67c5cceb3e"
+        },
+        {
+          "path": "results/mutate/cards-adapt5k-clb-metal-c2-a5-s1.json",
+          "sha256": "44a2ced5d85fe5f14c84050a555b5abd016071995e109d68a828ec6b3697cf44"
+        },
+        {
+          "path": "results/families/clb-step1.md",
+          "sha256": "eecd124333f20a72573f046999a0be7386123a57d39368ea811b843ade45e90a"
+        },
+        {
+          "path": "jobs/done/0884-mutate-cards.json",
+          "sha256": "9231290037567df68ec5b1725989b960e2f5d414f2ff5703e95b7bb5770a58ed"
+        },
+        {
+          "path": "jobs/done/0883-family.json",
+          "sha256": "67a6480ae628a57d543c8889776712dc0a335ad1fb083128147e9af316ed2d27"
+        },
+        {
+          "key": "measurement/cards-adapted@stage-a",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "98bcf190-8912-4af0-9cb8-61a56797ed0c",
+      "at": "2026-11-11T11:10:04+00:00 @ d3a67dc",
+      "until": "2026-11-13T02:29:58+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "a57a25f87990bb20feb03ee7900ffde3148bd942a3657fd42ea21585b15cb7f9"
+}

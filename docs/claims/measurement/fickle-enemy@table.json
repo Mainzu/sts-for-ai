@@ -1,0 +1,63 @@
+{
+  "key": "measurement/fickle-enemy@table",
+  "rev": 1,
+  "value": "Fickle enemy (cycle Attack -> Power -> Skill, Strength on a played card of the named type, 5% max HP lost on Attack/Skill turns, healed on Power turns) on the generated-enemies bench, 675 elite starts x 16 seeds, 10-29 net one turn deep @hpb0.01@tsl1, net minus heuristic minus the ladder control, HP per elite fight: FE-Attack +0.32 (0.20), FE-Power +0.16 (0.15), FE-Skill +0.70 (0.17); none reaches the 1.0 go bar (fail). By parent: FE-Attack x Lagavulin +1.75 (0.47, the turn-1 HP loss wakes it), FE-Skill x Sentries +1.57 (0.36), FE-Skill x Nob +0.80 (0.22); the rest within about 1 HP of zero. Difficulty about one to two enemy Strength on the ladder (heuristic wins 0.96-0.98).",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Fickle enemy read (job 0781, results/mutate/fickle-enemy.json)",
+      "sha256": "6b47947aaa29dd36ee916ecb9d398f55a8cd26bfc0f3ab34297994cbd8336501"
+    },
+    {
+      "path": "results/mutate/fickle-enemy.json",
+      "sha256": "223b8831c4aaa19925743ef37255fa319176440b703132bf21f1da330de33cbb"
+    },
+    {
+      "path": "jobs/done/0781-mutate-monsters.json",
+      "sha256": "db45ac1593bea6d845d4276259760b294a1adc52deeb1942cd7ab6a9b1a95f33"
+    },
+    {
+      "key": "yardstick/novelty-read",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "3e597e15-f95a-456e-8b37-d729df3b4edf",
+  "at": "2026-11-10T02:54:56+00:00 @ 21e61cc",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Fickle enemy (cycle Attack -> Power -> Skill, Strength on a played card of the named type, 5% max HP lost on Attack/Skill turns, healed on Power turns) on the generated-enemies bench, 675 elite starts x 16 seeds, 10-29 net one turn deep @hpb0.01@tsl1, net minus heuristic minus the ladder control, HP per elite fight: FE-Attack +0.32 (0.20), FE-Power +0.16 (0.15), FE-Skill +0.70 (0.17); none reaches the 1.0 go bar (fail). By parent: FE-Attack x Lagavulin +1.75 (0.47, the turn-1 HP loss wakes it), FE-Skill x Sentries +1.57 (0.36), FE-Skill x Nob +0.80 (0.22); the rest within about 1 HP of zero. Difficulty about one to two enemy Strength on the ladder (heuristic wins 0.96-0.98).",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Fickle enemy read (job 0781, results/mutate/fickle-enemy.json)",
+          "sha256": "6b47947aaa29dd36ee916ecb9d398f55a8cd26bfc0f3ab34297994cbd8336501"
+        },
+        {
+          "path": "results/mutate/fickle-enemy.json",
+          "sha256": "223b8831c4aaa19925743ef37255fa319176440b703132bf21f1da330de33cbb"
+        },
+        {
+          "path": "jobs/done/0781-mutate-monsters.json",
+          "sha256": "db45ac1593bea6d845d4276259760b294a1adc52deeb1942cd7ab6a9b1a95f33"
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "3e597e15-f95a-456e-8b37-d729df3b4edf",
+      "at": "2026-11-10T02:54:56+00:00 @ 21e61cc",
+      "until": "2026-11-10T07:03:38+00:00 @ f97b79c",
+      "retired": "merged into measurement/portfolio-fickle-enemy"
+    }
+  ],
+  "seal": "ad8cfdd2dba7c1db16d80d5e60bb6f1ddfa4dc84c3df80ca30398be2a69204a4"
+}

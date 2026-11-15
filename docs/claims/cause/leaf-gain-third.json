@@ -1,0 +1,383 @@
+{
+  "key": "cause/leaf-gain-third",
+  "rev": 7,
+  "value": "A one-turn gain against threats the second turn of search sees reaches the two-turn product at ~0.2-0.46x: effects encoding 0.29x (0.46x on original cards), 3-seed ensemble 0.38x, sharp2 burst 0.31x, thorns2 0.20x, SharpHide-stage-B headline +2.47 -> +1.08 HP (0.44x), no clears.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/effects-vs-ids@gen-bench",
+      "rev": 1
+    },
+    {
+      "key": "measurement/adapted-two@elites",
+      "rev": 4
+    },
+    {
+      "key": "measurement/crossed-player@two-turn",
+      "rev": 2
+    },
+    {
+      "key": "measurement/burst-official@held-out",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:03Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:32:57Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/adapted-two@elites, measurement/crossed-player@two-turn, measurement/burst-official@held-out reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A better leaf reaches the two-turn product at about a third of its one-turn gain, because the second turn of search already finds part of what the leaf learned: the effects encoding on generated cards +0.059 one turn deep and +0.017 two (0.29x; on original cards +0.166 and +0.076, 0.46x; measurement/effects-vs-ids@gen-bench), the three-seed ensemble +0.021 and +0.008 (0.38x; read on trained content only, Slime Boss its one boss), the 399-game SharpHide burst on the same 134 starts sharp2 +0.080 and +0.026 (0.31x), thorns2 +0.066 and +0.013 (0.20x; measurement/stat-burst@one-turn, measurement/adapted-two@elites). Planning rule: a one-turn screen gain of X predicts about X/3 two turns deep, so a leaf candidate earns a two-turn read only when its one-turn gain is at least three times that read's detectable effect (the owner's detectable-effect rule). Exits: a leaf change whose two-turn gain is as large as its one-turn gain (expected for content where the second turn sees nothing the first does not, such as payoffs past both horizons).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Ensemble evaluator: no change at two turns; spec folded (owner away, 2026-11-01)",
+          "sha256": "50729daa3cc6750cdefc2bc49dd824c72e61e73d7020669ae686c057e7fc1f62"
+        },
+        {
+          "key": "measurement/effects-vs-ids@gen-bench",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 2
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "owner/machine-time",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2ef20aae-4e81-4598-8ce8-557bca9d73a3",
+      "at": "2026-11-05T12:31:12Z @ 74e540f",
+      "until": "2026-11-05T15:45:29Z @ f89053c"
+    },
+    {
+      "rev": 2,
+      "value": "A better leaf reaches the two-turn product at about a third of its one-turn gain, because the second turn of search already finds part of what the leaf learned: the effects encoding on generated cards +0.059 one turn deep and +0.017 two (0.29x; on original cards +0.166 and +0.076, 0.46x; measurement/effects-vs-ids@gen-bench), the three-seed ensemble +0.021 and +0.008 (0.38x; read on trained content only, Slime Boss its one boss), the 399-game SharpHide burst sharp2 +0.080 and +0.026 on the same 134 starts (0.31x; +0.021 (0.009) on two burst seeds on fresh starts), thorns2 +0.066 and +0.013 (0.20x; measurement/stat-burst@one-turn, measurement/adapted-two@elites). Planning rule: a one-turn screen gain of X predicts about X/3 two turns deep, so a leaf candidate earns a two-turn read only when its one-turn gain is at least three times that read's detectable effect (the owner's detectable-effect rule). The rule covers gains on the content a change aims at, not retention: the same burst is level on unchanged content one turn deep (parent wins within +0.007, cell end-HP -0.07, boss replay +0.001) and loses 1.21 (0.30) HP per unchanged elite fight two turns deep on two burst seeds, so a one-turn retention read does not bound a two-turn retention cost; a net change headed for the product owes a two-turn retention read. Exits: a leaf change whose two-turn gain is as large as its one-turn gain (expected for content where the second turn sees nothing the first does not, such as payoffs past both horizons).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Ensemble evaluator: no change at two turns; spec folded (owner away, 2026-11-01)",
+          "sha256": "50729daa3cc6750cdefc2bc49dd824c72e61e73d7020669ae686c057e7fc1f62"
+        },
+        {
+          "key": "measurement/effects-vs-ids@gen-bench",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "owner/machine-time",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "56c5a1d1-29a3-4ae4-b122-773b2e4caee5",
+      "at": "2026-11-05T15:45:29Z @ f89053c",
+      "until": "2026-11-06T01:23:57Z @ aa30d72"
+    },
+    {
+      "rev": 3,
+      "value": "A better leaf reaches the two-turn product at about a third to a half of its one-turn gain, because the second turn of search already finds part of what the leaf learned: the effects encoding on generated cards +0.059 one turn deep and +0.017 two (0.29x; on original cards +0.166 and +0.076, 0.46x; measurement/effects-vs-ids@gen-bench), the three-seed ensemble +0.021 and +0.008 (0.38x; read on trained content only, Slime Boss its one boss), the 399-game SharpHide burst sharp2 +0.080 and +0.026 on the same 134 starts (0.31x; +0.021 (0.009) on two burst seeds on fresh starts), thorns2 +0.066 and +0.013 (0.20x; measurement/stat-burst@one-turn, measurement/adapted-two@elites), and on official content the SharpHide-then-stage-B burst net's headline gain with matched decks, +2.47 (0.53) HP and +0.040 clears one turn deep, +1.08 (0.47) HP and -0.006 (0.014) clears two turns deep (0.44x in HP, nothing in clears: the share won at the bosses goes, the share at the elites stays; measurement/burst-official@held-out, measurement/crossed-player@two-turn). Planning rule: a one-turn screen gain of X predicts about X/3 two turns deep, so a leaf candidate earns a two-turn read only when its one-turn gain is at least three times that read's detectable effect (the owner's detectable-effect rule); a one-turn gain that sits at the bosses predicts no clears two turns deep. The rule covers gains on the content a change aims at, not retention: the 399-game SharpHide burst is level on unchanged content one turn deep (parent wins within +0.007, cell end-HP -0.07, boss replay +0.001) and loses 1.21 (0.30) HP per unchanged elite fight two turns deep on two burst seeds, while the SharpHide-then-stage-B net gains 1.39 (0.33) HP per run at the headline's elites at that depth: a burst's two-turn retention varies by net, a one-turn retention read does not bound it, and a net change headed for the product owes its own two-turn retention read. Exits: a leaf change whose two-turn gain is as large as its one-turn gain (expected for content where the second turn sees nothing the first does not, such as payoffs past both horizons, or inputs that show enemy moves past the second turn).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Ensemble evaluator: no change at two turns; spec folded (owner away, 2026-11-01)",
+          "sha256": "50729daa3cc6750cdefc2bc49dd824c72e61e73d7020669ae686c057e7fc1f62"
+        },
+        {
+          "key": "measurement/effects-vs-ids@gen-bench",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 5
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "measurement/crossed-player@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-official@held-out",
+          "rev": 1
+        },
+        {
+          "key": "owner/machine-time",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "d348e064-834e-4cae-be51-056e6d1678db",
+      "at": "2026-11-06T01:23:57Z @ aa30d72",
+      "until": "2026-11-10T12:11:18Z @ 9748e5c"
+    },
+    {
+      "rev": 4,
+      "value": "A better leaf reaches the two-turn product at about a third to a half of its one-turn gain, because the second turn of search already finds part of what the leaf learned: the effects encoding on generated cards +0.059 one turn deep and +0.017 two (0.29x; on original cards +0.166 and +0.076, 0.46x; measurement/effects-vs-ids@gen-bench), the three-seed ensemble +0.021 and +0.008 (0.38x; read on trained content only, Slime Boss its one boss), the 399-game SharpHide burst sharp2 +0.080 and +0.026 on the same 134 starts (0.31x; +0.021 (0.009) on two burst seeds on fresh starts), thorns2 +0.066 and +0.013 (0.20x; measurement/stat-burst@one-turn, measurement/adapted-two@elites), and on official content the SharpHide-then-stage-B burst net's headline gain with matched decks, +2.47 (0.53) HP and +0.040 clears one turn deep, +1.08 (0.47) HP and -0.006 (0.014) clears two turns deep (0.44x in HP, nothing in clears: the share won at the bosses goes, the share at the elites stays; measurement/burst-official@held-out, measurement/crossed-player@two-turn). Planning rule: a one-turn screen gain of X predicts about X/3 two turns deep, so a leaf candidate earns a two-turn read only when its one-turn gain is at least three times that read's detectable effect (the owner's detectable-effect rule); a one-turn gain at the bosses from an in-fight threat the second turn sees (the bursts above) predicts no clears two turns deep. The rule covers gains on the content a change aims at, not retention: the 399-game SharpHide burst is level on unchanged content one turn deep (parent wins within +0.007, cell end-HP -0.07, boss replay +0.001) and loses 1.21 (0.30) HP per unchanged elite fight two turns deep on two burst seeds, while the SharpHide-then-stage-B net gains 1.39 (0.33) HP per run at the headline's elites at that depth: a burst's two-turn retention varies by net, a one-turn retention read does not bound it, and a net change headed for the product owes its own two-turn retention read. Exits: a leaf change whose two-turn gain is as large as its one-turn gain (expected for content where the second turn sees nothing the first does not, such as payoffs past both horizons, or inputs that show enemy moves past the second turn). Lead on that exit (one seed, measurement/pack-net-scratch@two-turn): a from-scratch all-content net that learned powers' later ticks gains +4.67 (1.40) HP and +0.080 clears two turns deep on the 31-card pack against +2.80 (1.37) one turn deep on the same sequences (1.67x), at the bosses; seeds 101 and 201 decide whether gains on content paying past both horizons carry whole.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Ensemble evaluator: no change at two turns; spec folded (owner away, 2026-11-01)",
+          "sha256": "50729daa3cc6750cdefc2bc49dd824c72e61e73d7020669ae686c057e7fc1f62"
+        },
+        {
+          "key": "measurement/effects-vs-ids@gen-bench",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 5
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "measurement/crossed-player@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-official@held-out",
+          "rev": 1
+        },
+        {
+          "key": "owner/machine-time",
+          "rev": 1
+        },
+        {
+          "key": "measurement/pack-net-scratch@two-turn",
+          "rev": 1
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Probe pns-two-turn read: the pack net's gain grows two turns deep; seeds 101 and 201 queued (on the owner's behalf, 2026-11-10)",
+          "sha256": "ab8bc8eb4ba3a61f832cefa3ea34140019b88de936354d8b5e282c86f65bbcf3"
+        }
+      ],
+      "owner": false,
+      "by": "62b7a521-3221-4c6f-8916-214850efc667",
+      "at": "2026-11-10T12:11:18Z @ 9748e5c",
+      "until": "2026-11-10T16:53:24Z @ 5e367c8"
+    },
+    {
+      "rev": 5,
+      "value": "How much of a better leaf's one-turn gain reaches the two-turn product depends on where the gain's payoff lands. Against threats the second turn of search sees, about a third to a half, because the second turn already finds part of what the leaf learned: the effects encoding on generated cards +0.059 one turn deep and +0.017 two (0.29x; on original cards 0.46x; measurement/effects-vs-ids@gen-bench), the three-seed ensemble 0.38x (trained content only), the SharpHide burst sharp2 0.31x, thorns2 0.20x (measurement/stat-burst@one-turn, measurement/adapted-two@elites), and the SharpHide-then-stage-B burst net's headline gain on matched decks +2.47 (0.53) HP one turn deep, +1.08 (0.47) two (0.44x in HP, nothing in clears; measurement/burst-official@held-out, measurement/crossed-player@two-turn). On content whose payoff lands past both horizons (powers that pay over later turns, setup), whole: three from-scratch pack nets that learned such content gain +4.57 (1.19) HP and +0.097 (0.030) clears two turns deep on the 31-card pack against +3.38 (1.21) one turn deep on the same sequences, ratio 1.35 (0.50), per seed 1.67 / 1.57 / 1.02, at the bosses (deaths 60 to about 42; measurement/pack-net-scratch@two-turn); whether it grows past 1 is not shown. Planning rule: a leaf candidate earns a two-turn read when its one-turn gain is at least three times that read's detectable effect on in-horizon content and once that effect on past-horizon content (the owner's detectable-effect rule); a one-turn gain at the bosses from an in-fight threat the second turn sees predicts no clears two turns deep, one from past-horizon content does. The rule covers gains on the content a change aims at, not retention: the 399-game SharpHide burst is level on unchanged content one turn deep and loses 1.21 (0.30) HP per unchanged elite fight two turns deep, while the SharpHide-then-stage-B net gains 1.39 (0.33) there: a net change headed for the product owes its own two-turn retention read. Exits: a gain against an in-horizon threat that carries whole, or a past-horizon gain that falls below 0.6x on another net or pool.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "pns-two-turn-seeds read: past-horizon content gains carry whole; cause/leaf-gain-third re-set; twin-two-turn-matched queued (on the owner's behalf, 2026-11-10)",
+          "sha256": "30cf80f6929023e8b1db34255a3c2e9369385ced13d7aa1f20f5a1554f1c371e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Probe pns-two-turn read: the pack net's gain grows two turns deep; seeds 101 and 201 queued (on the owner's behalf, 2026-11-10)",
+          "sha256": "ab8bc8eb4ba3a61f832cefa3ea34140019b88de936354d8b5e282c86f65bbcf3"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Ensemble evaluator: no change at two turns; spec folded (owner away, 2026-11-01)",
+          "sha256": "50729daa3cc6750cdefc2bc49dd824c72e61e73d7020669ae686c057e7fc1f62"
+        },
+        {
+          "key": "measurement/effects-vs-ids@gen-bench",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/crossed-player@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-official@held-out",
+          "rev": 1
+        },
+        {
+          "key": "measurement/pack-net-scratch@two-turn",
+          "rev": 2
+        },
+        {
+          "key": "owner/machine-time",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "76244db9-7a36-4d59-9a82-257f8498490b",
+      "at": "2026-11-10T16:53:24Z @ 5e367c8",
+      "until": "2026-11-11T05:21:39Z @ d06e052"
+    },
+    {
+      "rev": 6,
+      "value": "How much of a better leaf's one-turn gain reaches the two-turn product depends on where the gain's payoff lands. Against threats the second turn of search sees, about a third to a half, because the second turn already finds part of what the leaf learned: the effects encoding on generated cards +0.059 one turn deep and +0.017 two (0.29x; on original cards 0.46x; measurement/effects-vs-ids@gen-bench), the three-seed ensemble 0.38x (trained content only), the SharpHide burst sharp2 0.31x, thorns2 0.20x (measurement/stat-burst@one-turn, measurement/adapted-two@elites), and the SharpHide-then-stage-B burst net's headline gain on matched decks +2.47 (0.53) HP one turn deep, +1.08 (0.47) two (0.44x in HP, nothing in clears; measurement/burst-official@held-out, measurement/crossed-player@two-turn). On content whose payoff lands past both horizons (powers that pay over later turns, setup), whole: three from-scratch pack nets that learned such content gain +4.57 (1.19) HP and +0.097 (0.030) clears two turns deep on the 31-card pack against +3.38 (1.21) one turn deep on the same sequences, ratio 1.35 (0.50), per seed 1.67 / 1.57 / 1.02, at the bosses (deaths 60 to about 42; measurement/pack-net-scratch@two-turn); whether it grows past 1 is not shown. Content whose payoff is partly inside the second turn splits by part: on the product's 39 Demon Form decks the all-content twin keeps 0.56 of its one-turn gain (+11.49 one turn, +6.46 (1.41) two), as predicted by the first tick (in the product's horizon) at a third plus the later ticks (+3.30 past the first tick, twin-tsl1) whole, about +6.0 (measurement/pack-net-twin@two-turn). Planning rule: a leaf candidate earns a two-turn read when its one-turn gain is at least three times that read's detectable effect on in-horizon content and once that effect on past-horizon content (the owner's detectable-effect rule); a one-turn gain at the bosses from an in-fight threat the second turn sees predicts no clears two turns deep, one from past-horizon content does. The rule covers gains on the content a change aims at, not retention: the 399-game SharpHide burst is level on unchanged content one turn deep and loses 1.21 (0.30) HP per unchanged elite fight two turns deep, while the SharpHide-then-stage-B net gains 1.39 (0.33) there: a net change headed for the product owes its own two-turn retention read. Exits: a gain against an in-horizon threat that carries whole, or a past-horizon gain that falls below 0.6x on another net or pool.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "twin-depth-paired read: stop; one-turn screens stand; leaf-gain-third gains the mixed-content case (on the owner's behalf, 2026-11-11)",
+          "sha256": "d6de64b62a41ed31f3f4afe535a587642d59ee00f3fdf7b9706e2d331a584385"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "pns-two-turn-seeds read: past-horizon content gains carry whole; cause/leaf-gain-third re-set; twin-two-turn-matched queued (on the owner's behalf, 2026-11-10)",
+          "sha256": "30cf80f6929023e8b1db34255a3c2e9369385ced13d7aa1f20f5a1554f1c371e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Probe pns-two-turn read: the pack net's gain grows two turns deep; seeds 101 and 201 queued (on the owner's behalf, 2026-11-10)",
+          "sha256": "ab8bc8eb4ba3a61f832cefa3ea34140019b88de936354d8b5e282c86f65bbcf3"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Ensemble evaluator: no change at two turns; spec folded (owner away, 2026-11-01)",
+          "sha256": "50729daa3cc6750cdefc2bc49dd824c72e61e73d7020669ae686c057e7fc1f62"
+        },
+        {
+          "key": "measurement/effects-vs-ids@gen-bench",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/crossed-player@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-official@held-out",
+          "rev": 1
+        },
+        {
+          "key": "measurement/pack-net-scratch@two-turn",
+          "rev": 2
+        },
+        {
+          "key": "measurement/pack-net-twin@two-turn",
+          "rev": 3
+        },
+        {
+          "key": "owner/machine-time",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "c33c26e2-be6a-40e4-ba5d-4a83e10c1caf",
+      "at": "2026-11-11T05:21:39Z @ d06e052",
+      "until": "2026-11-13T02:29:03Z @ 3123201a"
+    }
+  ],
+  "seal": "8a92d1efada369307a9b133ecb2526d209d8ddf6733b4d5818c80b4662f296e9"
+}

@@ -1,0 +1,71 @@
+{
+  "key": "measurement/shl0.005@gen-rest",
+  "rev": 1,
+  "value": "The 10-29 net @shl0.005@tsl1@hpb0.01 on the 16 bench mechanics outside gen batch 1, elites, 675 starts x 4 seeds, paired with zero-shot (first 4 seeds of gen-enemies-b1.json, heuristic rows identical): change in the net's HP lost per elite fight, mean -0.41 (0.06) over the 16 mechanics and three parents; Lagavulin and Sentries identical to zero-shot (no monster Strength); on Nob -1.21 (0.15), from AttackLoss-Weak -4.55 (0.52) (wins 0.838 to 0.902), TurnEnd-Weak -2.38, TurnStart-Weak -2.25, OppCard-Damage -1.86 to TurnEnd-Vulnerable -0.35; the three Frail rows +0.14 to +0.34 (1.5-2.9 se), wins level. No row worse by 1.5 HP or 0.03 wins: the price's trade (AttackLoss-Strength x Nob +2.37, measurement/shl0.005@gen-b1) is confined to that cell.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/strength-hits-price.md",
+      "anchor": "Held-out read: @shl0.005 on the 16 mechanics outside batch 1 (job 0566, navigator probe, 2026-11-08)",
+      "sha256": "681dac5aa122c10697b7f56c7bacfaeed7fbe8eea7b9e69e324242f7c748aecf"
+    },
+    {
+      "path": "results/mutate/gen-rest-shl0.005.json",
+      "sha256": "1e252970f81051e4a841d64d3e94212b42e4376c1944bfd706ccc83ba67e9e49"
+    },
+    {
+      "path": "results/mutate/gen-enemies-b1.json",
+      "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+    },
+    {
+      "path": "jobs/done/0566-mutate-monsters.json",
+      "sha256": "4644e111f47111373c31f5587455ffa30fb6af674717ff38fe84ef99e5b4965e"
+    },
+    {
+      "key": "measurement/shl0.005@gen-b1",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f498054e-03ee-43a5-94ee-61d61fc50682",
+  "at": "2026-11-08T06:08:17+00:00 @ 598f9d3",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The 10-29 net @shl0.005@tsl1@hpb0.01 on the 16 bench mechanics outside gen batch 1, elites, 675 starts x 4 seeds, paired with zero-shot (first 4 seeds of gen-enemies-b1.json, heuristic rows identical): change in the net's HP lost per elite fight, mean -0.41 (0.06) over the 16 mechanics and three parents; Lagavulin and Sentries identical to zero-shot (no monster Strength); on Nob -1.21 (0.15), from AttackLoss-Weak -4.55 (0.52) (wins 0.838 to 0.902), TurnEnd-Weak -2.38, TurnStart-Weak -2.25, OppCard-Damage -1.86 to TurnEnd-Vulnerable -0.35; the three Frail rows +0.14 to +0.34 (1.5-2.9 se), wins level. No row worse by 1.5 HP or 0.03 wins: the price's trade (AttackLoss-Strength x Nob +2.37, measurement/shl0.005@gen-b1) is confined to that cell.",
+      "sources": [
+        {
+          "path": "docs/research/strength-hits-price.md",
+          "anchor": "Held-out read: @shl0.005 on the 16 mechanics outside batch 1 (job 0566, navigator probe, 2026-11-08)",
+          "sha256": "681dac5aa122c10697b7f56c7bacfaeed7fbe8eea7b9e69e324242f7c748aecf"
+        },
+        {
+          "path": "results/mutate/gen-rest-shl0.005.json",
+          "sha256": "1e252970f81051e4a841d64d3e94212b42e4376c1944bfd706ccc83ba67e9e49"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        },
+        {
+          "path": "jobs/done/0566-mutate-monsters.json",
+          "sha256": "4644e111f47111373c31f5587455ffa30fb6af674717ff38fe84ef99e5b4965e"
+        },
+        {
+          "key": "measurement/shl0.005@gen-b1",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "f498054e-03ee-43a5-94ee-61d61fc50682",
+      "at": "2026-11-08T06:08:17+00:00 @ 598f9d3",
+      "until": "2026-11-12T15:16:14+00:00 @ da93b77",
+      "retired": "STATUS.md over its cap; its numbers stay in cause/leaf-price-trades and docs/research/strength-hits-price.md#Held-out read: @shl0.005 on the 16 mechanics outside batch 1 (job 0566, navigator probe, 2026-11-08)"
+    }
+  ],
+  "seal": "1c3d0ac0945d032e459d28a5056f7d0f39813c542797b6085b89c40eaf509e17"
+}

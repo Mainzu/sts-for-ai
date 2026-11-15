@@ -1,0 +1,78 @@
+{
+  "key": "measurement/adaptation-stage-b",
+  "rev": 2,
+  "value": "Stage B bursts (weakhit1+dmg0.8+split, 1 seed, one turn, 200x8) cut no novelty cost at 2 se at 99 or 399 games; base costs one turn deep are small (wins -0.016/-0.006/-0.016), so stage B gives no games-to-adapt point; retention holds (+0.27, +1.14 HP cells).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Stage B bursts: nothing to repair one turn deep, and no burst cuts its modifier at 2 se; the SharpHide control gains on WeakOnHit (4.8 se in HP), so transfer is wider than one effect atom (adaptation lane step 3; 0138, 0139, 0141 with 0112; read 05:10 2026-11-05, lanes 2cca9f24)",
+      "sha256": "9f709c0401b5192f2fb69c3113f78217e6d8ace2979a71b4f617edaa7c68b722"
+    },
+    {
+      "path": "results/adapt/stageb33-s1.json",
+      "sha256": "2cecf16fbac09f1be40f0ae34426ffd32ee6555764122932d192546cbd9ed562"
+    },
+    {
+      "path": "results/adapt/stageb133-s1.json",
+      "sha256": "3c4250437deb77d0ae41205dfbfe85d8b3c8673d21b7d0b0e7d952064ae08efb"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:44+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Stage B bursts (one seed, one turn deep, 200 x 8): fine-tuning the 10-29 net on weakhit1, dmg0.8 and split together cuts none of their novelty costs at 2 se, at 99 games (33 per modifier: win +0.006, +0.004, +0.013, se 0.007-0.008) or 399 (-0.001, +0.007, +0.008); the base costs are small one turn deep (win -0.016, -0.006, -0.016; HP lost +1.74 (0.34) on weakhit1 only, DamageDown makes the net better than the heuristic), so stage B gives no games-to-adapt point. Retention holds (paired end-HP +0.27 and +1.14 on cells).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Stage B bursts: nothing to repair one turn deep, and no burst cuts its modifier at 2 se; the SharpHide control gains on WeakOnHit (4.8 se in HP), so transfer is wider than one effect atom (adaptation lane step 3; 0138, 0139, 0141 with 0112; read 05:10 2026-11-05, lanes 2cca9f24)",
+          "sha256": "9f709c0401b5192f2fb69c3113f78217e6d8ace2979a71b4f617edaa7c68b722"
+        },
+        {
+          "path": "results/adapt/stageb33-s1.json",
+          "sha256": "2cecf16fbac09f1be40f0ae34426ffd32ee6555764122932d192546cbd9ed562"
+        },
+        {
+          "path": "results/adapt/stageb133-s1.json",
+          "sha256": "3c4250437deb77d0ae41205dfbfe85d8b3c8673d21b7d0b0e7d952064ae08efb"
+        },
+        {
+          "path": "results/mutate/a.json",
+          "sha256": "d0fde96ac23dc06bd70014d98c0cf953ce4413c5c9c986dd53bcc0549648b14d"
+        },
+        {
+          "path": "jobs/done/0139-mutate-monsters.json",
+          "sha256": "1569a4bb96d0f409200b4b9d47103c05c7a2c49a5228f496c7317e166b89756b"
+        },
+        {
+          "path": "jobs/done/0141-mutate-monsters.json",
+          "sha256": "5270517a8233d6333a2804404ab9cbcd786787ddeb3208faf59eab2e19d3c8c5"
+        },
+        {
+          "path": "jobs/done/0112-mutate-monsters.json",
+          "sha256": "c29bcbfa1cd50b963e2e5da6ff451099b81a4d68632dfe043ad737cc2a77c05e"
+        },
+        {
+          "path": "jobs/done/0140-gauntlet.json",
+          "sha256": "ca8def8835db2072ce1cc0338e1cd10417c7596fb7d1944cc38bed42c8db7841"
+        },
+        {
+          "path": "jobs/done/0142-gauntlet.json",
+          "sha256": "451c90200eacae76bdd9ee863de3182682f5704881902b3f1d7891e77a7dc562"
+        }
+      ],
+      "owner": false,
+      "by": "2cca9f24-9754-4bc9-8091-7aec73975742",
+      "at": "2026-11-04T21:54:04+00:00 @ f0dfa05",
+      "until": "2026-11-13T02:29:44+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "c74ecff3aca1de020378a29f9195796ce4c1e3e279f212c5716b61607ee21f03"
+}

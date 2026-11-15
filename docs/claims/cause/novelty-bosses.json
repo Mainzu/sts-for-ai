@@ -1,0 +1,31 @@
+{
+  "key": "cause/novelty-bosses",
+  "rev": 1,
+  "value": "No boss cost beyond the heuristic on any stat change or Ritual 2, one turn deep or two; no adapted player read on bosses.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/wide-bench@one-turn",
+      "rev": 2
+    },
+    {
+      "key": "measurement/boss-cost@two-turn",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:27:56Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:02Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/wide-bench@one-turn, measurement/boss-cost@two-turn reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "bd73e564eb83072b3f7fa2ae67f4d18260d83e58aae54f4062bf72bdd0cc0c71"
+}

@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-act1-cards-zero-shot",
+  "rev": 2,
+  "value": "predicted likely table, ~1.9 cpu-h; actual done: 19/22 cards level one turn @tsl1, in-turn costs Disarm -0.118, Impervious -0.122, Intimidate -0.062 wins, Berserk +0.070, 1.59 cpu-h; reopen if a net reads enemy -Str/Weak/large block, a leaf probe shows the blindness, or 2,000-fight two-turn reads cost <~1 cpu-h.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane act1-cards-zero-shot closed (2026-11-07)",
+      "sha256": "5237aad7bb40bb4a8d0e399d0125fc1f67aed8f7861af68901a95800b58563b2"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:46+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted likely the table within the cap, likely Berserk costs on the plain leaf, even that an open card costs (project, goal 1), about 1.9 cpu-h; actual done: 19 of 22 cards level one turn deep with @tsl1, three in-turn cards cost (Disarm -0.118, Impervious -0.122, Intimidate -0.062 wins), Berserk leads (+0.070), no open card costs, 1.59 cpu-h; reopen if: a net reading negative enemy Strength, enemy Weak and large block in range exists, or a leaf-value probe shows the net blind to them, or two-turn reads of 2,000 fights cost under about 1 cpu-h",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane act1-cards-zero-shot closed (2026-11-07)",
+          "sha256": "5237aad7bb40bb4a8d0e399d0125fc1f67aed8f7861af68901a95800b58563b2"
+        }
+      ],
+      "owner": false,
+      "by": "e8b31491-99a8-49db-9c83-5b3fdedda7aa",
+      "at": "2026-11-07T03:19:16+00:00 @ 664b170",
+      "until": "2026-11-13T02:30:46+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "323ef3946d9775e2dcf8e8a95450d2dd78030f3bfa8ea020213786ba67c0e787"
+}

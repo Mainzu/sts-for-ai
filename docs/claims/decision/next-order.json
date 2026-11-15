@@ -1,0 +1,49 @@
+{
+  "key": "decision/next-order",
+  "rev": 1,
+  "value": "Next order (re-ranked from the approach review): L1 cheap depth (line seed; stage 2 after the landing), L2 the run value along HP, L3 a result cache for run-layer reads, L4 the mutated-monster bench, L5 a generated character on the headline (waits for the branch module and the owner's goal-1 answer), L6 one two-turn self-play round; the survival arms stay queued as the owner designed them.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Next re-ranked from the approach review (owner away, 2026-11-02)",
+      "sha256": "f15c7c1650e61c31caf73e006c3d7c085e2e513df33b2ee6fe63a89486f8fc52"
+    },
+    {
+      "path": "docs/research/approach-review-2026-11-02.md",
+      "anchor": "Approaches to try",
+      "sha256": "935fa90dc4d0e1d854bd6eb0c01810f8a7255eb80f1eff06bde3362a5fb1a9cf"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:11:37Z @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Next order (re-ranked from the approach review): L1 cheap depth (line seed; stage 2 after the landing), L2 the run value along HP, L3 a result cache for run-layer reads, L4 the mutated-monster bench, L5 a generated character on the headline (waits for the branch module and the owner's goal-1 answer), L6 one two-turn self-play round; the survival arms stay queued as the owner designed them.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Next re-ranked from the approach review (owner away, 2026-11-02)",
+          "sha256": "f15c7c1650e61c31caf73e006c3d7c085e2e513df33b2ee6fe63a89486f8fc52"
+        },
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Approaches to try",
+          "sha256": "935fa90dc4d0e1d854bd6eb0c01810f8a7255eb80f1eff06bde3362a5fb1a9cf"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:37Z @ fc9cdd8",
+      "until": "2026-11-11T10:10:44Z @ 3e258d9",
+      "retired": "spent: the 2026-11-02 order L1-L6 is done or replaced by the lane portfolio and docs/backlog.md's ranking (the newest big-picture review outranks it); STATUS cap"
+    }
+  ],
+  "seal": "8e86462d3c471e7d447919b0ea72b3cf6bc6da55e554d0d7b75e239f03c74257"
+}

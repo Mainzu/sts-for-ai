@@ -1,0 +1,118 @@
+{
+  "key": "measurement/hands-adaptive@elite-replay",
+  "rev": 3,
+  "value": "Adaptive hands (4; re-search at 16 where the 4-hand tree is uncut and <25k nodes) on 498 floor-9 headline elites: -0.21 (0.13) HP per elite vs 4 hands, +0.13 (0.11) vs 16 everywhere, wins level, 25.7% decisions re-searched, 1.39x time; gain only at 60+ HP starts; fails 0.3-HP-at-2-se bar.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/hands-where-small.md",
+      "anchor": "Step 3: the adaptive rule (results/depth_probe/two-adapt-elite-all.json, job 0345)",
+      "sha256": "90ef9ac38acc397991038ef2ccdeef76bc2004610b7a0a3daa921826b8ba80ae"
+    },
+    {
+      "path": "results/depth_probe/two-adapt-elite-all.json",
+      "sha256": "f13157d5ccd21a72b2e9915e9d83142a55c02ddd33ba2612b2554cc491ce7c52"
+    },
+    {
+      "key": "measurement/hands16@elite-replay",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:25+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Adaptive hand count (4 hands; where the 4-hand tree is uncut and under 25,000 nodes, search again with 16) on the 498 floor-9 elites of the headline product file, two turns deep: HP lost -0.21 (0.13) per elite against 4 hands and +0.13 (0.11) against 16 everywhere, wins level, 25.7% of decisions searched again, 1,760 s against 1,267 s at 4 hands (1.39x; 16 everywhere 2,030 s, 1.60x); the gain sits on starts at 60+ HP, nil at 40-59 HP; fails the 0.3-HP-at-2-se bar.",
+      "sources": [
+        {
+          "path": "docs/research/hands-where-small.md",
+          "anchor": "Step 3: the adaptive rule (results/depth_probe/two-adapt-elite-all.json, job 0345)",
+          "sha256": "90ef9ac38acc397991038ef2ccdeef76bc2004610b7a0a3daa921826b8ba80ae"
+        },
+        {
+          "path": "results/depth_probe/two-adapt-elite-all.json",
+          "sha256": "f13157d5ccd21a72b2e9915e9d83142a55c02ddd33ba2612b2554cc491ce7c52"
+        },
+        {
+          "path": "results/depth_probe/two4-elite-all.json",
+          "sha256": "a1485b3f594da7fc6fdf4544d637300f95e0e84354de8207ada1d2f59bc45ce4"
+        },
+        {
+          "path": "jobs/done/0345-depth-probe.json",
+          "sha256": "f0cf736b60d089b20db99bd52d711feed490b512eda40fcb89ab0b70437bc058"
+        },
+        {
+          "path": "jobs/done/0343-depth-probe.json",
+          "sha256": "c02ad11c5630ed2edcf366740e82cbcb71538c1a5eabc0a532eb9525232c695c"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "measurement/hands16@elite-replay",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "abfb1cca-c01d-4c29-98d3-41830bd0a88e",
+      "at": "2026-11-07T01:57:15+00:00 @ 1a854fb",
+      "until": "2026-11-11T05:47:31+00:00 @ bd2ee17"
+    },
+    {
+      "rev": 2,
+      "value": "Hand count two turns deep on the 498 floor-9 elites of the headline product file. 16 sampled hands everywhere against the product's 4: HP lost -0.34 (se 0.16) per elite, wins unchanged (485 both), 133 fights changed (71 better, 62 worse), trimmed means 0.30/0.25/0.19 (2/5/10 cut per end), gain on starts at 60+ HP; 2,030 s at 3 threads; at the 0.3 bar on the point estimate a lead, not a result. Adaptive (4 hands; where the 4-hand tree is uncut and under 25,000 nodes, search again with 16): -0.21 (0.13) per elite against 4 hands and +0.13 (0.11) against 16 everywhere, wins level, 25.7% of decisions searched again, 1,760 s against 1,267 s at 4 hands (1.39x; 16 everywhere 1.60x); the gain sits on starts at 60+ HP, nil at 40-59 HP; fails the 0.3-HP-at-2-se bar.",
+      "sources": [
+        {
+          "path": "docs/research/hands-where-small.md",
+          "anchor": "Step 3: the adaptive rule (results/depth_probe/two-adapt-elite-all.json, job 0345)",
+          "sha256": "90ef9ac38acc397991038ef2ccdeef76bc2004610b7a0a3daa921826b8ba80ae"
+        },
+        {
+          "path": "docs/research/hands-where-small.md",
+          "anchor": "Step 2: elite replay at 16 hands (results/depth_probe/two16-elite-all.json, job 0342)",
+          "sha256": "735f8c6fe11b63c4fc9bf9e399c90a007799bd7c8c5e552d8c21ab4b8b9ce4be"
+        },
+        {
+          "path": "results/depth_probe/two-adapt-elite-all.json",
+          "sha256": "f13157d5ccd21a72b2e9915e9d83142a55c02ddd33ba2612b2554cc491ce7c52"
+        },
+        {
+          "path": "results/depth_probe/two4-elite-all.json",
+          "sha256": "a1485b3f594da7fc6fdf4544d637300f95e0e84354de8207ada1d2f59bc45ce4"
+        },
+        {
+          "path": "results/depth_probe/two16-elite-all.json",
+          "sha256": "82f900baa3aa8ecfc9a5f6a6841ac27b1905a50f3902d4e09727aeb6876e6808"
+        },
+        {
+          "path": "jobs/done/0345-depth-probe.json",
+          "sha256": "f0cf736b60d089b20db99bd52d711feed490b512eda40fcb89ab0b70437bc058"
+        },
+        {
+          "path": "jobs/done/0343-depth-probe.json",
+          "sha256": "c02ad11c5630ed2edcf366740e82cbcb71538c1a5eabc0a532eb9525232c695c"
+        },
+        {
+          "path": "jobs/done/0342-depth-probe.json",
+          "sha256": "b4e81ce82e69cd6dfc1732c924d1f5b7546604d27ab4e9015cbb2fd0462493f4"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "15005195-3dba-4a7e-a86e-719258881310",
+      "at": "2026-11-11T05:47:31+00:00 @ bd2ee17",
+      "until": "2026-11-13T02:30:25+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "537ee38400d01de8f02cd435d92e681679ced3ced422df7975c31e5c4887dbdc"
+}

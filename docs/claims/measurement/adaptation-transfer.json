@@ -1,0 +1,118 @@
+{
+  "key": "measurement/adaptation-transfer",
+  "rev": 3,
+  "value": "SharpHide 1602-game burst (1 seed, one turn) on untrained thorns2: novelty gain +0.068 (0.013) wins (cut 1.28x, 0.86x its sharp2 gain); metal4-hp0.85+sharp2-hp0.9 +0.125 (0.017); 99-game net +0.051 / +0.089; parents within +0.007.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Transfer: a SharpHide burst repairs Thorns 2 too, 0.86x of its own SharpHide gain; adaptation carries across the damage-back-on-attack family (adaptation lane step 1; 0125, 0126; read 23:40 2026-11-04, lanes 4ccb3148)",
+      "sha256": "e98a58d240fd776c71204938b120cf31d372fc5d24aabd02d0519635dd3bede5"
+    },
+    {
+      "path": "results/adapt/transfer-1602-s1.json",
+      "sha256": "204082f05f097a9f1d0e62b13b75cc1f6ecd69113d683b8fa4a2a88fb36ac51d"
+    },
+    {
+      "path": "results/adapt/transfer-99-s1.json",
+      "sha256": "e183f4079abbba86920b87a2753944363a15f01734e9f089705a4bd06f4545b2"
+    },
+    {
+      "key": "measurement/adaptation-curve",
+      "rev": 6
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:45+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Transfer of the SharpHide burst (lead: one training seed, one turn deep, 200 starts x 8): the 1602-game net gains +0.068 (0.013) in novelty cost on thorns2, which it never trained on (base cost -0.053, cut 1.28x; 0.86x its own sharp2 gain), and +0.125 (0.017) on metal4-hp0.85+sharp2-hp0.9 (cut 1.38x); the 99-game net +0.051 (0.011) and +0.089 (0.015) (cuts 0.96x, 0.98x); parents within +0.007. Thorns gains sit on elites (+0.091, even over Nob, Lagavulin, Sentries), bosses +0.021 (0.020). Adaptation carries across a mechanic family sharing an effect atom (plain damage back on attacking), not only to the trained power; a hook power with a different effect is the untested control.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Transfer: a SharpHide burst repairs Thorns 2 too, 0.86x of its own SharpHide gain; adaptation carries across the damage-back-on-attack family (adaptation lane step 1; 0125, 0126; read 23:40 2026-11-04, lanes 4ccb3148)",
+          "sha256": "e98a58d240fd776c71204938b120cf31d372fc5d24aabd02d0519635dd3bede5"
+        },
+        {
+          "path": "results/adapt/transfer-1602-s1.json",
+          "sha256": "204082f05f097a9f1d0e62b13b75cc1f6ecd69113d683b8fa4a2a88fb36ac51d"
+        },
+        {
+          "path": "results/adapt/transfer-99-s1.json",
+          "sha256": "e183f4079abbba86920b87a2753944363a15f01734e9f089705a4bd06f4545b2"
+        },
+        {
+          "path": "jobs/done/0125-mutate-monsters.json",
+          "sha256": "259b78c89f9d76f6a3090977a7c9b0bed9db96a9445abce5e86d0e4ca4e543db"
+        },
+        {
+          "path": "jobs/done/0126-mutate-monsters.json",
+          "sha256": "1c77ed0900e45b32629af1429def28af74eb6c4428950c19b57d0c75a1d7bdef"
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "4ccb3148-4683-4db0-b258-c8c6cad7e8a3",
+      "at": "2026-11-04T16:35:47+00:00 @ ea608fe",
+      "until": "2026-11-04T21:54:05+00:00 @ f0dfa05"
+    },
+    {
+      "rev": 2,
+      "value": "Transfer of the SharpHide burst (lead: one training seed, one turn deep, 200 starts x 8): the 1602-game net gains +0.068 (0.013) in novelty cost on thorns2, which it never trained on (base cost -0.053, cut 1.28x; 0.86x its own sharp2 gain), and +0.125 (0.017) on metal4-hp0.85+sharp2-hp0.9 (cut 1.38x); the 99-game net +0.051 (0.011) and +0.089 (0.015); parents within +0.007; thorns gains sit on elites. Different-effect control: on weakhit1 (WeakOnHit, Weak on the attacker, never trained) it cuts the HP cost by 1.36 (0.29) of 1.74 HP and gains +0.024 (0.008) win, on elites (Nob, Sentries, Lagavulin), while on dmg0.8 and split (no punishment for attacking) it gains nothing. Transfer is wider than one effect atom: it carries across powers that punish the player for attacking.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Transfer: a SharpHide burst repairs Thorns 2 too, 0.86x of its own SharpHide gain; adaptation carries across the damage-back-on-attack family (adaptation lane step 1; 0125, 0126; read 23:40 2026-11-04, lanes 4ccb3148)",
+          "sha256": "e98a58d240fd776c71204938b120cf31d372fc5d24aabd02d0519635dd3bede5"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Stage B bursts: nothing to repair one turn deep, and no burst cuts its modifier at 2 se; the SharpHide control gains on WeakOnHit (4.8 se in HP), so transfer is wider than one effect atom (adaptation lane step 3; 0138, 0139, 0141 with 0112; read 05:10 2026-11-05, lanes 2cca9f24)",
+          "sha256": "9f709c0401b5192f2fb69c3113f78217e6d8ace2979a71b4f617edaa7c68b722"
+        },
+        {
+          "path": "results/adapt/transfer-1602-s1.json",
+          "sha256": "204082f05f097a9f1d0e62b13b75cc1f6ecd69113d683b8fa4a2a88fb36ac51d"
+        },
+        {
+          "path": "results/adapt/transfer-99-s1.json",
+          "sha256": "e183f4079abbba86920b87a2753944363a15f01734e9f089705a4bd06f4545b2"
+        },
+        {
+          "path": "results/adapt/control-1602-stageb.json",
+          "sha256": "99bfb0d4ea30b7101be58008cfbcb437e4915729ab30fb7378ef4c92f2158b2b"
+        },
+        {
+          "path": "jobs/done/0125-mutate-monsters.json",
+          "sha256": "259b78c89f9d76f6a3090977a7c9b0bed9db96a9445abce5e86d0e4ca4e543db"
+        },
+        {
+          "path": "jobs/done/0126-mutate-monsters.json",
+          "sha256": "1c77ed0900e45b32629af1429def28af74eb6c4428950c19b57d0c75a1d7bdef"
+        },
+        {
+          "path": "jobs/done/0138-mutate-monsters.json",
+          "sha256": "8fffdd4e87b644a759152db4044f1a69d4ed3b1fed4287969ae207d59f3665b9"
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 5
+        }
+      ],
+      "owner": false,
+      "by": "2cca9f24-9754-4bc9-8091-7aec73975742",
+      "at": "2026-11-04T21:54:05+00:00 @ f0dfa05",
+      "until": "2026-11-13T02:29:45+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "81b506d96b098e20dbac2a57fb9c8438d7110df4d07ec741292bd066e013b1c2"
+}

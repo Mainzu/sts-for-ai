@@ -1,0 +1,31 @@
+{
+  "key": "cause/novelty-two-turn-cost",
+  "rev": 1,
+  "value": "Two turns deep a cost stays on every reactive power: the product loses ~2 HP per elite fight beyond the heuristic, wins level; a SharpHide burst at that depth adds wins (+0.021 (0.009), +0.014 (0.008)), not replicated HP.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/reactive-cost@fresh-elites",
+      "rev": 2
+    },
+    {
+      "key": "measurement/adapted-two@elites",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:27:53Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:06Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/reactive-cost@fresh-elites, measurement/adapted-two@elites reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "2f4012c8014384ee8fab610a5030fbc4a7c77d8c67a9f7857c87b089fa20df94"
+}

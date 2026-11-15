@@ -1,0 +1,215 @@
+{
+  "key": "context/rules-version",
+  "rev": 9,
+  "value": "Rules version 334dd4b4ef071632: registry.rules_version(), the first 16 hex of sha256 over engine/tests/data/golden.txt (CRLF as LF), mapped by registry.SAME_RULES (re-recordings with no rule change); runs, datasets and the solved DB from another rules version don't replay.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "engine/tests/data/golden.txt",
+      "sha256": "334dd4b4ef071632fbdd46c20391dc752c17e07c5143c0d1e73c86d509e55f1a"
+    },
+    {
+      "path": "scripts/registry.py",
+      "sha256": "0588891dcaf89f6dd8503b94984e65697beb898d08b34150bd3fe1cdc1162aac"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Rules version moves for Row V, the game's caps and Shield Gremlin's Protect (on the owner's behalf, 2026-11-15)",
+      "sha256": "c9d5519cb111862ab426547696222b337e8f34c68ddd7b6122d672fdc56229b0"
+    }
+  ],
+  "check": {
+    "cmd": ".venv/Scripts/python.exe -I -c \"import sys; sys.path.insert(0, 'scripts'); import registry; print(registry.rules_version())\"",
+    "expect": "334dd4b4ef071632",
+    "timeout": 30
+  },
+  "owner": false,
+  "pinned": true,
+  "note": "Row V, C1 caps and Shield Gremlin's Protect landed in 378e2a40 (640 Fungi golden lines and 273 proving lines moved, 4 cover games appended), no SAME_RULES entry",
+  "by": "b8a9db13-f74c-4d56-b794-25229c64f682",
+  "at": "2026-11-14T17:00:14Z @ 5b383266",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Rules version 7042d1d6a6149ba0: the first 16 hex of sha256 over engine/tests/data/golden.txt with CRLF turned into LF (registry.rules_version()); runs, datasets and the solved DB from another rules version don't replay.",
+      "sources": [
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "7042d1d6a6149ba05a2f4fd9a6514ae768f6d9b8a1f1cf184de4ddda572b3e0d"
+        },
+        {
+          "path": "scripts/registry.py",
+          "sha256": "f91199872def05429c5ace453cd4b5c16094614acf02d84ab177a82f8d89cf90"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:08:56Z @ fc9cdd8",
+      "until": "2026-11-10T14:56:42Z @ a97705c"
+    },
+    {
+      "rev": 2,
+      "value": "Rules version 7042d1d6a6149ba0: registry.rules_version(), the first 16 hex of sha256 over engine/tests/data/golden.txt with CRLF turned into LF, mapped through registry.SAME_RULES (golden re-recordings with no rule change; e9c10f64df68a215 -> 7042d1d6a6149ba0 since the ended-fight recording of 2026-11-10); runs, datasets and the solved DB from another rules version don't replay.",
+      "sources": [
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "e9c10f64df68a2150ba34613247725e97859aa16fb4807d667cf2bf1f2dbe772"
+        },
+        {
+          "path": "scripts/registry.py",
+          "sha256": "2f97b9324496ce6d14e4d4c7ff62cae7f2b170a229712b6503422057b82a501d"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Golden games record an ended fight by what outlasts it (owner, 2026-11-10)",
+          "sha256": "8a90a66bb21a5c870ef869b7a8c2574b882709ff219c26687e8966a2cdab8d58"
+        }
+      ],
+      "owner": true,
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T14:56:42Z @ a97705c",
+      "until": "2026-11-10T15:15:34Z @ a97705c"
+    },
+    {
+      "rev": 3,
+      "value": "Rules version 7042d1d6a6149ba0: registry.rules_version(), the first 16 hex of sha256 over engine/tests/data/golden.txt (CRLF as LF), mapped by registry.SAME_RULES (re-recordings with no rule change); runs, datasets and the solved DB from another rules version don't replay.",
+      "sources": [
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "e9c10f64df68a2150ba34613247725e97859aa16fb4807d667cf2bf1f2dbe772"
+        },
+        {
+          "path": "scripts/registry.py",
+          "sha256": "0588891dcaf89f6dd8503b94984e65697beb898d08b34150bd3fe1cdc1162aac"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Golden games record an ended fight by what outlasts it (owner, 2026-11-10)",
+          "sha256": "8a90a66bb21a5c870ef869b7a8c2574b882709ff219c26687e8966a2cdab8d58"
+        }
+      ],
+      "owner": true,
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:15:34Z @ a97705c",
+      "until": "2026-11-13T17:49:37Z @ 49d55af3"
+    },
+    {
+      "rev": 4,
+      "value": "Rules version e47bcfcdb6b2777a: registry.rules_version(), the first 16 hex of sha256 over engine/tests/data/golden.txt (CRLF as LF), mapped by registry.SAME_RULES (re-recordings with no rule change); runs, datasets and the solved DB from another rules version don't replay.",
+      "sources": [
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "e47bcfcdb6b2777ab5d4ed70b3363c6f9ede1328f7748038060d67aaf4d52f3b"
+        },
+        {
+          "path": "scripts/registry.py",
+          "sha256": "0588891dcaf89f6dd8503b94984e65697beb898d08b34150bd3fe1cdc1162aac"
+        },
+        {
+          "path": "docs/specs/draw-knowledge.md",
+          "anchor": "Owner decision (2026-11-13)",
+          "sha256": "7c9138d847cebe383e664ba1aa3ba6c02044b7f4a35e785f32ec8237f8a615b1"
+        }
+      ],
+      "owner": true,
+      "by": "1d4d0e39-91ea-4cd4-bd84-cc18976039f3",
+      "at": "2026-11-13T17:49:37Z @ 49d55af3",
+      "until": "2026-11-14T08:58:04Z @ 3885e39b"
+    },
+    {
+      "rev": 5,
+      "value": "Rules version f59b662aa4500070: registry.rules_version(), the first 16 hex of sha256 over engine/tests/data/golden.txt (CRLF as LF), mapped by registry.SAME_RULES (re-recordings with no rule change); runs, datasets and the solved DB from another rules version don't replay.",
+      "sources": [
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "f59b662aa4500070d55817cd1ff2075fda6477abd5945624e53fad622c26c0b1"
+        },
+        {
+          "path": "scripts/registry.py",
+          "sha256": "0588891dcaf89f6dd8503b94984e65697beb898d08b34150bd3fe1cdc1162aac"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves to cover the 14 Nov rule fixes (on the owner's behalf, 2026-11-14)",
+          "sha256": "3d1e24a3b2b074a10fa89f9b515f059292bc1a184740c61df4c4c7c81e60045a"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T08:58:04Z @ 3885e39b",
+      "until": "2026-11-14T11:16:54Z @ 88b189c1"
+    },
+    {
+      "rev": 6,
+      "value": "Rules version 696d607bbb413f47: registry.rules_version(), the first 16 hex of sha256 over engine/tests/data/golden.txt (CRLF as LF), mapped by registry.SAME_RULES (re-recordings with no rule change); runs, datasets and the solved DB from another rules version don't replay.",
+      "sources": [
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "696d607bbb413f474fbf93fd8e168a3179400d77254c12ad47b5ae3492b04431"
+        },
+        {
+          "path": "scripts/registry.py",
+          "sha256": "0588891dcaf89f6dd8503b94984e65697beb898d08b34150bd3fe1cdc1162aac"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
+          "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T11:16:54Z @ 88b189c1",
+      "until": "2026-11-14T12:51:43Z @ 69a75332"
+    },
+    {
+      "rev": 7,
+      "value": "Rules version 32f1971b128452c4: registry.rules_version(), the first 16 hex of sha256 over engine/tests/data/golden.txt (CRLF as LF), mapped by registry.SAME_RULES (re-recordings with no rule change); runs, datasets and the solved DB from another rules version don't replay.",
+      "sources": [
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "32f1971b128452c4c74c34a4b56a049527392e3c6a25bc2c397322cff95c6fbf"
+        },
+        {
+          "path": "scripts/registry.py",
+          "sha256": "0588891dcaf89f6dd8503b94984e65697beb898d08b34150bd3fe1cdc1162aac"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Pocketwatch's play count (on the owner's behalf, 2026-11-14)",
+          "sha256": "d2e7d665d0d8dbb8dfffed3e638b9a1f1e70405ae489bf0c428f9ae3fb5f95d2"
+        }
+      ],
+      "owner": false,
+      "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+      "at": "2026-11-14T12:51:43Z @ 69a75332",
+      "until": "2026-11-14T15:58:34Z @ 13527edf"
+    },
+    {
+      "rev": 8,
+      "value": "Rules version d08bc2b781dd64da: registry.rules_version(), the first 16 hex of sha256 over engine/tests/data/golden.txt (CRLF as LF), mapped by registry.SAME_RULES (re-recordings with no rule change); runs, datasets and the solved DB from another rules version don't replay.",
+      "sources": [
+        {
+          "path": "engine/tests/data/golden.txt",
+          "sha256": "d08bc2b781dd64daf73ceeb39db2bfbea80e3b93acbefc1e292c363885bab048"
+        },
+        {
+          "path": "scripts/registry.py",
+          "sha256": "0588891dcaf89f6dd8503b94984e65697beb898d08b34150bd3fe1cdc1162aac"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Fire Breathing on a Curse draw (on the owner's behalf, 2026-11-14)",
+          "sha256": "a914ff6e6396d4ed3e1a7cbd9a25debc1d1a52bea96b1fae7609f18ef5179e89"
+        }
+      ],
+      "owner": false,
+      "by": "b8a9db13-f74c-4d56-b794-25229c64f682",
+      "at": "2026-11-14T15:58:34Z @ 13527edf",
+      "until": "2026-11-14T17:00:14Z @ 5b383266"
+    }
+  ],
+  "seal": "ea1cc8cbf341393be576633f2bca5f32aa29ca281ca3d0ac01aa0d403db0b2cd"
+}

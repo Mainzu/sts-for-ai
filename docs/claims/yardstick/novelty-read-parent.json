@@ -1,0 +1,37 @@
+{
+  "key": "yardstick/novelty-read-parent",
+  "rev": 1,
+  "value": "All modifiers of a mutate file share one parent draw: agreement across them is one finding; with M modifiers play the parent at ~sqrt(M) the seeds of a modifier; a lead becomes a result only on starts/seeds it wasn't found on.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+      "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+    },
+    {
+      "path": "scripts/analysis/mutate_monsters.py",
+      "sha256": "c866440feccc5b5c8f43793596cdb65212625ecb73c1c49ddc3ad05250ae5f87"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:08Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:44:56Z @ e24c419a",
+      "note": "mutate_monsters.py's only change since rev (3a4033c9) sets RUST_MIN_STACK to 64 MB; read, odds and the parent draw are untouched"
+    },
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:43:14Z @ d240a173",
+      "note": "navigator 2026-11-13: mutate_monsters.py diff since 3123201a is the patch-API refactor and stack size; parent selection unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "46a7e2d73f0cde6e88355580aee281100cd8f97c1adbce8e68860806f8373f21"
+}

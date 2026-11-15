@@ -1,0 +1,138 @@
+{
+  "key": "measurement/pack-net-gen-bench@seed1",
+  "rev": 2,
+  "value": "Pack net seed 1 (packnet40k-s1 r1 @tsl1) one turn deep on the generated-enemies bench's eight costliest or edge rows (675 elite starts x 16 seeds) against the 10-29 net @tsl1 on the same starts: HP lost per elite fight, pack net minus 10-29, parent +0.62 (0.16); AttackLoss-Damage +3.22 (0.40), OppCard-PlainDamage +2.15 (0.28), OppCard-Damage +1.92 (0.29), TurnStart-Weak +1.69, TurnEnd-Weak +1.63, OppCard-Vulnerable +11.67 (0.75; wins -0.304, the 10-29 net's +0.153 edge lost; Lagavulin +18.61); better on OppCard-Weak -2.24 (0.51) and AttackLoss-Weak -2.06 (0.40, cut 0.48). Breadth of official and Act 1 content buys no zero-shot transfer to generated mechanics and costs it on five of seven costly rows: the pack net is not a goal-1 base for generated packs. Single seed; whether the cause is the recipe or the pack's few powers is read by 0779 (all-content twin) and 0780 (seed 101). Attribution (0779): the all-content twin (no packs, same recipe, seed 1) @tsl1 on the same rows, win gain against the 10-29 net: AttackLoss-Damage -0.029 (0.006), OppCard-Weak -0.020, AttackLoss-Weak +0.042, OppCard-PlainDamage -0.043, OppCard-Damage -0.047, TurnStart-Weak -0.027, TurnEnd-Weak -0.021, OppCard-Vulnerable -0.267 (0.014); parent -0.005: the recipe (40k games, one round), not the pack, loses the bench; the pack adds -0.025 to -0.039 on AttackLoss-Damage and the OppCard damage rows.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/pns-probes.md",
+      "anchor": "pns1-gen-bench (0762): the pack net loses generated-bench play zero-shot",
+      "sha256": "cc80cdfa2ba3cc20ab52da0f357afa6f3168e3a0e49e7e9265e299510e0bcd98"
+    },
+    {
+      "path": "results/mutate/gen-pns1-tsl1.json",
+      "sha256": "e5dc5a6cc4d9ace7c3325f9a3af2f3ede00654bba477e387b437aaf682df02ab"
+    },
+    {
+      "path": "results/mutate/gen-enemies-b1.json",
+      "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+    },
+    {
+      "path": "jobs/done/0762-mutate-monsters.json",
+      "sha256": "c45bc4e1aa0a7dda401478ee48d60eea0f2688528e1fde404d2a7d616c30995f"
+    },
+    {
+      "key": "product/net",
+      "rev": 4
+    },
+    {
+      "path": "docs/research/pns-probes.md",
+      "anchor": "pns-gen-attribution, twin (0779): the recipe, not the pack, loses the generated bench",
+      "sha256": "525b4aa0e9d2a9673933a3a891ba8b75ab8b44166f5db3891aa19af0967bd667"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "pns-gen-attribution read: the recipe loses the generated bench; 47's step 2 keeps it and gains a round-2 branch (on the owner's behalf, 2026-11-10)",
+      "sha256": "dbb1476e2368d3aca5a6112b18b6bdc3502ed56953176dd0b0f3f389fcd32584"
+    },
+    {
+      "path": "results/mutate/gen-allc40k-s1-tsl1.json",
+      "sha256": "75a0ee872c8c05ef2ea2f533e52817ec817b67dcfd1bbac9694d59ea895b4b44"
+    },
+    {
+      "path": "jobs/done/0779-mutate-monsters.json",
+      "sha256": "caad0366dc422d91660f652dadc6f9aea25a2150267b244c179a35417ba48fc0"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "9b2dd76a-ebb7-49f2-a306-4e05e9845de4",
+  "at": "2026-11-10T05:44:59+00:00 @ 41760df",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Pack net seed 1 (packnet40k-s1 r1 @tsl1) one turn deep on the generated-enemies bench's eight costliest or edge rows (675 elite starts x 16 seeds) against the 10-29 net @tsl1 on the same starts: HP lost per elite fight, pack net minus 10-29, parent +0.62 (0.16); AttackLoss-Damage +3.22 (0.40), OppCard-PlainDamage +2.15 (0.28), OppCard-Damage +1.92 (0.29), TurnStart-Weak +1.69, TurnEnd-Weak +1.63, OppCard-Vulnerable +11.67 (0.75; wins -0.304, the 10-29 net's +0.153 edge lost; Lagavulin +18.61); better on OppCard-Weak -2.24 (0.51) and AttackLoss-Weak -2.06 (0.40, cut 0.48). Breadth of official and Act 1 content buys no zero-shot transfer to generated mechanics and costs it on five of seven costly rows: the pack net is not a goal-1 base for generated packs. Single seed; whether the cause is the recipe or the pack's few powers is read by 0779 (all-content twin) and 0780 (seed 101).",
+      "sources": [
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns1-gen-bench (0762): the pack net loses generated-bench play zero-shot",
+          "sha256": "cc80cdfa2ba3cc20ab52da0f357afa6f3168e3a0e49e7e9265e299510e0bcd98"
+        },
+        {
+          "path": "results/mutate/gen-pns1-tsl1.json",
+          "sha256": "e5dc5a6cc4d9ace7c3325f9a3af2f3ede00654bba477e387b437aaf682df02ab"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        },
+        {
+          "path": "jobs/done/0762-mutate-monsters.json",
+          "sha256": "c45bc4e1aa0a7dda401478ee48d60eea0f2688528e1fde404d2a7d616c30995f"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "b80fa29f-c01b-4065-805a-4beba0657002",
+      "at": "2026-11-10T00:20:24+00:00 @ 6117301",
+      "until": "2026-11-10T05:44:59+00:00 @ 41760df"
+    },
+    {
+      "rev": 2,
+      "value": "Pack net seed 1 (packnet40k-s1 r1 @tsl1) one turn deep on the generated-enemies bench's eight costliest or edge rows (675 elite starts x 16 seeds) against the 10-29 net @tsl1 on the same starts: HP lost per elite fight, pack net minus 10-29, parent +0.62 (0.16); AttackLoss-Damage +3.22 (0.40), OppCard-PlainDamage +2.15 (0.28), OppCard-Damage +1.92 (0.29), TurnStart-Weak +1.69, TurnEnd-Weak +1.63, OppCard-Vulnerable +11.67 (0.75; wins -0.304, the 10-29 net's +0.153 edge lost; Lagavulin +18.61); better on OppCard-Weak -2.24 (0.51) and AttackLoss-Weak -2.06 (0.40, cut 0.48). Breadth of official and Act 1 content buys no zero-shot transfer to generated mechanics and costs it on five of seven costly rows: the pack net is not a goal-1 base for generated packs. Single seed; whether the cause is the recipe or the pack's few powers is read by 0779 (all-content twin) and 0780 (seed 101). Attribution (0779): the all-content twin (no packs, same recipe, seed 1) @tsl1 on the same rows, win gain against the 10-29 net: AttackLoss-Damage -0.029 (0.006), OppCard-Weak -0.020, AttackLoss-Weak +0.042, OppCard-PlainDamage -0.043, OppCard-Damage -0.047, TurnStart-Weak -0.027, TurnEnd-Weak -0.021, OppCard-Vulnerable -0.267 (0.014); parent -0.005: the recipe (40k games, one round), not the pack, loses the bench; the pack adds -0.025 to -0.039 on AttackLoss-Damage and the OppCard damage rows.",
+      "sources": [
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns1-gen-bench (0762): the pack net loses generated-bench play zero-shot",
+          "sha256": "cc80cdfa2ba3cc20ab52da0f357afa6f3168e3a0e49e7e9265e299510e0bcd98"
+        },
+        {
+          "path": "results/mutate/gen-pns1-tsl1.json",
+          "sha256": "e5dc5a6cc4d9ace7c3325f9a3af2f3ede00654bba477e387b437aaf682df02ab"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        },
+        {
+          "path": "jobs/done/0762-mutate-monsters.json",
+          "sha256": "c45bc4e1aa0a7dda401478ee48d60eea0f2688528e1fde404d2a7d616c30995f"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-gen-attribution, twin (0779): the recipe, not the pack, loses the generated bench",
+          "sha256": "525b4aa0e9d2a9673933a3a891ba8b75ab8b44166f5db3891aa19af0967bd667"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "pns-gen-attribution read: the recipe loses the generated bench; 47's step 2 keeps it and gains a round-2 branch (on the owner's behalf, 2026-11-10)",
+          "sha256": "dbb1476e2368d3aca5a6112b18b6bdc3502ed56953176dd0b0f3f389fcd32584"
+        },
+        {
+          "path": "results/mutate/gen-allc40k-s1-tsl1.json",
+          "sha256": "75a0ee872c8c05ef2ea2f533e52817ec817b67dcfd1bbac9694d59ea895b4b44"
+        },
+        {
+          "path": "jobs/done/0779-mutate-monsters.json",
+          "sha256": "caad0366dc422d91660f652dadc6f9aea25a2150267b244c179a35417ba48fc0"
+        }
+      ],
+      "owner": false,
+      "by": "9b2dd76a-ebb7-49f2-a306-4e05e9845de4",
+      "at": "2026-11-10T05:44:59+00:00 @ 41760df",
+      "until": "2026-11-11T09:00:39+00:00 @ 50c01fd",
+      "retired": "STATUS cap: no fact cites it; its numbers stay in docs/research/pns-probes.md#pns1-gen-bench (0762) and #pns-gen-attribution; its conclusion (the pack net is no goal-1 base for generated packs) is superseded by measurement/genpack-transfer@three-seeds, where nets trained on a generated pack cut that cost 0.76"
+    }
+  ],
+  "seal": "62947c564eeb05aecbfb3f1cdd6d16800d709f6f23f143b1c81206f439fd11b6"
+}

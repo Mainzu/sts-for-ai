@@ -1,0 +1,437 @@
+{
+  "key": "measurement/act1-cards@files",
+  "rev": 14,
+  "value": "All 40 Ironclad cards the engine lacked load from content/packs/act1-ironclad.json with upgrades as data (75 of 75 load, docs/INDEX.md), each tested vs the game (act1_cards.rs, ironclad_last_four.rs, etc.); Searing Blow upgrades unbounded. A fight binds up to MAX_CARD_SLOTS pack cards and 24 pack powers (registry.rs). Blocked: none.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "content/packs/act1-ironclad.json",
+      "sha256": "e685a78130107c84c188b01abc90acf6b7df5b0898eef2449e319814e4a6e120"
+    },
+    {
+      "path": "engine/tests/ironclad_last_four.rs",
+      "sha256": "4bb25a32c04348a36cca43284805a4c58727583cee89c1d51fc7ce130d840539"
+    },
+    {
+      "path": "engine/tests/discovery.rs",
+      "sha256": "ba41a41586f657c25017633344af59cd82518821a234fca41ed6fc525325ec91"
+    },
+    {
+      "path": "docs/research/act1-coverage.json",
+      "sha256": "3c5070217d542db5039741042b8f0c96626dc38a0d377dbb57051a3ca24f8407"
+    },
+    {
+      "path": "engine/src/registry.rs",
+      "sha256": "5762ab9b1edf187b00173cc2a3ec01a3a83685957e3094308414304d7c344015"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "ironclad-last-four steps 3-4 landed (Dual Wield, Juggernaut) in e7957815; spec closed",
+  "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+  "at": "2026-11-14T06:46:15+00:00 @ e7957815",
+  "confirms": [
+    {
+      "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+      "at": "2026-11-14T13:40:40+00:00 @ 2e1d1b32",
+      "note": "discovery.rs change is the colorless missing list only, registry.rs change moves pool-name parsing before powers (act1-mag); Ironclad pack and its 75 entries unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Ironclad cards loaded from pack files with values checked: the 16 writable of the 40 the engine lacked, with upgrades (32 entries, generated powers FlameBarrier, Berserk, DoubleTap), in content/packs/act1-ironclad.json; wiki and sts_lightspeed agree except two sts_lightspeed gaps settled for the wiki (Disarm+ -3 Strength, Seeing Red exhausts); 10 tests pass (each card's numbers when played; greedy starter deck plus 8 new entries beats a Jaw Worm 40 of 40). Searing Blow has only its first upgrade (C6); Feed's max HP is off (charter). A deck binds at most 8 distinct pack cards (registry::SLOTS). 24 cards still blocked (C1 first).",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Step 3: the sixteen writable Ironclad cards as pack data",
+          "sha256": "34ed0ca53c4eb9ef2b1d846d37ed892432d76082a42bf2ca2d31f79376ad9535"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "f41ad0a52e2382f152df3ce0b003793c1498bf21c6803543a2d64b1b9534a497"
+        },
+        {
+          "path": "engine/tests/act1_cards.rs",
+          "sha256": "38539519266e612a02510c3f5f17b3cab67188fb8018a8a223663f406e420851"
+        }
+      ],
+      "owner": false,
+      "by": "95f0d8ff-f837-4806-8fce-2d31a8f45303",
+      "at": "2026-11-06T14:02:16+00:00 @ 59f887f",
+      "until": "2026-11-06T15:32:24+00:00 @ 828b955"
+    },
+    {
+      "rev": 2,
+      "value": "Ironclad cards loaded from pack files with values checked: 22 of the 40 the engine lacked, with upgrades (44 entries) in content/packs/act1-ironclad.json: the 16 writable ones (generated powers FlameBarrier, Berserk, DoubleTap; wiki and sts_lightspeed agree except two sts_lightspeed gaps settled for the wiki: Disarm+ -3 Strength, Seeing Red exhausts; engine/tests/act1_cards.rs 10 pass) and C1's six (True Grit, Burning Pact, Second Wind, Sever Soul, Fiend Fire, Exhume; the two sources agree; engine/tests/exhaust.rs 9 pass, greedy 40 of 40) on branch lane/act1-content until C1 lands. Searing Blow has only its first upgrade (C6); Feed's max HP is off (charter). A deck binds at most 8 distinct pack cards (registry::SLOTS). 18 cards still blocked (C2 next).",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Step 3: the sixteen writable Ironclad cards as pack data",
+          "sha256": "34ed0ca53c4eb9ef2b1d846d37ed892432d76082a42bf2ca2d31f79376ad9535"
+        },
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block C1: exhaust another card (six cards as pack data)",
+          "sha256": "9fb969997aa83f8a2044d17235f16778cc1eb0305211355b9d4d808d3faef363"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "1a4ef411afe9777d4e6f893e97f28f0cb4adf975b9bac292d6df976019b51326"
+        },
+        {
+          "path": "engine/tests/act1_cards.rs",
+          "sha256": "38539519266e612a02510c3f5f17b3cab67188fb8018a8a223663f406e420851"
+        },
+        {
+          "path": "engine/tests/exhaust.rs",
+          "sha256": "78161afc5a9ad0050c359fd1e57ad125e630e2bde0c249e9937b91c1198da807"
+        }
+      ],
+      "owner": false,
+      "by": "e2a35158-537a-4241-a4c1-37f823338b26",
+      "at": "2026-11-06T15:32:24+00:00 @ 828b955",
+      "until": "2026-11-07T07:35:37+00:00 @ 8e9e5c2"
+    },
+    {
+      "rev": 3,
+      "value": "Ironclad cards loaded from pack files with values checked: 27 of the 40 the engine lacked, with upgrades (54 entries) in content/packs/act1-ironclad.json: the 16 writable ones, C1's six, C2's three and C4's two (Entrench, Limit Break), each against the wiki and sts_lightspeed (engine/tests/act1_cards.rs, exhaust.rs, exhaust_triggers.rs, quantity_amounts.rs pass; greedy plays the pack's 27 base cards and the four C4 entries to an end). A fight binds up to 32 distinct pack cards and 24 pack powers (S1). 13 cards still blocked (C3 card drawn, C5 cost changes, and others in the inventory).",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block C4: Block and Apply amounts from a quantity (two cards as pack data)",
+          "sha256": "1c1b1011128632b00475b92c9a713f6ab470e349abfbb800ec96a83f0820c8d1"
+        },
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block S1: more pack cards and powers per fight",
+          "sha256": "da118ec75b9896857fa54011be46a3e7de005f8710f2334088aceef64c1e70de"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "8f4be99b64d9dc683288b13f20763440c59f923f426fa5e217dc9cbda392acc2"
+        },
+        {
+          "path": "engine/tests/act1_cards.rs",
+          "sha256": "0431a517fd736bdec0b23cb6f50355ec5c89e890a3f25761b537b9624ed63f7c"
+        },
+        {
+          "path": "engine/tests/quantity_amounts.rs",
+          "sha256": "69cc58e267c407de643d0f4a6f80eb35a99b57d2931af69303c461be7383983a"
+        }
+      ],
+      "owner": false,
+      "by": "7abcebd5-4bd6-45fc-a17f-1ca2ed6eb268",
+      "at": "2026-11-07T07:35:37+00:00 @ 8e9e5c2",
+      "until": "2026-11-09T10:53:42+00:00 @ 49c436c"
+    },
+    {
+      "rev": 4,
+      "value": "Ironclad cards loaded from pack files with values checked: 29 of the 40 the engine lacked, with upgrades, in content/packs/act1-ironclad.json: the 16 writable ones, C1's six, C2's three, C4's two (Entrench, Limit Break) and C3's two (Evolve, Fire Breathing), each against the wiki and sts_lightspeed (engine/tests/act1_cards.rs, exhaust.rs, exhaust_triggers.rs, quantity_amounts.rs, draw_triggers.rs pass). A fight binds up to 32 distinct pack cards and 24 pack powers (S1). 11 cards still blocked: Corruption, Blood for Blood (C5), Infernal Blade (C5, C11), Armaments (C6), Warcry (C7), Havoc (C8), Battle Trance (C9), Dual Wield (C10), Barricade (C12), Juggernaut (C13), Reaper (C14).",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block C3 as built: draw triggers (two cards as pack data)",
+          "sha256": "eef00f9bd1c3d39853cb5bdaa2437d53a5b3a2f6222125b2e4a1ac8b205f9f24"
+        },
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block S1: more pack cards and powers per fight",
+          "sha256": "da118ec75b9896857fa54011be46a3e7de005f8710f2334088aceef64c1e70de"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "5eb220f4c6a8153ec6911b722c7258d7d52ba0dced92de8a33df5ce0e27ffadc"
+        },
+        {
+          "path": "engine/tests/draw_triggers.rs",
+          "sha256": "a91870c1390c0dec0677f4e0b7ed07f1c68ed4e11cdc45a28f8944f9c666fe2e"
+        }
+      ],
+      "owner": false,
+      "by": "ba9f52ca-974f-4f92-9f9d-c09213c5039f",
+      "at": "2026-11-09T10:53:42+00:00 @ 49c436c",
+      "until": "2026-11-09T15:30:58+00:00 @ a6b5914"
+    },
+    {
+      "rev": 5,
+      "value": "Ironclad cards loaded from pack files with values checked: 31 of the 40 the engine lacked, with upgrades, in content/packs/act1-ironclad.json: the 16 writable ones, C1's six, C2's three, C4's two (Entrench, Limit Break), C3's two (Evolve, Fire Breathing) and C5's two (Blood for Blood, Corruption), each against the wiki and sts_lightspeed (engine/tests/act1_cards.rs, exhaust.rs, exhaust_triggers.rs, quantity_amounts.rs, draw_triggers.rs, cost_changes.rs pass). A fight binds up to 32 distinct pack cards and 24 pack powers (S1). 9 cards still blocked: Infernal Blade (C11, with costs-0-this-turn), Armaments (C6), Warcry (C7), Havoc (C8), Battle Trance (C9), Dual Wield (C10), Barricade (C12), Juggernaut (C13), Reaper (C14).",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block C5 as built: cost changes in combat (two cards as pack data)",
+          "sha256": "71d6f9b48c4c75cd50a35173c6b6cdf729892eefefe603bbf8ef16c6b64ed257"
+        },
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block S1: more pack cards and powers per fight",
+          "sha256": "da118ec75b9896857fa54011be46a3e7de005f8710f2334088aceef64c1e70de"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "d809d3b7341ce7de41b908c1beb45f9e869170d5ccdfd19ea1ddcbc9c47ccc3a"
+        },
+        {
+          "path": "engine/tests/cost_changes.rs",
+          "sha256": "8ee2a4338db6cd1fb37ddfa2fe6e7998b72a5b8ee102f0545346ec4338a418a2"
+        }
+      ],
+      "owner": false,
+      "by": "acdf2493-66bb-41e2-b531-e337775c1355",
+      "at": "2026-11-09T15:30:58+00:00 @ a6b5914",
+      "until": "2026-11-10T05:03:52+00:00 @ c62deb6"
+    },
+    {
+      "rev": 6,
+      "value": "Ironclad cards loaded from pack files with values checked: 32 of the 40 the engine lacked, with upgrades, in content/packs/act1-ironclad.json (one entry per card with its upgrade as data since C6; True Grit and Armaments keep X+ entries): the 16 writable ones, C1's six, C2's three, C4's two (Entrench, Limit Break), C3's two (Evolve, Fire Breathing), C5's two (Blood for Blood, Corruption) and C6's Armaments, each against the wiki and sts_lightspeed (engine/tests/act1_cards.rs, exhaust.rs, exhaust_triggers.rs, quantity_amounts.rs, draw_triggers.rs, cost_changes.rs, upgrades.rs, armaments.rs pass); Searing Blow upgrades without limit (levels 2 and up as per-copy variants, to level 252). A fight binds up to 32 distinct pack cards and 24 pack powers (S1). 8 cards still blocked: Infernal Blade (C11, with costs-0-this-turn), Warcry (C7), Havoc (C8), Battle Trance (C9), Dual Wield (C10), Barricade (C12), Juggernaut (C13), Reaper (C14).",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block C6 as built: card upgrades as data (Armaments, Searing Blow's repeats)",
+          "sha256": "e313f19f17087088364a7a0e2da52a17cc3089eb1fe41abb6553f31965730864"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "f76e5f97d7dafc1dd53b17dbc08108762276c7c62e2098fe6f3f01b094bf1d32"
+        },
+        {
+          "path": "engine/tests/armaments.rs",
+          "sha256": "edd7e13fdf210b81cbd9855d24053135fc31a060421d51ca615000deda347bf2"
+        },
+        {
+          "path": "engine/tests/upgrades.rs",
+          "sha256": "932e7914ee40eb64009409247db7c78a0f78fad4517b17316653ecc82500c3be"
+        }
+      ],
+      "owner": false,
+      "by": "5c05598a-e481-4462-8671-1b83efbc36a8",
+      "at": "2026-11-10T05:03:52+00:00 @ c62deb6",
+      "until": "2026-11-12T20:37:42+00:00 @ a72dc7ad"
+    },
+    {
+      "rev": 7,
+      "value": "Ironclad cards loaded from pack files with values checked: 34 of the 40 the engine lacked, with upgrades, in content/packs/act1-ironclad.json (one entry per card with its upgrade as data since C6; True Grit and Armaments keep X+ entries): the 16 writable ones, C1's six, C2's three, C4's two (Entrench, Limit Break), C3's two (Evolve, Fire Breathing), C5's two (Blood for Blood, Corruption) and C6's Armaments, Havoc (PlayTop, docs/specs/act1-singles.md) and Infernal Blade (Discover with offer 1 and the free-this-turn mark, docs/specs/discovery.md), each against the wiki and sts_lightspeed (engine/tests/act1_cards.rs, exhaust.rs, exhaust_triggers.rs, quantity_amounts.rs, draw_triggers.rs, cost_changes.rs, upgrades.rs, armaments.rs pass); Searing Blow upgrades without limit (levels 2 and up as per-copy variants, to level 252). A fight binds up to 32 distinct pack cards and 24 pack powers (S1). 6 cards still blocked: Warcry (C7), Battle Trance (C9), Dual Wield (C10), Barricade (C12), Juggernaut (C13), Reaper (C14).",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block C6 as built: card upgrades as data (Armaments, Searing Blow's repeats)",
+          "sha256": "e313f19f17087088364a7a0e2da52a17cc3089eb1fe41abb6553f31965730864"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "2a0f870eb81caeffde31990430ed812854a6c70b07a478208249f69dd111b863"
+        },
+        {
+          "path": "engine/tests/armaments.rs",
+          "sha256": "edd7e13fdf210b81cbd9855d24053135fc31a060421d51ca615000deda347bf2"
+        },
+        {
+          "path": "engine/tests/upgrades.rs",
+          "sha256": "932e7914ee40eb64009409247db7c78a0f78fad4517b17316653ecc82500c3be"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "9dbf5c7f059cb39aaa2c369ca639286ba3ffd320eb51b23c53369ea91863afd5"
+        },
+        {
+          "path": "docs/specs/discovery.md",
+          "sha256": "a1f093370428e492f358926f8aab1665cad394ef3b063d6e79413c8917b0b968"
+        },
+        {
+          "path": "docs/specs/act1-singles.md",
+          "sha256": "bcedb4b3e6ff086d1bd922a18e3fb1d0412622365919a2f9df852b5ff52183d5"
+        }
+      ],
+      "owner": false,
+      "by": "7c510f89-8e48-45c1-be09-2fb75f0e5d49",
+      "at": "2026-11-12T20:37:42+00:00 @ a72dc7ad",
+      "until": "2026-11-13T02:29:37+00:00 @ 3123201a"
+    },
+    {
+      "rev": 8,
+      "value": "34 of the 40 Ironclad cards the engine lacked load from content/packs/act1-ironclad.json with upgrades as data, each checked vs the wiki and sts_lightspeed (engine/tests/act1_cards.rs etc.); Searing Blow upgrades unbounded (to 252). A fight binds <=32 pack cards, <=24 pack powers. Blocked: Warcry C7, Battle Trance C9, Dual Wield C10, Barricade C12, Juggernaut C13, Reaper C14.",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block C6 as built: card upgrades as data (Armaments, Searing Blow's repeats)",
+          "sha256": "e313f19f17087088364a7a0e2da52a17cc3089eb1fe41abb6553f31965730864"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "2a0f870eb81caeffde31990430ed812854a6c70b07a478208249f69dd111b863"
+        },
+        {
+          "path": "engine/tests/upgrades.rs",
+          "sha256": "932e7914ee40eb64009409247db7c78a0f78fad4517b17316653ecc82500c3be"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "9dbf5c7f059cb39aaa2c369ca639286ba3ffd320eb51b23c53369ea91863afd5"
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:29:37+00:00 @ 3123201a",
+      "until": "2026-11-13T13:24:53+00:00 @ c4fb1faf"
+    },
+    {
+      "rev": 9,
+      "value": "34 of the 40 Ironclad cards the engine lacked load from content/packs/act1-ironclad.json with upgrades as data (69 of 75 Act 1 Ironclad cards load), each checked vs the wiki and sts_lightspeed (engine/tests/act1_cards.rs etc.); Searing Blow upgrades unbounded (to 252). A fight binds up to registry::MAX_CARD_SLOTS pack cards, pool cards included, and 24 pack powers (POWER_SLOTS). Blocked: Warcry C7, Battle Trance C9, Dual Wield C10, Barricade C12, Juggernaut C13, Reaper C14.",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block C6 as built: card upgrades as data (Armaments, Searing Blow's repeats)",
+          "sha256": "e313f19f17087088364a7a0e2da52a17cc3089eb1fe41abb6553f31965730864"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "2a0f870eb81caeffde31990430ed812854a6c70b07a478208249f69dd111b863"
+        },
+        {
+          "path": "engine/tests/upgrades.rs",
+          "sha256": "b8ccd675d6ad0861d872cb7eef10b776c815b26c4f434f723f8307e0f65bbf6a"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "ffb65af8fcc22a01a7d17c67daa599cef601804fa8477ed84d23a4b7cd7b0c2b"
+        },
+        {
+          "path": "engine/src/registry.rs",
+          "sha256": "2684a110cd1e25fdab6375e35317cca209efafd6ead4c41d769e81738807e8df"
+        }
+      ],
+      "owner": false,
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:24:53+00:00 @ c4fb1faf",
+      "until": "2026-11-13T13:25:07+00:00 @ c4fb1faf"
+    },
+    {
+      "rev": 10,
+      "value": "34 of the 40 Ironclad cards the engine lacked load from content/packs/act1-ironclad.json with upgrades as data (69 of 75 load), each checked vs the wiki and sts_lightspeed (engine/tests/act1_cards.rs etc.); Searing Blow upgrades unbounded. A fight binds up to MAX_CARD_SLOTS pack cards and 24 pack powers (registry.rs). Blocked: Warcry C7, Battle Trance C9, Dual Wield C10, Barricade C12, Juggernaut C13, Reaper C14.",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block C6 as built: card upgrades as data (Armaments, Searing Blow's repeats)",
+          "sha256": "e313f19f17087088364a7a0e2da52a17cc3089eb1fe41abb6553f31965730864"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "2a0f870eb81caeffde31990430ed812854a6c70b07a478208249f69dd111b863"
+        },
+        {
+          "path": "engine/tests/upgrades.rs",
+          "sha256": "b8ccd675d6ad0861d872cb7eef10b776c815b26c4f434f723f8307e0f65bbf6a"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "ffb65af8fcc22a01a7d17c67daa599cef601804fa8477ed84d23a4b7cd7b0c2b"
+        },
+        {
+          "path": "engine/src/registry.rs",
+          "sha256": "2684a110cd1e25fdab6375e35317cca209efafd6ead4c41d769e81738807e8df"
+        }
+      ],
+      "owner": false,
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:25:07+00:00 @ c4fb1faf",
+      "until": "2026-11-13T13:27:33+00:00 @ 9108cf87"
+    },
+    {
+      "rev": 11,
+      "value": "35 of the 40 Ironclad cards the engine lacked load from content/packs/act1-ironclad.json with upgrades as data (70 of 75 load), each tested vs the game (act1_cards.rs, colorless.rs for Warcry, etc.); Searing Blow upgrades unbounded. A fight binds up to MAX_CARD_SLOTS pack cards and 24 pack powers (registry.rs). Blocked: Battle Trance C9, Dual Wield C10, Barricade C12, Juggernaut C13, Reaper C14.",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Warcry loaded (2026-11-13, colorless-cards step 4)",
+          "sha256": "df832199e844992da67a317072f740462b89af6cf3e36aee13818ddc5b4a988d"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "4a0b576a0a64f02ee1fe568cdd436ced385a1e14872e4113ec93c63a9470934d"
+        },
+        {
+          "path": "engine/tests/upgrades.rs",
+          "sha256": "b8ccd675d6ad0861d872cb7eef10b776c815b26c4f434f723f8307e0f65bbf6a"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "ba8b74261a5372a5eca797aaaa9804ef81f4d8a1b82a7b945440760bc3166ffb"
+        },
+        {
+          "path": "engine/tests/colorless.rs",
+          "sha256": "a59fad745e3335f03d4907b4c3056a73bb98b364b9ff22f188654251fb3cc44b"
+        },
+        {
+          "path": "engine/src/registry.rs",
+          "sha256": "6ecb0676a23d74bd1b9d90898b3190f6a51d058d390e21dd00e0dd3d80c1c6a4"
+        }
+      ],
+      "owner": false,
+      "by": "7f40d6e4-69d1-4b13-a29e-284dff8cfde9",
+      "at": "2026-11-13T13:27:33+00:00 @ 9108cf87",
+      "until": "2026-11-14T01:11:16+00:00 @ 42c8ccf6"
+    },
+    {
+      "rev": 12,
+      "value": "38 of the 40 Ironclad cards the engine lacked load from content/packs/act1-ironclad.json with upgrades as data (73 of 75 load, docs/INDEX.md), each tested vs the game (act1_cards.rs, ironclad_last_four.rs for Battle Trance and Reaper, colorless.rs for Warcry, etc.); Searing Blow upgrades unbounded. A fight binds up to MAX_CARD_SLOTS pack cards and 24 pack powers (registry.rs). Blocked: Dual Wield C10, Juggernaut C13 (docs/specs/ironclad-last-four.md steps 3-4).",
+      "sources": [
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "483858c4d9731f24fae17b10ed4108c5dbbd71025f6574dbb83d4fcd05cccfad"
+        },
+        {
+          "path": "engine/tests/ironclad_last_four.rs",
+          "sha256": "ef59f9f167c2a68a2d4b22ef527e27cc5fd123b0bfd7a31fa455b97bd6525a09"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "c2d04509bdfce881b6ba55e6050a9fa3e652e831860e650bba89b5de9710bc7c"
+        },
+        {
+          "path": "docs/research/act1-coverage.json",
+          "sha256": "c129903487486d726b534e358de4ceacfbc8f3a24e398a14a6535b5c23f58d18"
+        },
+        {
+          "path": "engine/src/registry.rs",
+          "sha256": "b04215c8ad36fa6eb8040a40179b0b09aeab6a910e7f624bf47657b0135b134c"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T01:11:16+00:00 @ 42c8ccf6",
+      "until": "2026-11-14T01:11:26+00:00 @ 42c8ccf6"
+    },
+    {
+      "rev": 13,
+      "value": "38 of the 40 Ironclad cards the engine lacked load from content/packs/act1-ironclad.json with upgrades as data (73 of 75 load, docs/INDEX.md), each tested vs the game (act1_cards.rs, ironclad_last_four.rs, etc.); Searing Blow upgrades unbounded. A fight binds up to MAX_CARD_SLOTS pack cards and 24 pack powers (registry.rs). Blocked: Dual Wield C10, Juggernaut C13.",
+      "sources": [
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "2d9dc918c9343a2ffafd3587dba952cc2c3a238ce50a6cc6b61c7968355981bb"
+        },
+        {
+          "path": "engine/tests/ironclad_last_four.rs",
+          "sha256": "ef59f9f167c2a68a2d4b22ef527e27cc5fd123b0bfd7a31fa455b97bd6525a09"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "c2d04509bdfce881b6ba55e6050a9fa3e652e831860e650bba89b5de9710bc7c"
+        },
+        {
+          "path": "docs/research/act1-coverage.json",
+          "sha256": "c129903487486d726b534e358de4ceacfbc8f3a24e398a14a6535b5c23f58d18"
+        },
+        {
+          "path": "engine/src/registry.rs",
+          "sha256": "f004800b473caab6674252c33bbc7ff127b466f9f334e8244a5b439f0cb36c97"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T01:11:26+00:00 @ 42c8ccf6",
+      "until": "2026-11-14T06:46:15+00:00 @ e7957815"
+    }
+  ],
+  "seal": "1492ad5694c2226928a8b53ca6fc3c0bfdd42d840ac3356a520d7de77715dcab"
+}

@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-gen-adapted-column",
+  "rev": 2,
+  "value": "predicted likely/even, ~10 cpu-h; actual done: net-game bursts halve cost on 4/4 mechanics at 99 games, heuristic 3/4 + 1 at the line, never ahead by 2 se at 99 (ahead at 33, where neither halves); 7.5 cpu-h; reopen if a finetune improves past one epoch at 30-50 games, triggers beyond OppCard/AttackLoss land, or the parent loss (0.3-1.1 HP) needs a fix.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane gen-adapted-column closed (2026-11-08)",
+      "sha256": "1fb8dd8fb2267bcdcd5ef1fcc3b0f6362b89794331436d322a31b9b7541c2de3"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:57+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted likely that net-game bursts at 99 games halve the target's cost, even that heuristic games beat them by 2 se, about 10 cpu-h (cap 15); actual done: net bursts halve the cost on all four mechanics at 99 games, the heuristic on three and at the line on the fourth, never ahead by 2 se at 99 (ahead at 33 games, where neither halves the cost), 7.5 cpu-h; reopen if: a finetune recipe that improves past one epoch at 30-50 games exists, or generated mechanics outside the OppCard and AttackLoss triggers land on the bench, or the trained-parent loss (0.3-1.1 HP) needs fixing for a product burst",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane gen-adapted-column closed (2026-11-08)",
+          "sha256": "1fb8dd8fb2267bcdcd5ef1fcc3b0f6362b89794331436d322a31b9b7541c2de3"
+        }
+      ],
+      "owner": false,
+      "by": "71bd303c-1f59-45cf-8b2f-211d03b8fa6d",
+      "at": "2026-11-08T01:15:02+00:00 @ ccfd87a",
+      "until": "2026-11-13T02:30:57+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "3f35a0ce18e88993caabad443a5e5f8bec82f1a3aa0830ce4d38fa5dc643a3d7"
+}

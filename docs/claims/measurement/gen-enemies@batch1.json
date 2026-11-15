@@ -1,0 +1,69 @@
+{
+  "key": "measurement/gen-enemies@batch1",
+  "rev": 1,
+  "value": "Generated enemies bench batch 1 (8 pack mechanics on the official Act 1 elites, 675 starts x 16 seeds, one turn deep @hpb0.01@tsl1, net minus heuristic minus the same on a stat-only ladder control, HP lost): AttackLoss-Damage +5.60 (0.35), OppCard-PlainDamage +1.76 (0.29), AttackLoss-Strength +1.20 (0.22), TurnEnd-Frail +0.71 (0.09), TurnStart-Strength +0.48 (0.12), TurnEnd-Damage +0.03 (0.24), TurnStart-Damage -0.12 (0.24), OppCard-Vulnerable -9.55 (0.53; heuristic collapses, outside the ladder on Lagavulin and Sentries); mean +0.01 (1.51), 6 of 8 beyond 2 se, fail-fast does not hold. Costs sit in parent interactions: AttackLoss-Damage x Gremlin Nob +12.80 (net 1077 deaths of 3664 vs heuristic 204), OppCard-PlainDamage x three Sentries +4.58; the turn-trigger damage mechanics predicted +1 read zero, so the horizon mechanism did not predict these costs.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Batch 1 read (job 0469, results/mutate/gen-enemies-b1.json)",
+      "sha256": "6f761f429a81587dcf778717def5b497979dec81485e4227ed77e67af950b219"
+    },
+    {
+      "path": "results/mutate/gen-enemies-b1.json",
+      "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+    },
+    {
+      "path": "jobs/done/0469-mutate-monsters.json",
+      "sha256": "522933383e668da56b5377cfd0ced7a3dd49f84b0ce15747a53d73f80599bae5"
+    },
+    {
+      "key": "yardstick/novelty-read",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "12709262-f343-4a97-bad9-1987a314fa8e",
+  "at": "2026-11-07T13:00:16+00:00 @ 0a8edd4",
+  "confirms": [
+    {
+      "by": "ff4c73d2-3bed-4ee6-ba6e-cf0c50506dd8",
+      "at": "2026-11-07T16:17:15+00:00 @ bf50a10",
+      "note": "0470 merged batch 2 into the file; read-gen gives batch 1's eight rows unchanged (all elites and per parent)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Generated enemies bench batch 1 (8 pack mechanics on the official Act 1 elites, 675 starts x 16 seeds, one turn deep @hpb0.01@tsl1, net minus heuristic minus the same on a stat-only ladder control, HP lost): AttackLoss-Damage +5.60 (0.35), OppCard-PlainDamage +1.76 (0.29), AttackLoss-Strength +1.20 (0.22), TurnEnd-Frail +0.71 (0.09), TurnStart-Strength +0.48 (0.12), TurnEnd-Damage +0.03 (0.24), TurnStart-Damage -0.12 (0.24), OppCard-Vulnerable -9.55 (0.53; heuristic collapses, outside the ladder on Lagavulin and Sentries); mean +0.01 (1.51), 6 of 8 beyond 2 se, fail-fast does not hold. Costs sit in parent interactions: AttackLoss-Damage x Gremlin Nob +12.80 (net 1077 deaths of 3664 vs heuristic 204), OppCard-PlainDamage x three Sentries +4.58; the turn-trigger damage mechanics predicted +1 read zero, so the horizon mechanism did not predict these costs.",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Batch 1 read (job 0469, results/mutate/gen-enemies-b1.json)",
+          "sha256": "6f761f429a81587dcf778717def5b497979dec81485e4227ed77e67af950b219"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        },
+        {
+          "path": "jobs/done/0469-mutate-monsters.json",
+          "sha256": "522933383e668da56b5377cfd0ced7a3dd49f84b0ce15747a53d73f80599bae5"
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "12709262-f343-4a97-bad9-1987a314fa8e",
+      "at": "2026-11-07T13:00:16+00:00 @ 0a8edd4",
+      "until": "2026-11-11T09:03:51+00:00 @ 20449c5",
+      "retired": "merged into measurement/gen-enemies@table24 (same results file; STATUS cap)"
+    }
+  ],
+  "seal": "8043dd6e07ce73b6c7e47605b4c90f19b0b1ab8f7827ea46444f35637c419437"
+}

@@ -1,0 +1,136 @@
+{
+  "key": "cause/chooser-horizon",
+  "rev": 4,
+  "value": "The sim chooser (--rewards sim --sim-boss) scores an option by one-turn trial fights vs the next floor + the boss at post-rest HP, weighted alike, so it can't see elite HP on the path (cause/boss-deaths-elite-hp) unless the next floor is one; unpriced (backlog 45 value-chooser-path).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "scripts/gauntlet.py",
+      "sha256": "467b6f22c066a4a78f8019ed186148284ee0f5a59db9b36d35259864fa98e688"
+    },
+    {
+      "key": "cause/boss-deaths-elite-hp",
+      "rev": 1
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After the turn-start leaf on the one-turn headline: the one-turn controls stay plain; the chooser's horizon overpicks Demon Form (on the owner's behalf, 2026-11-07)",
+      "sha256": "0791d670fdae65c9381fd276a895fd9078193b58210d4e262093f08c3d91f255"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:59Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:43:11Z @ d240a173",
+      "note": "navigator 2026-11-13: scripts/gauntlet.py diff since 3123201a is only RUST_MIN_STACK 64 MB; chooser scoring unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The sim chooser (--rewards sim --sim-boss) scores an option by one-turn trial fights against the next floor plus the boss at post-rest HP, weighted alike, so it cannot see the HP the path's elites take (cause/boss-deaths: 17.3 and 13.8 HP per elite) unless the next floor is one. A card that pays at the boss and costs on the way is overpicked once the trial fighter plays it right: with the turn-start leaf Demon Form picks rise 0.17 to 0.49 of offers and the extra picks lose -0.115 (0.066) clears, deaths moving from the boss to the second elite, cancelling the fighting gain (measurement/turn-start-leaf@headline). So a fighter repair of a card does not reach own-pick headline reads through this chooser, and the trial-fight mismatch on cards that pay later is worth about nothing under this horizon. Exit: a chooser whose horizon holds the next elite (backlog elite-horizon-chooser, waits for Act 1's cards) reads level or worse than the sim chooser with the leaf on.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the turn-start leaf on the one-turn headline: the one-turn controls stay plain; the chooser's horizon overpicks Demon Form (on the owner's behalf, 2026-11-07)",
+          "sha256": "0791d670fdae65c9381fd276a895fd9078193b58210d4e262093f08c3d91f255"
+        },
+        {
+          "key": "measurement/turn-start-leaf@headline",
+          "rev": 1
+        },
+        {
+          "key": "cause/boss-deaths",
+          "rev": 2
+        },
+        {
+          "path": "scripts/gauntlet.py",
+          "sha256": "1d6e34da5af09af866f16708e1756f123b9a4a4f62cbaa1cacb51ae57739656a"
+        }
+      ],
+      "owner": false,
+      "by": "ed3c6b4a-3acf-4db6-955f-8d0df3367833",
+      "at": "2026-11-07T01:19:20Z @ de5296b",
+      "until": "2026-11-10T05:10:39Z @ 8d8349d"
+    },
+    {
+      "rev": 2,
+      "value": "The sim chooser (--rewards sim --sim-boss) scores an option by one-turn trial fights against the next floor plus the boss at post-rest HP, weighted alike, so it cannot see the HP the path's elites take (cause/boss-deaths: 17.3 and 13.8 HP per elite) unless the next floor is one. With the turn-start leaf repairing Demon Form in the trial fights and the fight, its picks rise 0.17 to 0.49 of offers and the extra picks lose -0.115 (0.066) clears, deaths moving from the boss to the second elite (measurement/turn-start-leaf@headline). That cost belongs to the leaf repair, not to the horizon in general: the all-content twins, which learned Demon Form from games, pick it 0.62-0.69 under the same chooser and gain where only they took it (+3.23 and +0.41 HP, clears +0.118 and +0.086; measurement/all-content-twin@ruler). So a leaf repair of a card that pays later does not reach own-pick headline reads through this chooser; a learned one can. The horizon's blind spot on elites is still there, unpriced; value-chooser-path (backlog 45) holds every elite ahead by construction and waits for Act 1's cards (the owner's 'Headline card pool and choosers after Act 1').",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Probe pns-twin-official read: the all-content gain on the ruler is Demon Form; twin-tsl1 and pns-twin-matched queued (on the owner's behalf, 2026-11-10)",
+          "sha256": "75ce3f58a14a6cb6df5c6d648c234279b6b1fd3527feecdb0e28969bc2b3f56e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the turn-start leaf on the one-turn headline: the one-turn controls stay plain; the chooser's horizon overpicks Demon Form (on the owner's behalf, 2026-11-07)",
+          "sha256": "0791d670fdae65c9381fd276a895fd9078193b58210d4e262093f08c3d91f255"
+        },
+        {
+          "key": "measurement/turn-start-leaf@headline",
+          "rev": 1
+        },
+        {
+          "key": "measurement/all-content-twin@ruler",
+          "rev": 1
+        },
+        {
+          "key": "cause/boss-deaths",
+          "rev": 2
+        },
+        {
+          "path": "scripts/gauntlet.py",
+          "sha256": "1d6e34da5af09af866f16708e1756f123b9a4a4f62cbaa1cacb51ae57739656a"
+        }
+      ],
+      "owner": false,
+      "by": "9b2dd76a-ebb7-49f2-a306-4e05e9845de4",
+      "at": "2026-11-10T05:10:39Z @ 8d8349d",
+      "until": "2026-11-10T05:11:19Z @ 8d8349d"
+    },
+    {
+      "rev": 3,
+      "value": "The sim chooser (--rewards sim --sim-boss) scores an option by one-turn trial fights against the next floor plus the boss at post-rest HP, weighted alike, so it cannot see the HP the path's elites take (cause/boss-deaths: 17.3 and 13.8 HP per elite) unless the next floor is one. With the turn-start leaf repairing Demon Form in the trial fights and the fight, its picks rise 0.17 to 0.49 of offers and the extra picks lose -0.115 (0.066) clears, deaths moving from the boss to the second elite (measurement/turn-start-leaf@headline). That cost belongs to the leaf repair, not to the horizon in general: the all-content twins, which learned Demon Form from games, pick it 0.62-0.69 under the same chooser and gain where only they took it (+3.23 and +0.41 HP, clears +0.118 and +0.086; measurement/pack-net-twin@one-turn). So a leaf repair of a card that pays later does not reach own-pick headline reads through this chooser; a learned one can. The horizon's blind spot on elites is still there, unpriced; value-chooser-path (backlog 45) holds every elite ahead by construction and waits for Act 1's cards (the owner's 'Headline card pool and choosers after Act 1').",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Probe pns-twin-official read: the all-content gain on the ruler is Demon Form; twin-tsl1 and pns-twin-matched queued (on the owner's behalf, 2026-11-10)",
+          "sha256": "e91fbab6d54310d7327eb316b4782e62b7a9f8e099d3aa7544e0489600e45610"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the turn-start leaf on the one-turn headline: the one-turn controls stay plain; the chooser's horizon overpicks Demon Form (on the owner's behalf, 2026-11-07)",
+          "sha256": "0791d670fdae65c9381fd276a895fd9078193b58210d4e262093f08c3d91f255"
+        },
+        {
+          "key": "measurement/turn-start-leaf@headline",
+          "rev": 1
+        },
+        {
+          "key": "measurement/pack-net-twin@one-turn",
+          "rev": 4
+        },
+        {
+          "key": "cause/boss-deaths",
+          "rev": 2
+        },
+        {
+          "path": "scripts/gauntlet.py",
+          "sha256": "99fc92589c4992b4aa7c106f9f4e6b2f648d0a3beb89c87d19a5f1ca29217929"
+        }
+      ],
+      "owner": false,
+      "by": "9b2dd76a-ebb7-49f2-a306-4e05e9845de4",
+      "at": "2026-11-10T05:11:19Z @ 8d8349d",
+      "until": "2026-11-13T02:28:59Z @ 3123201a"
+    }
+  ],
+  "seal": "e08e4d2b99b04ca54ed9a71ef9d90c15cb32cc5bbc94d94d6f5da3259801aaec"
+}

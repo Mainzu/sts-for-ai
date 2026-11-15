@@ -1,0 +1,1857 @@
+{
+ "merged": [
+  {
+   "id": "thinking-blink-or-ponder",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Overall think-time distribution. It is not tied to any single encounter or power, and no other card gives it.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "trim",
+     "why": "Its two 'slowest' rows (96 s Slime Boss run 44, 111 s three Red Louses run 2) are the top rows of thinking-hardest-moves, which tells them in detail. This card keeps the distribution.",
+     "repeats": "",
+     "claim": "At Ascension 20 the AI makes a typical move in 0.15 seconds, and three moves in four take under a second. The slowest 10% of moves, though, used 73% of all its thinking time, and one move in a hundred took more than 28 seconds.",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "trim",
+     "why": "The two 'slowest' rows (96.14 s Slime Boss run 44, 110.66 s three Red Louses run 2) are the top A20 and A0 rows of thinking-hardest-moves, with the same numbers and notes. This card should keep only the distribution (median and percentiles).",
+     "repeats": "thinking-hardest-moves",
+     "claim": "At Ascension 20 the AI makes a typical move in 0.15 seconds, and three moves in four take under a second. The slowest 10% of moves, though, used 73% of all its thinking time.",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "A20 slowest",
+    "A0 slowest"
+   ]
+  },
+  {
+   "id": "thinking-slime-boss-headache",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "This is the home card for per-encounter thinking time. Other cards whose rows name single-encounter monsters (Slime Boss, Lagavulin, Hexaghost, The Guardian, Gremlin Nob, Cultist) repeat this one.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "This is the clearest card about which fights the AI thinks hardest in (total per fight). It stays as the representative of the thinking-by-enemy group.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "This is the encounter-level thinking card, and the other thinking statistics reduce to it. Gremlin Gang (n=20) includes the run 83 standoff, but that fight's total was only 27 s, so the median of 30.7 does not depend on it.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "thinking-slowest-monsters",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "drop",
+     "why": "Most rows are single-encounter monsters: Slime Boss, The Guardian, Hexaghost, Lagavulin, Gremlin Nob and Cultist each appear in one encounter, so per-monster thinking time restates per-encounter thinking time. The remaining rows are Sneaky Gremlin, Fat Gremlin and Gremlin Wizard (only in the Gremlin Gang) and the Large Acid/Spike Slimes (their own hallway fights plus the Slime Boss split). Those restate the Gremlin Gang and slime encounters, and thinking-crowded-board already explains them: more monsters on the board means slower moves.",
+     "repeats": "thinking-slime-boss-headache",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "drop",
+     "why": "Repeats thinking-slime-boss-headache: the same story counted per monster instead of per fight (slimes and gremlins slow; Guardian, Hexaghost, Lagavulin, Nob and Cultist fast). The cause, more monsters on the board, is already on thinking-crowded-board.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "drop",
+     "why": "Each monster row is one encounter. Sneaky Gremlin, Gremlin Wizard and Fat Gremlin are the Gremlin Gang. Acid and Spike Slime (L) are the large-slime hallways plus Slime Boss splits. Slime Boss, The Guardian, Hexaghost, Lagavulin, Gremlin Nob and Cultist are their own encounters. The ordering (slimes and gremlins slow; Nob, Cultist and Lagavulin fast) is what thinking-slime-boss-headache already shows per fight.",
+     "repeats": "thinking-slime-boss-headache",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "thinking-crowded-board",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Monster count is a property of the board, not of one encounter. The 5-monster row is single-encounter (Lots of Slimes), but the card's caveat already says so.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "This is the mechanism behind the slow fights (the count of monsters alive). No other card says it.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "trim",
+     "why": "The 5-monster row has 21 decisions, all from the Lots of Slimes hallway: it is one encounter, and too few decisions to stand as a step on the scale. Rows 1-4 cover many encounters each, so the card still says something no encounter card does.",
+     "repeats": "",
+     "claim": "With one monster left, the AI averages 1.22 seconds a move and only 4% of moves hit the search's node cap. With four on the board (gremlin gangs, slime splits) it averages 7.57 seconds, and 39% of those moves hit the cap.",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "5 monsters"
+   ]
+  },
+  {
+   "id": "thinking-cards-in-hand",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "trim",
+     "why": "These three status rows stand in for encounters. Slimed is in hand only in Acid Slime fights (Slimed occurs in 116 A20 fights, all of them slime groups), which are already the slow slime encounters. Burn came from Hexaghost in 17 of 23 fights. Dazed came from Sentries in 15 of 35 fights and from the player's own Reckless Charge in the other 20, so the Dazed row mixes the Sentries encounter with the Reckless Charge row.",
+     "repeats": "",
+     "claim": "With Battle Trance in hand the AI averages 7.3 seconds a move, about three times the A20 average of 2.39 seconds, and Reckless Charge (7.2) is close behind. With Havoc in hand it averages only 1.1 seconds.",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "trim",
+     "why": "In these records Burn comes from Hexaghost (17 of 23 fights), so the Burn row restates Hexaghost's fast fights. Dazed comes from Sentries (15 of 35) or the bot's own Reckless Charge. Slimed is just the slime fights, which are slow because of the crowded board (thinking-crowded-board, thinking-slime-boss-headache).",
+     "repeats": "",
+     "claim": "With Battle Trance in hand the AI averages 7.3 seconds a move, about three times the A20 average, and Reckless Charge is close behind at 7.2. Holding Havoc, it averages only 1.1 seconds.",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "drop",
+     "why": "Its distinct-looking rows restate encounters. Slimed is only in slime fights (Slime Boss and the slime hallways). Burn is Hexaghost (17 of 23 fights; the other 6 are two runs with Immolate, 39 and 47), and one run (73) gives 78% of Burn-in-hand thinking seconds. Dazed is Sentries plus the bot's own Reckless Charge (15 and 20 of 35 fights), and run 70 gives 81% of its seconds. Havoc is mostly the run 83 standoff (58 of 103 decisions from run 83, 55 of them in that one fight). The remaining rows (Battle Trance, Reckless Charge, Intimidate, Inflame) each come from 5-7 runs, and one run gives 33-56% of their thinking seconds, so they show decks rather than cards.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "Slimed",
+    "Burn",
+    "Dazed"
+   ]
+  },
+  {
+   "id": "thinking-node-cap",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "trim",
+     "why": "Three rows stand in for encounters. Spike Slime (L) means the Spike Slime (L) hallway or the Slime Boss split. Frail on the player comes only from Spike Slimes (its fights are all Spike Slime groups and Slime Boss splits), so it is the same slime fights again. Burn in hand is Hexaghost (17 of 23 fights). The player-power, potion and card rows are spread across many encounters, so they stay.",
+     "repeats": "",
+     "claim": "The search stops when it reaches a fixed number of positions (its node cap). At A20 that happened on 9% of moves, and the rate varies a lot with what is in play. With Evolve active it hit the cap on 57% of moves, with Juggernaut 51% (both largely from a single run), and on 43% of the moves where it drank a potion. With Dexterity active it almost never did (1%).",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "trim",
+     "why": "'Burn in hand' means 'in a Hexaghost fight': 17 of the 23 Burn fights are Hexaghost. It adds nothing beyond the encounter.",
+     "repeats": "",
+     "claim": "The search stops when it reaches a fixed number of positions (its node cap). At A20 that happened on 9% of moves, and the rate varies a lot with what is in play. With Evolve active it hit the cap on 57% of moves, with Juggernaut 51% (both largely from a single run), and on 43% of the moves where it drank a potion. With Dexterity active it almost never did (1%).",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "trim",
+     "why": "Evolve and Juggernaut each come from 4 runs, and run 89 gives about half of their decisions. Battle Trance comes from 5 runs. Spike Slime (L) is a monster, and the crowded-board and encounter cards cover it. Frail comes from Spike Slimes and Slime Boss, so it restates slime fights. Burn in hand is Hexaghost. Dexterity active mixes Lagavulin's Siphon Soul (59 of 139 decisions had Lagavulin alive, 48 with negative Dexterity) with Dexterity potions, so it measures neither cleanly.",
+     "repeats": "",
+     "claim": "The search stops when it reaches a fixed number of positions (its node cap). At A20 that happened on 8.7% of moves (13.9% at A0). It hit the cap on 43% of the moves where it drank a potion, against 5% of the moves that played a Strike.",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "Spike Slime (L) alive",
+    "Frail on the player",
+    "Burn in hand",
+    "Evolve active",
+    "Juggernaut active",
+    "Battle Trance in hand",
+    "Dexterity active"
+   ]
+  },
+  {
+   "id": "thinking-hardest-moves",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Individual record moves. Not a per-encounter aggregate.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "This card is the detailed record of the single slowest moves. blink-or-ponder is trimmed so the two cards don't overlap.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Single slowest moves with their board context. Distinct once thinking-blink-or-ponder no longer repeats the top rows. The claim already says two of the A20 rows are one turn of one fight.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "real-picks-skip-rate",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Card rewards; nothing here is tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: how often the AI skips a card reward, by floor.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "This is the only card about skipping the whole reward, and its samples are adequate.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "real-picks-a20-favourites",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Card rewards; nothing here is tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: A20 take rates at the top end.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: the high end of A20 pick rates. The caveat already flags the small offer counts.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "real-picks-a20-snubs",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Card rewards; nothing here is tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: A20 take rates at the bottom end.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: the low end of A20 pick rates.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "real-picks-a0-loves-and-snubs",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Card rewards; nothing here is tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "This is the A0 version. A0 and A20 are never pooled, so it doesn't repeat the A20 cards.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "This is the A0 setting, kept separate from A20 (never pooled). There is no other A0 pick card.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "real-picks-score-margin",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Card rewards; nothing here is tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "drop",
+     "why": "Repeats real-picks-a20-favourites and real-picks-a20-snubs: the same cards (Rampage 6/10, Bludgeon 5/9, Spot Weakness and Fire Breathing 11/22 at the top; Limit Break and Entrench 0/17, Rupture 1/19, Barricade 1/14, Body Slam 3/37 at the bottom) with the same pick counts in the notes. The score gap over skipping is just the reason behind those same picks.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "drop",
+     "why": "The same cards land at the same ends: Rampage and Fire Breathing high; Limit Break, Entrench, Barricade, Rupture and Body Slam low. The margin over skip is just the score behind those pick rates, so the reader learns nothing new. The 'most one-sided reward' detail is minor.",
+     "repeats": "real-picks-a20-favourites / real-picks-a20-snubs",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "real-picks-rarity",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Card rewards; nothing here is tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: take rate by rarity.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct angle (rarity), with adequate samples per setting.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "real-picks-boss-deck",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Cards in the deck span all three bosses. One side note: the Wound status in fights comes only from the player's own Wild Strike or Power Through (52 of 52 A20 Wound fights), so the Wild Strike row here is the only place that self-inflicted effect still appears once trouble-debuffs-a20 is dropped.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: boss win rate by the cards in the deck.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "rewrite",
+     "why": "The card's spread mostly follows which boss each run met, not the cards. Hexaghost was won 4 of 17 times; the other bosses 26 of 34. Wild Strike decks met Hexaghost 5 times in 10 boss fights and lost all 5; without Wild Strike, non-Hexaghost bosses were won 23 of 29. Spot Weakness decks met Hexaghost only once in 10. Fire Breathing decks met it 3 times and won 2.",
+     "repeats": "",
+     "claim": "",
+     "compute": "For A20 runs 28-90 that reached the boss (51), use the deck during the boss fight (hand+draw+discard+exhaust at the floor-16 decisions, upgrades merged, gen: prefix stripped). For each card in at least 5 boss decks, give wins/fights split by boss (Hexaghost vs Slime Boss + The Guardian), with the same split for decks without the card. Keep only the cards whose with/without gap holds within the non-Hexaghost bosses, or that changed the Hexaghost result. A candidate headline, to check: Fire Breathing decks beat Hexaghost 2 of 3 against 2 of 14 for the other decks. Say plainly that the boss draw drives most of the raw gap (e.g. Wild Strike's 3 of 10 is 5 Hexaghost losses). This audit's deck reading gives Wild Strike 10 decks where the card shows 9: recheck."
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "sim-picks-product-favourites",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Simulated card picks; nothing here is tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "This is the simulated take-rate card. It is a different data source from the real-game pick cards.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Simulated pick rates with large samples, distinct from the real-game cards.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "sim-picks-demon-form",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Simulated card picks; nothing here is tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: where the net and the hand-written player disagree.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: the two players disagree, on the same seeds.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "sim-picks-clear-correlation",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Simulated card picks; nothing here is tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: clear rate when a card was taken versus passed, not how often it was taken.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: picks against run outcome. The caveat already handles the near-noise rows.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "sim-picks-boss-nemesis",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "This is the home card for simulated boss win rates. sim-picks-deadliest-fights repeats its net rows (Hexaghost 70 lost of 312 = 77.6% won, and so on) and is trimmed below.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "This is the clearest card for simulated boss win rates and the same-seed comparison.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "The simulated boss-win card for both players. sim-picks-deadliest-fights should drop its boss rows instead.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "sim-picks-how-runs-end",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Run endings by fight type. A distinct view.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct angle: where runs end (boss, elite or hallway) for both players. Its boss total (140) is the sum of the boss-nemesis losses, but the split by fight type is new.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: where runs end, for both players. Its boss-death count (140) is the sum of nemesis losses but shown as a share of runs, which is a different view.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "sim-picks-deadliest-fights",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "trim",
+     "why": "The three boss rows are the same simulated fights as sim-picks-boss-nemesis, shown as losses instead of wins (312/299/336 fights). The claim is already about non-boss fights.",
+     "repeats": "",
+     "claim": "Jaw Worm, Cultist, the louse packs, Fungi Beasts and Small Slimes went a combined 4,394 fights without killing the net once. Among non-boss fights, Lagavulin was the deadliest, but it still lost only 16 of 668.",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "trim",
+     "why": "Its three boss rows are exactly the net rows of sim-picks-boss-nemesis turned into loss rates: Hexaghost 70 of 312 = 100 - 77.6, The Guardian 57 of 299, Slime Boss 13 of 336. The claim is about non-boss fights only.",
+     "repeats": "",
+     "claim": "Jaw Worm, Cultist, the louse packs, Fungi Beasts and Small Slimes went a combined 4,394 fights without killing the net once. Among non-boss fights, Lagavulin was the deadliest, but it still lost only 16 of 668.",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "trim",
+     "why": "The three boss rows are the exact complements of the net rows in sim-picks-boss-nemesis (70/312 = 100-77.6, 57/299 = 100-80.9, 13/336 = 100-96.1). The claim is already about non-boss fights.",
+     "repeats": "sim-picks-boss-nemesis",
+     "claim": "Jaw Worm, Cultist, the louse packs, Fungi Beasts and Small Slimes went a combined 4,394 fights without killing the net once. Among non-boss fights, Lagavulin was the deadliest, but it still lost only 16 of 668.",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "Hexaghost",
+    "The Guardian",
+    "Slime Boss"
+   ]
+  },
+  {
+   "id": "trouble-hexaghost-a20",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "The headline card for boss win rates at both ascensions. It is kept as the single home for them, and records-boss-speed is trimmed so it does not repeat them.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "This is the clearest card for real-game boss results at both ascensions (wins and HP lost per boss). The other cards that restated the boss outcomes are dropped or trimmed.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "drop",
+     "why": "Every row is already shown elsewhere. A20 Hexaghost 4 of 17 and 61.5 HP is in trouble-a0-vs-a20 (n=17, 13 lost), trouble-killers-a20 (13 of 17) and records-boss-speed (won 4 of 17). Slime Boss 15/20 and Guardian 11/14 are in a0-vs-a20 and boss-speed. The A0 3-of-3 Hexaghost is in a0-vs-a20, and it is a 3-fight row anyway. Hexaghost's A20 record is repeated on five cards; one or two is enough.",
+     "repeats": "trouble-a0-vs-a20 and trouble-killers-a20",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "trouble-killers-a20",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Per-run cause of death, a different view from fight win rates. The 13-of-17 Hexaghost figure overlaps trouble-hexaghost-a20, but the elite and hallway killers are new.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "drop",
+     "why": "Repeats other cards. The boss deaths (Hexaghost 13 of 17, Slime Boss 5 of 20, Guardian 3 of 14) are the losses on trouble-hexaghost-a20. The elite deaths (Lagavulin 6 of 18, Nob 2 of 21, Sentries 1 of 15) are on the trimmed trouble-a0-vs-a20. The 33 deaths of 63 runs are also on run-level-empty-belt (33 of 33).",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Run-level: which fight ended each death. It is the main place for 'Hexaghost ended 13 of 17' and Lagavulin's 6 of 17. The 1-death hallway rows are flagged by HP-on-arrival notes.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "trouble-encounters-a20",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "This is the home card for HP lost per encounter at A20. The power and debuff cards restate it.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "trim",
+     "why": "Its six boss and elite rows have exactly the same values as trouble-a0-vs-a20 (A20 side) and trouble-hexaghost-a20: 61.5, 41.5, 39, 36.4, 32.1, 31.8. The claim is about hallway fights, so this card becomes the hallway HP-cost card.",
+     "repeats": "",
+     "claim": "In the A20 hallways, the Gremlin Gang cost about 18 HP a fight on average, twice a lone Jaw Worm's 8.8, though a few bad fights pull that average up (median 12). A Cultist cost only 3.4 HP: those fights end fast, before Ritual's Strength has stacked much.",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "trim",
+     "why": "The six elite and boss rows carry exactly the A20 values of trouble-a0-vs-a20 (61.5, 41.5, 39, 36.4, 32.1, 31.8). The claim was already about hallways. Gremlin Gang includes the run 83 standoff (60 to 8 HP); without it the mean is about 16. The claim's 'a few bad fights' covers that, or it can name the standoff.",
+     "repeats": "trouble-a0-vs-a20",
+     "claim": "In the A20 hallways, the Gremlin Gang cost about 18 HP a fight on average, twice a lone Jaw Worm's 8.8, though a few bad fights pull that average up (median 12). A Cultist cost only 3.4 HP: those fights end fast, before Ritual's Strength has stacked much.",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "Hexaghost",
+    "The Guardian",
+    "Slime Boss",
+    "3 Sentries",
+    "Lagavulin",
+    "Gremlin Nob"
+   ]
+  },
+  {
+   "id": "trouble-a0-vs-a20",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Per-encounter comparison across the two ascensions. Its A20 numbers match trouble-encounters-a20, but the A0 side is new.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "trim",
+     "why": "The boss rows (HP lost and losses at A0 and A20) are the same numbers as on trouble-hexaghost-a20, including Slime Boss 10.1 vs 39.0 HP in its notes. This card keeps the elites, and so it also takes over the elite-death numbers from the dropped trouble-killers-a20.",
+     "repeats": "",
+     "claim": "Every elite cost more HP at Ascension 20 than at A0. Gremlin Nob went from 11 to 32 HP, but its A0 figure rests on only 3 fights. Lagavulin went from 24.9 to 32.1 HP and won 9 of 9 at A0, but lost 6 of its 18 fights at A20.",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "After the trims, this is the one card with per-elite and per-boss HP cost. Gremlin Nob and Hexaghost at A0 rest on 3 fights each; the claim already says so for Nob.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "Slime Boss A0",
+    "Slime Boss A20",
+    "Hexaghost A0",
+    "Hexaghost A20",
+    "The Guardian A0",
+    "The Guardian A20"
+   ]
+  },
+  {
+   "id": "trouble-monster-powers-a20",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "drop",
+     "why": "The records show every row is one encounter or one monster family. Sharp Hide and Mode Shift: The Guardian 14 of 14. Artifact: Sentries 15 of 15. Enrage: Gremlin Nob 21 of 21. Metallicize: Lagavulin 18 of 22. Angry: Mad Gremlin, only in the Gremlin Gang. Curl Up: lice. Spore Cloud: Fungi Beasts. Ritual: Cultist. The HP figures are exactly those encounters' figures (41.5, 36.4, 31.8). Monster Strength is spread over Cultist, Jaw Worm, Fungi Beasts and others, so that row says nothing on its own. The caveat itself admits it measures the monster, not the power.",
+     "repeats": "trouble-encounters-a20",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "drop",
+     "why": "Every power row is one encounter under another name, and the values repeat the encounter HP rows. In these records: Sharp Hide/Mode Shift = The Guardian 14/14 (41.5), Artifact = Sentries 15/15 (36.4), Enrage = Gremlin Nob 21/21 (31.8), Metallicize = Lagavulin 18 of 22, Angry = Gremlin Gang, Curl Up = lice, Spore Cloud = Fungi Beasts, Ritual = Cultist. The only mixed row, monster Strength (14.5), sits at the all-fights baseline (14.3).",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "drop",
+     "why": "Every row is one encounter under another name, with identical numbers. Sharp Hide/Mode Shift 41.5 n=14 is The Guardian, Artifact 36.4 n=15 is 3 Sentries, and Enrage 31.8 n=21 is Gremlin Nob. Metallicize is mostly Lagavulin (18 of 22), Angry is the Mad Gremlin in the Gremlin Gang, Curl Up is lice, Spore Cloud is Fungi Beasts and Ritual is Cultist. Only 'Strength (monster)' is mixed, and its 14.5 is the all-fights average (14.3).",
+     "repeats": "trouble-encounters-a20 / trouble-a0-vs-a20",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "trouble-debuffs-a20",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "drop",
+     "why": "Each row is a stand-in for an encounter, or for the player's own cards. Burn: Hexaghost in 17 of 23 fights. Strength/Dexterity loss: Lagavulin 14 of 14. Entangled: Red Slaver 11 of 11. Dazed: Sentries 15 of 35, and the player's own Reckless Charge in the other 20. Slimed: Acid Slime groups only. Frail: Spike Slime groups and Slime Boss splits. Vulnerable: Fungi Beasts 36, Gremlin Nob 21, Red Slaver 16 of 85. Weak: lice, Blue Slaver and Acid Slimes. Wound comes from no monster at all: 52 of 52 Wound fights had the player's own Wild Strike or Power Through. Nothing is left that the encounter table does not already say.",
+     "repeats": "trouble-encounters-a20",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "drop",
+     "why": "The rows are encounters or the bot's own cards, not debuffs. Checked in states.jsonl: Burn = Hexaghost (17 of 23), Strength/Dexterity loss = Lagavulin (14 of 14), Entangled = Red Slaver (11 of 11), Dazed = Sentries (15) plus the bot's own Reckless Charge (about 20), Wound = mostly its own Wild Strike/Power Through (about 47 of 53), Slimed and Frail = slime encounters, Vulnerable = Fungi Beasts, Nob and Red Slaver. What is left restates trouble-encounters-a20 and trouble-a0-vs-a20.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "drop",
+     "why": "The data shows each row follows its source fight. Burn: 17 of 23 fights are Hexaghost, the rest two Immolate runs (39, 47). Strength/Dexterity loss: negative values only in Lagavulin fights (14 of 14). Entangled: all Red Slaver (11). Dazed: Sentries (15 of 35) plus the bot's own Reckless Charge (in 20 of 35 decks). Slimed: slime fights and Slime Boss. Frail: Spike Slimes and Slime Boss (plus Gremlin Gang). Vulnerable: Fungi Beasts 36, Gremlin Nob 21, Red Slaver 19. Weak: Blue Slaver, lice, acid slimes, Gremlin Gang, and those fights cost the average. Wound does not come from any Act 1 monster: it comes from the bot's own Wild Strike (42 of 52 fights) and Power Through (20). So the 'Burn and Dazed beat Weak' headline compares Hexaghost and Sentries with easy hallways.",
+     "repeats": "trouble-encounters-a20 / trouble-a0-vs-a20",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "plays-most-played",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Card-play shares. The Slimed row (79 plays) comes from slime fights, but it describes a behaviour (paying to exhaust a status card), not an encounter outcome.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: the mix of cards played.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: overall play mix.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "plays-hand-rate",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Per-card play rate. Not tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: how often a card in hand gets played.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "trim",
+     "why": "Havoc's 31 of 93 is mostly the run 83 standoff: 55 of the 93 Havoc opening-hand turns are from that single 84-turn fight. Evolve's row (24 turns, 5 runs) is thin, but it is the claim's point and the caveat can say so.",
+     "repeats": "",
+     "claim": "When a card sits in the opening hand of a turn, how often does the bot play it that turn? Whirlwind gets played 92% of the time and Flex 88%. Evolve is played only 21% of the time, Fire Breathing about a third of the time, and even Bash only 44%. Strike (74%) gets played far more often than Defend (57%). At A0 the same pattern holds: Evolve 14%, Demon Form and Fire Breathing 26%.",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "Havoc"
+   ]
+  },
+  {
+   "id": "plays-bash-turn1",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Per-encounter behaviour (opening with Bash) that no other card shows. Rows are encounters by design, not stand-ins for one.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: the Bash timing decision by opponent.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: turn-1 behaviour per opponent. Rows are small (6-22), as the caveat says.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "plays-nob-no-defend",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Enrage is Gremlin Nob only, but this card is about a play habit in that encounter (holding Defends back). No other card says this, and the encounter cards don't imply it.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "This is about a play habit, not a fight outcome. It is the only card that shows the bot reacting to Enrage.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "trim",
+     "why": "Keep the rows. The claim carries an editorial note ('Suggested title: ...') that must not be shown; take the title 'It rarely Defends against Gremlin Nob'. The subset text points to plays-gremlin-standoff, which was dropped: say instead that one 84-turn fight (run 83) dominates the Gremlin Gang.",
+     "repeats": "",
+     "claim": "Gremlin Nob's Enrage gives it Strength every time you play a Skill. The bot plays its Defends sparingly there: in 74 Nob turns with a Defend in hand it played one on only 17 (23%), against 154 of 216 (71%) at the other elites (Lagavulin and Sentries). Across all Nob turns it played 23 Defends to 101 Strikes, the lowest Defend-to-Strike ratio of any enemy group. It won 19 of its 21 Nob fights. The other end of the scale is Acid Slime (L) and The Guardian, where it blocked more than it struck.",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "plays-potions",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Potion timing; not tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "This is the only potion-use card left (run-level-potions-drunk was dropped).",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "This is the only potion-use card now that run-level-potions-drunk is gone.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "plays-energy-left",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "trim",
+     "why": "40 of the 43 turns in the top row come from the single 84-turn gremlin standoff. That fight is records-longest-fight's subject, and the row's note points to the already dropped plays-gremlin-standoff.",
+     "repeats": "",
+     "claim": "At A20 the bot ended 10.3% of its turns with energy left over, and 6.9% with both energy and a card it could afford to play (usually a Strike, sometimes Havoc). Acid Slime (L) (18% of turn ends) and The Guardian (17%) stand out, while Sentries, Slavers and Fungi Beasts sit near 5%. A0 shows almost the same rates, 10.3% and about 6.9%, though a quarter of A0's cases come from a single fight against an Acid Slime (S).",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "trim",
+     "why": "The Mad Gremlin + Shield Gremlin row is the 84-turn standoff (40 of its 43 turns come from that one fight), which records-longest-fight already tells. The A0 single-fight clause is the A0 slime stall from the same card.",
+     "repeats": "",
+     "claim": "At A20 the bot ended 10.3% of its turns with energy left over, and 6.9% with both energy and a card it could afford to play (usually a Strike, sometimes Havoc). The Guardian (17% of turn ends) and Acid Slime (L) (18%) stand out, while Sentries, Slavers and Fungi Beasts sit near 5%. A0 shows almost the same rates, 10.3% and about 6.9%.",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "rewrite",
+     "why": "The run 83 floor 5 standoff gives 40 of the 161 A20 'energy and an affordable card' turn ends, a quarter of the total, and it is where the Havoc cases come from. So both the headline 6.9% and the top row (Mad Gremlin + Shield Gremlin, 43 of 91, 40 from that fight) describe one fight. At A0, about a quarter of the cases come from the one run 18 stall.",
+     "repeats": "",
+     "claim": "",
+     "compute": "Leave out the run 83 floor 5 fight. Recompute the A20 rates over the remaining turn ends (energy left; energy plus an affordable card), and remove the Mad Gremlin + Shield Gremlin row. Give the per-enemy rows on the same basis, and say in the claim that one fight was set aside. Do the same at A0: leave out run 18 floor 2 (the Small Acid Slime stall) and report the A0 rate with and without it. Check whether the 'sometimes Havoc' wording survives without run 83."
+    }
+   ],
+   "remove_rows": [
+    "Mad Gremlin + Shield Gremlin"
+   ]
+  },
+  {
+   "id": "records-longest-fight",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Single records. This card is now the only home for the gremlin standoff, which shows why the prefer-kill-early setting matters.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "This card is the single home of the stall fights (the 84-turn gremlin standoff and the A0 slime stall), which the owner says matter for the kill-early setting. Other cards that restated the standoff are trimmed.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "This is where the 84-turn standoff lives now that plays-gremlin-standoff is gone. The owner notes that it shows why the prefer-kill-early fight setting matters, which could go in the caveat.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "records-closest-wins",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Single records; distinct.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: wins with the least HP left, and how rare they are at A0 (1 of 264) compared with A20 (14 of 546).",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: the lowest HP after a win.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "records-biggest-hit",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Single records; distinct.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: the biggest single enemy turn, not a fight total.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: the hardest single enemy turn. Hexaghost filling the list is the point, not a repeat.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "records-biggest-loss",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Single records; distinct.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "drop",
+     "why": "Repeats records-longest-fight and records-closest-wins. Its headline fights are already there: run 28 Guardian 87 to 16 and run 52 gremlins 79 to 22 (longest-fight notes), run 56 Spike Slime + Blue Slaver 75 to 5 (both cards), run 44 Slime Boss 66 to 3 and A0 run 19 Hexaghost 72 to 7 (closest-wins), A0 run 13 Sentries 80 to 13 (both cards).",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "drop",
+     "why": "Its headline fights are already on other records cards with the same HP. Run 28 Guardian 87 to 16 in 15 turns, run 56 75 to 5 in 18, run 52 79 to 22 in 15 and A0 run 13 Sentries 80 to 13 in 15 are rows of records-longest-fight. Run 44 Slime Boss 66 to 3 is a row of records-closest-wins. Long fights and costly wins are largely the same fights.",
+     "repeats": "records-longest-fight / records-closest-wins",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "records-boss-speed",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "trim",
+     "why": "The original claim repeats the boss win counts (15 of 20, 4 of 17), which are trouble-hexaghost-a20's subject. It also repeats run 7's no-HP Slime Boss win, which records-flawless covers (A0 Slime Boss 3 of 7 flawless). The new claim keeps only the turn counts, which no other card has.",
+     "repeats": "",
+     "claim": "Slime Boss gives the net its fastest boss wins: in 4 turns twice at A0, and in 6 turns at A20, where its median win took 9. The Guardian's wins run long, a median of 13 turns at A20 and 12.5 at A0. Hexaghost's few A20 wins were quick, 8 to 10 turns.",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "trim",
+     "why": "Its rows (fastest win per boss) are distinct, but the claim repeats the boss win rates on trouble-hexaghost-a20 (15 of 20, 4 of 17). The claim drops those; the rows stay.",
+     "repeats": "",
+     "claim": "Slime Boss gives the net its fastest single boss wins. At A0 it twice won in 4 turns, and run 7's win cost no HP at all. At A20 its fastest wins took 6 turns (median 9). Hexaghost's few A20 wins ended quickly (8 to 10 turns), while The Guardian's fights run long, with a median of about 13 turns per win.",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct content (turns to beat each boss). Its win counts repeat trouble-a0-vs-a20, but only as context in the notes.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "records-heals",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Relic heals; not tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: end-of-fight heals.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "trim",
+     "why": "One run (77) gave four of the eight record rows. Keep one row for it and state the four-of-five in the claim (it is in the original claim).",
+     "repeats": "",
+     "claim": "Burning Blood does steady work: +6 HP after nearly every win (507 of 549 A20 wins), 3,207 HP in all. The biggest single heals came from Burning Blood plus Meat on the Bone: +18 when a fight ends at half HP or lower. A20 run 77, the only A20 run that held Meat on the Bone, got that +18 in four of its five wins after picking it up, the last after The Guardian (23 to 41 HP). At A0, Black Blood (+12) shows up only in Act 2.",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "A20 run 77 F11: Red Slaver",
+    "A20 run 77 F12: Blue Slaver",
+    "A20 run 77 F14: Red Slaver"
+   ]
+  },
+  {
+   "id": "records-flawless",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Per-encounter flawless rate, a measure no other card gives.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: fights won without losing HP.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: fights won without losing HP. The caveat flags the small encounter counts.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "run-level-gold-hoard",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Run-level stat; not tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: unspent gold at the end of runs.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: gold the bot never spent.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "run-level-gold-sinks",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Run-level stat. The thieves row is Looters and Muggers, but it is about gold, not fight outcome.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "trim",
+     "why": "The World of Goop rows count the same 13 of 13 choices that run-level-events shows (A0 5, A20 8), and that card's claim uses them. The Cleric stays here and is trimmed from events instead.",
+     "repeats": "",
+     "claim": "The bot never shops, so gold leaves its purse in only two ways: event options, and thieves (Looters and Muggers) who run off with it. The word-based event rule sends it to odd places. At Ascension 0 the Masked Bandits got the most: twice the rule landed on '[Pay] Lose ALL of your Gold', which handed over 730 gold. At Ascension 20 the thieves kept the most, about 740 gold. Among events there, the Cleric's card removal took the most, ahead of the We Meet Again! relic trades.",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "trim",
+     "why": "The World of Goop paid-to-leave and Cleric paid-removal habits are rows of run-level-events (13 of 13 and 10 of 10). Keep them there, and keep this card to the thieves and the odd gold losses.",
+     "repeats": "run-level-events",
+     "claim": "The bot never shops, so gold leaves its purse in only two ways: event options, and thieves (Looters and Muggers) who run off with it. The word-based event rule sends it to odd places. At Ascension 0 the Masked Bandits got the most: twice the rule landed on '[Pay] Lose ALL of your Gold', which handed over 730 gold. At Ascension 20 the thieves kept the most, about 740 gold, and the We Meet Again! relic trades took 407.",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "A0: World of Goop (Leave It)",
+    "A20: World of Goop (Leave It)",
+    "A0: The Cleric (Purify)",
+    "A20: The Cleric (Purify)"
+   ]
+  },
+  {
+   "id": "run-level-empty-belt",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Run-level stat; distinct.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: potions still held when the run ended.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: potions left at death.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "run-level-campfires",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Run-level stat; distinct.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: rest or smith at campfires.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: rest or smith, split by setting.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "run-level-events",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Event habits; distinct.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "trim",
+     "why": "The Cleric row counts the same 10 Purify choices (A0 4, A20 6) that run-level-gold-sinks shows as gold paid, and that card's claim uses them. This claim doesn't use the row.",
+     "repeats": "",
+     "claim": "The bot picks event options by their wording, and that gives it fixed habits. In World of Goop it paid gold to leave 13 times out of 13 instead of taking 75 gold for 11 HP. It stomped the Mushrooms all 6 times; it won all 6 of those fights, but in run 34 the three Fungi Beasts took it from 36 HP to 3. Under run rules 1-3 it grabbed the Golden Idol all 6 times and then hid from the boulder at a cost of Max HP. Rules 4-5 stopped that, and it left the Idol both times it met it.",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: the event habits. It keeps the Goop and Cleric rows that gold-sinks drops.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "The Cleric: paid to remove a card"
+   ]
+  },
+  {
+   "id": "net-confidence-calibration",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Calibration of the net's scores overall; distinct.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "This is the clearest card on the net's confidence: does its start-of-fight score predict the result.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: the score against the outcome, with large samples.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "net-confidence-misjudged-monsters",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Per-encounter gap between the net's belief and the result, a measure no other card gives. This is the home card for 'Lagavulin and Hexaghost fool it'.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "This is the per-encounter view of the confidence error: Hexaghost and Lagavulin it is too hopeful about, The Guardian too pessimistic. It also covers the finding of the dropped confident-losses card.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "trim",
+     "why": "The rows are per encounter but measure misjudgement, not cost, so this card is not a repeat. The claim carries an editorial 'Suggested title' note that must not be shown; take the title 'Hexaghost and Lagavulin fool it; The Guardian scares it more than it should'. With confident-losses dropped, this card holds the Lagavulin over-optimism finding.",
+     "repeats": "",
+     "claim": "At A20 the net's fight-start score was furthest above the real result against Hexaghost (13 of 17 fights lost) and Lagavulin (6 of 18 lost). Against The Guardian it was the other way round: in the 11 fights it won, its start score was worth about 70 HP lost, and it actually lost about 34 HP.",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "net-confidence-confident-losses",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "drop",
+     "why": "Its message is that the most confident losses were Lagavulin (3 of the top 4). misjudged-monsters already says the net is too hopeful about Lagavulin (6 of 18 lost) and Hexaghost, so this card restates one encounter's over-hope as single fights.",
+     "repeats": "net-confidence-misjudged-monsters",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "drop",
+     "why": "Repeats net-confidence-misjudged-monsters ('Lagavulin fools it', 6 of 18 lost) and net-confidence-calibration (whose only loss at 1.8 or higher is the same run 79 Lagavulin). The top rows are those same Lagavulin fights listed one by one.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "drop",
+     "why": "Its point (Lagavulin losses it was sure of winning, 3 of 15 confident starts) is the Lagavulin row of misjudged-monsters shown as single fights. Run 79's Lagavulin is also named in calibration's 1.8-1.9 row. Runs 76 and 79 also appear in second-turn-saves.",
+     "repeats": "net-confidence-misjudged-monsters",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "net-confidence-second-turn-saves",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Two-turn versus one-turn verdict changes; individual decisions across many encounters.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: single decisions where looking one more turn ahead changed the verdict.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "trim",
+     "why": "Run 34 gave two of the four rises, and its floor-13 Fungi fight is already on records-closest-wins and run-level-events. The run 83 Gremlin Gang row is the standoff fight again.",
+     "repeats": "",
+     "claim": "In run 34 (A20), the Red Slaver fight on floor 14 started at 9 HP. One turn deep, the best option scored 0.15, which reads as an almost certain loss. Two turns deep, every attacking line scored about 1.52. The search played the Skill Potion, and the fight was won: 4 HP at the end, 10 after the end-of-fight heal. The reverse also happens: in run 78, against a Looter at 11 HP, one turn deep looked like a comfortable win at 1.58. Two turns deep it scored 0.43, and that fight was lost.",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "Run 34 fl 13 3 Fungi Beasts, 36 HP: Strike (won)",
+    "Run 83 fl 5 Gremlin Gang, 15 HP: Strike (won)"
+   ]
+  },
+  {
+   "id": "net-confidence-overrules",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "What the deeper search changes overall; not tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: how often the two-turn search changes the pick, and which way.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "keep",
+     "why": "Distinct: what the second turn changes, with large samples.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    }
+   ],
+   "remove_rows": []
+  },
+  {
+   "id": "net-confidence-card-vs-end",
+   "votes": [
+    {
+     "lens": 0,
+     "action": "keep",
+     "why": "Per-card value against ending the turn; not tied to an encounter.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 1,
+     "action": "keep",
+     "why": "Distinct: how much the net's score prefers playing each card over ending the turn. plays-hand-rate measures how often a card is played, which is a different thing.",
+     "repeats": "",
+     "claim": "",
+     "compute": ""
+    },
+    {
+     "lens": 2,
+     "action": "trim",
+     "why": "55 of Havoc's 96 decisions come from the single run 83 standoff fight (floor 5), so the row, and the claim's punchline about Havoc, describes that fight, not the card.",
+     "repeats": "",
+     "claim": "At A20, when Rampage or Ghostly Armor was playable, the net typically scored playing it about 22 points above ending the turn right there. Whirlwind came last of the cards shown, at about 10, from only 4 runs.",
+     "compute": ""
+    }
+   ],
+   "remove_rows": [
+    "Havoc"
+   ]
+  }
+ ],
+ "rewrites": [
+  {
+   "id": "real-picks-boss-deck",
+   "rewrite": {
+    "id": "real-picks-boss-deck",
+    "title": "A20: the deck at the Act 1 boss, boss by boss",
+    "claim": "Which boss a run met matters more than the cards. Hexaghost was beaten 4 times in 17 fights; Slime Boss and The Guardian together were beaten 26 times in 34. Most of the raw gap between cards comes from which boss each deck met. Wild Strike decks won only 3 of 9 boss fights, but 5 of those 9 were Hexaghost fights, all lost. Against Slime Boss or The Guardian, Wild Strike decks won 3 of 4, close to the 23 of 30 for the other decks. Fire Breathing stands out against both kinds of boss. Fire Breathing decks beat Hexaghost 2 times in 3, against 2 in 14 for the other decks. They also won all 5 of their fights against Slime Boss or The Guardian. Clash (10 of 11), Spot Weakness (8 of 9) and Pommel Strike (11 of 13) decks also beat Slime Boss and The Guardian more often than decks without those cards. Spot Weakness decks met Hexaghost only once, and Pommel Strike decks twice, so their good overall records partly reflect easier bosses.",
+    "subset": "Real game, A20, runs 28-90. All run-rule versions and fight-guard settings are pooled. Only runs that reached the Act 1 boss (floor 16) are counted: 51 runs, one boss fight each. The deck is the run's deck during the boss fight, read from the floor-16 combat states, so a card from the boss's own reward isn't counted. Upgraded copies count as the base card. A card created during the fight, such as a random attack, doesn't count. 'Slime Boss/Guardian' pools the fights against Slime Boss (20) and The Guardian (14).",
+    "n": "51 A20 boss fights, 30 won: Hexaghost 17 (4 won), Slime Boss 20 (15 won), The Guardian 14 (11 won). Card groups are 3-13 fights.",
+    "rows": [
+     {
+      "label": "Slime Boss/Guardian, any deck",
+      "value": 76,
+      "note": "26 of 34"
+     },
+     {
+      "label": "Hexaghost, any deck",
+      "value": 24,
+      "note": "4 of 17"
+     },
+     {
+      "label": "Fire Breathing vs Hexaghost",
+      "value": 67,
+      "note": "2 of 3 (other decks 2 of 14)"
+     },
+     {
+      "label": "Fire Breathing vs Slime Boss/Guardian",
+      "value": 100,
+      "note": "5 of 5 (other decks 21 of 29)"
+     },
+     {
+      "label": "Clash vs Slime Boss/Guardian",
+      "value": 91,
+      "note": "10 of 11 (other decks 16 of 23); vs Hexaghost 2 of 5"
+     },
+     {
+      "label": "Spot Weakness vs Slime Boss/Guardian",
+      "value": 89,
+      "note": "8 of 9 (other decks 18 of 25); met Hexaghost once and lost"
+     },
+     {
+      "label": "Pommel Strike vs Slime Boss/Guardian",
+      "value": 85,
+      "note": "11 of 13 (other decks 15 of 21); vs Hexaghost 0 of 2"
+     },
+     {
+      "label": "Wild Strike vs Slime Boss/Guardian",
+      "value": 75,
+      "note": "3 of 4 (other decks 23 of 30): no real gap"
+     },
+     {
+      "label": "Wild Strike vs Hexaghost",
+      "value": 0,
+      "note": "0 of 5 (other decks 4 of 12)"
+     }
+    ],
+    "unit": "% of A20 boss fights won, by boss and by a card in the deck at the boss",
+    "caveat": "This shows correlation, not cause, and the groups are tiny. Most of these rows rest on 3-13 fights, and the Hexaghost rows rest on 3-5 fights. These cards were picked as the high and low ends among about 30 cards found in 5 or more boss decks, so a few of them land high or low by chance. Some gaps that look big in the pooled numbers vanish once the bosses are split. Armaments decks beat Slime Boss and The Guardian 11 times in 14, against 15 in 20 without it. Shrug It Off decks did so 9 times in 12, against 17 in 22. A plausible reason Fire Breathing helps against Hexaghost is that it deals damage whenever a Status card is drawn, and Hexaghost shuffles Burns into the deck. These records don't prove that link. The pooled settings changed the route through the map over time (rules 1-5, with and without the fight guard), so the decks and HP that reached the boss differ between settings too. The deck reading from the combat piles gives the same 9 Wild Strike decks as the master deck. A count of 10 appears only if a Wild Strike created during the fight is counted.",
+    "script": "python -I scratch/stats-audit/rewrite/real-picks-boss-deck/a.py  (run from .)",
+    "drop_instead": false
+   },
+   "check": {
+    "verdict": "confirmed",
+    "reason": "My own script (scratch/stats-audit/recheck/real-picks-boss-deck/b.py) reproduces every number in the statistic. I used all_runs only to split the runs. For each run I read the master deck from that run's own floor-16 combat states, keyed by seed and folder, with upgrades folded into the base card. A boss fight counts as won when one of that run's boss fights in fights.jsonl was won. The A20 runs that reached floor 16 are runs 28 through 90: 51 runs with exactly one boss fight each, 30 of them won. By boss: Hexaghost 4 of 17, Slime Boss 15 of 20, The Guardian 11 of 14. The monsters in the combat states match each run's act1_boss. Every card row and every other-deck comparison matches. Fire Breathing: 2 of 3 against Hexaghost (other decks 2 of 14) and 5 of 5 against Slime Boss or The Guardian (other decks 21 of 29). Clash: 10 of 11 against 16 of 23, and 2 of 5 against Hexaghost. Spot Weakness: 8 of 9 against 18 of 25, and 0 of 1 against Hexaghost. Pommel Strike: 11 of 13 against 15 of 21, and 0 of 2 against Hexaghost. Wild Strike: 3 of 4 against 23 of 30, and 0 of 5 against Hexaghost (other decks 4 of 12). The caveat's Armaments (11 of 14 against 15 of 20) and Shrug It Off (9 of 12 against 17 of 22) also match. 32 cards outside the starter deck appear in 5 or more boss decks, consistent with 'about 30'. Every percentage is rounded correctly.",
+    "stat": {
+     "id": "real-picks-boss-deck",
+     "title": "A20: the deck at the Act 1 boss, boss by boss",
+     "claim": "Which boss a run met matters more than the cards. Hexaghost was beaten 4 times in 17 fights; Slime Boss and The Guardian together were beaten 26 times in 34. Most of the raw gap between cards comes from which boss each deck met. Wild Strike decks won only 3 of 9 boss fights, but 5 of those 9 were Hexaghost fights, all lost. Against Slime Boss or The Guardian, Wild Strike decks won 3 of 4, close to the 23 of 30 for the other decks. Fire Breathing stands out against both kinds of boss. Fire Breathing decks beat Hexaghost 2 times in 3, against 2 in 14 for the other decks. They also won all 5 of their fights against Slime Boss or The Guardian. Clash (10 of 11), Spot Weakness (8 of 9) and Pommel Strike (11 of 13) decks also beat Slime Boss and The Guardian more often than decks without those cards. Spot Weakness decks met Hexaghost only once, and Pommel Strike decks twice, so their good overall records partly reflect easier bosses.",
+     "subset": "Real game, A20, runs 28-90. All run-rule versions and fight-guard settings are pooled. Only runs that reached the Act 1 boss (floor 16) are counted: 51 runs, one boss fight each. The deck is the run's deck during the boss fight, read from the floor-16 combat states, so a card from the boss's own reward isn't counted. Upgraded copies count as the base card. A card created during the fight, such as a random attack, doesn't count. 'Slime Boss/Guardian' pools the fights against Slime Boss (20) and The Guardian (14).",
+     "n": "51 A20 boss fights, 30 won: Hexaghost 17 (4 won), Slime Boss 20 (15 won), The Guardian 14 (11 won). Card groups are 3-13 fights.",
+     "rows": [
+      {
+       "label": "Slime Boss/Guardian, any deck",
+       "value": 76,
+       "note": "26 of 34"
+      },
+      {
+       "label": "Hexaghost, any deck",
+       "value": 24,
+       "note": "4 of 17"
+      },
+      {
+       "label": "Fire Breathing vs Hexaghost",
+       "value": 67,
+       "note": "2 of 3 (other decks 2 of 14)"
+      },
+      {
+       "label": "Fire Breathing vs Slime Boss/Guardian",
+       "value": 100,
+       "note": "5 of 5 (other decks 21 of 29)"
+      },
+      {
+       "label": "Clash vs Slime Boss/Guardian",
+       "value": 91,
+       "note": "10 of 11 (other decks 16 of 23); vs Hexaghost 2 of 5"
+      },
+      {
+       "label": "Spot Weakness vs Slime Boss/Guardian",
+       "value": 89,
+       "note": "8 of 9 (other decks 18 of 25); met Hexaghost once and lost"
+      },
+      {
+       "label": "Pommel Strike vs Slime Boss/Guardian",
+       "value": 85,
+       "note": "11 of 13 (other decks 15 of 21); vs Hexaghost 0 of 2"
+      },
+      {
+       "label": "Wild Strike vs Slime Boss/Guardian",
+       "value": 75,
+       "note": "3 of 4 (other decks 23 of 30): no real gap"
+      },
+      {
+       "label": "Wild Strike vs Hexaghost",
+       "value": 0,
+       "note": "0 of 5 (other decks 4 of 12)"
+      }
+     ],
+     "unit": "% of A20 boss fights won, by boss and by a card in the deck at the boss",
+     "caveat": "This shows correlation, not cause, and the groups are tiny. Most of these rows rest on 3-13 fights, and the Hexaghost rows rest on 3-5 fights. These cards were picked as the high and low ends among about 30 cards found in 5 or more boss decks, so a few of them land high or low by chance. Some gaps that look big in the pooled numbers vanish once the bosses are split. Armaments decks beat Slime Boss and The Guardian 11 times in 14, against 15 in 20 without it. Shrug It Off decks did so 9 times in 12, against 17 in 22. A plausible reason Fire Breathing helps against Hexaghost is that it deals damage whenever a Status card is drawn, and Hexaghost shuffles Burns into the deck. These records don't prove that link. The pooled settings changed the route through the map over time (rules 1-5, with and without the fight guard), so the decks and HP that reached the boss differ between settings too. The deck reading from the combat piles gives the same 9 Wild Strike decks as the master deck. A count of 10 appears only if a Wild Strike created during the fight is counted.",
+     "script": "python -I scratch/stats-audit/recheck/real-picks-boss-deck/b.py  (run from .)",
+     "drop_instead": false
+    }
+   }
+  },
+  {
+   "id": "plays-energy-left",
+   "rewrite": {
+    "id": "plays-energy-left",
+    "title": "Ending the turn with energy and a playable card",
+    "claim": "One 84-turn gremlin standoff (run 83, floor 5) is set aside here because it alone gave a quarter of the cases. Without it, the bot at A20 ended 8.9% of its turns with energy left over, and 5.3% with both energy and a card it could afford to play. The leftover card was usually a Strike. Without that fight Havoc almost never shows up (1 case). The rate depends a lot on the enemy. With The Guardian or a lone Acid Slime (L) on the board it was about 17%. With Jaw Worm, Cultist or Hexaghost it was close to 0. A0 is almost the same once its one long stall (run 18, floor 2, a lone Acid Slime (S)) is set aside: 8.8% and 5.2%. With that fight counted, both levels sit at 10.3% energy left and 6.8-6.9% energy plus an affordable card.",
+    "subset": "Real game, A20 (runs 28-90, all run-rule versions pooled). Turn ends come from the game's own states: the last state of a turn before the next turn starts on the same floor. Fights the fallback rule finished are left out, and so is the run 83 floor 5 fight against Mad Gremlin + Shield Gremlin. Each row is the group of monsters still standing at that turn end. The A0 rates (runs 1-27, with and without the run 18 floor 2 fight) are given only in the text, never on the same chart.",
+    "n": "A20: 2,254 turn ends in 568 fights, with 200 ending with energy left and 120 with energy and an affordable card. Counting run 83 floor 5 gives 2,337 turn ends, 241 and 161. A0: 982 turn ends in 265 fights, with 86 and 51. Counting run 18 floor 2 gives 1,009, 104 and 69.",
+    "rows": [
+     {
+      "label": "Acid Slime (L)",
+      "value": 17.6,
+      "note": "12 of 68 turn ends, 19 fights, at most 3 from one fight"
+     },
+     {
+      "label": "The Guardian",
+      "value": 17.4,
+      "note": "27 of 155, 14 fights, at most 4 from one fight"
+     },
+     {
+      "label": "Gremlin Nob",
+      "value": 10.1,
+      "note": "7 of 69, 21 fights"
+     },
+     {
+      "label": "Lagavulin",
+      "value": 8,
+      "note": "10 of 125, 17 fights"
+     },
+     {
+      "label": "Slime Boss",
+      "value": 6.4,
+      "note": "5 of 78, 20 fights"
+     },
+     {
+      "label": "Acid Slime (M)",
+      "value": 6.2,
+      "note": "7 of 113, 43 fights"
+     },
+     {
+      "label": "Sentry",
+      "value": 5.3,
+      "note": "7 of 131, 15 fights"
+     },
+     {
+      "label": "Slaver",
+      "value": 5.1,
+      "note": "10 of 196, 66 fights; 8 of the 10 from one fight (run 56, floor 14)"
+     },
+     {
+      "label": "Fungi Beast",
+      "value": 4.7,
+      "note": "6 of 127, 50 fights"
+     },
+     {
+      "label": "Louse",
+      "value": 2.7,
+      "note": "5 of 182, 70 fights"
+     },
+     {
+      "label": "Hexaghost",
+      "value": 0.7,
+      "note": "1 of 138, 17 fights"
+     },
+     {
+      "label": "Jaw Worm",
+      "value": 0,
+      "note": "0 of 161, 54 fights"
+     },
+     {
+      "label": "Cultist",
+      "value": 0,
+      "note": "0 of 130, 56 fights"
+     },
+     {
+      "label": "All enemies (run 83 floor 5 set aside)",
+      "value": 5.3,
+      "note": "120 of 2,254; 6.9% (161 of 2,337) with that fight counted"
+     }
+    ],
+    "unit": "% of A20 turn ends with energy left and an affordable playable card",
+    "caveat": "Affordable means the game marked the card as playable and its cost was no more than the energy left. Status cards such as Slimed count (10 cases at A20). The last turn of each fight isn't counted. Holding a card can be the right play, for example to avoid triggering The Guardian's Mode Shift or to keep an Acid Slime (L) above its split threshold. These numbers don't say whether it was, and an enemy's high rate doesn't show that the enemy caused it. Most rows have only 5-27 cases, and the Slaver rate comes mostly from one fight. The A0 rate with run 18 counted is 6.8% or 6.9%, depending on how turn pairs split by a non-combat state are handled.",
+    "script": "cd scratch/stats-audit/rewrite/plays-energy-left && python -I e.py",
+    "drop_instead": false
+   },
+   "check": {
+    "verdict": "confirmed",
+    "reason": "I recomputed this with my own script, scratch/stats-audit/recheck/plays-energy-left/r.py. It works differently from the original: for each (seed, floor, turn) it keeps the last combat state, and a turn counts as ended when turn+1 exists on the same floor. Runs are numbered from all_runs, and floors the fallback rule finished are left out. Every figure matches.\n- A20 without run 83 floor 5: 2,254 turn ends in 568 fights; 200 with energy left (8.9%), 120 with energy and an affordable card (5.3%).\n- A20 with it counted: 2,337 / 241 (10.3%) / 161 (6.9%).\n- A0 without run 18 floor 2: 982 in 265 fights / 86 (8.8%) / 51 (5.2%).\n- A0 with it counted: 1,009 / 104 (10.3%) / 69 (6.8%).\n- The leftover card was usually a Strike. Slimed accounts for 10 cases, and Havoc for 1 once run 83 is set aside. No X-cost cards are involved.\n- Run 83 floor 5 gives 41 of the 161 cases (a quarter), runs 84 turns, and is Mad Gremlin + Shield Gremlin. Run 18 floor 2 is a lone Acid Slime (S).\n- Every row value, case count, fight count and largest share from one fight matches, including Slaver at 8 of 10 from run 56 floor 14 and The Guardian at 4 from one fight.",
+    "stat": {
+     "id": "plays-energy-left",
+     "title": "Ending the turn with energy and a playable card",
+     "claim": "One 84-turn gremlin standoff (run 83, floor 5) is set aside here because it alone gave a quarter of the cases. Without it, the bot at A20 ended 8.9% of its turns with energy left over, and 5.3% with both energy and a card it could afford to play. The leftover card was usually a Strike. Without that fight Havoc almost never shows up (1 case). The rate depends a lot on the enemy. With The Guardian or a lone Acid Slime (L) on the board it was about 17%. With Jaw Worm, Cultist or Hexaghost it was close to 0. A0 is almost the same once its one long stall (run 18, floor 2, a lone Acid Slime (S)) is set aside: 8.8% and 5.2%. With that fight counted, both levels sit at 10.3% energy left and 6.8-6.9% energy plus an affordable card.",
+     "subset": "Real game, A20 (runs 28-90, all run-rule versions pooled). Turn ends come from the game's own states: the last state of a turn before the next turn starts on the same floor. Fights the fallback rule finished are left out, and so is the run 83 floor 5 fight against Mad Gremlin + Shield Gremlin. Each row is the group of monsters still standing at that turn end. The A0 rates (runs 1-27, with and without the run 18 floor 2 fight) are given only in the text, never on the same chart.",
+     "n": "A20: 2,254 turn ends in 568 fights, with 200 ending with energy left and 120 with energy and an affordable card. Counting run 83 floor 5 gives 2,337 turn ends, 241 and 161. A0: 982 turn ends in 265 fights, with 86 and 51. Counting run 18 floor 2 gives 1,009, 104 and 69.",
+     "rows": [
+      {
+       "label": "Acid Slime (L)",
+       "value": 17.6,
+       "note": "12 of 68 turn ends, 19 fights, at most 3 from one fight"
+      },
+      {
+       "label": "The Guardian",
+       "value": 17.4,
+       "note": "27 of 155, 14 fights, at most 4 from one fight"
+      },
+      {
+       "label": "Gremlin Nob",
+       "value": 10.1,
+       "note": "7 of 69, 21 fights"
+      },
+      {
+       "label": "Lagavulin",
+       "value": 8,
+       "note": "10 of 125, 17 fights"
+      },
+      {
+       "label": "Slime Boss",
+       "value": 6.4,
+       "note": "5 of 78, 20 fights"
+      },
+      {
+       "label": "Acid Slime (M)",
+       "value": 6.2,
+       "note": "7 of 113, 43 fights"
+      },
+      {
+       "label": "Sentry",
+       "value": 5.3,
+       "note": "7 of 131, 15 fights"
+      },
+      {
+       "label": "Slaver",
+       "value": 5.1,
+       "note": "10 of 196, 66 fights; 8 of the 10 from one fight (run 56, floor 14)"
+      },
+      {
+       "label": "Fungi Beast",
+       "value": 4.7,
+       "note": "6 of 127, 50 fights"
+      },
+      {
+       "label": "Louse",
+       "value": 2.7,
+       "note": "5 of 182, 70 fights"
+      },
+      {
+       "label": "Hexaghost",
+       "value": 0.7,
+       "note": "1 of 138, 17 fights"
+      },
+      {
+       "label": "Jaw Worm",
+       "value": 0,
+       "note": "0 of 161, 54 fights"
+      },
+      {
+       "label": "Cultist",
+       "value": 0,
+       "note": "0 of 130, 56 fights"
+      },
+      {
+       "label": "All enemies (run 83 floor 5 set aside)",
+       "value": 5.3,
+       "note": "120 of 2,254; 6.9% (161 of 2,337) with that fight counted"
+      }
+     ],
+     "unit": "% of A20 turn ends with energy left and an affordable playable card",
+     "caveat": "Affordable means the game marked the card as playable and its cost was no more than the energy left. Status cards such as Slimed count (10 cases at A20). The last turn of each fight isn't counted. Holding a card can be the right play, for example to avoid triggering The Guardian's Mode Shift or to keep an Acid Slime (L) above its split threshold. These numbers don't say whether it was, and an enemy's high rate doesn't show that the enemy caused it. Most rows have only 5-27 cases, and the Slaver rate comes mostly from one fight. The A0 rate with run 18 counted is 6.8% or 6.9%, depending on how turn pairs split by a non-combat state are handled.",
+     "script": "cd scratch/stats-audit/rewrite/plays-energy-left && python -I e.py",
+     "drop_instead": false
+    }
+   }
+  }
+ ]
+}

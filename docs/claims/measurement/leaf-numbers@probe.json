@@ -1,0 +1,54 @@
+{
+  "key": "measurement/leaf-numbers@probe",
+  "rev": 2,
+  "value": "10-29 @hpb0.01 plain leaf, 167 tight2 held-out cells: monster_rolls leaves 27-31% of leaves, ~1 leftover block (3.5 w/ Impervious); leftover block (worth 0) priced with wrong sign, ~-0.3 HP/point to 20 (-5.9 (0.6) for +20), +0.9 to +1.5 on Impervious decks. Exact fix: clear block at the leaf (@lcb1).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/leaf-blind-numbers-2026-11-07.md",
+      "anchor": "Read (2026-11-07, job 0434)",
+      "sha256": "4a5c947ceb6a5b4c9a9aa837fac126745ac872f5f168afcbfee0687223feb6d7"
+    },
+    {
+      "path": "results/leaf_numbers/probe.json",
+      "sha256": "1a3423c0af95353711eee72ffca02c565c13f93b304ae52f5813f77341c1188a"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:31+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The 10-29 net @hpb0.01 (plain leaf) on its own leaves from the pack read's 167 tight2 held-out elite and boss cells (501 fights a set), price in HP, se over fights: monster_rolls leaves are 27-31% of leaves and hold about 1 leftover block (3.5 with Impervious). Leftover block at monster_rolls (true worth 0) is priced with the wrong sign: about -0.3 HP a point up to 20 (-5.9 (0.6) HP for +20 without the cards; Disarm, Intimidate alike), but +0.9 to +1.5 HP on the Impervious deck; the block actually present prices near 0 (+0.9 (0.2) with Impervious). Enemy Strength -2 at draw leaves: +4.9 HP against an upper-side worth of +9.9 to +13 (heuristic +4 to +7.5), the same +4.92 with and without Disarm. Enemy Weak +1: +4.2 to +6.0 against a one-turn worth of +2.2 to +2.7 (heuristic +10 to +19). Leftover block has an exact search-side fix (clear it at the leaf, as StartTurn does); Strength and Weak have none.",
+      "sources": [
+        {
+          "path": "docs/research/leaf-blind-numbers-2026-11-07.md",
+          "anchor": "Read (2026-11-07, job 0434)",
+          "sha256": "4a5c947ceb6a5b4c9a9aa837fac126745ac872f5f168afcbfee0687223feb6d7"
+        },
+        {
+          "path": "results/leaf_numbers/probe.json",
+          "sha256": "1a3423c0af95353711eee72ffca02c565c13f93b304ae52f5813f77341c1188a"
+        },
+        {
+          "path": "jobs/done/0434-leaf-numbers-probe.json",
+          "sha256": "3c8548b37fc6016ce0f8e137bf43880bddc4d1f9a2c816f18143c6aab83d20ba"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "e60a602b-27b7-450d-b752-c2464eac7531",
+      "at": "2026-11-07T04:00:11+00:00 @ 26f6194",
+      "until": "2026-11-13T02:30:31+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "31c6a72fabe1ef23c9230dacbe0a45d70a2d6f017863f36380f219eac5cc695e"
+}

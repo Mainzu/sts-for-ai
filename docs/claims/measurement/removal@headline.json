@@ -1,0 +1,49 @@
+{
+  "key": "measurement/removal@headline",
+  "rev": 1,
+  "value": "One Strike removed after the first elite (headline, one turn, 500 sequences): +1.78 end-HP (se 0.83, z 2.2), +0.038 clears (se 0.020), the gain at the boss; the sim removal chooser gives it back (-1.41 HP vs the Strike rule, protocol fail at n 222) because it removes an earned reward card in 24% of sequences.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Card removal: a removal is worth ~1.8 HP, the sim chooser gives it back (Q3; b2z3; read 12:20 2026-11-02, manager 158afb00)",
+      "sha256": "e45a5a3eca1b66eecac67d806323184e3d16c63225f33930bf1d8b2c5c1e9ebc"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss-rmstrike.json",
+      "sha256": "e36a86c3f1d8b02cfed250efaf2f98cd92427b8512a0677cea937ea9933fd8ea"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss-rmsim.json",
+      "sha256": "1693265378764d99d95aee95df477eff97dcfd1b2bc12c1c0045f5260028667c"
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:13:09+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:57:57+00:00 @ a875850",
+      "note": "yardstick/headline-setting rev 2 changed only which depth judges a change (one turn; the two-turn product is the reported score); the setting's flags this fact relies on (--start starter --rewards sim --sim-boss, 500 sequences) are unchanged"
+    },
+    {
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:38:07+00:00 @ 80d6c86",
+      "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "1f0bfe9db1d992c1cdcac299e2ca755539880ea45171928d3b1a58c9334655c2"
+}

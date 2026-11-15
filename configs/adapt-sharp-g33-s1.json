@@ -1,0 +1,15 @@
+{
+ "content": {
+  "mutated": [
+   "sharp2",
+   "sharp2-hp0.9",
+   "ritual2"
+  ]
+ },
+ "game_seed": 41,
+ "games": 33,
+ "n_val": 300,
+ "name": "adapt-sharp-g33-s1",
+ "pool": 10000,
+ "seed": 1
+}

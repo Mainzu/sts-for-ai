@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-pack-net-scratch",
+  "rev": 2,
+  "value": "pred even; go: 3 seeds pooled +3.33 HP (z 3.99) on the pack headline, cells +1.58 HP; 51.9 of 60 cpu-h. Reopen: content these nets never trained on (relics, potions, a new pack batch), or the two-turn read 0778 passes and the successor needs more seeds or a two-turn-teacher round.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane pack-net-scratch closed (2026-11-10)",
+      "sha256": "757b04ef06b6b2ad093b631601126f403df52deda8737cbfdbeddd9fbb27f77e"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:06+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even (seed 1 beats the 10-29 net on the pack headline by 2 se), about 40-60 thread-h; actual go: three seeds pooled +3.33 HP (z 3.99) on the pack headline, cells +1.58 HP, 51.9 cpu-h of 60; reopen if: new content these nets never trained on lands (relics, potions or a new card/monster batch in the pack), or the two-turn product read 0778 passes and the successor needs more seeds or a two-turn-teacher round",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane pack-net-scratch closed (2026-11-10)",
+          "sha256": "757b04ef06b6b2ad093b631601126f403df52deda8737cbfdbeddd9fbb27f77e"
+        }
+      ],
+      "owner": false,
+      "by": "27e6a8f8-85be-4e52-9ae1-9c3093a6429b",
+      "at": "2026-11-10T01:55:50+00:00 @ 39258b7",
+      "until": "2026-11-13T02:31:06+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "b612e671d19d53b24126cda0f5b4ba58ca6e90573cc141a66b53a097008ba408"
+}

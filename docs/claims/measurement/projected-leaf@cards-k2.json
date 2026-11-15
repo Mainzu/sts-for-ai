@@ -1,0 +1,58 @@
+{
+  "key": "measurement/projected-leaf@cards-k2",
+  "rev": 2,
+  "value": "@pl2 vs @tsl1, cards rung (10-29 net one turn, 200 starts x 16, paired), novelty-cost change wins / HP: inflame-turn1 -0.002 (0.002) / -0.61 (0.13) (elite -0.74 (0.14), boss -0.33 (0.26)); df-c2-s1 -0.004 / -0.06 (0.18); controls metal-c2-a5 +0.14 (0.07) HP, bash-c1-d5 level. Repairs HP on fights every player wins, not the boss-wins cost.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/projected-leaf.md",
+      "anchor": "Step 2 read (job 0471, `results/mutate/cards-pl.json`)",
+      "sha256": "66cb386cbd6682cc6160384804517a5bcd073b83c8c4af3cb76b6aa446bb7ff6"
+    },
+    {
+      "path": "results/mutate/cards-pl.json",
+      "sha256": "8ca79253c8ab753a05365a48dd624ade4464e82a29a14f7c695d233b6eefdcef"
+    },
+    {
+      "path": "results/mutate/cards-a.json",
+      "sha256": "a7d36555756d30a72576c21492795c8dad422d841289bec48ed4787544deea87"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:21+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Projected leaf @pl2 against @tsl1 on the cards rung (10-29 net one turn deep, 200 starts x 16 seeds, paired by start; tsl rows identical to cards-a.json): change in novelty cost, wins / HP lost (se): inflame-turn1 all -0.002 (0.002) / -0.61 (0.13), boss -0.006 (0.006) / -0.33 (0.26), elite +0.000 / -0.74 (0.14); df-c2-s1 all -0.004 (0.004) / -0.06 (0.18), elite -0.37 (0.18); controls metal-c2-a5 +0.000 / +0.14 (0.07), bash-c1-d5 level. inflame-turn1 novelty against the heuristic: tsl -0.018 (0.005) wins / +0.9 HP, pl2 -0.020 (0.005) / +0.2 HP. So two credited ticks repair HP on fights every player wins and do not touch the boss-wins cost.",
+      "sources": [
+        {
+          "path": "docs/research/projected-leaf.md",
+          "anchor": "Step 2 read (job 0471, `results/mutate/cards-pl.json`)",
+          "sha256": "66cb386cbd6682cc6160384804517a5bcd073b83c8c4af3cb76b6aa446bb7ff6"
+        },
+        {
+          "path": "results/mutate/cards-pl.json",
+          "sha256": "8ca79253c8ab753a05365a48dd624ade4464e82a29a14f7c695d233b6eefdcef"
+        },
+        {
+          "path": "jobs/done/0471-mutate-cards.json",
+          "sha256": "6d33cffad1709c866187edf4be5b99b99ef48b21b45715c61ee4840816cce5ce"
+        },
+        {
+          "path": "results/mutate/cards-a.json",
+          "sha256": "a7d36555756d30a72576c21492795c8dad422d841289bec48ed4787544deea87"
+        }
+      ],
+      "owner": false,
+      "by": "8fd8a4f0-108e-4502-bf21-2af91fedfc78",
+      "at": "2026-11-07T14:11:30+00:00 @ 3ecd728",
+      "until": "2026-11-13T02:31:21+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "62bb297ebbc6ad14d5761fa5a619138097e061cf9a9b8fbd9d963dca10222f39"
+}

@@ -1,0 +1,34 @@
+{
+  "key": "measurement/family-transfer-interference@gen-b1",
+  "rev": 1,
+  "value": "The two 399-game SharpHide bursts lose OppCard-Vulnerable, the zero-shot net's largest edge on gen b1 (-9.53 -> +0.36 / -1.72 HP; Sentries wins 0.765 -> 0.417 / 0.522); official parents' wins hold (0.987); seed 2 loses 4.4 HP on the Lagavulin parent.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/family-transfer-probes.md",
+      "anchor": "What it says",
+      "sha256": "a5c7327753ab144d7a9ee943737a7250dcdef96b5daf818bbcccece33d34cfa5"
+    },
+    {
+      "path": "results/mutate/gen-b1-sharp399-s1.json",
+      "sha256": "a76d2118072332057543146dfc768c387b1e9482ffe09adc3ba35a547037e896"
+    },
+    {
+      "path": "results/mutate/gen-b1-sharp399-s2.json",
+      "sha256": "ad3e5a0405168f8ec05ca50e75237a4ae60cc3ea89306ae198e74af13cabb8f9"
+    },
+    {
+      "path": "results/mutate/gen-enemies-b1.json",
+      "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:29+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "384698c7598150ded645e370f8d5a999376949b67e2190b305ef52f3c2b5a8dd"
+}

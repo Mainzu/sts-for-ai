@@ -1,0 +1,90 @@
+{
+  "key": "measurement/pack-dose-33@gen-b1",
+  "rev": 1,
+  "value": "Gen batch 1's pack chain at 33 games per mechanic and replay share 0.9 (arm g33-sh9, two nets, @tsl1 on the bench's elites, 675 fights x 4 seeds, pooled per start, against the zero-shot 10-29 net): the TurnEnd-Frail x Lagavulin leak +0.54 (0.33) HP per elite fight (g99 at share 0.5: +3.01 (0.39)), parent over all encounters -0.16 (0.15); AttackLoss-Damage x Gremlin Nob cut +4.24 (se over nets 1.92) of +13.29, per net +6.16 and +2.32 (g99: +11.50); OppCard-Vulnerable x Sentries +7.06 (0.81) HP, wins -0.213 (g99: -3.47, wins +0.105), guard fails on both nets. Between: the single-mechanic 33-game share-0.9 quote does not carry to eight mechanics in one burst; the leak follows the move off the parent, the cut and the edge each mechanic's own dose.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/family-transfer-probes.md",
+      "anchor": "Pack-dose-33 probe (0697-0701): the pack chain at 33 games per mechanic and share 0.9",
+      "sha256": "25820c3086b43ac90d7d3446a787ccb060e5ec535156479e925e02970ccd796d"
+    },
+    {
+      "path": "results/families/gen-b1-dose33.md",
+      "sha256": "b563359dfe0f03d6fff94169308ee6aa350bef795cdfa2d256cfd0907e181c64"
+    },
+    {
+      "path": "results/families/gen-b1.md",
+      "sha256": "6dec0802d7e61cb49e329a637d1c62c0579ff833a14fdf4247741e9ca0cdc217"
+    },
+    {
+      "path": "jobs/done/0701-family.json",
+      "sha256": "387b9a770bdb1b8b0573c50ce39b0a4fa8d23c394278dea6b941036566a57060"
+    },
+    {
+      "key": "measurement/pack-joint-burst@gen-b1",
+      "rev": 1
+    },
+    {
+      "key": "decision/burst-share",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "129b8d9d-a225-49d7-abbc-06f8d5f99e19",
+  "at": "2026-11-09T13:47:48+00:00 @ 1b2f7d1",
+  "confirms": [
+    {
+      "by": "129b8d9d-a225-49d7-abbc-06f8d5f99e19",
+      "at": "2026-11-09T15:28:43+00:00 @ 99df525",
+      "note": "re-checked 2026-11-09 after measurement/adaptation-curve's and decision/burst-share's re-set (share-quote-widen read): this fact's text does not depend on the changed sentence (the quote now covers four mechanics and qualifies the parent on OppCard-PlainDamage); where it quotes 33 games at share 0.9 on the two debuff mechanics or on cards, that narrower claim still holds"
+    },
+    {
+      "by": "2edc559b-edfc-489b-a2d9-c1df70ab65a0",
+      "at": "2026-11-09T21:22:24+00:00 @ af53c25",
+      "note": "cascade from decision/burst-share rev 3, which only added the pack-chain clause (g99 at share 0.9, measurement/pack-dose-99s9@gen-b1); this fact's numbers and claims do not depend on that clause, re-read 2026-11-10"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Gen batch 1's pack chain at 33 games per mechanic and replay share 0.9 (arm g33-sh9, two nets, @tsl1 on the bench's elites, 675 fights x 4 seeds, pooled per start, against the zero-shot 10-29 net): the TurnEnd-Frail x Lagavulin leak +0.54 (0.33) HP per elite fight (g99 at share 0.5: +3.01 (0.39)), parent over all encounters -0.16 (0.15); AttackLoss-Damage x Gremlin Nob cut +4.24 (se over nets 1.92) of +13.29, per net +6.16 and +2.32 (g99: +11.50); OppCard-Vulnerable x Sentries +7.06 (0.81) HP, wins -0.213 (g99: -3.47, wins +0.105), guard fails on both nets. Between: the single-mechanic 33-game share-0.9 quote does not carry to eight mechanics in one burst; the leak follows the move off the parent, the cut and the edge each mechanic's own dose.",
+      "sources": [
+        {
+          "path": "docs/research/family-transfer-probes.md",
+          "anchor": "Pack-dose-33 probe (0697-0701): the pack chain at 33 games per mechanic and share 0.9",
+          "sha256": "25820c3086b43ac90d7d3446a787ccb060e5ec535156479e925e02970ccd796d"
+        },
+        {
+          "path": "results/families/gen-b1-dose33.md",
+          "sha256": "b563359dfe0f03d6fff94169308ee6aa350bef795cdfa2d256cfd0907e181c64"
+        },
+        {
+          "path": "results/families/gen-b1.md",
+          "sha256": "6dec0802d7e61cb49e329a637d1c62c0579ff833a14fdf4247741e9ca0cdc217"
+        },
+        {
+          "path": "jobs/done/0701-family.json",
+          "sha256": "387b9a770bdb1b8b0573c50ce39b0a4fa8d23c394278dea6b941036566a57060"
+        },
+        {
+          "key": "measurement/pack-joint-burst@gen-b1",
+          "rev": 1
+        },
+        {
+          "key": "decision/burst-share",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "129b8d9d-a225-49d7-abbc-06f8d5f99e19",
+      "at": "2026-11-09T13:47:48+00:00 @ 1b2f7d1",
+      "until": "2026-11-11T05:36:17+00:00 @ a84d752",
+      "retired": "merged into measurement/pack-dose-99s9@gen-b1 (STATUS cap)"
+    }
+  ],
+  "seal": "a136cb691caff1b9164ca9ec4c2abe366408aef5d46b9e1d4325e7f4c121f01b"
+}

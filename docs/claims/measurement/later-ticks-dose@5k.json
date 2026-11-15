@@ -1,0 +1,79 @@
+{
+  "key": "measurement/later-ticks-dose@5k",
+  "rev": 1,
+  "value": "allcontent5k-s1 r1 minus its twin data5k-s1 r1 @hpb0.01@tsl1, cell books 0-999, paired by sequence (HP, se): Demon Form decks +7.34 (1.35), train -0.68 (0.51), other held-out -1.06 (0.76) with clears -0.061 (0.021); go at 5k by the step-2 rule (one seed). Against each net's own train stratum (both vs the 10-29 net) Demon Form decks sit +1.2 for the arm and -6.8 for the twin (at 40k: +2.7 and -0.8): most of the gap is the unseen card hurting the weak twin. Both 5k nets are 3.5-5 HP below the 10-29 net.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/from-scratch-later-ticks.md",
+      "anchor": "Step 2, 5k dose (0823-0824 against 0805-0806): go (read 2026-11-10 21:50, lanes 92715df6)",
+      "sha256": "d693360bdb424aa86ee0701e5349c56cc4b451a139147c5f772b2eae655b80d7"
+    },
+    {
+      "path": "scripts/analysis/cards_by_half.py",
+      "sha256": "c0a20d0e7b96a024e40f5f2502484ee2454f3b379e4b972fe3ce8010e6ef7d14"
+    },
+    {
+      "path": "jobs/done/0823-gauntlet.json",
+      "sha256": "d2e7d0e42041e2939a1e31d50e9c3ff11631bc7e0fdaf4cbcbb2d23bb0baa951"
+    },
+    {
+      "path": "jobs/done/0824-gauntlet.json",
+      "sha256": "e9659ba4576ba5654e6143ca3426d4dcbe96fac2115eeb213c05b7b2cde1a349"
+    },
+    {
+      "path": "jobs/done/0805-gauntlet.json",
+      "sha256": "4ee3eedbeb3bfc727db49db657eebdb2a5e5bc4189d706463ff580d8f4bb0673"
+    },
+    {
+      "path": "jobs/done/0806-gauntlet.json",
+      "sha256": "d94bace0fbb44af6d4976c1cf687244e77c61536f9a43e36ade9adba54ba059a"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "92715df6-8a68-4e6b-9e5b-eca7547859dc",
+  "at": "2026-11-10T14:45:48+00:00 @ 98d05a5",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "allcontent5k-s1 r1 minus its twin data5k-s1 r1 @hpb0.01@tsl1, cell books 0-999, paired by sequence (HP, se): Demon Form decks +7.34 (1.35), train -0.68 (0.51), other held-out -1.06 (0.76) with clears -0.061 (0.021); go at 5k by the step-2 rule (one seed). Against each net's own train stratum (both vs the 10-29 net) Demon Form decks sit +1.2 for the arm and -6.8 for the twin (at 40k: +2.7 and -0.8): most of the gap is the unseen card hurting the weak twin. Both 5k nets are 3.5-5 HP below the 10-29 net.",
+      "sources": [
+        {
+          "path": "docs/research/from-scratch-later-ticks.md",
+          "anchor": "Step 2, 5k dose (0823-0824 against 0805-0806): go (read 2026-11-10 21:50, lanes 92715df6)",
+          "sha256": "d693360bdb424aa86ee0701e5349c56cc4b451a139147c5f772b2eae655b80d7"
+        },
+        {
+          "path": "scripts/analysis/cards_by_half.py",
+          "sha256": "c0a20d0e7b96a024e40f5f2502484ee2454f3b379e4b972fe3ce8010e6ef7d14"
+        },
+        {
+          "path": "jobs/done/0823-gauntlet.json",
+          "sha256": "d2e7d0e42041e2939a1e31d50e9c3ff11631bc7e0fdaf4cbcbb2d23bb0baa951"
+        },
+        {
+          "path": "jobs/done/0824-gauntlet.json",
+          "sha256": "e9659ba4576ba5654e6143ca3426d4dcbe96fac2115eeb213c05b7b2cde1a349"
+        },
+        {
+          "path": "jobs/done/0805-gauntlet.json",
+          "sha256": "4ee3eedbeb3bfc727db49db657eebdb2a5e5bc4189d706463ff580d8f4bb0673"
+        },
+        {
+          "path": "jobs/done/0806-gauntlet.json",
+          "sha256": "d94bace0fbb44af6d4976c1cf687244e77c61536f9a43e36ade9adba54ba059a"
+        }
+      ],
+      "owner": false,
+      "by": "92715df6-8a68-4e6b-9e5b-eca7547859dc",
+      "at": "2026-11-10T14:45:48+00:00 @ 98d05a5",
+      "until": "2026-11-11T05:35:10+00:00 @ a84d752",
+      "retired": "merged into measurement/later-ticks-dose@20k (the dose curve, both arms; the lane closed 2026-11-11)"
+    }
+  ],
+  "seal": "f8a27dacdc6257f5c7b01138a7bac8f1f07721eebedc2127f2dce3ba792fb29b"
+}

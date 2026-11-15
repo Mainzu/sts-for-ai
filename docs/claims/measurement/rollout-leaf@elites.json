@@ -1,0 +1,84 @@
+{
+  "key": "measurement/rollout-leaf@elites",
+  "rev": 2,
+  "value": "Rollout leaf (n 16, product policy) vs the two-turn product's own play, all 498 floor-9 elites of the headline control: +0.67 (0.31) HP lost (worse), wins -0.008 (0.009); Nob +1.56 (0.57), Sentries +1.32 (0.47), Lagavulin -0.75 (0.55); non-decisive 261 +2.69 (0.38). No go (bar 1.5 HP/elite at 2 se).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Rollout leaf on all 498 floor-9 elites: +0.67 HP lost (se 0.31), worse than two turns; the decisive-elite gain was regression to the mean; no go for rollouts (depth-headroom lane; 0108 with 0093; read 18:10 2026-11-04, lanes ed05eb9c)",
+      "sha256": "d8cf78bdcb2c5b37da0f53287db2468e35845accc39b6d2b243e81f2ccf54f0a"
+    },
+    {
+      "path": "results/depth_probe/rollout-elite.json",
+      "sha256": "f2f40f787e3e1f08e6e12b96426a990e62097019491ee8c967862f675bd0864e"
+    },
+    {
+      "path": "results/depth_probe/rollout-elite-rest.json",
+      "sha256": "c5928540c12cda5104810a323ac9e1470d8b5619dea96ea8647afe2888bc8110"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    },
+    {
+      "key": "yardstick/headline-control",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:25+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:42:37+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Rollout leaf (n 16, product net policy) on all 498 floor-9 elites of the headline control, paired against the two-turn product's own play: +0.67 HP lost (se 0.31, worse), wins -0.008 (se 0.009); Lagavulin -0.75 (0.55), Nob +1.56 (0.57), Sentries +1.32 (0.47); on the 261 non-decisive elites +2.69 (0.38), flat across the control's loss bands, so 0093's decisive-elite gain (-1.54) was regression to the mean. No go for rollouts: the depth-headroom go rule (1.5 HP or more per elite at 2 se) is not met.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Rollout leaf on all 498 floor-9 elites: +0.67 HP lost (se 0.31), worse than two turns; the decisive-elite gain was regression to the mean; no go for rollouts (depth-headroom lane; 0108 with 0093; read 18:10 2026-11-04, lanes ed05eb9c)",
+          "sha256": "d8cf78bdcb2c5b37da0f53287db2468e35845accc39b6d2b243e81f2ccf54f0a"
+        },
+        {
+          "path": "results/depth_probe/rollout-elite.json",
+          "sha256": "f2f40f787e3e1f08e6e12b96426a990e62097019491ee8c967862f675bd0864e"
+        },
+        {
+          "path": "results/depth_probe/rollout-elite-rest.json",
+          "sha256": "c5928540c12cda5104810a323ac9e1470d8b5619dea96ea8647afe2888bc8110"
+        },
+        {
+          "path": "jobs/done/0108-depth-probe.json",
+          "sha256": "f64653854b8f558db4e364c793017510715ac81f9ddcce67ee002aba513b350f"
+        },
+        {
+          "path": "jobs/done/0093-depth-probe.json",
+          "sha256": "4e5034a342a5b462f72c4afe2fe6b34681d9412dfc9dd446bffbd80d06d46e4d"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "ed05eb9c-8eb3-446d-8f37-09e8ef4beb58",
+      "at": "2026-11-04T11:08:35+00:00 @ f093f1c",
+      "until": "2026-11-13T02:31:25+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "bed5df146e22a65ab3567a057ac93e375d45475df446b059739e3c81d8d62931"
+}

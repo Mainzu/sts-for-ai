@@ -1,0 +1,68 @@
+{
+  "key": "measurement/mixed-depth@headline",
+  "rev": 1,
+  "value": "--one-turn-floors 3 on the headline, 0-249, fixed n vs full two-turn depth: -0.012 clears (se 0.007), -0.27 end-HP (se 0.34), HP after floor 3 -0.25 (se 0.10, washes out by the boss); saves ~30% of wall time (43% on the cell gauntlet, where it was level: end-HP -0.02, se 0.05), no memory saving (peak 3.9 GB).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Mixed depth on the headline setting, fixed n 250: level by its bar, a small real cost on floors 1-3, less saving than on the cell gauntlet (R4 left; 0059l8c + 0059l8e; read 22:25 2026-11-02, manager 19428521)",
+      "sha256": "46aa8e5e19e4e47e3504ad9d09fc4dccb402f9265f0862b36758cb1b5ee1b6de"
+    },
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Mixed depth: floors 1-3 one turn deep is level and 43% cheaper (R4; b45; read 12:20 2026-11-02, manager 158afb00)",
+      "sha256": "ad3efaf71c0becbc25f9f56dad13b96e5b5410277b5e61e9e646185073d64faa"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-two-mixed3-starter-simboss-a.json",
+      "sha256": "defad419263916e6fd76cf944c0688e587de8a578f2855a5e6f39334314d3637"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-two-starter-simboss.json",
+      "sha256": "6a788adf75486e786c2d055cfcab9e47732f9ab63695ed072eb6702e6acbf05b"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    },
+    {
+      "key": "yardstick/cost-savers",
+      "rev": 3
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:13:31+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T00:37:14+00:00 @ da67084",
+      "note": "re-checked 08:00 2026-11-03: product/net rev 4 changed only the play flags (--line-seed --step-line; same net, same price) and yardstick/cost-savers rev 2 only added the line-step verdict; the fact's content is unaffected"
+    },
+    {
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:38:05+00:00 @ 80d6c86",
+      "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
+    },
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:20+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: yardstick/cost-savers reworded to a shorter single claim; the claim this fact cites kept its key"
+    },
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:42:13+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "4117c0f8870e7489dd6ee8daa04f7c77b05ae6b34d3646082bc4c368d662a256"
+}

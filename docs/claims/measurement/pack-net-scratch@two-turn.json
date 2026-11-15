@@ -1,0 +1,152 @@
+{
+  "key": "measurement/pack-net-scratch@two-turn",
+  "rev": 3,
+  "value": "Pack nets s1/101/201 two-turn (product flags) vs product on the 31-card pack headline, 0-249, n 250: end HP pooled +4.57 (1.19), clears +0.097 (0.030) (0.716/0.732/0.752 vs 0.636). Same one turn +3.38 (1.21); two/one ratio 1.35 (0.50). Boss deaths 60 -> 37-45. Product on this pack 0.636 vs 0.836 curated.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pns-probes.md",
+      "anchor": "pns-two-turn-seeds (0819-0820): the gain carries whole two turns deep on three seeds",
+      "sha256": "b9e3a0b24a7e95b95cf8aea93330b03e788a721d67eb32d060b5c5fa8410715a"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    },
+    {
+      "key": "yardstick/headline-control",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:42+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:42:23+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Pack net seed 1 (runs/2026-11-10-packnet40k-s1-r1-64badf9 @hpe0.01 --two-turn --line-seed --step-line) against the product (the 10-29 net, same flags) on the 31-card pack headline (pack dbec2dc1, pin 2af5b30), sequences 0-249, fixed n 250: +4.67 (1.40) end-HP, clears 0.716 vs 0.636 (+0.080 (0.033)); one turn deep on the same sequences +2.80 (1.37), ratio 1.67 (0.86); train +5.26 (1.92), held-out +4.08 (2.05). Boss-floor deaths 60 to 37; elites and hallways level. Where neither took Demon Form (205) +3.10 (1.48). Product level on this pack 0.636 clears against 0.836 curated on 0-249 (-8.56 (1.50) HP). One seed: a lead; seeds 101/201 queued (0819-0820).",
+      "sources": [
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-two-turn (0777-0778): the pack net's gain grows two turns deep",
+          "sha256": "627c3807feb28bf1a6a54b3b1cf8fd18fabe1bb9b27dcb74382480e2846ff9f9"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s1-hpe0.01-two-line-step-starter-simboss-pack-act1.json",
+          "sha256": "7ec96900525cddea987547cb3935239895d1d90da09c46788a3db79353267eb3"
+        },
+        {
+          "path": "results/gauntlet/pns-net1029-hpe0.01-two-line-step-starter-simboss-pack-act1-31.json",
+          "sha256": "f44dd72d637711316039d8384f0c09f002cb7aec4a69cc66cfa970a7fb47ae36"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s1-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "9b35563859e64169557b7c64df45fa9dd37c4f784bbd80acedd46a87ce545b9c"
+        },
+        {
+          "path": "results/gauntlet/pns-net1029-hpb0.01-starter-simboss-pack-act1-31.json",
+          "sha256": "e35a630562958c5b2076a1e6557caeba5059df9400f0b0ffe6a8cb9ee893f7c6"
+        },
+        {
+          "path": "jobs/done/0777-gauntlet.json",
+          "sha256": "c094ccaeee9f458006d85613c1a3e1627ca4a448e43dfeb7ff11c3bd3f2b97d3"
+        },
+        {
+          "path": "jobs/done/0778-gauntlet.json",
+          "sha256": "6098ade337d3fcfa4c45329a2fe2fa380c1e2b157e526a9d61e95f62a3b84d76"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "62b7a521-3221-4c6f-8916-214850efc667",
+      "at": "2026-11-10T12:10:46+00:00 @ 9748e5c",
+      "until": "2026-11-10T16:53:04+00:00 @ 5e367c8"
+    },
+    {
+      "rev": 2,
+      "value": "Pack nets seeds 1/101/201 (runs/2026-11-10-packnet40k-s{1,101,201}-r1 @hpe0.01 --two-turn --line-seed --step-line) against the product (the 10-29 net, same flags) on the 31-card pack headline (pack dbec2dc1, pin 2af5b30), sequences 0-249, fixed n 250: +4.67 (1.40), +4.42 (1.42), +4.62 (1.49) end-HP, pooled +4.57 (1.19); clears 0.716 / 0.732 / 0.752 vs 0.636, pooled +0.097 (0.030). One turn deep on the same sequences +2.80 / +2.82 / +4.53, pooled +3.38 (1.21); ratio two-turn / one-turn 1.67 / 1.57 / 1.02, pooled 1.35 (0.50). Boss-floor deaths 60 to 37 / 43 / 45; elites 18 to 17 / 18 / 8. Seed 1's split: where neither took Demon Form (205) +3.10 (1.48). Product level on this pack 0.636 clears against 0.836 curated on 0-249 (-8.56 (1.50) HP).",
+      "sources": [
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-two-turn-seeds (0819-0820): the gain carries whole two turns deep on three seeds",
+          "sha256": "b9e3a0b24a7e95b95cf8aea93330b03e788a721d67eb32d060b5c5fa8410715a"
+        },
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-two-turn (0777-0778): the pack net's gain grows two turns deep",
+          "sha256": "627c3807feb28bf1a6a54b3b1cf8fd18fabe1bb9b27dcb74382480e2846ff9f9"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s1-hpe0.01-two-line-step-starter-simboss-pack-act1.json",
+          "sha256": "7ec96900525cddea987547cb3935239895d1d90da09c46788a3db79353267eb3"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s101-hpe0.01-two-line-step-starter-simboss-pack-act1.json",
+          "sha256": "6ff6d8686cb472d822ff4a6a2b871029378066d0fab31fdafc4cc755d193da3a"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s201-hpe0.01-two-line-step-starter-simboss-pack-act1.json",
+          "sha256": "c37fa2ab7a37aba9ec561dff9b19acda459d02d9c0bc1de497f68cdaf8e59b16"
+        },
+        {
+          "path": "results/gauntlet/pns-net1029-hpe0.01-two-line-step-starter-simboss-pack-act1-31.json",
+          "sha256": "f44dd72d637711316039d8384f0c09f002cb7aec4a69cc66cfa970a7fb47ae36"
+        },
+        {
+          "path": "jobs/done/0777-gauntlet.json",
+          "sha256": "c094ccaeee9f458006d85613c1a3e1627ca4a448e43dfeb7ff11c3bd3f2b97d3"
+        },
+        {
+          "path": "jobs/done/0778-gauntlet.json",
+          "sha256": "6098ade337d3fcfa4c45329a2fe2fa380c1e2b157e526a9d61e95f62a3b84d76"
+        },
+        {
+          "path": "jobs/done/0819-gauntlet.json",
+          "sha256": "410a00f5248794d7f58a175f0bbc3bd4eb9c65afe8de6aa68a873b60ed527b05"
+        },
+        {
+          "path": "jobs/done/0820-gauntlet.json",
+          "sha256": "1b5bc73d1da37e5db16810f0edc706b37f3d0ed260fc88ae87d64654702b6177"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "76244db9-7a36-4d59-9a82-257f8498490b",
+      "at": "2026-11-10T16:53:04+00:00 @ 5e367c8",
+      "until": "2026-11-13T02:30:42+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "f8b31783f556c358d3a25d294e4d42a833953aa7ea2546d11ab5cf859525a947"
+}

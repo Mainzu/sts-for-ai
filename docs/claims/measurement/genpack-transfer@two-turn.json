@@ -1,0 +1,78 @@
+{
+  "key": "measurement/genpack-transfer@two-turn",
+  "rev": 2,
+  "value": "Genpack nets s1/101/201 vs product, both two-turn with product flags, 6 held-out gen rows, 67 official elite starts x2 seeds: product novelty cost +2.05 (0.59) HP, genpack +0.82 (0.52), cut 0.60 (0.20; seeds 0.87/0.36/0.58); w/o AttackLoss-Weak 0.27 (0.19); parents -0.39 (0.48). Verdict between (go: cut-2se>=0.4).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Step 2 pooled read and verdict (jobs 0928, 0937, 0938)",
+      "sha256": "bcd22902e70ed0396b399d2db67087d6bc13e2ce18f3008984ef35ee048fda87"
+    },
+    {
+      "path": "results/mutate/gpd-product.json",
+      "sha256": "e7937e093f082dd3d2c21db1fecfdda0fd4c3fdc106e1150653a7234466f66d6"
+    },
+    {
+      "key": "measurement/genpack-transfer@three-seeds",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:23+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Generated-pack nets seeds 1/101/201 (runs/2026-11-10-genpack40k-s1-r1-acf5102, runs/2026-11-11-genpack40k-s101-r1-065b3ff, runs/2026-11-11-genpack40k-s201-r1-a97ea94) two turns deep with the product's flags against the product (10-29 net, same flags) on the 6 held-out generated rows, 67 official elite starts x 2 seeds: the product's held-out novelty cost +2.05 (0.59) HP, genpack +0.82 (0.52), gain +1.23 (0.47), cut 0.60 (starts se 0.20, seed spread 0.15; per seed 0.87, 0.36, 0.58); without AttackLoss-Weak cut 0.27 (0.19); parents -0.39 (0.48) HP; OppCard-PlainDamage uncut (-0.09 (0.26)). Lane verdict between (go needed cut - 2 se >= 0.4). About half the one-turn cut (measurement/genpack-transfer@three-seeds, 0.76) on a cost the second turn already halves.",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Step 2 pooled read and verdict (jobs 0928, 0937, 0938)",
+          "sha256": "bcd22902e70ed0396b399d2db67087d6bc13e2ce18f3008984ef35ee048fda87"
+        },
+        {
+          "path": "results/mutate/gpd-product.json",
+          "sha256": "e7937e093f082dd3d2c21db1fecfdda0fd4c3fdc106e1150653a7234466f66d6"
+        },
+        {
+          "path": "results/mutate/gpd-gp1.json",
+          "sha256": "5a8be25ccdf735159328fb5c40a99a797f92f914677e5a0ded9cb346373dc9c5"
+        },
+        {
+          "path": "results/mutate/gpd-gp101.json",
+          "sha256": "0bf1fc337b2fae19258dc6e248311ba9bc2ff0cb7f30d2a2b88bb5c13c0717a7"
+        },
+        {
+          "path": "results/mutate/gpd-gp201.json",
+          "sha256": "f37e0d4a4add7126ab48f3200aaf7aa8927bff01b763113f87cb0d2fce540e41"
+        },
+        {
+          "path": "jobs/done/0928-mutate-monsters.json",
+          "sha256": "eb4f6144f2bf23bce2f9bda4b2848a592575f60555af2a596c54f64c3eba6e65"
+        },
+        {
+          "path": "jobs/done/0937-mutate-monsters.json",
+          "sha256": "2a1d73b35c0c058d9c9ae24bda9fa3ae5fdfa8d6c9fc9b9d9cccf46b67684f61"
+        },
+        {
+          "path": "jobs/done/0938-mutate-monsters.json",
+          "sha256": "2d1eef279c4c0b77b214f84af0f4f74470114a366e23b655595e10c9e4dd3a2c"
+        },
+        {
+          "key": "measurement/genpack-transfer@three-seeds",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "da3de6ee-12e0-465c-83cb-e5d85f04386e",
+      "at": "2026-11-12T14:49:52+00:00 @ ce8466a",
+      "until": "2026-11-13T02:30:23+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "0f5102e631090c8c6c3990d25f4dcfec664a092a8e72b39932e9851f78d5344d"
+}

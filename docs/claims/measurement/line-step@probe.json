@@ -1,0 +1,41 @@
+{
+  "key": "measurement/line-step@probe",
+  "rev": 1,
+  "value": "Stepping each uncut two-turn tree's principal line (--line-seed --step-line) makes exactly the committed-line player's decisions (20 of 20 held-out elite and boss fights identical, 526 of 526 uncut decisions agree) at 0.70 of its search cost (nodes 0.704, leaves 0.681, wall 0.693; 163 searches for 527 decisions): the agreement bar passes, the 0.65 cost bar is missed.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Line step: the stepped player makes the committed-line player's decisions exactly, at 0.70 of its search cost (line-step.md step 3; probe 01:40 2026-11-03, manager caf615f4)",
+      "sha256": "161ad0575ed168e57803deb42019839f7c70c9da83516f97fa72b55197d6293e"
+    },
+    {
+      "path": "results/depth/line-step-compare.json",
+      "sha256": "23984d2dff659c44b68a8d4d3ff085f3032dca9cb77ab6729be3247dd5fd00d7"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
+  "at": "2026-11-02T18:01:48+00:00 @ 7adb302",
+  "confirms": [
+    {
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T00:37:13+00:00 @ da67084",
+      "note": "re-checked 08:00 2026-11-03: product/net rev 4 changed only the play flags (--line-seed --step-line; same net, same price) and yardstick/cost-savers rev 2 only added the line-step verdict; the fact's content is unaffected"
+    },
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:42:07+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "2b072c1360144937632b04ee1864d2b4a3a61bad10197c315ac96322e8a0b8a4"
+}

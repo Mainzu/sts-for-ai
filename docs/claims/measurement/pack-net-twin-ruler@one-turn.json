@@ -1,0 +1,31 @@
+{
+  "key": "measurement/pack-net-twin-ruler@one-turn",
+  "rev": 1,
+  "value": "All-content twins s1/s101 one turn on the official headline (own picks, n 500): +1.11 (0.98) / +0.41 (1.02), pooled +0.76 (0.87) HP, clears +0.028: fail. DF picks 0.62/0.69 vs 0.19; no-DF sequences (347) -1.50 (1.00). Matched on control picks: pooled +1.15 (0.57); outside DF +0.05 (0.56): fight level, shortfall is picks.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pns-probes.md",
+      "anchor": "pns-twin-official (0782-0783): the all-content gain on the ruler is Demon Form; outside it the twin loses 1.5 HP",
+      "sha256": "43fc2ec1aaaad228a65ea637dd514ce5e5a5b26e4bb03409ae278aec71efc21a"
+    },
+    {
+      "path": "docs/research/pns-probes.md",
+      "anchor": "pns-twin-matched (0791-0792): on the control's decks the twin fights level outside Demon Form",
+      "sha256": "a560508eed0546a2e7bef3dfda082586cf7248faa1e29572ea67d087cfa8b74f"
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:45+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "b5e737948198896c9dd03c699e67eea05995febc331b6150c840728a2bbc850d"
+}

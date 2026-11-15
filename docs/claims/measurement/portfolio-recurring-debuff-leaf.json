@@ -1,0 +1,83 @@
+{
+  "key": "measurement/portfolio-recurring-debuff-leaf",
+  "rev": 3,
+  "value": "pred even; fail: @pd1 cut the Weak rows' HP cost 0.19/0.23 at k 4 (0.12/0.14 at k 2), parents held, Frail rows 0.3 HP worse; helps Gremlin Nob, hurts Three Sentries (k applications per monster over-count a duration debuff); 1.2 cpu-h. Reopen: a projection counting a duration debuff once per turn that cuts Nob's row, or inputs showing a debuff's duration with its re-application source.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane recurring-debuff-leaf closed (on the owner's behalf, 2026-11-10)",
+      "sha256": "8b20d860df604652eac230b401248e4fd19547cb217849574d14bb08dfeeefe1"
+    },
+    {
+      "path": "docs/research/recurring-debuff-leaf.md",
+      "anchor": "Result (read 2026-11-10): fail",
+      "sha256": "6f9116c3238cf9585ac74d2fe6a759b08a494adeb08820bb8e14809d1e224aa6"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:12+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even that one k halves both Weak rows at 2 se, about 2 cpu-h of reads (cap 3); actual fail: HP cost of the Weak rows cut 0.19/0.23 at k 4 (0.12/0.14 at k 2), parents held, Frail 0.3 HP worse at k 4; helps Gremlin Nob, hurts Three Sentries; 1.2 cpu-h; reopen if: a projection that counts a duration debuff once per turn (not k applications per monster) is built and cuts the Nob row on one-monster elites, or the net's inputs show a debuff's duration with its re-application source",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane recurring-debuff-leaf closed (on the owner's behalf, 2026-11-10)",
+          "sha256": "8b20d860df604652eac230b401248e4fd19547cb217849574d14bb08dfeeefe1"
+        }
+      ],
+      "owner": false,
+      "by": "28d694dc-765e-44fc-8517-4c02a32de603",
+      "at": "2026-11-10T00:31:50+00:00 @ c57e5cc",
+      "until": "2026-11-10T07:03:37+00:00 @ f97b79c"
+    },
+    {
+      "rev": 2,
+      "value": "predicted even that one k halves both Weak rows at 2 se, about 2 cpu-h of reads (cap 3); actual fail: HP cost of the Weak rows cut 0.19/0.23 at k 4 (0.12/0.14 at k 2), parents held, Frail 0.3 HP worse at k 4; helps Gremlin Nob, hurts Three Sentries; 1.2 cpu-h; reopen if: a projection that counts a duration debuff once per turn (not k applications per monster) is built and cuts the Nob row on one-monster elites, or the net's inputs show a debuff's duration with its re-application source The read (was measurement/recurring-debuff-leaf@elites): The 10-29 net one turn deep @tsl1@pl<k>@pd1 on generated elites (675 starts x 8 seeds, against @tsl1, job 0760): HP-lost novelty cost cut only 0.12/0.14 at k 2 and 0.19/0.23 at k 4 (TurnStart-/TurnEnd-Weak, se ~0.05; costs 2.55/2.95 HP); win-rate cuts 0.56/0.35 and 0.71/0.50 on a ~1-point cost (wide error); parents within 0.1 HP; Frail rows 0.3 HP worse at k 4. Works on Gremlin Nob (TurnEnd-Weak cut 55%), hurts on Three Sentries (k applications per sentry over-count a duration debuff).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane recurring-debuff-leaf closed (on the owner's behalf, 2026-11-10)",
+          "sha256": "8b20d860df604652eac230b401248e4fd19547cb217849574d14bb08dfeeefe1"
+        },
+        {
+          "path": "docs/research/recurring-debuff-leaf.md",
+          "anchor": "Result (read 2026-11-10): fail",
+          "sha256": "6f9116c3238cf9585ac74d2fe6a759b08a494adeb08820bb8e14809d1e224aa6"
+        },
+        {
+          "path": "results/mutate/gen-rdl-pl2.json",
+          "sha256": "0c219648c2de35d6605c150f1935455434038ea6bcf679205f3699a5cd38c921"
+        },
+        {
+          "path": "results/mutate/gen-rdl-pl4.json",
+          "sha256": "692119acb0517c64fe51c80532d1abc8da6b7ad993caddba1c0e22ca7bd6a14a"
+        },
+        {
+          "path": "results/mutate/gen-wf-tsl1.json",
+          "sha256": "7ef04a25c167bd3e4b69e5e75154e6f4c50f260aa2a98b34fb44b91924ef81e9"
+        },
+        {
+          "path": "jobs/done/0764-mutate-monsters.json",
+          "sha256": "a4510d2320047e59ed78dc368987e1b87447911bbfde6fad30d97926ae2da698"
+        },
+        {
+          "path": "jobs/done/0765-mutate-monsters.json",
+          "sha256": "31c397b7eaf4e36ee3c4c98b6222d4108746bc0cd2ab4008dbc7a2e7e371a8bb"
+        }
+      ],
+      "owner": false,
+      "by": "b03f7647-f3c8-4742-857a-e434dfb7a594",
+      "at": "2026-11-10T07:03:37+00:00 @ f97b79c",
+      "until": "2026-11-13T02:31:12+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "80a3b07f0cdd87949d029f4e36a667370eb82b55bd6cebf746ea2604695c64c7"
+}

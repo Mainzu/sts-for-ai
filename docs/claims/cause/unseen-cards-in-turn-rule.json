@@ -1,0 +1,32 @@
+{
+  "key": "cause/unseen-cards-in-turn-rule",
+  "rev": 1,
+  "value": "Under @tsl1 a card whose effect lands inside the turn (damage, HP kept, cards played) or whose turn-start tick needs no chance has no zero-shot cost one turn deep (19/22 Act 1 pack cards level); cards whose value is a number left in the leaf state (Disarm, Impervious, Intimidate: -0.06..-0.12 wins) are not covered.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/act1-cards@zero-shot",
+      "rev": 2
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After act1-cards-zero-shot: the in-turn rule narrowed; lane leaf-blind-numbers opened as the exploration lane; the two-turn read of the three cards not run; simulated-effect-inputs retired (on the owner's behalf, 2026-11-07)",
+      "sha256": "071d562c63fe14b6ba4539b71d0ccd475c12e33670831fb0bc909f64e4aa6a75"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:01Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:08Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/act1-cards@zero-shot reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "b111cceb23c3079e9d8e003285e43a9129a64a5929c0af889dd997900eb70a9c"
+}

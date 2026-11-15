@@ -1,0 +1,26 @@
+{
+  "key": "measurement/random-world-raw@pilot",
+  "rev": 1,
+  "value": "Random-world pilot (20 worlds of the 21 generated enemy mechanics, k 2/4/8, official Act 1 elites, 50 starts x 4 seeds, 10-29 net @hpb0.01 one turn): raw HP lost compounds for both players, net +21.3/+35.9/+58.2 vs summed singles +19.5/+30.7/+44.8; deaths 2-3x predicted (k 8: 0.78 vs 0.24).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/random-world-bench.md",
+      "anchor": "Step 3: pilot read (jobs 0729-0731, 2026-11-09)",
+      "sha256": "2f6bd8a28b9622c3046f12e20e7ea321f480454fa765e8f8866e924ae285fa7f"
+    },
+    {
+      "path": "results/mutate/rw-pilot.json",
+      "sha256": "e30030c958a7fc36f3715cfc78256ba0e4a54d8b574242e5412a81b629612abb"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:50+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "6c1195cbdefd15b7533753b443ec2198aed588eae9804020a9ee8a7919765bcb"
+}

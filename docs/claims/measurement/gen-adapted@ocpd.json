@@ -1,0 +1,58 @@
+{
+  "key": "measurement/gen-adapted@ocpd",
+  "rev": 2,
+  "value": "99-game bursts on GE-OppCard-PlainDamage x Sentries @tsl1: net teacher cut +4.16 (0.19) = 0.77 of +5.39, passes; heuristic +2.68 (0.27) = 0.50, fails by 0.015 HP (at the line); trained parent Sentries +1.08 HP/fight (net teacher), +0.27 (heuristic).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/gen-adapted-column.md",
+      "anchor": "Step 3 read: family gac-ocpd table (job 0532, 2026-11-08)",
+      "sha256": "dfcc3b6735da189c4b9de0bbde4ea930f0cf4d5b12cfd4c4b7b6bf81b018e4a5"
+    },
+    {
+      "path": "results/families/gac-ocpd.md",
+      "sha256": "2079ba0aceca9288c91f2c898edf5e44d604bddd702ba31dc34324650939de40"
+    },
+    {
+      "path": "jobs/done/0532-family.json",
+      "sha256": "72704f4578dcd74fbc8e838fedaa7475438726f5bf51b33795dc627e7e0b54f9"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:18+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "99-game bursts on GE-OppCard-PlainDamage x Sentries, one turn @hpb0.01@tsl1, read on the 0472 starts x 4 seeds: net teacher cut +4.16 (se nets 0.19), 0.77 of the +5.39 cost, passes; heuristic +2.68 (0.27), 0.50, misses the half-cost line by 0.015 HP (fail by the rule, at the line); the trained parent Sentries loses +1.08 HP per fight with the net teacher and +0.27 with the heuristic (wins flat); the control moved -2.2 to -3.0 HP",
+      "sources": [
+        {
+          "path": "docs/research/gen-adapted-column.md",
+          "anchor": "Step 3 read: family gac-ocpd table (job 0532, 2026-11-08)",
+          "sha256": "dfcc3b6735da189c4b9de0bbde4ea930f0cf4d5b12cfd4c4b7b6bf81b018e4a5"
+        },
+        {
+          "path": "results/families/gac-ocpd.md",
+          "sha256": "2079ba0aceca9288c91f2c898edf5e44d604bddd702ba31dc34324650939de40"
+        },
+        {
+          "path": "jobs/done/0532-family.json",
+          "sha256": "72704f4578dcd74fbc8e838fedaa7475438726f5bf51b33795dc627e7e0b54f9"
+        },
+        {
+          "key": "measurement/gen-adapted@ocw",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "71bd303c-1f59-45cf-8b2f-211d03b8fa6d",
+      "at": "2026-11-07T23:33:21+00:00 @ c707671",
+      "until": "2026-11-13T02:30:18+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "c7f5996e2e117c890bf1441d7ea328811007d3d0b0d112febb7fe3ab90788ef8"
+}

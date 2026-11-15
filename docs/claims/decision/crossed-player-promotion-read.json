@@ -1,0 +1,37 @@
+{
+  "key": "decision/crossed-player-promotion-read",
+  "rev": 1,
+  "value": "A fighter-only change earns a two-turn promotion read only if it lowers boss deaths two turns deep at 2 se, or run choices exist that turn post-elite HP into clears; a one-turn boss gain doesn't (cause/leaf-gain-third).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+      "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "twin-two-turn-matched at 500: between; no second seed; the fighter plateau has two nets (on the owner's behalf, 2026-11-11)",
+      "sha256": "77fe79647243f98fb2827a1e3dc0ab51c94b5633ee3c7b246c0e63ee63ea388b"
+    },
+    {
+      "key": "cause/leaf-gain-third",
+      "rev": 7
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:17Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:13Z @ 3123201a",
+      "note": "fact split 2026-11-13: cause/leaf-gain-third reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "d3e70e3cbc867b551cef7e95bd581b67e4bd582df872df6f5c2bf600ae4b5acb"
+}

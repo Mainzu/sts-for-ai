@@ -1,0 +1,286 @@
+{
+  "key": "how/player-strings",
+  "rev": 8,
+  "value": "A net player is runs/<id>/model.pt plus search-time settings (@hpb, @hpe, @esp, @shl, @sc, @dl, @tsl1, @lcb1, @pl, @pd1, @tb1, @sn1, @xh1; parsed by scripts/bench.py _SETTING); meanings: README.md#Act-1 gauntlet.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "scripts/bench.py",
+      "sha256": "4775f6a625b25046800f7d57fca6dd24adc9df99311c9557e8847ff8b74139cf"
+    },
+    {
+      "path": "README.md",
+      "anchor": "Act-1 gauntlet",
+      "sha256": "aea93b5ad2affc6f62998f17d4b5989b712158849ce208aaa1f0f947c33b46a2"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:14Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+      "at": "2026-11-13T03:47:03Z @ d08ef5a4",
+      "note": "checked c98e084d's README diff: it adds the meanings of the listed settings the fact points to; the list stands"
+    },
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:43:16Z @ d240a173",
+      "note": "navigator 2026-11-13: bench.py _SETTING still @hpb|@hpe|@esp|@shl|@sc|@dl|@tsl|@lcb|@pl|@pd|@tb|@sn|@xh; bench diff is PLAY_TURN_LIMIT from sts; README gained the leaf-settings paragraph"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A net player is runs/<id>/model.pt plus at most one of each search-time setting: @hpb<c> adds c x clamp(value/2, 0, 1) x (HP - start HP) to each leaf; @hpe<c> is the same price also applied to finished combats (end-HP; not with @hpb); @esp<k> prices enemy Strength; @sc<c> is a survive net's c. --two-turn (gauntlet.py flag) searches two turns deep.",
+      "sources": [
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "772f1108e15d8c76eee020aabaa855b80afcd4c0ebe4a221b9766f896deba58e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "HP bonus promoted (owner away, 2026-11-01)",
+          "sha256": "0d65e3ca17b3b4929f4f67341bab4994d435554aea66bdcb01e0814ff8e38029"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "End-HP bonus built and read (owner away, 2026-11-02)",
+          "sha256": "9cd08604e3bda54fba0f4000a86022a43302090458e04623b7f71d3b86d6aa6b"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:15Z @ fc9cdd8",
+      "until": "2026-11-07T13:19:14Z @ 39c4f63"
+    },
+    {
+      "rev": 2,
+      "value": "A net player is runs/<id>/model.pt plus at most one of each search-time setting (scripts/bench.py _SETTING): @hpb<c> adds c x clamp(value/2, 0, 1) x (HP - start HP) to each leaf; @hpe<c> is the same price also applied to finished combats (end-HP; not with @hpb); @esp<k> prices enemy Strength; @sc<c> is a survive net's c; @dl<k> scores end-of-turn leaves after k sampled draws; @tsl1 scores them after the player's turn-start hooks that need no chance; @lcb1 scores them with the player's block at 0; @pl<k> applies once-a-turn Strength and Dexterity hooks k more times there, player and monsters (docs/specs/projected-leaf.md). --two-turn (gauntlet.py flag) searches two turns deep.",
+      "sources": [
+        {
+          "path": "scripts/bench.py",
+          "sha256": "72f739317495c53465e8862532707c7c4bc38579fb884045eeb4216ccb7bf491"
+        },
+        {
+          "path": "scripts/stsnet.py",
+          "sha256": "caebb1b908cdffc49cd39970b673dec2a17d5917d3a32a26142cd85889be2918"
+        },
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "28427f71b7deecfd0f806232f8e74f2edd3b3dee07e906e092f046bea237221a"
+        },
+        {
+          "path": "docs/specs/projected-leaf.md",
+          "sha256": "d68e53979b12a493a2eb089e649db87c05462a2a1ab44070a7865111a7a735e7"
+        }
+      ],
+      "owner": false,
+      "by": "24375f99-3cb3-4ef9-b28f-f6df271d6129",
+      "at": "2026-11-07T13:19:14Z @ 39c4f63",
+      "until": "2026-11-08T05:14:10Z @ b8de83b"
+    },
+    {
+      "rev": 3,
+      "value": "A net player is runs/<id>/model.pt plus at most one of each search-time setting (scripts/bench.py _SETTING): @hpb<c> adds c x clamp(value/2, 0, 1) x (HP - start HP) to each leaf; @hpe<c> is the same price also applied to finished combats (end-HP; not with @hpb); @esp<k> prices enemy Strength; @shl<k> prices enemy Strength by the hits it will still land (docs/specs/strength-hits-price.md); @sc<c> is a survive net's c; @dl<k> scores end-of-turn leaves after k sampled draws; @tsl1 scores them after the player's turn-start hooks that need no chance; @lcb1 scores them with the player's block at 0; @pl<k> applies once-a-turn Strength and Dexterity hooks k more times there, player and monsters (docs/specs/projected-leaf.md). --two-turn (gauntlet.py flag) searches two turns deep.",
+      "sources": [
+        {
+          "path": "scripts/bench.py",
+          "sha256": "30d1e0fd12f0303691962c9d5989d00487a66f3f4920bbe88c9d352d98dc1625"
+        },
+        {
+          "path": "scripts/stsnet.py",
+          "sha256": "92d44456a3fc53fa9b098d8704b03d7f907923f63a677ab9a2dc74988d461e87"
+        },
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "c7c1c775e7ce3b22caae51bc3da0bd6b809bf3260c5d0337fca909cc5d6e0e33"
+        },
+        {
+          "path": "docs/specs/projected-leaf.md",
+          "sha256": "d68e53979b12a493a2eb089e649db87c05462a2a1ab44070a7865111a7a735e7"
+        },
+        {
+          "path": "docs/specs/strength-hits-price.md",
+          "sha256": "4c5d20197d0eecf720fbe5a19557897bd5e75b219d09487bc6e3166a06386f63"
+        }
+      ],
+      "owner": false,
+      "by": "f498054e-03ee-43a5-94ee-61d61fc50682",
+      "at": "2026-11-08T05:14:10Z @ b8de83b",
+      "until": "2026-11-09T08:54:04Z @ 946a2c4"
+    },
+    {
+      "rev": 4,
+      "value": "A net player is runs/<id>/model.pt plus at most one of each search-time setting (scripts/bench.py _SETTING): @hpb<c> adds c x clamp(value/2, 0, 1) x (HP - start HP) to each leaf; @hpe<c> is the same price also applied to finished combats (end-HP; not with @hpb); @esp<k> prices enemy Strength; @shl<k> prices enemy Strength by the hits it will still land (docs/specs/strength-hits-price.md); @sc<c> is a survive net's c; @dl<k> scores end-of-turn leaves after k sampled draws; @tsl1 scores them after the player's turn-start hooks that need no chance; @lcb1 scores them with the player's block at 0; @pl<k> applies once-a-turn Strength and Dexterity hooks k more times there, player and monsters (docs/specs/projected-leaf.md); @tb1 breaks exact value ties toward the sooner win, then lower enemy HP, values unchanged (docs/specs/finish-faster-tiebreak.md; off by default, cut no nodes). --two-turn (gauntlet.py flag) searches two turns deep.",
+      "sources": [
+        {
+          "path": "scripts/bench.py",
+          "sha256": "1a698c207fe080ced186c812ef4d1d3365d597963702a924cb0228efc5b027d5"
+        },
+        {
+          "path": "scripts/stsnet.py",
+          "sha256": "25713337b9ca9f56901eba253e3d34458632f17f307409eb4c770cb2576992d0"
+        },
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "5292e70b58ce3a5f8569169d9b26bf6becb9f5e1616bd0fdc2dde5f5a996aec8"
+        },
+        {
+          "path": "docs/specs/projected-leaf.md",
+          "sha256": "d68e53979b12a493a2eb089e649db87c05462a2a1ab44070a7865111a7a735e7"
+        },
+        {
+          "path": "docs/specs/strength-hits-price.md",
+          "sha256": "4c5d20197d0eecf720fbe5a19557897bd5e75b219d09487bc6e3166a06386f63"
+        },
+        {
+          "path": "docs/specs/finish-faster-tiebreak.md",
+          "sha256": "89dcfb2d1f84954a2e1ff5c8d2ebb0d32d0b795ec1a32ca31e3a7060ff9ed7e3"
+        }
+      ],
+      "owner": false,
+      "by": "1e53d6ed-baa0-4367-8ee3-26d3d9d38c35",
+      "at": "2026-11-09T08:54:04Z @ 946a2c4",
+      "until": "2026-11-09T19:31:08Z @ 9588fed"
+    },
+    {
+      "rev": 5,
+      "value": "A net player is runs/<id>/model.pt plus at most one of each search-time setting (scripts/bench.py _SETTING): @hpb<c> adds c x clamp(value/2, 0, 1) x (HP - start HP) to each leaf; @hpe<c> is the same price also applied to finished combats (end-HP; not with @hpb); @esp<k> prices enemy Strength; @shl<k> prices enemy Strength by the hits it will still land (docs/specs/strength-hits-price.md); @sc<c> is a survive net's c; @dl<k> scores end-of-turn leaves after k sampled draws; @tsl1 scores them after the player's turn-start hooks that need no chance; @lcb1 scores them with the player's block at 0; @pl<k> applies once-a-turn Strength and Dexterity hooks k more times there, player and monsters (docs/specs/projected-leaf.md); @tb1 breaks exact value ties toward the sooner win, then lower enemy HP, values unchanged (docs/specs/finish-faster-tiebreak.md; off by default, cut no nodes). @sn1 encodes card damage and block as the game shows them (+ Strength x hits, x0.75 under Weak; + Dexterity, x0.75 under Frail) and @xh1 the exhaust pile's counts as 0 (docs/specs/shown-card-numbers.md; read against a plain control with --vary price). --two-turn (gauntlet.py flag) searches two turns deep.",
+      "sources": [
+        {
+          "path": "scripts/bench.py",
+          "sha256": "2a1eae999a844483346d91e5da153778b11b47d4654f7f94633410312bf52008"
+        },
+        {
+          "path": "scripts/stsnet.py",
+          "sha256": "1ad8bd61728b455763f44a26a82231c2116e2fdf84d239f9d60999cca31327a6"
+        },
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "037800886230a076add946fbce27f1f8b86cf331c0d38341517ae35fb191b081"
+        },
+        {
+          "path": "docs/specs/projected-leaf.md",
+          "sha256": "d68e53979b12a493a2eb089e649db87c05462a2a1ab44070a7865111a7a735e7"
+        },
+        {
+          "path": "docs/specs/strength-hits-price.md",
+          "sha256": "4c5d20197d0eecf720fbe5a19557897bd5e75b219d09487bc6e3166a06386f63"
+        },
+        {
+          "path": "docs/specs/finish-faster-tiebreak.md",
+          "sha256": "89dcfb2d1f84954a2e1ff5c8d2ebb0d32d0b795ec1a32ca31e3a7060ff9ed7e3"
+        },
+        {
+          "path": "docs/specs/shown-card-numbers.md",
+          "sha256": "788de46df973d93d546ede54122badcbd7f67330e4068ae6b797f43abf1c7e69"
+        }
+      ],
+      "owner": false,
+      "by": "afbe1ebb-305c-4ac9-b359-8583079e6ffd",
+      "at": "2026-11-09T19:31:08Z @ 9588fed",
+      "until": "2026-11-09T23:45:21Z @ ee7b734"
+    },
+    {
+      "rev": 6,
+      "value": "A net player is runs/<id>/model.pt plus at most one of each search-time setting (scripts/bench.py _SETTING): @hpb<c> adds c x clamp(value/2, 0, 1) x (HP - start HP) to each leaf; @hpe<c> is the same price also applied to finished combats (end-HP; not with @hpb); @esp<k> prices enemy Strength; @shl<k> prices enemy Strength by the hits it will still land (docs/specs/strength-hits-price.md); @sc<c> is a survive net's c; @dl<k> scores end-of-turn leaves after k sampled draws; @tsl1 scores them after the player's turn-start hooks that need no chance; @lcb1 scores them with the player's block at 0; @pl<k> applies once-a-turn Strength and Dexterity hooks k more times there, player and monsters (docs/specs/projected-leaf.md), and @pd1 (only with @pl<k>) also living monsters' once-a-turn Weak, Frail and Vulnerable on the player (docs/specs/recurring-debuff-leaf.md); @tb1 breaks exact value ties toward the sooner win, then lower enemy HP, values unchanged (docs/specs/finish-faster-tiebreak.md; off by default, cut no nodes). @sn1 encodes card damage and block as the game shows them (+ Strength x hits, x0.75 under Weak; + Dexterity, x0.75 under Frail) and @xh1 the exhaust pile's counts as 0 (docs/specs/shown-card-numbers.md; read against a plain control with --vary price). --two-turn (gauntlet.py flag) searches two turns deep.",
+      "sources": [
+        {
+          "path": "scripts/bench.py",
+          "sha256": "978dd781bcdc1e3f3a7183ae9fa515edbae1a2af1a6c2fb57e1230c26214ee78"
+        },
+        {
+          "path": "scripts/stsnet.py",
+          "sha256": "822b8d4177b46c07fa3d8c42bc81e29a8c6e638c0f2a6b7199bdef9ce3f5d47c"
+        },
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "037800886230a076add946fbce27f1f8b86cf331c0d38341517ae35fb191b081"
+        },
+        {
+          "path": "docs/specs/projected-leaf.md",
+          "sha256": "d68e53979b12a493a2eb089e649db87c05462a2a1ab44070a7865111a7a735e7"
+        },
+        {
+          "path": "docs/specs/strength-hits-price.md",
+          "sha256": "4c5d20197d0eecf720fbe5a19557897bd5e75b219d09487bc6e3166a06386f63"
+        },
+        {
+          "path": "docs/specs/finish-faster-tiebreak.md",
+          "sha256": "89dcfb2d1f84954a2e1ff5c8d2ebb0d32d0b795ec1a32ca31e3a7060ff9ed7e3"
+        },
+        {
+          "path": "docs/specs/shown-card-numbers.md",
+          "sha256": "788de46df973d93d546ede54122badcbd7f67330e4068ae6b797f43abf1c7e69"
+        },
+        {
+          "path": "docs/specs/recurring-debuff-leaf.md",
+          "sha256": "170b8c6383c68427d1d4a4c61b3475ce94cf6a623ac31d4a1cd98aa25adf747c"
+        }
+      ],
+      "owner": false,
+      "by": "b80fa29f-c01b-4065-805a-4beba0657002",
+      "at": "2026-11-09T23:45:21Z @ ee7b734",
+      "until": "2026-11-13T01:43:30Z @ 2d152e05"
+    },
+    {
+      "rev": 7,
+      "value": "A net player is runs/<id>/model.pt plus at most one of each search-time setting (scripts/bench.py _SETTING): @hpb<c> adds c x clamp(value/2, 0, 1) x (HP - start HP) to each leaf; @hpe<c> is the same price also applied to finished combats (end-HP; c prices one HP at 80 max HP, c x 80 / max HP per HP at any other; not with @hpb); @esp<k> prices enemy Strength; @shl<k> prices enemy Strength by the hits it will still land (docs/specs/strength-hits-price.md); @sc<c> is a survive net's c; @dl<k> scores end-of-turn leaves after k sampled draws; @tsl1 scores them after the player's turn-start hooks that need no chance; @lcb1 scores them with the player's block at 0; @pl<k> applies once-a-turn Strength and Dexterity hooks k more times there, player and monsters (docs/specs/projected-leaf.md), and @pd1 (only with @pl<k>) also living monsters' once-a-turn Weak, Frail and Vulnerable on the player (docs/specs/recurring-debuff-leaf.md); @tb1 breaks exact value ties toward the sooner win, then lower enemy HP, values unchanged (docs/specs/finish-faster-tiebreak.md; off by default, cut no nodes). @sn1 encodes card damage and block as the game shows them (+ Strength x hits, x0.75 under Weak; + Dexterity, x0.75 under Frail) and @xh1 the exhaust pile's counts as 0 (docs/specs/shown-card-numbers.md; read against a plain control with --vary price). --two-turn (gauntlet.py flag) searches two turns deep.",
+      "sources": [
+        {
+          "path": "scripts/bench.py",
+          "sha256": "978dd781bcdc1e3f3a7183ae9fa515edbae1a2af1a6c2fb57e1230c26214ee78"
+        },
+        {
+          "path": "scripts/stsnet.py",
+          "sha256": "822b8d4177b46c07fa3d8c42bc81e29a8c6e638c0f2a6b7199bdef9ce3f5d47c"
+        },
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "23230d7cf85f5922c8c78cd60db98b5b53231df7c7afc409e16c83f7a80359eb"
+        },
+        {
+          "path": "docs/specs/projected-leaf.md",
+          "sha256": "d68e53979b12a493a2eb089e649db87c05462a2a1ab44070a7865111a7a735e7"
+        },
+        {
+          "path": "docs/specs/strength-hits-price.md",
+          "sha256": "4c5d20197d0eecf720fbe5a19557897bd5e75b219d09487bc6e3166a06386f63"
+        },
+        {
+          "path": "docs/specs/finish-faster-tiebreak.md",
+          "sha256": "89dcfb2d1f84954a2e1ff5c8d2ebb0d32d0b795ec1a32ca31e3a7060ff9ed7e3"
+        },
+        {
+          "path": "docs/specs/shown-card-numbers.md",
+          "sha256": "788de46df973d93d546ede54122badcbd7f67330e4068ae6b797f43abf1c7e69"
+        },
+        {
+          "path": "docs/specs/recurring-debuff-leaf.md",
+          "sha256": "170b8c6383c68427d1d4a4c61b3475ce94cf6a623ac31d4a1cd98aa25adf747c"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "End-HP bonus scales with max HP (owner, 2026-11-13)",
+          "sha256": "9b7e17f2e7f08c602a0ada05404fe195d9020fe3432dee7e1302ee1cead5d333"
+        }
+      ],
+      "owner": false,
+      "by": "2fda0390-ebf2-4956-a49b-b93252b1ac30",
+      "at": "2026-11-13T01:43:30Z @ 2d152e05",
+      "until": "2026-11-13T02:29:14Z @ 3123201a"
+    }
+  ],
+  "seal": "a42ece9a0b292f27c056489b7e17e89abbe844ee7cba847bf11346c13da65ed4"
+}

@@ -1,0 +1,52 @@
+{
+  "key": "measurement/portfolio-test-full-memory",
+  "rev": 2,
+  "value": "pred likely; done: full suite file by file peaks 1.77 GB (job 0303) vs 9.8 GB, admitted at 2.2 GB reserved, every check kept; test_sweep out of the default run; test_idle_gate is load-dependent; 23.4 thread-h. Reopen: a test-full file >4 GB again, or test-full unadmittable for 6 h.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane test-full-memory closed (2026-11-07)",
+      "sha256": "46b0b8ed9651725636d15f1e3ae287b58bdb5ee1c5562103f519be7867cb5471"
+    },
+    {
+      "path": "docs/research/test-full-memory-2026-11-06.md",
+      "anchor": "The full suite after the cuts (job 0303, 2026-11-07)",
+      "sha256": "4d1353f6649521d9d1729cc00a3491ea8ef503717d7dbe9c211b61bc605dcb08"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:16+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted likely, about 10 cpu-h of a 15 cpu-h cap; actual done on memory: the full suite file by file peaks at 1.77 GB (job 0303) against 9.8 GB, starts at 2.2 GB reserved, every check kept; 0303 exit 1 on test_jobs only (stale test_pin fixed, load-dependent test_idle_gate); test_sweep left out of the default run; 23.4 thread-hours by job records; reopen if: a test-full file peaks over 4 GB again or a test-full cannot be admitted for 6 hours",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane test-full-memory closed (2026-11-07)",
+          "sha256": "46b0b8ed9651725636d15f1e3ae287b58bdb5ee1c5562103f519be7867cb5471"
+        },
+        {
+          "path": "docs/research/test-full-memory-2026-11-06.md",
+          "anchor": "The full suite after the cuts (job 0303, 2026-11-07)",
+          "sha256": "4d1353f6649521d9d1729cc00a3491ea8ef503717d7dbe9c211b61bc605dcb08"
+        },
+        {
+          "path": "jobs/done/0303-test-full.json",
+          "sha256": "2b82e5ce7898031894ca7c9cc2937a80b11c39c02582e73f3c9d2b33d5f81000"
+        }
+      ],
+      "owner": false,
+      "by": "4af80b4e-9a2d-4a97-8598-552aa004548f",
+      "at": "2026-11-06T20:59:25+00:00 @ d477edc",
+      "until": "2026-11-13T02:31:16+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "9ef134a7cddbec8e9f9a12494d19a39cf9d1fd058d65ea942f9f0a22e5423704"
+}

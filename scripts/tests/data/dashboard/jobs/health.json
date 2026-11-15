@@ -1,0 +1,94 @@
+{
+ "at": "2026-11-03T11:50:00+00:00",
+ "steward_at": "2026-11-03T10:20:00+00:00",
+ "metrics": [
+  {
+   "name": "runner",
+   "kind": "blocker",
+   "state": "green",
+   "value": 1,
+   "detail": {},
+   "fix": null,
+   "streak": 0
+  },
+  {
+   "name": "disk",
+   "kind": "blocker",
+   "state": "red",
+   "value": 1,
+   "detail": {
+    "free": 3
+   },
+   "fix": "fix disk",
+   "streak": 0
+  },
+  {
+   "name": "cpu",
+   "kind": "work",
+   "state": "red",
+   "value": 1,
+   "detail": {},
+   "fix": "fix cpu",
+   "streak": 0
+  },
+  {
+   "name": "tests",
+   "kind": "work",
+   "state": "green",
+   "value": 1,
+   "detail": {},
+   "fix": null,
+   "streak": 0
+  }
+ ],
+ "blockers": [
+  {
+   "name": "disk",
+   "kind": "blocker",
+   "state": "red",
+   "value": 1,
+   "detail": {
+    "free": 3
+   },
+   "fix": "fix disk",
+   "streak": 0
+  }
+ ],
+ "work": [
+  {
+   "name": "cpu",
+   "kind": "work",
+   "state": "red",
+   "value": 1,
+   "detail": {},
+   "fix": "fix cpu",
+   "streak": 0
+  }
+ ],
+ "lanes": {
+  "alpha": {
+   "kind": "project",
+   "share": null,
+   "cap": 10.0,
+   "end": "2026-11-10",
+   "opened": "2026-11-03T08:00:00+00:00",
+   "step": "probe queued"
+  },
+  "beta": {
+   "kind": "exploration",
+   "share": null,
+   "cap": 12.0,
+   "end": "2026-11-08",
+   "opened": "2026-11-03T09:00:00+00:00",
+   "step": null
+  }
+ },
+ "wakes": {
+  "lanes": [],
+  "navigator": [],
+  "lane_cpu_h": {
+   "alpha": 3.2,
+   "beta": 0.0
+  }
+ }
+}

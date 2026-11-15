@@ -1,0 +1,109 @@
+{
+  "key": "measurement/rerank@headline",
+  "rev": 1,
+  "value": "One turn deep @hpb0.01 on the headline setting, sequences 0-249, fixed n, against the 10-29 net (0.688): data40k -0.056 clears (se 0.033), cover21 -0.096, data80k -0.104, lean-thr -0.108, burst8hp2 -0.148 (se 0.037; level with the heuristic, 0.532); end-HP -0.6 to -5.6. No standing net comes near the 10-29 net once rewards are in the loop.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Standing players re-ranked on the headline setting: none comes near the 10-29 net (approach review cheap read 4; b39d2; read 20:15 2026-11-02, manager 2b40a321)",
+      "sha256": "4de04bbc0fb64e29b82abdb3ef18d10d1df1ed1325c5176e6afdfcca780b513c"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+      "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+    },
+    {
+      "path": "results/gauntlet/rerank-burst8hp2-s1-hpb0.01-starter-simboss.json",
+      "sha256": "6897c9430043d228cf579090e158f954b35da840207264554ced2242e111d6bc"
+    },
+    {
+      "path": "results/gauntlet/rerank-data40k-s1-r1-hpb0.01-starter-simboss.json",
+      "sha256": "45ed6aa831ba34cdca8322b80307555f318d5a6aef64dcd7ac21ee9b8e214a17"
+    },
+    {
+      "path": "results/gauntlet/rerank-data80k-s1-r1-hpb0.01-starter-simboss.json",
+      "sha256": "0ab0212e155cf7a3b111d3192a5865c494443e974f9ff2f355f9c5453275bfaf"
+    },
+    {
+      "path": "results/gauntlet/rerank-cover21-s1-r1-hpb0.01-starter-simboss.json",
+      "sha256": "893b83039f603cbd07e3a92adf4976608c95a391274d63e0a86e06245bd36408"
+    },
+    {
+      "path": "results/gauntlet/rerank-lean-thr-s1-r2-hpb0.01-starter-simboss.json",
+      "sha256": "e68cc8fa10cceb681dca784cae176541699c3738424cad2acc52ad05a752ff6c"
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:12:12+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:57:57+00:00 @ a875850",
+      "note": "yardstick/headline-setting rev 2 changed only which depth judges a change (one turn; the two-turn product is the reported score); the setting's flags this fact relies on (--start starter --rewards sim --sim-boss, 500 sequences) are unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "One turn deep @hpb0.01 on the headline setting, sequences 0-249, fixed n, against the 10-29 net (0.688): data40k -0.056 clears (se 0.033), cover21 -0.096, data80k -0.104, lean-thr -0.108, burst8hp2 -0.148 (se 0.037; level with the heuristic, 0.532); end-HP -0.6 to -5.6. No standing net comes near the 10-29 net once rewards are in the loop.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Standing players re-ranked on the headline setting: none comes near the 10-29 net (approach review cheap read 4; b39d2; read 20:15 2026-11-02, manager 2b40a321)",
+          "sha256": "4de04bbc0fb64e29b82abdb3ef18d10d1df1ed1325c5176e6afdfcca780b513c"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+          "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+        },
+        {
+          "path": "results/gauntlet/rerank-burst8hp2-s1-hpb0.01-starter-simboss.json",
+          "sha256": "6897c9430043d228cf579090e158f954b35da840207264554ced2242e111d6bc"
+        },
+        {
+          "path": "results/gauntlet/rerank-data40k-s1-r1-hpb0.01-starter-simboss.json",
+          "sha256": "45ed6aa831ba34cdca8322b80307555f318d5a6aef64dcd7ac21ee9b8e214a17"
+        },
+        {
+          "path": "results/gauntlet/rerank-data80k-s1-r1-hpb0.01-starter-simboss.json",
+          "sha256": "0ab0212e155cf7a3b111d3192a5865c494443e974f9ff2f355f9c5453275bfaf"
+        },
+        {
+          "path": "results/gauntlet/rerank-cover21-s1-r1-hpb0.01-starter-simboss.json",
+          "sha256": "893b83039f603cbd07e3a92adf4976608c95a391274d63e0a86e06245bd36408"
+        },
+        {
+          "path": "results/gauntlet/rerank-lean-thr-s1-r2-hpb0.01-starter-simboss.json",
+          "sha256": "e68cc8fa10cceb681dca784cae176541699c3738424cad2acc52ad05a752ff6c"
+        },
+        {
+          "key": "yardstick/headline-setting",
+          "rev": 2
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:12:12+00:00 @ fc9cdd8",
+      "until": "2026-11-10T07:03:41+00:00 @ f97b79c",
+      "retired": "superseded by measurement/ledger@cells, yardstick/one-turn-controls and decision/no-goal2-training-arms"
+    }
+  ],
+  "seal": "c94dd38a32e9b28001c089980c4f2b14740a1e47de647b43db4506b327cedccb"
+}

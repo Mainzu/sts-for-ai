@@ -1,0 +1,104 @@
+{
+  "key": "decision/burst-share",
+  "rev": 4,
+  "value": "Bursts under ~100 games on one mechanic set replay share 0.9: 33 games cut >= half the cost on 4 generated mechanics (parent spared on 3; OppCard-PlainDamage x Sentries +1.68 HP), so a burst reads its parent row before shipping. finetune.py default stays 0.5.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After share-quote-widen: the 33-game quote widens on the cut, not on the parent (on the owner's behalf, 2026-11-09)",
+      "sha256": "3383cb29b67cac17bddf2d259ad411d496703842b6044a9b29fe00483067c015"
+    },
+    {
+      "key": "measurement/share-quote-widen@sentries",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:22Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:35Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/share-quote-widen@sentries reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A fine-tune burst of under about 100 games per mechanic sets replay share 0.9 in its config (33 games at 0.9 adapt as far as about 100 at 0.5 with the parents spared, measurement/share-curve@retention); scripts/finetune.py's default stays 0.5 until a lane that edits it changes the default and gives old configs an explicit 0.5.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After share-curve's close: few-game bursts set replay share 0.9; two probes queued on main (on the owner's behalf, 2026-11-09)",
+          "sha256": "b627d2ea6b669d3cadf504195dd397ff950ff1f8ddcd50f790276324139efd90"
+        },
+        {
+          "key": "measurement/share-curve@retention",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "9dac2594-61af-4f50-ba8b-c66fd10cfd0a",
+      "at": "2026-11-09T11:36:35Z @ a816116",
+      "until": "2026-11-09T15:27:21Z @ 0ca3bfa"
+    },
+    {
+      "rev": 2,
+      "value": "A fine-tune burst of under about 100 games on one mechanic sets replay share 0.9 in its config: 33 games at 0.9 cut half or more of the cost on four generated mechanics of two trigger kinds (measurement/share-curve@retention, measurement/share-quote-widen@sentries), the trained parent spared on three of them and +1.68 HP per fight on OppCard-PlainDamage x Sentries, so a burst reads its parent row before it ships; eight mechanics in one burst need more than 33 games each (measurement/pack-dose-33@gen-b1); on cards it spares the parent but keeps under half of a recurring tick's gain (measurement/card-burst-share@stage-a). scripts/finetune.py's default stays 0.5 until a lane that edits it changes the default and gives old configs an explicit 0.5.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After share-quote-widen: the 33-game quote widens on the cut, not on the parent (on the owner's behalf, 2026-11-09)",
+          "sha256": "3383cb29b67cac17bddf2d259ad411d496703842b6044a9b29fe00483067c015"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After share-curve's close: few-game bursts set replay share 0.9; two probes queued on main (on the owner's behalf, 2026-11-09)",
+          "sha256": "b627d2ea6b669d3cadf504195dd397ff950ff1f8ddcd50f790276324139efd90"
+        },
+        {
+          "key": "measurement/share-quote-widen@sentries",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "129b8d9d-a225-49d7-abbc-06f8d5f99e19",
+      "at": "2026-11-09T15:27:21Z @ 0ca3bfa",
+      "until": "2026-11-09T21:21:01Z @ 2123f4d"
+    },
+    {
+      "rev": 3,
+      "value": "A fine-tune burst of under about 100 games on one mechanic sets replay share 0.9 in its config: 33 games at 0.9 cut half or more of the cost on four generated mechanics of two trigger kinds (measurement/share-curve@retention, measurement/share-quote-widen@sentries), the trained parent spared on three of them and +1.68 HP per fight on OppCard-PlainDamage x Sentries, so a burst reads its parent row before it ships; on cards it spares the parent but keeps under half of a recurring tick's gain (measurement/card-burst-share@stage-a). A pack chain (one joint burst over a pack's mechanics) trains 99 games per mechanic at share 0.9 (arm g99-sh9): 33 games each were too few for eight mechanics (measurement/pack-dose-33@gen-b1), and g99-sh9 removes g99-at-0.5's TurnEnd-Frail x Lagavulin leak, keeps Nob's cut and the Sentries edge, spares the parents, and fails the per-net guard on one seed of two as g99 at 0.5 did, by less (measurement/pack-dose-99s9@gen-b1); the chain ships only a net that passes the guard. scripts/finetune.py's default stays 0.5 until a lane that edits it changes the default and gives old configs an explicit 0.5.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After pack-dose 99s9: pack chains train 99 games per mechanic at share 0.9 (on the owner's behalf, 2026-11-10)",
+          "sha256": "dafb516ad49dffe2ab6f4a94d4cdcaf76bf41baba72d6142fd3a66ced4b0c1ca"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After share-quote-widen: the 33-game quote widens on the cut, not on the parent (on the owner's behalf, 2026-11-09)",
+          "sha256": "3383cb29b67cac17bddf2d259ad411d496703842b6044a9b29fe00483067c015"
+        },
+        {
+          "key": "measurement/share-quote-widen@sentries",
+          "rev": 1
+        },
+        {
+          "key": "measurement/pack-dose-99s9@gen-b1",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "2edc559b-edfc-489b-a2d9-c1df70ab65a0",
+      "at": "2026-11-09T21:21:01Z @ 2123f4d",
+      "until": "2026-11-13T02:29:22Z @ 3123201a"
+    }
+  ],
+  "seal": "9ce00488ea51dd7e380ddff5ea080f9bae34f1c2d50f4aa8d918e0894b846c49"
+}

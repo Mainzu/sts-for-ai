@@ -1,0 +1,431 @@
+{
+  "key": "measurement/adaptation-curve",
+  "rev": 6,
+  "value": "SharpHide-family burst from the 10-29 net (share 0.5, one turn), novelty-cost cut sharp2 / sharp2-hp0.9: 99 games 1.17x/1.06x (s1), 1.12x/1.00x (s2); 399 1.66x/1.27x; 1602 1.65x/1.34x; plateau ~400; gain on elites; Ritual 2 (payoff past horizon) 0.15-0.46x; retention within 0.8 se at every size.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Second training seed at 99 games: SharpHide's cost cut 1.12x (seed 1 1.17x), retention -0.31 HP; the 99-game point is a result (adaptation lane step 2; 0127, 0130, 0131; read 00:35 2026-11-05, lanes 4ccb3148)",
+      "sha256": "234a89b7dcf56f3d609b1e981574578e4c13ffd8c05f450d7585f6c350a37ccc"
+    },
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Adaptation curve filled: 99 games repair SharpHide's one-turn cost on elites, 399 reach the plateau; Ritual 2 stays unrepaired at every size; retention holds (adaptation-curve lane; 0119-0124; read 22:45 2026-11-04, lanes 7d67038d)",
+      "sha256": "f85ffe42f8c89a7baa8ccb7ffbd947e78b8a8eb9873d9f58bce363f6b8e9754d"
+    },
+    {
+      "key": "measurement/adaptation-curve@1602",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:43+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:18+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/adaptation-curve@1602 reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Goal 1 games-to-adapt curve (lead: one training seed per size, nested data, one-turn reads): the 10-29 net fine-tuned on games against SharpHide 2, its hp pair and Ritual 2 cuts the one-turn novelty cost of sharp2 / sharp2-hp0.9 by 1.17x / 1.06x at 99 games (33 per modifier), 1.66x / 1.27x at 399, 1.65x / 1.34x at 1602 (gains +0.056 to +0.084 win rate, se 0.012-0.015; all on elites, Three Sentries most); Ritual 2 (payoff past the horizon) only 0.15-0.46x; retention on the one-turn cell gauntlet within 0.6 se at every size (paired end-HP -0.27, -0.07, -0.13). About 100 games adapt to an unseen power whose payoff is inside the search horizon; plateau by about 400.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Adaptation curve filled: 99 games repair SharpHide's one-turn cost on elites, 399 reach the plateau; Ritual 2 stays unrepaired at every size; retention holds (adaptation-curve lane; 0119-0124; read 22:45 2026-11-04, lanes 7d67038d)",
+          "sha256": "f85ffe42f8c89a7baa8ccb7ffbd947e78b8a8eb9873d9f58bce363f6b8e9754d"
+        },
+        {
+          "path": "results/adapt/burst33-s1.json",
+          "sha256": "f522b9c1e09e48b3295d87736ccf7b6c5ca344c87307ebb7f59fe30edcf08ce0"
+        },
+        {
+          "path": "results/adapt/burst133-s1.json",
+          "sha256": "1be7168f7da1dd2ea1be4a4b43122e367d4b29d7541a293ad5a7b72661dad3ca"
+        },
+        {
+          "path": "results/adapt/burst534-s1.json",
+          "sha256": "784f34dd62e63efa38f08702c085e336979f94f677a740c4da73b03da90310a2"
+        },
+        {
+          "path": "results/gauntlet/adapt33-s1-hpb0.01.json",
+          "sha256": "f1c8bd768eb91cb8a3bad8669e1085c9242faf645bd1cf8121fc6474f1d0bdee"
+        },
+        {
+          "path": "results/gauntlet/adapt133-s1-hpb0.01.json",
+          "sha256": "ab703571154dc7544151746d607708ce04f5cf96fb7954b653de5f53b1ab845b"
+        },
+        {
+          "path": "results/gauntlet/adapt534-s1-hpb0.01.json",
+          "sha256": "635452dd20de375f1e3b09b9a286b2459a1dd34de27243ce750ec6cace078dd5"
+        },
+        {
+          "path": "jobs/done/0119-finetune.json",
+          "sha256": "4e6f7a6a81675f7fac86372d0300936b3dc57ee0f1b9362c41aeec9ae8f948fe"
+        },
+        {
+          "path": "jobs/done/0120-finetune.json",
+          "sha256": "e0090fc0d1da32b11096a4dfa73eb85c3ac73dbb64cd06927a5bf14c6ec179bb"
+        },
+        {
+          "path": "jobs/done/0121-mutate-monsters.json",
+          "sha256": "e4b73eb48995e87a17f14527946bfc529b0e8cd71d06ce939b4cacf5bc9a9b3c"
+        },
+        {
+          "path": "jobs/done/0122-gauntlet.json",
+          "sha256": "de46229279e3367d1018b0e6ce20ee0b64586e7c6ed9dc55008ced0359d5ee8d"
+        },
+        {
+          "path": "jobs/done/0123-mutate-monsters.json",
+          "sha256": "64645cbf53d7ebd796046136257ea29efb9c16841d32bb2f6434108396a6dc2e"
+        },
+        {
+          "path": "jobs/done/0124-gauntlet.json",
+          "sha256": "983a80e6eceff6db1cf9619caf4eb864a718e3d48b79a37e91577dbae52c0212"
+        },
+        {
+          "key": "measurement/adaptation-curve@1602",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "7d67038d-6d81-4e0e-a8e1-60282fa7bf98",
+      "at": "2026-11-04T15:39:28+00:00 @ 5856e3b",
+      "until": "2026-11-04T17:29:49+00:00 @ 9c6972c"
+    },
+    {
+      "rev": 2,
+      "value": "Goal 1 games-to-adapt curve (nested data, one-turn reads; the 99-game point has two training seeds, 399 and 1602 one each): the 10-29 net fine-tuned on games against SharpHide 2, its hp pair and Ritual 2 cuts the one-turn novelty cost of sharp2 / sharp2-hp0.9 by 1.17x / 1.06x (seed 1) and 1.12x / 1.00x (seed 2) at 99 games (33 per modifier), 1.66x / 1.27x at 399, 1.65x / 1.34x at 1602 (gains +0.054 to +0.084 win rate, se 0.012-0.015; all on elites, Three Sentries most); Ritual 2 (payoff past the horizon) only 0.15-0.46x; retention on the one-turn cell gauntlet within 0.8 se at every size (paired end-HP -0.27, -0.07, -0.13; seed 2 at 99 games -0.31 (0.39)). About 100 games adapt to an unseen power whose payoff is inside the search horizon (a result at 99 games: both seeds at 4 se, 0.002 apart); plateau by about 400.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Second training seed at 99 games: SharpHide's cost cut 1.12x (seed 1 1.17x), retention -0.31 HP; the 99-game point is a result (adaptation lane step 2; 0127, 0130, 0131; read 00:35 2026-11-05, lanes 4ccb3148)",
+          "sha256": "234a89b7dcf56f3d609b1e981574578e4c13ffd8c05f450d7585f6c350a37ccc"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Adaptation curve filled: 99 games repair SharpHide's one-turn cost on elites, 399 reach the plateau; Ritual 2 stays unrepaired at every size; retention holds (adaptation-curve lane; 0119-0124; read 22:45 2026-11-04, lanes 7d67038d)",
+          "sha256": "f85ffe42f8c89a7baa8ccb7ffbd947e78b8a8eb9873d9f58bce363f6b8e9754d"
+        },
+        {
+          "path": "results/adapt/burst33-s1.json",
+          "sha256": "f522b9c1e09e48b3295d87736ccf7b6c5ca344c87307ebb7f59fe30edcf08ce0"
+        },
+        {
+          "path": "results/adapt/burst33-s2.json",
+          "sha256": "9467ce03b6707062310da1ae5583a31879c07df3d5498cd219bdcabe6e6b5863"
+        },
+        {
+          "path": "results/adapt/burst133-s1.json",
+          "sha256": "1be7168f7da1dd2ea1be4a4b43122e367d4b29d7541a293ad5a7b72661dad3ca"
+        },
+        {
+          "path": "results/adapt/burst534-s1.json",
+          "sha256": "784f34dd62e63efa38f08702c085e336979f94f677a740c4da73b03da90310a2"
+        },
+        {
+          "path": "results/gauntlet/adapt33-s1-hpb0.01.json",
+          "sha256": "f1c8bd768eb91cb8a3bad8669e1085c9242faf645bd1cf8121fc6474f1d0bdee"
+        },
+        {
+          "path": "results/gauntlet/adapt33-s2-hpb0.01.json",
+          "sha256": "583a0f62197486bd5cf9f2e5fd67535aefff66dc1d66606c348688a8217f7684"
+        },
+        {
+          "path": "results/gauntlet/adapt133-s1-hpb0.01.json",
+          "sha256": "ab703571154dc7544151746d607708ce04f5cf96fb7954b653de5f53b1ab845b"
+        },
+        {
+          "path": "results/gauntlet/adapt534-s1-hpb0.01.json",
+          "sha256": "635452dd20de375f1e3b09b9a286b2459a1dd34de27243ce750ec6cace078dd5"
+        },
+        {
+          "path": "jobs/done/0127-finetune.json",
+          "sha256": "eca5439273a104f7a54a3a97e6eee60c508a5217c95512bed5b3833bf2706c8f"
+        },
+        {
+          "path": "jobs/done/0130-mutate-monsters.json",
+          "sha256": "ee539a2dcd9cfdb2a97fb615af4a21c364edb8a1467ef6419c3c6be12819c45e"
+        },
+        {
+          "path": "jobs/done/0131-gauntlet.json",
+          "sha256": "8c89759f2b726f624e0af49777de2d7aa8745a8028a16f8721db207a6b37c1b7"
+        },
+        {
+          "key": "measurement/adaptation-curve@1602",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "4ccb3148-4683-4db0-b258-c8c6cad7e8a3",
+      "at": "2026-11-04T17:29:49+00:00 @ 9c6972c",
+      "until": "2026-11-08T15:59:56+00:00 @ 00bae76"
+    },
+    {
+      "rev": 3,
+      "value": "Goal 1 games-to-adapt curve (nested data, one-turn reads; the 99-game point has two training seeds, 399 and 1602 one each): the 10-29 net fine-tuned on games against SharpHide 2, its hp pair and Ritual 2 cuts the one-turn novelty cost of sharp2 / sharp2-hp0.9 by 1.17x / 1.06x (seed 1) and 1.12x / 1.00x (seed 2) at 99 games (33 per modifier), 1.66x / 1.27x at 399, 1.65x / 1.34x at 1602 (gains +0.054 to +0.084 win rate, se 0.012-0.015; all on elites, Three Sentries most); Ritual 2 (payoff past the horizon) only 0.15-0.46x; retention on the one-turn cell gauntlet within 0.8 se at every size (paired end-HP -0.27, -0.07, -0.13; seed 2 at 99 games -0.31 (0.39)). All at the default finetune replay share 0.5, which under-trains small sets (measurement/few-game-recipe@gfr-33: share 0.8 cut 0.79 of AttackLoss-Weak's cost at 33 games, 0.20 at 0.5; lane/share-curve re-measures the curve): at that share, about 100 games adapt to an unseen power whose payoff is inside the search horizon (a result at 99 games: both seeds at 4 se, 0.002 apart); plateau by about 400.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Second training seed at 99 games: SharpHide's cost cut 1.12x (seed 1 1.17x), retention -0.31 HP; the 99-game point is a result (adaptation lane step 2; 0127, 0130, 0131; read 00:35 2026-11-05, lanes 4ccb3148)",
+          "sha256": "234a89b7dcf56f3d609b1e981574578e4c13ffd8c05f450d7585f6c350a37ccc"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Adaptation curve filled: 99 games repair SharpHide's one-turn cost on elites, 399 reach the plateau; Ritual 2 stays unrepaired at every size; retention holds (adaptation-curve lane; 0119-0124; read 22:45 2026-11-04, lanes 7d67038d)",
+          "sha256": "f85ffe42f8c89a7baa8ccb7ffbd947e78b8a8eb9873d9f58bce363f6b8e9754d"
+        },
+        {
+          "path": "results/adapt/burst33-s1.json",
+          "sha256": "f522b9c1e09e48b3295d87736ccf7b6c5ca344c87307ebb7f59fe30edcf08ce0"
+        },
+        {
+          "path": "results/adapt/burst33-s2.json",
+          "sha256": "9467ce03b6707062310da1ae5583a31879c07df3d5498cd219bdcabe6e6b5863"
+        },
+        {
+          "path": "results/adapt/burst133-s1.json",
+          "sha256": "1be7168f7da1dd2ea1be4a4b43122e367d4b29d7541a293ad5a7b72661dad3ca"
+        },
+        {
+          "path": "results/adapt/burst534-s1.json",
+          "sha256": "784f34dd62e63efa38f08702c085e336979f94f677a740c4da73b03da90310a2"
+        },
+        {
+          "path": "results/gauntlet/adapt33-s1-hpb0.01.json",
+          "sha256": "f1c8bd768eb91cb8a3bad8669e1085c9242faf645bd1cf8121fc6474f1d0bdee"
+        },
+        {
+          "path": "results/gauntlet/adapt33-s2-hpb0.01.json",
+          "sha256": "583a0f62197486bd5cf9f2e5fd67535aefff66dc1d66606c348688a8217f7684"
+        },
+        {
+          "path": "results/gauntlet/adapt133-s1-hpb0.01.json",
+          "sha256": "ab703571154dc7544151746d607708ce04f5cf96fb7954b653de5f53b1ab845b"
+        },
+        {
+          "path": "results/gauntlet/adapt534-s1-hpb0.01.json",
+          "sha256": "635452dd20de375f1e3b09b9a286b2459a1dd34de27243ce750ec6cace078dd5"
+        },
+        {
+          "path": "jobs/done/0127-finetune.json",
+          "sha256": "eca5439273a104f7a54a3a97e6eee60c508a5217c95512bed5b3833bf2706c8f"
+        },
+        {
+          "path": "jobs/done/0130-mutate-monsters.json",
+          "sha256": "ee539a2dcd9cfdb2a97fb615af4a21c364edb8a1467ef6419c3c6be12819c45e"
+        },
+        {
+          "path": "jobs/done/0131-gauntlet.json",
+          "sha256": "8c89759f2b726f624e0af49777de2d7aa8745a8028a16f8721db207a6b37c1b7"
+        },
+        {
+          "key": "measurement/adaptation-curve@1602",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        },
+        {
+          "key": "measurement/few-game-recipe@gfr-33",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "0f7d764f-d468-460d-aa28-8d3e45552a89",
+      "at": "2026-11-08T15:59:56+00:00 @ 00bae76",
+      "until": "2026-11-09T11:37:22+00:00 @ a816116"
+    },
+    {
+      "rev": 4,
+      "value": "Goal 1 games-to-adapt curve (nested data, one-turn reads; the 99-game point has two training seeds, 399 and 1602 one each): the 10-29 net fine-tuned on games against SharpHide 2, its hp pair and Ritual 2 cuts the one-turn novelty cost of sharp2 / sharp2-hp0.9 by 1.17x / 1.06x (seed 1) and 1.12x / 1.00x (seed 2) at 99 games (33 per modifier), 1.66x / 1.27x at 399, 1.65x / 1.34x at 1602 (gains +0.054 to +0.084 win rate, se 0.012-0.015; all on elites, Three Sentries most); Ritual 2 (payoff past the horizon) only 0.15-0.46x; retention on the one-turn cell gauntlet within 0.8 se at every size (paired end-HP -0.27, -0.07, -0.13; seed 2 at 99 games -0.31 (0.39)). All at the default finetune replay share 0.5, which under-trains small sets (measurement/few-game-recipe@gfr-33: share 0.8 cut 0.79 of AttackLoss-Weak's cost at 33 games, 0.20 at 0.5; lane/share-curve re-measured it): at that share, about 100 games adapt to an unseen power whose payoff is inside the search horizon (a result at 99 games: both seeds at 4 se, 0.002 apart); plateau by about 400. Goal 1's quote is now 33 games at replay share 0.9 (11 at the edge) on two debuff-on-enemy generated mechanics, parents spared (measurement/share-curve@retention); Ritual 2 was not re-read at share 0.9.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Second training seed at 99 games: SharpHide's cost cut 1.12x (seed 1 1.17x), retention -0.31 HP; the 99-game point is a result (adaptation lane step 2; 0127, 0130, 0131; read 00:35 2026-11-05, lanes 4ccb3148)",
+          "sha256": "234a89b7dcf56f3d609b1e981574578e4c13ffd8c05f450d7585f6c350a37ccc"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Adaptation curve filled: 99 games repair SharpHide's one-turn cost on elites, 399 reach the plateau; Ritual 2 stays unrepaired at every size; retention holds (adaptation-curve lane; 0119-0124; read 22:45 2026-11-04, lanes 7d67038d)",
+          "sha256": "f85ffe42f8c89a7baa8ccb7ffbd947e78b8a8eb9873d9f58bce363f6b8e9754d"
+        },
+        {
+          "path": "results/adapt/burst33-s1.json",
+          "sha256": "f522b9c1e09e48b3295d87736ccf7b6c5ca344c87307ebb7f59fe30edcf08ce0"
+        },
+        {
+          "path": "results/adapt/burst33-s2.json",
+          "sha256": "9467ce03b6707062310da1ae5583a31879c07df3d5498cd219bdcabe6e6b5863"
+        },
+        {
+          "path": "results/adapt/burst133-s1.json",
+          "sha256": "1be7168f7da1dd2ea1be4a4b43122e367d4b29d7541a293ad5a7b72661dad3ca"
+        },
+        {
+          "path": "results/adapt/burst534-s1.json",
+          "sha256": "784f34dd62e63efa38f08702c085e336979f94f677a740c4da73b03da90310a2"
+        },
+        {
+          "path": "results/gauntlet/adapt33-s1-hpb0.01.json",
+          "sha256": "f1c8bd768eb91cb8a3bad8669e1085c9242faf645bd1cf8121fc6474f1d0bdee"
+        },
+        {
+          "path": "results/gauntlet/adapt33-s2-hpb0.01.json",
+          "sha256": "583a0f62197486bd5cf9f2e5fd67535aefff66dc1d66606c348688a8217f7684"
+        },
+        {
+          "path": "results/gauntlet/adapt133-s1-hpb0.01.json",
+          "sha256": "ab703571154dc7544151746d607708ce04f5cf96fb7954b653de5f53b1ab845b"
+        },
+        {
+          "path": "results/gauntlet/adapt534-s1-hpb0.01.json",
+          "sha256": "635452dd20de375f1e3b09b9a286b2459a1dd34de27243ce750ec6cace078dd5"
+        },
+        {
+          "path": "jobs/done/0127-finetune.json",
+          "sha256": "eca5439273a104f7a54a3a97e6eee60c508a5217c95512bed5b3833bf2706c8f"
+        },
+        {
+          "path": "jobs/done/0130-mutate-monsters.json",
+          "sha256": "ee539a2dcd9cfdb2a97fb615af4a21c364edb8a1467ef6419c3c6be12819c45e"
+        },
+        {
+          "path": "jobs/done/0131-gauntlet.json",
+          "sha256": "8c89759f2b726f624e0af49777de2d7aa8745a8028a16f8721db207a6b37c1b7"
+        },
+        {
+          "key": "measurement/adaptation-curve@1602",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        },
+        {
+          "key": "measurement/few-game-recipe@gfr-33",
+          "rev": 1
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After share-curve's close: few-game bursts set replay share 0.9; two probes queued on main (on the owner's behalf, 2026-11-09)",
+          "sha256": "b627d2ea6b669d3cadf504195dd397ff950ff1f8ddcd50f790276324139efd90"
+        },
+        {
+          "key": "measurement/share-curve@retention",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "9dac2594-61af-4f50-ba8b-c66fd10cfd0a",
+      "at": "2026-11-09T11:37:22+00:00 @ a816116",
+      "until": "2026-11-09T15:27:40+00:00 @ 0ca3bfa"
+    },
+    {
+      "rev": 5,
+      "value": "Goal 1 games-to-adapt curve (nested data, one-turn reads; the 99-game point has two training seeds, 399 and 1602 one each): the 10-29 net fine-tuned on games against SharpHide 2, its hp pair and Ritual 2 cuts the one-turn novelty cost of sharp2 / sharp2-hp0.9 by 1.17x / 1.06x (seed 1) and 1.12x / 1.00x (seed 2) at 99 games (33 per modifier), 1.66x / 1.27x at 399, 1.65x / 1.34x at 1602 (gains +0.054 to +0.084 win rate, se 0.012-0.015; all on elites, Three Sentries most); Ritual 2 (payoff past the horizon) only 0.15-0.46x; retention on the one-turn cell gauntlet within 0.8 se at every size (paired end-HP -0.27, -0.07, -0.13; seed 2 at 99 games -0.31 (0.39)). All at the default finetune replay share 0.5, which under-trains small sets (measurement/few-game-recipe@gfr-33: share 0.8 cut 0.79 of AttackLoss-Weak's cost at 33 games, 0.20 at 0.5; lane/share-curve re-measured it): at that share, about 100 games adapt to an unseen power whose payoff is inside the search horizon (a result at 99 games: both seeds at 4 se, 0.002 apart); plateau by about 400. Goal 1's quote is now 33 games at replay share 0.9 (11 at the edge) cutting half or more of the cost on four generated mechanics, two trigger kinds, one at a time, the trained parent spared on three and +1.68 HP on OppCard-PlainDamage x Sentries (decision/burst-share); Ritual 2 was not re-read at share 0.9.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Second training seed at 99 games: SharpHide's cost cut 1.12x (seed 1 1.17x), retention -0.31 HP; the 99-game point is a result (adaptation lane step 2; 0127, 0130, 0131; read 00:35 2026-11-05, lanes 4ccb3148)",
+          "sha256": "234a89b7dcf56f3d609b1e981574578e4c13ffd8c05f450d7585f6c350a37ccc"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Adaptation curve filled: 99 games repair SharpHide's one-turn cost on elites, 399 reach the plateau; Ritual 2 stays unrepaired at every size; retention holds (adaptation-curve lane; 0119-0124; read 22:45 2026-11-04, lanes 7d67038d)",
+          "sha256": "f85ffe42f8c89a7baa8ccb7ffbd947e78b8a8eb9873d9f58bce363f6b8e9754d"
+        },
+        {
+          "path": "results/adapt/burst33-s1.json",
+          "sha256": "f522b9c1e09e48b3295d87736ccf7b6c5ca344c87307ebb7f59fe30edcf08ce0"
+        },
+        {
+          "path": "results/adapt/burst33-s2.json",
+          "sha256": "9467ce03b6707062310da1ae5583a31879c07df3d5498cd219bdcabe6e6b5863"
+        },
+        {
+          "path": "results/adapt/burst133-s1.json",
+          "sha256": "1be7168f7da1dd2ea1be4a4b43122e367d4b29d7541a293ad5a7b72661dad3ca"
+        },
+        {
+          "path": "results/adapt/burst534-s1.json",
+          "sha256": "784f34dd62e63efa38f08702c085e336979f94f677a740c4da73b03da90310a2"
+        },
+        {
+          "path": "results/gauntlet/adapt33-s1-hpb0.01.json",
+          "sha256": "f1c8bd768eb91cb8a3bad8669e1085c9242faf645bd1cf8121fc6474f1d0bdee"
+        },
+        {
+          "path": "results/gauntlet/adapt33-s2-hpb0.01.json",
+          "sha256": "583a0f62197486bd5cf9f2e5fd67535aefff66dc1d66606c348688a8217f7684"
+        },
+        {
+          "path": "results/gauntlet/adapt133-s1-hpb0.01.json",
+          "sha256": "ab703571154dc7544151746d607708ce04f5cf96fb7954b653de5f53b1ab845b"
+        },
+        {
+          "path": "results/gauntlet/adapt534-s1-hpb0.01.json",
+          "sha256": "635452dd20de375f1e3b09b9a286b2459a1dd34de27243ce750ec6cace078dd5"
+        },
+        {
+          "path": "jobs/done/0127-finetune.json",
+          "sha256": "eca5439273a104f7a54a3a97e6eee60c508a5217c95512bed5b3833bf2706c8f"
+        },
+        {
+          "path": "jobs/done/0130-mutate-monsters.json",
+          "sha256": "ee539a2dcd9cfdb2a97fb615af4a21c364edb8a1467ef6419c3c6be12819c45e"
+        },
+        {
+          "path": "jobs/done/0131-gauntlet.json",
+          "sha256": "8c89759f2b726f624e0af49777de2d7aa8745a8028a16f8721db207a6b37c1b7"
+        },
+        {
+          "key": "measurement/adaptation-curve@1602",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        },
+        {
+          "key": "measurement/few-game-recipe@gfr-33",
+          "rev": 1
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After share-curve's close: few-game bursts set replay share 0.9; two probes queued on main (on the owner's behalf, 2026-11-09)",
+          "sha256": "b627d2ea6b669d3cadf504195dd397ff950ff1f8ddcd50f790276324139efd90"
+        },
+        {
+          "key": "measurement/share-curve@retention",
+          "rev": 1
+        },
+        {
+          "key": "decision/burst-share",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "129b8d9d-a225-49d7-abbc-06f8d5f99e19",
+      "at": "2026-11-09T15:27:40+00:00 @ 0ca3bfa",
+      "until": "2026-11-13T02:29:43+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "e8bac0a59b725b5374ecc19f56c60e8fa87053ced6564c77c52d1eba5455b1d7"
+}

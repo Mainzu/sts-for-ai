@@ -1,0 +1,42 @@
+{
+  "key": "how/act1-relics-potion-mechanics",
+  "rev": 1,
+  "value": "Potion mechanics: Attack/Skill/Power Potion Discover 1 of 3 (docs/specs/discovery.md); Distilled Chaos PlayTop 3; Liquid Memories free_in_hand; Fairy in a Bottle trigger OwnerDied, before Lizard Tail; Smoke Bomb ends a non-boss fight as won (CombatState.escaped); Entropic Brew ObtainRandomPotions; slots 3 + relics' potion_slots.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/specs/discovery.md",
+      "sha256": "4627355f0c6c9011ad2d9b4d8fc75db041fcf2fc9403a9f5cd15670e2e759b18"
+    },
+    {
+      "path": "docs/research/act1-relics-potions.md",
+      "anchor": "The player escapes (2026-11-13, session act1-p5)",
+      "sha256": "559b68f22b24f7b18b1a14fa48ebac07709761a9716b2db905efcf4cbc063ba5"
+    },
+    {
+      "path": "docs/research/act1-relics-potions.md",
+      "anchor": "Potions made in a fight (2026-11-13, act1-p6 session)",
+      "sha256": "b57b5b4810475d04574efb06253615ec5d57465968b9ad09540f0dc8d3e2bd0a"
+    },
+    {
+      "path": "docs/extending.md",
+      "anchor": "Potions made in a fight",
+      "sha256": "a7186a56a72e6dbed7b75ef75e28d3f8ab6e49af53b9d8a9c6951ec0312f7901"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:27Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:24:18Z @ c4fb1faf",
+      "note": "discovery.md changed only its Status line (8b0ba903); extending.md 'Potions made in a fight' changed only its card-slot limit (e901624c); the potion mechanics stated hold"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "9752e7e0c8619f81c383cadb3792833fa5b939dbde4615458da76d9feab120a6"
+}

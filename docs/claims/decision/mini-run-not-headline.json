@@ -1,0 +1,41 @@
+{
+  "key": "decision/mini-run-not-headline",
+  "rev": 1,
+  "value": "The headline setting and its control are unchanged after the run-decisions probes; the headline keeps no path rule; the mini-run (--elite-offers 2 --mid-rest 5) stays a probe setting, not the headline (easy at 0.900 clears one turn deep, and one extra card doesn't pay an elite); the run-layer family is paused until an elite pays a relic or max HP (backlog elite-payoff-relics).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Run layer after run-decisions: the headline setting stays, the mini-run stays a probe setting (on the owner's behalf, 2026-11-04)",
+      "sha256": "cd9ca5a874d011cd8ff1a35a1ad754c8eb934e7d545267b185c08364f6ca9cd2"
+    },
+    {
+      "key": "cause/elite-does-not-pay",
+      "rev": 2
+    },
+    {
+      "key": "decision/no-path-rule",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "4253ac8b-4270-40d7-958b-ef9945166c5b",
+  "at": "2026-11-04T07:16:09Z @ 303ac0b",
+  "confirms": [
+    {
+      "by": "b7755c1b-c846-428e-b225-17f45923e96d",
+      "at": "2026-11-11T09:00:54Z @ 20449c5",
+      "note": "re-checked after the lane worker's and the navigator's STATUS-cap merges: the merged facts hold their sources' numbers verbatim, this fact's own numbers unchanged"
+    },
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:16Z @ 3123201a",
+      "note": "fact split 2026-11-13: cause/elite-does-not-pay reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "aa031d7e077ada389ca5c0b21078f686ab3948394609aec34accffe2965a860f"
+}

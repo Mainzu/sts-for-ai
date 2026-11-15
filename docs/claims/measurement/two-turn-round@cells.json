@@ -1,0 +1,78 @@
+{
+  "key": "measurement/two-turn-round@cells",
+  "rev": 2,
+  "value": "Two-turn self-play round (10-29 net fine-tuned on 3000 stepped two-turn product games) one turn @hpb0.01 on cells vs net1029-hpb0.01: end-HP s1 -1.37 (0.83), s101 -1.02 (0.70) at n 150, one-turn control arm -0.05 (0.58); two-turn arms ~1.4 HP worse on the boss; val MSE flat from epoch 1. Null.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Two-turn self-play round: both arms fail the protocol; the outcome-label family closes (two-turn-round lane; 0067-0071; read 15:10 2026-11-03, lanes 42d5e5e2)",
+      "sha256": "78207e4353aec80be6d3cf712a124714ef86b5f17777628f53b867eb86f2fd1f"
+    },
+    {
+      "path": "results/gauntlet/twoturn-s1-hpb0.01.json",
+      "sha256": "fd6633234a22ec96bcd23a66701e578b893ab54d5912932f1664cee052dda17b"
+    },
+    {
+      "path": "results/gauntlet/twoturn-s101-hpb0.01.json",
+      "sha256": "9cbd22679a424e762a79fcec8b8765c7913e5aeaace751b221124c274c750676"
+    },
+    {
+      "path": "results/gauntlet/oneturn-ctl-s1-hpb0.01.json",
+      "sha256": "82ccc248b1a98815720ac33ec7a9d2998847d9f51c902027b52e29a5948501de"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:36+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Two-turn self-play round (10-29 net burst-fine-tuned on 3000 elite+boss games by the stepped two-turn product) read one turn deep @hpb0.01 on the cell gauntlet --against net1029-hpb0.01: s1 fail n 120 (end-HP -1.37 se 0.83 at n 150), s101 fail n 119 (-1.02 se 0.70 at n 150), one-turn control arm fail n 179 (-0.05 se 0.58 at n 200); two-turn arms lose ~1.4 HP more on the boss at matched start; val MSE flat from epoch 1. Verdict: null on both seeds, the outcome-label family closes.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Two-turn self-play round: both arms fail the protocol; the outcome-label family closes (two-turn-round lane; 0067-0071; read 15:10 2026-11-03, lanes 42d5e5e2)",
+          "sha256": "78207e4353aec80be6d3cf712a124714ef86b5f17777628f53b867eb86f2fd1f"
+        },
+        {
+          "path": "results/gauntlet/twoturn-s1-hpb0.01.json",
+          "sha256": "fd6633234a22ec96bcd23a66701e578b893ab54d5912932f1664cee052dda17b"
+        },
+        {
+          "path": "results/gauntlet/twoturn-s101-hpb0.01.json",
+          "sha256": "9cbd22679a424e762a79fcec8b8765c7913e5aeaace751b221124c274c750676"
+        },
+        {
+          "path": "results/gauntlet/oneturn-ctl-s1-hpb0.01.json",
+          "sha256": "82ccc248b1a98815720ac33ec7a9d2998847d9f51c902027b52e29a5948501de"
+        },
+        {
+          "path": "jobs/done/0069-two-turn-round.json",
+          "sha256": "edb3de35661fcb17d06e1aba74d29b5c3834f2eb0300d12f02922d976aa04b89"
+        },
+        {
+          "path": "jobs/done/0070-two-turn-round.json",
+          "sha256": "969a89a43366f9565a77bb0dfd59ec8f438c6278829a59773c06542038f10af6"
+        },
+        {
+          "path": "jobs/done/0071-two-turn-round.json",
+          "sha256": "0612b4ce0615308fb00acb3c571280374a8f8cc0b7ec208c10d2acd884905343"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "42d5e5e2-209e-4890-b1c6-8dbc12882bd6",
+      "at": "2026-11-03T08:03:33+00:00 @ 9a72fa9",
+      "until": "2026-11-13T02:31:36+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "fbc3f3b9a419d88f70a92207d26808df07051bb5caa4a6cd0bc578413c4abb08"
+}

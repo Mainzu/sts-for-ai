@@ -1,0 +1,151 @@
+{
+  "key": "measurement/act1-cards@pack-offers",
+  "rev": 3,
+  "value": "27 act1-ironclad pack cards in both halves' offers (--pack, headline, n 500, each vs its own control --vary pack), clears: heuristic 0.534->0.428 (-0.106, se 0.029), one-turn net 0.680->0.522 (-0.158, 0.028), product 0.834->0.684 (-0.150, 0.025); product lead over one-turn net moves +0.008 (0.033): order holds. Loss mostly diluted offers (~half as many originals offered).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/act1-inventory.md",
+      "anchor": "G1 re-rank read (0463, 0464, 0465)",
+      "sha256": "55c4794d5d567fe953cea06e6375e744bb71d2818d1bffb7c7554e89aa4489eb"
+    },
+    {
+      "path": "results/gauntlet/g1-net1029-hpe0.01-two-line-step-starter-simboss-pack-act1.json",
+      "sha256": "9233ed2d0fc72505179a5a53bf8a2f872eab1bb05dc762c0687cd293b60a71dc"
+    },
+    {
+      "path": "jobs/done/0466-gauntlet.json",
+      "sha256": "e9bd9897332666597082f226a882bbf7cbccaada778f6bae773b951a61130f66"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    },
+    {
+      "key": "yardstick/headline-control",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:38+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:41:11+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "With the 27 act1-ironclad pack cards in both halves' offers (gauntlet.py --pack, headline setting, each against its own control --vary pack): heuristic 0.534 -> 0.428 (-0.106, se 0.029, n 500), one-turn net 0.680 -> 0.522 (-0.158, 0.028, n 500), product 0.836 -> 0.684 (-0.152, 0.035, sequences 0-249; 0466 adds 250-499). Order holds; the product's lead over the one-turn net 0.148 -> 0.132 (change -0.016, se 0.045). The one-turn net's drop beyond the heuristic's is -0.052 (0.037), a lead only. The loss is mostly diluted offers (about half as many original cards offered; loss falls with original cards offered) while the sim chooser takes 3.1-3.6 pack cards a sequence; worst holders are setup and exhaust cards (Feel No Pain, Burning Pact, True Grit, Berserk); deaths move to elites and bosses.",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "G1 re-rank read (0463, 0464, 0465)",
+          "sha256": "e1076ec65e1e4d568edc2d818372b19f2f21346ae3acda05d5f066c5a367436c"
+        },
+        {
+          "path": "results/gauntlet/g1-heuristic-starter-simboss-pack-act1.json",
+          "sha256": "3fc67bd4885bd0bbb5267971333339e31baab0ce451fecd0bdb6eef86916291e"
+        },
+        {
+          "path": "results/gauntlet/g1-net1029-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "ba42cd59e277657c389c11eaf26f1925ce429d641121999b03bb21e5ac053b14"
+        },
+        {
+          "path": "results/gauntlet/g1-net1029-hpe0.01-two-line-step-starter-simboss-pack-act1.json",
+          "sha256": "72b1a9d994246500644136d565f21c31872a5a9feb155c76461cfdf14d512b0b"
+        },
+        {
+          "path": "jobs/done/0463-gauntlet.json",
+          "sha256": "27b881f8186a6b397a48bf3f5911d698048b1606bb492851fc51be446e75fb7d"
+        },
+        {
+          "path": "jobs/done/0464-gauntlet.json",
+          "sha256": "c8a0238c12887a94f13f878d45afd5a36a32c6c1c907fc2ab25d392d7a8ac689"
+        },
+        {
+          "path": "jobs/done/0465-gauntlet.json",
+          "sha256": "63aa40b18c8e3391b9a3824233db08560217d38e928719943b207a6873d211c3"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "50c85ab2-88a7-4b7c-8394-2571384a7ca9",
+      "at": "2026-11-07T13:31:11+00:00 @ 3b67843",
+      "until": "2026-11-07T17:35:22+00:00 @ 9e47587"
+    },
+    {
+      "rev": 2,
+      "value": "With the 27 act1-ironclad pack cards in both halves' offers (gauntlet.py --pack, headline setting, each against its own control --vary pack, n 500): heuristic 0.534 -> 0.428 (-0.106, se 0.029), one-turn net 0.680 -> 0.522 (-0.158, 0.028), product 0.834 -> 0.684 (-0.150, 0.025; train -0.172, held-out -0.128). Order holds; the product's lead over the one-turn net moves +0.008 (paired, se 0.033), so it holds. Drops beyond the heuristic's: product -0.044 (0.037), one-turn net -0.052 (0.037), leads only and alike for both depths. The loss is mostly diluted offers (about half as many original cards offered; loss falls with original cards offered) while the sim chooser takes 3.1-3.6 pack cards a sequence; worst holders are setup and exhaust cards (Feel No Pain, Burning Pact, True Grit, Berserk); deaths move to elites and bosses (product: Hexaghost 29 -> 60, Slime Boss 5 -> 18).",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "G1 re-rank read (0463, 0464, 0465)",
+          "sha256": "55c4794d5d567fe953cea06e6375e744bb71d2818d1bffb7c7554e89aa4489eb"
+        },
+        {
+          "path": "results/gauntlet/g1-heuristic-starter-simboss-pack-act1.json",
+          "sha256": "3fc67bd4885bd0bbb5267971333339e31baab0ce451fecd0bdb6eef86916291e"
+        },
+        {
+          "path": "results/gauntlet/g1-net1029-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "ba42cd59e277657c389c11eaf26f1925ce429d641121999b03bb21e5ac053b14"
+        },
+        {
+          "path": "results/gauntlet/g1-net1029-hpe0.01-two-line-step-starter-simboss-pack-act1.json",
+          "sha256": "9233ed2d0fc72505179a5a53bf8a2f872eab1bb05dc762c0687cd293b60a71dc"
+        },
+        {
+          "path": "jobs/done/0463-gauntlet.json",
+          "sha256": "27b881f8186a6b397a48bf3f5911d698048b1606bb492851fc51be446e75fb7d"
+        },
+        {
+          "path": "jobs/done/0464-gauntlet.json",
+          "sha256": "c8a0238c12887a94f13f878d45afd5a36a32c6c1c907fc2ab25d392d7a8ac689"
+        },
+        {
+          "path": "jobs/done/0465-gauntlet.json",
+          "sha256": "63aa40b18c8e3391b9a3824233db08560217d38e928719943b207a6873d211c3"
+        },
+        {
+          "path": "jobs/done/0466-gauntlet.json",
+          "sha256": "e9bd9897332666597082f226a882bbf7cbccaada778f6bae773b951a61130f66"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "44e90a22-d852-4690-bf34-f6fb10c5c34e",
+      "at": "2026-11-07T17:35:22+00:00 @ 9e47587",
+      "until": "2026-11-13T02:29:38+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "8b43f61b0c90c9101d46cf6d8e02754a17be6b0c00c94558997a7997287462ef"
+}

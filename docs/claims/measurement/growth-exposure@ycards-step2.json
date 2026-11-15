@@ -1,0 +1,163 @@
+{
+  "key": "measurement/growth-exposure@ycards-step2",
+  "rev": 4,
+  "value": "Step-2 Demon Form bursts' own rows on DF decks holding DF (elites+bosses): net-g1600 8.2%, two-g400 32.5%, heur-g400 51.9%; replay pool halves these. heur-g400 x3 @hpb0.01@tsl1 vs 10-29 @tsl1: DF decks -0.73 (0.87/1.06) HP, train -1.12: learned the first tick only, so exposure in a burst doesn't teach later ticks.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/player-growth-exposure.md",
+      "anchor": "Step 1: how often the step-2 Demon Form bursts held Demon Form (read 10:30 2026-11-10, lanes 6c4e3f06)",
+      "sha256": "1c30ab2bb6b7250f870b2419b0e1c6ab63c1dac4dd47ac74a342afbfc2f9cfc0"
+    },
+    {
+      "path": "docs/research/player-growth-exposure.md",
+      "anchor": "Step 1 read: heur-g400 @tsl1 fails (jobs 0784-0789, read 2026-11-10 14:00, lanes 74df2700)",
+      "sha256": "3d0fd2ca2eebea9c86a47ff2389108b1bae9cda97457ed0fee2db6de07d30249"
+    },
+    {
+      "key": "measurement/demon-form-games@tsl1",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:24+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Share of the step-2 Demon Form bursts' own training rows on Demon Form decks where the player held Demon Form (exact finetune sampling; all / elites / bosses; DF games where it was played): net-g1600 8.2% / 5.6% / 11.0%, played 11.3%; two-g400 32.5% / 16.3% / 48.2%, played 39.7%; heur-g400 51.9% / 40.4% / 63.3%, played 66.4%; no other deck holds it. Rows mix half and half with the replay pool, so all rows hold about half these shares. The net's own games were gated; the product's sit at the charter's one-third bar; the heuristic's had the gate open but were never read @tsl1.",
+      "sources": [
+        {
+          "path": "docs/research/player-growth-exposure.md",
+          "anchor": "Step 1: how often the step-2 Demon Form bursts held Demon Form (read 10:30 2026-11-10, lanes 6c4e3f06)",
+          "sha256": "1c30ab2bb6b7250f870b2419b0e1c6ab63c1dac4dd47ac74a342afbfc2f9cfc0"
+        },
+        {
+          "path": "scripts/analysis/power_exposure.py",
+          "sha256": "aae9bf5d8b865fda092ba6be5723fd44d49d41ae08c5d732cb9637b15a84f022"
+        },
+        {
+          "key": "measurement/demon-form-games@tsl1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/demon-form-games@cells",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "6c4e3f06-c41d-4abb-b9f9-60e6b5b502fd",
+      "at": "2026-11-10T03:20:20+00:00 @ 4056504",
+      "until": "2026-11-10T06:39:01+00:00 @ 38d0766"
+    },
+    {
+      "rev": 2,
+      "value": "Share of the step-2 Demon Form bursts' own training rows on Demon Form decks where the player held Demon Form (exact finetune sampling; all / elites / bosses; DF games where it was played): net-g1600 8.2% / 5.6% / 11.0%, played 11.3%; two-g400 32.5% / 16.3% / 48.2%, played 39.7%; heur-g400 51.9% / 40.4% / 63.3%, played 66.4%; no other deck holds it. Rows mix half and half with the replay pool, so all rows hold about half these shares. heur-g400's three nets @hpb0.01@tsl1, both cell books, against the 10-29 net @tsl1 (HP, se over sequences / nets): Demon Form decks -0.73 (0.87 / 1.06) (seeds -2.86, +0.46, +0.20), train -1.12 (0.42 / 0.75), other held-out -1.53; its plain-leaf +4.98 is the first tick. With the gate open in half the rows the burst learned the first tick only: exposure inside a burst does not teach later ticks.",
+      "sources": [
+        {
+          "path": "docs/research/player-growth-exposure.md",
+          "anchor": "Step 1: how often the step-2 Demon Form bursts held Demon Form (read 10:30 2026-11-10, lanes 6c4e3f06)",
+          "sha256": "1c30ab2bb6b7250f870b2419b0e1c6ab63c1dac4dd47ac74a342afbfc2f9cfc0"
+        },
+        {
+          "path": "docs/research/player-growth-exposure.md",
+          "anchor": "Step 1 read: heur-g400 @tsl1 fails (jobs 0784-0789, read 2026-11-10 14:00, lanes 74df2700)",
+          "sha256": "3d0fd2ca2eebea9c86a47ff2389108b1bae9cda97457ed0fee2db6de07d30249"
+        },
+        {
+          "path": "scripts/analysis/power_exposure.py",
+          "sha256": "aae9bf5d8b865fda092ba6be5723fd44d49d41ae08c5d732cb9637b15a84f022"
+        },
+        {
+          "path": "jobs/done/0784-gauntlet.json",
+          "sha256": "576b74116e2fd7785672e6a178fe9662c4f56cda8ac2aca16f282cfbd6ba9a6a"
+        },
+        {
+          "path": "jobs/done/0785-gauntlet.json",
+          "sha256": "c8cadf0a02ff3281c5a026526bdc3a8fb4ea19323385af814fa734e15d531707"
+        },
+        {
+          "path": "jobs/done/0786-gauntlet.json",
+          "sha256": "ad4bba08cf71fef1e7c59a1a9a62c5338c0b7bbebc396796f698459b227a3309"
+        },
+        {
+          "path": "jobs/done/0787-gauntlet.json",
+          "sha256": "cf0544133e73dd955dc828481beba9240899dd1b8958bc1059fd0f4f82d38a88"
+        },
+        {
+          "path": "jobs/done/0788-gauntlet.json",
+          "sha256": "2567864bd185c0c092becfba08ea915bd095d1a467d4411ada8920ed4c032b1a"
+        },
+        {
+          "path": "jobs/done/0789-gauntlet.json",
+          "sha256": "f7324c4f35a0fdd0dbc31e523198899d7c6692432e8a4de4f2e9687a23bf0d21"
+        },
+        {
+          "key": "measurement/demon-form-games@tsl1",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "74df2700-b05b-489b-8248-5f612242f8ed",
+      "at": "2026-11-10T06:39:01+00:00 @ 38d0766",
+      "until": "2026-11-10T12:12:37+00:00 @ 4f63f69"
+    },
+    {
+      "rev": 3,
+      "value": "Share of the step-2 Demon Form bursts' own training rows on Demon Form decks where the player held Demon Form (exact finetune sampling; elites and bosses together / elites / bosses, as power_exposure.py counted before 01a134b added hallways; DF games where it was played): net-g1600 8.2% / 5.6% / 11.0%, played 11.3%; two-g400 32.5% / 16.3% / 48.2%, played 39.7%; heur-g400 51.9% / 40.4% / 63.3%, played 66.4%; no other deck holds it. Rows mix half and half with the replay pool, so all rows hold about half these shares. heur-g400's three nets @hpb0.01@tsl1, both cell books, against the 10-29 net @tsl1 (HP, se over sequences / nets): Demon Form decks -0.73 (0.87 / 1.06) (seeds -2.86, +0.46, +0.20), train -1.12 (0.42 / 0.75), other held-out -1.53; its plain-leaf +4.98 is the first tick. With the gate open in half the rows the burst learned the first tick only: exposure inside a burst does not teach later ticks.",
+      "sources": [
+        {
+          "path": "docs/research/player-growth-exposure.md",
+          "anchor": "Step 1: how often the step-2 Demon Form bursts held Demon Form (read 10:30 2026-11-10, lanes 6c4e3f06)",
+          "sha256": "1c30ab2bb6b7250f870b2419b0e1c6ab63c1dac4dd47ac74a342afbfc2f9cfc0"
+        },
+        {
+          "path": "docs/research/player-growth-exposure.md",
+          "anchor": "Step 1 read: heur-g400 @tsl1 fails (jobs 0784-0789, read 2026-11-10 14:00, lanes 74df2700)",
+          "sha256": "3d0fd2ca2eebea9c86a47ff2389108b1bae9cda97457ed0fee2db6de07d30249"
+        },
+        {
+          "path": "scripts/analysis/power_exposure.py",
+          "sha256": "8f7af86ecf8f0099426b7287ad2bb1ed39377407a6a2795c3f3185bb0f2a431c"
+        },
+        {
+          "path": "jobs/done/0784-gauntlet.json",
+          "sha256": "576b74116e2fd7785672e6a178fe9662c4f56cda8ac2aca16f282cfbd6ba9a6a"
+        },
+        {
+          "path": "jobs/done/0785-gauntlet.json",
+          "sha256": "c8cadf0a02ff3281c5a026526bdc3a8fb4ea19323385af814fa734e15d531707"
+        },
+        {
+          "path": "jobs/done/0786-gauntlet.json",
+          "sha256": "ad4bba08cf71fef1e7c59a1a9a62c5338c0b7bbebc396796f698459b227a3309"
+        },
+        {
+          "path": "jobs/done/0787-gauntlet.json",
+          "sha256": "cf0544133e73dd955dc828481beba9240899dd1b8958bc1059fd0f4f82d38a88"
+        },
+        {
+          "path": "jobs/done/0788-gauntlet.json",
+          "sha256": "2567864bd185c0c092becfba08ea915bd095d1a467d4411ada8920ed4c032b1a"
+        },
+        {
+          "path": "jobs/done/0789-gauntlet.json",
+          "sha256": "f7324c4f35a0fdd0dbc31e523198899d7c6692432e8a4de4f2e9687a23bf0d21"
+        },
+        {
+          "key": "measurement/demon-form-games@tsl1",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "62b7a521-3221-4c6f-8916-214850efc667",
+      "at": "2026-11-10T12:12:37+00:00 @ 4f63f69",
+      "until": "2026-11-13T02:30:24+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "4eceee9679a5b9810825c7dac8027aef15153df389f852b570d628515fe327fa"
+}

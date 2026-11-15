@@ -1,0 +1,682 @@
+Strike
+  card cost=1 type_attack=1 targeted=1 is_strike=1 damage_single=6 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=6 hits_single=1
+Strike+
+  card cost=1 type_attack=1 targeted=1 is_strike=1 damage_single=9 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=9 hits_single=1
+Defend
+  card cost=1 type_skill=1 block=5
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=5
+Defend+
+  card cost=1 type_skill=1 block=8
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=8
+Bash
+  card cost=2 type_attack=1 targeted=1 damage_single=8 hits_single=1 apply_opponent_Vulnerable=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=8 hits_single=1 apply_opponent_Vulnerable=2
+Bash+
+  card cost=2 type_attack=1 targeted=1 damage_single=10 hits_single=1 apply_opponent_Vulnerable=3
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=10 hits_single=1 apply_opponent_Vulnerable=3
+Shrug It Off
+  card cost=1 type_skill=1 block=8 draw=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=8 draw=1
+Shrug It Off+
+  card cost=1 type_skill=1 block=11 draw=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=11 draw=1
+Wound
+  card type_status=1 unplayable=1
+Wound
+  card type_status=1 unplayable=1
+Anger
+  card type_attack=1 targeted=1 damage_single=6 hits_single=1 add_discard=1 added_damage=6
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=6 hits_single=1 add_discard=1 added_damage=6
+Anger+
+  card type_attack=1 targeted=1 damage_single=8 hits_single=1 add_discard=1 added_damage=8
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=8 hits_single=1 add_discard=1 added_damage=8
+Body Slam
+  card cost=1 type_attack=1 targeted=1 damage_from_block=1 expr_k=1 expr_q_block=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_from_block=1 expr_k=1 expr_q_block=1
+Body Slam+
+  card type_attack=1 targeted=1 damage_from_block=1 expr_k=1 expr_q_block=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_from_block=1 expr_k=1 expr_q_block=1
+Clash
+  card type_attack=1 targeted=1 damage_single=14 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=14 hits_single=1
+Clash+
+  card type_attack=1 targeted=1 damage_single=18 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=18 hits_single=1
+Cleave
+  card cost=1 type_attack=1 damage_all=8 hits_all=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_all=8 hits_all=1
+Cleave+
+  card cost=1 type_attack=1 damage_all=11 hits_all=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_all=11 hits_all=1
+Clothesline
+  card cost=2 type_attack=1 targeted=1 damage_single=12 hits_single=1 apply_opponent_Weak=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=12 hits_single=1 apply_opponent_Weak=2
+Clothesline+
+  card cost=2 type_attack=1 targeted=1 damage_single=14 hits_single=1 apply_opponent_Weak=3
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=14 hits_single=1 apply_opponent_Weak=3
+Iron Wave
+  card cost=1 type_attack=1 targeted=1 damage_single=5 hits_single=1 block=5
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=5 hits_single=1 block=5
+Iron Wave+
+  card cost=1 type_attack=1 targeted=1 damage_single=7 hits_single=1 block=7
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=7 hits_single=1 block=7
+Pommel Strike
+  card cost=1 type_attack=1 targeted=1 is_strike=1 damage_single=9 hits_single=1 draw=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=9 hits_single=1 draw=1
+Pommel Strike+
+  card cost=1 type_attack=1 targeted=1 is_strike=1 damage_single=10 hits_single=1 draw=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=10 hits_single=1 draw=2
+Thunderclap
+  card cost=1 type_attack=1 damage_all=4 hits_all=1 apply_all_Vulnerable=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_all=4 hits_all=1 apply_all_Vulnerable=1
+Thunderclap+
+  card cost=1 type_attack=1 damage_all=7 hits_all=1 apply_all_Vulnerable=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_all=7 hits_all=1 apply_all_Vulnerable=1
+Twin Strike
+  card cost=1 type_attack=1 targeted=1 is_strike=1 damage_single=10 hits_single=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=10 hits_single=2
+Twin Strike+
+  card cost=1 type_attack=1 targeted=1 is_strike=1 damage_single=14 hits_single=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=14 hits_single=2
+Wild Strike
+  card cost=1 type_attack=1 targeted=1 is_strike=1 damage_single=12 hits_single=1 add_draw=1 added_unplayable=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=12 hits_single=1 add_draw=1 added_unplayable=1
+Wild Strike+
+  card cost=1 type_attack=1 targeted=1 is_strike=1 damage_single=17 hits_single=1 add_draw=1 added_unplayable=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=17 hits_single=1 add_draw=1 added_unplayable=1
+Heavy Blade
+  card cost=2 type_attack=1 targeted=1 strength_mult_base=14 strength_mult=3 expr_base=14 expr_k=2 expr_q_strength=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 strength_mult_base=14 strength_mult=3 expr_base=14 expr_k=2 expr_q_strength=1
+Heavy Blade+
+  card cost=2 type_attack=1 targeted=1 strength_mult_base=14 strength_mult=5 expr_base=14 expr_k=4 expr_q_strength=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 strength_mult_base=14 strength_mult=5 expr_base=14 expr_k=4 expr_q_strength=1
+Perfected Strike
+  card cost=2 type_attack=1 targeted=1 is_strike=1 per_strike_base=6 per_strike=2 expr_base=6 expr_k=2 expr_q_strike=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 per_strike_base=6 per_strike=2 expr_base=6 expr_k=2 expr_q_strike=1
+Perfected Strike+
+  card cost=2 type_attack=1 targeted=1 is_strike=1 per_strike_base=6 per_strike=3 expr_base=6 expr_k=3 expr_q_strike=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 per_strike_base=6 per_strike=3 expr_base=6 expr_k=3 expr_q_strike=1
+Sword Boomerang
+  card cost=1 type_attack=1 damage_random=9 hits_random=3
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_random=9 hits_random=3
+Sword Boomerang+
+  card cost=1 type_attack=1 damage_random=12 hits_random=4
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_random=12 hits_random=4
+Bloodletting
+  card type_skill=1 energy=2 lose_hp=3
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 energy=2 lose_hp=3
+Bloodletting+
+  card type_skill=1 energy=3 lose_hp=3
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 energy=3 lose_hp=3
+Hemokinesis
+  card cost=1 type_attack=1 targeted=1 damage_single=15 hits_single=1 lose_hp=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=15 hits_single=1 lose_hp=2
+Hemokinesis+
+  card cost=1 type_attack=1 targeted=1 damage_single=20 hits_single=1 lose_hp=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=20 hits_single=1 lose_hp=2
+Pummel
+  card cost=1 type_attack=1 exhaust=1 targeted=1 damage_single=8 hits_single=4
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=8 hits_single=4
+Pummel+
+  card cost=1 type_attack=1 exhaust=1 targeted=1 damage_single=10 hits_single=5
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=10 hits_single=5
+Uppercut
+  card cost=2 type_attack=1 targeted=1 damage_single=13 hits_single=1 apply_opponent_Vulnerable=1 apply_opponent_Weak=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=13 hits_single=1 apply_opponent_Vulnerable=1 apply_opponent_Weak=1
+Uppercut+
+  card cost=2 type_attack=1 targeted=1 damage_single=13 hits_single=1 apply_opponent_Vulnerable=2 apply_opponent_Weak=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=13 hits_single=1 apply_opponent_Vulnerable=2 apply_opponent_Weak=2
+Inflame
+  card cost=1 type_power=1 apply_me_Strength=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_me_Strength=2
+Inflame+
+  card cost=1 type_power=1 apply_me_Strength=3
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_me_Strength=3
+Flex
+  card type_skill=1 apply_me_Strength=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_me_Strength=2
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 remove_self=1 apply_me_Strength=-2
+Flex+
+  card type_skill=1 apply_me_Strength=4
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_me_Strength=4
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 remove_self=1 apply_me_Strength=-4
+Carnage
+  card cost=2 type_attack=1 ethereal=1 targeted=1 damage_single=20 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=20 hits_single=1
+Carnage+
+  card cost=2 type_attack=1 ethereal=1 targeted=1 damage_single=28 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=28 hits_single=1
+Slimed
+  card cost=1 type_status=1 exhaust=1
+Slimed
+  card cost=1 type_status=1 exhaust=1
+Dazed
+  card type_status=1 unplayable=1 ethereal=1
+Dazed
+  card type_status=1 unplayable=1 ethereal=1
+Silent Strike
+  card cost=1 type_attack=1 targeted=1 is_strike=1 damage_single=6 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=6 hits_single=1
+Silent Strike+
+  card cost=1 type_attack=1 targeted=1 is_strike=1 damage_single=9 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=9 hits_single=1
+Silent Defend
+  card cost=1 type_skill=1 block=5
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=5
+Silent Defend+
+  card cost=1 type_skill=1 block=8
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=8
+Neutralize
+  card type_attack=1 targeted=1 damage_single=3 hits_single=1 apply_opponent_Weak=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=3 hits_single=1 apply_opponent_Weak=1
+Neutralize+
+  card type_attack=1 targeted=1 damage_single=4 hits_single=1 apply_opponent_Weak=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=4 hits_single=1 apply_opponent_Weak=2
+Sucker Punch
+  card cost=1 type_attack=1 targeted=1 damage_single=7 hits_single=1 apply_opponent_Weak=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=7 hits_single=1 apply_opponent_Weak=1
+Sucker Punch+
+  card cost=1 type_attack=1 targeted=1 damage_single=9 hits_single=1 apply_opponent_Weak=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=9 hits_single=1 apply_opponent_Weak=2
+Leg Sweep
+  card cost=2 type_skill=1 targeted=1 block=11 apply_opponent_Weak=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=11 apply_opponent_Weak=2
+Leg Sweep+
+  card cost=2 type_skill=1 targeted=1 block=14 apply_opponent_Weak=3
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=14 apply_opponent_Weak=3
+Quick Slash
+  card cost=1 type_attack=1 targeted=1 damage_single=8 hits_single=1 draw=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=8 hits_single=1 draw=1
+Quick Slash+
+  card cost=1 type_attack=1 targeted=1 damage_single=12 hits_single=1 draw=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=12 hits_single=1 draw=1
+Backflip
+  card cost=1 type_skill=1 block=5 draw=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=5 draw=2
+Backflip+
+  card cost=1 type_skill=1 block=8 draw=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=8 draw=2
+Deflect
+  card type_skill=1 block=4
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=4
+Deflect+
+  card type_skill=1 block=7
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=7
+Slice
+  card type_attack=1 targeted=1 damage_single=6 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=6 hits_single=1
+Slice+
+  card type_attack=1 targeted=1 damage_single=9 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=9 hits_single=1
+Dagger Spray
+  card cost=1 type_attack=1 damage_all=8 hits_all=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_all=8 hits_all=2
+Dagger Spray+
+  card cost=1 type_attack=1 damage_all=12 hits_all=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_all=12 hits_all=2
+Blade Dance
+  card cost=1 type_skill=1 added_damage=12 add_hand=3
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 added_damage=12 add_hand=3
+Blade Dance+
+  card cost=1 type_skill=1 added_damage=16 add_hand=4
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 added_damage=16 add_hand=4
+Cloak and Dagger
+  card cost=1 type_skill=1 block=6 added_damage=4 add_hand=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=6 added_damage=4 add_hand=1
+Cloak and Dagger+
+  card cost=1 type_skill=1 block=6 added_damage=8 add_hand=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=6 added_damage=8 add_hand=2
+Shiv
+  card type_attack=1 exhaust=1 targeted=1 damage_single=4 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=4 hits_single=1
+Shiv+
+  card type_attack=1 exhaust=1 targeted=1 damage_single=6 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=6 hits_single=1
+Deadly Poison
+  card cost=1 type_skill=1 targeted=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_opponent=1 lose_hp=5 reduce_self=1
+Deadly Poison+
+  card cost=1 type_skill=1 targeted=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_opponent=1 lose_hp=7 reduce_self=1
+Poisoned Stab
+  card cost=1 type_attack=1 targeted=1 damage_single=6 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=6 hits_single=1
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_opponent=1 lose_hp=3 reduce_self=1
+Poisoned Stab+
+  card cost=1 type_attack=1 targeted=1 damage_single=8 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=8 hits_single=1
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_opponent=1 lose_hp=4 reduce_self=1
+Bouncing Flask
+  card cost=2 type_skill=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_opponent=1 lose_hp=9 reduce_self=1
+Bouncing Flask+
+  card cost=2 type_skill=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_opponent=1 lose_hp=12 reduce_self=1
+Spot Weakness
+  card cost=1 type_skill=1 targeted=1 apply_me_Strength=3
+  row trigger_CardPlayed(Owner)=1 condition_TargetIntendsAttack=1 grant_own=1 apply_me_Strength=3
+Spot Weakness+
+  card cost=1 type_skill=1 targeted=1 apply_me_Strength=4
+  row trigger_CardPlayed(Owner)=1 condition_TargetIntendsAttack=1 grant_own=1 apply_me_Strength=4
+Dropkick
+  card cost=1 type_attack=1 targeted=1 damage_single=5 hits_single=1 draw=1 energy=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=5 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_TargetHas(Vulnerable)=1 grant_own=1 draw=1 energy=1
+Dropkick+
+  card cost=1 type_attack=1 targeted=1 damage_single=8 hits_single=1 draw=1 energy=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=8 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_TargetHas(Vulnerable)=1 grant_own=1 draw=1 energy=1
+Go for the Eyes
+  card type_attack=1 targeted=1 damage_single=3 hits_single=1 apply_opponent_Weak=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=3 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_TargetIntendsAttack=1 grant_own=1 apply_opponent_Weak=1
+Go for the Eyes+
+  card type_attack=1 targeted=1 damage_single=4 hits_single=1 apply_opponent_Weak=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=4 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_TargetIntendsAttack=1 grant_own=1 apply_opponent_Weak=2
+FTL
+  card type_attack=1 targeted=1 damage_single=5 hits_single=1 draw=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=5 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_CardsPlayedThisTurnBelow=1 condition_param=3 grant_own=1 draw=1
+FTL+
+  card type_attack=1 targeted=1 damage_single=6 hits_single=1 draw=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=6 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_CardsPlayedThisTurnBelow=1 condition_param=4 grant_own=1 draw=1
+Combust
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 lose_hp=1
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 damage_plain=5
+Combust+
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 lose_hp=1
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 damage_plain=7
+Brutality
+  card type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_me=1 draw=1 lose_hp=1
+Brutality+
+  card type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_me=1 draw=1 lose_hp=1
+Rupture
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerLostHp(Card)=1 condition_Always=1 grant_me=1 apply_me_Strength=1
+Rupture+
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerLostHp(Card)=1 condition_Always=1 grant_me=1 apply_me_Strength=2
+Metallicize
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 block=3
+Metallicize+
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 block=4
+Demon Form
+  card cost=3 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_me=1 apply_me_Strength=2
+Demon Form+
+  card cost=3 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_me=1 apply_me_Strength=3
+Rage
+  card type_skill=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_CardPlayed(Owner)=1 condition_CardType(Attack)=1 grant_me=1 block=3
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 remove_self=1
+Rage+
+  card type_skill=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_CardPlayed(Owner)=1 condition_CardType(Attack)=1 grant_me=1 block=5
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 remove_self=1
+Burn
+  card type_status=1 unplayable=1 damage_plain_self=2
+  held trigger_OwnerTurnEnd=1 condition_Always=1 grant_own=1 damage_plain_self=2
+Burn+
+  card type_status=1 unplayable=1 damage_plain_self=4
+  held trigger_OwnerTurnEnd=1 condition_Always=1 grant_own=1 damage_plain_self=4
+Whirlwind
+  card type_attack=1 x_cost=1 expr_k=5 expr_q_energy=1 expr_all=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 expr_k=5 expr_q_energy=1 expr_all=1
+Whirlwind+
+  card type_attack=1 x_cost=1 expr_k=8 expr_q_energy=1 expr_all=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 expr_k=8 expr_q_energy=1 expr_all=1
+Accuracy
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+Accuracy+
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+Wraith Form
+  card cost=3 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 apply_me_Dexterity=-1
+Wraith Form+
+  card cost=3 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 apply_me_Dexterity=-1
+Caltrops
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerAttacked=1 condition_Always=1 grant_me=1 damage_plain=3
+Caltrops+
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerAttacked=1 condition_Always=1 grant_me=1 damage_plain=5
+Survivor
+  card cost=1 type_skill=1 block=8 pick_discard=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=8 pick_discard=1
+Survivor+
+  card cost=1 type_skill=1 block=11 pick_discard=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=11 pick_discard=1
+Burst
+  card cost=1 type_skill=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerPlaysCard=1 condition_CardType(Skill)=1 grant_me=1 reduce_self=1 replay=1
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 remove_self=1
+Burst+
+  card cost=1 type_skill=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerPlaysCard=1 condition_CardType(Skill)=1 grant_me=1 reduce_self=1 replay=1
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 remove_self=1
+Hologram
+  card cost=1 type_skill=1 exhaust=1 block=3 pick_return=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=3 pick_return=1
+Hologram+
+  card cost=1 type_skill=1 block=5 pick_return=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=5 pick_return=1
+Headbutt
+  card cost=1 type_attack=1 targeted=1 damage_single=9 hits_single=1 pick_to_top=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=9 hits_single=1 pick_to_top=1
+Headbutt+
+  card cost=1 type_attack=1 targeted=1 damage_single=12 hits_single=1 pick_to_top=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=12 hits_single=1 pick_to_top=1
+Rampage
+  card cost=1 type_attack=1 targeted=1 damage_single=8 hits_single=1 grow_damage=5
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=8 hits_single=1 grow_damage=5
+Rampage+
+  card cost=1 type_attack=1 targeted=1 damage_single=8 hits_single=1 grow_damage=8
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=8 hits_single=1 grow_damage=8
+Protect
+  card cost=2 type_skill=1 retain=1 block=12
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=12
+Protect+
+  card cost=2 type_skill=1 retain=1 block=16
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=16
+gen:Dual Wield
+  card cost=1 type_skill=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+gen:Juggernaut
+  card cost=2 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerGainedBlock=1 condition_Always=1 grant_me=1 damage_plain=5
+gen:Battle Trance
+  card type_skill=1 draw=3
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 draw=3
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 remove_self=1
+gen:Disarm
+  card cost=1 type_skill=1 exhaust=1 targeted=1 apply_opponent_Strength=-2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_opponent_Strength=-2
+gen:Flame Barrier
+  card cost=2 type_skill=1 block=12
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=12
+  row trigger_OwnerAttacked=1 condition_Always=1 grant_me=1 damage_plain=4
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_me=1 remove_self=1
+gen:Ghostly Armor
+  card cost=1 type_skill=1 ethereal=1 block=10
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=10
+gen:Intimidate
+  card type_skill=1 exhaust=1 apply_all_Weak=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_all_Weak=1
+gen:Power Through
+  card cost=1 type_skill=1 block=15 added_unplayable=2 add_hand=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=15 added_unplayable=2 add_hand=2
+gen:Reckless Charge
+  card type_attack=1 targeted=1 damage_single=7 hits_single=1 add_draw=1 added_unplayable=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=7 hits_single=1 add_draw=1 added_unplayable=1
+gen:Searing Blow
+  card cost=2 type_attack=1 targeted=1 damage_single=12 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=12 hits_single=1
+gen:Infernal Blade
+  card cost=1 type_skill=1 exhaust=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+gen:Seeing Red
+  card cost=1 type_skill=1 exhaust=1 energy=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 energy=2
+gen:Shockwave
+  card cost=2 type_skill=1 exhaust=1 apply_all_Vulnerable=3 apply_all_Weak=3
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_all_Vulnerable=3 apply_all_Weak=3
+gen:Berserk
+  card type_power=1 apply_me_Vulnerable=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_me_Vulnerable=2
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_me=1 energy=1
+gen:Bludgeon
+  card cost=3 type_attack=1 targeted=1 damage_single=32 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=32 hits_single=1
+gen:Double Tap
+  card cost=1 type_skill=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerPlaysCard=1 condition_CardType(Attack)=1 grant_me=1 reduce_self=1 replay=1
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 remove_self=1
+gen:Feed
+  card cost=1 type_attack=1 exhaust=1 targeted=1 damage_single=10 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=10 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_TargetDied=1 grant_own=1
+gen:Reaper
+  card cost=2 type_attack=1 exhaust=1 damage_all=4 hits_all=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_all=4 hits_all=1
+gen:Immolate
+  card cost=2 type_attack=1 damage_all=21 hits_all=1 add_discard=1 added_unplayable=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_all=21 hits_all=1 add_discard=1 added_unplayable=1
+gen:Impervious
+  card cost=2 type_skill=1 exhaust=1 block=30
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=30
+gen:Offering
+  card type_skill=1 exhaust=1 draw=3 energy=2 lose_hp=6
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 draw=3 energy=2 lose_hp=6
+gen:True Grit
+  card cost=1 type_skill=1 block=7 exhaust_random=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=7 exhaust_random=1
+gen:True Grit+
+  card cost=1 type_skill=1 block=9 pick_exhaust=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=9 pick_exhaust=1
+gen:Burning Pact
+  card cost=1 type_skill=1 draw=2 pick_exhaust=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 draw=2 pick_exhaust=1
+gen:Second Wind
+  card cost=1 type_skill=1 exhaust_hand=0.5 block_per_card=5
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 exhaust_hand=0.5 block_per_card=5
+gen:Sever Soul
+  card cost=2 type_attack=1 targeted=1 damage_single=16 hits_single=1 exhaust_hand=0.5
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=16 hits_single=1 exhaust_hand=0.5
+gen:Fiend Fire
+  card cost=2 type_attack=1 exhaust=1 targeted=1 expr_k=7 exhaust_hand=1 expr_q_hand=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 expr_k=7 exhaust_hand=1 expr_q_hand=1
+gen:Exhume
+  card cost=1 type_skill=1 exhaust=1 pick_return_exhaust=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 pick_return_exhaust=1
+gen:Dark Embrace
+  card cost=2 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_CardExhausted=1 condition_Always=1 grant_me=1 draw=1
+gen:Feel No Pain
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_CardExhausted=1 condition_Always=1 grant_me=1 block=3
+gen:Sentinel
+  card cost=1 type_skill=1 block=5 energy=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=5
+  held trigger_CardExhausted=1 condition_Always=1 grant_own=1 energy=2
+gen:Evolve
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_CardDrawn=1 condition_CardType(Status)=1 grant_me=1 draw=1
+gen:Fire Breathing
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_CardDrawn=1 condition_CardType(Status)=1 grant_me=1 damage_plain=6
+gen:Entrench
+  card cost=2 type_skill=1 block_of_k=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block_of_k=1
+gen:Limit Break
+  card cost=1 type_skill=1 exhaust=1 apply_of_k=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_of_k=1
+gen:Blood for Blood
+  card cost=4 type_attack=1 targeted=1 cost_less_per_hp_loss=1 damage_single=18 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=18 hits_single=1
+gen:Barricade
+  card cost=3 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+gen:Corruption
+  card cost=3 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+gen:Havoc
+  card cost=1 type_skill=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+gen:Warcry
+  card type_skill=1 exhaust=1 draw=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 draw=1
+gen:Armaments
+  card cost=1 type_skill=1 block=5 pick_upgrade=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=5 pick_upgrade=1
+gen:Armaments+
+  card cost=1 type_skill=1 block=5 upgrade_hand=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=5 upgrade_hand=1
+gen:Dual Wield+
+  card cost=1 type_skill=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+gen:Juggernaut+
+  card cost=2 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerGainedBlock=1 condition_Always=1 grant_me=1 damage_plain=7
+gen:Battle Trance+
+  card type_skill=1 draw=4
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 draw=4
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 remove_self=1
+gen:Disarm+
+  card cost=1 type_skill=1 exhaust=1 targeted=1 apply_opponent_Strength=-3
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_opponent_Strength=-3
+gen:Flame Barrier+
+  card cost=2 type_skill=1 block=16
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=16
+  row trigger_OwnerAttacked=1 condition_Always=1 grant_me=1 damage_plain=6
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_me=1 remove_self=1
+gen:Ghostly Armor+
+  card cost=1 type_skill=1 ethereal=1 block=13
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=13
+gen:Intimidate+
+  card type_skill=1 exhaust=1 apply_all_Weak=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_all_Weak=2
+gen:Power Through+
+  card cost=1 type_skill=1 block=20 added_unplayable=2 add_hand=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=20 added_unplayable=2 add_hand=2
+gen:Reckless Charge+
+  card type_attack=1 targeted=1 damage_single=10 hits_single=1 add_draw=1 added_unplayable=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=10 hits_single=1 add_draw=1 added_unplayable=1
+gen:Searing Blow+
+  card cost=2 type_attack=1 targeted=1 damage_single=16 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=16 hits_single=1
+gen:Infernal Blade+
+  card type_skill=1 exhaust=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+gen:Seeing Red+
+  card type_skill=1 exhaust=1 energy=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 energy=2
+gen:Shockwave+
+  card cost=2 type_skill=1 exhaust=1 apply_all_Vulnerable=5 apply_all_Weak=5
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_all_Vulnerable=5 apply_all_Weak=5
+gen:Berserk+
+  card type_power=1 apply_me_Vulnerable=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_me_Vulnerable=1
+  row trigger_OwnerTurnStart=1 condition_Always=1 grant_me=1 energy=1
+gen:Bludgeon+
+  card cost=3 type_attack=1 targeted=1 damage_single=42 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=42 hits_single=1
+gen:Double Tap+
+  card cost=1 type_skill=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_OwnerPlaysCard=1 condition_CardType(Attack)=1 grant_me=1 reduce_self=1 replay=1
+  row trigger_OwnerTurnEnd=1 condition_Always=1 grant_me=1 remove_self=1
+gen:Feed+
+  card cost=1 type_attack=1 exhaust=1 targeted=1 damage_single=12 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=12 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_TargetDied=1 grant_own=1
+gen:Reaper+
+  card cost=2 type_attack=1 exhaust=1 damage_all=5 hits_all=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_all=5 hits_all=1
+gen:Immolate+
+  card cost=2 type_attack=1 damage_all=28 hits_all=1 add_discard=1 added_unplayable=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_all=28 hits_all=1 add_discard=1 added_unplayable=1
+gen:Impervious+
+  card cost=2 type_skill=1 exhaust=1 block=40
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=40
+gen:Offering+
+  card type_skill=1 exhaust=1 draw=5 energy=2 lose_hp=6
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 draw=5 energy=2 lose_hp=6
+gen:Burning Pact+
+  card cost=1 type_skill=1 draw=3 pick_exhaust=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 draw=3 pick_exhaust=1
+gen:Second Wind+
+  card cost=1 type_skill=1 exhaust_hand=0.5 block_per_card=7
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 exhaust_hand=0.5 block_per_card=7
+gen:Sever Soul+
+  card cost=2 type_attack=1 targeted=1 damage_single=22 hits_single=1 exhaust_hand=0.5
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=22 hits_single=1 exhaust_hand=0.5
+gen:Fiend Fire+
+  card cost=2 type_attack=1 exhaust=1 targeted=1 expr_k=10 exhaust_hand=1 expr_q_hand=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 expr_k=10 exhaust_hand=1 expr_q_hand=1
+gen:Exhume+
+  card type_skill=1 exhaust=1 pick_return_exhaust=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 pick_return_exhaust=1
+gen:Dark Embrace+
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_CardExhausted=1 condition_Always=1 grant_me=1 draw=1
+gen:Feel No Pain+
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_CardExhausted=1 condition_Always=1 grant_me=1 block=4
+gen:Sentinel+
+  card cost=1 type_skill=1 block=8 energy=3
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block=8
+  held trigger_CardExhausted=1 condition_Always=1 grant_own=1 energy=3
+gen:Evolve+
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_CardDrawn=1 condition_CardType(Status)=1 grant_me=1 draw=2
+gen:Fire Breathing+
+  card cost=1 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+  row trigger_CardDrawn=1 condition_CardType(Status)=1 grant_me=1 damage_plain=10
+gen:Entrench+
+  card cost=1 type_skill=1 block_of_k=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 block_of_k=1
+gen:Limit Break+
+  card cost=1 type_skill=1 apply_of_k=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 apply_of_k=1
+gen:Blood for Blood+
+  card cost=3 type_attack=1 targeted=1 cost_less_per_hp_loss=1 damage_single=22 hits_single=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 damage_single=22 hits_single=1
+gen:Barricade+
+  card cost=2 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+gen:Corruption+
+  card cost=2 type_power=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+gen:Havoc+
+  card type_skill=1
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1
+gen:Warcry+
+  card type_skill=1 exhaust=1 draw=2
+  row trigger_CardPlayed(Owner)=1 condition_Always=1 grant_own=1 draw=2

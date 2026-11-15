@@ -1,0 +1,89 @@
+{
+  "key": "measurement/genpack-transfer@two-turn-seed1",
+  "rev": 1,
+  "value": "Two turns deep (the product's flags: --two-turn --line-seed --step-line), 6 old held-out generated rows, official elite starts x 2 seeds: the product (10-29 net @hpe0.01) pays a held-out pooled novelty cost of +1.46 (0.33) HP over 200 starts (one turn deep the 10-29 net pays about 4.2: the second turn prices about two thirds); on the first 67 starts +2.05 (0.59), and the generated-pack seed-1 net +0.27 (0.53): gain +1.77 (0.48) HP, cut 0.87 (se 0.23), at the go bar (cut - 2 se 0.399); 0.51 (0.17) without AttackLoss-Weak; parents -0.10 (0.41) HP. Lead (one seed); seeds 101 and 201 (0929, 0930) decide.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Step 1, seed-1 cut (job 0928, results/mutate/gpd-gp1.json; 0908 killed, see decisions)",
+      "sha256": "0b9fc837bdc3482e0e19e83d53d429847ff5911b7ee313defd04569015ff8c6b"
+    },
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Step 1, the product's own cost (job 0907, results/mutate/gpd-product.json)",
+      "sha256": "bad35dc8ecbc0d4620f78243ee9898cd9765bd34aab85c06b19d667bf4565d89"
+    },
+    {
+      "path": "results/mutate/gpd-product.json",
+      "sha256": "e7937e093f082dd3d2c21db1fecfdda0fd4c3fdc106e1150653a7234466f66d6"
+    },
+    {
+      "path": "results/mutate/gpd-gp1.json",
+      "sha256": "5a8be25ccdf735159328fb5c40a99a797f92f914677e5a0ded9cb346373dc9c5"
+    },
+    {
+      "path": "jobs/done/0907-mutate-monsters.json",
+      "sha256": "c56463fca597c88f5419e87f46eaf778c14092523d575bfb114b157fa51a907a"
+    },
+    {
+      "path": "jobs/done/0928-mutate-monsters.json",
+      "sha256": "eb4f6144f2bf23bce2f9bda4b2848a592575f60555af2a596c54f64c3eba6e65"
+    },
+    {
+      "key": "product/net",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "d3f741ca-584b-4cf4-9328-8a251465b107",
+  "at": "2026-11-12T05:35:12+00:00 @ b1d5f78",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Two turns deep (the product's flags: --two-turn --line-seed --step-line), 6 old held-out generated rows, official elite starts x 2 seeds: the product (10-29 net @hpe0.01) pays a held-out pooled novelty cost of +1.46 (0.33) HP over 200 starts (one turn deep the 10-29 net pays about 4.2: the second turn prices about two thirds); on the first 67 starts +2.05 (0.59), and the generated-pack seed-1 net +0.27 (0.53): gain +1.77 (0.48) HP, cut 0.87 (se 0.23), at the go bar (cut - 2 se 0.399); 0.51 (0.17) without AttackLoss-Weak; parents -0.10 (0.41) HP. Lead (one seed); seeds 101 and 201 (0929, 0930) decide.",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Step 1, seed-1 cut (job 0928, results/mutate/gpd-gp1.json; 0908 killed, see decisions)",
+          "sha256": "0b9fc837bdc3482e0e19e83d53d429847ff5911b7ee313defd04569015ff8c6b"
+        },
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Step 1, the product's own cost (job 0907, results/mutate/gpd-product.json)",
+          "sha256": "bad35dc8ecbc0d4620f78243ee9898cd9765bd34aab85c06b19d667bf4565d89"
+        },
+        {
+          "path": "results/mutate/gpd-product.json",
+          "sha256": "e7937e093f082dd3d2c21db1fecfdda0fd4c3fdc106e1150653a7234466f66d6"
+        },
+        {
+          "path": "results/mutate/gpd-gp1.json",
+          "sha256": "5a8be25ccdf735159328fb5c40a99a797f92f914677e5a0ded9cb346373dc9c5"
+        },
+        {
+          "path": "jobs/done/0907-mutate-monsters.json",
+          "sha256": "c56463fca597c88f5419e87f46eaf778c14092523d575bfb114b157fa51a907a"
+        },
+        {
+          "path": "jobs/done/0928-mutate-monsters.json",
+          "sha256": "eb4f6144f2bf23bce2f9bda4b2848a592575f60555af2a596c54f64c3eba6e65"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "d3f741ca-584b-4cf4-9328-8a251465b107",
+      "at": "2026-11-12T05:35:12+00:00 @ b1d5f78",
+      "until": "2026-11-12T05:35:29+00:00 @ b1d5f78",
+      "retired": "folded into lane/genpack-product-depth/step (STATUS.md cap); the verdict goes to measurement/genpack-transfer@two-turn"
+    }
+  ],
+  "seal": "55c59f458991eb9b9e5908dbfd78b372da1aa3f813da582dde5663de2bb9a347"
+}

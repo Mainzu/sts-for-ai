@@ -1,0 +1,105 @@
+{
+  "key": "measurement/genpack-yardstick@wide-s1",
+  "rev": 1,
+  "value": "Owner's yardstick (stage A modifiers on official elites, 675 starts x 2 seeds, @tsl1 one turn deep; novelty cost = net's edge over the heuristic on the parent minus on the modifier, end HP): the wide generated-pack net (widepack40k s1) pooled over sharp2, thorns2, ritual2, weakhit1 +0.92 (0.19) HP against pack-net-scratch s1 +4.03 (0.28) and the 10-29 net +3.41 (0.25), wide - pns1 -3.11 (0.26), wins +0.003 vs +0.058; sharp2 repaired (-0.28 vs +6.73), thorns2 not (+4.20, level with the 10-29 net's +4.92 on every elite; Thorns is on Attacked, the trigger the wide pack holds out whole, and GE-Attacked-Damage is the grid row it cuts least, +2.34); str2 and hp1.25 level for all three; the wide net's parent edge -0.72 (0.27) HP, 0.63 below pns1 and 1.91 below the 10-29 net. One training seed: a lead.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/genpack-yardstick.md",
+      "anchor": "Read (navigator, 2026-11-12)",
+      "sha256": "bffd92b32b4fa85069da68687a76ef45ed723d5725c14fb369ae39ef12d37795"
+    },
+    {
+      "path": "docs/research/genpack-yardstick.md",
+      "anchor": "Why (per encounter and per grid row)",
+      "sha256": "b39018d4e62a4a2479478c11aa28557b00936c7e36f7616a2c956f5f0379e1a8"
+    },
+    {
+      "path": "results/mutate/yard-wide-tsl1.json",
+      "sha256": "33dcd90b55aa6d806ca2af3be0d9251c875234e873c8ef356bd9b0882a098409"
+    },
+    {
+      "path": "results/mutate/yard-pns1-tsl1.json",
+      "sha256": "897e8133e6022a6b5a42116bb1c3a4d1d479ea470a0d0a00482dcdfb17a06c03"
+    },
+    {
+      "path": "results/mutate/yard-n1029-tsl1.json",
+      "sha256": "4929b896034bd39636560cfe36da2b0a7abcbad280714d3cdaed61e4afb4f926"
+    },
+    {
+      "path": "jobs/done/0931-mutate-monsters.json",
+      "sha256": "ed3990f59d0b644b673127e63b45fd20a099d045089be738cec5a8905eba21fe"
+    },
+    {
+      "path": "jobs/done/0932-mutate-monsters.json",
+      "sha256": "58a269d4f73ddc090dac1a9480a38b39b16ef294948de231bbaa6f894d862f1b"
+    },
+    {
+      "path": "jobs/done/0933-mutate-monsters.json",
+      "sha256": "cc26bd2665a4fe52f1631584b6cee70b43acbe20ebf31e1f94164e6ec28eac2c"
+    },
+    {
+      "key": "decision/goal1-yardstick",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "1ec59987-d1e7-4821-ae13-fbedea71c3f8",
+  "at": "2026-11-12T12:35:45+00:00 @ c570745",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Owner's yardstick (stage A modifiers on official elites, 675 starts x 2 seeds, @tsl1 one turn deep; novelty cost = net's edge over the heuristic on the parent minus on the modifier, end HP): the wide generated-pack net (widepack40k s1) pooled over sharp2, thorns2, ritual2, weakhit1 +0.92 (0.19) HP against pack-net-scratch s1 +4.03 (0.28) and the 10-29 net +3.41 (0.25), wide - pns1 -3.11 (0.26), wins +0.003 vs +0.058; sharp2 repaired (-0.28 vs +6.73), thorns2 not (+4.20, level with the 10-29 net's +4.92 on every elite; Thorns is on Attacked, the trigger the wide pack holds out whole, and GE-Attacked-Damage is the grid row it cuts least, +2.34); str2 and hp1.25 level for all three; the wide net's parent edge -0.72 (0.27) HP, 0.63 below pns1 and 1.91 below the 10-29 net. One training seed: a lead.",
+      "sources": [
+        {
+          "path": "docs/research/genpack-yardstick.md",
+          "anchor": "Read (navigator, 2026-11-12)",
+          "sha256": "bffd92b32b4fa85069da68687a76ef45ed723d5725c14fb369ae39ef12d37795"
+        },
+        {
+          "path": "docs/research/genpack-yardstick.md",
+          "anchor": "Why (per encounter and per grid row)",
+          "sha256": "b39018d4e62a4a2479478c11aa28557b00936c7e36f7616a2c956f5f0379e1a8"
+        },
+        {
+          "path": "results/mutate/yard-wide-tsl1.json",
+          "sha256": "33dcd90b55aa6d806ca2af3be0d9251c875234e873c8ef356bd9b0882a098409"
+        },
+        {
+          "path": "results/mutate/yard-pns1-tsl1.json",
+          "sha256": "897e8133e6022a6b5a42116bb1c3a4d1d479ea470a0d0a00482dcdfb17a06c03"
+        },
+        {
+          "path": "results/mutate/yard-n1029-tsl1.json",
+          "sha256": "4929b896034bd39636560cfe36da2b0a7abcbad280714d3cdaed61e4afb4f926"
+        },
+        {
+          "path": "jobs/done/0931-mutate-monsters.json",
+          "sha256": "ed3990f59d0b644b673127e63b45fd20a099d045089be738cec5a8905eba21fe"
+        },
+        {
+          "path": "jobs/done/0932-mutate-monsters.json",
+          "sha256": "58a269d4f73ddc090dac1a9480a38b39b16ef294948de231bbaa6f894d862f1b"
+        },
+        {
+          "path": "jobs/done/0933-mutate-monsters.json",
+          "sha256": "cc26bd2665a4fe52f1631584b6cee70b43acbe20ebf31e1f94164e6ec28eac2c"
+        },
+        {
+          "key": "decision/goal1-yardstick",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "1ec59987-d1e7-4821-ae13-fbedea71c3f8",
+      "at": "2026-11-12T12:35:45+00:00 @ c570745",
+      "until": "2026-11-12T16:01:19+00:00 @ 0ee4d27",
+      "retired": "merged into measurement/genpack-yardstick@18-seeds (STATUS cap), which quotes its numbers"
+    }
+  ],
+  "seal": "60e913a6da6a622f460d5d1420060db569e5586f8995464968701cd167633542"
+}

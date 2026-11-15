@@ -1,0 +1,74 @@
+{
+  "key": "measurement/pack-pick-split@headline",
+  "rev": 2,
+  "value": "Act 1 pack with --pack-picks originals, headline n 500: heuristic 0.304 clears (pack 0.428, plain 0.534), one-turn 10-29 0.382 (pack 0.522, plain 0.680); barring lost 0.124/0.140 more than the pack, share recovered -1.17/-0.89. Drop is dilution; pack picks are worth 0.12-0.14 clears.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/act1-inventory.md",
+      "anchor": "Pack-pick split read (0627-0630, lane pack-pick-split)",
+      "sha256": "92a57d4a9911c5475ae15a401b6c7f98b12abba4e7dbaa71cc99fb3d4ce4801d"
+    },
+    {
+      "key": "measurement/act1-cards@pack-offers",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:44+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Act 1 pack offered with --pack-picks originals (chooser takes only original cards or skips), headline setting, n 500: heuristic 0.304 clears (pack 0.428, plain 0.534; vs pack -0.124 se 0.025), one-turn net @hpb0.01 0.382 (pack 0.522, plain 0.680; vs pack -0.140 se 0.027); share of the pack drop recovered -1.17 and -0.89. Barred, the chooser takes ~2 fewer cards a sequence (6.0-6.3 vs 7.9-8.2) and the extra deaths sit at the floor-9 elites (Lagavulin, Sentries, Nob), bosses barely move: the pack drop is dilution, and the pack cards the sim chooser takes are worth 0.12-0.14 clears against its alternatives.",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Pack-pick split read (0627-0630, lane pack-pick-split)",
+          "sha256": "92a57d4a9911c5475ae15a401b6c7f98b12abba4e7dbaa71cc99fb3d4ce4801d"
+        },
+        {
+          "path": "results/gauntlet/pps-heuristic-starter-simboss-pack-act1-orig.json",
+          "sha256": "78ebf8025ec9bf0f508efb492d441a7fdd73c032fac6f1ef5360789861be85b5"
+        },
+        {
+          "path": "results/gauntlet/pps-net1029-hpb0.01-starter-simboss-pack-act1-orig.json",
+          "sha256": "9770cd920c34e892ea3373032665bb1a08403efd6cc767f1fc359e8bb5cac4c5"
+        },
+        {
+          "path": "jobs/done/0627-gauntlet.json",
+          "sha256": "b24d8bc6fa69021b3ff97c41d5908c3c024934a488c748bb2c43997033579a15"
+        },
+        {
+          "path": "jobs/done/0628-gauntlet.json",
+          "sha256": "2025d56f078dd6eb86532243e0fa1380a1686abf9ad083149db359f9f6568188"
+        },
+        {
+          "path": "jobs/done/0629-gauntlet.json",
+          "sha256": "adbb5c7e0b8e9ad4e6078566223a2c9d1925be7640fd77c4b460e22a649730d4"
+        },
+        {
+          "path": "jobs/done/0630-gauntlet.json",
+          "sha256": "ae104bfe3836cd9fb9914b82ff1ceb2b8ed914da868d7620c60b651eaaede4c9"
+        },
+        {
+          "key": "measurement/act1-cards@pack-offers",
+          "rev": 2
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "aea48cb6-f099-47f2-b2ee-3b82d159bb02",
+      "at": "2026-11-08T16:42:30+00:00 @ c17bb33",
+      "until": "2026-11-13T02:30:44+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "d7ede4b768e1422469a0124b78189536adc864545689e729538d84e11936cd86"
+}

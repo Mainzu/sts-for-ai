@@ -1,0 +1,26 @@
+{
+  "key": "measurement/burst-official@matched-headline",
+  "rev": 1,
+  "value": "SharpHide->stage B net on the headline with matched decks (0198), one turn: +2.47 (0.53) HP, clears +0.040 (0.016); one seed.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Burst nets on the held-out cell book: the SharpHide-then-stage-B net keeps its gain on sequences 500-999 (+2.27 (0.47) paired end-HP, against +2.36 (0.46) on 0-499) and carries it to the headline setting with matched decks (+2.47 (0.53), clears +0.040 (0.016)); the seed-2 SharpHide burst loses -1.56 (0.48) there (burst-official steps 1-2; 0192-0198; read 23:15 2026-11-05, lanes 4e7486ad)",
+      "sha256": "5e9c70c81e6d27d6617f0ffa8569741e645bd6c13f7f9eb36da70dc3bcf73623"
+    },
+    {
+      "path": "jobs/done/0198-gauntlet.json",
+      "sha256": "4d0e42925e7ddec80d1159afe11c1094971f47d52802a4a09dcc66a927b20048"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:31+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "b0f37cf5ad971642831414ed98c84b28c6511c4458163753897d1e2eccd1e705"
+}

@@ -1,0 +1,63 @@
+{
+ "name": "gbb-gp1-g11",
+ "lane": "genpack-burst-base",
+ "about": "genpack-burst-base step 2, 11-game arm (lane/genpack-burst-base): joint bursts from the generated-pack seed-1 net on GE-OppCard-Artifact and GE-Attacked-Wound (11 games each, all three elites, played @tsl1, replay share 0.9), three seeds; read @tsl1 one turn deep on both rows and the parent, 1000 starts x 4 seeds. The table scores GE-OppCard-Artifact against this base's zero-shot file (control: the parent fight); the cross-base comparison, Wound and the pooled cut are read by hand (genpack-burst-base results doc).",
+ "parent": "runs/2026-11-10-genpack40k-s1-r1-acf5102/model.pt",
+ "arms": {
+  "net-g11-sh9": [
+   "configs/gbb-gp1-g11-sh9-s1.json",
+   "configs/gbb-gp1-g11-sh9-s2.json",
+   "configs/gbb-gp1-g11-sh9-s3.json"
+  ]
+ },
+ "burst": {
+  "threads": 4,
+  "mem_gb": 2.0,
+  "estimate_min": 6
+ },
+ "reads": {
+  "rows": {
+   "cmd": [
+    "scripts/analysis/mutate_monsters.py",
+    "play",
+    "--starts",
+    "1000",
+    "--groups",
+    "elite",
+    "--seeds",
+    "4",
+    "--players",
+    "one",
+    "--net",
+    "{net}@tsl1",
+    "--mods",
+    "GE-OppCard-Artifact,GE-Attacked-Wound",
+    "--threads",
+    "3",
+    "--out",
+    "results/mutate/gbb-{run}.json"
+   ],
+   "threads": 3,
+   "mem_gb": 1.5,
+   "estimate_min": 12
+  }
+ },
+ "table": {
+  "kind": "gen",
+  "book": "rows",
+  "base": "results/mutate/gen-wide-gp1-tsl1.json",
+  "mechanic": "GE-OppCard-Artifact",
+  "control": "parent",
+  "seeds": 4,
+  "encounters": [
+   "gremlin_nob",
+   "lagavulin",
+   "three_sentries"
+  ],
+  "min_starts": 200,
+  "rule": {
+   "share": 0.5,
+   "min_se": 2.0
+  }
+ }
+}

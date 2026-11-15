@@ -1,0 +1,93 @@
+{
+  "key": "measurement/burst-official@own-picks",
+  "rev": 3,
+  "value": "SharpHide->stage B net with own picks, headline one turn vs controls: 0-499 +2.00 (0.98) HP, 500-999 +0.18 (0.96); pooled 1000 +1.09 (0.69), z 1.59, clears +0.006 (0.017): the matched fighting gain (+2.3-2.5) reaches own-pick play at about half; one seed.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Burst net with its own picks on the confirm book: +0.18 (0.96) paired end-HP, clears -0.022 (0.025); pooled with step 3 over 1000 sequences +1.09 (0.69), z 1.59, under 2 se, so the lane's go fails; step 5 (two turns deep) runs for the depth question (burst-official step 4; 0200; read 00:30 2026-11-06, lanes 4e7486ad)",
+      "sha256": "2c3723dc248ecab54e6e50461adc22732f95b2a33d07e7b0c8e722141f4c0297"
+    },
+    {
+      "path": "jobs/done/0199-gauntlet.json",
+      "sha256": "03539fe591f797f76d7e0032b3d0b508c68036c057ce820a9606688028c28a87"
+    },
+    {
+      "path": "jobs/done/0200-gauntlet.json",
+      "sha256": "bc45494093a1c4e26b1a61af40cda44b6c4fc90d41eac41ac175e241a1c0b75f"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:54+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "SharpHide-then-stage-B net @hpb0.01 with its own picks, headline setting one turn deep, sequences 0-499, against the one-turn headline control (0199): paired end-HP +2.00 (0.98), clears 0.714 against 0.680, +0.034 (0.023); protocol open at n 500 (z 2.04); boss deaths 107 to 78, floors 6-10 deaths 53 to 65; one training seed, a lead until the confirm book (step 4) pools with it.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Burst net with its own picks on the headline setting: +2.00 (0.98) paired end-HP, clears +0.034 (0.023), protocol open at n 500; boss deaths 107 to 78, early-floor deaths up; steps 4-5 queued (burst-official step 3; 0199; read 23:45 2026-11-05, lanes 4e7486ad)",
+          "sha256": "e38c322612c05436c9e82b7ca4e684dd30f01c2d543e29ef182999dc74a7f2de"
+        },
+        {
+          "path": "results/gauntlet/seq-sharp-then-stageb-s1-hpb0.01-starter-simboss.json",
+          "sha256": "b4b9ab7b3900132fff1147923ee912d9b9ddaee5fe12367bbcd786895adf98a4"
+        },
+        {
+          "path": "jobs/done/0199-gauntlet.json",
+          "sha256": "03539fe591f797f76d7e0032b3d0b508c68036c057ce820a9606688028c28a87"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "4e7486ad-8284-4a2e-afb1-556b630771b2",
+      "at": "2026-11-05T16:45:00+00:00 @ 7bd8f37",
+      "until": "2026-11-05T17:25:19+00:00 @ 19e3fb9"
+    },
+    {
+      "rev": 2,
+      "value": "SharpHide-then-stage-B net @hpb0.01 with its own picks, headline setting one turn deep, against the one-turn headline controls: sequences 0-499 (0199) +2.00 (0.98) paired end-HP, clears +0.034 (0.023); sequences 500-999 (0200) +0.18 (0.96), clears -0.022 (0.025); pooled over 1000 +1.09 (0.69), z 1.59, clears +0.006 (0.017). Boss deaths 107 to 78 on 0-499 but 100 to 113 on 500-999. Its fighting gain with matched or cell decks (+2.3 to +2.5 at 4-5 se) reaches own-pick play at about half; one training seed.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Burst net with its own picks on the confirm book: +0.18 (0.96) paired end-HP, clears -0.022 (0.025); pooled with step 3 over 1000 sequences +1.09 (0.69), z 1.59, under 2 se, so the lane's go fails; step 5 (two turns deep) runs for the depth question (burst-official step 4; 0200; read 00:30 2026-11-06, lanes 4e7486ad)",
+          "sha256": "2c3723dc248ecab54e6e50461adc22732f95b2a33d07e7b0c8e722141f4c0297"
+        },
+        {
+          "path": "results/gauntlet/seq-sharp-then-stageb-s1-hpb0.01-starter-simboss.json",
+          "sha256": "b4b9ab7b3900132fff1147923ee912d9b9ddaee5fe12367bbcd786895adf98a4"
+        },
+        {
+          "path": "results/gauntlet/seq-sharp-then-stageb-s1-hpb0.01-starter-simboss-500.json",
+          "sha256": "5ee52887389589b57a72714feff6a0d6675de0216183384a0c0a755915a5e3c0"
+        },
+        {
+          "path": "jobs/done/0199-gauntlet.json",
+          "sha256": "03539fe591f797f76d7e0032b3d0b508c68036c057ce820a9606688028c28a87"
+        },
+        {
+          "path": "jobs/done/0200-gauntlet.json",
+          "sha256": "bc45494093a1c4e26b1a61af40cda44b6c4fc90d41eac41ac175e241a1c0b75f"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "4e7486ad-8284-4a2e-afb1-556b630771b2",
+      "at": "2026-11-05T17:25:19+00:00 @ 19e3fb9",
+      "until": "2026-11-13T02:29:54+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "1e7fe8e217943b3bc7d47f4a20dff8a4012305e14022c14c07da53be78d0f7c1"
+}

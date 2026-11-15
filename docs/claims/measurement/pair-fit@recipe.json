@@ -1,0 +1,50 @@
+{
+  "key": "measurement/pair-fit@recipe",
+  "rev": 2,
+  "value": "Fitting 10-29 to 4,448 pile-move pairs (split by sequence): held-out corr plateaus ~0.3 for every fit (whole net 0.27, pulled 0.22, head 0.24, ridge frozen penultimate 0.33) vs unchanged 0.20, reachable ~0.81; 25% of positions as good as all. Limit is inputs/teacher, not the fit.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pile-prices-2026-11-09.md",
+      "anchor": "Recipe check: the 0.3 plateau is not the fitting setup",
+      "sha256": "50fcfc7f49ba874ca31681ce3ee67595c5daa5d08e9f158b296e0803fd571026"
+    },
+    {
+      "path": "results/probes/pile-prices/recipe.log",
+      "sha256": "6401ee9d9ee2d7c0302ee6abe8456e59b03c67fe8c203fc7c12198e4c271287a"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:44+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Fitting the 10-29 net to interventional pile-move pairs (4,448 pairs on 1,500 positions; 906 train, 296 validation, 298 test, split by sequence; steps and ridge strength chosen on validation; bootstrap over positions) plateaus at about 0.3 held-out correlation with the played-out change under every fit: whole net 0.27 (0.06), whole net pulled to its original weights 0.22 (0.05), head only 0.24 (0.06), head only pulled 0.21 (0.05), ridge on the frozen head input 0.13 (0.05), ridge on the frozen penultimate layer 0.33 (0.08, validation 0.18); the unchanged net 0.20 (0.10); reachable about 0.81. The whole-net fit on 25% of train positions 0.28, 50% 0.21, all 0.27. The limit is what the net learns from (inputs or teacher), not the fitting recipe.",
+      "sources": [
+        {
+          "path": "docs/research/pile-prices-2026-11-09.md",
+          "anchor": "Recipe check: the 0.3 plateau is not the fitting setup",
+          "sha256": "50fcfc7f49ba874ca31681ce3ee67595c5daa5d08e9f158b296e0803fd571026"
+        },
+        {
+          "path": "results/probes/pile-prices/recipe.log",
+          "sha256": "6401ee9d9ee2d7c0302ee6abe8456e59b03c67fe8c203fc7c12198e4c271287a"
+        },
+        {
+          "path": "results/probes/pile-prices/scripts/recipe.py",
+          "sha256": "ea530be131247d5fde200fb4372fe9e06d6a443d00f31401718e2ca0f4f99a90"
+        }
+      ],
+      "owner": false,
+      "by": "0804bcc5-cde8-4829-ac5c-3f208429ea29",
+      "at": "2026-11-09T13:22:42+00:00 @ 02aca44",
+      "until": "2026-11-13T02:30:44+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "6230a7bbba67c9af0b63dc2365b04d0bbd371b6045c935c73b3470212528c51a"
+}

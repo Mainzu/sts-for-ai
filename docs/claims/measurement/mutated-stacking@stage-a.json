@@ -1,0 +1,58 @@
+{
+  "key": "measurement/mutated-stacking@stage-a",
+  "rev": 2,
+  "value": "Stage A stacks: interaction beyond 2 se for 2/7 on heuristic (metal4-hp0.85+sharp2-hp0.9 -0.022 (0.009); thorns2-hp0.9+hp1.3-str-1 -0.038 (0.014)), 1/6 two-turn (metal4+sharp2 -0.034 (0.015)). Additivity fails by up to ~0.04 wins, on elites (Sentries -0.06 to -0.10): a stack is measured as its own row.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Stacking check: 2 of 7 stacks are harder than the sum of their parts beyond 2 se (heuristic), 1 of 6 two turns deep; the sum is close but not the distance axis; the two owner pairs both read harder (goal1-yardstick; 0092; read 04:45 2026-11-05, lanes cf60f1ff)",
+      "sha256": "106bb1145e9ec05fbf77ffd530ed4fac59a3019e549218b8d4ff423e889db50a"
+    },
+    {
+      "path": "results/mutate/a.json",
+      "sha256": "d0fde96ac23dc06bd70014d98c0cf953ce4413c5c9c986dd53bcc0549648b14d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:39+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Stacking check on stage A (200 starts; heuristic 200x8, two-turn product 200x4): of 7 stacks, interaction (stack's win change minus the sum of its parts') beyond 2 se on heuristic for 2 (metal4-hp0.85+sharp2-hp0.9 -0.022 (0.009); thorns2-hp0.9+hp1.3-str-1 -0.038 (0.014)) and two turns deep for 1 of 6 (metal4-hp0.85+sharp2-hp0.9 -0.034 (0.015)); others within 2 se (-0.024 to +0.023). Fails the additivity rule: the sum of parts is a prior that misses by up to about 0.04 win rate, concentrated on elites (Three Sentries -0.06 to -0.10); a stack's difficulty is measured as its own row. Thorns 2 one-turn novelty -0.053 (0.014), two-turn repair +0.053, like SharpHide; owner pairs thorns2-hp0.9 -0.110 (0.016) and hp1.3-str-1 -0.058 (0.011) two turns, both harder.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Stacking check: 2 of 7 stacks are harder than the sum of their parts beyond 2 se (heuristic), 1 of 6 two turns deep; the sum is close but not the distance axis; the two owner pairs both read harder (goal1-yardstick; 0092; read 04:45 2026-11-05, lanes cf60f1ff)",
+          "sha256": "106bb1145e9ec05fbf77ffd530ed4fac59a3019e549218b8d4ff423e889db50a"
+        },
+        {
+          "path": "results/mutate/a.json",
+          "sha256": "d0fde96ac23dc06bd70014d98c0cf953ce4413c5c9c986dd53bcc0549648b14d"
+        },
+        {
+          "path": "jobs/done/0092-mutate-monsters.json",
+          "sha256": "1069513a8ae1447de1cdc2eacdc7dd5974b5e4bfee05655fb8b37174f59c0129"
+        },
+        {
+          "path": "jobs/done/0091-mutate-monsters.json",
+          "sha256": "83ad1e1cdbf3226a8b857b1d1fe46835ff9c1d81ca88da0706f19b2d7f3a34b4"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "cf60f1ff-dbde-46db-b8f7-f3bf17ea2965",
+      "at": "2026-11-04T21:38:03+00:00 @ 13459b0",
+      "until": "2026-11-13T02:30:39+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "bd33ae538c11ff77546a41a930582aadf2a5efebeadce0683e484c8d03062528"
+}

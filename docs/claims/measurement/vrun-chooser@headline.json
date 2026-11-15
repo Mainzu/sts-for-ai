@@ -1,0 +1,49 @@
+{
+  "key": "measurement/vrun-chooser@headline",
+  "rev": 1,
+  "value": "The fitted run-value chooser (--rewards vrun, cross-fitted halves, one turn) loses to the sim chooser on both halves: pooled -0.044 clears (se 0.026), -1.45 end-HP (se 1.0); it changes 22-24% of picks and skips more (21% vs 15%).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Run-value chooser: fails its first check on both halves (L2 b; b39d4; read 19:40 2026-11-02, manager 2b40a321)",
+      "sha256": "cb3c252ec6108e6cf922722b46a0e5e9259a489d28edd76cab8f045f77c10dd3"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-vrun-fit0-starter.json",
+      "sha256": "b291959e95095d32afad424c0832e6aef9881fdb1b6487c10283664bcf474164"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-vrun-fit250-starter.json",
+      "sha256": "f9603e7b7b236538a015c53f81b7a3fa1998afed068597f9b26ab167c401ad7a"
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:13:13+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:57:59+00:00 @ a875850",
+      "note": "yardstick/headline-setting rev 2 changed only which depth judges a change (one turn; the two-turn product is the reported score); the setting's flags this fact relies on (--start starter --rewards sim --sim-boss, 500 sequences) are unchanged"
+    },
+    {
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:38:10+00:00 @ 80d6c86",
+      "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "a3141f5bf77101fa7594e61b01f579f761d2eddb1fe39ebce657da297a7eb4ba"
+}

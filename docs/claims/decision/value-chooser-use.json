@@ -1,0 +1,91 @@
+{
+  "key": "decision/value-chooser-use",
+  "rev": 3,
+  "value": "Sim chooser stays default and ruler. --rewards value: bulk reads on train-card sequences only (level, 1/6 wall time); never with unseen cards in offers (-4 HP, 2.7 se). Its train-half lead (+4-5 HP) waits for Act 1; then it's the headline chooser per decision/headline-pool-after-act1.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane value-chooser closed (2026-11-06)",
+      "sha256": "c3a98614f7ac990e88729f07fb2bb3fdfe70cd31697891c514b98561b35848ca"
+    },
+    {
+      "key": "measurement/portfolio-value-chooser",
+      "rev": 1
+    },
+    {
+      "key": "decision/headline-pool-after-act1",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:34Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The sim chooser (--rewards sim --sim-boss) stays the default and the ruler for every read; gauntlet.py play --rewards value (the net's static values of fight start states, no trial fights; level on the headline at a sixth of the wall time, measurement/portfolio-value-chooser) is a tool for bulk reads on train-card sequences only, never on a read whose offers hold cards the net did not train on (there it is 4 HP below the sim chooser at 2.7 se: the novelty cost moves from the fights into the picks). Its lead on the train half (+4 to +5 HP, +0.06 clears, 3-3.7 se, sequences 0-499, one turn deep) is not confirmed or built on now: a chooser change is run-level decision work and waits for Act 1's cards (docs/direction.md, Avoid), which bring a new net and pool. It is the first candidate of the chooser workstream (decision/chooser-workstream): static values where every offered card is a trained card, trial fights where one is not; on today's files that split reads about +2 HP and +0.03 clears overall. Reopen: Act 1's cards in the engine and a net trained on them; confirm on sequences 500-999 at fixed n before building.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After stage 3 and the value-chooser close: the transfer column is Demon Form's own row learned from other cards; step 2b added; the value chooser stays a tool; generated-enemies-bench waits for powers on pack monsters (on the owner's behalf, 2026-11-06)",
+          "sha256": "00e62169cf9c5b440f097bdc8f50c0246fa8aaee4c9c276fd5f7651da90bf31b"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane value-chooser closed (2026-11-06)",
+          "sha256": "c3a98614f7ac990e88729f07fb2bb3fdfe70cd31697891c514b98561b35848ca"
+        },
+        {
+          "key": "measurement/portfolio-value-chooser",
+          "rev": 1
+        },
+        {
+          "key": "decision/chooser-workstream",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "5318d280-ece7-4e67-8dec-aa22f7895409",
+      "at": "2026-11-06T07:59:48Z @ b77d1d6",
+      "until": "2026-11-09T21:22:48Z @ af53c25"
+    },
+    {
+      "rev": 2,
+      "value": "The sim chooser (--rewards sim --sim-boss) stays the default and the ruler for every read; gauntlet.py play --rewards value (the net's static values of fight start states, no trial fights; level on the headline at a sixth of the wall time, measurement/portfolio-value-chooser) is a tool for bulk reads on train-card sequences only, never on a read whose offers hold cards the net did not train on (there it is 4 HP below the sim chooser at 2.7 se: the novelty cost moves from the fights into the picks). Its lead on the train half (+4 to +5 HP, +0.06 clears, 3-3.7 se, sequences 0-499, one turn deep) is not confirmed or built on now: a chooser change is run-level decision work and waits for Act 1's cards (docs/direction.md, Avoid). After Act 1 the value chooser becomes the headline's chooser once a net has trained on the widened pool, after backlog value-chooser-path (every encounter the sequence can still meet, start states valued before the opening hand; decision/headline-pool-after-act1); confirm on sequences 500-999 at fixed n before building on it.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane value-chooser closed (2026-11-06)",
+          "sha256": "c3a98614f7ac990e88729f07fb2bb3fdfe70cd31697891c514b98561b35848ca"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Headline card pool and choosers after Act 1 (owner, 2026-11-09)",
+          "sha256": "555f892e75f130df4ac90f8a722e9b98b3db28b93e33b6561fa85150f3bbf5c1"
+        },
+        {
+          "key": "measurement/portfolio-value-chooser",
+          "rev": 1
+        },
+        {
+          "key": "decision/chooser-workstream",
+          "rev": 1
+        },
+        {
+          "key": "decision/headline-pool-after-act1",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2edc559b-edfc-489b-a2d9-c1df70ab65a0",
+      "at": "2026-11-09T21:22:48Z @ af53c25",
+      "until": "2026-11-13T02:29:34Z @ 3123201a"
+    }
+  ],
+  "seal": "551a5e9f5ef1a66b2739f61e4cf08757d4ddbb55f6951c879e4955842fcf94b3"
+}

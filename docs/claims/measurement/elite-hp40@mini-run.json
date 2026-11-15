@@ -1,0 +1,71 @@
+{
+  "key": "measurement/elite-hp40@mini-run",
+  "rev": 1,
+  "value": "The path rule 'skip an elite under 40 HP' on the mini-run (one turn, 10-29 net @hpb0.01) fails the protocol at n 50 on rows identical to the control: after the mid-act heal only 20 of 996 elite arrivals are under 40 HP (136 on the headline), so its gain is bounded under +1 HP at any n.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Skip under 40 HP on the mini-run: fail at n 50, the rule never fires there; the elite and path probes close, all three run-decision probes are no go (run-decisions lane; 0089; read 14:05 2026-11-04, lanes 3edeb150)",
+      "sha256": "3fdeee80381f815addbc82148aff6c5a2bec2ba37266c014b40dbab59390a591"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss-mini-elitehp40.json",
+      "sha256": "d9fbdd1738a214271f29c02ac8e1bba95250b3b482f080f3650b0b2dfbeca088"
+    },
+    {
+      "path": "jobs/done/0089-gauntlet.json",
+      "sha256": "c5ccee8a497cef5e451e3082182e68704e6d1d06807c87b0ed012d1460e9e021"
+    },
+    {
+      "key": "measurement/mini-run@control",
+      "rev": 1
+    },
+    {
+      "key": "yardstick/protocol",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "3edeb150-e3e3-40cf-bb7e-c5b63b73194e",
+  "at": "2026-11-04T06:54:58+00:00 @ bd51c87",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The path rule 'skip an elite under 40 HP' on the mini-run (one turn, 10-29 net @hpb0.01) fails the protocol at n 50 on rows identical to the control: after the mid-act heal only 20 of 996 elite arrivals are under 40 HP (136 on the headline), so its gain is bounded under +1 HP at any n.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Skip under 40 HP on the mini-run: fail at n 50, the rule never fires there; the elite and path probes close, all three run-decision probes are no go (run-decisions lane; 0089; read 14:05 2026-11-04, lanes 3edeb150)",
+          "sha256": "3fdeee80381f815addbc82148aff6c5a2bec2ba37266c014b40dbab59390a591"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-starter-simboss-mini-elitehp40.json",
+          "sha256": "d9fbdd1738a214271f29c02ac8e1bba95250b3b482f080f3650b0b2dfbeca088"
+        },
+        {
+          "path": "jobs/done/0089-gauntlet.json",
+          "sha256": "c5ccee8a497cef5e451e3082182e68704e6d1d06807c87b0ed012d1460e9e021"
+        },
+        {
+          "key": "measurement/mini-run@control",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "3edeb150-e3e3-40cf-bb7e-c5b63b73194e",
+      "at": "2026-11-04T06:54:58+00:00 @ bd51c87",
+      "until": "2026-11-11T08:58:25+00:00 @ 20449c5",
+      "retired": "merged into measurement/mini-run@control (STATUS cap)"
+    }
+  ],
+  "seal": "0fb98e63f8e958b0dc0da2eba2624d6b5d116a2103d0adf21955ce2846f457a9"
+}

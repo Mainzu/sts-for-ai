@@ -1,0 +1,47 @@
+{
+  "key": "decision/line-step-reads",
+  "rev": 1,
+  "value": "Line-step step 4 reads run despite the missed 0.65 cost bar (measured 0.70): the bar was the review's estimate, identity is exact, and 0.70 of every two-turn read is a plain win; a pass of the headline read at fixed n 250 makes --line-seed --step-line the play mode for two-turn reads.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Line-step probe: identity exact, cost 0.70, the reads go ahead (owner away, 2026-11-03)",
+      "sha256": "fafc6f2a728b3e8d319ef8f3374ee994d679eccfd342bd31de00f9f42ef02916"
+    },
+    {
+      "key": "measurement/line-step@probe",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
+  "at": "2026-11-02T18:01:50Z @ 7adb302",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Line-step step 4 reads run despite the missed 0.65 cost bar (measured 0.70): the bar was the review's estimate, identity is exact, and 0.70 of every two-turn read is a plain win; a pass of the headline read at fixed n 250 makes --line-seed --step-line the play mode for two-turn reads.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Line-step probe: identity exact, cost 0.70, the reads go ahead (owner away, 2026-11-03)",
+          "sha256": "fafc6f2a728b3e8d319ef8f3374ee994d679eccfd342bd31de00f9f42ef02916"
+        },
+        {
+          "key": "measurement/line-step@probe",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
+      "at": "2026-11-02T18:01:50Z @ 7adb302",
+      "until": "2026-11-11T10:11:35Z @ 3e258d9",
+      "retired": "spent: the line-step step 4 reads ran and the stepped line is the product's play mode (decision/line-step-play-mode, measurement/line-step@headline); STATUS cap"
+    }
+  ],
+  "seal": "17abad2911af75dc7877ca4d24c35b23a2f4e8c049fe751cb4c1d3df0c9380e7"
+}

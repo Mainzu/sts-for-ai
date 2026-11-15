@@ -1,0 +1,64 @@
+{
+  "key": "measurement/line-seed@cells",
+  "rev": 1,
+  "value": "Two-turn play that commits to the turn's first tree's line (--line-seed), cell gauntlet 0-249, fixed n vs plain two-turn: +0.024 clears (se 0.019), +0.60 end-HP (se 0.52): level or better, so exporting the principal line (~1.7x cheaper two-turn, the first tree holds ~60% of a turn's cost) loses nothing seen. One book of 250.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Line seed: a two-turn player that commits to its first tree's line plays level or better (line-seed.md step 3; b39b1; read 20:00 2026-11-02, manager 2b40a321)",
+      "sha256": "5d4d3aba3bb7f31d0da7bb45664aa5ecccc91f96c741cce4392dbb4cee0e2fa0"
+    },
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Where a turn's two-turn cost goes by decision index (line-seed.md step 2, `line_probe.py`; 14:35 2026-11-02, manager 837a5e68)",
+      "sha256": "81de2f44417c44acdb4bf3a2a5b12acfeeecc4e37b792964d8bb9f83ba94ce44"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-two-line-a.json",
+      "sha256": "a6d5af3a59430e1d50b6d340c02dbdb60ca31c425696e3f0cf2a7932fdcaa65c"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    },
+    {
+      "key": "yardstick/cost-savers",
+      "rev": 3
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:13:29+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T00:37:12+00:00 @ da67084",
+      "note": "re-checked 08:00 2026-11-03: product/net rev 4 changed only the play flags (--line-seed --step-line; same net, same price) and yardstick/cost-savers rev 2 only added the line-step verdict; the fact's content is unaffected"
+    },
+    {
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:38:04+00:00 @ 80d6c86",
+      "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
+    },
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:20+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: yardstick/cost-savers reworded to a shorter single claim; the claim this fact cites kept its key"
+    },
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:42:01+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "43be4fd58a5eda32ac429b0403df080b58c6c581c44b8a2fa5371cc26604d5fe"
+}

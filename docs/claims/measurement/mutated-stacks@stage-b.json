@@ -1,0 +1,37 @@
+{
+  "key": "measurement/mutated-stacks@stage-b",
+  "rev": 1,
+  "value": "Stage B stacks two-turn product: weakhit1-dmg0.8+thorns2-hp0.9 -0.110 (0.017), interaction +0.016 (0.013); weakhit1-dmg0.8+split interaction +0.024 (0.008), on bosses. Reactive-stack win cost on fresh elites: Thorns stack -0.025 (0.009), SharpHide stack -0.000 (0.010); the repeat is ~2 HP per elite on reactive modifiers (measurement/reactive-cost@fresh-elites).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Stage B two turns deep, final at 200 of 200 starts: nothing beyond the heuristic at 2 se on any pattern modifier; the Thorns stack on elites is now -0.034 (0.011); the heuristic is an unadapted reference (job 0113 complete, with 0112; read 14:40 2026-11-05, navigator 7341b88a)",
+      "sha256": "eb5f940508112e9683ed046441d97c33b471c7769e903f05d690840c0854f86b"
+    },
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Fresh elite starts: the product pays about 2 HP per fight beyond the heuristic on every reactive modifier (+1.75 to +2.66, each 3.5-5 se), but not in wins; the reactive-stack win lead holds for the Thorns stack only (-0.025 (0.009)) and not for the SharpHide stack (-0.000 (0.010)) (adapted-two-turn lane step 1; 0152; read 18:40 2026-11-05, lanes 1461c7f0)",
+      "sha256": "e07b43b7300d062457a67ad7d799963eccb80375af6584cb8f17affe8e9cefa0"
+    },
+    {
+      "key": "measurement/reactive-cost@fresh-elites",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:43+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:21+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/reactive-cost@fresh-elites reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "f65f26296396af5d2ecd93e76f19e7b6807d8bdf10e5a0a4a28a18ce3535700f"
+}

@@ -1,0 +1,22 @@
+{
+ "content": {
+  "encounters": [
+   "lagavulin",
+   "three_sentries"
+  ],
+  "mutated": [
+   "GE-AttackLoss-Weak"
+  ],
+  "net_settings": "@hpb0.01@tsl1",
+  "skip": 1000,
+  "val_fights": 40
+ },
+ "game_seed": 61,
+ "games": 33,
+ "n_val": 300,
+ "name": "sc-alw-net-g33-sh9-s2",
+ "player": "net",
+ "pool": 10000,
+ "seed": 2,
+ "share": 0.9
+}

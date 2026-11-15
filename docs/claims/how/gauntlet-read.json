@@ -1,0 +1,297 @@
+{
+  "key": "how/gauntlet-read",
+  "rev": 10,
+  "value": "gauntlet.py play <player> writes results/gauntlet/<tag>.json in blocks of 50 (a rerun adds only missing sequences); gauntlet.py read a.json b.json pairs by sequence (clears, paired diff, HP at boss, deaths by floor). Report effects at fixed n. Flags: README.md#Act-1 gauntlet.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "scripts/gauntlet.py",
+      "sha256": "467b6f22c066a4a78f8019ed186148284ee0f5a59db9b36d35259864fa98e688"
+    },
+    {
+      "path": "README.md",
+      "anchor": "Act-1 gauntlet",
+      "sha256": "aea93b5ad2affc6f62998f17d4b5989b712158849ce208aaa1f0f947c33b46a2"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:11Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+      "at": "2026-11-13T03:47:02Z @ d08ef5a4",
+      "note": "checked c98e084d's README diff: it adds leaf settings and other play options; play/read usage unchanged"
+    },
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:43:12Z @ d240a173",
+      "note": "navigator 2026-11-13: gauntlet.py diff only RUST_MIN_STACK; README Act-1 gauntlet changes are spec links to decisions headings and the leaf-settings paragraph, play/read usage unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Play with gauntlet.py play <player> [--two-turn] [--start starter --rewards sim --sim-boss] [--against <control file>] into results/gauntlet/<tag>.json (blocks of 50, a rerun adds only missing sequences); read with gauntlet.py read <a>.json <b>.json, which pairs by sequence and prints clears, the paired difference, HP at the boss and deaths by floor; report an effect at fixed n, not at the early-stop point.",
+      "sources": [
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "08dc942ddc309340c4705a66c768f7f3fb1caf7e277cf1d38c183e2b43c6e65e"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:17Z @ fc9cdd8",
+      "until": "2026-11-02T17:32:20Z @ 4600572"
+    },
+    {
+      "rev": 2,
+      "value": "Play with gauntlet.py play <player> [--two-turn] [--start starter --rewards sim --sim-boss] [--against <control file> [--vary <field>]] into results/gauntlet/<tag>.json (blocks of 50, a rerun adds only missing sequences); --against refuses a control whose settings differ (depth, --one-turn-floors, the price after the player's @, --start, --rewards, --sim-boss, chooser, rest, removal, elites), naming each, unless the read declares the field it tests with --vary (recorded in the file's protocol key); seed and shape must always match. Read with gauntlet.py read <a>.json <b>.json, which pairs by sequence and prints clears, the paired difference, HP at the boss and deaths by floor; report an effect at fixed n, not at the early-stop point.",
+      "sources": [
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "b467f6150aa0e832f3921d51c82cd8ef4714add4ba6928b3e31742170606d394"
+        },
+        {
+          "path": "scripts/gauntlet.py",
+          "sha256": "19938a07c0b1f981b7bcec88c3e5c15d58b1d5351b95595eab727d7b34b07394"
+        },
+        {
+          "path": "scripts/tests/test_gauntlet.py",
+          "sha256": "58ba9a5ee54a559e457ad356916963007b82b0e0281dc40aec181fc431e01881"
+        }
+      ],
+      "owner": false,
+      "by": "3fa813ae-d1ab-43db-9d18-d8a1c44be692",
+      "at": "2026-11-02T17:32:20Z @ 4600572",
+      "until": "2026-11-04T07:16:34Z @ cfe7e3d"
+    },
+    {
+      "rev": 3,
+      "value": "Play with gauntlet.py play <player> [--two-turn --line-seed --step-line] [--start starter --rewards sim --sim-boss] [--elite-offers N --mid-rest K (the mini-run)] [--elites skip|hp --elite-hp H] [--rest sim --rest-fights F --rest-margin M] [--against <control file> [--vary <field>]] into results/gauntlet/<tag>.json (blocks of 50, a rerun adds only missing sequences); --against refuses a control whose settings differ in any VARY field (price, two_turn, one_turn_floors, line_seed, step_line, rest, rewards, start, sim_boss, chooser, fit, rest_choice, remove, elites, elite_hp, elite_offers, mid_rest), naming each, unless the read declares the field it tests with --vary (recorded in the file's protocol key); seed and shape must always match; flags at their defaults are absent from settings, so older files still match. Read with gauntlet.py read <a>.json <b>.json, which pairs by sequence and prints clears, the paired difference, HP at the boss and deaths by floor; report an effect at fixed n, not at the early-stop point.",
+      "sources": [
+        {
+          "path": "scripts/gauntlet.py",
+          "sha256": "699a8064fe761c9efed57bad6aa303efc9deafc40ede633ec5278ba71e328dc2"
+        },
+        {
+          "path": "scripts/tests/test_gauntlet.py",
+          "sha256": "6a74d164794242828f20b24fa74a612e2b02ae4523d9178622898809cd339c7f"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Mini-run setting: a second card offer after an elite, a heal after floor 5 (on the owner's behalf, 2026-11-04)",
+          "sha256": "3c48f4f840d3f16915e39e89164faa6bb31272baabbe14463d888cec157214ee"
+        }
+      ],
+      "owner": false,
+      "by": "4253ac8b-4270-40d7-958b-ef9945166c5b",
+      "at": "2026-11-04T07:16:34Z @ cfe7e3d",
+      "until": "2026-11-04T12:58:19Z @ 8fc9083"
+    },
+    {
+      "rev": 4,
+      "value": "Play with gauntlet.py play <player> [--two-turn --line-seed --step-line] [--start starter --rewards sim --sim-boss] [--elite-offers N --mid-rest K (the mini-run)] [--elites skip|hp --elite-hp H] [--rest sim --rest-fights F --rest-margin M] [--match <file>] [--against <control file> [--vary <field>]] into results/gauntlet/<tag>.json (blocks of 50, a rerun adds only missing sequences); --match <file> replays that file's recorded card picks, rest and removal choices into this run (deck-matched read: only the fighter varies; matched floors carry matched: true; match is recorded in settings and never compared by --against; a matched read cannot see a chooser change); --against refuses a control whose settings differ in any VARY field (price, two_turn, one_turn_floors, line_seed, step_line, rest, rewards, start, sim_boss, chooser, fit, rest_choice, remove, elites, elite_hp, elite_offers, mid_rest), naming each, unless the read declares the field it tests with --vary (recorded in the file's protocol key); seed and shape must always match; flags at their defaults are absent from settings, so older files still match. Read with gauntlet.py read <a>.json <b>.json, which pairs by sequence and prints clears, the paired difference, HP at the boss and deaths by floor; report an effect at fixed n, not at the early-stop point.",
+      "sources": [
+        {
+          "path": "scripts/gauntlet.py",
+          "sha256": "ce596acfd364cf814b9542afd93ab8240f18b94c0ccd745292f54aaacbcfe829"
+        },
+        {
+          "path": "scripts/tests/test_gauntlet.py",
+          "sha256": "8af829b313472bb060615b60d830e38fc458825f8ba9a44c61512afab9cc6927"
+        },
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "436246e1ef8c9c8e22e26fb66477594ec068bf1775c5cbab68073e2255f78607"
+        },
+        {
+          "path": "docs/specs/deck-matched-reads.md",
+          "sha256": "c0f9f6289e8efa7ea6238fa782218e7fdfe0f46d1275d11c07bc7e5fd10b09a1"
+        }
+      ],
+      "owner": false,
+      "by": "e1d8aca3-bf85-47fa-949b-a0192894458e",
+      "at": "2026-11-04T12:58:19Z @ 8fc9083",
+      "until": "2026-11-05T14:43:56Z @ 60e882a"
+    },
+    {
+      "rev": 5,
+      "value": "Play with gauntlet.py play <player> [--two-turn --line-seed --step-line] [--start starter --rewards sim --sim-boss] [--elite-offers N --mid-rest K (the mini-run)] [--elites skip|hp --elite-hp H] [--rest sim --rest-fights F --rest-margin M] [--match <file>] [--against <control file> [--vary <field>]] into results/gauntlet/<tag>.json (blocks of 50, a rerun adds only missing sequences); --match <file> replays that file's recorded card picks, rest and removal choices into this run (deck-matched read: only the fighter varies; matched floors carry matched: true; match is recorded in settings and never compared by --against; a matched read cannot see a chooser change); --against refuses a control whose settings differ in any VARY field (price, two_turn, one_turn_floors, line_seed, step_line, rest, rewards, start, sim_boss, chooser, fit, rest_choice, remove, elites, elite_hp, elite_offers, mid_rest), naming each, unless the read declares the field it tests with --vary (recorded in the file's protocol key); seed and shape must always match; flags at their defaults are absent from settings, so older files still match. Read with gauntlet.py read <a>.json <b>.json, which pairs by sequence and prints clears, the paired difference, HP at the boss and deaths by floor; report an effect at fixed n, not at the early-stop point. Pick the read by its question: a whole-player question plays each arm with its own picks (unmatched); a fighting-only question is a matched read on the control's picks (cheapest, a slight lean toward the control); crossed arms (--match plus --chooser) only when fighting and picking must be split.",
+      "sources": [
+        {
+          "path": "scripts/gauntlet.py",
+          "sha256": "ce596acfd364cf814b9542afd93ab8240f18b94c0ccd745292f54aaacbcfe829"
+        },
+        {
+          "path": "scripts/tests/test_gauntlet.py",
+          "sha256": "8af829b313472bb060615b60d830e38fc458825f8ba9a44c61512afab9cc6927"
+        },
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "772f1108e15d8c76eee020aabaa855b80afcd4c0ebe4a221b9766f896deba58e"
+        },
+        {
+          "path": "docs/specs/deck-matched-reads.md",
+          "sha256": "c0f9f6289e8efa7ea6238fa782218e7fdfe0f46d1275d11c07bc7e5fd10b09a1"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Choosing a read by its question: own picks, matched, or crossed (owner, 2026-11-05)",
+          "sha256": "845c389b521926d7d33fc827c280f43cf818eec6ec010a696bd665597cce476d"
+        }
+      ],
+      "owner": false,
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:43:56Z @ 60e882a",
+      "until": "2026-11-06T08:00:28Z @ b77d1d6"
+    },
+    {
+      "rev": 6,
+      "value": "Play with gauntlet.py play <player> [--two-turn --line-seed --step-line] [--start starter --rewards sim --sim-boss] [--rewards value [--value-hands K]: picks by the net's static values of fight start states, no trial fights; a tool for train-card sequences only, decision/value-chooser-use] [--elite-offers N --mid-rest K (the mini-run)] [--elites skip|hp --elite-hp H] [--rest sim --rest-fights F --rest-margin M] [--match <file>] [--against <control file> [--vary <field>]] into results/gauntlet/<tag>.json (blocks of 50, a rerun adds only missing sequences); --match <file> replays that file's recorded card picks, rest and removal choices into this run (deck-matched read: only the fighter varies; matched floors carry matched: true; match is recorded in settings and never compared by --against; a matched read cannot see a chooser change); --against refuses a control whose settings differ in any VARY field (price, two_turn, one_turn_floors, line_seed, step_line, rest, rewards, start, sim_boss, chooser, fit, rest_choice, remove, elites, elite_hp, elite_offers, mid_rest, value_hands), naming each, unless the read declares the field it tests with --vary (recorded in the file's protocol key); seed and shape must always match; flags at their defaults are absent from settings, so older files still match. Read with gauntlet.py read <a>.json <b>.json, which pairs by sequence and prints clears, the paired difference, HP at the boss and deaths by floor; report an effect at fixed n, not at the early-stop point. Pick the read by its question: a whole-player question plays each arm with its own picks (unmatched); a fighting-only question is a matched read on the control's picks (cheapest, a slight lean toward the control); crossed arms (--match plus --chooser) only when fighting and picking must be split.",
+      "sources": [
+        {
+          "path": "scripts/gauntlet.py",
+          "sha256": "7c610b01bbcfe18ec5761d92a4874ad7846de04792c7296dae02c5cc9858d545"
+        },
+        {
+          "path": "scripts/tests/test_gauntlet.py",
+          "sha256": "3a0f17d83ac7f43e0a977775b3bb63b7eee05abf0edce7c650ac52c5c8e45134"
+        },
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "772f1108e15d8c76eee020aabaa855b80afcd4c0ebe4a221b9766f896deba58e"
+        },
+        {
+          "path": "docs/specs/deck-matched-reads.md",
+          "sha256": "c0f9f6289e8efa7ea6238fa782218e7fdfe0f46d1275d11c07bc7e5fd10b09a1"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Choosing a read by its question: own picks, matched, or crossed (owner, 2026-11-05)",
+          "sha256": "845c389b521926d7d33fc827c280f43cf818eec6ec010a696bd665597cce476d"
+        },
+        {
+          "key": "decision/value-chooser-use",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "5318d280-ece7-4e67-8dec-aa22f7895409",
+      "at": "2026-11-06T08:00:28Z @ b77d1d6",
+      "until": "2026-11-07T13:19:16Z @ 39c4f63"
+    },
+    {
+      "rev": 7,
+      "value": "Play with gauntlet.py play <player> [--two-turn --line-seed --step-line] [--start starter --rewards sim --sim-boss] [--pack <file>: a content pack whose base cards join both halves' offers, loaded in the two-turn workers too, recorded as pack: <file>@<content hash>] [--rewards value [--value-hands K]: picks by the net's static values of fight start states, no trial fights; a tool for train-card sequences only, decision/value-chooser-use] [--elite-offers N --mid-rest K (the mini-run)] [--elites skip|hp --elite-hp H] [--rest sim --rest-fights F --rest-margin M] [--match <file>] [--against <control file> [--vary <field>]] into results/gauntlet/<tag>.json (blocks of 50, a rerun adds only missing sequences); --match <file> replays that file's recorded card picks, rest and removal choices into this run (deck-matched read: only the fighter varies; matched floors carry matched: true; match is recorded in settings and never compared by --against; a matched read cannot see a chooser change; it refuses a file of another pack setting); --against refuses a control whose settings differ in any VARY field (price, two_turn, one_turn_floors, line_seed, step_line, rest, rewards, start, sim_boss, chooser, fit, rest_choice, remove, elites, elite_hp, elite_offers, mid_rest, value_hands, pack), naming each, unless the read declares the field it tests with --vary (recorded in the file's protocol key); seed and shape must always match; flags at their defaults are absent from settings, so older files still match. Read with gauntlet.py read <a>.json <b>.json, which pairs by sequence and prints clears, the paired difference, HP at the boss and deaths by floor; report an effect at fixed n, not at the early-stop point. Pick the read by its question: a whole-player question plays each arm with its own picks (unmatched); a fighting-only question is a matched read on the control's picks (cheapest, a slight lean toward the control); crossed arms (--match plus --chooser) only when fighting and picking must be split.",
+      "sources": [
+        {
+          "path": "scripts/gauntlet.py",
+          "sha256": "dc3a744e7536d659398f60bac3c0f985971e9972643a143e056103950998b0a8"
+        },
+        {
+          "path": "scripts/tests/test_gauntlet.py",
+          "sha256": "a63e336bffc4f30ae3093a6f2721b0f2af68ed605cc5576cad72dd1c1344357d"
+        },
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "17015f2258003bc1fe5a14f65e8a7a01f8007d48d469d1de6f1eab3e4e91e802"
+        },
+        {
+          "path": "docs/specs/deck-matched-reads.md",
+          "sha256": "c0f9f6289e8efa7ea6238fa782218e7fdfe0f46d1275d11c07bc7e5fd10b09a1"
+        },
+        {
+          "path": "docs/specs/gauntlet-pack-offers.md",
+          "sha256": "6fa7ab7f3c3edc3eea899615a43f3e0fa408d9fb1c4391d11e8dd25740f8920f"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Choosing a read by its question: own picks, matched, or crossed (owner, 2026-11-05)",
+          "sha256": "845c389b521926d7d33fc827c280f43cf818eec6ec010a696bd665597cce476d"
+        },
+        {
+          "key": "decision/value-chooser-use",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "24375f99-3cb3-4ef9-b28f-f6df271d6129",
+      "at": "2026-11-07T13:19:16Z @ 39c4f63",
+      "until": "2026-11-08T09:44:57Z @ 24f0f16"
+    },
+    {
+      "rev": 8,
+      "value": "Play with gauntlet.py play <player> [--two-turn --line-seed --step-line] [--start starter --rewards sim --sim-boss] [--pack <file>: a content pack whose base cards join both halves' offers and whose hallway encounters join the hard floors (1/10 each with act1-monsters, other floors as pack-less), loaded in the two-turn workers too, recorded as pack: <file>@<content hash>] [--rewards value [--value-hands K]: picks by the net's static values of fight start states, no trial fights; a tool for train-card sequences only, decision/value-chooser-use] [--elite-offers N --mid-rest K (the mini-run)] [--elites skip|hp --elite-hp H] [--rest sim --rest-fights F --rest-margin M] [--match <file>] [--against <control file> [--vary <field>]] into results/gauntlet/<tag>.json (blocks of 50, a rerun adds only missing sequences); --match <file> replays that file's recorded card picks, rest and removal choices into this run (deck-matched read: only the fighter varies; matched floors carry matched: true; match is recorded in settings and never compared by --against; a matched read cannot see a chooser change; it refuses a file of another pack setting); --against refuses a control whose settings differ in any VARY field (price, two_turn, one_turn_floors, line_seed, step_line, rest, rewards, start, sim_boss, chooser, fit, rest_choice, remove, elites, elite_hp, elite_offers, mid_rest, value_hands, pack), naming each, unless the read declares the field it tests with --vary (recorded in the file's protocol key); seed and shape must always match; flags at their defaults are absent from settings, so older files still match. Read with gauntlet.py read <a>.json <b>.json, which pairs by sequence and prints clears, the paired difference, HP at the boss and deaths by floor; report an effect at fixed n, not at the early-stop point. Pick the read by its question: a whole-player question plays each arm with its own picks (unmatched); a fighting-only question is a matched read on the control's picks (cheapest, a slight lean toward the control); crossed arms (--match plus --chooser) only when fighting and picking must be split.",
+      "sources": [
+        {
+          "path": "scripts/gauntlet.py",
+          "sha256": "dd89f4c102c90194654ab34816c748887e081adf1511f7762e5743d73c64d3a9"
+        },
+        {
+          "path": "scripts/tests/test_gauntlet.py",
+          "sha256": "acf25ca227c100ccf0170da419586d154f9f6245b0743aa0dc1c404040cf129c"
+        },
+        {
+          "path": "README.md",
+          "anchor": "Act-1 gauntlet",
+          "sha256": "c7c1c775e7ce3b22caae51bc3da0bd6b809bf3260c5d0337fca909cc5d6e0e33"
+        },
+        {
+          "path": "docs/specs/deck-matched-reads.md",
+          "sha256": "c0f9f6289e8efa7ea6238fa782218e7fdfe0f46d1275d11c07bc7e5fd10b09a1"
+        },
+        {
+          "path": "docs/specs/gauntlet-pack-offers.md",
+          "sha256": "6fa7ab7f3c3edc3eea899615a43f3e0fa408d9fb1c4391d11e8dd25740f8920f"
+        },
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "Block G2: pack encounters in the gauntlet's hard floors",
+          "sha256": "3669c65d11e48534f2cbcdddbfe04e22f1d0f36c989a5e430700e2914ff99cbc"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Choosing a read by its question: own picks, matched, or crossed (owner, 2026-11-05)",
+          "sha256": "845c389b521926d7d33fc827c280f43cf818eec6ec010a696bd665597cce476d"
+        },
+        {
+          "key": "decision/value-chooser-use",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "1d063cd2-692f-4289-a030-d1e9ff1b8e4f",
+      "at": "2026-11-08T09:44:57Z @ 24f0f16",
+      "until": "2026-11-08T15:58:16Z @ 00bae76"
+    },
+    {
+      "rev": 9,
+      "value": "Play with gauntlet.py play <player> [--two-turn --line-seed --step-line] [--start starter --rewards sim --sim-boss] [--pack <file>: a content pack whose base cards join both halves' offers and whose hallway encounters join the hard floors (1/10 each with act1-monsters, other floors as pack-less), loaded in the two-turn workers too, recorded as pack: <file>@<content hash>] [--pack-picks originals: with --pack and offers, the pack cards are offered but the chooser takes only original cards or skips, recorded as pack_picks] [--rewards value [--value-hands K]: picks by the net's static values of fight start states, no trial fights; a tool for train-card sequences only, decision/value-chooser-use] [--elite-offers N --mid-rest K (the mini-run)] [--elites skip|hp --elite-hp H] [--rest sim --rest-fights F --rest-margin M] [--match <file>] [--against <control file> [--vary <field>]] into results/gauntlet/<tag>.json (blocks of 50, a rerun adds only missing sequences); --match <file> replays that file's recorded card picks, rest and removal choices into this run (deck-matched read: only the fighter varies; matched floors carry matched: true; match is recorded in settings and never compared by --against; a matched read cannot see a chooser change; it refuses a file of another pack setting); --against refuses a control whose settings differ in any VARY field (price, two_turn, one_turn_floors, line_seed, step_line, rest, rewards, start, sim_boss, chooser, fit, rest_choice, remove, elites, elite_hp, elite_offers, mid_rest, value_hands, pack, pack_picks), naming each, unless the read declares the field it tests with --vary (recorded in the file's protocol key); seed and shape must always match; flags at their defaults are absent from settings, so older files still match. Read with gauntlet.py read <a>.json <b>.json, which pairs by sequence and prints clears, the paired difference, HP at the boss and deaths by floor; report an effect at fixed n, not at the early-stop point. Pick the read by its question: a whole-player question plays each arm with its own picks (unmatched); a fighting-only question is a matched read on the control's picks (cheapest, a slight lean toward the control); crossed arms (--match plus --chooser) only when fighting and picking must be split.",
+      "sources": [
+        {
+          "path": "scripts/gauntlet.py",
+          "sha256": "99fc92589c4992b4aa7c106f9f4e6b2f648d0a3beb89c87d19a5f1ca29217929"
+        },
+        {
+          "path": "docs/specs/pack-pick-split.md",
+          "sha256": "83f9a62abfe95ada33734ff94d92b1bb85ffb14f331067bfbfbe2f1ce20dc48d"
+        }
+      ],
+      "owner": false,
+      "by": "0f7d764f-d468-460d-aa28-8d3e45552a89",
+      "at": "2026-11-08T15:58:16Z @ 00bae76",
+      "until": "2026-11-13T02:29:11Z @ 3123201a"
+    }
+  ],
+  "seal": "4dc7cb301a98623ca8affe76a35727b1a45560682cb2cbd6af098080e6fa361b"
+}

@@ -1,0 +1,95 @@
+{
+  "key": "measurement/shown-numbers@cells",
+  "rev": 1,
+  "value": "10-29 net one turn deep @hpb0.01 on the one-turn cell gauntlet, sequences 0-499, fixed n 500 against results/gauntlet/net1029-hpb0.01.json: @sn1 -0.24 (0.21) HP, @xh1 -0.24 (0.22), @sn1@xh1 -0.34 (0.26); clears within +0.005; Strength/multi-hit stratum (436 of 500) the same; flags change about a third of sequences; level zero-shot",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/shown-card-numbers-2026-11-10.md",
+      "anchor": "Cell gauntlet, one turn deep (jobs 0757-0759)",
+      "sha256": "6dc74ee93bc267b0cdebb7607f6794119602b809e766dd536650a9bf87001400"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-sn1.json",
+      "sha256": "baab7323d4e4b31b7726d5bd722f6cbdea15ad0622b4d75185ab7389c981f083"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-xh1.json",
+      "sha256": "d2264a7aee05f249ce592f6841e5b20d7d6561b059e576b3e35f4ab80977ea8c"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-sn1xh1.json",
+      "sha256": "a9e01829828092b040ed5dd3e8e1ed15c1768a5af8cc2dfc834a96c7beb1d6a6"
+    },
+    {
+      "path": "jobs/done/0757-gauntlet.json",
+      "sha256": "294ed74672b81a68c375bd975d2108edd0a7acf7cb75ebed1ad5dc159438af3b"
+    },
+    {
+      "path": "jobs/done/0758-gauntlet.json",
+      "sha256": "3b4f4592ee0df83c36b2e1210b6dcb74e35bd6eca7f9073a0f14cc28c85780b7"
+    },
+    {
+      "path": "jobs/done/0759-gauntlet.json",
+      "sha256": "553d5b8d70796914f60a4f7d2feb822bbae76a43fffd8968922007ab63bd5159"
+    },
+    {
+      "key": "yardstick/one-turn-controls",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "22671add-cd16-4d99-9e2e-3a0bd4f9f071",
+  "at": "2026-11-09T21:10:10+00:00 @ 30aa133",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "10-29 net one turn deep @hpb0.01 on the one-turn cell gauntlet, sequences 0-499, fixed n 500 against results/gauntlet/net1029-hpb0.01.json: @sn1 -0.24 (0.21) HP, @xh1 -0.24 (0.22), @sn1@xh1 -0.34 (0.26); clears within +0.005; Strength/multi-hit stratum (436 of 500) the same; flags change about a third of sequences; level zero-shot",
+      "sources": [
+        {
+          "path": "docs/research/shown-card-numbers-2026-11-10.md",
+          "anchor": "Cell gauntlet, one turn deep (jobs 0757-0759)",
+          "sha256": "6dc74ee93bc267b0cdebb7607f6794119602b809e766dd536650a9bf87001400"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-sn1.json",
+          "sha256": "baab7323d4e4b31b7726d5bd722f6cbdea15ad0622b4d75185ab7389c981f083"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-xh1.json",
+          "sha256": "d2264a7aee05f249ce592f6841e5b20d7d6561b059e576b3e35f4ab80977ea8c"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-sn1xh1.json",
+          "sha256": "a9e01829828092b040ed5dd3e8e1ed15c1768a5af8cc2dfc834a96c7beb1d6a6"
+        },
+        {
+          "path": "jobs/done/0757-gauntlet.json",
+          "sha256": "294ed74672b81a68c375bd975d2108edd0a7acf7cb75ebed1ad5dc159438af3b"
+        },
+        {
+          "path": "jobs/done/0758-gauntlet.json",
+          "sha256": "3b4f4592ee0df83c36b2e1210b6dcb74e35bd6eca7f9073a0f14cc28c85780b7"
+        },
+        {
+          "path": "jobs/done/0759-gauntlet.json",
+          "sha256": "553d5b8d70796914f60a4f7d2feb822bbae76a43fffd8968922007ab63bd5159"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "22671add-cd16-4d99-9e2e-3a0bd4f9f071",
+      "at": "2026-11-09T21:10:10+00:00 @ 30aa133",
+      "until": "2026-11-10T07:04:28+00:00 @ f97b79c",
+      "retired": "merged into measurement/portfolio-shown-card-numbers"
+    }
+  ],
+  "seal": "060dd1be9166e2228e9d214a6a259b6822976bbf3a92c29da899c9b8a093d560"
+}

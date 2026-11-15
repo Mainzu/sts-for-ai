@@ -1,0 +1,36 @@
+{
+  "key": "how/act1-relics-hooks",
+  "rev": 1,
+  "value": "A relic is on the player's relic list with its own hooks and counter, firing at its game class's trigger (CombatStart*, OwnerTurnStart*/End, OwnerLostHp, OwnerPlaysCard, CardExhausted, OpponentDied, CombatWon, OwnerDied, OwnerApplied); hooks take <=2 conditions; a hook may open a pick (Stage::RelicPick). docs/specs/act1-singles.md s6.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/specs/act1-singles.md",
+      "sha256": "7f4702dbe0f70a7c273f6784dbf72eff04343e6ea2037e03bc8e37921d7e0178"
+    },
+    {
+      "path": "docs/research/act1-relics-potions.md",
+      "anchor": "The player applied a power (2026-11-13, session act1-r14)",
+      "sha256": "45eb73439c3d18699d6c0cc07e60adf4e6a9571bce30a9c886e56e0ecb6c5a30"
+    },
+    {
+      "path": "engine/tests/owner_applied.rs",
+      "sha256": "49e78b7fd43f85edd442c1f53dbdd948a26ef08d2f277e638d12ec919f9f2996"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:24Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:24:18Z @ c4fb1faf",
+      "note": "act1-singles.md changed only its Status line (8b0ba903); s6's relic triggers, <=2 conditions and RelicPick unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "550fb1e0e07ee086c37e27243d30b194f1a5ed05636c85ea8aca4d1b544a7c2a"
+}

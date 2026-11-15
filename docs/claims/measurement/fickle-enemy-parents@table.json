@@ -1,0 +1,26 @@
+{
+  "key": "measurement/fickle-enemy-parents@table",
+  "rev": 1,
+  "value": "Fickle enemy by parent (10-29 @hpb0.01@tsl1 minus heuristic minus ladder control, HP/elite fight): FE-Attack x Lagavulin +1.75 (0.47; turn-1 HP loss wakes it), FE-Skill x Sentries +1.57 (0.36), FE-Skill x Nob +0.80 (0.22); rest within ~1 HP. Difficulty ~1-2 enemy Strength.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Fickle enemy read (job 0781, results/mutate/fickle-enemy.json)",
+      "sha256": "6b47947aaa29dd36ee916ecb9d398f55a8cd26bfc0f3ab34297994cbd8336501"
+    },
+    {
+      "path": "results/mutate/fickle-enemy.json",
+      "sha256": "223b8831c4aaa19925743ef37255fa319176440b703132bf21f1da330de33cbb"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:48+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "faa0a2f92a1944f9eb3821f12df189106f3985fb845d1f222fdc26c6488e8396"
+}

@@ -1,0 +1,52 @@
+{
+  "key": "measurement/boss-replay-score@one-turn",
+  "rev": 1,
+  "value": "Boss-replay score (8 replays at arrival HP, one turn, the file's own player; 0 if died before the boss) against real results on sequences 0-249 vs the one-turn control: sd ratio on end-HP 1.17-1.28, on clears 1.25-1.52 (only matched net1029-s101 over 1.4); means unchanged; replay seed 0 reproduces every real boss fight. Not adopted.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Boss-replay score: 1.17-1.28x on end-HP sd, 1.25-1.52x on clears; not adopted (cheaper-reads lane; 0101-0105; read 14:50 2026-11-04, lanes bc9c6ab7)",
+      "sha256": "50c5d6f8ea43ab1914b095b48af44336350ffa4e42f922437affbc6fcd902dff"
+    },
+    {
+      "path": "jobs/done/0101-boss-replay.json",
+      "sha256": "587c083245d4c01ba187c385d27cadf8697aaf8c1e0d333fd37098071e8ae551"
+    },
+    {
+      "path": "jobs/done/0102-boss-replay.json",
+      "sha256": "78be7ddf1e4e652cab5f0413586efa0d4f9918ec40edca7954033f134684cd32"
+    },
+    {
+      "path": "jobs/done/0103-boss-replay.json",
+      "sha256": "82d7689293c29ff18753e8ca1f549b82e9f8f1d654368e695995e8175ffbe749"
+    },
+    {
+      "path": "jobs/done/0104-boss-replay.json",
+      "sha256": "d4de8df0d019086ba9eaed73ca7c71e16a9b9adff051aa632ca9648506a4f155"
+    },
+    {
+      "path": "jobs/done/0105-boss-replay.json",
+      "sha256": "66553178dc7f2a10914252c3c34d4f6a5a5fd594ac743184467f0bee1958b9db"
+    },
+    {
+      "key": "yardstick/one-turn-controls",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "bc9c6ab7-4de3-45b9-b300-826135be8473",
+  "at": "2026-11-04T07:41:41+00:00 @ 41d21df",
+  "confirms": [
+    {
+      "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+      "at": "2026-11-13T04:30:09+00:00 @ 28c50af5",
+      "note": "the fact was read against the old one-turn control files (net1029-hpb0.01-starter-simboss.json / net1029-hpb0.01.json), which are unchanged; only the yardstick pointer moved (decisions 'Combined one-turn control ... read', 2026-11-13)"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "7a0f137f19f5b3fd31bcde324368019b3ee9245f76459d4ec89bc8d56e5d9894"
+}

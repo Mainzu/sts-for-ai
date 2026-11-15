@@ -1,0 +1,61 @@
+{
+  "key": "decision/matched-reads",
+  "rev": 2,
+  "value": "gauntlet.py play --match is the read for fighting-only questions one turn deep (on the control's picks); whole-player questions play unmatched (how/gauntlet-read). Two-turn reads are for depth questions and the product's score (decision/one-turn-comparisons); matched two-turn reads were not adopted (0107: sd 1.27x under the 1.4x bar, means equal).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Choosing a read by its question: own picks, matched, or crossed (owner, 2026-11-05)",
+      "sha256": "845c389b521926d7d33fc827c280f43cf818eec6ec010a696bd665597cce476d"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Deck-matched reads stay a one-turn screen tool; two-turn reads stay unmatched (on the owner's behalf, 2026-11-04)",
+      "sha256": "4eec6af45bcdd8546813b994fe333e47485daaf514eed117f53f00f723bba05b"
+    },
+    {
+      "key": "measurement/deck-matched@two-turn",
+      "rev": 2
+    },
+    {
+      "key": "decision/one-turn-comparisons",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+  "at": "2026-11-05T14:44:02Z @ 60e882a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:15Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/deck-matched@two-turn reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "gauntlet.py play --match stays a one-turn screen tool; two-turn headline reads keep the protocol unmatched (0107 missed the 1.4x sd bar at 1.27x, means equal). Adopting matched two-turn reads on CPU per verdict (0.29x on 0107's pair, wall time 0.48x) needs its own check set before a read.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Deck-matched reads stay a one-turn screen tool; two-turn reads stay unmatched (on the owner's behalf, 2026-11-04)",
+          "sha256": "4eec6af45bcdd8546813b994fe333e47485daaf514eed117f53f00f723bba05b"
+        },
+        {
+          "key": "measurement/deck-matched@two-turn",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "1aba741f-cb73-4746-91c0-26ca852ecaed",
+      "at": "2026-11-04T14:24:48Z @ 2ee0f61",
+      "until": "2026-11-05T14:44:02Z @ 60e882a"
+    }
+  ],
+  "seal": "0f74cac77e2a1d67a0192a1383797918ca0c512449e7dd9c2256d245e878ed30"
+}

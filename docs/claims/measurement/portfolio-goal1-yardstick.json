@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-goal1-yardstick",
+  "rev": 2,
+  "value": "predicted even, ~60 cpu-h (cap 90); actual done: stage A two-turn table, stacking check (additivity off by <=0.04), stage B table; product pays nothing beyond heuristic per single modifier two-turn except two boss rows; 90.1 cpu-h; reopen if boss-cost-two-turn goes, the reactive-stack lead holds on fresh starts, or pack monsters land.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane goal1-yardstick closed (2026-11-05)",
+      "sha256": "83b9af7db28407faf6d07f2641f1ec257746a064258d566c6b146768416a0c00"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:01+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even that goal 1's number exists within the cap (moves no score, makes goal 1 measurable), ~60 CPU-h (cap 90); actual done: stage A two-turn table, stacking check (additivity fails by up to 0.04) and stage B table recorded; the product pays nothing beyond the heuristic per single modifier two turns deep except two boss rows awaiting boss-cost-two-turn, lead -0.03 on reactive stacks on elites; 90.1 cpu-h (+~7 for 0113's run-out); reopen if: boss-cost-two-turn is a go, the reactive-stack lead holds on fresh seeds or starts, or monsters from packs land",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane goal1-yardstick closed (2026-11-05)",
+          "sha256": "83b9af7db28407faf6d07f2641f1ec257746a064258d566c6b146768416a0c00"
+        }
+      ],
+      "owner": false,
+      "by": "90f55716-f6c6-4779-9e1a-ae9bd0d39565",
+      "at": "2026-11-05T03:16:04+00:00 @ 83775b5",
+      "until": "2026-11-13T02:31:01+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "bce8a26156b2eed3fd18cf25b4d4aad7d1b2e9aeb806197cc54f83e6ee4d008c"
+}

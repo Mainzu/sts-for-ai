@@ -1,0 +1,6 @@
+{"version": 1, "sets": {
+  "ironclad": ["Strike", "Defend", "Bash", "Shrug It Off", "Anger", "Body Slam", "Clash", "Cleave", "Clothesline", "Iron Wave", "Pommel Strike", "Thunderclap", "Twin Strike", "Wild Strike", "Heavy Blade", "Perfected Strike", "Sword Boomerang", "Bloodletting", "Hemokinesis", "Pummel", "Uppercut", "Inflame", "Flex", "Carnage", "Spot Weakness", "Dropkick", "Combust", "Brutality", "Rupture"],
+  "silent": ["Silent Strike", "Silent Defend", "Neutralize", "Sucker Punch", "Leg Sweep", "Quick Slash", "Backflip", "Deflect", "Slice", "Dagger Spray", "Blade Dance", "Cloak and Dagger", "Deadly Poison", "Poisoned Stab", "Bouncing Flask"],
+  "check9": ["Go for the Eyes", "FTL", "Metallicize", "Demon Form", "Rage"],
+  "proving": ["Whirlwind", "Accuracy", "Wraith Form", "Caltrops", "Survivor", "Burst", "Hologram", "Headbutt", "Rampage", "Protect"]
+}}

@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-learn-memory",
+  "rev": 2,
+  "value": "pred likely; go: 40k-game from-scratch learn, round 0 peaks 1.01 GB commit (bar 3.5) with the pool streamed and the solve step reading only its games, games_sha256 unchanged; 1.8 of 3 cpu-h. Reopen: later-round branches or a many-game solve step >3.5 GB commit, or mapped-cache reads slowing an epoch >15% when free RAM < cache.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane learn-memory closed (2026-11-09)",
+      "sha256": "7ec7522d893623b33471a7089d8a590b9b201055ec50ea934ca259a472197588"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:03+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted likely (it builds), even (training time within 15%); about 3 h of code and 1 cpu-h of checks; actual go: round 0 of a 40k-game from-scratch learn peaks at 1.01 GB commit (bar 3.5) with the pool streamed and the solve step reading only its games, same pool games_sha256, no chunked trainer needed (training already mapped); about 1.8 cpu-h of a 3 cap; reopen if: a learn with branches in later rounds or a many-game solve step peaks above 3.5 GB commit, or mapped-cache reads slow an epoch over 15% when less than the cache's size is free",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane learn-memory closed (2026-11-09)",
+          "sha256": "7ec7522d893623b33471a7089d8a590b9b201055ec50ea934ca259a472197588"
+        }
+      ],
+      "owner": false,
+      "by": "e210147f-dc95-40cc-8c04-6656660acf23",
+      "at": "2026-11-09T14:58:40+00:00 @ f865062",
+      "until": "2026-11-13T02:31:03+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "5a64057a03911d7b331f2c9923fa20ede12415186c2dda38528eaa47295d8732"
+}

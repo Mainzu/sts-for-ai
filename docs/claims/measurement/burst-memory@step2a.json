@@ -1,0 +1,55 @@
+{
+  "key": "measurement/burst-memory@step2a",
+  "rev": 1,
+  "value": "A finetune.py burst with the memory-mapped replay pool (60cc028) peaks at 0.70 GB at 4 threads (job 0304, burst 0276's config; 0276 on the old code 3.81 GB). Its curves match 0276's to 5 digits for 3 epochs and drift by at most 0.00219 val MSE after: the input layout widened between the pins (act1-content's six exhaust effects), the pool data are identical apart from all-zero added columns; so training is unchanged by the pool change.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Burst memory (step 2a read): the mapped pool cuts a burst's peak from 3.81 to 0.70 GB at 4 threads; the curve check's 0.00219 gap is the wider input layout, not the pool, so the check is passed by hand and the bursts run (yardstick-cards step 2a; 0304 against 0276; read 05:50 2026-11-07, lanes)",
+      "sha256": "dcfd841ca9540454ceec16c351756a91444a676a41d182c0180495b1db481f96"
+    },
+    {
+      "path": "jobs/done/0304-finetune.json",
+      "sha256": "7867287ba525f908a20a18b035a6dcd3258a941d92c30fdb79d5e12615f08e74"
+    },
+    {
+      "path": "jobs/done/0276-finetune.json",
+      "sha256": "f10f9961b6f414f3ce38c39a43803130a259fa3a22925a0ecbf5c0673a97b3d0"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "d41b9665-fb2c-439a-9abb-7972c16ad0f3",
+  "at": "2026-11-06T22:32:07+00:00 @ 579a868",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A finetune.py burst with the memory-mapped replay pool (60cc028) peaks at 0.70 GB at 4 threads (job 0304, burst 0276's config; 0276 on the old code 3.81 GB). Its curves match 0276's to 5 digits for 3 epochs and drift by at most 0.00219 val MSE after: the input layout widened between the pins (act1-content's six exhaust effects), the pool data are identical apart from all-zero added columns; so training is unchanged by the pool change.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Burst memory (step 2a read): the mapped pool cuts a burst's peak from 3.81 to 0.70 GB at 4 threads; the curve check's 0.00219 gap is the wider input layout, not the pool, so the check is passed by hand and the bursts run (yardstick-cards step 2a; 0304 against 0276; read 05:50 2026-11-07, lanes)",
+          "sha256": "dcfd841ca9540454ceec16c351756a91444a676a41d182c0180495b1db481f96"
+        },
+        {
+          "path": "jobs/done/0304-finetune.json",
+          "sha256": "7867287ba525f908a20a18b035a6dcd3258a941d92c30fdb79d5e12615f08e74"
+        },
+        {
+          "path": "jobs/done/0276-finetune.json",
+          "sha256": "f10f9961b6f414f3ce38c39a43803130a259fa3a22925a0ecbf5c0673a97b3d0"
+        }
+      ],
+      "owner": false,
+      "by": "d41b9665-fb2c-439a-9abb-7972c16ad0f3",
+      "at": "2026-11-06T22:32:07+00:00 @ 579a868",
+      "until": "2026-11-11T07:44:08+00:00 @ 0b5de0f",
+      "retired": "merged into measurement/learn-memory@40k (STATUS cap)"
+    }
+  ],
+  "seal": "63015c2fa2cacc1729eb8270672a9d75efe1fb0ae743482ab1a751a7e50a4023"
+}

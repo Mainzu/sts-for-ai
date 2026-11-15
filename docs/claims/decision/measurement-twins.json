@@ -1,0 +1,110 @@
+{
+  "key": "decision/measurement-twins",
+  "rev": 4,
+  "value": "A twin trained only as a yardstick number's control is outside the training rule if a decisions entry names the number, it costs <= ~3 cpu-h, and it's never a product candidate. Full-size ids twins don't qualify: the ids gap is measured at 5k (+2.54 (0.52) HP).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "The owner's filler proposal placed: read the held-out half of existing nets, not full-size ids twins; unseen cards cost the net half its edge (on the owner's behalf, 2026-11-05)",
+      "sha256": "547b8f1568a7eaf73a4f2a8711d574c312fe6251bf1317566635535ebb8d4fa7"
+    },
+    {
+      "key": "decision/training-stops",
+      "rev": 1
+    },
+    {
+      "key": "measurement/cards-by-half@cells",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:28Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:15Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/cards-by-half@cells reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A twin net trained only as the control of a yardstick number is outside the owner's training rule (decision/training-stops stops arms that hope for a gain) under three conditions: a decisions entry names the number it controls, it costs at most about 3 cpu-h, and it is never read as a product candidate. In force for the two ids partners of the 5k effects twins (ids5k-s301, ids5k-s401: the no-generalisation floor of the cards rung's zero-shot number, lane/yardstick-cards step 1). Full-size ids twins (backlog ids-effects-full-recipe) are not such a control: the ids gap sits on held-out cards and is structural (cause/unseen-cards-half-edge), so they stay under the training rule.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "The owner's filler proposal placed: read the held-out half of existing nets, not full-size ids twins; unseen cards cost the net half its edge (on the owner's behalf, 2026-11-05)",
+          "sha256": "547b8f1568a7eaf73a4f2a8711d574c312fe6251bf1317566635535ebb8d4fa7"
+        },
+        {
+          "key": "decision/training-stops",
+          "rev": 1
+        },
+        {
+          "key": "cause/unseen-cards-half-edge",
+          "rev": 5
+        }
+      ],
+      "owner": false,
+      "by": "56c5a1d1-29a3-4ae4-b122-773b2e4caee5",
+      "at": "2026-11-05T16:55:26Z @ 266f4c4",
+      "until": "2026-11-07T01:19:21Z @ de5296b"
+    },
+    {
+      "rev": 2,
+      "value": "A twin net trained only as the control of a yardstick number is outside the owner's training rule (decision/training-stops stops arms that hope for a gain) under three conditions: a decisions entry names the number it controls, it costs at most about 3 cpu-h, and it is never read as a product candidate. In force for the two ids partners of the 5k effects twins (ids5k-s301, ids5k-s401: the no-generalisation floor of the cards rung's zero-shot number, lane/yardstick-cards step 1, done). Full-size ids twins (backlog ids-effects-full-recipe) are not such a control and stay under the training rule: by id and by effects the nine unseen cards other than Demon Form cost nothing, and Demon Form's cost was the one-turn leaf's horizon (cause/unseen-cards-half-edge), so no ids gap is left for a twin to measure.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "The owner's filler proposal placed: read the held-out half of existing nets, not full-size ids twins; unseen cards cost the net half its edge (on the owner's behalf, 2026-11-05)",
+          "sha256": "547b8f1568a7eaf73a4f2a8711d574c312fe6251bf1317566635535ebb8d4fa7"
+        },
+        {
+          "key": "decision/training-stops",
+          "rev": 1
+        },
+        {
+          "key": "cause/unseen-cards-half-edge",
+          "rev": 7
+        }
+      ],
+      "owner": false,
+      "by": "ed3c6b4a-3acf-4db6-955f-8d0df3367833",
+      "at": "2026-11-07T01:19:21Z @ de5296b",
+      "until": "2026-11-09T09:57:34Z @ 0aed5f6"
+    },
+    {
+      "rev": 3,
+      "value": "A twin net trained only as the control of a yardstick number is outside the owner's training rule (decision/training-stops stops arms that hope for a gain) under three conditions: a decisions entry names the number it controls, it costs at most about 3 cpu-h, and it is never read as a product candidate. In force for the two ids partners of the 5k effects twins (ids5k-s301, ids5k-s401: the no-generalisation floor of the cards rung's zero-shot number, lane/yardstick-cards step 1, done). Full-size ids twins (backlog ids-effects-full-recipe) are not such a control and stay under the training rule: the ids gap is already measured at 5k over five seed twins (effects minus ids +2.54 (0.52) HP on unseen cards, measurement/cards-by-half@cells; the effects inputs carry transfer, cause/unseen-cards-half-edge), and no decision waits on its size at full scale, since the product keeps the effects inputs either way.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "The owner's filler proposal placed: read the held-out half of existing nets, not full-size ids twins; unseen cards cost the net half its edge (on the owner's behalf, 2026-11-05)",
+          "sha256": "547b8f1568a7eaf73a4f2a8711d574c312fe6251bf1317566635535ebb8d4fa7"
+        },
+        {
+          "key": "decision/training-stops",
+          "rev": 1
+        },
+        {
+          "key": "cause/unseen-cards-half-edge",
+          "rev": 9
+        },
+        {
+          "key": "measurement/cards-by-half@cells",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "1e53d6ed-baa0-4367-8ee3-26d3d9d38c35",
+      "at": "2026-11-09T09:57:34Z @ 0aed5f6",
+      "until": "2026-11-13T02:29:28Z @ 3123201a"
+    }
+  ],
+  "seal": "cc0ff3dc0ce82fe7c96be7f6191f3eecc5b6edb053a7fe1e1bf018fdaf940f69"
+}

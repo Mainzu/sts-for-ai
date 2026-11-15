@@ -1,0 +1,78 @@
+{
+  "key": "measurement/portfolio-mechanic-count-curve",
+  "rev": 3,
+  "value": "pred even; go (1 seed): 6-arm held-out pooled cut 0.88 (0.02) vs the 18-arm's 0.81 (measurement/mechanic-count@six-arm); 37 cpu-h (18 lost to a reboot). Reopen: a pack-size design hinging on fewer mechanics needs a 2nd 6-arm seed, or a held-out pair with an uncovered atom is priced against the count.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane mechanic-count-curve closed (2026-11-12)",
+      "sha256": "725c2cae89b58c618ce18516bf3c06b91028461a2949e9347ed2ed2d91dc66b1"
+    },
+    {
+      "key": "measurement/mechanic-count@six-arm",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:05+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even that the 6-arm's held-out pooled cut is within 2 se of 0.81, about 18 cpu-h; actual closed at the cap with no read (about 29 cpu-h at the close, about 37 once 0905 ends; 18 lost to 0927, killed by a reboot), learn 0935 done, read 0905/0906 left to the navigator; reopen if: 0906's pooled held-out cut is 0.4-0.6 (a seed-101 6-arm learn decides) or under 0.4 (a 12-mechanic arm), while the pool-size question is still open",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane mechanic-count-curve closed (2026-11-12)",
+          "sha256": "725c2cae89b58c618ce18516bf3c06b91028461a2949e9347ed2ed2d91dc66b1"
+        },
+        {
+          "path": "jobs/done/0935-learn.json",
+          "sha256": "d3889d1a677f018ade772f66e1409864aa2d8a82bb28f8b07ff3ee6e0dbf7b0e"
+        }
+      ],
+      "owner": false,
+      "by": "5f60fea3-5739-43f8-a859-1bbbc7d78897",
+      "at": "2026-11-12T13:18:02+00:00 @ dcc13a2",
+      "until": "2026-11-12T15:13:37+00:00 @ 9b55119"
+    },
+    {
+      "rev": 2,
+      "value": "predicted even that the 6-arm's held-out pooled cut is within 2 se of 0.81, about 18 cpu-h; actual go on one seed after the close (read by the navigator): cut 0.88 (0.02), above the 18-arm's 0.81 (measurement/mechanic-count@six-arm); about 37 cpu-h (18 lost to 0927, killed by a reboot); reopen if: a second 6-arm seed is needed to settle a pack's size (a generator design that hinges on fewer mechanics), or a held-out pair with an uncovered atom is to be priced against the count",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane mechanic-count-curve closed (2026-11-12)",
+          "sha256": "725c2cae89b58c618ce18516bf3c06b91028461a2949e9347ed2ed2d91dc66b1"
+        },
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Mechanic count (lane mechanic-count-curve; read by the navigator, jobs 0905, 0906)",
+          "sha256": "03800f3a386de0d047b73d6867f6c39a82ff8c5d2a40917557843771ee631414"
+        },
+        {
+          "path": "jobs/done/0935-learn.json",
+          "sha256": "d3889d1a677f018ade772f66e1409864aa2d8a82bb28f8b07ff3ee6e0dbf7b0e"
+        },
+        {
+          "path": "jobs/done/0906-genpack-cut.json",
+          "sha256": "f131c7d76d163a1c80c4e6517fd7004323d211eeb8ebf1183bfb37909bcf3751"
+        },
+        {
+          "key": "measurement/mechanic-count@six-arm",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "48a915f7-e4fb-4f66-b701-0667be478b80",
+      "at": "2026-11-12T15:13:37+00:00 @ 9b55119",
+      "until": "2026-11-13T02:31:05+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "4bc1897eb9c7e7ec1dff4bde2e26b68e676cdbf44c37ff8dbe2907d6f6c29894"
+}

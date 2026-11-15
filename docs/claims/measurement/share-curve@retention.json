@@ -1,0 +1,90 @@
+{
+  "key": "measurement/share-curve@retention",
+  "rev": 2,
+  "value": "Goal 1's games-to-adapt quote: 33 games at replay share 0.9 (11 at the edge, measurement/share-curve-ocw@g11) on two debuff-on-enemy elite mechanics, one turn, net teacher. Retention: best g33 sh0.9 seed on one-turn cells vs net1029-hpb0.01, AttackLoss-Weak +0.06 (0.55) HP, OppCard-Weak +0.31 (0.48); 2-se lower bounds -1.04/-0.65.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/share-curve.md",
+      "anchor": "Step 1b and step 2: OppCard-Weak at 11 games (table 0694) and retention (0695, 0696), 2026-11-09; checkpoint retention passed; the go holds",
+      "sha256": "2df19bbc557133e4e3726e65b0ae100889f5266f6b60c9bc5467d07aef2a203d"
+    },
+    {
+      "path": "results/gauntlet/sc-alw-g33-sh9-hpb0.01.json",
+      "sha256": "4f093c9a848969ae46e73022085db109b8422c619c8e3c2402afbe5812223e49"
+    },
+    {
+      "path": "results/gauntlet/sc-ocw-g33-sh9-hpb0.01.json",
+      "sha256": "a46aceb5ddc4df6cc06e99d55c44835748dc786f40d5a7858e54794f5b4f4573"
+    },
+    {
+      "key": "measurement/share-curve@alw",
+      "rev": 2
+    },
+    {
+      "key": "measurement/share-curve@ocw",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:30+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Share-recipe bursts keep the parent's play: one-turn cell gauntlet paired against net1029-hpb0.01, each mechanic's best 33-game share-0.9 seed: GE-AttackLoss-Weak s3 +0.06 HP (se 0.55, n 250, clears 0.636 vs 0.612), GE-OppCard-Weak s2 +0.31 (0.48, n 200, 0.635 vs 0.600); runs stopped early by --against (protocol fail = no 1.5 HP gain), 2-se lower bounds -1.04 and -0.65, inside the 1.5 HP bar. OppCard-Weak at 11 games share 0.9 (sc-ocw11): cut +3.69 (0.26/0.71), 0.50 of the cost at the bar, per net +4.88/+2.43/+3.76, parent +0.09. Goal 1's games-to-adapt quote: 33 games at replay share 0.9 (11 at the edge) on two debuff-on-enemy elite mechanics, one turn deep, net teacher",
+      "sources": [
+        {
+          "path": "docs/research/share-curve.md",
+          "anchor": "Step 1b and step 2: OppCard-Weak at 11 games (table 0694) and retention (0695, 0696), 2026-11-09; checkpoint retention passed; the go holds",
+          "sha256": "2df19bbc557133e4e3726e65b0ae100889f5266f6b60c9bc5467d07aef2a203d"
+        },
+        {
+          "path": "results/gauntlet/sc-alw-g33-sh9-hpb0.01.json",
+          "sha256": "4f093c9a848969ae46e73022085db109b8422c619c8e3c2402afbe5812223e49"
+        },
+        {
+          "path": "results/gauntlet/sc-ocw-g33-sh9-hpb0.01.json",
+          "sha256": "a46aceb5ddc4df6cc06e99d55c44835748dc786f40d5a7858e54794f5b4f4573"
+        },
+        {
+          "path": "results/families/sc-ocw11.json",
+          "sha256": "fc818fc63ba8f27fafcceee94b2e899072e1256104ffe3efe44dcf2c0b333a22"
+        },
+        {
+          "path": "jobs/done/0694-family.json",
+          "sha256": "336791a29ba0edfbc1afaf9b3c8d62fd2631d86744e409c534f2f7b8ace10e2f"
+        },
+        {
+          "path": "jobs/done/0695-gauntlet.json",
+          "sha256": "6b4d9529d74da33b5eac851d6f7505aab6e73ae949eeeb7aa507703c95d75426"
+        },
+        {
+          "path": "jobs/done/0696-gauntlet.json",
+          "sha256": "c19ae5f7dd5c79116626ebfe245ebf7d9050fb3d9170f6d0ffd18a536784b577"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        },
+        {
+          "key": "measurement/share-curve@alw",
+          "rev": 1
+        },
+        {
+          "key": "measurement/share-curve@ocw",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "fe02d2dc-9024-4b2e-b27c-382b67b6cb89",
+      "at": "2026-11-09T11:24:24+00:00 @ 5c25b2c",
+      "until": "2026-11-13T02:31:30+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "d750ea0b5987b981ab38cc5aec4d152afcee6e844c7407c90158494866014b86"
+}

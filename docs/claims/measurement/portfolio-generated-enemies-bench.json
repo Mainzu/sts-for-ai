@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-generated-enemies-bench",
+  "rev": 2,
+  "value": "predicted likely table, ~6 cpu-h (cap 10); actual table at 15.2 cpu-h: 17/21 mechanics cost, mean +1.28 (0.38) HP/elite fight, cost follows punish-an-action triggers; reopen if unread atoms land, a new product net/leaf (re-read top 5 pairings ~1 thread-h), or two-turn read wanted after the adapted column fails on AttackLoss-Damage x Nob.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane generated-enemies-bench closed (2026-11-07)",
+      "sha256": "c8e97438bda34c73c381417ed49c4e4025da9bae1e352d33f18af8c41de68851"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:58+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted likely the 24-mechanic table within the cap, even that some mechanics cost one turn deep with @tsl1, about 6 cpu-h (cap 10); actual table recorded at 15.2 cpu-h (1.5x the cap), 17 of 21 read mechanics cost, mean +1.28 (0.38) HP per elite fight, cost follows the punish-an-action trigger; adapted column not run (gen-adapted-column); reopen if: new atoms the net does not read land (measure blindness against this table), a new product net or leaf (re-read the five costliest pairings, about 1 thread-hour), or a two-turn read is wanted after the adapted column fails to halve AttackLoss-Damage x Nob",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane generated-enemies-bench closed (2026-11-07)",
+          "sha256": "c8e97438bda34c73c381417ed49c4e4025da9bae1e352d33f18af8c41de68851"
+        }
+      ],
+      "owner": false,
+      "by": "ff4c73d2-3bed-4ee6-ba6e-cf0c50506dd8",
+      "at": "2026-11-07T16:18:03+00:00 @ ecf931f",
+      "until": "2026-11-13T02:30:58+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "fa3e577f7be6aea2102cbf90e01e7109f5b10ee9e8246b7b982c1514ab5a475d"
+}

@@ -1,0 +1,26 @@
+{
+  "key": "measurement/pack-net-twin-tsl1@cells",
+  "rev": 1,
+  "value": "All-content twins @hpb0.01@tsl1 vs 10-29 @tsl1, both cell books, 2 nets: Demon Form decks +3.30 (0.95; nets 0.35) HP, other held-out -0.04 (0.60), train +0.56 (0.43): learned Demon Form past its first tick.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pns-probes.md",
+      "anchor": "twin-tsl1 (0793-0796): from-scratch games taught Demon Form more than its first tick",
+      "sha256": "f0e7b8cc26ce9cb6195e67d7156690bd05af7c9d4710a6bcd2cad189762bf336"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-tsl1.json",
+      "sha256": "88bcfa6dc0f358ec2209d8dc0129d850ede28fa706f836b83bc120c18b3b8107"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:46+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "5cfe869482d0d205a4547a8710db5d3203a8e085559fad1b41b1b4a9bed6d855"
+}

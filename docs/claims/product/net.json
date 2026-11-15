@@ -1,0 +1,131 @@
+{
+  "key": "product/net",
+  "rev": 5,
+  "value": "Product player: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "configs/product.json",
+      "sha256": "a8f3e876d86e570ff1ad85531fb7f5426ef0dac11cbf57e076e8be1c77440e2d"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Product read 0986: `@tsl1@lcb1` two turns deep is level; the product gains both flags and the chooser (on the owner's behalf, 2026-11-13)",
+      "sha256": "531b472107a5bfc62f349958aff89e773997c8235683a54723a04538f399fa2b"
+    }
+  ],
+  "check": {
+    "cmd": "python -I scripts/product.py player",
+    "expect": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1",
+    "timeout": 10
+  },
+  "owner": false,
+  "pinned": true,
+  "note": null,
+  "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+  "at": "2026-11-13T09:37:40Z @ 335c597a",
+  "confirms": [
+    {
+      "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+      "at": "2026-11-14T12:51:48Z @ 1232e778",
+      "note": "check passed: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1"
+    },
+    {
+      "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+      "at": "2026-11-14T13:40:23Z @ 2e1d1b32",
+      "note": "check passed: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1"
+    },
+    {
+      "by": "24a6e50e-3e7c-42ec-b831-f35d7846c20b",
+      "at": "2026-11-14T15:43:19Z @ 770ebbbe",
+      "note": "check passed: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1"
+    },
+    {
+      "by": "24a6e50e-3e7c-42ec-b831-f35d7846c20b",
+      "at": "2026-11-14T15:48:53Z @ e92ee62d",
+      "note": "check passed: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1 --two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Product player: runs/2026-11-01-burst8hp2-s1-9f89b6f/model.pt@hpb0.01, one turn deep (the ladder champion with the search HP bonus 0.01).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "HP bonus promoted (owner away, 2026-11-01)",
+          "sha256": "0d65e3ca17b3b4929f4f67341bab4994d435554aea66bdcb01e0814ff8e38029"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:08:14Z @ fc9cdd8",
+      "until": "2026-11-02T16:08:15Z @ fc9cdd8"
+    },
+    {
+      "rev": 2,
+      "value": "Product player: runs/2026-11-01-burst8hp2-s1-9f89b6f/model.pt@hpe0.01 --two-turn (burst8hp2 s1 searched two turns deep with the end-HP price 0.01).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Two-turn @hpe is the product player (owner away, 2026-11-02)",
+          "sha256": "ca044c0831da6c8b37ee12319b5441efe72230d04e34260cd9073954e827b5b9"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:08:15Z @ fc9cdd8",
+      "until": "2026-11-02T16:08:15Z @ fc9cdd8"
+    },
+    {
+      "rev": 3,
+      "value": "Product player: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01 --two-turn (the 10-29 net searched two turns deep, fallback player, 400k nodes, sample k 4, end-HP price 0.01). Not burst8hp2 (that was the product until 2026-11-02 and is still the tight2 ladder's champion).",
+      "sources": [
+        {
+          "path": "configs/product.json",
+          "sha256": "72e460ead40bc44b8afb75a0feb0e7af2319a1f188af7319242c6f2839c595e4"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Product net: the 10-29 net (owner away, 2026-11-02)",
+          "sha256": "559ef81f9c9bd95ed6d6a83138e4e117bf4c753de7302b14c2d35257aee814b2"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Headline re-rank: the 10-29 net is the product net, the headline setting is the final ruler (owner away, 2026-11-02)",
+          "sha256": "5fb53628e38af4cc15051b3be295f08e4b7a87003153f8a5b08afdb8e1db7b38"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Two-turn @hpe is the product player (owner away, 2026-11-02)",
+          "sha256": "ca044c0831da6c8b37ee12319b5441efe72230d04e34260cd9073954e827b5b9"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:08:15Z @ fc9cdd8",
+      "until": "2026-11-03T00:34:19Z @ da67084"
+    },
+    {
+      "rev": 4,
+      "value": "Product player: runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01 --two-turn --line-seed --step-line.",
+      "sources": [
+        {
+          "path": "configs/product.json",
+          "sha256": "7eff1ba9bd0d40302b1369c5e0b6e275e795dee5c83c07cb7c1e7222e90e74c1"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Line step is the two-turn play mode (owner away, 2026-11-03)",
+          "sha256": "b9128f17997a157bca86e2f61ec1765ebc065b0419fac54dcf3b413184e3f0cf"
+        }
+      ],
+      "owner": false,
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T00:34:19Z @ da67084",
+      "until": "2026-11-13T09:37:40Z @ 335c597a"
+    }
+  ],
+  "seal": "4cd5d489e8d54f844fff5eb4fd2f3a6809e607b8743fbc413b6e6b489dd58b08"
+}

@@ -1,0 +1,22 @@
+{
+  "key": "decision/no-burst-lottery-crossed",
+  "rev": 1,
+  "value": "Burst lottery (many seeds, keep the best) closed: best of 20 more draws ~0.2 HP two turns deep.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "twin-two-turn-matched at 500: between; no second seed; the fighter plateau has two nets (on the owner's behalf, 2026-11-11)",
+      "sha256": "77fe79647243f98fb2827a1e3dc0ab51c94b5633ee3c7b246c0e63ee63ea388b"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:18Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "8d19c2c52bb7ae799083201c8f18e99c5c3caa3949090ebb4c2fdf945b17f465"
+}

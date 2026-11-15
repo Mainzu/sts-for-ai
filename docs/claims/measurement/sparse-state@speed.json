@@ -1,0 +1,27 @@
+{
+  "key": "measurement/sparse-state@speed",
+  "rev": 1,
+  "value": "Sparse piles and powers vs main at 1ad4938, series_speed.py 11 interleaved runs, medians: search 1 thread 475.2 -> 558.6 games/s (+17.6%, 10 of 11 pairs), 16 threads +35.5%, random combats +13.3%, clone 26.5 -> 20.7 ns; CombatState 1,292 -> 744 bytes; golden, codec, series_check and H4 identical",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/specs/sparse-state.md",
+      "anchor": "Results (built 2026-11-06, lane sparse-state)",
+      "sha256": "40c34bedc7fd773084e17ba4e59237853a4da0b178621e73eb8e1a4d27d6077a"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Sparse state built and landed: search +17.6% (on the owner's behalf, 2026-11-06)",
+      "sha256": "93fce3836dfeadd7f56b6d7732c4c8aa6bc5b30b14f61660a70848b7bb2b3626"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "1939d3ae-aea6-413d-9ca4-7c43d9d98f32",
+  "at": "2026-11-06T16:57:07+00:00 @ b2d870e",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "b9335a0e5debd4e101b24b09a9164e372f337ba0a3c847c5f1109246c33db9fd"
+}

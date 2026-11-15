@@ -1,0 +1,15 @@
+{
+ "config": {
+  "name": "pin-hp",
+  "no_death": true,
+  "sample_seed": 6,
+  "search": {
+   "limit": 16
+  }
+ },
+ "engine_commit": "49d55af3d07a6b00fc3b52eab15890e4626c1c9a+dirty",
+ "games_sha256": "09d0fd0d0a351ebbdf8aaeb70b7f46d148d8c6567d72839290845b5f42a34fa2",
+ "n_games": 6,
+ "parent_model": null,
+ "rules_version": "e47bcfcdb6b2777a"
+}

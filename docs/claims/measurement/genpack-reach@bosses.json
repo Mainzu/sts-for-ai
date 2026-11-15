@@ -1,0 +1,67 @@
+{
+  "key": "measurement/genpack-reach@bosses",
+  "rev": 2,
+  "value": "24 generated mechanics on 325 official boss fights x4, one turn @tsl1: held-out (6 rows) novelty cost pns s1 +1.21 (0.26) -> genpack s1 +0.23 (0.26) HP, cut 0.81 (0.19), wins +0.030 (0.009); training rows cut 0.86; parents level. Base boss cost ~1/4 of the elites'.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/genpack-reach-2026-11-11.md",
+      "anchor": "Bosses (0844-0845): the cut reaches the official bosses, on a small base cost",
+      "sha256": "1294c71edac536d747b6839d9a6977651972f6407ad0a0588a7fb3b04c00999a"
+    },
+    {
+      "path": "results/mutate/gen-pns1-tsl1-boss24.json",
+      "sha256": "f2f310ffdf224bae3ad9f39469a44a861ceb25dacc0cd3c7a6fccbe0b0f4e172"
+    },
+    {
+      "path": "results/mutate/gen-gp1-tsl1-boss24.json",
+      "sha256": "dd733f99e4cb1fd3505fc03e3e26721fe104249815f9d4b7c9e196c9a332cc0e"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:21+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The 24 generated enemy mechanics on the bench's 325 official boss fights (Slime Boss 110, Hexaghost 110, the Guardian 105) x 4 seeds, one turn deep @tsl1, pin 33fd633, heuristic games identical: novelty cost (net minus heuristic, beyond the parent; paired by start) held-out pooled (6 rows) pack-net-scratch seed 1 +1.21 (0.26) HP, generated-pack net seed 1 +0.23 (0.26), gain +0.98 (0.24), cut 0.81 (0.19), wins gain +0.030 (0.009); training rows (18) +1.82 to +0.25, cut 0.86 (0.13), wins +0.045 (0.008); parents level (net HP lost 38.47 / 38.48, wins 0.724 / 0.713). Held-out gain by boss: Slime Boss +0.91 (0.50), Hexaghost +1.05 (0.35), Guardian +0.99 (0.36). Base boss cost a quarter of the elites' (+5.17, measurement/genpack-transfer@seed1).",
+      "sources": [
+        {
+          "path": "docs/research/genpack-reach-2026-11-11.md",
+          "anchor": "Bosses (0844-0845): the cut reaches the official bosses, on a small base cost",
+          "sha256": "1294c71edac536d747b6839d9a6977651972f6407ad0a0588a7fb3b04c00999a"
+        },
+        {
+          "path": "results/mutate/gen-pns1-tsl1-boss24.json",
+          "sha256": "f2f310ffdf224bae3ad9f39469a44a861ceb25dacc0cd3c7a6fccbe0b0f4e172"
+        },
+        {
+          "path": "results/mutate/gen-gp1-tsl1-boss24.json",
+          "sha256": "dd733f99e4cb1fd3505fc03e3e26721fe104249815f9d4b7c9e196c9a332cc0e"
+        },
+        {
+          "path": "jobs/done/0844-mutate-monsters.json",
+          "sha256": "de38a451babd37605614c4c945ce17ad6ff958719cee019b074a9ac90fd23374"
+        },
+        {
+          "path": "jobs/done/0845-mutate-monsters.json",
+          "sha256": "aa617f2f61e3de9d9de5c69b11dedf5c8e2e86c4944ec5ed87982df73e5b9a51"
+        },
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Seed-1 read (jobs 0809, 0810; 0811 refused)",
+          "sha256": "e35efa6e99431e9c75bc54234f9e60cf3df0735eee1ee5e9aea46686ff8e7b89"
+        }
+      ],
+      "owner": false,
+      "by": "76244db9-7a36-4d59-9a82-257f8498490b",
+      "at": "2026-11-10T17:57:48+00:00 @ d1d839e",
+      "until": "2026-11-13T02:30:21+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "61dde6359e38c1d92eb54307455b732402d494bf3551f9bb41622fa6bc090ea9"
+}

@@ -1,0 +1,38 @@
+{
+  "key": "how/power-can-go-negative",
+  "rev": 1,
+  "value": "Every power row carries can_go_negative (default false), the engine's form of the game's AbstractPower.canGoNegative: true for Strength and Dexterity (Wraith Form is stored +n in the engine, so left out). A negative Apply of a power without it acts as the game's ReducePowerAction: floored at 0, nothing when not held, no debuff, no OwnerApplied hooks. Python: sts.power_can_go_negative(name).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "engine/src/registry.rs",
+      "sha256": "d63f68bd19a0e3ce2f9fc3e13a0cdca958d88af854b187caccdd00c1c8091db9"
+    },
+    {
+      "path": "engine/src/state.rs",
+      "sha256": "9200c10a087b9452251f58354c1e5ef39c2635f1bab9e62a7374db793f243ba6"
+    },
+    {
+      "path": "content/powers.json",
+      "sha256": "7a95a139b19b7efc0654dc9c9f507610346290cbe8ce11205a6ec36875a0412c"
+    },
+    {
+      "path": "py/src/lib.rs",
+      "sha256": "41d9c8af51de7e66005dc2e88f8ea598184300db2f725357789b4c5069de30c0"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Rules version moves for Pocketwatch's play count (on the owner's behalf, 2026-11-14)",
+      "sha256": "e00c0296d95284c7135fcc66f43eb41581ac4b1a0b680b439cc5350ea4c4288d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+  "at": "2026-11-14T12:51:34Z @ 69a75332",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "a9812bf44a6fcbd0e456e7da6653bad7d4b764bf825eb3fc11a988fff24d05ce"
+}

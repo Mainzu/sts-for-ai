@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-session-free-reads",
+  "rev": 2,
+  "value": "pred likely/even; done: family ycards-step2 ran from one queueing session to its table (64 jobs, 0404 writes the verdict) vs pattern-rows-burst's 12 jobs over several sessions; 0 lane cpu-h. Reopen: a pass rule needing a look between jobs that --if-passed/--check can't express, or families still needing as many sessions.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane session-free-reads closed (2026-11-08)",
+      "sha256": "621eed775c1d2fca166d7d900836f2979f5198733c5d747f8caaf2d6de89aea0"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:14+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted likely as code, even that it halves sessions per family, about 1 cpu-h of checks; actual done: the ycards-step2 family ran from one queueing session to its table (64 jobs, job 0404 writes the verdict) against pattern-rows-burst's 12 jobs over several sessions, ledger committed, 0.0 lane cpu-h of 3; reopen if: a family's pass rule needs a look between jobs that --if-passed/--check cannot express, or a family's reads still take as many sessions as pattern-rows-burst",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane session-free-reads closed (2026-11-08)",
+          "sha256": "621eed775c1d2fca166d7d900836f2979f5198733c5d747f8caaf2d6de89aea0"
+        }
+      ],
+      "owner": false,
+      "by": "36dc1dce-940a-4b81-8465-e50b51706621",
+      "at": "2026-11-07T17:43:38+00:00 @ 4e4fdf7",
+      "until": "2026-11-13T02:31:14+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "d60a42719640774f292427689f00cca87e6fa2b57377d61a8da86f9432878ad6"
+}

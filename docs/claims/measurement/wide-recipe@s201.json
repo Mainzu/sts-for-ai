@@ -1,0 +1,42 @@
+{
+  "key": "measurement/wide-recipe@s201",
+  "rev": 1,
+  "value": "Wide recipe seed 201 (current encoding) on 675 elites @tsl1: new held-out cut 0.77 (0.06) vs pns201 (+2.88 -> +0.65); old 24 rows held-out +1.08 vs 18-mech s201 +1.26 (not worse); yardstick pooled 4 +1.08 (0.23) vs pns1 +4.03 (half 2.02); cells -0.56 (0.55). RoundEnd rows still costly (+1.80/+1.74). Passes all bars; seed 101 not run.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Seed 201 of the wide recipe (jobs 1002-1006; read 2026-11-14)",
+      "sha256": "f6e5d4d6a0e4644dcee2ed01812ba99fdbaaf29288230e6c848fb38e0282a286"
+    },
+    {
+      "path": "results/mutate/gen-wide-wp201-tsl1.json",
+      "sha256": "f7676eb7196cb8b10e01873540cfa3803ef97ddb8f6e6e41f1710bf31ef973a2"
+    },
+    {
+      "path": "results/mutate/gen-wp201-tsl1-all24.json",
+      "sha256": "dc9027d62bf29977a7d17c36df42dcc98873f16b873b90684642f9f9388f8fea"
+    },
+    {
+      "path": "results/mutate/yard-wp201-tsl1.json",
+      "sha256": "7a609d99db8a82e00f04b7715dfe840a4e202aa490ae8c77466ac1378170e72a"
+    },
+    {
+      "path": "results/gauntlet/widepack40k-s201-hpb0.01-cells.json",
+      "sha256": "939f186f1d81b907123a8f41a7e77adaecf330bd8b270e39eb5a2be696276e1c"
+    },
+    {
+      "path": "jobs/done/1002-learn.json",
+      "sha256": "3ecfe1f9ef17b427f7c3ce5821d9daa64ac6ee2eb8027078614f938d41e4a457"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "ec59ec51-b355-4d8f-9c19-42070a4c2e66",
+  "at": "2026-11-13T23:14:02+00:00 @ 93cd5661",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "fd499c56e799e9cc7811e7d4c4eb7a9305c2d213bc1db46fc65be75520985a31"
+}

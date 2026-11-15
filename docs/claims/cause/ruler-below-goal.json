@@ -1,0 +1,70 @@
+{
+  "key": "cause/ruler-below-goal",
+  "rev": 3,
+  "value": "Each yardstick drops one stage of the objective (tight2: HP carried; run-HP: clears; cell gauntlet: the deck; headline: boss end-HP and the map), so it ranks near-copies right and recipe changes wrong; the next ruler reversed verdicts (data80k best on tight2, 4th on the gauntlet).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/big-picture-2026-11-12.md",
+      "anchor": "Diagnosis",
+      "sha256": "4a95153f1db59b82ae4baa57b65e149ecc53faf2aa9678f893e9d31d9f7d6796"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:08Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Each yardstick dropped one stage of the objective (tight2 drops HP carried, run-HP drops clears, the cell gauntlet drops the deck, the headline drops boss end-HP and the map), so it ranks near-copies right and recipe changes wrong, and the next ruler reversed its verdicts (data80k best on tight2, fourth on the gauntlet; ladder -0.0012 vs gauntlet +0.168 for the HP bonus).",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "The patterns behind the record",
+          "sha256": "16de4c3c7820337ce8999ae598c89f0472ecea8c15e5da9370798defb26d5f14"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:10:33Z @ fc9cdd8",
+      "until": "2026-11-12T09:28:07Z @ f048400"
+    },
+    {
+      "rev": 2,
+      "value": "Each yardstick dropped one stage of the objective (tight2 drops HP carried, run-HP drops clears, the cell gauntlet drops the deck, the headline drops boss end-HP and the map), so it ranks near-copies right and recipe changes wrong, and the next ruler reversed its verdicts (data80k best on tight2, fourth on the gauntlet; ladder -0.0012 vs gauntlet +0.168 for the HP bonus). And the headline's own statistic: The headline's end-HP statistic (end HP 0 if not cleared, the protocol's SPRT) credits HP left after the Act 1 boss: on matched official reads the recent goal-2 candidates' gains are almost all HP left on sequences both players clear (all-content twin two turns deep +1.41 (0.45) = +0.09 from clear flips + 1.32 shared, clears +0.014 at about 1 se; one turn deep +1.69 = -0.01 + 1.70; SharpHide-stage-B two turns deep +1.08 = 0.01 + 1.07), mostly HP saved inside the boss fight, while a real effect splits otherwise (two turns over one +6.14 = 3.68 flips + 2.45 shared) and the SharpHide net one turn deep (+2.47) has 1.09 from flips; what shared HP is worth depends on the act transition's heal, not yet checked against the decompiled code (backlog 69).",
+      "sources": [
+        {
+          "path": "docs/research/big-picture-2026-11-12.md",
+          "anchor": "Diagnosis",
+          "sha256": "4a95153f1db59b82ae4baa57b65e149ecc53faf2aa9678f893e9d31d9f7d6796"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-12.md",
+          "anchor": "Key claims and the skeptics' verdicts",
+          "sha256": "6f007c65243b7606f2eefafbe1eba953b4f590ea69291cb209ccf0c2e10714c5"
+        },
+        {
+          "path": "results/gauntlet/match-allcontent40k-s1-hpe0.01-two-line-step-starter-simboss.json",
+          "sha256": "bdf5f423aaa8eb0ac8a14b78f3c982c7270a74a5a331a3e8954b13fe6662f83a"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json",
+          "sha256": "18cd9996abd64a927459287bf456a4b974f7956884d4d9f5fb551745bb1162ed"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "e660090c-a2b6-4392-b828-c18bd9d9f685",
+      "at": "2026-11-12T09:28:07Z @ f048400",
+      "until": "2026-11-13T02:29:08Z @ 3123201a"
+    }
+  ],
+  "seal": "f1ff6002a49cb5b77b2887159466a330f7dc6131aa02a3c918f82a5060c8a866"
+}

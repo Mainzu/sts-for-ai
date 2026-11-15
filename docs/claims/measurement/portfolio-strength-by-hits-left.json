@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-strength-by-hits-left",
+  "rev": 2,
+  "value": "pred even; fail: @shl cut the AttackLoss-Damage x Nob cost 71% (k 0.005) / 93% (0.01) but AttackLoss-Strength x Nob +2.37 / +9.38 HP over zero-shot; 3.0 cpu-h. Reopen: a price on the Strength change a choice causes that stops ranking attacks below skills on 0554's AttackLoss-Strength x Nob starts, or k 0.0025 read for the Nob parent's -0.36 HP lead.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane strength-by-hits-left closed (2026-11-08)",
+      "sha256": "10447962c4e8e0ca9b3905cf8157bca53b5e17e5f847db84609e3a5d511b9861"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:16+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even that one scale keeps half of AttackLoss-Damage x Nob's cut with AttackLoss-Strength within 1.5 HP of zero-shot, a long shot on the headline; about 2 h of code and 3 cpu-h (cap 6); actual fail: Nob cost cut 71% (k 0.005) and 93% (0.01), AttackLoss-Strength x Nob +2.37 and +9.38 over zero-shot, headline not run; 3.0 cpu-h; reopen if: a price on the Strength change a choice causes (difference from the root, damage credit at the same rate) stops ranking attacks below skills on 0554's AttackLoss-Strength x Nob starts offline, or k 0.0025 is read for the Nob parent's -0.36 HP lead",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane strength-by-hits-left closed (2026-11-08)",
+          "sha256": "10447962c4e8e0ca9b3905cf8157bca53b5e17e5f847db84609e3a5d511b9861"
+        }
+      ],
+      "owner": false,
+      "by": "58772442-8d0e-4067-9bfa-00b87832475e",
+      "at": "2026-11-08T03:09:10+00:00 @ c11e406",
+      "until": "2026-11-13T02:31:16+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "89efa363d2353fc8ac5a1b0c4c973392f7c03281a2bf36865c47b618b28dd695"
+}

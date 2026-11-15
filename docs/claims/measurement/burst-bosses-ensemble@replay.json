@@ -1,0 +1,30 @@
+{
+  "key": "measurement/burst-bosses-ensemble@replay",
+  "rev": 1,
+  "value": "Mean of the 3 10-29 seed nets as one evaluator (no HP price) minus mean of members, boss replay: Guardian +0.007 (0.004), Hexaghost +0.009 (0.004), Slime 0.000 (0.002).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Burst nets on the headline decks' boss fights, one turn deep: a fine-tune of 400-1600 games moves wins on the two bosses the net never trained on by -0.054 to +0.034 (the 1602-game SharpHide burst +0.034 (0.008) Guardian, +0.031 (0.010) Hexaghost; the stat burst -0.054 (0.012) Hexaghost) and on Slime Boss by at most +0.012; one training seed each, so a lead (navigator probe; 0157-0160; read 19:25 2026-11-05, navigator 2ef20aae)",
+      "sha256": "9ba305046c66e0bd1e4a321a2045b272901e7db61e93301ad865b14d134ca11a"
+    },
+    {
+      "path": "results/boss_replay/hp-sweep-ens3-plain.json",
+      "sha256": "423c5f48949a03ddf952113f13f18096cc4775066382d019a99839dc96c7f6be"
+    },
+    {
+      "path": "results/boss_replay/hp-sweep-s1-plain.json",
+      "sha256": "558c44551638b786178ff25916f1e7d32a32a53af336b5f27badffdb3f90e7cf"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:30+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "9a4211f0fa68ef75ae6bc8993395239d34d795c642789d0466e34f4eeb4c5854"
+}

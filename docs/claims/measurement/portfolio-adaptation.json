@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-adaptation",
+  "rev": 2,
+  "value": "predicted even/likely, ~2.5 cpu-h (cap 12); actual transfer pass (thorns2 0.86x; WeakOnHit HP cost cut 0.78x by the SharpHide net), second seed pass, rate columns fail on Ritual 2, stage B no curve point; 3.4 cpu-h; reopen if a mechanic with a one-turn cost >=~0.04 win / 3 HP, a WeakOnHit second seed, or a past-horizon input.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane adaptation closed (2026-11-05)",
+      "sha256": "1ba96f63b7036bbf9db832cfcbdf841cacb8fc0f14543cc472c09274753eee44"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:47+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted: steps rated even (transfer), likely (second seed), likely/even (stage B), ~2.5 cpu-h (cap 4, extended to 12 for step 4, the rate twins); actual: transfer passed (thorns2 0.86x; WeakOnHit HP cost cut 0.78x by the SharpHide net), second seed passed, rate columns failed on Ritual 2, stage B gave no curve point (costs too small one turn deep); 3.4 cpu-h; reopen if: a mechanic with a clear one-turn cost (>= ~0.04 win or 3 HP per fight) to train on, a second seed for the WeakOnHit transfer lead, or a past-horizon input appears",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adaptation closed (2026-11-05)",
+          "sha256": "1ba96f63b7036bbf9db832cfcbdf841cacb8fc0f14543cc472c09274753eee44"
+        }
+      ],
+      "owner": false,
+      "by": "2cca9f24-9754-4bc9-8091-7aec73975742",
+      "at": "2026-11-04T21:54:46+00:00 @ bd0d537",
+      "until": "2026-11-13T02:30:47+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "393165e98b653485da6a0490d1e97dba3050de725f8e40c7098d24a022249413"
+}

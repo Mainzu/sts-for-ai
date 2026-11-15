@@ -1,0 +1,3505 @@
+{
+ "kept": [
+  {
+   "id": "h-training-nets-per-period",
+   "period": "all",
+   "title": "521 nets in 23 days, and the kind of training flipped twice",
+   "claim": "The project trained 521 value nets that were saved with weights. Up to the end of period 4 almost all were trained from scratch (285 of 331). In periods 5 and 6 short fine-tunes of an existing net took over (145 of 153). In period 7 the new content brought back training from scratch (20 of 29). The busiest stretch was period 3, the first three days with the owner away: 155 nets, about 52 a day.",
+   "subset": "Every runs/2026-* folder that holds a model.pt. 'Fine-tune' means the config names a parent net or a games count (scripts/finetune.py and family.py bursts). 'From scratch' means the config has n_train: scripts/learn.py in rounds of self-play, or the single-shot baseline trainings of 10-24 (P1, no rounds). Dated by created in run.json (local time).",
+   "n": "521 nets (P1 8, P2 112, P3 155, P4 56, P5 17, P6 136, P7 29, P8 8)",
+   "viz": {
+    "kind": "line",
+    "unit": "nets trained",
+    "x_label": "period",
+    "y_label": "nets",
+    "series": [
+     {
+      "name": "from scratch",
+      "points": [
+       {
+        "x": "P1",
+        "y": 8
+       },
+       {
+        "x": "P2",
+        "y": 112
+       },
+       {
+        "x": "P3",
+        "y": 128
+       },
+       {
+        "x": "P4",
+        "y": 37
+       },
+       {
+        "x": "P5",
+        "y": 0
+       },
+       {
+        "x": "P6",
+        "y": 8
+       },
+       {
+        "x": "P7",
+        "y": 20
+       },
+       {
+        "x": "P8",
+        "y": 2
+       }
+      ]
+     },
+     {
+      "name": "fine-tune of an existing net",
+      "points": [
+       {
+        "x": "P1",
+        "y": 0
+       },
+       {
+        "x": "P2",
+        "y": 0
+       },
+       {
+        "x": "P3",
+        "y": 27
+       },
+       {
+        "x": "P4",
+        "y": 19
+       },
+       {
+        "x": "P5",
+        "y": 17
+       },
+       {
+        "x": "P6",
+        "y": 128
+       },
+       {
+        "x": "P7",
+        "y": 9
+       },
+       {
+        "x": "P8",
+        "y": 6
+       }
+      ]
+     }
+    ]
+   },
+   "caveat": "Five more run folders have no saved model (unfinished or failed) and are not counted. Periods differ in length (2 to 4 days); per day, P3 is still the busiest. The 8 P1 nets were single trainings, not rounds of self-play. The longest single training job was a fine-tune on 11-07 (0278-finetune, 3.95 hours on 3 threads); the one that used the most machine time was allcontent40k-s101 on 11-08 (3.4 hours on 6 threads, about 20 thread-hours).",
+   "script": "cd scratch/hist/training && python -I gather.py && python -I recipe.py && python -I trainjobs.py",
+   "sources": "runs/*/run.json, runs/*/config.json, runs/*/model.pt; jobs/done/*.json for job length",
+   "verdict": "corrected",
+   "reason": "I recomputed every count from runs/ and they all match: 521 run folders with a model.pt, 5 without one (the same 5 folders), 0 duplicate model files by MD5, and the folder-name date agrees with run.json 'created' every time. Split by period: P1 8, P2 112, P3 155, P4 56, P5 17, P6 136, P7 29, P8 8. From scratch vs fine-tune: 285/331 up to P4, 145/153 fine-tunes in P5-P6, 20/29 from scratch in P7. P3 is still the busiest per day (52/day, against 34 in P6 and 28 in P2), so period length does not change the headline. Two fixes are needed. (1) The 8 P1 nets have n_train but no 'rounds' key; they are single from-scratch trainings, not rounds of self-play, so the series name and the subset text need adjusting. (2) The caveat is wrong. The longest single training job by wall time is 0278-finetune (11-07, 3.95 h on 3 threads), not allcontent40k-s101 (0583-learn, 3.42 h on 6 threads). allcontent40k-s101 is the largest only in thread-hours (20.5 against 11.9)."
+  },
+  {
+   "id": "h-training-games-per-day",
+   "period": "all",
+   "title": "4.4 million practice fights, a quarter of them on one day",
+   "claim": "The engine played 4,370,543 distinct practice fights to make training data, stored in 268 distinct datasets. 31 October alone produced 1,132,230 fights, more than periods 1, 2, 5, 6 and 8 together (1,082,768). Most of the data (3.57 million fights, 82%) came from round-0 pools that the search played with its hand-written heuristic. Only 0.80 million fights were played by a net, which is self-play in the strict sense.",
+   "subset": "Every datasets/<id>/manifest.json (n_games), counted once per distinct games file (games_sha256). This drops 17 byte-identical regenerated copies (104,069 fights) and the leftover daf87b2b715e.tmp folder. Each dataset is dated by the first run that trained on it; datasets no run used are dated by their file time.",
+   "n": "268 distinct datasets, 4,370,543 fights",
+   "viz": {
+    "kind": "line",
+    "unit": "fights generated",
+    "x_label": "day (2026)",
+    "y_label": "fights",
+    "series": [
+     {
+      "name": "fights in new datasets",
+      "points": [
+       {
+        "x": "10-24",
+        "y": 35241
+       },
+       {
+        "x": "10-25",
+        "y": 298519
+       },
+       {
+        "x": "10-26",
+        "y": 64740
+       },
+       {
+        "x": "10-27",
+        "y": 23858
+       },
+       {
+        "x": "10-28",
+        "y": 95325
+       },
+       {
+        "x": "10-29",
+        "y": 0
+       },
+       {
+        "x": "10-30",
+        "y": 279588
+       },
+       {
+        "x": "10-31",
+        "y": 1132230
+       },
+       {
+        "x": "11-01",
+        "y": 709761
+       },
+       {
+        "x": "11-02",
+        "y": 18423
+       },
+       {
+        "x": "11-03",
+        "y": 7050
+       },
+       {
+        "x": "11-04",
+        "y": 0
+       },
+       {
+        "x": "11-05",
+        "y": 1900
+       },
+       {
+        "x": "11-06",
+        "y": 11700
+       },
+       {
+        "x": "11-07",
+        "y": 38100
+       },
+       {
+        "x": "11-08",
+        "y": 254312
+       },
+       {
+        "x": "11-09",
+        "y": 3198
+       },
+       {
+        "x": "11-10",
+        "y": 595481
+       },
+       {
+        "x": "11-11",
+        "y": 294747
+       },
+       {
+        "x": "11-12",
+        "y": 257545
+       },
+       {
+        "x": "11-13",
+        "y": 248825
+       }
+      ]
+     }
+    ]
+   },
+   "caveat": "A dataset counts once, on the day it was first used, even if later nets trained on it again. Copies whose games file is identical to an earlier one (the same seeds regenerated) are counted only once. Pools played by the heuristic are cheap and large (up to 240,000 fights). Sets played by a net are small (a few thousand per round).",
+   "script": "python -I scratch/hist/verify/h-training-games-per-day/c.py",
+   "sources": "datasets/*/manifest.json (n_games, games_sha256, parent_model), runs/*/run.json (created, datasets)",
+   "verdict": "corrected",
+   "reason": "The dating method holds: I took each dataset's date from the earliest run.json 'created' that lists it, and used the file time for the 6 datasets no run used. That gives the miner's daily numbers exactly, apart from the double counts below. Two counting errors and one wording error. (1) 17 datasets are byte-identical copies of earlier ones (same games_sha256, for example five f-*-r0 sets of 3,237 games each and three pairs of 15,000-game heuristic pools). Together they add 104,069 fights that were counted twice. (2) datasets/daf87b2b715e.tmp is a leftover temporary folder (2,724 fights) that was counted as a dataset. After removing both: 268 distinct datasets and 4,370,543 fights. Heuristic or no-parent pools: 3,568,927 (81.7%). Net-played: 801,616 fights (0.80M, not 0.86M). 31 Oct: 1,132,230 fights. That is still more than periods 1+2+5+6+8 together (1,082,768). (3) The title says 'a third', but 31 Oct is 26% of all fights (it was 26% before the fix as well), so the title should say 'a quarter'. The changed days are 10-25, 10-31, 11-01 and 11-02. Two datasets have a file time later than their first use, which is a small problem with mtimes and doesn't affect the totals."
+  },
+  {
+   "id": "h-training-product-family",
+   "period": "3",
+   "title": "The product's net was trained on 10-29 and has held the product role since 11-02",
+   "claim": "The product's net was trained on the evening of 29 October. (The real game on 14 November was played by another net, pack net seed 201, trained from scratch on 10 November on games with the real Act 1 cards.) Its family tree is short. A 60,000-fight pool played by the heuristic trained a first net. That net's 5,775 fights trained a second, whose 6,013 fights made up round 2. The seed-check run then retrained round 2 from scratch at three training seeds, and seed 1 became the product net. It learned from all 11,788 self-play fights plus a random sixth of the examples from the heuristic pool. On 11-01 two fine-tunes of it (burst8, then burst8hp2) took over for a day. On 11-02 it beat them on HP kept at the end of a run and became the product net, and none of the 383 nets trained after it has replaced it since. 167 runs started from it, trained on data it played, or used it to play.",
+   "subset": "Lineage from round.json parent_run and dataset manifest parent_model fields. Round-0 sampling from round.json window.round0_sample (1/6 for rounds 1 and up; seed_check.py retrains on the same window). Product history from configs/product.json 'previous' and the docs/decisions.md entries of 11-01 and 11-02. Later nets are runs with a model.pt whose run.json created time is after 10-29 22:32:39 (local time).",
+   "n": "1 product net; 11,788 self-play fights + 1/6 of the examples from a 60,000-fight heuristic pool (+3,000 validation fights); 383 later nets (including its 2 seed siblings); 167 runs that refer to it directly (173 counting their descendants)",
+   "viz": {
+    "kind": "timeline",
+    "unit": "event",
+    "events": [
+     {
+      "x": "10-25",
+      "label": "Round-0 pool: 60,000 fights played by the heuristic search (dataset 2bad7e)",
+      "value": 60000
+     },
+     {
+      "x": "10-27 21:28",
+      "label": "score+branch-s0-r0 trains on half of that pool's examples"
+     },
+     {
+      "x": "10-28 04:03",
+      "label": "r0's 5,775 fights train score+branch-s1-r1, the first round of a night loop",
+      "value": 5775
+     },
+     {
+      "x": "10-28 04:23",
+      "label": "r1's 6,013 fights are added and round 2 trains (with a sixth of the pool); the loop reaches round 10 by 06:55, about one round every 19 minutes",
+      "value": 6013
+     },
+     {
+      "x": "10-29 22:32",
+      "label": "Seed-check retrains round 2 at seed 1 on the same data: the future product net"
+     },
+     {
+      "x": "11-01",
+      "label": "Fine-tunes of it take over: burst8 becomes champion, then burst8hp2 becomes the product"
+     },
+     {
+      "x": "11-02",
+      "label": "It beats burst8hp2 on HP kept at the end of a run and becomes the product net"
+     },
+     {
+      "x": "11-13",
+      "label": "Still the product net, now with the chooser and new search flags; 383 nets trained since 10-29"
+     },
+     {
+      "x": "11-14",
+      "label": "Plays the real game"
+     }
+    ]
+   },
+   "caveat": "Seeds 101 and 201 of the same retrain are its siblings and are counted among the 383. Most later nets were experiments judged on their own yardsticks, not challengers. 'Not replaced since 11-02' means none passed the rule for becoming the product, not that every one played worse. The 1/6 sample is of examples spread across all 60,000 pool fights, so the pool still shaped it.",
+   "script": "cd scratch/hist/verify/h-training-product-family && python -I v.py; python -I -c \"import json;print(json.load(open('runs/2026-10-28-score+branch-s1-r2-e250964/round.json'))['window'])\"; python -I -c \"import json;print(json.load(open('configs/product.json'))['previous'])\"",
+   "sources": "runs/2026-10-2[7-9]-*/round.json, run.json, config.json; datasets/{2bad7e15394f,47199f1023e9,b51c304673cb,eb96eb4a46c3}/manifest.json; scripts/learn.py d0_samples; scripts/seed_check.py round_window; configs/product.json; docs/decisions.md 'HP bonus promoted' (11-01) and 'Product net: the 10-29 net' (11-02)",
+   "verdict": "corrected",
+   "reason": "My own script reproduces most of the numbers. The four dataset manifests give 60,000 + 5,775 + 6,013 = 71,788 training games, plus 3,000 for validation. 383 runs with a model.pt were created after the product run's created time (10-29 22:32:39 local time); that count includes its own seed siblings s101 and s201. Exactly 167 runs name the product run or one of its datasets in their config, round or run files directly (173 if their own descendants are counted too). The timeline times also match: 10-27 21:28, 10-28 04:03 and 04:23, and r10 at 06:55, about 19 minutes per round.\n\nTwo parts are wrong:\n(1) 'It learned from 71,788 fights' is not true. Round 2's window (s1-r2 round.json) has round0_sample = 1/6, and learn.py d0_samples uses that fraction for every round from 1 on. seed_check.py round_window checks that the retrain uses the same sample. So the net trained on all 11,788 self-play fights but only a random sixth of the examples from the 60,000-fight heuristic pool. That sixth is spread across all 60,000 games, so the 'fights' count overstates what it learned from.\n(2) 'Never replaced it' is false. configs/product.json 'previous' shows burst8hp2-s1 (trained 11-01, a fine-tune whose recipe starts from the 10-29 net, per decisions 'Burst ratchet...') as the product from 11-01 to 11-02. Before it, burst8 s1 was the ladder champion. The 10-29 net only became the product on 11-02 ('Product net: the 10-29 net'), after beating burst8hp2 on end-HP. So it was briefly replaced by its own fine-tunes and won the role back. It has not been replaced since 11-02.\nPeriod 3 (born 10-29) is right."
+  },
+  {
+   "id": "h-training-data-scaling",
+   "period": "4",
+   "title": "More data helped, until 40,000 fights a group",
+   "claim": "The lab tested whether more training fights make a better net. Going from 5,000 to 20,000 fights per group raised the held-out won share by +0.011. Going from 20,000 to 40,000 added +0.009. Going from 40,000 to 80,000 (a 240,000-fight dataset, the biggest the project ever made) added only +0.003, and the two seeds disagreed (+0.024 and -0.019). On 1 November the lab stopped scaling data and kept the 20k default for experiments. 40k became the usual size for new from-scratch nets only from 8 November.",
+   "subset": "Round-1 nets on the tight2 bench, one turn deep, held-out half (12,200 fights per net). Won-share differences are paired by seed. Only n_train differs between arms.",
+   "n": "5k vs 20k: 5 seeds; 20k vs 40k: 3 seeds; 40k vs 80k: 2 seeds",
+   "viz": {
+    "kind": "bars",
+    "unit": "held-out won share gained",
+    "rows": [
+     {
+      "label": "5k to 20k fights per group",
+      "value": 0.011,
+      "note": "5 seeds, se 0.006"
+     },
+     {
+      "label": "20k to 40k",
+      "value": 0.009,
+      "note": "3 seeds, se 0.003"
+     },
+     {
+      "label": "40k to 80k",
+      "value": 0.003,
+      "note": "2 seeds: +0.024 and -0.019"
+     }
+    ]
+   },
+   "caveat": "The first step is a fourfold increase and the other two are doublings. With only 2 seeds at 80k, the flat result is weak evidence. Both 80k nets also failed the ladder against the 10-29 champion (-0.018, -0.024). The 80k training jobs took 2.9 hours (s1) and 1.0 hours (s101) on 6 threads. The 5k/20k/40k results were read on 31 October; the 80k results and the stop decision came on 1 November.",
+   "script": "cd . && sed -n 1169,1186p docs/research/learned-play-results.md && sed -n 1628,1641p docs/research/learned-play-results.md && sed -n 1207,1222p docs/decisions.md; python -I -c \"import json,glob; [print(d, json.load(open(d+'/config.json'))['n_train']) for d in sorted(glob.glob('runs/2026-11-*-r0-*'))]\"",
+   "sources": "runs/2026-10-31-data{5,20,40}k-s*-r1-*/round.json and runs/2026-11-01-data80k-s*-r1-*/round.json (gate.halves.held_out.net); docs/research/learned-play-results.md 'Data scaling' and 'data80k vs data40k, 2 seeds'; docs/decisions.md 2026-11-01 'Data scaling: 80k shows no gain'; jobs/done/0057a9a-learn.json and 0057a9b-learn.json; datasets/9533627344f5 and 121978db780d manifests (240,000 games each)",
+   "verdict": "corrected",
+   "reason": "The three paired gains reproduce exactly from runs/*-data{5,20,40,80}k-s*-r1-*/round.json (gate.halves.held_out.net, n=12,200 each, paired by seed with the same train_seed and round0_seed). 5k to 20k: +0.0113 (se 0.0061, 5 seeds). 20k to 40k: +0.0087 (se 0.0032, 3 seeds). 40k to 80k: +0.0025, seeds +0.0244 and -0.0194. Datasets 9533627344f5 and 121978db780d hold 240,000 games each, the largest of the 286 manifests. One repeat needs care: data20k-s201 has two r1 folders, but 8836ba7 has no round.json (it never finished), so only 95c5a40 counts and nothing is counted twice. Two statements are wrong. (1) '40k stayed the size for from-scratch nets to the end' is false. The 11-01 decision says 'the default n_train stays', and the next nine round-0 runs used 20k (lean-* on 11-01 and 11-02). 40k became the usual size only from 11-08 (allcontent40k), and 20k and 5k runs still happened on 11-06 and 11-10. (2) 'Each 80k training took about 2.9 hours' is true only for s1 (job 0057a9a, 23:27 to 02:19). s101 (0057a9b) took 1.0 hours (02:59 to 04:02). Dating: the 5k/20k/40k reads ran on 10-31 (period 3), and the 80k runs and the stop decision came on 11-01 (period 4). Period 4 is acceptable if the stop is the headline. The claim no longer says only the data size changed, because the 5k step is fourfold; the caveat notes that."
+  },
+  {
+   "id": "h-training-burst-sizes",
+   "period": "6",
+   "title": "Fine-tunes on as few as 11 fights",
+   "claim": "In period 6 the lab mostly stopped training nets from scratch. Instead it fine-tuned one existing net in short bursts on new content's fights: 127 fine-tunes against 8 from-scratch runs. Of the 127 bursts, 94 used 99 fights or fewer, and 12 used just 11. The question had shifted from 'what is the best net?' to 'how few fights does the net need to adapt to new content?'.",
+   "subset": "Fine-tune runs created 11-06 to 11-09 (run.json created, local time) whose run.json has a parent net; the games value from each config.json. One memory-check rerun with an identical config (ycards-heur-g400-s1-memcheck) is left out.",
+   "n": "127 fine-tune nets (one parent net); 8 from-scratch runs in the same days",
+   "viz": {
+    "kind": "bars",
+    "unit": "nets",
+    "rows": [
+     {
+      "label": "11 fights",
+      "value": 12
+     },
+     {
+      "label": "33 fights",
+      "value": 44
+     },
+     {
+      "label": "50 fights",
+      "value": 2
+     },
+     {
+      "label": "99 fights",
+      "value": 36
+     },
+     {
+      "label": "100 fights",
+      "value": 3
+     },
+     {
+      "label": "400 fights",
+      "value": 19
+     },
+     {
+      "label": "1,600 fights",
+      "value": 5
+     },
+     {
+      "label": "4,000 fights",
+      "value": 6
+     }
+    ]
+   },
+   "caveat": "Burst sizes count fights of new content mixed into a 10,000-position replay pool, not the whole training set. The from-scratch runs in the same days used 5,000 or 40,000 training positions, a different unit, so the page doesn't compare the two. Small bursts are cheap, so many seeds and variants were run; that partly explains the counts.",
+   "script": "cd scratch/hist/verify/h-training-burst-sizes && python -I v2.py",
+   "sources": "runs/2026-11-0[6-9]-*/config.json (games, pool, n_train), run.json (created, parent)",
+   "verdict": "corrected",
+   "reason": "I recomputed this from runs/*/run.json (created 11-06 to 11-09, local time) and config.json. 136 runs were created in that window. 128 of them have 'games' and the same parent net (runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt), and their bar counts match the miner's exactly. I found three errors. (1) The claim's arithmetic is wrong: 12+44+2+36 = 94, not 92. (2) One run is counted twice. 2026-11-07-ycards-heur-g400-s1-memcheck-457824d has the same config as 2026-11-07-ycards-heur-g400-s1-1dd4e45, including seed and game_seed, and the same datasets. It is a rerun to check memory three hours later, so the 400 bar should be 19 and n should be 127. (3) The '40,000 fights per group' comparison uses a different ruler. The from-scratch runs (allcontent40k-s1/s101, r0/r1, 11-08) have n_train=40000, which counts training positions (puzzles), not fights, and there is no 'per group'. The fine-tune 'games' count fights of new content mixed into a 10,000-position replay pool. The two numbers can't be compared as like for like. The 'mostly stopped training from scratch' part holds: the window has 8 from-scratch runs (4 ids5k with n_train 5000, 4 allcontent40k) against 128 fine-tunes. The bars chart fits the statistic."
+  },
+  {
+   "id": "h-machine-longest",
+   "period": "5",
+   "title": "The three longest jobs ran 34 hours in one lane, far past their first estimates",
+   "claim": "The longest job in the queue's history is 0083-mutate-monsters: 13 h 56 min on 3 threads (11-04 03:24 to 17:21). It ran the two-turn product player on a stage-A table of mutated monsters, widened from 40x4 to 200x4. The second and third longest (0092, 10 h 11 min; 0113, 10 h 00 min) came from the same goal1-yardstick lane and followed it with gaps of 56 and 6 minutes. That lane kept 3 threads busy from 11-04 03:24 to 11-05 14:35. All three outran their first estimates (340, 450 and 330 min) by 1.4x to 2.5x. The steward raised each estimate mid-run from the job's pace, the last time when the job was 97-99% done. Short jobs (under an hour) usually finished in about half their estimate (median 0.50x, n=954).",
+   "subset": "jobs that started and ended; wall time from started to ended; first estimate = the 'from' of the first entry in the job's estimates list, or estimate_min if it was never revised",
+   "n": "1,091 started jobs; the top 3 shown",
+   "viz": {
+    "kind": "slope",
+    "unit": "hours",
+    "a_label": "first estimate",
+    "b_label": "actual wall time",
+    "rows": [
+     {
+      "label": "0083-mutate-monsters",
+      "a": 5.67,
+      "b": 13.94
+     },
+     {
+      "label": "0092-mutate-monsters",
+      "a": 7.5,
+      "b": 10.19
+     },
+     {
+      "label": "0113-mutate-monsters",
+      "a": 5.5,
+      "b": 10
+     }
+    ]
+   },
+   "caveat": "Wall time includes any slowdown from other jobs sharing the machine (other lanes ran alongside). The stored estimate_min is the last estimate, revised from pace near the end of each run, so comparing against it makes the estimates look accurate when they weren't. Three jobs is too few to say that long jobs are estimated worse in general.",
+   "script": "python -I scratch/hist/verify/h-machine-longest/v.py",
+   "sources": "jobs/done/0083-mutate-monsters.json, 0092-mutate-monsters.json, 0113-mutate-monsters.json (fields started, ended, threads, estimate_min, estimates)",
+   "verdict": "corrected",
+   "reason": "The durations, threads, dates and totals all reproduce: 1,091 started jobs, 484.8 wall hours and 1,710 thread-hours. 0083 ran 836 min, 0092 ran 611 min and 0113 ran 600 min, all on 3 threads in lane goal1-yardstick. The claim that \"their estimates held\" is wrong, though. The miner compared each run against estimate_min, which is the last estimate, and the steward raised that number while the job was running, using the job's own pace. The 799 for 0083 was set at 787 of 836 minutes, with 197 of 200 starts done. The 607 for 0113 was set at 14:33, two minutes before the job ended. The first estimates were 340, 450 and 330 min, so the jobs took 2.5x, 1.4x and 1.8x those. Two smaller fixes: \"back to back\" leaves out a 56 min gap between 0083 and 0092 (and 6 min before 0113), and \"held the machine\" overstates it. Each job used 3 threads, and other lanes' jobs ran alongside (0087, 0095, 0143, 0151, 0152, 0154). The short-job figure holds: jobs under 60 min had a median of 0.50x their estimate, n=954. Their estimates were rarely revised, so their first estimate gives the same result."
+  },
+  {
+   "id": "h-machine-wait",
+   "period": "all",
+   "title": "How long a job waited in the queue before it started",
+   "claim": "In period 5 the median job started 5.5 minutes after it was queued. In period 6, when family chains queued hundreds of reads at once, the median wait rose to 124 minutes, and one job in ten waited more than 4.7 hours. The longest wait in the queue's history was 30.6 hours: 0059l8b-bash, queued 11-01 15:48 and started 11-02 22:21. It was waiting for memory, not for another job: its 6 GB reservation never fit in the free RAM, and it started one minute after a manager cut the reservation to 3.5 GB.",
+   "subset": "started jobs; wait = started minus added; period by start time",
+   "n": "1,091 started jobs (P3 105, P4 168, P5 120, P6 470, P7 182, P8 46)",
+   "viz": {
+    "kind": "line",
+    "unit": "minutes",
+    "x_label": "period",
+    "y_label": "minutes from queued to started",
+    "series": [
+     {
+      "name": "median wait",
+      "points": [
+       {
+        "x": "P3",
+        "y": 122.7
+       },
+       {
+        "x": "P4",
+        "y": 17.8
+       },
+       {
+        "x": "P5",
+        "y": 5.5
+       },
+       {
+        "x": "P6",
+        "y": 124.4
+       },
+       {
+        "x": "P7",
+        "y": 97.5
+       },
+       {
+        "x": "P8",
+        "y": 30.7
+       }
+      ]
+     },
+     {
+      "name": "90th percentile wait",
+      "points": [
+       {
+        "x": "P3",
+        "y": 528
+       },
+       {
+        "x": "P4",
+        "y": 228
+       },
+       {
+        "x": "P5",
+        "y": 183
+       },
+       {
+        "x": "P6",
+        "y": 284
+       },
+       {
+        "x": "P7",
+        "y": 607
+       },
+       {
+        "x": "P8",
+        "y": 304
+       }
+      ]
+     }
+    ]
+   },
+   "caveat": "Part of each wait is deliberate. About 3 in 10 started jobs were queued to run only after another job (--after) or only if another passed (--if-passed). Others waited for their memory reservation to fit, so a wait does not only mean waiting for free threads. Periods 1 and 2 had no queue.",
+   "script": "python -I scratch/hist/machine/jobs_stats.py wait",
+   "sources": "jobs/done/*.json (added, started, after, if_passed, note)",
+   "verdict": "corrected",
+   "reason": "My own script reproduced every number. There are 1,224 done files and 1,091 started jobs, with unique ids and no duplicates. All timestamps are local time. Per-period counts, the medians (122.7, 17.8, 5.5, 124.4, 97.5, 30.7) and the 30.6 h maximum match exactly. My 90th percentiles (inclusive method) are 514, 213, 181, 280, 602 and 304. The miner's index method gives 528, 228, 183, 284, 607 and 304, which is the same picture, and P6's '4.7 hours' holds either way. In P6, 245 of 470 started jobs are family jobs, so the explanation for P6 is supported. One part is wrong: the cause of the longest wait. 0059l8b-bash has no 'after' and no 'if_passed' field. Its note says it waited because its 6 GB memory reservation could never fit in the free RAM. A manager lowered it to 3.5 GB at 22:20 on 11-02, and the job started at 22:21. The claim that it waited 'behind the jobs it was set to wait for' is therefore false. I fixed that sentence. The caveat is kept and widened: about 30% of started jobs carry after or if_passed, and memory reservations also delay starts."
+  },
+  {
+   "id": "h-machine-hours",
+   "period": "all",
+   "title": "The machine did not sleep: busy threads by hour of day",
+   "claim": "The queue ran day and night. Between midnight and 08:00, it used 31.5% of all queue thread-hours, close to the 33.3% an even spread would give. Over the whole queue the quietest hour, 07:00, still averaged 3.7 busy threads against 5.5 at the busiest, 10:00. In period 3 the machine was busy around the clock (12 threads at midnight, 01:00 and 08:00). In period 5 the nights were the quiet part (about 2 threads, 1.6 to 2.3, from 22:00 to 04:00), while the long mutated-monster jobs ran in the day.",
+   "subset": "started jobs; each job's threads spread over the clock hours it ran; value = average busy threads in that clock hour for that period (thread-hours divided by the number of such hours the queue existed, 10-30 12:00 to 11-14 06:00)",
+   "n": "1,091 started jobs, 1,710 thread-hours",
+   "viz": {
+    "kind": "heat",
+    "unit": "average busy threads",
+    "xs": [
+     "00",
+     "01",
+     "02",
+     "03",
+     "04",
+     "05",
+     "06",
+     "07",
+     "08",
+     "09",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20",
+     "21",
+     "22",
+     "23"
+    ],
+    "ys": [
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ],
+    "cells": [
+     [
+      12,
+      12,
+      9.8,
+      9.8,
+      6,
+      7.8,
+      11.2,
+      9,
+      12,
+      11.1,
+      11,
+      9.4,
+      6.8,
+      5.9,
+      7.8,
+      6.8,
+      9.3,
+      6.9,
+      9.1,
+      9.4,
+      8.4,
+      10.2,
+      10.7,
+      10.8
+     ],
+     [
+      8,
+      7.9,
+      7.4,
+      7.8,
+      8.2,
+      8.5,
+      7.9,
+      6.5,
+      7.8,
+      5.9,
+      6.6,
+      4.4,
+      5.8,
+      6,
+      8.5,
+      4.6,
+      3.5,
+      5.6,
+      7.9,
+      7.7,
+      6.3,
+      4.1,
+      5.8,
+      3.9
+     ],
+     [
+      1.7,
+      1.8,
+      2,
+      1.9,
+      2.1,
+      2.7,
+      3,
+      2.7,
+      4.7,
+      5,
+      5.3,
+      5.3,
+      5.7,
+      6.2,
+      5.6,
+      4.1,
+      4,
+      3.7,
+      2.8,
+      3.9,
+      4.7,
+      2.5,
+      1.6,
+      2.3
+     ],
+     [
+      3.6,
+      4,
+      3.2,
+      3,
+      3.1,
+      3.8,
+      2.9,
+      3,
+      3.8,
+      3.1,
+      3.6,
+      3,
+      3.5,
+      3,
+      2.3,
+      1.9,
+      2.1,
+      3,
+      4.7,
+      4.4,
+      3.9,
+      3.6,
+      4.5,
+      3.5
+     ],
+     [
+      4.1,
+      5,
+      6.2,
+      5.4,
+      6.6,
+      6.7,
+      5.2,
+      3.2,
+      5.3,
+      6.6,
+      6.7,
+      7.4,
+      5.4,
+      5.5,
+      4.9,
+      5.8,
+      5.5,
+      5.3,
+      6.2,
+      5.7,
+      5.1,
+      4.4,
+      4,
+      4
+     ],
+     [
+      3.2,
+      2.4,
+      3.7,
+      5,
+      4.8,
+      4,
+      1.8,
+      0.6,
+      1.4,
+      5.1,
+      2.2,
+      5.9,
+      7.9,
+      7.1,
+      2.4,
+      7.6,
+      6.1,
+      6,
+      1.7,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "caveat": "Threads are what each job declared, not measured CPU use. Work run outside the queue (training in periods 1 and 2, the real game, builds) is not counted. P3 covers only 10-30 12:00 to 10-31, and P8 ends with the last finished job on 11-14 06:07, so each of their cells averages over one or two days (P8's 07:00 to 23:00 cells come from 11-13 alone).",
+   "script": "python -I scratch/hist/machine/hours.py",
+   "sources": "jobs/done/*.json (started, ended, threads)",
+   "verdict": "corrected",
+   "reason": "My own script reproduces every number exactly. It finds 1,091 started jobs and 1,710 thread-hours between 10-30 12:25 and 11-14 06:07, a night share of 31.5%, 3.7 busy threads at 07:00 against 5.5 at 10:00, and all 144 heat cells. Two sentences in the claim go further than the grid supports, so I corrected them.\n\n1) Period 5 nights were not \"under 2 threads from 22:00 to 04:00\". The values are 1.6 at 22:00, 2.3 at 23:00, 1.7, 1.8 and 2.0 at 00:00 to 02:00, 1.9 at 03:00 and 2.1 at 04:00.\n\n2) Period 3 was not \"busiest overnight\". It hit 12 threads at 08:00 as well as at 00:00 and 01:00, and it stayed high around the clock. Its 00:00 to 07:00 average (9.7) is barely above the rest of the day, and it covers only about 1.5 days.\n\nThe mutated-monster point holds. In period 5, mutate-monsters jobs made up 131 of the 216 daytime thread-hours.\n\nThe chart type fits. Hour-of-day by period is not the per-day chart already on the page."
+  },
+  {
+   "id": "h-machine-failures",
+   "period": "all",
+   "title": "Why jobs failed, period by period",
+   "claim": "Of 1,224 jobs, 1,031 ended ok, 131 were cancelled before they started (20 of them automatically, because a job they depended on failed), 53 failed and 9 were killed, lost or ended without a status. The most common cause of failure was a missing file or module (14), often a job pinned to a code snapshot that lacked a file it needed. A test run found a fault 11 times (10 full-suite runs and one single test file), 6 of them in period 6. Out of memory struck in two bursts: three self-play learn jobs in period 3 and three in period 8, when the wide recipe's re-runs died one after another (0987, 0988, 0997) right after 0975 died of a stack overflow.",
+   "subset": "jobs/done with status failed; cause read by hand from each job's log tail, reason field and exit code; period by start time (added time for two jobs that never started)",
+   "n": "53 failed jobs (P3 10, P4 4, P5 7, P6 11, P7 9, P8 12)",
+   "viz": {
+    "kind": "heat",
+    "unit": "failed jobs",
+    "xs": [
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ],
+    "ys": [
+     "file or module missing",
+     "tests found a fault",
+     "input from an earlier job missing or bad",
+     "out of memory",
+     "process ended by Windows (exit 0x40010004)",
+     "refused: control played with other settings",
+     "stack overflow",
+     "other (bad argument, locked file, crash)"
+    ],
+    "cells": [
+     [
+      4,
+      0,
+      6,
+      2,
+      1,
+      1
+     ],
+     [
+      1,
+      0,
+      1,
+      6,
+      3,
+      0
+     ],
+     [
+      0,
+      2,
+      0,
+      0,
+      2,
+      4
+     ],
+     [
+      3,
+      0,
+      0,
+      0,
+      0,
+      3
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      2,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     [
+      2,
+      2,
+      0,
+      1,
+      0,
+      3
+     ]
+    ]
+   },
+   "caveat": "The causes are a hand classification of the last error lines in each log, so a few could belong to a neighbouring group (0057a6i shares its log file with another job, so its cause can't be checked). A failed test run counts as a job doing its job. The 'refused' failures are the gauntlet's own guard stopping a comparison with a differently-played control, which is also a check working as intended. Most cells hold 0 to 3 jobs; read the grid as where failures happened, not as rates.",
+   "script": "python -I scratch/hist/machine/fails.py  (log tails), then extra2.py (cause by period table); jobs_stats.py status (cancel reasons). Checked by scratchpad/hist/verify/h-machine-failures/v.py",
+   "sources": "jobs/done/*.json (status, exit_code, reason, pin, note), logs/jobs/*.log tails",
+   "verdict": "corrected",
+   "reason": "My own pass over jobs/done/*.json gives the same numbers: 1,224 jobs, of which 1,031 ok, 131 cancelled (20 with a \"did not pass\" reason that names a failed job they depended on, 111 with no reason), 53 failed, and 5 ended-unknown + 2 killed + 2 lost = 9. Failed jobs by start time (added time for 0005 and 0006, which never started): P3 10, P4 4, P5 7, P6 11, P7 9, P8 12. When I read the log tails and the reason field myself, every cell of the heat grid comes out the same. The exit codes back up the groups: 3221225725 = 0xC00000FD is a stack overflow (0975), and 1073807364 = 0x40010004 is the process ended by Windows (0565, 0908, 0927). The 0975 -> 0987/0988/0997 chain checks out in the job notes. Three wording fixes are needed. (1) Only one of the three out-of-memory failures in P3 was in teacher workers during distillation: 0049e's log shows a teacher. 0049d died building training rows in numpy, and 0052 died while generating tight fights, with no teacher in either log. (2) The \"test suite found a fault\" row holds 10 runs of the full suite (scripts/test_full.py) plus one single test file (0013, test_curriculum.py, P3), so \"the full test suite found a fault 11 times\" overstates it. Six of them in P6 is correct. (3) Of the 14 missing-file-or-module failures, only 0334 and 0432 clearly ran a pinned code snapshot taken before their script existed. 0117/0118 were pinned snapshots that lacked a config file. 0082/0084/0085/0086 were pinned jobs whose launcher (exec.py) could not find the program it was told to run. 0053/0054 lost the sts module while it was being rebuilt (sts.sts missing). 0005/0006 never started (WinError 2). So \"often a pinned snapshot that lacked a file it needed\" is accurate, and \"before its script existed\" is not. One more point: 0057a6i shares 0062-bash.log with another job, so its cause (\"other\") cannot be checked from its log. Nothing else to refute: there are no duplicate files (ids are unique), each row is a cause and each column a period, and the per-cell counts are shown as counts rather than presented as rates."
+  },
+  {
+   "id": "h-measures-count-heat",
+   "period": "all",
+   "title": "What got measured when: training runs first, gauntlets from 1 Nov",
+   "claim": "The project changed which ruler it used. In periods 2 and 3 the measurements were mostly training runs (111 and 134). The paired ladder lived only from 30 Oct to 1 Nov (39 tests). From 1 Nov the 11-floor gauntlet took over (347 files), and from period 5 the mutated benches (167 files). Period 6, when real Act 1 went in, was the busiest stretch: 412 result files and training runs, against 32 in the final two days.",
+   "subset": "Training runs from runs/index.csv (by run date; 498 of the 535 run folders are indexed); ladder tests from results/ladder/log.jsonl; result files (.json, top level only) in results/<kind>/ by file modification time. 'other' = exact-puzzles, adapt, packs, gen_powers, depth_probe. Real-game files and smaller kinds (r0-scores, bosses, power_exposure, rollout, baseline, warm-start and others, about 40 files) are left out.",
+   "n": "1,206 measurements (498 runs, 39 ladder tests, 669 result files)",
+   "viz": {
+    "kind": "heat",
+    "unit": "measurements",
+    "xs": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ],
+    "ys": [
+     "training runs",
+     "ladder tests",
+     "gauntlet",
+     "mutated benches",
+     "boss replays",
+     "depth",
+     "probes",
+     "families",
+     "other"
+    ],
+    "cells": [
+     [
+      7,
+      111,
+      134,
+      56,
+      17,
+      136,
+      29,
+      8
+     ],
+     [
+      0,
+      0,
+      18,
+      21,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      78,
+      38,
+      136,
+      85,
+      10
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      14,
+      101,
+      39,
+      12
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      21,
+      12,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      32,
+      9,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      5,
+      14,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      18,
+      2,
+      2
+     ],
+     [
+      0,
+      4,
+      2,
+      5,
+      17,
+      9,
+      0,
+      0
+     ]
+    ]
+   },
+   "caveat": "Result files are dated by modification time, so a file rewritten later counts in the later period. One file can hold 500 fights or 20; this counts files, not fights. results/ is not in git, so there is no commit date to cross-check. Files in subfolders and minor result kinds are not counted.",
+   "script": "python -I scratch/hist/measures/heat.py",
+   "sources": "runs/index.csv, results/ladder/log.jsonl, results/{gauntlet,mutate,boss_replay,depth,probes,families,exact-puzzles,adapt,packs,gen_powers,depth_probe}/*.json",
+   "verdict": "corrected",
+   "reason": "My own count (verify/h-measures-count-heat/v.py) matches every cell of the heat: training runs from runs/index.csv 7/111/134/56/17/136/29/8 (498), ladder log 0/0/18/21 (39, 30 Oct to 1 Nov 11:08), gauntlet 347, mutate 167, boss_replay 34, depth 42, probes 20, families 22, and 'other' 4/2/5/17/9 (exact-puzzles 4 + gen_powers 7 + adapt 14 + packs 4 + depth_probe 8 = 37). The period 6 column adds up to 412 and the period 8 column to 32, both as claimed. The total n is wrong, though. The result-file rows add up to 669, not 869, so the whole is 1,206 measurements, not 1,406. Smaller notes: the stated subset leaves out about 40 top-level result files (r0-scores 10, bosses 5, power_exposure 5, rollout 4, baseline 4, plus warm-start, luck, cf_price, hands, parity and leaf_numbers). It also skips files in subfolders (for example gen_powers/ has 64 more and packs/ 28 more). The 'other' row is defined, so this is a scope choice and not an error, but the n text should say these kinds are left out. runs/ holds 535 run folders and the index lists 498, so the training-run row counts indexed runs only. A heat map of plain counts does not mix two rulers on one axis, so it is fine."
+  },
+  {
+   "id": "h-measures-cell-gauntlet-best",
+   "period": "all",
+   "title": "The cell gauntlet's best barely moved after the first week of November",
+   "claim": "On the cell gauntlet (11 floors, one-turn search, the first 500 fight sequences), the best clear rate any player reached rose from 0.646 in period 4 to 0.682 in period 7, and the typical read (median) from 0.612 to 0.648. For scale: the hand-written heuristic reads 0.596, and the 10-29 net, the one the product kept using, reads 0.634. The record 0.682 came from one training seed of the genpack40k recipe (a rerun gave the identical result); its sister seeds read 0.642 and 0.676. Period 8 has only 2 reads.",
+   "subset": "Cell gauntlet: settings exactly {player, two_turn=false, 11-floor shape, rest 0.3, seed 20261101}, fight sequences 0-499 (no -b500 files). Every player measured, an identical rerun counted once, best and median per period, period taken from the result file's time (local time)",
+   "n": "126 reads: P4 29, P5 13, P6 50, P7 32, P8 2; 500 sequences each",
+   "viz": {
+    "kind": "line",
+    "unit": "clear rate (share of 500 sequences cleared)",
+    "x_label": "period",
+    "y_label": "clear rate",
+    "series": [
+     {
+      "name": "best read of the period",
+      "points": [
+       {
+        "x": "P4",
+        "y": 0.646
+       },
+       {
+        "x": "P5",
+        "y": 0.664
+       },
+       {
+        "x": "P6",
+        "y": 0.668
+       },
+       {
+        "x": "P7",
+        "y": 0.682
+       },
+       {
+        "x": "P8",
+        "y": 0.67
+       }
+      ]
+     },
+     {
+      "name": "median read of the period",
+      "points": [
+       {
+        "x": "P4",
+        "y": 0.612
+       },
+       {
+        "x": "P5",
+        "y": 0.644
+       },
+       {
+        "x": "P6",
+        "y": 0.627
+       },
+       {
+        "x": "P7",
+        "y": 0.648
+       },
+       {
+        "x": "P8",
+        "y": 0.661
+       }
+      ]
+     }
+    ]
+   },
+   "caveat": "Period 8 rests on 2 reads (0.670 and 0.652), so its best and median are not comparable with the other periods (13 to 50 reads). Periods are dated from the result files' modification times because results/ is not in git. The second block (sequences 500-999, the -b500 files) is easier (the 10-29 net reads 0.686 there against 0.634 here) and is kept off this chart. The best of many reads is pulled upward by luck: seeds of one recipe differ by up to 0.05. Players differ in leaf options (plain or @tsl1).",
+   "script": "python -I scratch/hist/verify/h-measures-cell-gauntlet-best/v2.py",
+   "sources": "results/gauntlet/*.json (settings and sequences, file mtimes), results/gauntlet/net1029-hpb0.01.json, results/gauntlet/heuristic-bcbb0e.json, results/gauntlet/genpack40k-s{1,101,201}-hpb0.01-cells.json, results/gauntlet/genpack40k-s1-hpb0.01-cells-r2.json (identical rerun, counted once)",
+   "verdict": "corrected",
+   "reason": "My own script (cell gauntlet: settings exactly player/two_turn/shape/rest/seed, 11-floor shape, one-turn, rest 0.3, seed 20261101, sequences 0-499; dated by file mtime in local time, since results/gauntlet is not tracked in git) reproduces the 127 files and the per-period bests: 0.646, 0.664, 0.668, 0.682, 0.670. It also reproduces the P4, P5 and P7 medians, the heuristic at 0.596, net1029 at 0.634 and the genpack40k seeds at 0.682, 0.642 and 0.676. Three things are wrong. (1) The P8 'median' of 0.652 is not a median. The miner takes v[len(v)//2] from a list sorted high to low, which for an even n gives the lower middle value. With only 2 reads (0.670 and 0.652) the true median is 0.661. For P6 (n=50) the same rule gives 0.626 where the true median is 0.627. (2) genpack40k-s1-hpb0.01-cells-r2.json is a rerun of the record player whose results match genpack40k-s1-hpb0.01-cells.json exactly, outcome for outcome, so it is counted twice. Removing it makes P7 n=32 and the total 126. The P7 best and median stay the same. (3) A P8 point from 2 reads should not sit on a best-of-n line beside periods with 13 to 50 reads, because the best of more reads is pulled higher. I mark it as thin in the caveat rather than draw it as a trend. The headline holds: the best rose only from 0.646 to 0.682 and the median from 0.612 to 0.648."
+  },
+  {
+   "id": "h-measures-ladder-streak",
+   "period": "3",
+   "title": "After the first net beat the heuristic, the next 17 challengers all failed to beat it",
+   "claim": "On 30 Oct the 10-29 net passed the paired ladder against the heuristic (+3.7 points of the same fights won, 1,150 pairs) and became champion. None of the next 17 candidates (30-31 Oct) beat it: its two seed twins, three nets trained on 40k positions, five lean-threshold seeds, three distilled nets, three cover21 nets and an ensemble. The best two were dead even (ensemble +0.2, seed twin s201 0.0). The cover21 nets did worst, about 6 to 7 points behind. The more-data nets (data40k) were 1.4 to 2.6 points behind, so more data did not help here. The streak ended on 1 Nov, when the burst8 nets passed against it.",
+   "subset": "Paired ladder, one-turn net player: candidate and champion (the 10-29 net) play the same fight with the same seed; lead = candidate's fight wins minus champion's, per pair; a sequential test stops at a verdict (pass needs evidence of a 1-point gain)",
+   "n": "17 tests against the 10-29 net, 482 to 4,274 pairs each (30-31 Oct); plus the promoting test against the heuristic",
+   "viz": {
+    "kind": "bars",
+    "unit": "lead over the 10-29 net in fights won (percentage points)",
+    "rows": [
+     {
+      "label": "ensemble with 10-29 net",
+      "value": 0.2,
+      "note": "fail, 4,274 pairs"
+     },
+     {
+      "label": "10-29 net s201",
+      "value": 0,
+      "note": "fail, 4,090 pairs"
+     },
+     {
+      "label": "lean-thr s201",
+      "value": -0.7,
+      "note": "fail, 1,880 pairs"
+     },
+     {
+      "label": "10-29 net s101",
+      "value": -1.3,
+      "note": "fail, 1,305 pairs"
+     },
+     {
+      "label": "lean-thr s101",
+      "value": -1.3,
+      "note": "fail, 1,349 pairs"
+     },
+     {
+      "label": "lean-distil s101",
+      "value": -1.3,
+      "note": "fail, 1,349 pairs"
+     },
+     {
+      "label": "data40k s101",
+      "value": -1.4,
+      "note": "fail, 1,305 pairs"
+     },
+     {
+      "label": "lean-thr s401",
+      "value": -1.6,
+      "note": "fail, 1,120 pairs"
+     },
+     {
+      "label": "data40k s201",
+      "value": -1.8,
+      "note": "fail, 1,152 pairs"
+     },
+     {
+      "label": "lean-thr s301",
+      "value": -1.8,
+      "note": "fail, 1,257 pairs"
+     },
+     {
+      "label": "data40k s1",
+      "value": -2.6,
+      "note": "fail, 847 pairs"
+     },
+     {
+      "label": "lean-distil s1",
+      "value": -3,
+      "note": "fail, 771 pairs"
+     },
+     {
+      "label": "lean-thr s1",
+      "value": -3.2,
+      "note": "fail, 570 pairs"
+     },
+     {
+      "label": "lean-distil s201",
+      "value": -4.7,
+      "note": "fail, 580 pairs"
+     },
+     {
+      "label": "cover21 s201",
+      "value": -5.8,
+      "note": "fail, 502 pairs"
+     },
+     {
+      "label": "cover21 s101",
+      "value": -5.9,
+      "note": "fail, 575 pairs"
+     },
+     {
+      "label": "cover21 s1",
+      "value": -7.1,
+      "note": "fail, 482 pairs"
+     }
+    ]
+   },
+   "caveat": "The test stops early once a verdict is clear, so big losses come from few pairs and their size is rough. A fail means no proof of a 1-point gain, not proof of a loss. The promoting +3.7 against the heuristic is a different comparison and is left off the bars; on its held-out half of fights the lead was only +1.0 (interval -1.7 to +3.8). The ladder measures one-turn play on single fights. The product later kept the 10-29 net because of whole-run end-HP reads, not because of this ladder (decisions 2026-11-02), and the ladder itself crowned an 11-01 net (burst8hp2) in the meantime.",
+   "script": "python -I scratch/hist/verify/h-measures-ladder-streak/v.py",
+   "sources": "results/ladder/log.jsonl, results/ladder/tests/0001.json, results/ladder/tests/0022.json, results/ladder/champion.json, docs/decisions.md ('Product net: the 10-29 net')",
+   "verdict": "corrected",
+   "reason": "My own read of results/ladder/log.jsonl matches every number: test 0001 on 10-30 20:35 (10-29 net s1 beat the heuristic, +3.74 points over 1,150 pairs, promoted), then tests 0002-0018 on 30-31 Oct were 17 distinct candidates that all failed. Their leads and pair counts match the miner's to 0.1 point, and there are no reruns among them. The rerun 0021 (data40k s1 again) falls on 11-01, outside the window. Four fixes. (1) Title and claim say all 17 \"lost\", but the ensemble led by +0.2 and s201 by -0.02 (0.0). They failed to show a 1-point gain; they did not lose. (2) The last sentence is wrong. The streak ended on 11-01: burst8 s1 and s101 passed against the 10-29 net (0022 +1.1, 0023 +2.2), and burst8hp2 then took the ladder champion. The product went back to the 10-29 net on 11-02 because of end-HP gauntlet reads (decisions 'Product net: the 10-29 net'), which also say the one-turn ladder 'doesn't track run-level play'. So this streak is not the start of why the product kept the net. (3) The +3.7 bar is measured against the heuristic, while the 17 others are measured against the 10-29 net. That puts two rulers on one axis, so it moves to the text. (4) The 3.7 pass deserves its own caveat: on the held-out half of fights the lead was only +1.0 (CI -1.7 to +3.8), and the train half gave +6.4. Period 3 (30-31 Oct, local time) is right. Nothing on the page already shows this."
+  },
+  {
+   "id": "h-measures-seed-spread",
+   "period": "6",
+   "title": "Retraining the same recipe with a new seed moves the score as much as most ideas did",
+   "claim": "On 6-7 Nov the lanes read 9 training recipes, each trained with 3 to 5 different seeds, on the same 500 gauntlet sequences. For three recipes they also read the same nets a second way (@tsl1). Seeds of the same recipe differed by 1.4 to 5.2 points of clear rate (median 2.0). The 10-29 net's whole lead over the heuristic on these sequences is 3.8 points (0.634 vs 0.596). So the luck of a single training seed could make an idea look like it gained or lost most of that lead. This is why the project read seed twins before believing a result.",
+   "subset": "Cell gauntlet (seed 20261101, rest 0.3), one-turn search, sequences 0-499, 500 sequences per read. Recipes with 3 or more training seeds whose reads all fall on 6-9 Nov (data20k was trained 10-31 and burst8 on 11-01; both were re-read 11-06/07). Rows marked @tsl1 are the same nets read with the tsl1 search option.",
+   "n": "9 recipes, 29 nets, 35 reads (11 recipe-and-read groups)",
+   "viz": {
+    "kind": "bars",
+    "unit": "gap between best and worst seed (clear-rate points)",
+    "rows": [
+     {
+      "label": "data20k (5 seeds)",
+      "value": 5.2,
+      "note": "0.586 to 0.638"
+     },
+     {
+      "label": "ycards heur-g400",
+      "value": 3.4,
+      "note": "0.600 to 0.634"
+     },
+     {
+      "label": "burst8 'neither'",
+      "value": 3.2,
+      "note": "0.588 to 0.620"
+     },
+     {
+      "label": "ycards net-g1600, read @tsl1",
+      "value": 3,
+      "note": "0.638 to 0.668 (same nets as the row below)"
+     },
+     {
+      "label": "ycards net-g400",
+      "value": 2.6,
+      "note": "0.596 to 0.622"
+     },
+     {
+      "label": "ycards net-g1600",
+      "value": 2,
+      "note": "0.628 to 0.648"
+     },
+     {
+      "label": "burst8, read @tsl1",
+      "value": 1.6,
+      "note": "0.646 to 0.662"
+     },
+     {
+      "label": "burst8 'parts'",
+      "value": 1.6,
+      "note": "0.590 to 0.606"
+     },
+     {
+      "label": "ycards net-g100",
+      "value": 1.6,
+      "note": "0.612 to 0.628"
+     },
+     {
+      "label": "ycards two-g400",
+      "value": 1.4,
+      "note": "0.614 to 0.628"
+     },
+     {
+      "label": "ycards two-g400, read @tsl1",
+      "value": 1.4,
+      "note": "0.616 to 0.630 (same nets as the row above)"
+     }
+    ]
+   },
+   "caveat": "Reading the same net again gives exactly the same result, so the gap comes from the training seed. But how big it is depends on which 500 sequences are used: on sequences 500-999 the data20k seeds differ by 3.4 points, not 5.2. With only 3 seeds the gap understates the full range. On this gauntlet, across all 24 recipe-and-read groups with 2 or more seeds from every period, the median gap is 1.6 points.",
+   "script": "python -I scratch/hist/verify/h-measures-seed-spread/v.py && python -I scratch/hist/verify/h-measures-seed-spread/v2.py && python -I scratch/hist/verify/h-measures-seed-spread/v3.py",
+   "sources": "results/gauntlet/rerank-2026-10-31-data20k-*-hpb0.01.json, rerank-2026-11-01-burst8-*-hpb0.01-tsl1.json, rerank-2026-11-07-*-hpb0.01[-tsl1].json, heuristic-bcbb0e.json, net1029-hpb0.01.json",
+   "verdict": "corrected",
+   "reason": "All 11 bar values hold. My own script reproduces every one on sequences 0-499 of the cell gauntlet (one-turn search, the same gauntlet settings as heuristic-bcbb0e.json). The median of the 11 gaps is 2.0. The heuristic scores 0.596 and the 10-29 net scores 0.634, so its lead is 3.8 points. All 35 reads are dated 11-06 to 11-07 by file time, which is period 6.\n\nFour things need fixing:\n(1) The n is wrong. Three bars (@tsl1) re-read the same nets as the ycards net-g1600 and ycards two-g400 bars, and the burst8 @tsl1 bar re-reads burst8's nets. That makes 35 reads of 29 distinct nets from 9 training recipes, not \"11 recipes, 35 nets\". The plain read and the @tsl1 read are two read settings. Each gap stays inside one setting, so the bars can stay, but the labels have to say this.\n(2) \"In period 6 the lanes trained\" is wrong for two recipes. data20k was trained 10-31 and burst8 on 11-01. Their seeds were only re-read on 11-06 and 11-07.\n(3) The caveat says the gap is \"training noise, not fight-sampling noise\", which goes too far. A re-read of the same net is identical (genpack40k-s1 cells vs r2: 341 = 341, 0 sequences differ), so the reads themselves add no noise. But the gap depends on which 500 sequences are used. On sequences 500-999 the data20k seeds span 0.646 to 0.680, a gap of 3.4 rather than 5.2. Seed pairs disagree on 54 to 71 of the 500 sequences.\n(4) I could not reproduce the \"34 recipes\" figure. Pooling it probably mixes gauntlet settings. On this one gauntlet I find 24 groups (recipe plus read setting) with 2 or more seeds, and their median gap is 1.6. The median matches; the count does not.\n\nThe comparison with the 3.8-point lead is fair, because both use the same 500 sequences and the same settings."
+  },
+  {
+   "id": "h-measures-tight-bench",
+   "period": "2",
+   "title": "The first ruler: hard fights, with unseen cards held out",
+   "claim": "Before the gauntlet existed, nets were scored on a 'tight' bench of hard single fights. The bench had two halves: decks built from the training card pool, and decks that hold cards the net never trained with (held out). From 25 to 28 Oct, 22 runs were scored on it. The best held-out win rate was 0.511 (score+branch, seed 1, 10 rounds, 28 Oct), against 0.460 for the 24 Oct baseline. That best result's 95% range is 0.47-0.55 over 550 games, and it is the top of 22 tries, so the gain is modest. Runs that won more with training-pool decks also won more with held-out-card decks (correlation 0.86): a run's ranking carried over to cards it had not seen. The bench last appears in the run index on 28 Oct; after that the project moved to the ladder and the gauntlet.",
+   "subset": "runs/index.csv rows with bench_version 1 dated 25-28 Oct; tight bench win rate, train half (training card pool) vs held_out half (decks with held-out cards)",
+   "n": "22 training runs; 550 held-out games per run",
+   "viz": {
+    "kind": "scatter",
+    "unit": "win rate on tight fights",
+    "x_label": "win rate, training-pool decks",
+    "y_label": "win rate, decks with held-out cards",
+    "points": [
+     {
+      "x": 0.4246,
+      "y": 0.4236,
+      "label": "f-base r3"
+     },
+     {
+      "x": 0.3738,
+      "y": 0.3982,
+      "label": "f-1 r3"
+     },
+     {
+      "x": 0.4475,
+      "y": 0.4618,
+      "label": "f-3 r3"
+     },
+     {
+      "x": 0.4787,
+      "y": 0.4364,
+      "label": "f-6 r3"
+     },
+     {
+      "x": 0.4754,
+      "y": 0.4673,
+      "label": "f-13 r3"
+     },
+     {
+      "x": 0.4475,
+      "y": 0.4364,
+      "label": "f-16 r3"
+     },
+     {
+      "x": 0.4115,
+      "y": 0.4182,
+      "label": "f-36 r3"
+     },
+     {
+      "x": 0.4525,
+      "y": 0.4673,
+      "label": "f-136 r3"
+     },
+     {
+      "x": 0.4475,
+      "y": 0.4436,
+      "label": "score s0 r3"
+     },
+     {
+      "x": 0.5,
+      "y": 0.4673,
+      "label": "score+branch s0 r3"
+     },
+     {
+      "x": 0.4656,
+      "y": 0.4382,
+      "label": "score s0 r3 (b)"
+     },
+     {
+      "x": 0.4492,
+      "y": 0.4345,
+      "label": "score+branch s0 r3 (b)"
+     },
+     {
+      "x": 0.4918,
+      "y": 0.4655,
+      "label": "hp s0 r3"
+     },
+     {
+      "x": 0.4754,
+      "y": 0.4473,
+      "label": "hp+branch s0 r3"
+     },
+     {
+      "x": 0.4508,
+      "y": 0.4509,
+      "label": "score s1 r3"
+     },
+     {
+      "x": 0.4934,
+      "y": 0.4927,
+      "label": "score+branch s1 r3"
+     },
+     {
+      "x": 0.4869,
+      "y": 0.4545,
+      "label": "hp s1 r3"
+     },
+     {
+      "x": 0.4459,
+      "y": 0.4345,
+      "label": "hp+branch s1 r3"
+     },
+     {
+      "x": 0.4738,
+      "y": 0.4382,
+      "label": "score s1 r10"
+     },
+     {
+      "x": 0.4754,
+      "y": 0.4527,
+      "label": "score s0 r10"
+     },
+     {
+      "x": 0.5082,
+      "y": 0.4764,
+      "label": "score+branch s0 r10"
+     },
+     {
+      "x": 0.5344,
+      "y": 0.5109,
+      "label": "score+branch s1 r10"
+     }
+    ]
+   },
+   "caveat": "Win rates on this bench are not comparable with the gauntlet's clear rates: it scores single hard fights, not 11-floor sequences. The two halves use the same encounters and the same net, so part of the 0.86 correlation is shared fight difficulty, not proof the net generalizes. Each held-out rate rests on 550 games (about +/-0.04), and 0.511 is the best of 22 runs.",
+   "script": "python -I scratch/hist/measures/tight.py",
+   "sources": "runs/index.csv (bench_version, tight_train_win, tight_held_out_win); runs/2026-10-28-score+branch-s1-r10-3c58554/bench.json (550 games, Wilson interval); scripts/bench_sets.py (meaning of the halves)",
+   "verdict": "corrected",
+   "reason": "My own script (python -I, runs/index.csv) gives the same numbers. There are 22 rows with bench_version 1 dated 25-28 Oct. All 22 scatter points match exactly. The correlation between the two halves is 0.856, the best held-out win is 0.5109 (score+branch s1 r10, 28 Oct), and the 24 Oct baseline is 0.4600. No bench_version 1 rows appear after 28 Oct. The two score-s0-r3 rows are different commits (882c853 and a713277), so they are not double counted. Three fixes are needed. (1) The halves are not \"fights seen in training vs held-out fights\". scripts/bench_sets.py builds the train half from the training card pool and the held_out half from decks holding held-out cards, against the same encounters. (2) The 0.511 is the best of 22 runs on 550 held-out games. Its Wilson 95% interval in bench.json is 0.469-0.552, and the 0.460 baseline sits just below that. Picking the best of 22 also inflates it, so the rise should be stated as modest, not as a firm gain. (3) Both halves use the same encounters and are played by the same net, so \"did not just reward memorising\" goes too far. The fair reading is that the ranking of runs carried over to decks with unseen cards."
+  },
+  {
+   "id": "h-engine-first-evening",
+   "period": "1",
+   "title": "The first evening: from spec to trained nets in 91 minutes of commits",
+   "claim": "On 23 Oct the first commit (the spec) landed at 22:05. The eighth landed at 23:36: self-play data and the first two value nets, which its message reports as trained and compared. By midnight the repository held 5,821 lines of Rust (1,610 of them tests), 964 lines of Python and 90 Rust tests. One commit at 22:35 added every in-scope Act 1 card, power and monster. These are commit times, so much of the work was likely written before it was committed.",
+   "subset": "git history, commits dated 10-23 (author time, local time)",
+   "n": "8 commits on 10-23; lines are file lengths at 39de9ebf (equal to the summed git numstat, added minus deleted), all .rs and .py files",
+   "viz": {
+    "kind": "bignum",
+    "unit": "",
+    "rows": [
+     {
+      "label": "commits, spec to first nets",
+      "value": 8,
+      "note": "22:05 to 23:36, 91 minutes"
+     },
+     {
+      "label": "Rust lines by midnight",
+      "value": 5821,
+      "note": "engine core 1,903 + Act 1 content 1,777 + search and agents 1,076 + Python bindings 1,065; 1,610 are tests"
+     },
+     {
+      "label": "Rust tests by midnight",
+      "value": 90,
+      "note": "#[test] functions at 39de9ebf"
+     },
+     {
+      "label": "Python lines by midnight",
+      "value": 964,
+      "note": "binding tests, eval/replay scripts, self-play, train.py, stsnet.py, test_net.py"
+     }
+    ]
+   },
+   "caveat": "These are commit timestamps, not working time. They show how the work was committed, not how fast it was written. The trained nets are not in the repo; the 39de9ebf commit message reports their training and test result.",
+   "script": "cd scratch/hist/verify/h-engine-first-evening && python -I v.py",
+   "sources": "git log of main up to 6b09e463; commits 5003b824, b4f9b968, 40b4f73b, 40ff7dd4, 8db249bf, 39de9ebf",
+   "verdict": "corrected",
+   "reason": "My own script reproduced the main numbers. There are 8 commits dated 10-23 (local time): 5003b824 at 22:05:51 through 39de9ebf at 23:36:06, which is 91 minutes. At 39de9ebf the .rs files hold 5,821 lines, matching both the file contents and the summed numstat. The .py files hold 964 lines, and there are 90 #[test] attributes. Commit 40b4f73b is the 'Full Act 1 content' commit at 22:35. One note is wrong. The Act 1 content commit adds a net 1,777 Rust lines, not 1,949. The Rust breakdown by commit is: engine core b4f9b968 1,903, Act 1 content 1,777, options/search/agents 40ff7dd4 1,076, Python bindings 8db249bf 1,065. Together they make 5,821. The Rust total also includes 1,610 lines of Rust tests, which the note should say. The repo holds no trained weights. The nets claim rests on the 39de9ebf commit message, which reports training on 30k self-play games and the check-6 result. That is acceptable, but the wording should say 'trained and tested' as the message reports it. The timestamps caveat is already present. Nothing here repeats the page, which shows commits per day, not this."
+  },
+  {
+   "id": "h-engine-loc",
+   "period": "all",
+   "title": "Lines of Rust and Python, day by day",
+   "claim": "Python overtook Rust on 27 Oct and pulled far ahead while the lab ran experiments, ending at 68,068 lines. Rust grew in bursts: the rules-engine series on 1-2 Nov (16,316 to 20,158), almost nothing while the AI roles took over (20,158 to 20,595 over 3-5 Nov), then real Act 1 content, relics, potions and the real-game bridge, which took it from 25,890 on 9 Nov to 49,600 on 14 Nov.",
+   "subset": "every .rs and every .py file in main's tree (engine, binding crate, solved-position DB, scripts, tests) at the last main commit before local midnight each day",
+   "n": "2,591 commits, 23 days",
+   "viz": {
+    "kind": "line",
+    "unit": "lines",
+    "x_label": "day (2026)",
+    "y_label": "lines in the repository",
+    "series": [
+     {
+      "name": "Rust",
+      "points": [
+       {
+        "x": "10-23",
+        "y": 5821
+       },
+       {
+        "x": "10-24",
+        "y": 8341
+       },
+       {
+        "x": "10-25",
+        "y": 8885
+       },
+       {
+        "x": "10-26",
+        "y": 11786
+       },
+       {
+        "x": "10-27",
+        "y": 11786
+       },
+       {
+        "x": "10-28",
+        "y": 12770
+       },
+       {
+        "x": "10-29",
+        "y": 12894
+       },
+       {
+        "x": "10-30",
+        "y": 13720
+       },
+       {
+        "x": "10-31",
+        "y": 15482
+       },
+       {
+        "x": "11-01",
+        "y": 16316
+       },
+       {
+        "x": "11-02",
+        "y": 20158
+       },
+       {
+        "x": "11-03",
+        "y": 20348
+       },
+       {
+        "x": "11-04",
+        "y": 20595
+       },
+       {
+        "x": "11-05",
+        "y": 20595
+       },
+       {
+        "x": "11-06",
+        "y": 21986
+       },
+       {
+        "x": "11-07",
+        "y": 23730
+       },
+       {
+        "x": "11-08",
+        "y": 24875
+       },
+       {
+        "x": "11-09",
+        "y": 25890
+       },
+       {
+        "x": "11-10",
+        "y": 29939
+       },
+       {
+        "x": "11-11",
+        "y": 31803
+       },
+       {
+        "x": "11-12",
+        "y": 36134
+       },
+       {
+        "x": "11-13",
+        "y": 43126
+       },
+       {
+        "x": "11-14",
+        "y": 49600
+       }
+      ]
+     },
+     {
+      "name": "Python",
+      "points": [
+       {
+        "x": "10-23",
+        "y": 964
+       },
+       {
+        "x": "10-24",
+        "y": 5648
+       },
+       {
+        "x": "10-25",
+        "y": 8027
+       },
+       {
+        "x": "10-26",
+        "y": 10028
+       },
+       {
+        "x": "10-27",
+        "y": 12286
+       },
+       {
+        "x": "10-28",
+        "y": 12985
+       },
+       {
+        "x": "10-29",
+        "y": 15089
+       },
+       {
+        "x": "10-30",
+        "y": 23800
+       },
+       {
+        "x": "10-31",
+        "y": 27368
+       },
+       {
+        "x": "11-01",
+        "y": 30520
+       },
+       {
+        "x": "11-02",
+        "y": 32055
+       },
+       {
+        "x": "11-03",
+        "y": 39821
+       },
+       {
+        "x": "11-04",
+        "y": 41857
+       },
+       {
+        "x": "11-05",
+        "y": 42351
+       },
+       {
+        "x": "11-06",
+        "y": 43844
+       },
+       {
+        "x": "11-07",
+        "y": 47832
+       },
+       {
+        "x": "11-08",
+        "y": 52572
+       },
+       {
+        "x": "11-09",
+        "y": 54208
+       },
+       {
+        "x": "11-10",
+        "y": 55504
+       },
+       {
+        "x": "11-11",
+        "y": 57396
+       },
+       {
+        "x": "11-12",
+        "y": 57881
+       },
+       {
+        "x": "11-13",
+        "y": 60165
+       },
+       {
+        "x": "11-14",
+        "y": 68068
+       }
+      ]
+     }
+    ]
+   },
+   "caveat": "Lines include tests and blank lines; JSON content files and docs are not counted. Work on lane branches counts on the day it was merged into main. The 14 Nov Python jump includes about 5,150 lines of the showcase's own statistics scripts. More lines is not more capability.",
+   "script": "python -I scratch/hist/verify/h-engine-loc/loc.py",
+   "sources": "git ls-tree -r + git cat-file --batch over main's first-parent commit at each day's end (local time); 11-14 Rust total matches wc -l over git ls-files '*.rs' (49,600)",
+   "verdict": "corrected",
+   "reason": "The miner's method is wrong for what the chart says it shows. It adds up git log --numstat by commit date across all branches, so lane-branch commits count on the day they were written, not the day they reached main. I counted every .rs and .py blob in main's tree at the last first-parent commit before local midnight each day. The end points and the shape hold: Rust is 49,600 on 11-14 in both counts, and Python overtakes Rust on 10-27 in both. Several days are off, though. 10-27 Rust is 11,786, not 12,212. 10-30 is 13,720 / 23,800, not 13,892 / 23,973. 11-02 Python is 32,055, not 35,756, because about 3,700 lines were still on lane branches. 11-06 to 11-13 Rust is 21,986 / 23,730 / 24,875 / 25,890 / 29,939 / 31,803 / 36,134 / 43,126; the miner's 26,126 on 11-09 becomes 25,890. Final Python is 68,068, not 68,062, probably because numstat misses last lines that have no newline. The caveat about the 11-14 jump checks out: showcase/stats adds +5,153 Python lines that day. It is not a repeat of anything on the page; commits per day is a different measure. One setting, so the line chart fits."
+  },
+  {
+   "id": "h-engine-tests",
+   "period": "all",
+   "title": "Tests grew ninefold in Rust, seventyfold in Python",
+   "claim": "The Rust test count went from 90 on the first night to 822, and the Python test count from 14 to 1,015. Rust tests were nearly flat from 24 Oct to 2 Nov (149 to 222) and grew fastest in the last five days (414 to 822). Those were the days real Act 1 content, relics, potions and the real-game rule fixes went in, and each came with tests.",
+   "subset": "test functions in git on main at the end of each local day (main's reflog, local time): #[test] lines in .rs files, def test_ lines in .py files",
+   "n": "23 daily snapshots",
+   "viz": {
+    "kind": "line",
+    "unit": "test functions",
+    "x_label": "day (2026)",
+    "y_label": "test functions",
+    "series": [
+     {
+      "name": "Rust #[test]",
+      "points": [
+       {
+        "x": "10-23",
+        "y": 90
+       },
+       {
+        "x": "10-24",
+        "y": 149
+       },
+       {
+        "x": "10-25",
+        "y": 149
+       },
+       {
+        "x": "10-26",
+        "y": 174
+       },
+       {
+        "x": "10-27",
+        "y": 174
+       },
+       {
+        "x": "10-28",
+        "y": 183
+       },
+       {
+        "x": "10-29",
+        "y": 184
+       },
+       {
+        "x": "10-30",
+        "y": 198
+       },
+       {
+        "x": "10-31",
+        "y": 217
+       },
+       {
+        "x": "11-01",
+        "y": 222
+       },
+       {
+        "x": "11-02",
+        "y": 222
+       },
+       {
+        "x": "11-03",
+        "y": 287
+       },
+       {
+        "x": "11-04",
+        "y": 293
+       },
+       {
+        "x": "11-05",
+        "y": 293
+       },
+       {
+        "x": "11-06",
+        "y": 332
+       },
+       {
+        "x": "11-07",
+        "y": 371
+       },
+       {
+        "x": "11-08",
+        "y": 390
+       },
+       {
+        "x": "11-09",
+        "y": 414
+       },
+       {
+        "x": "11-10",
+        "y": 485
+       },
+       {
+        "x": "11-11",
+        "y": 512
+       },
+       {
+        "x": "11-12",
+        "y": 595
+       },
+       {
+        "x": "11-13",
+        "y": 708
+       },
+       {
+        "x": "11-14",
+        "y": 822
+       }
+      ]
+     },
+     {
+      "name": "Python def test_",
+      "points": [
+       {
+        "x": "10-23",
+        "y": 14
+       },
+       {
+        "x": "10-24",
+        "y": 95
+       },
+       {
+        "x": "10-25",
+        "y": 159
+       },
+       {
+        "x": "10-26",
+        "y": 193
+       },
+       {
+        "x": "10-27",
+        "y": 215
+       },
+       {
+        "x": "10-28",
+        "y": 226
+       },
+       {
+        "x": "10-29",
+        "y": 258
+       },
+       {
+        "x": "10-30",
+        "y": 324
+       },
+       {
+        "x": "10-31",
+        "y": 391
+       },
+       {
+        "x": "11-01",
+        "y": 447
+       },
+       {
+        "x": "11-02",
+        "y": 500
+       },
+       {
+        "x": "11-03",
+        "y": 609
+       },
+       {
+        "x": "11-04",
+        "y": 641
+       },
+       {
+        "x": "11-05",
+        "y": 652
+       },
+       {
+        "x": "11-06",
+        "y": 676
+       },
+       {
+        "x": "11-07",
+        "y": 746
+       },
+       {
+        "x": "11-08",
+        "y": 801
+       },
+       {
+        "x": "11-09",
+        "y": 821
+       },
+       {
+        "x": "11-10",
+        "y": 848
+       },
+       {
+        "x": "11-11",
+        "y": 887
+       },
+       {
+        "x": "11-12",
+        "y": 911
+       },
+       {
+        "x": "11-13",
+        "y": 950
+       },
+       {
+        "x": "11-14",
+        "y": 1015
+       }
+      ]
+     }
+    ]
+   },
+   "caveat": "These are test functions found by text search, not tests that ran or passed. One golden test replays about 9,000 recorded games (engine/tests/data/golden.txt), so the count says little about coverage. Days are where main stood at local midnight, so work on lane branches counts only from the day it landed.",
+   "script": "python -I scratch/hist/verify/h-engine-tests/check2.py",
+   "sources": "git reflog of main (last entry per local day), then git grep -c with pathspecs *.rs and *.py at that commit",
+   "verdict": "corrected",
+   "reason": "The shape holds, but the miner's numbers are inflated by a bug and, on some days, taken from the wrong commit. (1) cnt(h, pat, paths) is called with the string '*.rs' and then runs *paths, so git grep gets the pathspecs '*', '.', 'r', 's'. That matches every file, so '#[test]' and 'def test_' written in docs/specs/*.md are counted too. At HEAD 6b09e463 there are 822 #[test] lines in .rs files, not 846, and 1,015 def test_ lines in .py files, not 1,024. (2) \"Last commit of each day\" came from author-date order over all commits, so some days are lane-branch commits that had not reached main yet (11-06, 11-07, 11-09, 11-11, 11-12, 11-13). I used main's reflog, which covers all 1,833 moves since the first commit, to find the commit main actually pointed to at the end of each local day (local time; every commit has the same offset). Using first-parent instead also fails, because a branch merge makes it follow engine-next on 11-02. Corrected: Rust 90 to 822 (9.1x, still 'ninefold') and Python 14 to 1,015 (72x, still 'seventyfold'). Rust 149 to 222 from 10-24 to 11-02 holds. The fast stretch is 414 to 822 from 11-09 to 11-14, not 444 to 846. The miner's day 11-03 value of 311 is really 287 (the 10-24..11-02 flat part was unaffected). The page doesn't already show this, and the line chart fits. Both series count test functions, so they share a unit. The golden caveat holds: golden.txt has 9,008 lines and golden.rs has 4 #[test]."
+  },
+  {
+   "id": "h-engine-rules-version",
+   "period": "all",
+   "title": "The rules version held for 21 days, then moved five times in one day",
+   "claim": "Every dataset and run is stamped with a rules version: a hash of 9,000 seeded random games recorded on 24 Oct (golden.txt). It stayed 7042d1d6 for three weeks: a 2 Nov change was undone 9 minutes later, and a 10 Nov rewrite was declared the same rules. Then the real game exposed rule gaps, and the version moved five times between 01:08 and 22:56 on 14 Nov. The first move rewrote 139 of the 9,000 games (random-spot card inserts). Each of the other four added cover games for rules fixed that day: 5 at once (turn-end order, Duplication, Guardian, Feed and others), then one each for Lagavulin's wake, Pocketwatch and Fire Breathing on a Curse.",
+   "subset": "commits that changed engine/tests/data/golden.txt; hash as scripts/registry.py rules_version computes it",
+   "n": "9 commits touching golden.txt; 5 real version moves",
+   "viz": {
+    "kind": "timeline",
+    "unit": "golden games",
+    "events": [
+     {
+      "x": "10-24 01:04",
+      "label": "9,000 seeded random games recorded; version 7042d1d6",
+      "value": 9000
+     },
+     {
+      "x": "11-02 01:36",
+      "label": "1,200 proving games appended (55bba64a)",
+      "value": 10200
+     },
+     {
+      "x": "11-02 01:45",
+      "label": "moved to their own file 9 minutes later; back to 7042d1d6",
+      "value": 9000
+     },
+     {
+      "x": "11-10 22:15",
+      "label": "ended fights recorded differently; e9c10f64 mapped to 7042d1d6 as the same rules",
+      "value": 9000
+     },
+     {
+      "x": "11-14 01:08",
+      "label": "random-spot card inserts go under the top card; 139 games change (e47bcfcd)",
+      "value": 9000
+     },
+     {
+      "x": "11-14 15:39",
+      "label": "5 cover games for the 14 Nov rule fixes, Duplication among them (f59b662a)",
+      "value": 9005
+     },
+     {
+      "x": "11-14 18:10",
+      "label": "Lagavulin's wake takes 8 Metallicize (696d607b)",
+      "value": 9006
+     },
+     {
+      "x": "11-14 19:32",
+      "label": "Pocketwatch counted as the game counts (32f1971b)",
+      "value": 9007
+     },
+     {
+      "x": "11-14 22:56",
+      "label": "Fire Breathing fires on a Curse draw (d08bc2b7)",
+      "value": 9008
+     }
+    ]
+   },
+   "caveat": "The hash only moves when a rule change alters a golden game. Several rule fixes (Perfected Strike, Mode Shift block, turn-end order of Burn and Metallicize, and others) left golden unchanged until the cover games of 14 Nov were added, so 'rules version unchanged' did not mean 'rules unchanged'. Times are author times; for the four later commits on 14 Nov, the commit times are 4 to 16 minutes later.",
+   "script": "python -I scratch/hist/engine/golden.py",
+   "sources": "git log -- engine/tests/data/golden.txt; git show 7947ae4d (cover game list); scripts/registry.py rules_version and SAME_RULES; docs/decisions.md 'Rules version moves ...' entries of 2026-11-14",
+   "verdict": "corrected",
+   "reason": "I wrote my own script to rebuild every golden.txt version from git. It normalises CRLF, takes the sha256 prefix and applies SAME_RULES, the same steps as rules_version. Every hash, local time (local time) and game count matches the miner's: 9,000, then 10,200, then back to 9,000 at 7042d1d6 nine minutes later, then e9c10f64 mapped to 7042d1d6, then e47bcfcd, f59b662a (9,005), 696d607b (9,006), 32f1971b (9,007) and d08bc2b7 (9,008). The 21 days (10-24 to 11-14) and the five moves on 14 Nov also hold. One part of the claim is wrong. It says each of the five moves added a cover game, but the first move (fc124b67, 01:08) added no game. It changed the recorded hashes of 139 of the existing 9,000 games, and the count stayed 9,000. Only the other four moves added games, 5 + 1 + 1 + 1. Also, Duplication's cover game came in the 15:39 batch of 5, which also covers turn-end order, Guardian, Feed and Perfected Strike. It did not come with the first move. The claim is corrected to say this, and the first event's label now notes the 139 rewritten games."
+  },
+  {
+   "id": "h-engine-hot-files",
+   "period": "all",
+   "title": "Which code files were edited most, and when",
+   "claim": "The engine's state file (state.rs) is the most-edited code file, with 117 commits. Over two thirds of them (79) came in the last five days, while relics, potions and the real game were going in. The registry (registry.rs, 107) was only created on day 9 (10-31), and almost all of its edits came from 11-06 on. The training script learn.py went the other way: 49 of its 59 edits came in the first nine days (to 10-31), and after that it was edited only 10 more times.",
+   "subset": "commits on main touching each .rs or .py file, by period (author time, local time); top 10 code files by total commits",
+   "n": "2,591 commits; top 10 of all code files",
+   "viz": {
+    "kind": "heat",
+    "unit": "commits touching the file",
+    "xs": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ],
+    "ys": [
+     "engine/src/state.rs (117)",
+     "engine/src/registry.rs (107)",
+     "py/src/lib.rs (96)",
+     "py/src/features.rs (74)",
+     "scripts/explore.py (65)",
+     "scripts/learn.py (59)",
+     "engine/src/codec.rs (56)",
+     "scripts/stsnet.py (48)",
+     "scripts/registry.py (39)",
+     "engine/src/hooks.rs (38)"
+    ],
+    "cells": [
+     [
+      9,
+      0,
+      4,
+      8,
+      1,
+      16,
+      36,
+      43
+     ],
+     [
+      0,
+      0,
+      1,
+      6,
+      1,
+      27,
+      32,
+      40
+     ],
+     [
+      8,
+      12,
+      12,
+      10,
+      2,
+      14,
+      17,
+      21
+     ],
+     [
+      5,
+      0,
+      6,
+      10,
+      1,
+      6,
+      23,
+      23
+     ],
+     [
+      0,
+      5,
+      0,
+      0,
+      0,
+      27,
+      18,
+      15
+     ],
+     [
+      9,
+      23,
+      17,
+      4,
+      1,
+      3,
+      0,
+      2
+     ],
+     [
+      0,
+      1,
+      5,
+      6,
+      0,
+      9,
+      10,
+      25
+     ],
+     [
+      11,
+      11,
+      7,
+      8,
+      1,
+      6,
+      2,
+      2
+     ],
+     [
+      8,
+      15,
+      5,
+      3,
+      3,
+      2,
+      3,
+      0
+     ],
+     [
+      3,
+      0,
+      1,
+      3,
+      1,
+      5,
+      11,
+      14
+     ]
+    ]
+   },
+   "caveat": "Periods differ in length (2 to 4 days) and in commit count (61 in P1, 763 in P6), and a commit count says nothing about the size of the edit. engine/src/effects.rs ties hooks.rs at 38 for tenth place, and scripts/real_game.py (37, all in P8) falls just outside the top 10. The chart shows timing only, not why a file stopped or started changing. Docs dwarf code: docs/decisions.md alone was edited in 558 commits.",
+   "script": "python -I scratch/hist/engine/heat.py",
+   "sources": "git log --name-only on main",
+   "verdict": "corrected",
+   "reason": "I recomputed it with my own script (git log main --name-only, author time moved to local time). All 80 cells and every row total match exactly: 2,591 commits, period counts 61/110/219/236/340/763/431/431. Using commit time instead of author time moves at most 2 commits between neighbouring periods. Only 5 commit subjects repeat, so double counting is negligible. Three parts of the wording are wrong. (1) state.rs: 79 of 117 is 68%, which is more than two thirds, not 'almost two thirds'. (2) learn.py: 49 of 59 edits fall in P1-P3 (10-23..10-31). That is the first nine days, not 'the first week': the first seven days hold 36. (3) registry.rs was created on 10-31 (day 9) in 'Registry-lite step 2'. Calling it 'untouched' for eight days implies it existed before then. 'It went quiet once the roles moved to fixed nets' asserts a cause the data cannot show, so I reworded it as a timing statement. Two smaller points: hooks.rs ties effects.rs at 38 for tenth place, so the tie goes in the caveat; scripts/real_game.py (37, all in P8) falls just outside the top 10. The heat chart fits the data."
+  },
+  {
+   "id": "h-engine-speed",
+   "period": "all",
+   "title": "Engine speed changes, each measured before vs after",
+   "claim": "The biggest speed-up came on 25 Oct, when the net's forward pass moved from Python to Rust: self-play went from 23.5 to 179 games per second (Python on 4 threads vs Rust on all threads, so part of the gain is threads). Later work moved speed both ways. On 2 Nov the new rule machinery cost one-turn search 7.5% at 1 thread, and the same day a search memo that stores each state once gained it back 52%. On 6 Nov, shrinking the combat state from 1,292 to 744 bytes added 17.6%.",
+   "subset": "speed checks recorded in docs/decisions.md and the sparse-piles spec; each event is its own before-vs-after measurement on the laptop, with its own workload",
+   "n": "5 measured changes; 3 to 22 interleaved runs each",
+   "viz": {
+    "kind": "timeline",
+    "unit": "",
+    "events": [
+     {
+      "x": "10-25",
+      "label": "Rust inference: self-play 23.5 to 179 games/s (7.6x; Python on 4 threads vs Rust on all threads, median of 5)"
+     },
+     {
+      "x": "11-02",
+      "label": "Rules-engine series (specs 2-9): one-turn search -7.5% at 1 thread, -13.7% at all threads; state grew 1,028 to 1,268 bytes"
+     },
+     {
+      "x": "11-02",
+      "label": "Search memo stores each state once: one-turn search +52% at 1 thread, +32% at all threads (5 runs)"
+     },
+     {
+      "x": "11-06",
+      "label": "Sparse state: 1,292 to 744 bytes; search +17.6% at 1 thread, +35.5% at all threads (11 runs)"
+     },
+     {
+      "x": "11-13",
+      "label": "Sparse piles (u16 card ids, shared 64-entry pile list): search +0.7% to +3.6%, level with main (16 and 22 runs, loaded machine)"
+     }
+    ]
+   },
+   "caveat": "Each check used its own workload and machine load, so the numbers are not on one scale and cannot be added up. The 25 Oct figure compares different thread counts. The 13 Nov jobs crashed out of memory partway through.",
+   "script": "grep -n -E '^## (Search memo|Series speed|Sparse state built)|Rust inference \\(spec' docs/decisions.md; git -C . show d45a2e9c -- docs/specs/sparse-piles.md",
+   "sources": "docs/decisions.md entries 'Rust inference (spec rust-inference, built 2026-10-25)', 'Series speed and search identity after specs 2-9 (2026-11-02)', 'Search memo stores each state once (2026-11-02)', 'Sparse state built and landed (2026-11-06)'; docs/specs/sparse-piles.md 'Final speed' (commit d45a2e9c); kb measurement/sparse-piles@speed",
+   "verdict": "corrected",
+   "reason": "Four of the five events check out against docs/decisions.md and git. Rust inference was specced on 10-25 (b9f1a21f), with self-play going from 23.5 to 179 games/s, 7.6x, median of 5. The rules-engine series on 11-02 cost 7.5% at 1 thread and 13.7% at all threads, and the state grew from 1,028 to 1,268 bytes. The search memo on 11-02 (cfeb9317, 05:26) gained 52% and 32% over 5 runs. Sparse state on 11-06 (b2d870ed) shrank the state from 1,292 to 744 bytes and gained 17.6% and 35.5% over 11 runs. Two things need fixing. (1) The sparse-piles event is wrong: the spec title said 96 entries, but what landed was S64, a shared 64-entry list. Commit d45a2e9c's final speed is search +0.7% to +3.6%, from two jobs of 16 and 22 pairs that crashed out of memory on a loaded machine. That is 'level with main', not 96 entries. (2) The 7.6x headline compares Python on 4 threads with Rust on all threads, so it is partly a thread-count gain. The claim text has to say so, not only the event label. Also, n says 4 measured changes but the timeline shows 5 events, so n now counts all 5. None of this repeats the existing page (only a 9 Nov note mentions speed checks)."
+  },
+  {
+   "id": "h-writing-decisions-who",
+   "period": "all",
+   "title": "Who wrote the decisions, period by period",
+   "claim": "docs/decisions.md holds 499 dated entries. While the owner sat at the desk (periods 1-2), every entry came from their session (25). From 10-29 Claude wrote 125 entries marked 'owner away' in five days. From 11-03 the AI roles took over and wrote 213 entries marked 'on the owner's behalf', 97 of them in period 6 alone. The owner signed 55 entries from 10-29 on (8 of them tagged 'owner present', 10-31 to 11-02): 1 in period 3, then 10-14 per period in periods 4-7 and 5 in the two-day period 8. Period 6 (11-06..11-09) was the busiest stretch with 149 entries. The busiest single day was 11-02, with 55.",
+   "subset": "Every '## ' heading in docs/decisions.md at HEAD. Date = git blame author time of the heading line (local time). Who = the heading's own tag. A tag starting '(owner' or containing 'owner present', or an untagged entry before 10-29, counts as owner. '(owner away...)' counts as Claude while the owner was away, and '(on the owner's behalf...)' as the roles. 'Lane X opened/closed' headings are lane records. The rest are untagged build notes; half of those (11 of 22) are the rules-engine series built overnight on 11-02, 01:36-05:26.",
+   "n": "499 entries",
+   "viz": {
+    "kind": "heat",
+    "unit": "decision entries",
+    "xs": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ],
+    "ys": [
+     "owner",
+     "Claude, owner away",
+     "roles, on the owner's behalf",
+     "lane opened/closed records",
+     "untagged build notes"
+    ],
+    "cells": [
+     [
+      12,
+      13,
+      1,
+      11,
+      10,
+      14,
+      14,
+      5
+     ],
+     [
+      0,
+      0,
+      47,
+      69,
+      9,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      40,
+      97,
+      54,
+      22
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      12,
+      34,
+      11,
+      2
+     ],
+     [
+      0,
+      0,
+      2,
+      13,
+      1,
+      4,
+      1,
+      1
+     ]
+    ]
+   },
+   "caveat": "The tag is the writer's own label, not a check of who typed it. Entries marked 'owner present' were likely typed by Claude with the owner at the desk. Blame dates an entry by the last change to its heading line, so a retitled entry moves to the day of the retitle. Periods differ in length (2 to 4 days).",
+   "script": "python -I scratch/hist/writing/dec.py && python -I scratch/hist/writing/dec2.py",
+   "sources": "docs/decisions.md (git blame HEAD)",
+   "verdict": "corrected",
+   "reason": "My own blame script (v.py) gets the same 499 headings, the same 125 'owner away', 213 'on the owner's behalf' (97 in P6), 59 lane records, P6 = 149 entries and busiest day 11-02 = 55. Using author time or committer time moves only 1 heading to another period, and nothing is counted twice. The only cell differences come from where the owner tag can sit. I counted only '(owner...' at the start of the tag. The miner also counts 'owner present' later in the tag, e.g. 'Hang and memory fixes (2026-10-31, owner present)' and 'Series review fixes (2026-11-02, manager's call, owner present)'. That rule is reasonable, so I kept the miner's cells (owner P3 = 1, P4 = 11; untagged P3 = 2, P4 = 13) and fixed the subset wording to describe it. Two parts of the text were wrong. 'About 10-14 per period' does not hold for P3 (1 entry) or P8 (5 entries in 2 days). Also, only 11 of the 22 untagged entries after 10-28 belong to the 11-02 01:36-05:26 overnight rules-engine series, so 'most' became 'half'. The heat chart suits counts by writer and period, and the caveat already covers the unequal period lengths. It does not repeat anything already on the page (the page has commits per day, not decision entries)."
+  },
+  {
+   "id": "h-writing-entry-length",
+   "period": "all",
+   "title": "Decision entries got short, then long again",
+   "claim": "With the owner at the desk a decision entry ran about 480-540 words (median), and the two longest of the whole project came on day 2 (10-24): 'Triggers and conditions (SPEC.md Amendment 4)' at 1,976 words and 'Learned play as built' at 1,911. When Claude ran the lab alone (period 3) the median fell to 113 words: many small calls, written fast. Once the roles wrote the record (period 5 on) it settled near 290 words, with 'After' entries that explain a lane's result and the next step reaching 1,585 words (11-05).",
+   "subset": "Words in each decisions.md entry (heading to next heading), grouped by the period of its heading's blame date.",
+   "n": "499 entries, 152,823 words; per period n = 12, 13, 50, 93, 72, 149, 80, 30",
+   "viz": {
+    "kind": "line",
+    "unit": "words per entry",
+    "series": [
+     {
+      "name": "median entry",
+      "points": [
+       {
+        "x": "P1",
+        "y": 478.5
+       },
+       {
+        "x": "P2",
+        "y": 536
+       },
+       {
+        "x": "P3",
+        "y": 113
+       },
+       {
+        "x": "P4",
+        "y": 153
+       },
+       {
+        "x": "P5",
+        "y": 284
+       },
+       {
+        "x": "P6",
+        "y": 292
+       },
+       {
+        "x": "P7",
+        "y": 295.5
+       },
+       {
+        "x": "P8",
+        "y": 294.5
+       }
+      ]
+     },
+     {
+      "name": "longest entry",
+      "points": [
+       {
+        "x": "P1",
+        "y": 1976
+       },
+       {
+        "x": "P2",
+        "y": 1574
+       },
+       {
+        "x": "P3",
+        "y": 516
+       },
+       {
+        "x": "P4",
+        "y": 628
+       },
+       {
+        "x": "P5",
+        "y": 1585
+       },
+       {
+        "x": "P6",
+        "y": 1581
+       },
+       {
+        "x": "P7",
+        "y": 855
+       },
+       {
+        "x": "P8",
+        "y": 735
+       }
+      ]
+     }
+    ]
+   },
+   "caveat": "Periods 1-2 have only 12 and 13 entries, so their medians are rough. Early entries are 'as built' summaries of whole specs, a different kind of entry from the later one-decision notes. Word counts are of each entry as it reads today; an entry extended later still counts in the period of its heading.",
+   "script": "python -I scratch/hist/writing/dec.py && python -I scratch/hist/writing/dec2.py",
+   "sources": "docs/decisions.md (git blame HEAD)",
+   "verdict": "confirmed",
+   "reason": "My own script (git blame --line-porcelain HEAD on docs/decisions.md, entries split at '## ' headings, words counted from the line after the heading up to the next heading, period from the heading line's blame date in local time) gives the same numbers: 499 entries and 152,823 words. Per-period n is 12/13/50/93/72/149/80/30. The medians are 478.5/536/113/153/284/292/295.5/294.5 and the maxima are 1976/1574/516/628/1585/1581/855/735. The two longest entries overall are 'Triggers and conditions (SPEC.md Amendment 4)' at 1,976 words (10-24 09:14) and 'Learned play as built' at 1,911 words (10-24 14:58). The 1,585-word entry is an 'After boss-cost-two-turn...' entry dated 11-05. Using committer time instead of author time moves one entry from P6 to P7, which changes the medians by at most 1. Only 8 headings carry a written date that differs from their blame date, all by one day around midnight, so the periods are not affected. All 499 headings sit in one file with no duplicate copies. The two series use the same unit, and the claim says 'roughly' for P1-P2 and the caveat notes the small n. One weakness remains, though it is not a refutation: the word count covers the entry body as it stands at HEAD, while the period comes from the heading's blame date. An entry extended later still counts in its original period."
+  },
+  {
+   "id": "h-writing-words",
+   "period": "all",
+   "title": "1.24 million words written into docs/",
+   "claim": "Over 23 days the commits added about 1.24 million words to Markdown files under docs/ (the repo's Markdown today holds about 995,000 words). Research notes are the biggest share: a 13-note literature survey on days 1 and 2 (backgammon afterstates, expert iteration, card-game AI...), 20 new notes in period 3, and 182,000 words in the last two days alone. Specs peaked in period 4 at 107,000 words, when 43 new specs were written: run-level features (rest site, card rewards, elite skip, gauntlet), rules-engine pieces (hooks, modifiers, monster patterns) and a 9-part review-fixes series. The backlog file appears only in period 5, when the navigator role starts keeping it.",
+   "subset": "git log -p --no-merges --no-renames over every *.md, words on added lines, grouped by commit date (local time) and folder. Thousands of words.",
+   "n": "every commit touching a .md file; 1,237,961 words added under docs/ (plus 20,192 outside docs/)",
+   "viz": {
+    "kind": "heat",
+    "unit": "thousand words added",
+    "xs": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ],
+    "ys": [
+     "research notes",
+     "specs",
+     "decisions",
+     "backlog",
+     "other docs"
+    ],
+    "cells": [
+     [
+      38.9,
+      4.5,
+      76.3,
+      83.9,
+      26.2,
+      96.7,
+      48.5,
+      182.4
+     ],
+     [
+      7.1,
+      28.8,
+      29,
+      107.2,
+      19.5,
+      54.4,
+      32.6,
+      17.3
+     ],
+     [
+      8.7,
+      9.9,
+      8.5,
+      18.9,
+      27,
+      55.2,
+      26.7,
+      10
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      27.7,
+      40.4,
+      26.6,
+      10.7
+     ],
+     [
+      2,
+      2.2,
+      21.4,
+      25.4,
+      37.3,
+      4.2,
+      8.9,
+      12.9
+     ]
+    ]
+   },
+   "caveat": "Gross words added: a rewritten line, or a file deleted and added again, counts again, so this measures writing effort, not the size of the docs (about 182,000 words were also deleted under docs/). Periods have different lengths. New research files per period, each path counted once: 15, 1, 20, 16, 1, 23, 15, 17.",
+   "script": "python -I scratch/hist/writing/words.py",
+   "sources": "git history of *.md files; docs/research, docs/specs, docs/decisions.md, docs/backlog.md",
+   "verdict": "corrected",
+   "reason": "I recomputed it with my own script: git log -p --no-merges --no-renames over *.md, words on added lines, local dates (local time, the machine's own zone). All 40 heat cells match to 0.1k, and the totals match exactly: 1,237,961 words under docs/ and 20,192 outside. My first run disagreed only because I had set TZ to the local zone, which Git for Windows silently ignores, so its dates came out in UTC. Fixing that brought every cell into line. Today's tracked Markdown holds 994,694 words, so 'about 993,000' is close enough. The backlog file first appears on 11-03 (P5), as claimed. P8 research is 182.4k, as claimed. Three text details are wrong and are fixed below. (1) 'Mostly the rules-engine series' is not supported. Of the 43 specs added in P4, only about 8 are rules-engine pieces (runtime-registry, pack-every-atom, per-copy-overrides, monster-patterns, decision-points, replacement-hooks, static-modifiers, amount-expressions). 9 are the series-review-fixes set, and the rest are run-level and tooling specs (rest-site, card-rewards, card-removal, elite-skip, gauntlet, ladder-v2, caches...). (2) Of the 15 research files added in P1, 13 are the literature survey (12 topic cards plus the synthesis note); the other 2 are result and benchmark notes. (3) The miner counts approach-review-2026-11-02.md twice in P4: it was added, deleted and added again. Counted once per path, P4 has 16 new research files, not 17. In the same way the deleted words under docs/ are about 182,000; the 188,000 also counts Markdown outside docs/. The heat chart fits a time-by-category picture, and the caveat already covers gross counting and the unequal period lengths. This is not a repeat of anything already on the page (commits per day is a different measure)."
+  },
+  {
+   "id": "h-writing-backlog",
+   "period": "all",
+   "title": "The backlog kept growing",
+   "claim": "The navigator's backlog of candidate lanes started on 11-03 with 12 entries and peaked at 24 the next morning. A prune on 11-04 cut it to 13. Over the 12 days, 130 named candidates passed through it and 83 left it (opened as a lane, merged into another, or answered). Yet the list never shrank for long: from a low of 17 on 11-07 it grew every day and ended the project at 47 open candidates. The last two days added 20 and removed 2, as the real-game runs and the owner's return brought new questions faster than the one remaining lane could take them.",
+   "subset": "Bold slug-named entries ('- **name**' or 'N. **name**') under '## Candidates' in docs/backlog.md, read at every commit that changed the file (230 commits). A name is opened on the day it first appears and removed on the day it last appears, if it is absent at the end. Days are commit dates in local time (local time).",
+   "n": "130 distinct candidate names, 11-03..11-14",
+   "viz": {
+    "kind": "line",
+    "unit": "candidates",
+    "series": [
+     {
+      "name": "open at day's end",
+      "points": [
+       {
+        "x": "11-03",
+        "y": 16
+       },
+       {
+        "x": "11-04",
+        "y": 13
+       },
+       {
+        "x": "11-05",
+        "y": 14
+       },
+       {
+        "x": "11-06",
+        "y": 22
+       },
+       {
+        "x": "11-07",
+        "y": 17
+       },
+       {
+        "x": "11-08",
+        "y": 22
+       },
+       {
+        "x": "11-09",
+        "y": 23
+       },
+       {
+        "x": "11-10",
+        "y": 25
+       },
+       {
+        "x": "11-11",
+        "y": 26
+       },
+       {
+        "x": "11-12",
+        "y": 29
+       },
+       {
+        "x": "11-13",
+        "y": 38
+       },
+       {
+        "x": "11-14",
+        "y": 47
+       }
+      ]
+     },
+     {
+      "name": "opened",
+      "points": [
+       {
+        "x": "11-03",
+        "y": 19
+       },
+       {
+        "x": "11-04",
+        "y": 9
+       },
+       {
+        "x": "11-05",
+        "y": 13
+       },
+       {
+        "x": "11-06",
+        "y": 12
+       },
+       {
+        "x": "11-07",
+        "y": 7
+       },
+       {
+        "x": "11-08",
+        "y": 15
+       },
+       {
+        "x": "11-09",
+        "y": 10
+       },
+       {
+        "x": "11-10",
+        "y": 10
+       },
+       {
+        "x": "11-11",
+        "y": 9
+       },
+       {
+        "x": "11-12",
+        "y": 6
+       },
+       {
+        "x": "11-13",
+        "y": 11
+       },
+       {
+        "x": "11-14",
+        "y": 9
+       }
+      ]
+     },
+     {
+      "name": "removed",
+      "points": [
+       {
+        "x": "11-03",
+        "y": 3
+       },
+       {
+        "x": "11-04",
+        "y": 12
+       },
+       {
+        "x": "11-05",
+        "y": 13
+       },
+       {
+        "x": "11-06",
+        "y": 3
+       },
+       {
+        "x": "11-07",
+        "y": 12
+       },
+       {
+        "x": "11-08",
+        "y": 11
+       },
+       {
+        "x": "11-09",
+        "y": 9
+       },
+       {
+        "x": "11-10",
+        "y": 7
+       },
+       {
+        "x": "11-11",
+        "y": 8
+       },
+       {
+        "x": "11-12",
+        "y": 3
+       },
+       {
+        "x": "11-13",
+        "y": 2
+       },
+       {
+        "x": "11-14",
+        "y": 0
+       }
+      ]
+     }
+    ]
+   },
+   "caveat": "A renamed candidate counts as one removed and one opened, so both flows run somewhat high. Entries marked 'merged into' that stay in the list as a stub still count as open. Three entries added on 11-13 as bullets that wait only for code count as candidates. Without them the end count is 44. Parked items, the ideas-triage list, the open-questions list and the ranked shortlist inside the section ('0. **76 `hpe-leaf-cap`**') are not counted. The 11-04 intraday peak of 24 does not show at day's end.",
+   "script": "python -I scratch/hist/verify/h-writing-backlog/x.py",
+   "sources": "git history of docs/backlog.md (230 commits, 11-03 07:45 to 11-14)",
+   "verdict": "corrected",
+   "reason": "My own script reproduces the miner's numbers exactly when it only counts numbered '1. **name**' entries: 112 names, 68 gone, 44 at the end, and the same daily values. But that pattern misses the backlog's first day. docs/backlog.md was created on 11-03 at 07:45, and its '## Candidates' section then listed bullet entries ('- **name**'): 12 at first, 16 by the end of 11-03 and 24 at the peak on 11-04. On 11-04 the list was pruned and renumbered down to 13. Twelve of those 13 were carried over from 11-03; only boss-step-hp-price was new. So 'started on 11-04 with 13' is wrong, and the 13 'opened' on 11-04 are mostly a format change, not new candidates. The 11-03 names dropped in the prune (feasibility-ladder, two-turn-self-play, mutated-monsters-b and others) never appear in the miner's count. I parsed both bullet and numbered entries with slug-style names under '## Candidates' only, skipped the one empty commit (made while the section was being rewritten), and counted each name as opened on the day it first appears and removed on the day it last appears, if it is gone at the end. The result: 130 distinct candidates, 83 gone, 47 open at the end. The 3 extra at the end are bullet entries added on 11-13 that wait for code (hpe-leaf-fix, tb1-default-flip, column-zeroing). Only the counts for 11-03, 11-04, 11-13 and 11-14 change. The rest of the story holds: from the 11-07 low of 17 the list grew every day, and the last two days added 20 and removed 2. The chart type is fine: open-at-day's-end and the daily flows share one unit, and dates use fixed local time."
+  },
+  {
+   "id": "h-writing-kb",
+   "period": "8",
+   "title": "636 stored facts, 48 now suspect",
+   "claim": "By 11-14 the project's fact store (docs/claims) held 636 facts: 426 active, 210 retired. Measurements are the bulk (246 active). Lane facts are almost all retired (161 of 169) because a lane's facts retire when it closes. The real-game day left 48 active facts suspect: the store flags a fact automatically when a file it cites changes. 13 of the 34 'how' facts (how the code works) went suspect, because the day's rule fixes touched engine files (state.rs, monsters.rs, registry.rs) and scripts/gauntlet.py. Every file those facts cite was last changed on 11-14. The most-rewritten fact is lane/act1-content/step, revised 59 times as the Act 1 content work moved block by block.",
+   "subset": "Every JSON fact under docs/claims (recursive) at the working tree of 11-14; suspect = listed by 'kb.py check'; one bar per area, value = active facts.",
+   "n": "636 facts (426 active, 210 retired, 48 suspect)",
+   "viz": {
+    "kind": "bars",
+    "unit": "active facts",
+    "rows": [
+     {
+      "label": "measurement",
+      "value": 246,
+      "note": "18 suspect, 33 retired, 176 revised at least once (retired included)"
+     },
+     {
+      "label": "decision",
+      "value": 67,
+      "note": "5 suspect, 9 retired"
+     },
+     {
+      "label": "cause",
+      "value": 48,
+      "note": "9 suspect, 1 retired"
+     },
+     {
+      "label": "how",
+      "value": 34,
+      "note": "13 suspect (38%), all citing files changed on 11-14"
+     },
+     {
+      "label": "yardstick",
+      "value": 15,
+      "note": "1 suspect"
+     },
+     {
+      "label": "lane",
+      "value": 8,
+      "note": "2 suspect, 161 retired"
+     },
+     {
+      "label": "owner",
+      "value": 6,
+      "note": "0 suspect"
+     },
+     {
+      "label": "context / product",
+      "value": 2,
+      "note": "0 suspect; spec facts: 5, all retired"
+     }
+    ]
+   },
+   "caveat": "Suspect is a snapshot taken on the last day, right after many rule fixes, so it is higher than on a quiet day. A suspect fact may still be true; it only needs a re-check. The store started late on 11-02 (80 seeded facts), so facts were created in periods 4-8 only (85, 133, 201, 86, 131).",
+   "script": "python -I scratch/hist/writing/kb.py && python -I scratch/hist/writing/added.py",
+   "sources": "docs/claims/**/*.json; ~/.claude/skills/kb/kb.py check; git log -- docs/claims (store start 11-02 23:15)",
+   "verdict": "corrected",
+   "reason": "My own script reproduces every number in the statistic. There are 636 JSON facts with 636 distinct keys, so nothing is counted twice: 426 active and 210 retired. The per-area active and retired counts match the bars exactly, and lane has 161 of 169 retired. kb.py check reports '426 facts: 378 clean, 48 suspect', split as measurement 18, how 13, cause 9, decision 5, lane 2, yardstick 1. The most-revised fact is lane/act1-content/step at rev 59. 176 measurement facts have rev above 1. Facts created per period come out as 85, 133, 201, 86 and 131. I also checked the claim that the day's changes caused the suspects: every file the suspect how-facts cite (gauntlet.py, state.rs, bench.py, py/src/lib.rs, monsters.rs, runner.rs, registry.rs, act1-monsters.json) was last changed on 11-14, so the attribution to the real-game day holds. One error: the caveat says the store started on 11-01, but git shows it was created on 11-02 at 23:15 local time (kb adoption stage 1, 80 seeded facts). Period 4 still gets all 85 of its facts, but on 11-02, not starting 11-01. Minor wording: the note of 176 revisions counts retired measurement facts too (173 of them are active). The chart is fine: there is one ruler (active-fact count), it is not a repeat of anything on the page, and it makes no causal leap beyond the file-change check, which I confirmed."
+  },
+  {
+   "id": "h-search-exact-puzzles",
+   "period": "2",
+   "title": "The last turn is easy; one turn before it is not",
+   "claim": "On 10-26 an exact solver (up to 1 million positions per puzzle, every random event listed) gave the true value of every option in 2,000 end-of-fight decisions. The heuristic's one-turn search picked an exactly best option on all 1,552 last-turn puzzles, but on 9 to 10% of the puzzles one or more turns before the end it picked worse, giving up about 3 HP (0.03 score) on average there. The project's nets of that day scored the same as the heuristic within error: 13 of the 448 deeper puzzles fooled all four evaluators.",
+   "subset": "Heuristic evaluator, one-turn search (limit 16) against exact values; tight-fight puzzles, train and held-out halves pooled (1,000 each). Horizon = turns left in the fight.",
+   "n": "2,000 puzzles (1,552 last turn, 313 one turn out, 135 two or more out)",
+   "viz": {
+    "kind": "bars",
+    "unit": "% best pick",
+    "rows": [
+     {
+      "label": "Last turn (horizon 0)",
+      "value": 100,
+      "note": "1,552 of 1,552; one turn of search sees the end of the fight"
+     },
+     {
+      "label": "One turn before the end",
+      "value": 90.1,
+      "note": "282 of 313; mean regret 0.033 (about 3 HP)"
+     },
+     {
+      "label": "Two or more turns before",
+      "value": 91.1,
+      "note": "123 of 135; mean regret 0.027"
+     },
+     {
+      "label": "Contested (best beats 2nd by 0.05+)",
+      "value": 92.7,
+      "note": "240 of 259; mean regret 0.037"
+     }
+    ]
+   },
+   "caveat": "End-of-fight decisions only, from games the heuristic itself played; 77% of puzzles are last-turn ones where any evaluator scores 100% by construction. The 'all four evaluators' count comes from docs/research/exact-puzzles.md, the rest from the heuristic's result file.",
+   "script": "python -I scratch/hist/search/puzzles.py .",
+   "sources": "results/exact-puzzles/heuristic.json (and the net files beside it); docs/research/exact-puzzles.md",
+   "verdict": "confirmed",
+   "reason": "My own script pooled the train and held-out halves of sets.puzzles in results/exact-puzzles/heuristic.json and got the same numbers: horizon 0 is 1552/1552, horizon 1 is 282/313 = 90.1% with regret 0.0332, horizon 2+ is 123/135 = 91.1% with regret 0.0271, and contested puzzles are 240/259 = 92.7% with regret 0.0370. The settings also match: max_nodes 1,000,000, per_half 1000, limit 16, turns 1. The doc puts 0.01 at about 1 HP, so 0.033 is about 3 HP. The deeper puzzles (448) give 405/448, so 9.6% wrong picks, which fits \"9 to 10%\". docs/research/exact-puzzles.md backs \"13 of 448 fool all four\". It also backs \"nets indistinguishable\": every paired regret difference with the heuristic has an interval that holds 0. The three net files beside heuristic.json give 90.7-93.6% at horizon 1 and 83.7-86.7% at horizon 2+. The date is right: commit 82c6c74b, 2026-10-26 16:06, which is period 2. Each file was counted once; there are four evaluator files and none is a copy. One small presentation point, not a correction: the contested bar overlaps the horizon bars, because contested puzzles span all horizons. The note under it already says what that bar means."
+  },
+  {
+   "id": "h-search-node-cap",
+   "period": "3",
+   "title": "Two-turn search lost until it was allowed to think longer",
+   "claim": "In the first paired test of two-turn search (10-30), capped at 50,000 positions per decision, it won 4.8 points fewer elite and boss fights than plain one-turn search. Raising the cap to 400,000 turned that to +1.6. Making it fall back to the one-turn pick whenever the tree was still cut off (about 1 decision in 21 in play) gave +6.1. With the 10-29 net scoring the leaves, the same fixes moved it from -1.0 to +5.5. Most of the early loss came from cut-off trees, not from searching deeper.",
+   "subset": "Held-out decks, elite and boss fights. Every row uses the same 1,336 fights, and the one-turn results are identical fight for fight within each leaf scorer. Two-turn limit 16, sample k 4. Value = two-turn minus one-turn win rate.",
+   "n": "1,336 paired fights per row (se 0.013 to 0.015)",
+   "viz": {
+    "kind": "bars",
+    "unit": "win-rate points, two-turn minus one-turn",
+    "rows": [
+     {
+      "label": "Heuristic leaves, cap 50k",
+      "value": -4.8,
+      "note": "probe: mean 11,535 positions per decision, 13.5% of probed decisions cut"
+     },
+     {
+      "label": "Heuristic leaves, cap 400k",
+      "value": 1.6,
+      "note": "mean 76,372 positions, 16% of probed (hard) decisions cut"
+     },
+     {
+      "label": "Heuristic leaves, cap 400k + fall back when cut",
+      "value": 6.1,
+      "note": "one-turn 49.8% -> two-turn 55.8%; 4.7% of decisions in play were cut"
+     },
+     {
+      "label": "10-29 net leaves, cap 50k",
+      "value": -1,
+      "note": "mean 16,341 positions, 23% of probed decisions cut"
+     },
+     {
+      "label": "10-29 net leaves, cap 400k + fall back",
+      "value": 5.5,
+      "note": "one-turn 53.5% -> two-turn 59.1%; 4.8% of decisions in play were cut"
+     }
+    ]
+   },
+   "caveat": "The cut shares in the notes come from a small probe of every third decision (61 to 133 decisions per run). In full play at 400k, 4.7 to 4.8% of decisions were cut, mostly in Sentries and Slime Boss. The research doc's '1%' figure disagrees with its own per-encounter table. The net rows have no plain cap-400k run, so for them the cap increase and the fallback can't be separated. Lagavulin was still slightly negative (about -3) with the fallback. Thread counts differed between runs (6, 4, 6), which affects timing, not wins.",
+   "script": "python -I scratch/hist/verify/h-search-node-cap/v.py .",
+   "sources": "results/depth/paired-held_out.json, paired-held_out-cap400k.json, paired-held_out-cap400k-fallback-m0.json, paired-net-held_out.json, paired-net-held_out-cap400k-fallback.json; docs/research/depth-pilot-2026-10-30.md",
+   "verdict": "corrected",
+   "reason": "All five win-rate differences check out from the per-fight records: -4.79, +1.65, +6.06, -1.05 and +5.54 points. Each file has the same 1,336 fights (cell, encounter, seed). The one-turn results match fight for fight within each leaf scorer: 0.498 for heuristic leaves and 0.535 for net leaves. The probe numbers also match, and all runs finished between 10-30 15:10 and 10-31 05:30, so period 3 is right.\n\nTwo things were wrong.\n(1) \"About 1 decision in 100 in play were cut\" is false. The per-fight cut counts give 1,329 of 28,033 two-turn decisions cut (4.7%) in the heuristic fallback run and 1,352 of 28,217 (4.8%) in the net fallback run. The research doc's own net section also says 4.8%. Its \"1% of cut decisions\" line disagrees with its own per-encounter table: 0.8% (Nob), 0.6% (Lagavulin), 5.8% (Sentries), 8.3% (Slime Boss).\n(2) The caveat says the 400k runs used 4 threads. Only the plain cap-400k run did; both fallback runs used 6.\n\nThe causal sentence is softened. Fallback minus plain is +4.4 (se 1.1) on the same fights, which supports \"cut-off trees cost the fights\". It does not show that depth itself costs nothing, because Lagavulin is still about -3 with the fallback."
+  },
+  {
+   "id": "h-search-first-card",
+   "period": "4",
+   "title": "The first card of a turn costs more than the rest together",
+   "claim": "Two-turn search re-plans after every card. On 11-02 a probe over 20 fights measured how big each search was: the turn's first decision explored 22,800 positions on average (0.34 s), the second 9,860, the third 4,270 and the fourth 1,430. The first decision took 61% of all positions searched. A follow-up on 11-03 reused the tree from the previous card instead of rebuilding it: 30% fewer positions (4.81 million down to 3.38 million), with the same pick on every compared decision (526).",
+   "subset": "10-29 net, two-turn search (limit 16, sample k 4, cap 400,000), 20 fights: 16 elite (Gremlin Nob, Lagavulin, Three Sentries) and 4 Slime Boss, 5 deck families; 502 searches over 139 turns. Positions = search tree nodes.",
+   "n": "502 searches (139 / 134 / 122 / 85 / 18 / 4 by place in turn)",
+   "viz": {
+    "kind": "bars",
+    "unit": "positions searched per decision (mean)",
+    "rows": [
+     {
+      "label": "1st decision of the turn",
+      "value": 22801,
+      "note": "n 139; 4,101 leaves scored; 345 ms"
+     },
+     {
+      "label": "2nd",
+      "value": 9859,
+      "note": "n 134; 169 ms"
+     },
+     {
+      "label": "3rd",
+      "value": 4271,
+      "note": "n 122; 73 ms"
+     },
+     {
+      "label": "4th",
+      "value": 1435,
+      "note": "n 85; 20 ms"
+     },
+     {
+      "label": "5th",
+      "value": 1694,
+      "note": "n 18; small n"
+     },
+     {
+      "label": "6th",
+      "value": 145,
+      "note": "n 4; small n"
+     }
+    ]
+   },
+   "caveat": "20 fights (16 elite, 4 Slime Boss) over 5 deck families; milliseconds are wall time on the dev machine. The 5th and 6th rows rest on 18 and 4 searches. The tree-reuse figure is from results/depth/line-step-compare.json (same 20 fights, run just after midnight on 11-03).",
+   "script": "python -I scratch/hist/search/lineprobe.py .",
+   "sources": "results/depth/line-probe.json, results/depth/line-step-compare.json",
+   "verdict": "corrected",
+   "reason": "My own script reproduces every number: 502 searches over 139 turns in 20 fights. Mean positions by place in the turn are 22,801 / 9,859 / 4,271 / 1,435 / 1,694 / 145, with n of 139 / 134 / 122 / 85 / 18 / 4. The first decision takes 345 ms on average and accounts for 61.4% of all positions searched. In the tree-reuse follow-up, total positions fall from 4,805,287 to 3,383,767 (ratio 0.704, so 30% fewer). Two descriptions are wrong, though. First, the fights are not 20 elite fights of one deck family: they are 16 elite fights (Gremlin Nob, Lagavulin, Three Sentries) plus 4 Slime Boss fights (a boss), spread over 5 deck families (aoe, skill_heavy, multi_hit, setup, debuff). Second, pairing the decisions one by one, all 527 picks match. The file's summary reports 526 compared, so the claim should say \"every compared decision (526)\" rather than imply a different count. Timing: the probe file is dated 11-02 14:26 local, which fits period 4. The reuse follow-up is dated 11-03 00:57, which falls in period 5; it is fine as a footnote. The bar chart fits, and the small rows are already flagged."
+  },
+  {
+   "id": "h-search-rollout-bosses",
+   "period": "4",
+   "title": "Playing each option out 64 times saved 2 of 69 lost boss fights",
+   "claim": "On 11-02 the lab ran a ceiling probe: at every decision of a replayed fight, play each option to the end of the fight with the one-turn net and pick the best average. It replayed the fatal fight of the 117 sequences no player had cleared. With 16 playouts per option it won 3 of them, and with 64 it won 7 (6%). Only 2 of those 7 were among the 69 boss fights (0 at 16 playouts). The other 5 were elites or hallway fights. On 30 boss fights the product had won, the rollout player lost 7 (16 playouts) and 3 (64 playouts). With 64 playouts, a fight took on average 5,300 playouts and 7 s on the lost set, and 7,700 playouts and 52 s on the won set. The result was under the 10% bar, so the lab read it as little headroom left in the fatal fight: losses are decided earlier, by HP spent on the way and by the deck.",
+   "subset": "Fatal fights of the 117 never-cleared sequences (69 floor-10 bosses, 48 earlier fights, mostly floor-9 elites), replayed at the entry HP of the product's run (champion-hpe0.01-two). Also 30 floor-10 boss fights the product won. Playout and decision player: 11-01 burst8hp2 net @hpb0.01, one turn deep. 4 threads, seed 0. Value: share of fights the rollout player won.",
+   "n": "69 lost boss fights, 48 lost non-boss fights, 30 won boss fights, each replayed at 16 and at 64 playouts per option",
+   "viz": {
+    "kind": "slope",
+    "unit": "% fights won by the rollout player",
+    "a_label": "16 playouts per option",
+    "b_label": "64 playouts per option",
+    "rows": [
+     {
+      "label": "Lost boss fights (69)",
+      "a": 0,
+      "b": 2.9
+     },
+     {
+      "label": "Lost elite and hallway fights (48)",
+      "a": 6.3,
+      "b": 10.4
+     },
+     {
+      "label": "Boss fights the product won (30)",
+      "a": 76.7,
+      "b": 90
+     }
+    ]
+   },
+   "caveat": "The fights were chosen by their outcome, so part of each change comes from selection (regression to the mean), not from the rollouts. n is small: 2 boss rescues and 30 won fights. The rollout player is the one-turn net, which is weaker than the product on bosses (all 3 losses at 64 playouts were Hexaghost at 80 HP), so this sets a lower bound on headroom, not a ceiling. It replays only the fatal fight, not the whole run.",
+   "script": "python -I scratch/hist/verify/h-search-rollout-bosses/v.py .",
+   "sources": "results/rollout/never129.json, never129-n64.json, cleared30.json, cleared30-n64.json; docs/research/learned-play-results.md 'Rollout ceiling probe' (read 03:05 2026-11-02)",
+   "verdict": "corrected",
+   "reason": "The win counts are right: 3/117 and 7/117 on the never-cleared set, 23/30 and 27/30 on the cleared set, the same fight ids in both n runs, no duplicates. The files are dated 11-02 02:13-03:02, so period 4 is right. Four things are wrong. (1) The 117 are not boss fights. They are each never-cleared sequence's fatal fight: 69 are floor-10 bosses and 48 are earlier fights, mostly floor-9 elites (Lagavulin, Nob, Sentries) plus a few hallway fights. On the 69 bosses the rollout won 0 at 16 playouts and 2 at 64 (Hexaghost and Guardian, 2.9%). 5 of the 7 rescues at 64 were elites or hallway fights. Only the 30 cleared fights are all bosses. (2) The playout policy was the one-turn champion (burst8hp2 @hpb0.01, one decision at a time), not the product's own two-turn @hpe player. learned-play-results.md says the probe player is weaker than the product on bosses. (3) 'Never cleared' means no gauntlet player's file clears the sequence, not just the product. The doc says 117 because the 10-29 net files joined (129 before). (4) 5,300-7,700 playouts and 7-52 s are the per-fight means of the two sets (never 5,338 and 6.9 s; cleared 7,731 and 52.4 s), not a range. The real per-fight range is 704-13,632 playouts and 0.0-383 s. It was also a ceiling probe for combat headroom (bar: over 30% means headroom, under 10% means near the ceiling), not the rollout leaf. The rollout leaf was a later elite read (0108) that came out no go, partly regression to the mean. The selection caveat stands. Fix the chart by splitting the lost fights into boss and non-boss rows so bosses are not pooled with elites."
+  },
+  {
+   "id": "h-search-depth-headroom",
+   "period": "5",
+   "title": "Seventeen times the thinking for less than one HP",
+   "claim": "On 11-04 the lab tested whether searching deeper than two turns pays off on floor-9 elites. A third turn of search (cap 1.6 million positions) took 44.5 s per fight, about 17 times the two-turn product's 2.5 s, and saved 0.75 HP per fight (se 0.81; all 48 fights won either way). A rollout leaf (16 playouts per option, about 1,160 playouts per fight, 10.4 s) lost 0.67 HP more per fight than the product (se 0.31) and lost 4 more fights out of 498. Neither reached the 1.5 HP bar, so the depth family was closed: on this laptop, searching past two turns stopped paying.",
+   "subset": "Floor-9 elite fights from the headline control's runs. Each fight is paired against the two-turn product's own play on the same fight. Player: the 10-29 net @hpe0.01. The three-turn arm ran on the first 48 fights only. The two-turn k 4 and k 16 points come from an 11-07 rerun of the same 498 fights.",
+   "n": "498 elite fights (three-turn arm: 48)",
+   "viz": {
+    "kind": "scatter",
+    "unit": "HP",
+    "x_label": "seconds per elite fight",
+    "y_label": "HP saved per fight vs the two-turn product",
+    "points": [
+     {
+      "x": 2.5,
+      "y": 0,
+      "label": "Two-turn product (cap 400k, k 4)"
+     },
+     {
+      "x": 4.1,
+      "y": 0.34,
+      "label": "Two-turn, k 16 (+0.34, se 0.16; 485/498 won, same as product)"
+     },
+     {
+      "x": 10.4,
+      "y": -0.67,
+      "label": "Rollout leaf, 16 playouts (481/498 won)"
+     },
+     {
+      "x": 44.5,
+      "y": 0.75,
+      "label": "Three-turn, cap 1.6M (48 fights)"
+     }
+    ]
+   },
+   "caveat": "The two-turn timings come from the 11-07 rerun of the same 498 fights (files two4 and two16). The two4 rerun reproduces the product's play exactly, fight for fight. The k 16 point is a paired difference: 40.65 against 40.31 HP left, +0.34 HP, se 0.16. It came after the 11-04 decision and changes search width, not depth. Rollout seconds are summed per fight. The three-turn arm's 48 fights recorded 130 cap cuts over 1,027 decisions.",
+   "script": "python -I scratch/hist/verify/h-search-depth-headroom/v.py results/depth_probe",
+   "sources": "results/depth_probe/three-elite-all.json, rollout-elite.json, rollout-elite-rest.json, two4-elite-all.json, two16-elite-all.json; docs/decisions.md 'Lane depth-headroom closed (2026-11-04)'",
+   "verdict": "corrected",
+   "reason": "My own paired recompute (each arm's hp_end minus the gauntlet file's hp_end_obs, matched by fight index; rollout-elite and rollout-elite-rest have no overlapping fights and together make 498) matches the claim's three-turn numbers: +0.75 HP (se 0.81), 48 of 48 won, 44.5 s per fight against 2.54 s, 1,027 decisions and 130 cuts. It also matches the rollout numbers: -0.675 HP (se 0.31), 481 against 485 wins, 10.42 s and about 1,163 playouts per fight. The two4 rerun reproduces the product's play exactly (difference 0.000 on every fight), so it is a fair stand-in for the product's timing. One chart point is wrong. Two-turn k 16 ends with 40.65 HP left against 40.31 for the product, so it SAVED +0.34 HP (paired se 0.16) and did not lose 0.3. The miner flipped the sign the wrong way, even though its own caveat gives the correct end-HP figures. I fixed that point and added its paired se. Note that the k 16 and two4 arms ran on 11-07 (period 6), so the claim text now says these are later timing reruns. The two-turn adaptive arm (+0.21, se 0.13) is left out, as in the original."
+  },
+  {
+   "id": "h-search-luck",
+   "period": "7",
+   "title": "Luck is a fifth of the noise, and subtracting it didn't help",
+   "claim": "On 11-11 the lab measured how much of a training label is luck. Replaying 1,200 positions 8 times each showed that luck after the decision is 19% of the labels' spread, not most of it. Subtracting the net's estimate of that luck removed only 13% of it (1% on Demon Form decks). On paired comparisons of two players over 100 card sequences, the luck-corrected difference was more spread out than the raw one (standard deviation 12.0 HP against 8.5). It needed a ratio of 0.75 or lower and got 1.41.",
+   "subset": "3,200 one-turn fights (1,600 elite, 1,600 boss) of the g1600 recipe, played by the 10-29 net @hpb0.01 on held-out decks; luck valued by the 10-29 net. Paired read: the same net with and without one setting, 100 sequences.",
+   "n": "22,813 labelled rows; 1,200 rows replayed 8 times; 100 paired sequences",
+   "viz": {
+    "kind": "bignum",
+    "unit": "",
+    "rows": [
+     {
+      "label": "Luck's share of label spread",
+      "value": 19,
+      "note": "% (noise variance 0.071 of 0.364)"
+     },
+     {
+      "label": "Luck removed by the correction",
+      "value": 13,
+      "note": "% (se 5); 1% on Demon Form decks"
+     },
+     {
+      "label": "Paired-read spread, corrected / raw",
+      "value": 1.41,
+      "note": "ratio (se 0.50); bar was 0.75 or lower"
+     }
+    ]
+   },
+   "caveat": "One net values the luck. Its own error (0.147) is about twice the label noise, so a better net might price more of it. The 19% pools elite and boss fights: luck is 37% of the elite label spread and 20% of the boss spread. The ratio's se is wide (0.50): 1.41 is clearly above the 0.75 bar, but not clearly above 1.0, so 'no help' is firmer than 'worse'.",
+   "script": "python -I scratch/hist/search/luck.py .",
+   "sources": "results/luck/luck-share-g1600.json, results/luck/luck-read-cells.json; docs/research/luck-corrected-labels.md",
+   "verdict": "corrected",
+   "reason": "All numbers reproduce exactly from results/luck/*.json with my own script: noise_var/label_var = 0.0706/0.364 = 19.4%; removed_var/noise_var = 12.8% (se 4.8), Demon Form 1.1% (se 10); paired diffs over 100 sequences give sd 8.53 raw vs 12.05 corrected, ratio 1.41 (se 0.50), bar 0.75, fail. Rows 22,813, 3,200 games, 1,200 x 8 replays. Commits 11-11 16:03-16:36, so period 7 is right. Two softenings: (1) \"made things worse\" overstates it. 1.41 is only about 0.8 se above 1.0, so the honest reading is that the correction did not reduce the spread and clearly missed the 0.75 bar (about 1.3 se short). (2) The 19% is pooled over elite and boss fights. Looked at alone, luck is 37% of the elite label spread and 20% of the boss spread, so the caveat should say so. Title and caveat changed. The numbers stay."
+  },
+  {
+   "id": "h-content-fun-puzzle-endings",
+   "period": "2",
+   "title": "2,000 endgame puzzles, and what the right move is worth",
+   "claim": "On 26 October the exact solver turned 2,000 near-the-end positions from close fights into puzzles and worked out the true value of every move. In 1,111 of them the fight was already lost whatever you played, and in 133 it was won whatever you played. In 97 puzzles exactly one move out of three or more wins for certain and every other move loses for certain. The biggest knife edge has nine moves against three Louses at 7 HP, and only Clothesline+ on the second target wins. In one Lots of Slimes puzzle plain Thunderclap wins and Thunderclap+ loses. The likely reason is order: playing the plain one first means its Vulnerable makes the upgraded one hit harder.",
+   "subset": "data/bench/puzzles.json: 1,000 train and 1,000 held-out puzzles, one per tight-fight game played by search plus the hand-written player on fresh seeds; exact values from sts.solve with a 1M-node budget; a loss chance within 1e-9 of 0 or 1 counts as certain",
+   "n": "2,000 puzzles (1,552 on the fight's last turn, 448 one turn or more from the end)",
+   "viz": {
+    "kind": "tally",
+    "unit": "puzzles",
+    "rows": [
+     {
+      "label": "Lost whatever you play",
+      "value": 1111
+     },
+     {
+      "label": "The move changes the odds or the HP left",
+      "value": 659
+     },
+     {
+      "label": "Won whatever you play",
+      "value": 133
+     },
+     {
+      "label": "Only one of 3+ moves wins; all others lose for certain",
+      "value": 97
+     }
+    ]
+   },
+   "caveat": "The positions come from close fights played by the hand-written player, so lost positions are over-represented. A 'certain' loss or win means a loss chance of 1 or 0 under best play. The file stores 26 certain losses as 0.9999999999999998, so the counts use a 1e-9 tolerance. The Thunderclap order explanation is my reading of the card numbers (4 + 7x1.5 = 14 against 7 + 4x1.5 = 13); the solver doesn't record it.",
+   "script": "python -I scratch/hist/verify/h-content-fun-puzzle-endings/v2.py data/bench/puzzles.json",
+   "sources": "data/bench/puzzles.json (commit c99599f6, 2026-10-26); docs/research/exact-puzzles.md",
+   "verdict": "corrected",
+   "reason": "Recomputed from data/bench/puzzles.json (2,000 puzzles, 1,000 train + 1,000 held_out, no duplicate seed/step/spec, horizon 0 in 1,552; commit c99599f6 on 2026-10-26 13:53, so period 2 is right; the page mentions the puzzle bench only in one line, so this isn't a repeat). Two errors. (1) The miner's script tests loss == 1 exactly, but 26 puzzles store a certain loss as 0.9999999999999998 (a floating-point rounding of 1). With a 1e-9 tolerance the counts become: lost whatever you play 1,111 (not 1,085), won whatever you play 133, exactly one of 3+ moves wins and all others lose for certain 97 (not 96), the move matters 659 (not 686). Nineteen of the miner's 686 'the move changes the odds or the HP left' puzzles have every option at the same loss of 0.9999999999999998 and the same value, so the move changes nothing in them, which contradicts that label. (2) Only ONE Lots of Slimes puzzle (held_out seed 9015029, step 5) has both Thunderclap and Thunderclap+ as options, with plain winning and + losing. The other puzzle the miner cites (9013029) has no Thunderclap+ option: there plain Thunderclap wins against Strikes, Defend and End. Confirmed: the biggest knife edge is three_louse at 7 HP, 9 options, only Clothesline+@1 wins. 'Survives' should read 'wins for certain': with a 1e-9 tolerance there are about 28 more puzzles where exactly one move escapes a certain loss but still carries some chance of losing. The miner's count only takes moves with a loss chance of 0. The Thunderclap-order explanation is still a guess and stays in the caveat. A tally (parts of 2,000) is a fair chart."
+  },
+  {
+   "id": "h-content-fun-generated-powers",
+   "period": "3",
+   "title": "43 made-up Power cards: who coped better?",
+   "claim": "On 31 October the project built Power cards from building blocks and swapped each one in for Demon Form or Metallicize in held-out fights. The hand-written player won less with 31 of the 43 cards. The 29 October net lost less than the hand-written player with 21 cards and more with 14. The hand-written player's two worst cards were defensive ones whose payoff comes later. One was '1 energy: this turn, when you lose HP, give all enemies 1 Weak' (-0.31 wins for the hand-written player, -0.19 for the net). With '2 energy: deal 1 damage to all enemies at the end of this turn', a card that does almost nothing, the hand-written player lost 0.225 wins and the net lost 0.05.",
+   "subset": "gen_powers bench: tight2 held-out cells, first 4 fights per cell, one turn deep. Each generated card replaces the Demon Form or Metallicize in the same fight (paired). Hand-written player vs the 29 October net (r2 s1).",
+   "n": "326 cells, 1,304 fights per set; 43 cards with 12 to 52 fights each",
+   "viz": {
+    "kind": "scatter",
+    "unit": "wins (share of fights)",
+    "x_label": "Hand-written player: win rate with the generated card minus with the original",
+    "y_label": "29 October net: win rate with the generated card minus with the original",
+    "points": [
+     {
+      "x": -0.312,
+      "y": -0.188,
+      "label": "gc1_013: 1 energy, this turn: when you lose HP, 1 Weak to all enemies (16 fights)"
+     },
+     {
+      "x": -0.25,
+      "y": -0.125,
+      "label": "gc1_017: 1 energy, once per stack: when attacked for HP, 1 Weak to all enemies (32 fights)"
+     },
+     {
+      "x": -0.225,
+      "y": -0.05,
+      "label": "gc1_127: 2 energy, this turn: 1 damage to all at your turn end (40 fights)"
+     },
+     {
+      "x": -0.208,
+      "y": -0.167,
+      "label": "gc1_105: 1 energy, fading: draw 1 when you play an Attack (24 fights)"
+     },
+     {
+      "x": -0.208,
+      "y": -0.083,
+      "label": "gc1_028: 1 energy, all fight: when you play an Attack, draw 1 and lose 2 HP (24 fights)"
+     },
+     {
+      "x": -0.188,
+      "y": 0,
+      "label": "gc1_110: 2 energy, all fight: when you play a card, lose 1 HP and draw 1 (16 fights)"
+     },
+     {
+      "x": -0.179,
+      "y": -0.214,
+      "label": "gc1_090: 1 energy, once per stack: when attacked for HP, 1 Weak to all enemies (28 fights)"
+     },
+     {
+      "x": -0.167,
+      "y": -0.333,
+      "label": "gc1_052: 1 energy, all fight: 1 Strength at turn start; 3 Block when a card costs you HP (12 fights)"
+     },
+     {
+      "x": -0.125,
+      "y": -0.083,
+      "label": "gc1_123: 1 energy, fading: at turn start 1 energy and 1 Vulnerable to all enemies (24 fights)"
+     },
+     {
+      "x": -0.125,
+      "y": 0.042,
+      "label": "gc1_079: 2 energy, all fight: draw 1 when you play a Power (24 fights)"
+     },
+     {
+      "x": -0.125,
+      "y": -0.075,
+      "label": "gc1_011: 2 energy, once per stack: 2 damage to all at turn end; 1 Weak to all when you lose HP (40 fights)"
+     },
+     {
+      "x": -0.125,
+      "y": -0.083,
+      "label": "gc1_047: 1 energy, all fight: when attacked for HP, 1 Weak to all enemies (24 fights)"
+     },
+     {
+      "x": -0.1,
+      "y": 0.05,
+      "label": "gc1_062: 1 energy, once per stack: 1 Vulnerable to all enemies at turn start (20 fights)"
+     },
+     {
+      "x": -0.083,
+      "y": 0,
+      "label": "gc1_048: 1 energy, this turn: when you lose HP, 3 damage and 1 Weak to all (36 fights)"
+     },
+     {
+      "x": -0.083,
+      "y": -0.083,
+      "label": "gc1_026: 1 energy, fading: 2 damage to all when a card costs you HP (24 fights)"
+     },
+     {
+      "x": -0.075,
+      "y": -0.075,
+      "label": "gc1_019: 1 energy, once per stack: 1 Weak to all when you lose HP; 1 Strength at turn start (40 fights)"
+     },
+     {
+      "x": -0.071,
+      "y": -0.036,
+      "label": "gc1_016: 1 energy, all fight: 1 energy and 1 Strength at turn start (28 fights)"
+     },
+     {
+      "x": -0.062,
+      "y": -0.062,
+      "label": "gc1_080: 1 energy, all fight: when you play a Power, lose 2 HP and draw 1 (32 fights)"
+     },
+     {
+      "x": -0.062,
+      "y": -0.062,
+      "label": "gc1_020: 1 energy, once per stack: 1 energy and 1 Vulnerable to all at turn start (16 fights)"
+     },
+     {
+      "x": -0.056,
+      "y": -0.083,
+      "label": "gc1_103: 1 energy, once per stack: 1 energy and 1 Strength at turn start (36 fights)"
+     },
+     {
+      "x": -0.05,
+      "y": -0.025,
+      "label": "gc1_024: 2 energy, fading: lose 2 HP when you play a Skill (40 fights)"
+     },
+     {
+      "x": -0.045,
+      "y": -0.045,
+      "label": "gc1_111: 2 energy, once per stack: 2 Block when a card costs you HP (44 fights)"
+     },
+     {
+      "x": -0.042,
+      "y": 0,
+      "label": "gc1_086: 1 energy, fading: 1 energy at turn start (24 fights)"
+     },
+     {
+      "x": -0.042,
+      "y": -0.083,
+      "label": "gc1_032: 1 energy, once per stack: 3 damage to all when you lose HP (24 fights)"
+     },
+     {
+      "x": -0.036,
+      "y": -0.071,
+      "label": "gc1_018: 1 energy, all fight: 1 Dexterity and 3 damage to all at turn end (28 fights)"
+     },
+     {
+      "x": -0.036,
+      "y": 0.036,
+      "label": "gc1_057: 2 energy, this turn: damage to all when you lose HP; draw 1 when you play a card (28 fights)"
+     },
+     {
+      "x": -0.036,
+      "y": -0.107,
+      "label": "gc1_033: 2 energy, fading: 1 Dexterity at turn end; 1 Weak to all when attacked for HP (28 fights)"
+     },
+     {
+      "x": -0.031,
+      "y": -0.125,
+      "label": "gc1_104: 1 energy, fading: 1 damage to all and 1 Dexterity at turn end (32 fights)"
+     },
+     {
+      "x": -0.031,
+      "y": -0.094,
+      "label": "gc1_029: 1 energy, this turn: 1 Weak to all when you lose HP or are attacked (32 fights)"
+     },
+     {
+      "x": -0.028,
+      "y": 0,
+      "label": "gc1_041: 2 energy, once per stack: 1 Weak to all when attacked for HP (36 fights)"
+     },
+     {
+      "x": -0.023,
+      "y": 0,
+      "label": "gc1_095: 2 energy, once per stack: 1 energy and 1 Strength at turn start (44 fights)"
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "label": "gc1_069: 2 energy, fading: 2 damage to all at turn end (40 fights)"
+     },
+     {
+      "x": 0,
+      "y": 0.125,
+      "label": "gc1_125: 1 energy, all fight: 5 damage to all when you lose HP (32 fights)"
+     },
+     {
+      "x": 0,
+      "y": -0.031,
+      "label": "gc1_000: 2 energy, this turn: lose 2 HP when you play a Skill (32 fights)"
+     },
+     {
+      "x": 0,
+      "y": 0.094,
+      "label": "gc1_025: 2 energy, this turn: 1 Dexterity and 2 damage to all at turn end (32 fights)"
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "label": "gc1_087: 2 energy, this turn: 1 Weak to all when attacked or when you lose HP (28 fights)"
+     },
+     {
+      "x": 0,
+      "y": 0.042,
+      "label": "gc1_050: 2 energy, this turn: 3 damage to all at turn end (48 fights)"
+     },
+     {
+      "x": 0,
+      "y": -0.028,
+      "label": "gc1_102: 2 energy, once per stack: when you play a card, draw 1 and lose 2 HP (36 fights)"
+     },
+     {
+      "x": 0.036,
+      "y": -0.036,
+      "label": "gc1_030: 2 energy, once per stack: 1 Weak to all when you lose HP (28 fights)"
+     },
+     {
+      "x": 0.038,
+      "y": 0.038,
+      "label": "gc1_082: 2 energy, fading: 1 Vulnerable to all and 1 Strength at turn start (52 fights)"
+     },
+     {
+      "x": 0.062,
+      "y": 0,
+      "label": "gc1_049: 2 energy, once per stack: 1 Dexterity and 3 damage to all at turn end (32 fights)"
+     },
+     {
+      "x": 0.083,
+      "y": 0,
+      "label": "gc1_065: 2 energy, fading: 1 Dexterity at turn end (12 fights)"
+     },
+     {
+      "x": 0.111,
+      "y": 0.028,
+      "label": "gc1_109: 1 energy, fading: 1 Dexterity and 4 damage to all at turn end (36 fights)"
+     }
+    ]
+   },
+   "caveat": "Each card has only 12 to 52 fights, so chance alone moves a single card's point by about 0.1 wins. Read the cloud, not one dot. 8 cards tie (the point sits on the diagonal). Labels don't show how many copies of the card the deck holds (1 to 3). Over all 326 cells, the net's lead over the hand-written player grew by +0.021 (se 0.011) on generated cards. The hand-written player rates only Strength powers, so it is a weak yardstick on generated content.",
+   "script": "python -I scratch/hist/content-fun/genpow_scatter.py (numbers); labels corrected per the hook conditions in gen_powers_pack.json, checked by scratch/hist/verify/h-content-fun-generated-powers/v.py",
+   "sources": "data/bench/gen_powers.json, data/bench/gen_powers_pack.json, results/gen_powers/first-check.json (commit e2cfef4d, 2026-10-31)",
+   "verdict": "corrected",
+   "reason": "My own script pairs each generated fight with its original twin by (cell, seed) and gets the same numbers: 43 cards, 326 cells, 1,304 fights per set, and every card's x and y matches. The net loses less on 21 cards, more on 14, and ties on 8. The hand-written player is negative on 31 of 43. The period is right: the source commit e2cfef4d is dated 2026-10-31 05:12, and the champion is runs/2026-10-29-seed-check-r2-s1. The overall paired lead of +0.021 (se 0.011) matches first-check.json. Nothing is double counted: there is one result file, and its twins are exact pairs.\n\nThe problem is in the labels. The miner's describer drops each hook's card-type condition, so six labels say \"when you play a card\" for a card that only triggers on one type:\n- gc1_079 and gc1_080 trigger only on Power cards. gc1_079's label \"draw 1 when you play a card\" makes a nearly useless card sound strong.\n- gc1_105 and gc1_028 trigger only on Attacks.\n- gc1_024 and gc1_000 trigger only on Skills.\nI fixed those six labels. I also softened \"worst cards were defensive ones\": only the two worst cards (gc1_013 and gc1_017, Weak when you lose HP) are defensive. The third (gc1_127) is a damage card, and the fourth and fifth are draw cards."
+  },
+  {
+   "id": "h-content-fun-zero-shot-act1-cards",
+   "period": "6",
+   "title": "22 new Ironclad cards the net had never seen",
+   "claim": "When the real Act 1 Ironclad cards went in on 7 November, the 29 October net was tested on 22 cards it had never trained on, with three copies of each card put into the deck. On 19 of them it lost nothing against the hand-written player: 18 read level, and with Berserk it pulled ahead (+0.066 wins). Berserk made both players worse, but the hand-written player got worse by more, and it played Berserk on only 15% of the turns it held one. Three cards cost the net: Impervious (-0.122 wins), Disarm (-0.118) and Intimidate (-0.062). All three are Exhaust skills whose whole value is a number the net must read: 30 Block, negative enemy Strength, Weak on every enemy.",
+   "subset": "tight2 held-out elite and boss cells (126 elite, 41 boss), three fights each, three copies of the card in place of three Strikes (then Defends), paired with the same fights without the card; 29 October net @hpb0.01 one turn deep (@tsl1 on decks with a turn-start power) minus the hand-written player",
+   "n": "167 cells x 3 fights per card, 22 cards; se 0.026 to 0.034 wins",
+   "viz": {
+    "kind": "bars",
+    "unit": "change in the net's win-rate lead over the hand-written player",
+    "rows": [
+     {
+      "label": "Impervious",
+      "value": -0.122,
+      "note": "se 0.034; -1.58 HP"
+     },
+     {
+      "label": "Disarm",
+      "value": -0.118,
+      "note": "se 0.032; -2.16 HP"
+     },
+     {
+      "label": "Intimidate",
+      "value": -0.062,
+      "note": "se 0.029; -1.08 HP"
+     },
+     {
+      "label": "Seeing Red",
+      "value": -0.042,
+      "note": "se 0.032"
+     },
+     {
+      "label": "True Grit",
+      "value": -0.032,
+      "note": "se 0.029"
+     },
+     {
+      "label": "Second Wind",
+      "value": -0.03,
+      "note": "se 0.032"
+     },
+     {
+      "label": "Immolate",
+      "value": -0.03,
+      "note": "se 0.028"
+     },
+     {
+      "label": "Exhume",
+      "value": -0.028,
+      "note": "se 0.031"
+     },
+     {
+      "label": "Feed",
+      "value": -0.022,
+      "note": "se 0.028"
+     },
+     {
+      "label": "Bludgeon",
+      "value": -0.02,
+      "note": "se 0.026"
+     },
+     {
+      "label": "Power Through",
+      "value": -0.016,
+      "note": "se 0.028"
+     },
+     {
+      "label": "Offering",
+      "value": -0.008,
+      "note": "se 0.034"
+     },
+     {
+      "label": "Shockwave",
+      "value": -0.006,
+      "note": "se 0.030"
+     },
+     {
+      "label": "Flame Barrier",
+      "value": -0.002,
+      "note": "se 0.031"
+     },
+     {
+      "label": "Ghostly Armor",
+      "value": 0.002,
+      "note": "se 0.027"
+     },
+     {
+      "label": "Searing Blow",
+      "value": 0.008,
+      "note": "se 0.028"
+     },
+     {
+      "label": "Fiend Fire",
+      "value": 0.012,
+      "note": "se 0.031"
+     },
+     {
+      "label": "Burning Pact",
+      "value": 0.014,
+      "note": "se 0.031"
+     },
+     {
+      "label": "Double Tap",
+      "value": 0.018,
+      "note": "se 0.031"
+     },
+     {
+      "label": "Reckless Charge",
+      "value": 0.026,
+      "note": "se 0.030"
+     },
+     {
+      "label": "Sever Soul",
+      "value": 0.032,
+      "note": "se 0.029"
+     },
+     {
+      "label": "Berserk",
+      "value": 0.066,
+      "note": "se 0.033 (2.0 se); all in the 41 boss cells; hand-written player plays it 15% of turns held"
+     }
+    ]
+   },
+   "caveat": "With 22 cards read at 2 se, about one false hit is expected by chance. Disarm and Impervious are well past that; Intimidate and Berserk sit right at 2 se, and Berserk's gain comes from the 41 boss cells alone. 'Why' (inputs outside the training range) is the lane's hypothesis, not a measurement: Shockwave also applies Weak and reads level. A lead measures the net against the hand-written player, not whether the card is good (Burning Pact and Exhume hurt both players about equally and read level).",
+   "script": "python -I scratch/hist/verify/h-content-fun-zero-shot-act1-cards/check.py",
+   "sources": "results/pack_cards/act1/table.json (jobs 0428-0431, ended 2026-11-07 10:16 local time); docs/research/act1-cards-zero-shot-2026-11-07.md",
+   "verdict": "corrected",
+   "reason": "All 22 bar values, se's, HP notes and Berserk's 15% play rate match the tsl1_won/all column of results/pack_cards/act1/table.json exactly (167 cells each; jobs 0428-0431 ended 2026-11-07 ~10:16 local time, period 6). Using tsl1 for every card is legitimate: the flag only changes decks holding a turn-start power (doc: 46/46 fights equal otherwise). Exhaust-skill framing and the Berserk story (heuristic -0.160 vs net -0.094 wins) match the write-up. One counting error: by tsl1 at 2 se, Impervious (3.6 se), Disarm (3.7) and Intimidate (2.1) cost, and Berserk (+0.066/0.033 = 2.0 se) is a gain, so 18 are level, not 19. The doc's '19 of 22' means 'no measured cost' and includes Berserk, but the claim says 19 'held level' AND Berserk 'went the other way' (19+3+1=23). Fixed wording below. Also worth knowing: Berserk's gain is all in the 41 boss cells (+0.325; elite -0.019), so it rests on few cells. Not a repeat: the page's novelty item covers mutated elites, not new cards."
+  },
+  {
+   "id": "h-content-fun-trigger-cost",
+   "period": "6",
+   "title": "Made-up monster powers: the trigger orders the cost",
+   "claim": "The 24 made-up elite powers combine 4 triggers with 7 effects (Strength, Block, Damage, PlainDamage, Weak, Vulnerable, Frail), minus the 4 pairs that real monsters already have. On average, the time a power fires orders its cost more than what it does. Powers that fire at the monster's own turn start or end cost the net 0.39 and 0.53 HP per elite fight, measured beyond a stat-only fight of matching difficulty. Powers that punish the player's own actions cost 1.62 (playing a card) and 2.98 (hitting the monster). The effect still matters: Weak costs over 2 HP on every trigger. Three mechanics are left out because the hand-written player collapsed on them. Against 'Vulnerable to the player on every card played' it won only 69% of elite fights, while the net won 85%.",
+   "subset": "Generated-enemies bench: official Act 1 elites (Gremlin Nob, Lagavulin, three Sentries), each carrying one generated power. Cost = (29 October net @hpb0.01@tsl1, one turn deep, minus the hand-written player) on the mechanic, minus the same gap on the stat-only control nearest in difficulty, paired by start.",
+   "n": "675 elite starts x 16 seeds per mechanic; 21 mechanics (7 + 5 + 4 + 5) of the 24",
+   "viz": {
+    "kind": "bars",
+    "unit": "HP lost per elite fight beyond the hand-written player and the control (mean over mechanics)",
+    "rows": [
+     {
+      "label": "Monster's turn start",
+      "value": 0.39,
+      "note": "7 mechanics; range -1.76 to +2.21 (Weak)"
+     },
+     {
+      "label": "Monster's turn end",
+      "value": 0.53,
+      "note": "5 mechanics; range -0.46 to +2.55 (Weak)"
+     },
+     {
+      "label": "Player plays a card",
+      "value": 1.62,
+      "note": "4 mechanics (Weak and Vulnerable left out; with them -1.00)"
+     },
+     {
+      "label": "Player's attack takes the monster's HP",
+      "value": 2.98,
+      "note": "5 mechanics (Vulnerable left out; with it +1.39)"
+     }
+    ]
+   },
+   "caveat": "Each bar is a mean over 4 to 7 mechanics, and much of a mechanic's cost depends on which elite carries it. Nob alone drives the attack-trigger mean: 'damage when hit' costs +12.8 on Nob and under 2 on the others. The three left-out mechanics all sit on the player-action triggers and all read negative, because the hand-written player collapsed there, not because the net did well. Including them would lower those two bars. Turn-start and turn-end versions of one effect read almost alike, so there are about 19 distinct mechanics, not 24. The page's 1.28 HP headline is the mean of these 21.",
+   "script": ".venv/Scripts/python -I scratch/hist/content-fun/gen_enemies.py",
+   "sources": "results/mutate/gen-enemies-b1.json (jobs 0469-0470, 2026-11-07); scripts/analysis/mutate_monsters.py gen_table; docs/research/generated-enemies.md",
+   "verdict": "corrected",
+   "reason": "My own script on results/mutate/gen-enemies-b1.json (675 elite starts: Nob 229, Lagavulin 231, Sentries 215; 16 seeds; nearest-difficulty control picked by the hand-written player's mean HP lost; paired by start) reproduces every number. Per-trigger means over the 21: turn start +0.39 (7), turn end +0.53 (5), card played +1.62 (4), attack HP loss +2.98 (5). Mean of the 21 is +1.28, and of all 24 it is +0.32. Win rates on OppCard-Vulnerable: hand-written player 0.691, net 0.845. Both jobs (0469, 0470) ran on 11-07, which is period 6. Three things needed fixing. (1) \"4 triggers x 6 effects\" is wrong. The grid is 4 triggers x 7 effects (Strength, Block, Damage, PlainDamage, Weak, Vulnerable, Frail) minus the 4 pairs that official monsters already have, which gives 7+5+6+6 = 24. (2) \"What costs the net is when a power fires, not what it does\" goes beyond the data. The trigger orders the means, but the effect matters too. Weak costs +2.21 at turn start and +2.55 at turn end, so individual turn-start/turn-end powers are not all under 0.6 HP; only the means are. The source write-up itself says \"Weak is the costly effect\". (3) All three left-out mechanics are on the player-action triggers and all had negative costs (-2.94, -9.55, -6.53). Leaving them out raises those two bars: with all 24, the card-played mean is -1.00 and the attack mean is +1.39. The exclusion is justified (the hand-written player collapses, and its HP falls outside the control ladder), but the caveat must say this. The bars chart is fine. The 1.28 headline is on the page already, but this per-trigger split is not."
+  },
+  {
+   "id": "h-content-fun-four-at-once",
+   "period": "7",
+   "title": "Four made-up powers on one elite at once",
+   "claim": "Around midnight of 10-11 November the lab stacked four made-up monster powers on a single official elite, on 40 different random combinations. The 29 October net and a net trained from scratch on the real Act 1 pack both lost about 6 HP per fight more than the hand-written player, beyond what the plain elite costs. The net trained on a pack of made-up mechanics lost about half as much, 3.16 HP, on combinations it had never met together.",
+   "subset": "Random-world bench, no-death mode: 40 worlds of 4 generated mechanics drawn from the 21-mechanic main pool, on 50 shared official elite starts x 4 seeds; each net @tsl1 one turn deep, cost = net's HP lost beyond the plain elite minus the hand-written player's, a death counted as the whole start HP",
+   "n": "40 worlds x 50 starts x 4 seeds per net (8,000 fights per player per net)",
+   "viz": {
+    "kind": "bars",
+    "unit": "HP lost per elite fight beyond the hand-written player",
+    "rows": [
+     {
+      "label": "29 October net",
+      "value": 6.38,
+      "note": "se 0.20"
+     },
+     {
+      "label": "Net trained from scratch on the real Act 1 pack (seed 1)",
+      "value": 6.16,
+      "note": "se 0.23"
+     },
+     {
+      "label": "Net trained on the made-up mechanics pack (seed 1)",
+      "value": 3.16,
+      "note": "se 0.18; paired cut -3.01 (0.18)"
+     }
+    ]
+   },
+   "caveat": "One seed per new net. The generated-pack net trained on these mechanics singly, so the test is new combinations, not new mechanics. The 29 October net's worlds were played on 9 November (same worlds and starts); the two new nets' runs ran 10 Nov 23:41 to 11 Nov 00:14. With the start-HP cap, deaths dominate the remaining cost: the generated-pack net dies about as often as the hand-written player (0.49 vs 0.51 of games).",
+   "script": ".venv/Scripts/python -I scratch/hist/content-fun/stacks.py",
+   "sources": "results/mutate/rw-nodeath.json (jobs 0739-0740), rw-nd-pns1-k4.json, rw-nd-gp1-k4.json (jobs 0842-0843); docs/research/genpack-reach-2026-11-11.md",
+   "verdict": "corrected",
+   "reason": "My own script reproduces every number exactly. I computed cost from the raw [won, end HP] pairs with each loss capped at the start HP, as net (world minus parent) minus heuristic (world minus parent), averaged over 40 main k=4 worlds, with se over worlds. Results: 29 Oct net 6.38 (0.20); pns s1 6.16 (0.23); genpack s1 3.16 (0.18); paired genpack minus pns -3.01 (0.18). Death rates: net 0.565 / 0.575 / 0.492 against the heuristic's 0.514. n is 40x50x4 = 8,000 fights per player. All three files share the same starts, start HP list, worlds and the gen_pack hash, and each net has its own parent fight, so nothing is pooled or counted twice. Uncapped costs (125.8 / 182.7 / 47.4) would tell the same story with huge se, so the capped figure is the right one to show. One wording error: the claim says 'On 11 November'. Job 0842 (pns s1) ran 10 Nov 23:41-23:56 local and job 0843 (genpack s1) ran 10 Nov 23:41... no, 11 Nov 00:02-00:14. The 29 Oct net's worlds come from jobs 0739-0740 on 9 Nov (rw-nodeath.json), and the write-up is dated 11-11. So the stacking was not done 'on 11 November'. The new-net runs straddle midnight 10/11 Nov, which keeps the statistic in period 7. The date wording is fixed below. The chart (bars, one setting, one unit) and the caveat are sound. This is not on the page already."
+  },
+  {
+   "id": "h-simulated-runs-fights-per-day",
+   "period": "all",
+   "title": "Two million test fights, almost all in the last two weeks",
+   "claim": "The gauntlet played 1,775,729 fights in 165,940 eleven-floor runs, and the champion ladder played 272,360 fights in its pairs. Neither existed in periods 1 and 2, when nets were tested on a smaller fixed bench of games. The ladder started on 10-30 and the gauntlet on 11-01. The busiest day was 11-07, with 471,963 gauntlet fights, when dozens of new nets were re-ranked on the same 500 runs.",
+   "subset": "Every results/gauntlet/*.json file (347 files; only floors actually played count, since a run stops at its first loss) and every ladder match in results/ladder/log.jsonl and results/ladder/runhp/*.json (each pair = 2 fights, one per player; aborted .partial files excluded).",
+   "n": "347 gauntlet files, 165,940 runs, 1,775,729 fights; 79 ladder matches, 272,360 fights",
+   "viz": {
+    "kind": "line",
+    "unit": "fights per day",
+    "x_label": "day (2026)",
+    "y_label": "fights",
+    "series": [
+     {
+      "name": "gauntlet fights",
+      "points": [
+       {
+        "x": "10-30",
+        "y": 0
+       },
+       {
+        "x": "10-31",
+        "y": 0
+       },
+       {
+        "x": "11-01",
+        "y": 58054
+       },
+       {
+        "x": "11-02",
+        "y": 245498
+       },
+       {
+        "x": "11-03",
+        "y": 17322
+       },
+       {
+        "x": "11-04",
+        "y": 46051
+       },
+       {
+        "x": "11-05",
+        "y": 96796
+       },
+       {
+        "x": "11-06",
+        "y": 300147
+       },
+       {
+        "x": "11-07",
+        "y": 471963
+       },
+       {
+        "x": "11-08",
+        "y": 31667
+       },
+       {
+        "x": "11-09",
+        "y": 13714
+       },
+       {
+        "x": "11-10",
+        "y": 256520
+       },
+       {
+        "x": "11-11",
+        "y": 177023
+       },
+       {
+        "x": "11-12",
+        "y": 10724
+       },
+       {
+        "x": "11-13",
+        "y": 43166
+       },
+       {
+        "x": "11-14",
+        "y": 7084
+       }
+      ]
+     },
+     {
+      "name": "ladder fights",
+      "points": [
+       {
+        "x": "10-30",
+        "y": 13090
+       },
+       {
+        "x": "10-31",
+        "y": 36026
+       },
+       {
+        "x": "11-01",
+        "y": 215244
+       },
+       {
+        "x": "11-02",
+        "y": 8000
+       },
+       {
+        "x": "11-03",
+        "y": 0
+       },
+       {
+        "x": "11-04",
+        "y": 0
+       },
+       {
+        "x": "11-05",
+        "y": 0
+       },
+       {
+        "x": "11-06",
+        "y": 0
+       },
+       {
+        "x": "11-07",
+        "y": 0
+       },
+       {
+        "x": "11-08",
+        "y": 0
+       },
+       {
+        "x": "11-09",
+        "y": 0
+       },
+       {
+        "x": "11-10",
+        "y": 0
+       },
+       {
+        "x": "11-11",
+        "y": 0
+       },
+       {
+        "x": "11-12",
+        "y": 0
+       },
+       {
+        "x": "11-13",
+        "y": 0
+       },
+       {
+        "x": "11-14",
+        "y": 0
+       }
+      ]
+     }
+    ]
+   },
+   "caveat": "Result files are not in git. Gauntlet days come from file modification time (local time); for the files a queue job wrote, the job's date agrees with it. A later rewrite could have moved a date. Files deleted before today are not counted. About 13,000 fights (under 1%) are deterministic reruns that repeat another file's runs exactly. Earlier bench tests (results/baseline, runs/*/bench.json, 10-24 to 10-28) and training self-play fights are not counted.",
+   "script": "cd scratch/hist/verify/h-simulated-runs-fights-per-day && python -I v.py && python -I v2.py && python -I v3.py",
+   "sources": "results/gauntlet/*.json, results/ladder/log.jsonl, results/ladder/runhp/*.json, runs/*/bench.json, results/baseline/",
+   "verdict": "corrected",
+   "reason": "I recomputed the numbers myself. They match: 347 gauntlet files, 165,940 runs and 1,775,729 fights. Every daily gauntlet total equals the file modification-time total (11-07 = 471,963, the busiest day; that day has about 69 files of 500 runs each). The ladder gives 272,360 fights per day as claimed (10-30 13,090; 10-31 36,026; 11-01 215,244; 11-02 8,000). Two things are wrong. (1) There are 79 ladder matches, not 80: log.jsonl has 39 lines (ids 0024 and 0025 are missing) and runhp/*.json has 40. The 4 aborted runhp partial files are correctly left out. (2) The claim that no test fights exist for periods 1 and 2 is false. Bench test games ran then: results/baseline/*.json is dated 10-24, and runs/*/bench.json has 25 files from 10-24 to 10-28, with roughly 59,000 games by a nested 'games' sum (an approximate count). Only the gauntlet and the ladder did not exist yet. Minor point: 12 gauntlet files repeat another file's sequences exactly (deterministic reruns: sanity old/new, thread checks t3/t8, e2e pinned/unpinned, cells-r2). That is about 13,000 fights, under 1%. They were really played, so I kept them, but they are not distinct test runs."
+  },
+  {
+   "id": "h-simulated-runs-killers",
+   "period": "all",
+   "title": "Hexaghost and The Guardian were the run-killers",
+   "claim": "Across 58,546 lost gauntlet runs (duplicate files removed), Hexaghost ended 16,962 (29%), The Guardian 12,545 (21%) and Slime Boss 6,581 (11%). Together the three bosses ended 62% of all failed runs. In P4 to P7 a player who reached Hexaghost lost to him 33% to 38% of the time. In P8 The Guardian edged ahead, 28.7% against 27.1%. Slime Boss cost 10% to 14%, and each of the three elites only 3% to 6% of the fights against it.",
+   "subset": "335 gauntlet files with distinct sequences (12 copy or rerun files dropped), all players mixed, one shape and rest 0.3; share of fights against each encounter that were lost, per period",
+   "n": "P4 302,414 fights, P5 159,071, P6 815,731, P7 438,870, P8 50,250; Hexaghost reached 47,950 times",
+   "viz": {
+    "kind": "heat",
+    "unit": "% of fights against it lost",
+    "xs": [
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8"
+    ],
+    "ys": [
+     "Hexaghost",
+     "The Guardian",
+     "Slime Boss",
+     "Lagavulin",
+     "Three Sentries",
+     "Gremlin Nob"
+    ],
+    "cells": [
+     [
+      35.4,
+      33,
+      37.7,
+      32.8,
+      27.1
+     ],
+     [
+      32.4,
+      25.5,
+      27.7,
+      26.8,
+      28.7
+     ],
+     [
+      13,
+      11.3,
+      14,
+      12.7,
+      10.4
+     ],
+     [
+      5.8,
+      3.8,
+      4.9,
+      4.8,
+      2.8
+     ],
+     [
+      5.5,
+      3.7,
+      4.4,
+      4.4,
+      3.1
+     ],
+     [
+      4.8,
+      3.5,
+      4.5,
+      4.4,
+      3.3
+     ]
+    ]
+   },
+   "caveat": "Each period mixes different players, decks and nets, so change across periods is not a measure of progress. P8 is small, about 1,400 fights per boss. The boss comes after a fixed rest, but elites come at whatever HP is left, so their lower loss rate partly reflects when they appear. Copies of the same results (sanity, thread and scale checks, a rerun) are counted once.",
+   "script": "cd scratch/hist/verify/h-simulated-runs-killers && python -I v2.py",
+   "sources": "results/gauntlet/*.json",
+   "verdict": "corrected",
+   "reason": "My own count from all 347 files matches every number the miner gave: 58,744 lost runs, 17,025 / 12,590 / 6,612 runs ended, 61.7%, fights per period, and every heat cell. There are two problems. (1) The title is false for P8. In P8 The Guardian beat Hexaghost on both measures: 28.7% of his fights lost against 27.1%, and 382 runs ended against 373. So Hexaghost was not the run-killer in every period. (2) 12 files are copies whose sequences repeat another file's exactly: 9 '*-sanity-*' files, the scale-t3/t8 pair, the thread-check pair, the lanes-e2e pinned/unpinned pair and the genpack '-cells-r2' rerun. They add 865 runs that are counted twice. Removing them changes the totals a little: 58,546 lost runs, Hexaghost 16,962 (29.0%), Guardian 12,545, Slime Boss 6,581, top three 61.6%. The cells move by at most 0.2 points. All files use the same shape (11 floors, boss last) and the same rest of 0.3, so the shape is not mixed. Players are mixed, and the caveat already says so. P8 is small (about 1,400 boss fights each), so do not read the P8 dip as a trend."
+  }
+ ],
+ "dropped": [
+  {
+   "id": "h-training-distillation",
+   "keep": false,
+   "why": "One closed idea told as its own statistic. Its result, three distilled nets failing against the champion, is already covered by h-measures-ladder-streak. P3 has enough without it."
+  },
+  {
+   "id": "h-machine-kinds-by-period",
+   "keep": false,
+   "why": "Largely repeats h-measures-count-heat, which shows which rulers were used when (ladder only P3-4, gauntlet from P4) and covers all periods, not only the queue's P3-8. The family-burst detail is a single event."
+  },
+  {
+   "id": "h-machine-estimates",
+   "keep": false,
+   "why": "Restates 'CPU estimate vs actual per lane', which is already on the page, by job kind instead of by lane. The estimate story is also partly in h-machine-longest."
+  },
+  {
+   "id": "h-measures-rules-frozen",
+   "keep": false,
+   "why": "Says the same thing from the same data (golden.txt commits, five moves on 11-14) as h-engine-rules-version. Keep one. If wanted, fold its line about runs and datasets all sharing one rules version into the kept statistic."
+  },
+  {
+   "id": "h-writing-reversed",
+   "keep": false,
+   "why": "One episode (a single exemption flip-flop) told as a statistic. P6 is already the most crowded period."
+  },
+  {
+   "id": "h-content-fun-nob-hits-back",
+   "keep": false,
+   "why": "One mechanic on one monster told as if general. Its cost already appears in h-content-fun-trigger-cost (hitting the monster costs 2.98 HP)."
+  },
+  {
+   "id": "h-simulated-runs-test-variants",
+   "keep": false,
+   "why": "Puts eight test rules (settings) on one axis by design, and its 0.680 is a headline already on the page."
+  },
+  {
+   "id": "h-simulated-runs-encounters-p6",
+   "keep": false,
+   "why": "Repeats h-simulated-runs-killers for one period (bosses lose 14-38%, elites about 4.5%), and its scatter pools all players and settings on one axis."
+  },
+  {
+   "id": "h-simulated-runs-luck-p6",
+   "keep": false,
+   "why": "Restates the who-clears waffle already on the page (runs cleared by all players and by none)."
+  },
+  {
+   "id": "h-simulated-runs-best-by-period",
+   "keep": false,
+   "why": "Repeats h-measures-cell-gauntlet-best (0.646 to 0.682, heuristic 0.596). It also adds the starter-deck test as a second setting on the same line."
+  }
+ ]
+}

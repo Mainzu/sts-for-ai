@@ -1,0 +1,27 @@
+{
+  "key": "measurement/seed-sd-fixed-players@gauntlet",
+  "rev": 1,
+  "value": "For two fixed players gauntlet sequence se are sound: leads at 2-3 se replicated on the other book in 63 of 65 pairs. Headline-setting deck noise: ~0.035 clears se per 250-sequence pair.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Run-level seed noise (twins b37d-f, 2026-11-02)",
+      "sha256": "ebf38d1ef129969dd28b84399dbf16f64e6b9d2288186076a261da7c4d7a41be"
+    },
+    {
+      "path": "docs/research/big-picture-2026-11-06.md",
+      "anchor": "Key claims and skeptic verdicts",
+      "sha256": "c59114d491930272819530fccaeefa81decc6681260fde6952cb6e52ee4edbd7"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:51+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "b9e49b6feb50091a1df59a2cac01f59e5ee67a843a452b65cead24966f28957e"
+}

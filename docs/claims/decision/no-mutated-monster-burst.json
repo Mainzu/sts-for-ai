@@ -1,0 +1,246 @@
+{
+  "key": "decision/no-mutated-monster-burst",
+  "rev": 6,
+  "value": "No adaptation burst on mutated monsters as a product lever, until lane adapted-two-turn reads: two turns deep the product's cost beyond the heuristic is within noise on every stage A and stage B modifier, bosses included (measurement/boss-cost@two-turn: ritual2 -0.017 (0.016), hp0.8 a ceiling squeeze); a burst against Ritual 2 does not repair it (cut 0.38x at 1602 games), and a burst on plain stat changes repairs nothing and costs retention (measurement/stat-burst@one-turn). The basis is the heuristic reference, which cannot show what an adapted player wins (yardstick/novelty-read rule e). Revisit on lane adapted-two-turn's go (a burst net beats the product two turns deep on sharp2 or thorns2 at 2 se with the parent kept); a stop there confirms this decision against the adapted reference. The goal-1 enemies rung is read on the product player (two turns deep) with the one-turn net's drop reported as the leaf's cost; the burst is goal 1's games-to-adapt measurement (measurement/adaptation-curve), run per mechanic family, not a product step.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
+      "sha256": "3df5b299a54b7341b8f5aece00ba55484f6291bc2dd7bd2594337e4cb90a9f00"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+      "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane difficulty-shift closed (2026-11-05)",
+      "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane boss-cost-two-turn closed (2026-11-05)",
+      "sha256": "1b7086a7e58a6227844cdd56474a154a02c81d4d1f9baabd3264c94c432a48fc"
+    },
+    {
+      "key": "measurement/boss-cost@two-turn",
+      "rev": 1
+    },
+    {
+      "key": "measurement/stat-burst@one-turn",
+      "rev": 1
+    },
+    {
+      "key": "measurement/adaptation-curve",
+      "rev": 2
+    },
+    {
+      "key": "yardstick/novelty-read",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "7341b88a-0947-4f2b-9d60-594698d8eaa7",
+  "at": "2026-11-05T07:26:37Z @ c272a75",
+  "confirms": [],
+  "flags": [
+    {
+      "by": "19324dbf-6338-4e64-b0a5-7bf437e6c6ca",
+      "at": "2026-11-05T09:51:19Z @ 707a52d",
+      "reason": "measurement/adapted-two@elites (lead, 2.3-2.5 se): two turns deep the product pays ~2 HP per elite fight beyond the heuristic on sharp2/thorns2 and a 399-game burst removes it; confirmation on fresh starts queued by lane adapted-two-turn"
+    }
+  ],
+  "history": [
+    {
+      "rev": 1,
+      "value": "No adaptation burst on mutated monsters: two turns deep the product loses nothing beyond the heuristic on any state-patch modifier, so it is a horizon problem. The goal-1 enemies rung is read on the product player (two turns deep), with the one-turn net's drop reported as the leaf's cost; stage B (pattern mutations) waits for the landing.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Mutated monsters stage A, two-turn read: horizon, not a training gap; no burst on mutated monsters (owner away, 2026-11-02)",
+          "sha256": "ae2709dc1a3ab324429cbe8fd9d5501b19a33c42b280fce7c0197c87019c4ae4"
+        },
+        {
+          "key": "product/net",
+          "rev": 3
+        },
+        {
+          "key": "context/engine-next",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:32Z @ fc9cdd8",
+      "until": "2026-11-02T17:25:55Z @ 7f0a742"
+    },
+    {
+      "rev": 2,
+      "value": "No adaptation burst on mutated monsters: two turns deep the product loses nothing beyond the heuristic on any state-patch modifier, so it is a horizon problem. The goal-1 enemies rung is read on the product player (two turns deep), with the one-turn net's drop reported as the leaf's cost; stage B (pattern mutations) is unblocked by the engine-next landing (2026-11-03) and needs a spec.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Mutated monsters stage A, two-turn read: horizon, not a training gap; no burst on mutated monsters (owner away, 2026-11-02)",
+          "sha256": "ae2709dc1a3ab324429cbe8fd9d5501b19a33c42b280fce7c0197c87019c4ae4"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "context/engine-next",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
+      "at": "2026-11-02T17:25:55Z @ 7f0a742",
+      "until": "2026-11-04T16:01:07Z @ 24a7e00"
+    },
+    {
+      "rev": 3,
+      "value": "No adaptation burst on mutated monsters as a product lever: two turns deep the product's cost beyond the heuristic is within +-0.015 on every stage A modifier except ritual2 -0.036 and hp0.8 -0.030 (bosses), and a burst does not repair ritual2 either (cut 0.38x at 1602 games), so training on the mutated bench cannot move the product. The goal-1 enemies rung is read on the product player (two turns deep) with the one-turn net's drop reported as the leaf's cost; the burst is goal 1's games-to-adapt measurement (measurement/adaptation-curve), run per mechanic, not a product step.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adaptation-curve closed (2026-11-04)",
+          "sha256": "35948c5c9342924dc8b97c49ee43e339c30a01af436eb9d2a65423a020014c75"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Mutated monsters stage A, two-turn read: horizon, not a training gap; no burst on mutated monsters (owner away, 2026-11-02)",
+          "sha256": "ae2709dc1a3ab324429cbe8fd9d5501b19a33c42b280fce7c0197c87019c4ae4"
+        },
+        {
+          "key": "measurement/mutated-monsters@stage-a",
+          "rev": 2
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "0abb1a96-a184-451e-87ad-b17eeedec484",
+      "at": "2026-11-04T16:01:07Z @ 24a7e00",
+      "until": "2026-11-04T22:14:32Z @ 99b1561"
+    },
+    {
+      "rev": 4,
+      "value": "No adaptation burst on mutated monsters as a product lever: two turns deep the product's win-rate cost beyond the heuristic is within +-0.015 on every stage A modifier except ritual2 -0.036 and hp0.8 -0.030 (bosses), where the win-rate column is partly the scale (yardstick/novelty-read) and a burst against Ritual 2 does not repair it (cut 0.38x at 1602 games); the reactive powers, which bursts do repair, cost the product nothing. Open at 66 boss starts: by odds ratio the product is below its parent edge on str2 (-0.53 (0.30)), ritual2 (-0.73 (0.38)) and hp0.8 (-0.84 (0.47)); revisit if lane difficulty-shift shows a boss cost at 325 starts that a stat burst repairs. The goal-1 enemies rung is read on the product player (two turns deep) with the one-turn net's drop reported as the leaf's cost; the burst is goal 1's games-to-adapt measurement (measurement/adaptation-curve), run per mechanic, not a product step.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Stage A re-read: the boss cost follows shifted numbers, not growth, and how a novelty cost is read (on the owner's behalf, 2026-11-05)",
+          "sha256": "f63c7066d5d986a9803a94a333fccecba701b9fa0383e29f88786010cee52543"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adaptation-curve closed (2026-11-04)",
+          "sha256": "35948c5c9342924dc8b97c49ee43e339c30a01af436eb9d2a65423a020014c75"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Mutated monsters stage A, two-turn read: horizon, not a training gap; no burst on mutated monsters (owner away, 2026-11-02)",
+          "sha256": "ae2709dc1a3ab324429cbe8fd9d5501b19a33c42b280fce7c0197c87019c4ae4"
+        },
+        {
+          "key": "measurement/mutated-monsters@stage-a",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "1ef7f60b-ed9a-4889-af70-64f5334e6905",
+      "at": "2026-11-04T22:14:32Z @ 99b1561",
+      "until": "2026-11-05T00:47:57Z @ 22b5d9b"
+    },
+    {
+      "rev": 5,
+      "value": "No adaptation burst on mutated monsters as a product lever: two turns deep the product's win-rate cost beyond the heuristic is within +-0.015 on every stage A modifier except ritual2 -0.036 and hp0.8 -0.030, both on the 66 boss starts and both read against one parent draw of 4 seeds (yardstick/novelty-read, rule a); the reactive powers, which bursts do repair, cost the product nothing; a burst against Ritual 2 does not repair it (cut 0.38x at 1602 games), and a burst on plain stat changes repairs nothing and costs retention (measurement/stat-burst@one-turn). One turn deep the boss question is answered: no cost at 325 starts (measurement/wide-bench@one-turn). Revisit only if lane boss-cost-two-turn is a go (the two boss rows hold on 259 fresh boss starts). The goal-1 enemies rung is read on the product player (two turns deep) with the one-turn net's drop reported as the leaf's cost; the burst is goal 1's games-to-adapt measurement (measurement/adaptation-curve), run per mechanic family, not a product step.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane difficulty-shift closed (2026-11-05)",
+          "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+        },
+        {
+          "key": "measurement/wide-bench@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "ff666280-ee25-4103-8011-de5b45cf8e3c",
+      "at": "2026-11-05T00:47:57Z @ 22b5d9b",
+      "until": "2026-11-05T07:26:37Z @ c272a75"
+    },
+    {
+      "rev": 6,
+      "value": "No adaptation burst on mutated monsters as a product lever, until lane adapted-two-turn reads: two turns deep the product's cost beyond the heuristic is within noise on every stage A and stage B modifier, bosses included (measurement/boss-cost@two-turn: ritual2 -0.017 (0.016), hp0.8 a ceiling squeeze); a burst against Ritual 2 does not repair it (cut 0.38x at 1602 games), and a burst on plain stat changes repairs nothing and costs retention (measurement/stat-burst@one-turn). The basis is the heuristic reference, which cannot show what an adapted player wins (yardstick/novelty-read rule e). Revisit on lane adapted-two-turn's go (a burst net beats the product two turns deep on sharp2 or thorns2 at 2 se with the parent kept); a stop there confirms this decision against the adapted reference. The goal-1 enemies rung is read on the product player (two turns deep) with the one-turn net's drop reported as the leaf's cost; the burst is goal 1's games-to-adapt measurement (measurement/adaptation-curve), run per mechanic family, not a product step.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "3df5b299a54b7341b8f5aece00ba55484f6291bc2dd7bd2594337e4cb90a9f00"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane difficulty-shift closed (2026-11-05)",
+          "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane boss-cost-two-turn closed (2026-11-05)",
+          "sha256": "1b7086a7e58a6227844cdd56474a154a02c81d4d1f9baabd3264c94c432a48fc"
+        },
+        {
+          "key": "measurement/boss-cost@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "7341b88a-0947-4f2b-9d60-594698d8eaa7",
+      "at": "2026-11-05T07:26:37Z @ c272a75",
+      "until": "2026-11-05T12:26:34Z @ 035810b",
+      "retired": "replaced by decision/burst-adapted-column: lane adapted-two-turn's go (a 399-game burst beats the product two turns deep on sharp2 and thorns2) showed the heuristic reference hid the cost"
+    }
+  ],
+  "seal": "08b68e6f07cbd962ab10c6113d3ff4d7643d0fdadf5977f27358002f5b24916f"
+}

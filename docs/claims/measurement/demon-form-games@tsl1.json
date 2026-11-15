@@ -1,0 +1,158 @@
+{
+  "key": "measurement/demon-form-games@tsl1",
+  "rev": 2,
+  "value": "Step 2's passing arms @tsl1 minus 10-29 @tsl1, Demon Form decks: net-g1600 +1.19 (0.75) HP, two-g400 -0.42 (0.94) vs +3.77/+4.48 plain: the bursts learned Demon Form's first tick, not later ticks; gate fails both. parts and neither level: no composition.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Step 2's turn-start-leaf gate and neither complete: both passing arms learned Demon Form's first tick and nothing after it (two-g400 -0.42 (0.94) HP on its decks @tsl1, net-g1600 +1.19 (0.75)); parts and neither are level, so the net does not compose the pair (yardstick-cards steps 2 and 2b checkpoint; 0398-0402, 0439-0450; read 12:10 2026-11-07, lanes 34ade50d)",
+      "sha256": "27a2571b0dd1fd931f8019beeb99665d6f0b18089813bf55b8d500391caae936"
+    },
+    {
+      "key": "measurement/demon-form-games@cells",
+      "rev": 2
+    },
+    {
+      "key": "measurement/burst8-tsl1@cells",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:10+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Step 2's passing arms read @hpb0.01@tsl1 on both cell books minus the 10-29 net @hpb0.01@tsl1, paired by sequence, three seeds pooled (HP (se over sequences / nets), clears): net-g1600 train -0.31 (0.36/0.21) -0.025, other held-out -0.31 (0.45/0.56) -0.030, held-out Demon Form decks +1.19 (0.75/0.26) +0.019 (seeds +1.59 +1.29 +0.70); two-g400 train -0.71 (0.40/0.26) -0.036, held-out -0.70 (0.48/0.16) -0.035, Demon Form decks -0.42 (0.94/0.07) -0.027. Against +3.77 and +4.48 on the plain leaf: the bursts learned Demon Form's first tick, which the turn-start leaf prices with no games, and not its later ticks; the charter's gate fails for both arms, so no step-2 net goes toward the chooser or the product. Step 2b complete: neither -0.78 (0.77/0.59) on Demon Form decks against parts -0.13, level (per pair, no composition).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Step 2's turn-start-leaf gate and neither complete: both passing arms learned Demon Form's first tick and nothing after it (two-g400 -0.42 (0.94) HP on its decks @tsl1, net-g1600 +1.19 (0.75)); parts and neither are level, so the net does not compose the pair (yardstick-cards steps 2 and 2b checkpoint; 0398-0402, 0439-0450; read 12:10 2026-11-07, lanes 34ade50d)",
+          "sha256": "27a2571b0dd1fd931f8019beeb99665d6f0b18089813bf55b8d500391caae936"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-07-ycards-net-g1600-s1-4e72759-hpb0.01-tsl1.json",
+          "sha256": "0d2e31a450715407c033acdc645d2d89e9732d6ffdd35d21487a4fa814834274"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-07-ycards-net-g1600-s1-4e72759-hpb0.01-tsl1-b500.json",
+          "sha256": "32c4fd702faddc92fb0fcf9497f18182185652f403dfd700d58c33f2d85784b4"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-07-ycards-net-g1600-s2-2c127ac-hpb0.01-tsl1.json",
+          "sha256": "e5e2af8d8836c4552ba15b4b21c5e60810892bb068352777111ec00d14898146"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-07-ycards-net-g1600-s2-2c127ac-hpb0.01-tsl1-b500.json",
+          "sha256": "6aa6caa11c71cc8badddef21db784defbca5f92d963de91705c8303cc495d64f"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-07-ycards-net-g1600-s3-d07b090-hpb0.01-tsl1.json",
+          "sha256": "b3c1d4c4776ab706a2bd9ee1943ec6b8fe94f5c02d9112d66c55696219b44322"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-07-ycards-net-g1600-s3-d07b090-hpb0.01-tsl1-b500.json",
+          "sha256": "9306eeaa1065c46d5c73437ebfaacf88845e58a90301763417838fa8e7f0aa50"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-07-ycards-two-g400-s1-e1bfcfc-hpb0.01-tsl1.json",
+          "sha256": "ce5012c64956468bbf2749b5b696dd31593fc54e8cfa8769f444857b71f7a5e4"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-07-ycards-two-g400-s1-e1bfcfc-hpb0.01-tsl1-b500.json",
+          "sha256": "18784105efb0206ef70c4613f965708d917ca3fce44a33f6c482377c90ee9501"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-07-ycards-two-g400-s2-8ebcdbe-hpb0.01-tsl1.json",
+          "sha256": "2834d1f27bfc514d5d246c7130836466371b70ef54fd99741e22a78a2ac7d57e"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-07-ycards-two-g400-s2-8ebcdbe-hpb0.01-tsl1-b500.json",
+          "sha256": "b98611b0fdb89cd5aef2e62d0937f45e732058675de81f65782194354728551a"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-07-ycards-two-g400-s3-3c8aacf-hpb0.01-tsl1.json",
+          "sha256": "dcc3181f00a490e4f1a4469c330df81aeaa76059bb505b000e3deacb3c1e492e"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-07-ycards-two-g400-s3-3c8aacf-hpb0.01-tsl1-b500.json",
+          "sha256": "e9d173e67a0a53cc27135b3d5f5eb1c12ea42c340ae52c7569d2ddd05e65ece8"
+        },
+        {
+          "path": "jobs/done/0439-gauntlet.json",
+          "sha256": "d2560fbe896895bc94f675db3939ef1df2aed9d247584c9180d0afbcb65014fb"
+        },
+        {
+          "path": "jobs/done/0440-gauntlet.json",
+          "sha256": "ad50041216990d4e0ff2ef920e1b5fdb678dcaffb9b1b792caeab5e66d7b9808"
+        },
+        {
+          "path": "jobs/done/0441-gauntlet.json",
+          "sha256": "1f6cef503e06a5a4d0c642b7ed49983df95fe44bdf7692727809d5e7ce29b5e7"
+        },
+        {
+          "path": "jobs/done/0442-gauntlet.json",
+          "sha256": "021f9fb2a14858338fc0bc69e79ff9e8e80f6c40628529aa270b500c4d07602c"
+        },
+        {
+          "path": "jobs/done/0443-gauntlet.json",
+          "sha256": "dcd757dc907a03f7acf67718ff0e91d1a9671c240b1703e6fef3177b99ca74cc"
+        },
+        {
+          "path": "jobs/done/0444-gauntlet.json",
+          "sha256": "2f6ce1a1490b5ca5ad447f31d1d97719a9ebf8f482f7d6550cc7416b41d9ed09"
+        },
+        {
+          "path": "jobs/done/0445-gauntlet.json",
+          "sha256": "89fbbea957d9c23df44bbdb51228f2756052837aa553ba8d86896f4012ffac7b"
+        },
+        {
+          "path": "jobs/done/0446-gauntlet.json",
+          "sha256": "0c3b682af14738669a437ea0c7131d73ee16654195a243a06db7a4dd1d42e198"
+        },
+        {
+          "path": "jobs/done/0447-gauntlet.json",
+          "sha256": "c56f41f0eb2812b0bad2401255773f5e5aa4c43fb80fab80404f602a92c93c48"
+        },
+        {
+          "path": "jobs/done/0448-gauntlet.json",
+          "sha256": "71feb30357ed73ff6d8e38283cc6ca5994dbde6a7a7724ce13a9f202ae0590b0"
+        },
+        {
+          "path": "jobs/done/0449-gauntlet.json",
+          "sha256": "3d4b85c22cf0f2cd2d3786f29736de8b0b05a744124bcdaaf5b314468189c368"
+        },
+        {
+          "path": "jobs/done/0450-gauntlet.json",
+          "sha256": "4716431016ad6fab21095a8f61c4b9023189a428f69d252cb8988015c3b02946"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-tsl1.json",
+          "sha256": "88bcfa6dc0f358ec2209d8dc0129d850ede28fa706f836b83bc120c18b3b8107"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-tsl1-b500.json",
+          "sha256": "91ed63b41b153449c5d7190037d04c89cc618caa897ed38c8f5078cf4b09a2b3"
+        },
+        {
+          "key": "measurement/demon-form-games@cells",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst8-tsl1@cells",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "34ade50d-0c3c-43a4-95dc-03e6e008496f",
+      "at": "2026-11-07T05:02:03+00:00 @ addbd68",
+      "until": "2026-11-13T02:30:10+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "8aca795753c81197a52094578d986084ffc49890ff53a42cd62cf2efcfe30ea5"
+}

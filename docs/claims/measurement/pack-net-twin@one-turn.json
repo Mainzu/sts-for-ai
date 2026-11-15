@@ -1,0 +1,457 @@
+{
+  "key": "measurement/pack-net-twin@one-turn",
+  "rev": 5,
+  "value": "All-content twins (allcontent40k-s1/-s101 r1 @hpb0.01 = packnet40k config w/o packs), one turn, 0-499, n 500. Pack headline: twin vs 10-29 +2.59 (0.89) HP, clears +0.052; pack net minus twin +0.38 (0.73): twin carries 87%. Official cells: twin +2.32 (0.54); pack net minus twin -1.09 (0.39), clears -0.029 (dilution). Gain is the recipe (from scratch, 40k, deck_pool all).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pns-probes.md",
+      "anchor": "pns-twin (0770-0773): the all-content recipe carries the pack net's gain; the pack costs official cells",
+      "sha256": "5566867d51a35008d39e1f26d826794a4c615b296cca3727b14c24b56b72b043"
+    },
+    {
+      "key": "measurement/pack-net-twin-ruler@one-turn",
+      "rev": 1
+    },
+    {
+      "key": "measurement/pack-net-twin-tsl1@cells",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:42+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "All-content twins (allcontent40k-s1, -s101 r1 @hpb0.01: packnet40k's config without packs, same seeds), one turn deep, sequences 0-499, fixed n 500. Pack headline: twin vs the 10-29 net's pack file +2.59 (0.89) HP pooled, clears +0.052 (seed 1 +4.40, seed 101 +0.78); pack net minus twin +0.38 (0.73), clears +0.017 (seed 1 -1.14, seed 101 +1.91): the twin carries 87% of the pack net's +2.97, so training on the pack does not pay there. Official cells: twin vs the 10-29 net +2.32 (0.54), clears +0.033; pack net minus twin -1.09 (0.39), z -2.80, clears -0.029 on both seeds (dilution of official fights). The gain is the recipe (from scratch, 40k games, one round, deck_pool all: the cells' held-out half is training content for these nets), and effect inputs carry the pack cards zero-shot.",
+      "sources": [
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-twin (0770-0773): the all-content recipe carries the pack net's gain; the pack costs official cells",
+          "sha256": "5566867d51a35008d39e1f26d826794a4c615b296cca3727b14c24b56b72b043"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s1-hpb0.01-cells.json",
+          "sha256": "b90031d5d47979bddeb3a1f885c7d225d6585ecdc1f490015224e22c7709e50a"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s101-hpb0.01-cells.json",
+          "sha256": "6380d8e385b880c78c7720288b62aca8d0116a5ebf530f11875a0bdbf5c21fa2"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s1-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "23a7a64c692f81802c67f7f75b96c7d6a6d528b7b791ee39f5b9580421233f7f"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s101-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "b17e1f490dcbb35302ce2c161c8dd78ff07a18f4666e2af9b50a4711505f5900"
+        },
+        {
+          "path": "jobs/done/0770-gauntlet.json",
+          "sha256": "f906204a639f24de596b814f4bcf6f9da9eccb288bbccf93d7bf902bccb35d96"
+        },
+        {
+          "path": "jobs/done/0771-gauntlet.json",
+          "sha256": "3c96d2d1198c8fda68958226ca1b377252f7a0c76fc7881bb8faa343d436eb3c"
+        },
+        {
+          "path": "jobs/done/0772-gauntlet.json",
+          "sha256": "4bb497a9f1d8ea5b486b107fe1cc3b86d2a665e8b74a2f2738ff580e7767c777"
+        },
+        {
+          "path": "jobs/done/0773-gauntlet.json",
+          "sha256": "621770af47e031286a32975701ef769129fb88c4d4ad35c5fa9c72a4e8d45cdf"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "bd66b160-d47d-4824-862b-a74f9071680e",
+      "at": "2026-11-10T02:22:31+00:00 @ 1614a42",
+      "until": "2026-11-10T05:11:08+00:00 @ 8d8349d"
+    },
+    {
+      "rev": 2,
+      "value": "All-content twins (allcontent40k-s1, -s101 r1 @hpb0.01: packnet40k's config without packs, same seeds), one turn deep, sequences 0-499, fixed n 500. Pack headline: twin vs the 10-29 net's pack file +2.59 (0.89) HP pooled, clears +0.052 (seed 1 +4.40, seed 101 +0.78); pack net minus twin +0.38 (0.73), clears +0.017 (seed 1 -1.14, seed 101 +1.91): the twin carries 87% of the pack net's +2.97, so training on the pack does not pay there. Official cells: twin vs the 10-29 net +2.32 (0.54), clears +0.033; pack net minus twin -1.09 (0.39), z -2.80, clears -0.029 on both seeds (dilution of official fights). The gain is the recipe (from scratch, 40k games, one round, deck_pool all: the cells' held-out half is training content for these nets), and effect inputs carry the pack cards zero-shot. Ruler (0782-0783, pns-twin-official): (yardstick/headline-setting, own picks), sequences 0-499, fixed n 500, against yardstick/one-turn-controls: seed 1 +1.11 (0.98) HP, clears +0.032; seed 101 +0.41 (1.02), +0.024; pooled +0.76 (0.87), +0.028 (protocol bar +1.5 at 2 se: fail); pack net s1 +0.59 (1.05). Demon Form picks 0.62 / 0.69 of offers against the control's 0.19. Both took Demon Form (41 sequences): +19.22 (3.24) / +15.56 (3.71) HP, clears +0.463 / +0.390; only the twin took it (102 / 105): +3.23 (2.20) / +0.41 (2.05), clears +0.118 / +0.086; no player took it (347, pooled): -1.50 (1.00) HP, second-elite deaths 21 to 31 / 29, boss 68 to 59 / 60. All deaths control / s1 / s101: hallways 18 / 30 / 31, elites 35 / 45 / 45, boss 107 / 69 / 72. Pooled by half: train -0.90 (1.08), held-out +2.42 (1.36) (fixed-deck cells: +0.89 (0.57), +3.76 (0.91)).",
+      "sources": [
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-twin (0770-0773): the all-content recipe carries the pack net's gain; the pack costs official cells",
+          "sha256": "5566867d51a35008d39e1f26d826794a4c615b296cca3727b14c24b56b72b043"
+        },
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-twin-official (0782-0783): the all-content gain on the ruler is Demon Form; outside it the twin loses 1.5 HP",
+          "sha256": "43fc2ec1aaaad228a65ea637dd514ce5e5a5b26e4bb03409ae278aec71efc21a"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Probe pns-twin-official read: the all-content gain on the ruler is Demon Form; twin-tsl1 and pns-twin-matched queued (on the owner's behalf, 2026-11-10)",
+          "sha256": "75ce3f58a14a6cb6df5c6d648c234279b6b1fd3527feecdb0e28969bc2b3f56e"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s1-hpb0.01-cells.json",
+          "sha256": "b90031d5d47979bddeb3a1f885c7d225d6585ecdc1f490015224e22c7709e50a"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s101-hpb0.01-cells.json",
+          "sha256": "6380d8e385b880c78c7720288b62aca8d0116a5ebf530f11875a0bdbf5c21fa2"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s1-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "23a7a64c692f81802c67f7f75b96c7d6a6d528b7b791ee39f5b9580421233f7f"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s101-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "b17e1f490dcbb35302ce2c161c8dd78ff07a18f4666e2af9b50a4711505f5900"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s1-hpb0.01-starter-simboss.json",
+          "sha256": "5c10ea56bdb3f2533f36c16ba75719c6cdb6c4b3df94c7ff19437315bd976b03"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s101-hpb0.01-starter-simboss.json",
+          "sha256": "dc240647edb774a25006a5c4ce4684b08ee80b3c5ddb91c0a521ecbe9cf33b10"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s1-hpb0.01-starter-simboss.json",
+          "sha256": "4d2fd4d902810f39de067f3d305b71d025545279a9788d143a92632af467415d"
+        },
+        {
+          "path": "jobs/done/0770-gauntlet.json",
+          "sha256": "f906204a639f24de596b814f4bcf6f9da9eccb288bbccf93d7bf902bccb35d96"
+        },
+        {
+          "path": "jobs/done/0771-gauntlet.json",
+          "sha256": "3c96d2d1198c8fda68958226ca1b377252f7a0c76fc7881bb8faa343d436eb3c"
+        },
+        {
+          "path": "jobs/done/0772-gauntlet.json",
+          "sha256": "4bb497a9f1d8ea5b486b107fe1cc3b86d2a665e8b74a2f2738ff580e7767c777"
+        },
+        {
+          "path": "jobs/done/0773-gauntlet.json",
+          "sha256": "621770af47e031286a32975701ef769129fb88c4d4ad35c5fa9c72a4e8d45cdf"
+        },
+        {
+          "path": "jobs/done/0782-gauntlet.json",
+          "sha256": "ee921d0250bc6222ee4b025ab48c59f4856e51389e547556b167e19cbd3084f8"
+        },
+        {
+          "path": "jobs/done/0783-gauntlet.json",
+          "sha256": "575d98af641c34f929e41643043d31ae6b688560f6ecd8295894c9b1e1a6d8db"
+        },
+        {
+          "path": "jobs/done/0774-gauntlet.json",
+          "sha256": "a4206700204360dd04eee2291e0bae97eefca0f3a95afe836ab7386d3154cfbb"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/headline-setting",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "9b2dd76a-ebb7-49f2-a306-4e05e9845de4",
+      "at": "2026-11-10T05:11:08+00:00 @ 8d8349d",
+      "until": "2026-11-10T05:17:09+00:00 @ 491c2ed"
+    },
+    {
+      "rev": 3,
+      "value": "All-content twins (allcontent40k-s1, -s101 r1 @hpb0.01: packnet40k's config without packs, same seeds), one turn deep, sequences 0-499, fixed n 500. Pack headline: twin vs the 10-29 net's pack file +2.59 (0.89) HP pooled, clears +0.052 (seed 1 +4.40, seed 101 +0.78); pack net minus twin +0.38 (0.73), clears +0.017 (seed 1 -1.14, seed 101 +1.91): the twin carries 87% of the pack net's +2.97, so training on the pack does not pay there. Official cells: twin vs the 10-29 net +2.32 (0.54), clears +0.033; pack net minus twin -1.09 (0.39), z -2.80, clears -0.029 on both seeds (dilution of official fights). The gain is the recipe (from scratch, 40k games, one round, deck_pool all: the cells' held-out half is training content for these nets), and effect inputs carry the pack cards zero-shot. Ruler (0782-0783, pns-twin-official): (yardstick/headline-setting, own picks), sequences 0-499, fixed n 500, against yardstick/one-turn-controls: seed 1 +1.11 (0.98) HP, clears +0.032; seed 101 +0.41 (1.02), +0.024; pooled +0.76 (0.87), +0.028 (protocol bar +1.5 at 2 se: fail); pack net s1 +0.59 (1.05). Demon Form picks 0.62 / 0.69 of offers against the control's 0.19. Both took Demon Form (41 sequences): +19.22 (3.24) / +15.56 (3.71) HP, clears +0.463 / +0.390; only the twin took it (102 / 105): +3.23 (2.20) / +0.41 (2.05), clears +0.118 / +0.086; no player took it (347, pooled): -1.50 (1.00) HP, second-elite deaths 21 to 31 / 29, boss 68 to 59 / 60. All deaths control / s1 / s101: hallways 18 / 30 / 31, elites 35 / 45 / 45, boss 107 / 69 / 72. Pooled by half: train -0.90 (1.08), held-out +2.42 (1.36) (fixed-deck cells: +0.89 (0.57), +3.76 (0.91)). Matched on the control's picks (0791-0792, pns-twin-matched): seed 1 +1.69 (0.68), seed 101 +0.61 (0.63), pooled +1.15 (0.57) HP, clears +0.018; the control's 41 Demon Form decks +14.07 (2.24) / +12.71 (2.79); the other 457 sequences +0.05 (0.56) pooled, with second-elite deaths 25 to 32 / 33 and boss deaths 93 to 81 / 73: the twins fight level outside Demon Form, so about 1.5 HP of the own-pick shortfall there is picks (about 1.4 se).",
+      "sources": [
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-twin (0770-0773): the all-content recipe carries the pack net's gain; the pack costs official cells",
+          "sha256": "5566867d51a35008d39e1f26d826794a4c615b296cca3727b14c24b56b72b043"
+        },
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-twin-official (0782-0783): the all-content gain on the ruler is Demon Form; outside it the twin loses 1.5 HP",
+          "sha256": "43fc2ec1aaaad228a65ea637dd514ce5e5a5b26e4bb03409ae278aec71efc21a"
+        },
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-twin-matched (0791-0792): on the control's decks the twin fights level outside Demon Form",
+          "sha256": "a560508eed0546a2e7bef3dfda082586cf7248faa1e29572ea67d087cfa8b74f"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Probe pns-twin-official read: the all-content gain on the ruler is Demon Form; twin-tsl1 and pns-twin-matched queued (on the owner's behalf, 2026-11-10)",
+          "sha256": "e91fbab6d54310d7327eb316b4782e62b7a9f8e099d3aa7544e0489600e45610"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s1-hpb0.01-cells.json",
+          "sha256": "b90031d5d47979bddeb3a1f885c7d225d6585ecdc1f490015224e22c7709e50a"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s101-hpb0.01-cells.json",
+          "sha256": "6380d8e385b880c78c7720288b62aca8d0116a5ebf530f11875a0bdbf5c21fa2"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s1-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "23a7a64c692f81802c67f7f75b96c7d6a6d528b7b791ee39f5b9580421233f7f"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s101-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "b17e1f490dcbb35302ce2c161c8dd78ff07a18f4666e2af9b50a4711505f5900"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s1-hpb0.01-starter-simboss.json",
+          "sha256": "5c10ea56bdb3f2533f36c16ba75719c6cdb6c4b3df94c7ff19437315bd976b03"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s101-hpb0.01-starter-simboss.json",
+          "sha256": "dc240647edb774a25006a5c4ce4684b08ee80b3c5ddb91c0a521ecbe9cf33b10"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s1-hpb0.01-starter-simboss.json",
+          "sha256": "4d2fd4d902810f39de067f3d305b71d025545279a9788d143a92632af467415d"
+        },
+        {
+          "path": "results/gauntlet/match-allcontent40k-s1-hpb0.01-starter-simboss.json",
+          "sha256": "65e0aa3485457742735938f9c8b20bb8a5a3249b431ab41bf896ac2043f0fff6"
+        },
+        {
+          "path": "results/gauntlet/match-allcontent40k-s101-hpb0.01-starter-simboss.json",
+          "sha256": "3d6c76883583c4ac14baace89eb3018a7dc38be8a76ce0a7dd7e8b64350a9971"
+        },
+        {
+          "path": "jobs/done/0770-gauntlet.json",
+          "sha256": "f906204a639f24de596b814f4bcf6f9da9eccb288bbccf93d7bf902bccb35d96"
+        },
+        {
+          "path": "jobs/done/0771-gauntlet.json",
+          "sha256": "3c96d2d1198c8fda68958226ca1b377252f7a0c76fc7881bb8faa343d436eb3c"
+        },
+        {
+          "path": "jobs/done/0772-gauntlet.json",
+          "sha256": "4bb497a9f1d8ea5b486b107fe1cc3b86d2a665e8b74a2f2738ff580e7767c777"
+        },
+        {
+          "path": "jobs/done/0773-gauntlet.json",
+          "sha256": "621770af47e031286a32975701ef769129fb88c4d4ad35c5fa9c72a4e8d45cdf"
+        },
+        {
+          "path": "jobs/done/0782-gauntlet.json",
+          "sha256": "ee921d0250bc6222ee4b025ab48c59f4856e51389e547556b167e19cbd3084f8"
+        },
+        {
+          "path": "jobs/done/0783-gauntlet.json",
+          "sha256": "575d98af641c34f929e41643043d31ae6b688560f6ecd8295894c9b1e1a6d8db"
+        },
+        {
+          "path": "jobs/done/0774-gauntlet.json",
+          "sha256": "a4206700204360dd04eee2291e0bae97eefca0f3a95afe836ab7386d3154cfbb"
+        },
+        {
+          "path": "jobs/done/0791-gauntlet.json",
+          "sha256": "82af0945bb33a7827ade744d3ad3963523b9f556786b9d0b5bf2c973620c2a36"
+        },
+        {
+          "path": "jobs/done/0792-gauntlet.json",
+          "sha256": "f9e381eca9c59cc89cff8518c4e57c6321894db84a95c02b84f5253b1da6a571"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/headline-setting",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "9b2dd76a-ebb7-49f2-a306-4e05e9845de4",
+      "at": "2026-11-10T05:17:09+00:00 @ 491c2ed",
+      "until": "2026-11-10T05:43:18+00:00 @ e77a837"
+    },
+    {
+      "rev": 4,
+      "value": "All-content twins (allcontent40k-s1, -s101 r1 @hpb0.01: packnet40k's config without packs, same seeds), one turn deep, sequences 0-499, fixed n 500. Pack headline: twin vs the 10-29 net's pack file +2.59 (0.89) HP pooled, clears +0.052 (seed 1 +4.40, seed 101 +0.78); pack net minus twin +0.38 (0.73), clears +0.017 (seed 1 -1.14, seed 101 +1.91): the twin carries 87% of the pack net's +2.97, so training on the pack does not pay there. Official cells: twin vs the 10-29 net +2.32 (0.54), clears +0.033; pack net minus twin -1.09 (0.39), z -2.80, clears -0.029 on both seeds (dilution of official fights). The gain is the recipe (from scratch, 40k games, one round, deck_pool all: the cells' held-out half is training content for these nets), and effect inputs carry the pack cards zero-shot. Ruler (0782-0783, pns-twin-official): (yardstick/headline-setting, own picks), sequences 0-499, fixed n 500, against yardstick/one-turn-controls: seed 1 +1.11 (0.98) HP, clears +0.032; seed 101 +0.41 (1.02), +0.024; pooled +0.76 (0.87), +0.028 (protocol bar +1.5 at 2 se: fail); pack net s1 +0.59 (1.05). Demon Form picks 0.62 / 0.69 of offers against the control's 0.19. Both took Demon Form (41 sequences): +19.22 (3.24) / +15.56 (3.71) HP, clears +0.463 / +0.390; only the twin took it (102 / 105): +3.23 (2.20) / +0.41 (2.05), clears +0.118 / +0.086; no player took it (347, pooled): -1.50 (1.00) HP, second-elite deaths 21 to 31 / 29, boss 68 to 59 / 60. All deaths control / s1 / s101: hallways 18 / 30 / 31, elites 35 / 45 / 45, boss 107 / 69 / 72. Pooled by half: train -0.90 (1.08), held-out +2.42 (1.36) (fixed-deck cells: +0.89 (0.57), +3.76 (0.91)). Matched on the control's picks (0791-0792, pns-twin-matched): seed 1 +1.69 (0.68), seed 101 +0.61 (0.63), pooled +1.15 (0.57) HP, clears +0.018; the control's 41 Demon Form decks +14.07 (2.24) / +12.71 (2.79); the other 457 sequences +0.05 (0.56) pooled, with second-elite deaths 25 to 32 / 33 and boss deaths 93 to 81 / 73: the twins fight level outside Demon Form, so about 1.5 HP of the own-pick shortfall there is picks (about 1.4 se). Cells @hpb0.01@tsl1 against the 10-29 net @tsl1 (0793-0796, twin-tsl1, both books, two nets): Demon Form decks +3.30 (0.95; nets 0.35) HP, other held-out -0.04 (0.60), train +0.56 (0.43): the twins learned Demon Form past its first tick.",
+      "sources": [
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-twin (0770-0773): the all-content recipe carries the pack net's gain; the pack costs official cells",
+          "sha256": "5566867d51a35008d39e1f26d826794a4c615b296cca3727b14c24b56b72b043"
+        },
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-twin-official (0782-0783): the all-content gain on the ruler is Demon Form; outside it the twin loses 1.5 HP",
+          "sha256": "43fc2ec1aaaad228a65ea637dd514ce5e5a5b26e4bb03409ae278aec71efc21a"
+        },
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "pns-twin-matched (0791-0792): on the control's decks the twin fights level outside Demon Form",
+          "sha256": "a560508eed0546a2e7bef3dfda082586cf7248faa1e29572ea67d087cfa8b74f"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Probe pns-twin-official read: the all-content gain on the ruler is Demon Form; twin-tsl1 and pns-twin-matched queued (on the owner's behalf, 2026-11-10)",
+          "sha256": "e91fbab6d54310d7327eb316b4782e62b7a9f8e099d3aa7544e0489600e45610"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s1-hpb0.01-cells.json",
+          "sha256": "b90031d5d47979bddeb3a1f885c7d225d6585ecdc1f490015224e22c7709e50a"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s101-hpb0.01-cells.json",
+          "sha256": "6380d8e385b880c78c7720288b62aca8d0116a5ebf530f11875a0bdbf5c21fa2"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s1-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "23a7a64c692f81802c67f7f75b96c7d6a6d528b7b791ee39f5b9580421233f7f"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s101-hpb0.01-starter-simboss-pack-act1.json",
+          "sha256": "b17e1f490dcbb35302ce2c161c8dd78ff07a18f4666e2af9b50a4711505f5900"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s1-hpb0.01-starter-simboss.json",
+          "sha256": "5c10ea56bdb3f2533f36c16ba75719c6cdb6c4b3df94c7ff19437315bd976b03"
+        },
+        {
+          "path": "results/gauntlet/allcontent40k-s101-hpb0.01-starter-simboss.json",
+          "sha256": "dc240647edb774a25006a5c4ce4684b08ee80b3c5ddb91c0a521ecbe9cf33b10"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s1-hpb0.01-starter-simboss.json",
+          "sha256": "4d2fd4d902810f39de067f3d305b71d025545279a9788d143a92632af467415d"
+        },
+        {
+          "path": "results/gauntlet/match-allcontent40k-s1-hpb0.01-starter-simboss.json",
+          "sha256": "65e0aa3485457742735938f9c8b20bb8a5a3249b431ab41bf896ac2043f0fff6"
+        },
+        {
+          "path": "results/gauntlet/match-allcontent40k-s101-hpb0.01-starter-simboss.json",
+          "sha256": "3d6c76883583c4ac14baace89eb3018a7dc38be8a76ce0a7dd7e8b64350a9971"
+        },
+        {
+          "path": "jobs/done/0770-gauntlet.json",
+          "sha256": "f906204a639f24de596b814f4bcf6f9da9eccb288bbccf93d7bf902bccb35d96"
+        },
+        {
+          "path": "jobs/done/0771-gauntlet.json",
+          "sha256": "3c96d2d1198c8fda68958226ca1b377252f7a0c76fc7881bb8faa343d436eb3c"
+        },
+        {
+          "path": "jobs/done/0772-gauntlet.json",
+          "sha256": "4bb497a9f1d8ea5b486b107fe1cc3b86d2a665e8b74a2f2738ff580e7767c777"
+        },
+        {
+          "path": "jobs/done/0773-gauntlet.json",
+          "sha256": "621770af47e031286a32975701ef769129fb88c4d4ad35c5fa9c72a4e8d45cdf"
+        },
+        {
+          "path": "jobs/done/0782-gauntlet.json",
+          "sha256": "ee921d0250bc6222ee4b025ab48c59f4856e51389e547556b167e19cbd3084f8"
+        },
+        {
+          "path": "jobs/done/0783-gauntlet.json",
+          "sha256": "575d98af641c34f929e41643043d31ae6b688560f6ecd8295894c9b1e1a6d8db"
+        },
+        {
+          "path": "jobs/done/0774-gauntlet.json",
+          "sha256": "a4206700204360dd04eee2291e0bae97eefca0f3a95afe836ab7386d3154cfbb"
+        },
+        {
+          "path": "jobs/done/0791-gauntlet.json",
+          "sha256": "82af0945bb33a7827ade744d3ad3963523b9f556786b9d0b5bf2c973620c2a36"
+        },
+        {
+          "path": "jobs/done/0792-gauntlet.json",
+          "sha256": "f9e381eca9c59cc89cff8518c4e57c6321894db84a95c02b84f5253b1da6a571"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/headline-setting",
+          "rev": 2
+        },
+        {
+          "path": "docs/research/pns-probes.md",
+          "anchor": "twin-tsl1 (0793-0796): from-scratch games taught Demon Form more than its first tick",
+          "sha256": "f0e7b8cc26ce9cb6195e67d7156690bd05af7c9d4710a6bcd2cad189762bf336"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Probe twin-tsl1 read: from-scratch games taught Demon Form past its first tick; 0777-0778 released; 49 gets the next exploration charter (on the owner's behalf, 2026-11-10)",
+          "sha256": "367154afd55bb44cac1b66fb0ac1d2e87e642e736e01800de8fb46f18a933d93"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-08-allcontent40k-s1-r1-887ca04-hpb0.01-tsl1.json",
+          "sha256": "39213fd2c95512d4baa6b3756bc20e25a3ce03b57c510adddea210842b17381e"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-08-allcontent40k-s1-r1-887ca04-hpb0.01-tsl1-b500.json",
+          "sha256": "58dc41925fcf91c5bc59c378d5f5797a93fdb97cbab57fe994b45d42d0b0bfb7"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-08-allcontent40k-s101-r1-ce824da-hpb0.01-tsl1.json",
+          "sha256": "df2ad10c621bdb1f16a604a61dd3828a7aa9695be41bf5487b3fcb202f8d0474"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-08-allcontent40k-s101-r1-ce824da-hpb0.01-tsl1-b500.json",
+          "sha256": "444f5bc874dc62d8cf0c9c72f46a902ccef0fbe7c2d14ceb33650e1e4b987c99"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-tsl1.json",
+          "sha256": "88bcfa6dc0f358ec2209d8dc0129d850ede28fa706f836b83bc120c18b3b8107"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-tsl1-b500.json",
+          "sha256": "91ed63b41b153449c5d7190037d04c89cc618caa897ed38c8f5078cf4b09a2b3"
+        },
+        {
+          "path": "jobs/done/0793-gauntlet.json",
+          "sha256": "91228606b467cddb389b6a8cc2deb98abdd0154573bfcfea8429a2735e7de600"
+        },
+        {
+          "path": "jobs/done/0794-gauntlet.json",
+          "sha256": "82f128724529996bd5d26502c70d4acbad907d31da511a6afe32f2d11b6c2e25"
+        },
+        {
+          "path": "jobs/done/0795-gauntlet.json",
+          "sha256": "ae7806a9517c57f5351feb432389124eac8331eb6b2d5795c04de35bca096ce1"
+        },
+        {
+          "path": "jobs/done/0796-gauntlet.json",
+          "sha256": "bf5a093585224be8dcdd9748acbd1b058177624cd3f5ac78a2f1d270f7886a63"
+        }
+      ],
+      "owner": false,
+      "by": "9b2dd76a-ebb7-49f2-a306-4e05e9845de4",
+      "at": "2026-11-10T05:43:18+00:00 @ e77a837",
+      "until": "2026-11-13T02:30:42+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "56960257fd312f055b59e73d4e85e47246f8c07b1473d68f78a36278400c037e"
+}

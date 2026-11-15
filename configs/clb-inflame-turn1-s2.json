@@ -1,0 +1,15 @@
+{
+ "content": {
+  "pack": "data/bench/mutated_cards_pack.json",
+  "cards": [
+   "inflame-turn1"
+  ]
+ },
+ "game_seed": 61,
+ "games": 5000,
+ "n_val": 150,
+ "name": "clb-inflame-turn1-s2",
+ "player": "net",
+ "pool": 10000,
+ "seed": 2
+}

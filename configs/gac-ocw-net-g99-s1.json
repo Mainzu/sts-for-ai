@@ -1,0 +1,21 @@
+{
+ "content": {
+  "encounters": [
+   "lagavulin"
+  ],
+  "mutated": [
+   "GE-OppCard-Weak"
+  ],
+  "net_settings": "@hpb0.01@tsl1",
+  "skip": 1000,
+  "val_fights": 40,
+  "repeat": true
+ },
+ "game_seed": 61,
+ "games": 99,
+ "n_val": 300,
+ "name": "gac-ocw-net-g99-s1",
+ "player": "net",
+ "pool": 10000,
+ "seed": 1
+}

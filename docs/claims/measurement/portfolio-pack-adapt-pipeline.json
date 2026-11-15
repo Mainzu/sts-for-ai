@@ -1,0 +1,43 @@
+{
+  "key": "measurement/portfolio-pack-adapt-pipeline",
+  "rev": 2,
+  "value": "pred likely/even; go: chain queue -> table with no session; Nob cut 0.75-0.87; shipped net at its guard bar (TurnEnd-Frail x Lagavulin +1.99 vs 2.0), leak in every net, worse with parents in the burst; 3.8 thread-h. Reopen: a retention fix is chosen, or a second pack can't run the chain unchanged.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane pack-adapt-pipeline closed (2026-11-08)",
+      "sha256": "02a3374ed2a4ec9b2d27e4da307c714aa06aaa8149cb5a1fe1cd014fe5875910"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:06+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted likely as code, even that an arm ships under the guard with Nob's cost halved; ~6 thread-h (cap 9); actual go: chain queue to table with no session, Nob cut 0.75-0.87, one net per arm passes the guard but the shipped net at its bar (TurnEnd-Frail x Lagavulin +1.99 vs 2.0; leak in every net, worse with parents in the burst), 3.8 thread-h; reopen if: a retention fix (burst retention term, a teacher that keeps parent Lagavulin level, or a stricter guard) is chosen, or a second pack cannot go through the chain unchanged",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane pack-adapt-pipeline closed (2026-11-08)",
+          "sha256": "02a3374ed2a4ec9b2d27e4da307c714aa06aaa8149cb5a1fe1cd014fe5875910"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane pack-adapt-pipeline opened (on the owner's behalf, 2026-11-08)",
+          "sha256": "b90666144408503b9aca5081793137c4fa2da79e7c14f1933b3fb53bbb0b788f"
+        }
+      ],
+      "owner": false,
+      "by": "eb5c7398-12ed-4238-ac3a-6385040b2df9",
+      "at": "2026-11-08T07:42:21+00:00 @ ee2e22c",
+      "until": "2026-11-13T02:31:06+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "f6914ef5ae67eb0395c8e5fd2a317820bf4f8df86a08a96627d9dbe6c62ab1f0"
+}

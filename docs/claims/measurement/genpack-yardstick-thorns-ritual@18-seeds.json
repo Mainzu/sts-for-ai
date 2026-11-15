@@ -1,0 +1,22 @@
+{
+  "key": "measurement/genpack-yardstick-thorns-ritual@18-seeds",
+  "rev": 1,
+  "value": "Yardstick rows over the 18-mechanic genpack seeds 1/101/201 (@tsl1 one turn): thorns2 +2.45/+6.28/+4.62 (wide s1 +4.20 inside); ritual2 -0.74/-1.02/-0.33 vs 10-29 net +1.68 (0.35), repaired as pns1 (-0.22) and wide s1 (-1.07); str2, hp1.25 level for all.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/genpack-yardstick.md",
+      "anchor": "The 18-mechanic nets on the yardstick (jobs 0939-0941, navigator, 2026-11-12)",
+      "sha256": "3a563f4cfe04081d5bf33a0638c0a2f74d859f756b89b1824215cb77e918bb52"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:39+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "012ec5c04cef73d150c31c02d77dc49c2c7649566c44e494015a318e2ad6abf3"
+}

@@ -1,0 +1,1440 @@
+{
+  "key": "measurement/act1-relics@files",
+  "rev": 25,
+  "value": "Act 1 relics from content files: 82 of 141 (80 in content/packs/act1-relics.json, Toolbox in content/packs/act1-colorless.json, Burning Blood in content/relics.json), each tested vs its decompiled class (engine/tests/act1_relics.rs, fight_vocabulary.rs, act1_singles.rs, snecko.rs). <=16 relics per fight (RELIC_CAP); the gauntlet holds none until the post-Act-1 headline change.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "content/packs/act1-relics.json",
+      "sha256": "54495ac135a663bfbbfe99a47dfec3fb46f60a2a1b38cab18082ffcb2bcf7d04"
+    },
+    {
+      "path": "content/packs/act1-colorless.json",
+      "sha256": "f170df0e9cfead109bb0848c9b1fa80d4892640aefcd5f40b733ed88b9d76bb0"
+    },
+    {
+      "path": "content/relics.json",
+      "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+    },
+    {
+      "path": "engine/tests/act1_relics.rs",
+      "sha256": "986317e703dd8a1b072bca010f67baa614cf307dc4dee3ef5963964dcc3ada78"
+    },
+    {
+      "path": "engine/tests/fight_vocabulary.rs",
+      "sha256": "bf13cc5ac392e3a96af5e7f65465d521fe6b6dd1f46e2b61a60db997bab0d3d6"
+    },
+    {
+      "path": "engine/tests/act1_singles.rs",
+      "sha256": "e519d0ab4eb2b7956eb290d700340783b12d814625901fd8b80c1fbbe28e9539"
+    },
+    {
+      "path": "engine/tests/snecko.rs",
+      "sha256": "02a9914af0a447601a0d649f34834706c07b52e1701022cc6c6382928c3af806"
+    },
+    {
+      "path": "engine/src/relics.rs",
+      "sha256": "1ef8fc80827813a7942f02b40f795db318cf8329a755c6d41b8f0b67a11b75c1"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "blocked relics step 7: Hand Drill, Unceasing Top, Strange Spoon (act1_relics.rs hand_drill, unceasing_top, strange_spoon, strange_spoon_codec)",
+  "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+  "at": "2026-11-14T00:43:49+00:00 @ d48b3f26",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Act 1 relics loaded from content files: 23 of 141. The 21 writable relics and Red Skull in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs test; Burning Blood in the official content/relics.json (win_heal 6). Fights take relics by name (sts.Combat relics=, Combat.versus relics= group=, sts.run spec key relics); the gauntlet holds none until the headline change after Act 1. Deviations: Red Skull is a +3-per-hit static, not real Strength; Ancient Tea Set acts in any fight given it; at most 12 starting powers (POWER_CAP), more is an error. Newly writable on Effect::Heal: Blood Vial, Bird-Faced Urn, Pantograph.",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "R1 as built (2026-11-10, owner-led session)",
+          "sha256": "37335634f4c050b7998ba4d66eb218ecdaf56e6691358d91ff40b56e789caaa3"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "5276910968913d579ff375584a7bfe93fbbe03a3150144bf10bad6fe06cdda95"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "e335ae2f9c3be4ac75106d93d6e693b16ca773378b73d21038414503260993b9"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "574217419662ebb9a1469baa6e5bd1de2d8a92f5925ef5fc094d0deaa9ae24c7"
+        }
+      ],
+      "owner": false,
+      "by": "ce41a42f-9dd2-4027-be63-31c0673fd7b9",
+      "at": "2026-11-10T09:25:06+00:00 @ 5aa21ea",
+      "until": "2026-11-11T06:33:12+00:00 @ 3ea7bfa"
+    },
+    {
+      "rev": 2,
+      "value": "Act 1 relics loaded from content files: 23 of 141. The 21 writable relics and Red Skull in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs test; Burning Blood in the official content/relics.json (win_heal 6). Since the relic entity (docs/specs/relic-entity.md, 2026-11-11, lane act1-content) each relic is held on the player's relic list with its own hooks and counter, acting at its game class's trigger (CombatStart, OwnerTurnStart, OwnerLostHp, CardExhausted); no helper powers except StrikeDummy (relics have no static modifiers). Red Skull is real Strength with the game's isActive flag as its counter; Ancient Tea Set starts at the game's -2 (after a rest) and acts in any fight given it until the run layer passes -1. At most 16 relics per fight (RELIC_CAP). Fights take relics by name or (name, counter) (sts.Combat relics=, Combat.versus relics= group=, sts.run spec key relics; Combat.relics reads them back); the gauntlet holds none until the headline change after Act 1. Named limits: Philosopher's Stone gives no Strength to spawned monsters; battle-start order is list order. Newly writable on Effect::Heal: Blood Vial, Bird-Faced Urn, Pantograph.",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Relic entity (step 4, 2026-11-11, owner-led session)",
+          "sha256": "06243fcb5960245fcd1be85ab34be1842fd3b29f09b5a17fc026828ae3c8944f"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Relics",
+          "sha256": "32068673e9478b769e73bdc597bf7427d10f715ba9c56d25decd482cd311cd96"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "0a3b302b58a630d2ece62b36c6498998d439565b9e6a46fb88e581771fca3d51"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "66fd0a90c4c11f4a7ba85477fc5b805d83b7bfa50807dc92aa14a70da91b115a"
+        }
+      ],
+      "owner": false,
+      "by": "ccfb7770-05c5-462c-acd2-0a6f42ac16d3",
+      "at": "2026-11-11T06:33:12+00:00 @ 3ea7bfa",
+      "until": "2026-11-12T05:17:14+00:00 @ f07b50e"
+    },
+    {
+      "rev": 3,
+      "value": "Act 1 relics loaded from content files: 40 of 141. 39 in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs test against its decompiled class; Burning Blood in the official content/relics.json (win_heal 6). Each relic is held on the player's relic list with its own hooks and counter, acting at its game class's trigger (CombatStart, OwnerTurnStart, OwnerTurnEnd, OwnerLostHp, OwnerPlaysCard, CardPlayed by Owner after the card resolves, CardExhausted). Counters carried between fights (Happy Flower, Nunchaku, Ink Bottle, Incense Burner) are the caller's starting counter until the run layer (R2). Pack powers named by relics: StrikeDummy (static), PlatedArmor, NextTurnBlock, Vigor. Black Blood is win_heal 6 on top of the character's 6. Red Skull is real Strength with the game's isActive flag as its counter; Ancient Tea Set starts at -2. At most 16 relics per fight (RELIC_CAP). The gauntlet holds none until the headline change after Act 1. Named limits: Philosopher's Stone gives no Strength to spawned monsters; battle-start order is list order; Pen Nib needs a hook with two conditions.",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "6736bd71db955f2b9415a450e80504275f888895084a59a1859f8ae2eb16dc41"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Counter relics (2026-11-12, owner session)",
+          "sha256": "9ad6b5d7cdf953c25f490b11fd320c1ad933f698b0f4dcfd1f4f6ba2dfc042b4"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Relic entity (step 4, 2026-11-11, owner-led session)",
+          "sha256": "06243fcb5960245fcd1be85ab34be1842fd3b29f09b5a17fc026828ae3c8944f"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Relics",
+          "sha256": "32068673e9478b769e73bdc597bf7427d10f715ba9c56d25decd482cd311cd96"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "42af4da2ad06b33c02b586f159ffffab09b19df207772f31deb82fd63f607454"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "9ea925e4c372ffc428a7540546c2ccd8b7aaa57843d26093dd25958c0fd98f76"
+        }
+      ],
+      "owner": false,
+      "by": "0cb82499-5e88-4e6a-a10b-66a3fb28520c",
+      "at": "2026-11-12T05:17:14+00:00 @ f07b50e",
+      "until": "2026-11-12T10:47:18+00:00 @ 00b20ea"
+    },
+    {
+      "rev": 4,
+      "value": "Act 1 relics loaded from content files: 47 of 141. 46 in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs or fight_vocabulary.rs test against its decompiled class; Burning Blood in the official content/relics.json (win_heal 6). Each relic is held on the player's relic list with its own hooks and counter, acting at its game class's trigger (CombatStartPreDraw, CombatStart, OwnerTurnStart, OwnerTurnStartPostDraw, OwnerTurnEnd, OwnerLostHp, OwnerPlaysCard, CardPlayed by Owner after the card resolves, CardExhausted, OpponentDied, CombatWon). Hooks may take two conditions; a relic hook may open a pick at CombatStart or after the turn's draw (Gambling Chip, Stage::RelicPick). Counters carried between fights (Happy Flower, Nunchaku, Ink Bottle, Incense Burner, Pen Nib) are the caller's starting counter until the run layer (R2). Pack powers named by relics: StrikeDummy (static), PlatedArmor, NextTurnBlock, Vigor, PenNib, GingerWard, TurnipWard. Black Blood is win_heal 6 on top of the character's 6. At most 16 relics per fight (RELIC_CAP). The gauntlet holds none until the headline change after Act 1. Named limits: Philosopher's Stone gives no Strength to spawned monsters; battle-start order is list order; a second relic pick in one pass is skipped.",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "60f2f86cb57fb025e80fd6e248a5dd40da6c2fbecc548e04c12d923d2959ca74"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Fight vocabulary (2026-11-12, owner session)",
+          "sha256": "eaa597e9a3342c4e23830790755e293c3162a9d463160f3adb984c082061d49f"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Counter relics (2026-11-12, owner session)",
+          "sha256": "9ad6b5d7cdf953c25f490b11fd320c1ad933f698b0f4dcfd1f4f6ba2dfc042b4"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Relics",
+          "sha256": "acf6934f45a2ef44a2b2396c91ddd6037af22c865b239a2c115f3aecd555dd6a"
+        },
+        {
+          "path": "docs/specs/fight-vocabulary.md",
+          "sha256": "74067da5a6f05b39a7a73b7171674ac7fde3a1679e95c709af10dd7946865c3b"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "ff095e3b9efbe9fb4e7e2e9eb37333e4a557adf6114c073039ece478e4240903"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "2974ed22993160233dbd540c65b8375215a11295dca76b7eaa18e5acb4a083d7"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "8ab3553b19c60ec46b433600d35f3aa2d528040cd5fe73f84ec726444fa17562"
+        }
+      ],
+      "owner": false,
+      "by": "0cb82499-5e88-4e6a-a10b-66a3fb28520c",
+      "at": "2026-11-12T10:47:18+00:00 @ 00b20ea",
+      "until": "2026-11-12T10:47:55+00:00 @ 00b20ea"
+    },
+    {
+      "rev": 5,
+      "value": "Act 1 relics loaded from content files: 47 of 141. 46 in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs or fight_vocabulary.rs test against its decompiled class; Burning Blood in the official content/relics.json (win_heal 6). Each relic is held on the player's relic list with its own hooks and counter, acting at its game class's trigger (CombatStartPreDraw, CombatStart, OwnerTurnStart, OwnerTurnStartPostDraw, OwnerTurnEnd, OwnerLostHp, OwnerPlaysCard, CardPlayed by Owner after the card resolves, CardExhausted, OpponentDied, CombatWon). Hooks may take two conditions; a relic hook may open a pick at CombatStart or after the turn's draw (Gambling Chip, Stage::RelicPick). Counters carried between fights (Happy Flower, Nunchaku, Ink Bottle, Incense Burner, Pen Nib) are the caller's starting counter until the run layer (R2). Pack powers named by relics: StrikeDummy (static), PlatedArmor, NextTurnBlock, Vigor, PenNib, GingerWard, TurnipWard. Black Blood is win_heal 6 on top of the character's 6. At most 16 relics per fight (RELIC_CAP). The gauntlet holds none until the headline change after Act 1. Named limits: Philosopher's Stone gives no Strength to spawned monsters; battle-start order is list order; a second relic pick in one pass is skipped. Potions: 23 of 33 load from content/packs/act1-potions.json, each against its decompiled class (engine/tests/act1_potions.rs, fight_vocabulary.rs); left out: Attack, Skill, Power, Colorless Potion (P3), Distilled Chaos (C8), Liquid Memories and Snecko Oil (C5), Fairy in a Bottle (R23), Smoke Bomb (P5), Entropic Brew (P6); the run layer holds no potions yet (P2).",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "60f2f86cb57fb025e80fd6e248a5dd40da6c2fbecc548e04c12d923d2959ca74"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Fight vocabulary (2026-11-12, owner session)",
+          "sha256": "eaa597e9a3342c4e23830790755e293c3162a9d463160f3adb984c082061d49f"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Counter relics (2026-11-12, owner session)",
+          "sha256": "9ad6b5d7cdf953c25f490b11fd320c1ad933f698b0f4dcfd1f4f6ba2dfc042b4"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Relics",
+          "sha256": "acf6934f45a2ef44a2b2396c91ddd6037af22c865b239a2c115f3aecd555dd6a"
+        },
+        {
+          "path": "docs/specs/fight-vocabulary.md",
+          "sha256": "74067da5a6f05b39a7a73b7171674ac7fde3a1679e95c709af10dd7946865c3b"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "ff095e3b9efbe9fb4e7e2e9eb37333e4a557adf6114c073039ece478e4240903"
+        },
+        {
+          "path": "content/packs/act1-potions.json",
+          "sha256": "88a00f25674ad1aa9d03412cc7758f8b53375dd9b5db445aca4526551fede872"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "2974ed22993160233dbd540c65b8375215a11295dca76b7eaa18e5acb4a083d7"
+        },
+        {
+          "path": "engine/tests/act1_potions.rs",
+          "sha256": "2cd62800ebd060de3133f999c762f1586f24fe57491377a3e12af36592709768"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "8ab3553b19c60ec46b433600d35f3aa2d528040cd5fe73f84ec726444fa17562"
+        }
+      ],
+      "owner": false,
+      "by": "0cb82499-5e88-4e6a-a10b-66a3fb28520c",
+      "at": "2026-11-12T10:47:55+00:00 @ 00b20ea",
+      "until": "2026-11-12T13:15:10+00:00 @ f8ab93a"
+    },
+    {
+      "rev": 6,
+      "value": "Act 1 relics loaded from content files: 48 of 141. 47 in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs or fight_vocabulary.rs test against its decompiled class; Burning Blood in the official content/relics.json (win_heal 6). Each relic is held on the player's relic list with its own hooks and counter, acting at its game class's trigger (CombatStartPreDraw, CombatStart, OwnerTurnStart, OwnerTurnStartPostDraw, OwnerTurnEnd, OwnerLostHp, OwnerPlaysCard, CardPlayed by Owner after the card resolves, CardExhausted, OpponentDied, CombatWon, OwnerDied: the player's save below 1 HP, Lizard Tail). Hooks may take two conditions; a relic hook may open a pick at CombatStart or after the turn's draw (Gambling Chip, Stage::RelicPick). Counters carried between fights (Happy Flower, Nunchaku, Ink Bottle, Incense Burner, Pen Nib, Lizard Tail's -2 used) are the caller's starting counter until the run layer (R2). Pack powers named by relics: StrikeDummy (static), PlatedArmor, NextTurnBlock, Vigor, PenNib, GingerWard, TurnipWard. Black Blood is win_heal 6 on top of the character's 6. At most 16 relics per fight (RELIC_CAP). The gauntlet holds none until the headline change after Act 1. Named limits: Philosopher's Stone gives no Strength to spawned monsters; battle-start order is list order; a second relic pick in one pass is skipped; a saved player's bloodied state moves once (before the loss -> after the save). Potions: 24 of 33 load from content/packs/act1-potions.json, each against its decompiled class (engine/tests/act1_potions.rs, fight_vocabulary.rs); Fairy in a Bottle is a potion with \"trigger\": \"OwnerDied\", never drunk, used before Lizard Tail; left out: Attack, Skill, Power, Colorless Potion (P3), Distilled Chaos (C8), Liquid Memories and Snecko Oil (C5), Smoke Bomb (P5), Entropic Brew (P6); the run layer holds no potions yet (P2).",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "84c91369205df5d455bb9d32522815cbb6c803e0f9dc982a41f95a3b0960c77c"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Saved from death (2026-11-12, act1-r23 session)",
+          "sha256": "c3c36f539c49e4f9c9be5a815ae7c0a3ad136209d325d7a8650052e3609acddb"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Fight vocabulary (2026-11-12, owner session)",
+          "sha256": "eaa597e9a3342c4e23830790755e293c3162a9d463160f3adb984c082061d49f"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Counter relics (2026-11-12, owner session)",
+          "sha256": "9ad6b5d7cdf953c25f490b11fd320c1ad933f698b0f4dcfd1f4f6ba2dfc042b4"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Relics",
+          "sha256": "85eb2423d00f77a52983dfbbaa48cdc3b27df7b6c45a0d9a77a54e2adfa9d120"
+        },
+        {
+          "path": "docs/specs/would-die.md",
+          "sha256": "a12207e722c7d8f53d17f5e1f6743291fe838b216644266bf38c74413cfd8773"
+        },
+        {
+          "path": "docs/specs/fight-vocabulary.md",
+          "sha256": "74067da5a6f05b39a7a73b7171674ac7fde3a1679e95c709af10dd7946865c3b"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "1024ec3e7be8e741fb10b4e2e8a8be25645720f85997edc2112cb933ad0802f7"
+        },
+        {
+          "path": "content/packs/act1-potions.json",
+          "sha256": "486f3ab7205239495f451ef50d4a3ded8dff3a76f07ddab0e4b68b5112174af7"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "7a8f66a9fc2070fb3d1b0fa264d2f6928b30a8d02c898521a0a701de54aed483"
+        },
+        {
+          "path": "engine/tests/act1_potions.rs",
+          "sha256": "bd23eb30161195d766509f0d55b38487a7bdfffd199ca58defa6cabe16032a71"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "8ab3553b19c60ec46b433600d35f3aa2d528040cd5fe73f84ec726444fa17562"
+        }
+      ],
+      "owner": false,
+      "by": "84f4d5af-6b83-43b0-bb27-ea7968a6189d",
+      "at": "2026-11-12T13:15:10+00:00 @ f8ab93a",
+      "until": "2026-11-12T15:53:39+00:00 @ 9fcc167"
+    },
+    {
+      "rev": 7,
+      "value": "Act 1 relics loaded from content files: 52 of 141. 51 in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs or fight_vocabulary.rs test against its decompiled class; Burning Blood in the official content/relics.json (win_heal 6). Each relic is held on the player's relic list with its own hooks and counter, acting at its game class's trigger (CombatStartPreDraw, CombatStart, OwnerTurnStart, OwnerTurnStartPostDraw, OwnerTurnEnd, OwnerLostHp, OwnerPlaysCard, CardPlayed by Owner after the card resolves, CardExhausted, OpponentDied, CombatWon, OwnerDied: the player's save below 1 HP, Lizard Tail). After block (docs/specs/after-block.md): four replacement passes in the game's damage order, each while the amount is above 0, before the save: DealtAfterBlock (The Boot, AtLeast 5), TakenAfterBlock (Buffer, every hit and HP loss), AttackedAfterBlock (Torii, upTo 5, Cap 1), HpLossLast (Tungsten Rod, Add -1); Fossilized Helix gives 1 Buffer. Hooks may take two conditions; a relic hook may open a pick at CombatStart or after the turn's draw (Gambling Chip, Stage::RelicPick). Counters carried between fights (Happy Flower, Nunchaku, Ink Bottle, Incense Burner, Pen Nib, Lizard Tail's -2 used) are the caller's starting counter until the run layer (R2). Pack powers named by relics: StrikeDummy (static), PlatedArmor, NextTurnBlock, Vigor, PenNib, GingerWard, TurnipWard, Buffer, TheBoot, Torii, TungstenRod. Black Blood is win_heal 6 on top of the character's 6. At most 16 relics per fight (RELIC_CAP). The gauntlet holds none until the headline change after Act 1. Named limits: Philosopher's Stone gives no Strength to spawned monsters; battle-start order is list order; a second relic pick in one pass is skipped; a saved player's bloodied state moves once (before the loss -> after the save). Potions: 24 of 33 load from content/packs/act1-potions.json, each against its decompiled class (engine/tests/act1_potions.rs, fight_vocabulary.rs); Fairy in a Bottle is a potion with \"trigger\": \"OwnerDied\", never drunk, used before Lizard Tail; left out: Attack, Skill, Power, Colorless Potion (P3), Distilled Chaos (C8), Liquid Memories and Snecko Oil (C5), Smoke Bomb (P5), Entropic Brew (P6); the run layer holds no potions yet (P2).",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "After block (2026-11-12, session act1-r12)",
+          "sha256": "9ca42d67c8a0f68ae46db90e5011c982f584af30c7505e4f3d6f176a0cbdebe3"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "f274f01c99b049e918c9de7f53d87ab66ffb9149b01c32aad857bc44343dd793"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Saved from death (2026-11-12, act1-r23 session)",
+          "sha256": "4d60909413162c0a42689b1a648f7607ddd47014a0a73c3ca489e3f07a09b462"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Fight vocabulary (2026-11-12, owner session)",
+          "sha256": "eaa597e9a3342c4e23830790755e293c3162a9d463160f3adb984c082061d49f"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Counter relics (2026-11-12, owner session)",
+          "sha256": "9ad6b5d7cdf953c25f490b11fd320c1ad933f698b0f4dcfd1f4f6ba2dfc042b4"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Relics",
+          "sha256": "5aad4fa58666e5294fdf4db194649fcc9209be0286d2a8e84b31b81952cf999f"
+        },
+        {
+          "path": "docs/specs/after-block.md",
+          "sha256": "142c61961b3c4ab0bb261e471a2111528b8dad356a1aae201878f6848b16c004"
+        },
+        {
+          "path": "docs/specs/would-die.md",
+          "sha256": "a12207e722c7d8f53d17f5e1f6743291fe838b216644266bf38c74413cfd8773"
+        },
+        {
+          "path": "docs/specs/fight-vocabulary.md",
+          "sha256": "74067da5a6f05b39a7a73b7171674ac7fde3a1679e95c709af10dd7946865c3b"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "2840f92633c1cea1e6d04c705afb7459178db3d14f499ad762d9412ad898aa31"
+        },
+        {
+          "path": "content/packs/act1-potions.json",
+          "sha256": "486f3ab7205239495f451ef50d4a3ded8dff3a76f07ddab0e4b68b5112174af7"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "f6cdc5d39fa382dc6573daf989e589b9fe096324aaa2714e5ffd424d9df09709"
+        },
+        {
+          "path": "engine/tests/after_block.rs",
+          "sha256": "520bf59b4ec456f0255d0bbaf806a60e8f32e90669559bf8ea9b37c1d25d324c"
+        },
+        {
+          "path": "engine/tests/act1_potions.rs",
+          "sha256": "bd23eb30161195d766509f0d55b38487a7bdfffd199ca58defa6cabe16032a71"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "8ab3553b19c60ec46b433600d35f3aa2d528040cd5fe73f84ec726444fa17562"
+        }
+      ],
+      "owner": false,
+      "by": "55ece378-007b-495e-8753-561fe6d36b82",
+      "at": "2026-11-12T15:53:39+00:00 @ 9fcc167",
+      "until": "2026-11-12T16:49:50+00:00 @ 8e858b4"
+    },
+    {
+      "rev": 8,
+      "value": "Act 1 relics loaded from content files: 52 of 141. 51 in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs or fight_vocabulary.rs test against its decompiled class; Burning Blood in the official content/relics.json (win_heal 6). Each relic is held on the player's relic list with its own hooks and counter, acting at its game class's trigger (CombatStartPreDraw, CombatStart, OwnerTurnStart, OwnerTurnStartPostDraw, OwnerTurnEnd, OwnerLostHp, OwnerPlaysCard, CardPlayed by Owner after the card resolves, CardExhausted, OpponentDied, CombatWon, OwnerDied: the player's save below 1 HP, Lizard Tail). After block (docs/specs/after-block.md): four replacement passes in the game's damage order, each while the amount is above 0, before the save: DealtAfterBlock (The Boot, AtLeast 5), TakenAfterBlock (Buffer, every hit and HP loss), AttackedAfterBlock (Torii, upTo 5, Cap 1), HpLossLast (Tungsten Rod, Add -1); Fossilized Helix gives 1 Buffer. Hooks may take two conditions; a relic hook may open a pick at CombatStart or after the turn's draw (Gambling Chip, Stage::RelicPick). Counters carried between fights (Happy Flower, Nunchaku, Ink Bottle, Incense Burner, Pen Nib, Lizard Tail's -2 used) are the caller's starting counter until the run layer (R2). Pack powers named by relics: StrikeDummy (static), PlatedArmor, NextTurnBlock, Vigor, PenNib, GingerWard, TurnipWard, Buffer, TheBoot, Torii, TungstenRod. Black Blood is win_heal 6 on top of the character's 6. At most 16 relics per fight (RELIC_CAP). The gauntlet holds none until the headline change after Act 1. Named limits: Philosopher's Stone gives no Strength to spawned monsters; battle-start order is list order; a second relic pick in one pass is skipped; a saved player's bloodied state moves once (before the loss -> after the save). Potions: 25 of 33 load from content/packs/act1-potions.json, each against its decompiled class (engine/tests/act1_potions.rs, fight_vocabulary.rs, act1_singles.rs); Liquid Memories returns a card that costs 0 this turn (CombatState.free_in_hand, docs/specs/act1-singles.md; mark_free_in_hand for discovery); Fairy in a Bottle is a potion with \"trigger\": \"OwnerDied\", never drunk, used before Lizard Tail; left out: Attack, Skill, Power, Colorless Potion (P3), Distilled Chaos (C8), Snecko Oil (C5 with chance), Smoke Bomb (P5), Entropic Brew (P6); the run layer holds no potions yet (P2).",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "4ac9b15d1730086dd54bdf22d54ed786766683a84d02ef208aca72d05750574c"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Costs 0 this turn",
+          "sha256": "fc629d25f574d934804962178e14c06312f32436c285dd36bd275f730318beff"
+        },
+        {
+          "path": "docs/specs/act1-singles.md",
+          "sha256": "89d4cf7afb1e0bf40068c37f7bcc7b67f49f53dd9152bffc4276e41bf914c2ba"
+        },
+        {
+          "path": "content/packs/act1-potions.json",
+          "sha256": "7cc8390ac466e1595e12454317e7d00f1443e45f0982c824bff49aea9b0cdb9a"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "3164e14eb6dca0fe4093dd370e00a7b3e7da7b495c35ed7babaab5a3f91a2b33"
+        },
+        {
+          "path": "docs/specs/after-block.md",
+          "sha256": "c135daf2d8a561086c7e26209f5ca5adaffa96f63b469cbf02e776a194c4025c"
+        },
+        {
+          "path": "docs/specs/would-die.md",
+          "sha256": "a12207e722c7d8f53d17f5e1f6743291fe838b216644266bf38c74413cfd8773"
+        },
+        {
+          "path": "docs/specs/fight-vocabulary.md",
+          "sha256": "74067da5a6f05b39a7a73b7171674ac7fde3a1679e95c709af10dd7946865c3b"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "2840f92633c1cea1e6d04c705afb7459178db3d14f499ad762d9412ad898aa31"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "f6cdc5d39fa382dc6573daf989e589b9fe096324aaa2714e5ffd424d9df09709"
+        },
+        {
+          "path": "engine/tests/after_block.rs",
+          "sha256": "520bf59b4ec456f0255d0bbaf806a60e8f32e90669559bf8ea9b37c1d25d324c"
+        },
+        {
+          "path": "engine/tests/act1_potions.rs",
+          "sha256": "b7c05ccbf8d87bb9000dd40cb91981df2c68bc08d4d60fe628578c6253f8ba6e"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "8ab3553b19c60ec46b433600d35f3aa2d528040cd5fe73f84ec726444fa17562"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "After block (2026-11-12, session act1-r12)",
+          "sha256": "9ca42d67c8a0f68ae46db90e5011c982f584af30c7505e4f3d6f176a0cbdebe3"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Saved from death (2026-11-12, act1-r23 session)",
+          "sha256": "4d60909413162c0a42689b1a648f7607ddd47014a0a73c3ca489e3f07a09b462"
+        }
+      ],
+      "owner": false,
+      "by": "09f8779d-86df-48e0-98e9-306eeaa1c276",
+      "at": "2026-11-12T16:49:50+00:00 @ 8e858b4",
+      "until": "2026-11-12T19:01:08+00:00 @ 3f2f357"
+    },
+    {
+      "rev": 9,
+      "value": "Act 1 relics loaded from content files: 52 of 141. 51 in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs or fight_vocabulary.rs test against its decompiled class; Burning Blood in the official content/relics.json (win_heal 6). Each relic is held on the player's relic list with its own hooks and counter, acting at its game class's trigger (CombatStartPreDraw, CombatStart, OwnerTurnStart, OwnerTurnStartPostDraw, OwnerTurnEnd, OwnerLostHp, OwnerPlaysCard, CardPlayed by Owner after the card resolves, CardExhausted, OpponentDied, CombatWon, OwnerDied: the player's save below 1 HP, Lizard Tail). After block (docs/specs/after-block.md): four replacement passes in the game's damage order, each while the amount is above 0, before the save: DealtAfterBlock (The Boot, AtLeast 5), TakenAfterBlock (Buffer, every hit and HP loss), AttackedAfterBlock (Torii, upTo 5, Cap 1), HpLossLast (Tungsten Rod, Add -1); Fossilized Helix gives 1 Buffer. Hooks may take two conditions; a relic hook may open a pick at CombatStart or after the turn's draw (Gambling Chip, Stage::RelicPick). Counters carried between fights (Happy Flower, Nunchaku, Ink Bottle, Incense Burner, Pen Nib, Lizard Tail's -2 used) are the caller's starting counter until the run layer (R2). Pack powers named by relics: StrikeDummy (static), PlatedArmor, NextTurnBlock, Vigor, PenNib, GingerWard, TurnipWard, Buffer, TheBoot, Torii, TungstenRod. Black Blood is win_heal 6 on top of the character's 6. At most 16 relics per fight (RELIC_CAP). The gauntlet holds none until the headline change after Act 1. Named limits: Philosopher's Stone gives no Strength to spawned monsters; battle-start order is list order; a second relic pick in one pass is skipped; a saved player's bloodied state moves once (before the loss -> after the save). Potions: 26 of 33 load from content/packs/act1-potions.json, each against its decompiled class (engine/tests/act1_potions.rs, fight_vocabulary.rs, act1_singles.rs); Liquid Memories returns a card that costs 0 this turn (CombatState.free_in_hand, docs/specs/act1-singles.md; mark_free_in_hand for discovery); Fairy in a Bottle is a potion with \"trigger\": \"OwnerDied\", never drunk, used before Lizard Tail; Smoke Bomb escapes a hallway or elite fight: it ends as won with CombatState.escaped (CombatWon hooks and the combat-end heal run; docs/specs/act1-singles.md section 4), not a legal action in a boss fight (a slot holds a boss kind, or the boss_fight mark set by give_potions survives Slime Boss's split); left out: Attack, Skill, Power, Colorless Potion (P3), Distilled Chaos (C8), Snecko Oil (C5 with chance), Entropic Brew (P6); the run layer holds no potions yet (P2).",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "57ccb467ef5cae560263437adfc86ea127838b72d55bc5135340d05e3bdc7362"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Costs 0 this turn",
+          "sha256": "fc629d25f574d934804962178e14c06312f32436c285dd36bd275f730318beff"
+        },
+        {
+          "path": "docs/specs/act1-singles.md",
+          "sha256": "4185d7566ca7814d141fc8f2d13dcf1e64a4537d7a796e434997f530c66a47a0"
+        },
+        {
+          "path": "content/packs/act1-potions.json",
+          "sha256": "bb8ee16db80937428657ef139e70a53401cfc37a8de14bd71889fd177d669957"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "3164e14eb6dca0fe4093dd370e00a7b3e7da7b495c35ed7babaab5a3f91a2b33"
+        },
+        {
+          "path": "docs/specs/after-block.md",
+          "sha256": "142c61961b3c4ab0bb261e471a2111528b8dad356a1aae201878f6848b16c004"
+        },
+        {
+          "path": "docs/specs/would-die.md",
+          "sha256": "a12207e722c7d8f53d17f5e1f6743291fe838b216644266bf38c74413cfd8773"
+        },
+        {
+          "path": "docs/specs/fight-vocabulary.md",
+          "sha256": "74067da5a6f05b39a7a73b7171674ac7fde3a1679e95c709af10dd7946865c3b"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "2840f92633c1cea1e6d04c705afb7459178db3d14f499ad762d9412ad898aa31"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "f6cdc5d39fa382dc6573daf989e589b9fe096324aaa2714e5ffd424d9df09709"
+        },
+        {
+          "path": "engine/tests/after_block.rs",
+          "sha256": "520bf59b4ec456f0255d0bbaf806a60e8f32e90669559bf8ea9b37c1d25d324c"
+        },
+        {
+          "path": "engine/tests/act1_potions.rs",
+          "sha256": "97ca229a25875915dcc2d6ed53a03dc91f0e0167d13c90332380c723a57cdb5c"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "8ab3553b19c60ec46b433600d35f3aa2d528040cd5fe73f84ec726444fa17562"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "After block (2026-11-12, session act1-r12)",
+          "sha256": "9ca42d67c8a0f68ae46db90e5011c982f584af30c7505e4f3d6f176a0cbdebe3"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Saved from death (2026-11-12, act1-r23 session)",
+          "sha256": "4d60909413162c0a42689b1a648f7607ddd47014a0a73c3ca489e3f07a09b462"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "The player escapes (2026-11-13, session act1-p5)",
+          "sha256": "559b68f22b24f7b18b1a14fa48ebac07709761a9716b2db905efcf4cbc063ba5"
+        }
+      ],
+      "owner": false,
+      "by": "b5526c38-1e34-4cee-a44a-3010895eb568",
+      "at": "2026-11-12T19:01:08+00:00 @ 3f2f357",
+      "until": "2026-11-12T19:05:50+00:00 @ 2a6af08e"
+    },
+    {
+      "rev": 10,
+      "value": "Act 1 relics loaded from content files: 54 of 141. 53 in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs, fight_vocabulary.rs or act1_singles.rs test against its decompiled class; Burning Blood in the official content/relics.json (win_heal 6). Each relic is held on the player's relic list with its own hooks and counter, acting at its game class's trigger (CombatStartPreDraw, CombatStart, OwnerTurnStart, OwnerTurnStartPostDraw, OwnerTurnEnd, OwnerLostHp, OwnerPlaysCard, CardPlayed by Owner after the card resolves, CardExhausted, OpponentDied, CombatWon, OwnerDied: the player's save below 1 HP, Lizard Tail). After block (docs/specs/after-block.md): four replacement passes in the game's damage order, each while the amount is above 0, before the save: DealtAfterBlock (The Boot, AtLeast 5), TakenAfterBlock (Buffer, every hit and HP loss), AttackedAfterBlock (Torii, upTo 5, Cap 1), HpLossLast (Tungsten Rod, Add -1); Fossilized Helix gives 1 Buffer. Hooks may take two conditions; a relic hook may open a pick at CombatStart or after the turn's draw (Gambling Chip, Stage::RelicPick). Counters carried between fights (Happy Flower, Nunchaku, Ink Bottle, Incense Burner, Pen Nib, Lizard Tail's -2 used) are the caller's starting counter until the run layer (R2). Pack powers named by relics: StrikeDummy (static), PlatedArmor, NextTurnBlock, Vigor, PenNib, GingerWard, TurnipWard, Buffer, TheBoot, Torii, TungstenRod. Black Blood is win_heal 6 on top of the character's 6. At most 16 relics per fight (RELIC_CAP). The gauntlet holds none until the headline change after Act 1. Named limits: Philosopher's Stone gives no Strength to spawned monsters; battle-start order is list order; a second relic pick in one pass is skipped; a saved player's bloodied state moves once (before the loss -> after the save). Potions: 27 of 33 load from content/packs/act1-potions.json, each against its decompiled class (engine/tests/act1_potions.rs, fight_vocabulary.rs, act1_singles.rs); Distilled Chaos plays the top 3 cards (PlayTop, CombatState.top_queue; the same effect loads the Ironclad card Havoc); Art of War and Pocketwatch keep last turn's count in the relic counter; Liquid Memories returns a card that costs 0 this turn (CombatState.free_in_hand, docs/specs/act1-singles.md; mark_free_in_hand for discovery); Fairy in a Bottle is a potion with \"trigger\": \"OwnerDied\", never drunk, used before Lizard Tail; Smoke Bomb escapes a hallway or elite fight: it ends as won with CombatState.escaped (CombatWon hooks and the combat-end heal run; docs/specs/act1-singles.md section 4), not a legal action in a boss fight (a slot holds a boss kind, or the boss_fight mark set by give_potions survives Slime Boss's split); left out: Attack, Skill, Power, Colorless Potion (P3), Snecko Oil (C5 with chance), Entropic Brew (P6); the run layer holds no potions yet (P2).",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "94f39e2f4a454e2707a42fdf2d144e353720b4a0b901d67855b4d3439afd225e"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Costs 0 this turn",
+          "sha256": "fc629d25f574d934804962178e14c06312f32436c285dd36bd275f730318beff"
+        },
+        {
+          "path": "docs/specs/act1-singles.md",
+          "sha256": "bcedb4b3e6ff086d1bd922a18e3fb1d0412622365919a2f9df852b5ff52183d5"
+        },
+        {
+          "path": "content/packs/act1-potions.json",
+          "sha256": "95ce08fd7324f351dfcd1b888e96ac06bc4365e98cc51b8015828b21361eba13"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "92bbc2ab01e610149d2ea708b6848dc246e0738a37d6cd151531a049d2cc8187"
+        },
+        {
+          "path": "docs/specs/after-block.md",
+          "sha256": "c135daf2d8a561086c7e26209f5ca5adaffa96f63b469cbf02e776a194c4025c"
+        },
+        {
+          "path": "docs/specs/would-die.md",
+          "sha256": "a12207e722c7d8f53d17f5e1f6743291fe838b216644266bf38c74413cfd8773"
+        },
+        {
+          "path": "docs/specs/fight-vocabulary.md",
+          "sha256": "74067da5a6f05b39a7a73b7171674ac7fde3a1679e95c709af10dd7946865c3b"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "85dedbc3a4e213c054963b03bfe9b964febf5b96c1fff9442a947b2ad4c0b49d"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "7350a3e160ec64a2a9d37f7a01ba2ee4e694a664499fd39660fcdafc29dbcaca"
+        },
+        {
+          "path": "engine/tests/after_block.rs",
+          "sha256": "520bf59b4ec456f0255d0bbaf806a60e8f32e90669559bf8ea9b37c1d25d324c"
+        },
+        {
+          "path": "engine/tests/act1_potions.rs",
+          "sha256": "11efee216617238c027f4c24d1eb51658d4cf9ec19d1cba6ef51c62c2d3074da"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "8ab3553b19c60ec46b433600d35f3aa2d528040cd5fe73f84ec726444fa17562"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "After block (2026-11-12, session act1-r12)",
+          "sha256": "9ca42d67c8a0f68ae46db90e5011c982f584af30c7505e4f3d6f176a0cbdebe3"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Saved from death (2026-11-12, act1-r23 session)",
+          "sha256": "4d60909413162c0a42689b1a648f7607ddd47014a0a73c3ca489e3f07a09b462"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "The player escapes (2026-11-13, session act1-p5)",
+          "sha256": "559b68f22b24f7b18b1a14fa48ebac07709761a9716b2db905efcf4cbc063ba5"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Play the top card",
+          "sha256": "67b1dcd68a9da625c157e52636cfcbb1c63848b9785b0c0e243855612c302f5e"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "28d9f7fd95ef9b4e1a8d9c04c83df587b800ff279090cb5eee2d4716f909c363"
+        }
+      ],
+      "owner": false,
+      "by": "09f8779d-86df-48e0-98e9-306eeaa1c276",
+      "at": "2026-11-12T19:05:50+00:00 @ 2a6af08e",
+      "until": "2026-11-12T20:36:50+00:00 @ a72dc7ad"
+    },
+    {
+      "rev": 11,
+      "value": "Act 1 relics loaded from content files: 54 of 141. 53 in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs, fight_vocabulary.rs or act1_singles.rs test against its decompiled class; Burning Blood in the official content/relics.json (win_heal 6). Each relic is held on the player's relic list with its own hooks and counter, acting at its game class's trigger (CombatStartPreDraw, CombatStart, OwnerTurnStart, OwnerTurnStartPostDraw, OwnerTurnEnd, OwnerLostHp, OwnerPlaysCard, CardPlayed by Owner after the card resolves, CardExhausted, OpponentDied, CombatWon, OwnerDied: the player's save below 1 HP, Lizard Tail). After block (docs/specs/after-block.md): four replacement passes in the game's damage order, each while the amount is above 0, before the save: DealtAfterBlock (The Boot, AtLeast 5), TakenAfterBlock (Buffer, every hit and HP loss), AttackedAfterBlock (Torii, upTo 5, Cap 1), HpLossLast (Tungsten Rod, Add -1); Fossilized Helix gives 1 Buffer. Hooks may take two conditions; a relic hook may open a pick at CombatStart or after the turn's draw (Gambling Chip, Stage::RelicPick). Counters carried between fights (Happy Flower, Nunchaku, Ink Bottle, Incense Burner, Pen Nib, Lizard Tail's -2 used) are the caller's starting counter until the run layer (R2). Pack powers named by relics: StrikeDummy (static), PlatedArmor, NextTurnBlock, Vigor, PenNib, GingerWard, TurnipWard, Buffer, TheBoot, Torii, TungstenRod. Black Blood is win_heal 6 on top of the character's 6. At most 16 relics per fight (RELIC_CAP). The gauntlet holds none until the headline change after Act 1. Named limits: Philosopher's Stone gives no Strength to spawned monsters; battle-start order is list order; a second relic pick in one pass is skipped; a saved player's bloodied state moves once (before the loss -> after the save). Potions: 30 of 33 load from content/packs/act1-potions.json, each against its decompiled class (engine/tests/act1_potions.rs, fight_vocabulary.rs, act1_singles.rs, discovery.rs); Attack, Skill and Power Potion discover 1 of 3 random cards of their type from the Ironclad pool (a pack's pools, Discover; docs/specs/discovery.md), free this turn, Skills 25 of 28 and Powers 12 of 14 in the pool (the blocked Ironclad cards); Distilled Chaos plays the top 3 cards (PlayTop, CombatState.top_queue; the same effect loads the Ironclad card Havoc); Art of War and Pocketwatch keep last turn's count in the relic counter; Liquid Memories returns a card that costs 0 this turn (CombatState.free_in_hand, docs/specs/act1-singles.md; mark_free_in_hand for discovery); Fairy in a Bottle is a potion with \"trigger\": \"OwnerDied\", never drunk, used before Lizard Tail; Smoke Bomb escapes a hallway or elite fight: it ends as won with CombatState.escaped (CombatWon hooks and the combat-end heal run; docs/specs/act1-singles.md section 4), not a legal action in a boss fight (a slot holds a boss kind, or the boss_fight mark set by give_potions survives Slime Boss's split); left out: Colorless Potion (colorless cards: none of the game's 34 loads), Snecko Oil (C5 with chance), Entropic Brew (P6); the run layer holds no potions yet (P2).",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "c3fd3731107e237c63cb6ac63d9e9aaa2110bfe3dc570280649f72586571ecde"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Costs 0 this turn",
+          "sha256": "fc629d25f574d934804962178e14c06312f32436c285dd36bd275f730318beff"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Pools and discovery",
+          "sha256": "d29f215fe115bf82a1cd9b58d8e04e15d37f37257dab315fae8c87305cabca8e"
+        },
+        {
+          "path": "docs/specs/act1-singles.md",
+          "sha256": "bcedb4b3e6ff086d1bd922a18e3fb1d0412622365919a2f9df852b5ff52183d5"
+        },
+        {
+          "path": "docs/specs/discovery.md",
+          "sha256": "a1f093370428e492f358926f8aab1665cad394ef3b063d6e79413c8917b0b968"
+        },
+        {
+          "path": "content/packs/act1-potions.json",
+          "sha256": "a12d5857888b6be4440923f61ccab38cf4234550f7de03bfb662231fb4e49b6c"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "e797f7347ce5bd13ad4257b6c5f6d6a3f4a4727993e8e7c1ff343c4da74cb33a"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "9dbf5c7f059cb39aaa2c369ca639286ba3ffd320eb51b23c53369ea91863afd5"
+        },
+        {
+          "path": "docs/specs/after-block.md",
+          "sha256": "142c61961b3c4ab0bb261e471a2111528b8dad356a1aae201878f6848b16c004"
+        },
+        {
+          "path": "docs/specs/would-die.md",
+          "sha256": "a12207e722c7d8f53d17f5e1f6743291fe838b216644266bf38c74413cfd8773"
+        },
+        {
+          "path": "docs/specs/fight-vocabulary.md",
+          "sha256": "74067da5a6f05b39a7a73b7171674ac7fde3a1679e95c709af10dd7946865c3b"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "85dedbc3a4e213c054963b03bfe9b964febf5b96c1fff9442a947b2ad4c0b49d"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "7350a3e160ec64a2a9d37f7a01ba2ee4e694a664499fd39660fcdafc29dbcaca"
+        },
+        {
+          "path": "engine/tests/after_block.rs",
+          "sha256": "520bf59b4ec456f0255d0bbaf806a60e8f32e90669559bf8ea9b37c1d25d324c"
+        },
+        {
+          "path": "engine/tests/act1_potions.rs",
+          "sha256": "9c54fb748d0279e63bf169c195b82b157163b5c1a1632fb3d4379c3bc000f222"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "7b95d4dadf13e5d956eccd92af95a164735c7182959a8903552eb50f4a53a487"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "After block (2026-11-12, session act1-r12)",
+          "sha256": "9ca42d67c8a0f68ae46db90e5011c982f584af30c7505e4f3d6f176a0cbdebe3"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Saved from death (2026-11-12, act1-r23 session)",
+          "sha256": "4d60909413162c0a42689b1a648f7607ddd47014a0a73c3ca489e3f07a09b462"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "The player escapes (2026-11-13, session act1-p5)",
+          "sha256": "559b68f22b24f7b18b1a14fa48ebac07709761a9716b2db905efcf4cbc063ba5"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Discovery (2026-11-12, act1-p3 session)",
+          "sha256": "6512550544c881d3fc5c988ea9e6c0a4c0e08e21a8411067db65cdd24eed7ea7"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Play the top card",
+          "sha256": "67b1dcd68a9da625c157e52636cfcbb1c63848b9785b0c0e243855612c302f5e"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "2a0f870eb81caeffde31990430ed812854a6c70b07a478208249f69dd111b863"
+        }
+      ],
+      "owner": false,
+      "by": "7c510f89-8e48-45c1-be09-2fb75f0e5d49",
+      "at": "2026-11-12T20:36:50+00:00 @ a72dc7ad",
+      "until": "2026-11-12T22:11:54+00:00 @ 11d99c51"
+    },
+    {
+      "rev": 12,
+      "value": "Act 1 relics loaded from content files: 55 of 141. 54 in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs, fight_vocabulary.rs or act1_singles.rs test against its decompiled class; Burning Blood in the official content/relics.json (win_heal 6). Each relic is held on the player's relic list with its own hooks and counter, acting at its game class's trigger (CombatStartPreDraw, CombatStart, OwnerTurnStart, OwnerTurnStartPostDraw, OwnerTurnEnd, OwnerLostHp, OwnerPlaysCard, CardPlayed by Owner after the card resolves, CardExhausted, OpponentDied, CombatWon, OwnerDied: the player's save below 1 HP, Lizard Tail; OwnerApplied: a power the player applied to a monster landed, after Artifact's cancel, with the condition Applying <power>, Champion Belt; docs/specs/act1-singles.md section 6). After block (docs/specs/after-block.md): four replacement passes in the game's damage order, each while the amount is above 0, before the save: DealtAfterBlock (The Boot, AtLeast 5), TakenAfterBlock (Buffer, every hit and HP loss), AttackedAfterBlock (Torii, upTo 5, Cap 1), HpLossLast (Tungsten Rod, Add -1); Fossilized Helix gives 1 Buffer. Hooks may take two conditions; a relic hook may open a pick at CombatStart or after the turn's draw (Gambling Chip, Stage::RelicPick). Counters carried between fights (Happy Flower, Nunchaku, Ink Bottle, Incense Burner, Pen Nib, Lizard Tail's -2 used) are the caller's starting counter until the run layer (R2). Pack powers named by relics: StrikeDummy (static), PlatedArmor, NextTurnBlock, Vigor, PenNib, GingerWard, TurnipWard, Buffer, TheBoot, Torii, TungstenRod. Black Blood is win_heal 6 on top of the character's 6. At most 16 relics per fight (RELIC_CAP). The gauntlet holds none until the headline change after Act 1. Named limits: Philosopher's Stone gives no Strength to spawned monsters; battle-start order is list order; a second relic pick in one pass is skipped; a saved player's bloodied state moves once (before the loss -> after the save). Potions: 30 of 33 load from content/packs/act1-potions.json, each against its decompiled class (engine/tests/act1_potions.rs, fight_vocabulary.rs, act1_singles.rs, discovery.rs); Attack, Skill and Power Potion discover 1 of 3 random cards of their type from the Ironclad pool (a pack's pools, Discover; docs/specs/discovery.md), free this turn, Skills 25 of 28 and Powers 12 of 14 in the pool (the blocked Ironclad cards); Distilled Chaos plays the top 3 cards (PlayTop, CombatState.top_queue; the same effect loads the Ironclad card Havoc); Art of War and Pocketwatch keep last turn's count in the relic counter; Liquid Memories returns a card that costs 0 this turn (CombatState.free_in_hand, docs/specs/act1-singles.md; mark_free_in_hand for discovery); Fairy in a Bottle is a potion with \"trigger\": \"OwnerDied\", never drunk, used before Lizard Tail; Smoke Bomb escapes a hallway or elite fight: it ends as won with CombatState.escaped (CombatWon hooks and the combat-end heal run; docs/specs/act1-singles.md section 4), not a legal action in a boss fight (a slot holds a boss kind, or the boss_fight mark set by give_potions survives Slime Boss's split); left out: Colorless Potion (colorless cards: none of the game's 34 loads), Snecko Oil (C5 with chance), Entropic Brew (P6); the run layer holds no potions yet (P2).",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "044d20308e384af203a42315586c547cd69069c9ba126a06d2afe45535c64d11"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Costs 0 this turn",
+          "sha256": "fc629d25f574d934804962178e14c06312f32436c285dd36bd275f730318beff"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Pools and discovery",
+          "sha256": "d29f215fe115bf82a1cd9b58d8e04e15d37f37257dab315fae8c87305cabca8e"
+        },
+        {
+          "path": "docs/specs/act1-singles.md",
+          "sha256": "6d5e850329afbb567a989ea1cda99ef2b6b3093c77051352c2f5fa8363127c80"
+        },
+        {
+          "path": "docs/specs/discovery.md",
+          "sha256": "a1f093370428e492f358926f8aab1665cad394ef3b063d6e79413c8917b0b968"
+        },
+        {
+          "path": "content/packs/act1-potions.json",
+          "sha256": "a12d5857888b6be4440923f61ccab38cf4234550f7de03bfb662231fb4e49b6c"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "e797f7347ce5bd13ad4257b6c5f6d6a3f4a4727993e8e7c1ff343c4da74cb33a"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "9dbf5c7f059cb39aaa2c369ca639286ba3ffd320eb51b23c53369ea91863afd5"
+        },
+        {
+          "path": "docs/specs/after-block.md",
+          "sha256": "c135daf2d8a561086c7e26209f5ca5adaffa96f63b469cbf02e776a194c4025c"
+        },
+        {
+          "path": "docs/specs/would-die.md",
+          "sha256": "a12207e722c7d8f53d17f5e1f6743291fe838b216644266bf38c74413cfd8773"
+        },
+        {
+          "path": "docs/specs/fight-vocabulary.md",
+          "sha256": "74067da5a6f05b39a7a73b7171674ac7fde3a1679e95c709af10dd7946865c3b"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "6dd3a7cdbeb9a4c3a383e91df01a52bdd94a0d8a3c295c8b8cc2f4ceef425a3b"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "6f4b8481ab8c85db71bb32a9f0bef4f3a8a118d28b9612d5fd232ab15c7799a8"
+        },
+        {
+          "path": "engine/tests/after_block.rs",
+          "sha256": "520bf59b4ec456f0255d0bbaf806a60e8f32e90669559bf8ea9b37c1d25d324c"
+        },
+        {
+          "path": "engine/tests/act1_potions.rs",
+          "sha256": "9c54fb748d0279e63bf169c195b82b157163b5c1a1632fb3d4379c3bc000f222"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "7b95d4dadf13e5d956eccd92af95a164735c7182959a8903552eb50f4a53a487"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "After block (2026-11-12, session act1-r12)",
+          "sha256": "9ca42d67c8a0f68ae46db90e5011c982f584af30c7505e4f3d6f176a0cbdebe3"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Saved from death (2026-11-12, act1-r23 session)",
+          "sha256": "4d60909413162c0a42689b1a648f7607ddd47014a0a73c3ca489e3f07a09b462"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "The player escapes (2026-11-13, session act1-p5)",
+          "sha256": "559b68f22b24f7b18b1a14fa48ebac07709761a9716b2db905efcf4cbc063ba5"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Discovery (2026-11-12, act1-p3 session)",
+          "sha256": "6512550544c881d3fc5c988ea9e6c0a4c0e08e21a8411067db65cdd24eed7ea7"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Play the top card",
+          "sha256": "67b1dcd68a9da625c157e52636cfcbb1c63848b9785b0c0e243855612c302f5e"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "2a0f870eb81caeffde31990430ed812854a6c70b07a478208249f69dd111b863"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "The player applied a power (2026-11-13, session act1-r14)",
+          "sha256": "45eb73439c3d18699d6c0cc07e60adf4e6a9571bce30a9c886e56e0ecb6c5a30"
+        },
+        {
+          "path": "engine/tests/owner_applied.rs",
+          "sha256": "49e78b7fd43f85edd442c1f53dbdd948a26ef08d2f277e638d12ec919f9f2996"
+        }
+      ],
+      "owner": false,
+      "by": "1f19fce7-7cb2-48ae-9415-47aad1ebe02a",
+      "at": "2026-11-12T22:11:54+00:00 @ 11d99c51",
+      "until": "2026-11-12T22:52:32+00:00 @ 83ed90d4"
+    },
+    {
+      "rev": 13,
+      "value": "Act 1 relics loaded from content files: 56 of 141. 55 in content/packs/act1-relics.json, each checked by an engine/tests/act1_relics.rs, fight_vocabulary.rs or act1_singles.rs test against its decompiled class; Burning Blood in the official content/relics.json (win_heal 6). Each relic is held on the player's relic list with its own hooks and counter, acting at its game class's trigger (CombatStartPreDraw, CombatStart, OwnerTurnStart, OwnerTurnStartPostDraw, OwnerTurnEnd, OwnerLostHp, OwnerPlaysCard, CardPlayed by Owner after the card resolves, CardExhausted, OpponentDied, CombatWon, OwnerDied: the player's save below 1 HP, Lizard Tail; OwnerApplied: a power the player applied to a monster landed, after Artifact's cancel, with the condition Applying <power>, Champion Belt; docs/specs/act1-singles.md section 6). After block (docs/specs/after-block.md): four replacement passes in the game's damage order, each while the amount is above 0, before the save: DealtAfterBlock (The Boot, AtLeast 5), TakenAfterBlock (Buffer, every hit and HP loss), AttackedAfterBlock (Torii, upTo 5, Cap 1), HpLossLast (Tungsten Rod, Add -1); Fossilized Helix gives 1 Buffer. Hooks may take two conditions; a relic hook may open a pick at CombatStart or after the turn's draw (Gambling Chip, Stage::RelicPick). Counters carried between fights (Happy Flower, Nunchaku, Ink Bottle, Incense Burner, Pen Nib, Lizard Tail's -2 used) are the caller's starting counter until the run layer (R2). Pack powers named by relics: StrikeDummy (static), PlatedArmor, NextTurnBlock, Vigor, PenNib, GingerWard, TurnipWard, Buffer, TheBoot, Torii, TungstenRod. Black Blood is win_heal 6 on top of the character's 6. At most 16 relics per fight (RELIC_CAP). The gauntlet holds none until the headline change after Act 1. Named limits: Philosopher's Stone gives no Strength to spawned monsters; battle-start order is list order; a second relic pick in one pass is skipped; a saved player's bloodied state moves once (before the loss -> after the save). Potions: 31 of 33 load from content/packs/act1-potions.json, each against its decompiled class (engine/tests/act1_potions.rs, fight_vocabulary.rs, act1_singles.rs, discovery.rs); Attack, Skill and Power Potion discover 1 of 3 random cards of their type from the Ironclad pool (a pack's pools, Discover; docs/specs/discovery.md), free this turn, Skills 25 of 28 and Powers 12 of 14 in the pool (the blocked Ironclad cards); Distilled Chaos plays the top 3 cards (PlayTop, CombatState.top_queue; the same effect loads the Ironclad card Havoc); Art of War and Pocketwatch keep last turn's count in the relic counter; Liquid Memories returns a card that costs 0 this turn (CombatState.free_in_hand, docs/specs/act1-singles.md; mark_free_in_hand for discovery); Fairy in a Bottle is a potion with \"trigger\": \"OwnerDied\", never drunk, used before Lizard Tail; Smoke Bomb escapes a hallway or elite fight: it ends as won with CombatState.escaped (CombatWon hooks and the combat-end heal run; docs/specs/act1-singles.md section 4), not a legal action in a boss fight (a slot holds a boss kind, or the boss_fight mark set by give_potions survives Slime Boss's split); Entropic Brew fills every empty potion slot with a random potion of its pack's potions less Fruit Juice, one chance event per slot, 65/25/10 by rarity then alike (ObtainRandomPotions; docs/specs/act1-singles.md section 5), its pool's potions bound with it (their pack powers and discoveries' cards: 40 card slots since, CARD_SLOTS), and a boss fight holding it carries the boss_fight mark; potion slots are 3 plus each held relic's potion_slots (Potion Belt 2); left out: Colorless Potion (colorless cards: none of the game's 34 loads), Snecko Oil (C5 with chance); the run layer holds no potions yet (P2).",
+      "sources": [
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "sha256": "87aed72eb0673501c398a0d0c22797fa88b3040d4aea9e9b48c826f8fe350279"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Costs 0 this turn",
+          "sha256": "fc629d25f574d934804962178e14c06312f32436c285dd36bd275f730318beff"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Pools and discovery",
+          "sha256": "8d331d9e83d75601a9993fb22148f8919a3b73839612377d23f9de03e57547e3"
+        },
+        {
+          "path": "docs/specs/act1-singles.md",
+          "sha256": "77f876f7ff48587fe04a99267f1510d568be3d3947fcebf9240e00f233e20e5b"
+        },
+        {
+          "path": "docs/specs/discovery.md",
+          "sha256": "a1f093370428e492f358926f8aab1665cad394ef3b063d6e79413c8917b0b968"
+        },
+        {
+          "path": "content/packs/act1-potions.json",
+          "sha256": "bf1e3b2459a9c60fe06a02cd8e7d1c48e9fc632935e7210c43c4a57b3052c1c5"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "5dd02badcc4c45d958a636cb5d46f29ed66b8d636d5589ea8a47ffa52d9ba540"
+        },
+        {
+          "path": "engine/tests/discovery.rs",
+          "sha256": "9dbf5c7f059cb39aaa2c369ca639286ba3ffd320eb51b23c53369ea91863afd5"
+        },
+        {
+          "path": "docs/specs/after-block.md",
+          "sha256": "142c61961b3c4ab0bb261e471a2111528b8dad356a1aae201878f6848b16c004"
+        },
+        {
+          "path": "docs/specs/would-die.md",
+          "sha256": "a12207e722c7d8f53d17f5e1f6743291fe838b216644266bf38c74413cfd8773"
+        },
+        {
+          "path": "docs/specs/fight-vocabulary.md",
+          "sha256": "74067da5a6f05b39a7a73b7171674ac7fde3a1679e95c709af10dd7946865c3b"
+        },
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "d1d290f40f66cf0f112290e5831e2f78a992be4740f5695fe8c3662fb7438455"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "fddce65b4c164df6dafff1a75b29b10e79978ed707fb47ebf46eda636154a221"
+        },
+        {
+          "path": "engine/tests/after_block.rs",
+          "sha256": "520bf59b4ec456f0255d0bbaf806a60e8f32e90669559bf8ea9b37c1d25d324c"
+        },
+        {
+          "path": "engine/tests/act1_potions.rs",
+          "sha256": "af05b42ad1b5e946564b659bbf995811fa8ad7ca90cce0496b83ce8010794c69"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "7b95d4dadf13e5d956eccd92af95a164735c7182959a8903552eb50f4a53a487"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "After block (2026-11-12, session act1-r12)",
+          "sha256": "9ca42d67c8a0f68ae46db90e5011c982f584af30c7505e4f3d6f176a0cbdebe3"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Saved from death (2026-11-12, act1-r23 session)",
+          "sha256": "4d60909413162c0a42689b1a648f7607ddd47014a0a73c3ca489e3f07a09b462"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "The player escapes (2026-11-13, session act1-p5)",
+          "sha256": "559b68f22b24f7b18b1a14fa48ebac07709761a9716b2db905efcf4cbc063ba5"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Discovery (2026-11-12, act1-p3 session)",
+          "sha256": "f8958b607d36cb3f8984e92458273ad2cbb6ce51acfa6bc193b6fe166faf787b"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Play the top card",
+          "sha256": "67b1dcd68a9da625c157e52636cfcbb1c63848b9785b0c0e243855612c302f5e"
+        },
+        {
+          "path": "content/packs/act1-ironclad.json",
+          "sha256": "2a0f870eb81caeffde31990430ed812854a6c70b07a478208249f69dd111b863"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "The player applied a power (2026-11-13, session act1-r14)",
+          "sha256": "45eb73439c3d18699d6c0cc07e60adf4e6a9571bce30a9c886e56e0ecb6c5a30"
+        },
+        {
+          "path": "engine/tests/owner_applied.rs",
+          "sha256": "49e78b7fd43f85edd442c1f53dbdd948a26ef08d2f277e638d12ec919f9f2996"
+        },
+        {
+          "path": "docs/research/act1-relics-potions.md",
+          "anchor": "Potions made in a fight (2026-11-13, act1-p6 session)",
+          "sha256": "b57b5b4810475d04574efb06253615ec5d57465968b9ad09540f0dc8d3e2bd0a"
+        },
+        {
+          "path": "docs/extending.md",
+          "anchor": "Potions made in a fight",
+          "sha256": "c4f7c63fae5a99b0189d4630ca21582becafc113bd2559c8b40670ace4ca0195"
+        }
+      ],
+      "owner": false,
+      "by": "b563b5e2-f816-4938-a245-ba604e35b16d",
+      "at": "2026-11-12T22:52:32+00:00 @ 83ed90d4",
+      "until": "2026-11-13T02:29:42+00:00 @ 3123201a"
+    },
+    {
+      "rev": 14,
+      "value": "Act 1 relics from content files: 56 of 141 (55 in content/packs/act1-relics.json, Burning Blood in content/relics.json), each tested vs its decompiled class (engine/tests/act1_relics.rs, fight_vocabulary.rs, act1_singles.rs). <=16 relics per fight (RELIC_CAP); the gauntlet holds none until the post-Act-1 headline change.",
+      "sources": [
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "d1d290f40f66cf0f112290e5831e2f78a992be4740f5695fe8c3662fb7438455"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "fddce65b4c164df6dafff1a75b29b10e79978ed707fb47ebf46eda636154a221"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "7b95d4dadf13e5d956eccd92af95a164735c7182959a8903552eb50f4a53a487"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "5dd02badcc4c45d958a636cb5d46f29ed66b8d636d5589ea8a47ffa52d9ba540"
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:29:42+00:00 @ 3123201a",
+      "until": "2026-11-13T06:46:11+00:00 @ 5240b8fb"
+    },
+    {
+      "rev": 15,
+      "value": "Act 1 relics from content files: 57 of 141 (56 in content/packs/act1-relics.json, Burning Blood in content/relics.json), each tested vs its decompiled class (engine/tests/act1_relics.rs, fight_vocabulary.rs, act1_singles.rs, snecko.rs). Snecko Eye (2026-11-13): draw_per_turn 2 and the pack power Confused rolling each drawn card's cost (docs/specs/sparse-piles.md step c). <=16 relics per fight (RELIC_CAP); the gauntlet holds none until the post-Act-1 headline change.",
+      "sources": [
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "f2436435c24f805706157ec5681bcde96a980188a62d7b93e71fae5ba17230df"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "ba60bc84aedd46edcf8b648ef59d57d785fcf09e9ea2edea3671084d6ae69ab0"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "bf13cc5ac392e3a96af5e7f65465d521fe6b6dd1f46e2b61a60db997bab0d3d6"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "ef39ef1e7d686cb5f283979de9a7af34a3c5c62e234dde98b5afb4a7d7a694a2"
+        },
+        {
+          "path": "engine/tests/snecko.rs",
+          "sha256": "2d95924819d0dca855a73bc72fe1357b4b2f5b85bd46a9350e917bc7ff8d23bb"
+        }
+      ],
+      "owner": false,
+      "by": "a8f31275-1ed7-44ce-95f2-c3f7d8378390",
+      "at": "2026-11-13T06:46:11+00:00 @ 5240b8fb",
+      "until": "2026-11-13T13:24:52+00:00 @ c4fb1faf"
+    },
+    {
+      "rev": 16,
+      "value": "Act 1 relics from content files: 58 of 141 (57 in content/packs/act1-relics.json, Burning Blood in content/relics.json), each tested vs its decompiled class (engine/tests/act1_relics.rs, fight_vocabulary.rs, act1_singles.rs, snecko.rs). Snecko Eye: draw_per_turn 2 and pack power Confused rolling each drawn card's cost. <=16 relics per fight (RELIC_CAP); the gauntlet holds none until the post-Act-1 headline change.",
+      "sources": [
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "be930c4171b301355cb6a0ed8aae45b88566706e1918fc51fb32b97799b667f0"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "946a6832b055a810f98fc19b7839c82c6930a888d37c27cb35f8b7b59ec3b323"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "bf13cc5ac392e3a96af5e7f65465d521fe6b6dd1f46e2b61a60db997bab0d3d6"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "ef39ef1e7d686cb5f283979de9a7af34a3c5c62e234dde98b5afb4a7d7a694a2"
+        },
+        {
+          "path": "engine/tests/snecko.rs",
+          "sha256": "02a9914af0a447601a0d649f34834706c07b52e1701022cc6c6382928c3af806"
+        },
+        {
+          "path": "engine/src/relics.rs",
+          "sha256": "2a422eff4e45e7c9abf8b3fb4e97833e2b5c047c9d43ff137292717da7661fe4"
+        }
+      ],
+      "owner": false,
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:24:52+00:00 @ c4fb1faf",
+      "until": "2026-11-13T13:25:06+00:00 @ c4fb1faf"
+    },
+    {
+      "rev": 17,
+      "value": "Act 1 relics from content files: 58 of 141 (57 in content/packs/act1-relics.json, Burning Blood in content/relics.json), each tested vs its decompiled class (engine/tests/act1_relics.rs, fight_vocabulary.rs, act1_singles.rs, snecko.rs). <=16 relics per fight (RELIC_CAP); the gauntlet holds none until the post-Act-1 headline change.",
+      "sources": [
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "be930c4171b301355cb6a0ed8aae45b88566706e1918fc51fb32b97799b667f0"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "946a6832b055a810f98fc19b7839c82c6930a888d37c27cb35f8b7b59ec3b323"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "bf13cc5ac392e3a96af5e7f65465d521fe6b6dd1f46e2b61a60db997bab0d3d6"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "ef39ef1e7d686cb5f283979de9a7af34a3c5c62e234dde98b5afb4a7d7a694a2"
+        },
+        {
+          "path": "engine/tests/snecko.rs",
+          "sha256": "02a9914af0a447601a0d649f34834706c07b52e1701022cc6c6382928c3af806"
+        },
+        {
+          "path": "engine/src/relics.rs",
+          "sha256": "2a422eff4e45e7c9abf8b3fb4e97833e2b5c047c9d43ff137292717da7661fe4"
+        }
+      ],
+      "owner": false,
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:25:06+00:00 @ c4fb1faf",
+      "until": "2026-11-13T13:55:05+00:00 @ 0f292654"
+    },
+    {
+      "rev": 18,
+      "value": "Act 1 relics from content files: 59 of 141 (57 in content/packs/act1-relics.json, Toolbox in content/packs/act1-colorless.json, Burning Blood in content/relics.json), each tested vs its decompiled class (engine/tests/act1_relics.rs, fight_vocabulary.rs, act1_singles.rs, snecko.rs). <=16 relics per fight (RELIC_CAP); the gauntlet holds none until the post-Act-1 headline change.",
+      "sources": [
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "be930c4171b301355cb6a0ed8aae45b88566706e1918fc51fb32b97799b667f0"
+        },
+        {
+          "path": "content/packs/act1-colorless.json",
+          "sha256": "dd96f8806baf0adc059a57f6778a66db2fa0fb5f77874aba55cb48d904cb953e"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "8cb3dda9bf23da00946ca5272f56f6df636a12ed0c58e63abc1bb84083cbcc6d"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "bf13cc5ac392e3a96af5e7f65465d521fe6b6dd1f46e2b61a60db997bab0d3d6"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "ef39ef1e7d686cb5f283979de9a7af34a3c5c62e234dde98b5afb4a7d7a694a2"
+        },
+        {
+          "path": "engine/tests/snecko.rs",
+          "sha256": "02a9914af0a447601a0d649f34834706c07b52e1701022cc6c6382928c3af806"
+        },
+        {
+          "path": "engine/src/relics.rs",
+          "sha256": "2a422eff4e45e7c9abf8b3fb4e97833e2b5c047c9d43ff137292717da7661fe4"
+        }
+      ],
+      "owner": false,
+      "by": "831147fb-7dae-446a-8fe2-cbd26d380410",
+      "at": "2026-11-13T13:55:05+00:00 @ 0f292654",
+      "until": "2026-11-13T15:09:16+00:00 @ 6b804e4f"
+    },
+    {
+      "rev": 19,
+      "value": "Act 1 relics from content files: 64 of 141 (62 in content/packs/act1-relics.json, Toolbox in content/packs/act1-colorless.json, Burning Blood in content/relics.json), each tested vs its game class (engine/tests/act1_relics.rs, fight_vocabulary.rs, act1_singles.rs, snecko.rs). <=16 relics per fight (RELIC_CAP); the gauntlet holds none until the post-Act-1 headline change.",
+      "sources": [
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "9602410ec6c69961e05664a4839a6765184fdd5bcb52757507bb4e63a0215180"
+        },
+        {
+          "path": "content/packs/act1-colorless.json",
+          "sha256": "dd96f8806baf0adc059a57f6778a66db2fa0fb5f77874aba55cb48d904cb953e"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "4ec5861748a5ea2e2132b1ec6f8579b1b76b3550079febb27255a238f4ca8d06"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "bf13cc5ac392e3a96af5e7f65465d521fe6b6dd1f46e2b61a60db997bab0d3d6"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "ef39ef1e7d686cb5f283979de9a7af34a3c5c62e234dde98b5afb4a7d7a694a2"
+        },
+        {
+          "path": "engine/tests/snecko.rs",
+          "sha256": "02a9914af0a447601a0d649f34834706c07b52e1701022cc6c6382928c3af806"
+        },
+        {
+          "path": "engine/src/relics.rs",
+          "sha256": "5fe123aaa4fc6e45b40d2e7e49003ea6cc0fff5edbb61adf2bd13036d1737bee"
+        }
+      ],
+      "owner": false,
+      "by": "6717d033-8b1e-4449-b1ad-14de2c135ca5",
+      "at": "2026-11-13T15:09:16+00:00 @ 6b804e4f",
+      "until": "2026-11-13T15:17:32+00:00 @ 19e19bb0"
+    },
+    {
+      "rev": 20,
+      "value": "Act 1 relics from content files: 68 of 141 (66 in content/packs/act1-relics.json, Toolbox in content/packs/act1-colorless.json, Burning Blood in content/relics.json), each tested vs its decompiled class (engine/tests/act1_relics.rs, fight_vocabulary.rs, act1_singles.rs, snecko.rs). <=16 relics per fight (RELIC_CAP); the gauntlet holds none until the post-Act-1 headline change.",
+      "sources": [
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "9231979fb580f12f674fbf03d2554242326b513a77672587704fa11cf4805e57"
+        },
+        {
+          "path": "content/packs/act1-colorless.json",
+          "sha256": "dd96f8806baf0adc059a57f6778a66db2fa0fb5f77874aba55cb48d904cb953e"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "6d96cd88916d030c7932d3623422290383fd7ab0280f8c3b8e34c928c69e9c2a"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "bf13cc5ac392e3a96af5e7f65465d521fe6b6dd1f46e2b61a60db997bab0d3d6"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "ef39ef1e7d686cb5f283979de9a7af34a3c5c62e234dde98b5afb4a7d7a694a2"
+        },
+        {
+          "path": "engine/tests/snecko.rs",
+          "sha256": "02a9914af0a447601a0d649f34834706c07b52e1701022cc6c6382928c3af806"
+        },
+        {
+          "path": "engine/src/relics.rs",
+          "sha256": "5fe123aaa4fc6e45b40d2e7e49003ea6cc0fff5edbb61adf2bd13036d1737bee"
+        }
+      ],
+      "owner": false,
+      "by": "ae1a6137-ecfe-4354-b8f1-ea46f575e0a1",
+      "at": "2026-11-13T15:17:32+00:00 @ 19e19bb0",
+      "until": "2026-11-13T15:49:47+00:00 @ 332e24a1"
+    },
+    {
+      "rev": 21,
+      "value": "Act 1 relics from content files: 70 of 141 (68 in content/packs/act1-relics.json, Toolbox in content/packs/act1-colorless.json, Burning Blood in content/relics.json), each tested vs its decompiled class (engine/tests/act1_relics.rs, fight_vocabulary.rs, act1_singles.rs, snecko.rs). <=16 relics per fight (RELIC_CAP); the gauntlet holds none until the post-Act-1 headline change.",
+      "sources": [
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "bdda00a0be49e0149559a330523ccc4f255c4c912f09b6751ace22d4b531fc39"
+        },
+        {
+          "path": "content/packs/act1-colorless.json",
+          "sha256": "dd96f8806baf0adc059a57f6778a66db2fa0fb5f77874aba55cb48d904cb953e"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "8fa83512f8e2a5d7ae8ef6c45bb1b9f4805669a4cf242be228068658c59fcee9"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "bf13cc5ac392e3a96af5e7f65465d521fe6b6dd1f46e2b61a60db997bab0d3d6"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "ef39ef1e7d686cb5f283979de9a7af34a3c5c62e234dde98b5afb4a7d7a694a2"
+        },
+        {
+          "path": "engine/tests/snecko.rs",
+          "sha256": "02a9914af0a447601a0d649f34834706c07b52e1701022cc6c6382928c3af806"
+        },
+        {
+          "path": "engine/src/relics.rs",
+          "sha256": "5fe123aaa4fc6e45b40d2e7e49003ea6cc0fff5edbb61adf2bd13036d1737bee"
+        }
+      ],
+      "owner": false,
+      "by": "bb952f23-dc61-4489-8ab5-9f8c80c8234f",
+      "at": "2026-11-13T15:49:47+00:00 @ 332e24a1",
+      "until": "2026-11-13T18:27:02+00:00 @ 91a4781d"
+    },
+    {
+      "rev": 22,
+      "value": "Act 1 relics from content files: 73 of 141 (71 in content/packs/act1-relics.json, Toolbox in content/packs/act1-colorless.json, Burning Blood in content/relics.json), each tested vs its decompiled class (engine/tests/act1_relics.rs, fight_vocabulary.rs, act1_singles.rs, snecko.rs). <=16 relics per fight (RELIC_CAP); the gauntlet holds none until the post-Act-1 headline change.",
+      "sources": [
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "6470660e8f81cf1a00241099056e70fd521d79609014b70db2bde06a1eb4d17b"
+        },
+        {
+          "path": "content/packs/act1-colorless.json",
+          "sha256": "dd96f8806baf0adc059a57f6778a66db2fa0fb5f77874aba55cb48d904cb953e"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "e7809527b4f91ab03204db95c0bfd03ed3898268dd716c32456e436b8c91b26e"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "bf13cc5ac392e3a96af5e7f65465d521fe6b6dd1f46e2b61a60db997bab0d3d6"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "ef39ef1e7d686cb5f283979de9a7af34a3c5c62e234dde98b5afb4a7d7a694a2"
+        },
+        {
+          "path": "engine/tests/snecko.rs",
+          "sha256": "02a9914af0a447601a0d649f34834706c07b52e1701022cc6c6382928c3af806"
+        },
+        {
+          "path": "engine/src/relics.rs",
+          "sha256": "5fe123aaa4fc6e45b40d2e7e49003ea6cc0fff5edbb61adf2bd13036d1737bee"
+        }
+      ],
+      "owner": false,
+      "by": "78f15f03-ab89-44c6-9f95-b2d7ce2fc10f",
+      "at": "2026-11-13T18:27:02+00:00 @ 91a4781d",
+      "until": "2026-11-13T18:36:35+00:00 @ e4e3cb99"
+    },
+    {
+      "rev": 23,
+      "value": "Act 1 relics from content files: 76 of 141 (74 in content/packs/act1-relics.json, Toolbox in content/packs/act1-colorless.json, Burning Blood in content/relics.json), each tested vs its decompiled class (engine/tests/act1_relics.rs, fight_vocabulary.rs, act1_singles.rs, snecko.rs). <=16 relics per fight (RELIC_CAP); the gauntlet holds none until the post-Act-1 headline change.",
+      "sources": [
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "066316a47c63cc72d5bc713d2d4f1fcd78fcb2f39bc29e5af43c97a39d8be815"
+        },
+        {
+          "path": "content/packs/act1-colorless.json",
+          "sha256": "dd96f8806baf0adc059a57f6778a66db2fa0fb5f77874aba55cb48d904cb953e"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "f467508806e6984bc2afb53ee5506b9962b7d2f9d4dcfaa131782144d267e25d"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "bf13cc5ac392e3a96af5e7f65465d521fe6b6dd1f46e2b61a60db997bab0d3d6"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "ef39ef1e7d686cb5f283979de9a7af34a3c5c62e234dde98b5afb4a7d7a694a2"
+        },
+        {
+          "path": "engine/tests/snecko.rs",
+          "sha256": "02a9914af0a447601a0d649f34834706c07b52e1701022cc6c6382928c3af806"
+        },
+        {
+          "path": "engine/src/relics.rs",
+          "sha256": "e96dd2ce9f3ca0f75d6e0eee1d81660d6e9491e0edc37baf8136b66c735d3cad"
+        }
+      ],
+      "owner": false,
+      "by": "7eaf0179-8b1b-4247-a84e-24912357f6c1",
+      "at": "2026-11-13T18:36:35+00:00 @ e4e3cb99",
+      "until": "2026-11-14T00:20:20+00:00 @ 33ad3c42"
+    },
+    {
+      "rev": 24,
+      "value": "Act 1 relics from content files: 79 of 141 (77 in content/packs/act1-relics.json, Toolbox in content/packs/act1-colorless.json, Burning Blood in content/relics.json), each tested vs its decompiled class (engine/tests/act1_relics.rs, fight_vocabulary.rs, act1_singles.rs, snecko.rs). <=16 relics per fight (RELIC_CAP); the gauntlet holds none until the post-Act-1 headline change.",
+      "sources": [
+        {
+          "path": "content/packs/act1-relics.json",
+          "sha256": "f854c36e1915353eac6612af9afcbe011361dd7893cb29fa348702bf62b3d420"
+        },
+        {
+          "path": "content/packs/act1-colorless.json",
+          "sha256": "f170df0e9cfead109bb0848c9b1fa80d4892640aefcd5f40b733ed88b9d76bb0"
+        },
+        {
+          "path": "content/relics.json",
+          "sha256": "c994b31abcd8af32ac2cd53f10d924501b9c1cc6a1d56cdd60bb82c13bdd414a"
+        },
+        {
+          "path": "engine/tests/act1_relics.rs",
+          "sha256": "c4733ba7f17c2a0fbf6e57b2571047bc13608d69bcc604f613cae8ea05e7a89a"
+        },
+        {
+          "path": "engine/tests/fight_vocabulary.rs",
+          "sha256": "bf13cc5ac392e3a96af5e7f65465d521fe6b6dd1f46e2b61a60db997bab0d3d6"
+        },
+        {
+          "path": "engine/tests/act1_singles.rs",
+          "sha256": "e519d0ab4eb2b7956eb290d700340783b12d814625901fd8b80c1fbbe28e9539"
+        },
+        {
+          "path": "engine/tests/snecko.rs",
+          "sha256": "02a9914af0a447601a0d649f34834706c07b52e1701022cc6c6382928c3af806"
+        },
+        {
+          "path": "engine/src/relics.rs",
+          "sha256": "e96dd2ce9f3ca0f75d6e0eee1d81660d6e9491e0edc37baf8136b66c735d3cad"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T00:20:20+00:00 @ 33ad3c42",
+      "until": "2026-11-14T00:43:49+00:00 @ d48b3f26"
+    }
+  ],
+  "seal": "69ad3acc777e2e2dca63e9614ad4927fd49694d21c4732ed82c1b839a2e1d07f"
+}

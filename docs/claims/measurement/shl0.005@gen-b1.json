@@ -1,0 +1,66 @@
+{
+  "key": "measurement/shl0.005@gen-b1",
+  "rev": 2,
+  "value": "@shl0.005@tsl1@hpb0.01, 10-29 net, gen batch 1 elites 675x4, cost vs zero-shot (HP/elite fight): AttackLoss-Damage x Nob +13.29 (0.90) -> +3.80 (0.58), wins 0.698 -> 0.890; AttackLoss-Strength worse: Nob +2.37 (0.57), Lagavulin +1.05 (0.45) (@esp0.04: +15.9 to +19.5); Nob parent -0.36 (0.18). Fails only AttackLoss-Strength x Nob (bar 1.5).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/strength-hits-price.md",
+      "anchor": "Step 2, scale 0.005 (job 0554, 2026-11-08)",
+      "sha256": "e37656f885c87cfef7a93b24ba66633e24b06cbd7692cf461c3e4ec6531702ee"
+    },
+    {
+      "path": "results/mutate/gen-b1-shl0.005.json",
+      "sha256": "e4818f89ca29e00141b37ae60baa6b4f536fc0f1eae929add34b74e3b00a1286"
+    },
+    {
+      "path": "results/mutate/gen-enemies-b1.json",
+      "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+    },
+    {
+      "path": "results/mutate/gen-b1-esp0.04.json",
+      "sha256": "23f62452b4e729701024b56dce0e5e7bbc82c5c14ee54691bb69682551c783b6"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:31+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The 10-29 net @shl0.005@tsl1@hpb0.01 on gen batch 1, elites, 675 starts x 4 seeds, paired with zero-shot (first 4 seeds of gen-enemies-b1) and 0472: cost (net - heuristic)(mechanic) - (same)(control), HP lost per elite fight: AttackLoss-Damage x Nob +13.29 (0.90) -> +3.80 (0.58), diff -9.49 (0.78), wins 0.698 -> 0.890 (@esp0.04: -0.06, 0.942); AttackLoss-Strength vs zero-shot Nob +2.37 (0.57), Lagavulin +1.05 (0.45), Sentries -0.15 (0.27) (@esp0.04: +15.9 to +19.5); Nob parent net HP lost -0.36 (0.18), other parents 0. Charter bar: fails on AttackLoss-Strength x Nob only (bar 1.5 HP).",
+      "sources": [
+        {
+          "path": "docs/research/strength-hits-price.md",
+          "anchor": "Step 2, scale 0.005 (job 0554, 2026-11-08)",
+          "sha256": "e37656f885c87cfef7a93b24ba66633e24b06cbd7692cf461c3e4ec6531702ee"
+        },
+        {
+          "path": "results/mutate/gen-b1-shl0.005.json",
+          "sha256": "e4818f89ca29e00141b37ae60baa6b4f536fc0f1eae929add34b74e3b00a1286"
+        },
+        {
+          "path": "jobs/done/0554-mutate-monsters.json",
+          "sha256": "59592f3d01bb89563224af0a3173019d7c2ca5f66198e8d6f8f749b0dbad04ad"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        },
+        {
+          "path": "results/mutate/gen-b1-esp0.04.json",
+          "sha256": "23f62452b4e729701024b56dce0e5e7bbc82c5c14ee54691bb69682551c783b6"
+        }
+      ],
+      "owner": false,
+      "by": "58772442-8d0e-4067-9bfa-00b87832475e",
+      "at": "2026-11-08T02:23:59+00:00 @ d2fe692",
+      "until": "2026-11-13T02:31:31+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "8eafe59ec081508e48e08255b526602e806fdecb48534c291e4c0e18274e58f3"
+}

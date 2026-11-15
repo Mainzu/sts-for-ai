@@ -1,0 +1,49 @@
+{
+  "key": "measurement/portfolio-cheaper-reads",
+  "rev": 1,
+  "value": "predicted p ~0.6 that deck matching makes headline reads 2-4x cheaper, ~8 CPU-h (cap 12); actual: one turn deep variance 2.4-4.2x lower (a screen tool), two turns deep sd 1.27x under the 1.4x bar (not adopted; 0.29x CPU per verdict on one pair is a lead with a pre-set check), boss-replay score and 8 threads not adopted; 11.4 cpu-h used",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane cheaper-reads closed (2026-11-04)",
+      "sha256": "122572eadf93036dcac345f0acc89b5dd7c811a7c8caf6bf994fc9e55ae8adc3"
+    },
+    {
+      "key": "measurement/deck-matched@one-turn",
+      "rev": 2
+    },
+    {
+      "key": "measurement/deck-matched@two-turn",
+      "rev": 2
+    },
+    {
+      "key": "measurement/boss-replay-score@one-turn",
+      "rev": 1
+    },
+    {
+      "key": "measurement/cost@gauntlet",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "re-checked after the lane worker's and the navigator's STATUS-cap merges: the merged facts hold their sources' numbers verbatim, this fact's own numbers unchanged",
+  "by": "38f068ab-8b7e-4981-8bbe-695e64cca72a",
+  "at": "2026-11-04T14:28:47+00:00 @ 63f7e28",
+  "confirms": [
+    {
+      "by": "b7755c1b-c846-428e-b225-17f45923e96d",
+      "at": "2026-11-11T09:00:52+00:00 @ 20449c5",
+      "note": "re-checked after the lane worker's and the navigator's STATUS-cap merges: the merged facts hold their sources' numbers verbatim, this fact's own numbers unchanged"
+    },
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:22+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/deck-matched@one-turn, measurement/deck-matched@two-turn, measurement/cost@gauntlet reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "d19c9255137af94a455bdef2d8e6f4f428206885ea2090bec23cf0d663d4ac88"
+}

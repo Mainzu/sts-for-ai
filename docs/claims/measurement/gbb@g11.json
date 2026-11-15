@@ -1,0 +1,70 @@
+{
+  "key": "measurement/gbb@g11",
+  "rev": 2,
+  "value": "11-game joint bursts (share 0.9, @tsl1, 3 seeds) on GE-OppCard-Artifact + GE-Attacked-Wound, pooled cut of own zero-shot cost: generated-pack s1 base 0.60 (0.12), pack-net-scratch s1 base 0.10 (0.06), gap 0.49 (0.14); Artifact gp +5.29 vs pns -1.59 (pns worse than zero-shot), Wound level (+2.61 vs +2.86); parents +0.14, +0.25 HP",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Pack-net-scratch base, 11 games, and the checkpoint (jobs 0953-0959; files results/mutate/gbb-2026-11-13-gbb-pns1-g11-sh9-s{1,2,3}-*.json)",
+      "sha256": "3ea9004b4a63f55b1f38ccdd28e035716ab0775ea929d6deb832a27a8b23ee7e"
+    },
+    {
+      "path": "jobs/done/0952-family.json",
+      "sha256": "1d82bb59c2af2389e5228851cf43dc96e7c7d8afdb6bba1704ab795242b84045"
+    },
+    {
+      "path": "jobs/done/0959-family.json",
+      "sha256": "71a9f7e94bd7bbe4c62b6eefd84e2e9ec01d5588062254b8c14b9efb27948d7d"
+    },
+    {
+      "path": "results/mutate/gen-wide-gp1-tsl1.json",
+      "sha256": "d96fc131cbbff776fe13cc8c28a36a28fe7bcb509df0a7a4aa16e20d207b2af9"
+    },
+    {
+      "path": "results/mutate/gen-wide-pns1-tsl1.json",
+      "sha256": "3477532fc835a2bc8af5f706864805a1a3c411914960a01ad0709dfef269967b"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "fced9664-4ee1-4261-aec3-a7f1f2fc7d15",
+  "at": "2026-11-12T23:51:52+00:00 @ e4bfa8cd",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "genpack-burst-base 11-game joint bursts, generated-pack s1 base (3 seeds): OppCard-Artifact cut +5.29 HP (se nets 1.55) of +10.82 cost; Attacked-Wound +2.61 (0.14) of +2.44; pooled share 0.60 (se 0.12); parent +0.14 HP; pns base pending (0953-0959)",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Generated-pack base, 11 games (jobs 0946-0952; files results/mutate/gbb-2026-11-13-gbb-gp1-g11-sh9-s{1,2,3}-*.json)",
+          "sha256": "c3fdc6d80e036b0f47ebba6422f94ae6485d238028e2012b552476a104acffa6"
+        },
+        {
+          "path": "jobs/done/0952-family.json",
+          "sha256": "1d82bb59c2af2389e5228851cf43dc96e7c7d8afdb6bba1704ab795242b84045"
+        },
+        {
+          "path": "jobs/done/0947-family.json",
+          "sha256": "a2dc1a222b589273cd247b303cf7610cc55f492f074f3bc6b363b32506b84b52"
+        },
+        {
+          "path": "jobs/done/0949-family.json",
+          "sha256": "12d5551155fe8d5046c95c2181b6b10dccd030475f3669a7ce54b697058b0c24"
+        },
+        {
+          "path": "jobs/done/0951-family.json",
+          "sha256": "58a17e7247afe8b77bcdf312baebee0069d7897283ee471bc8dfcaeb05055bea"
+        }
+      ],
+      "owner": false,
+      "by": "9cd20e2b-6794-46ec-a107-b2b869fc9786",
+      "at": "2026-11-12T20:00:12+00:00 @ e5fee34c",
+      "until": "2026-11-12T23:51:52+00:00 @ e4bfa8cd"
+    }
+  ],
+  "seal": "65ab9d9fb581fb3bd72f8ffe3853e4d78f60ded81526ea258869c0f3d679c2a4"
+}

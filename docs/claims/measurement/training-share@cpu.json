@@ -1,0 +1,39 @@
+{
+  "key": "measurement/training-share@cpu",
+  "rev": 1,
+  "value": "Training took about 260 of the 575 thread-hours the job runner booked from 10-30 to the 11-02 snapshot (jobs/done, threads x (ended - started)), while no net trained in that time beat the 10-29 net at run level.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/approach-review-2026-11-02.md",
+      "anchor": "Where the project stands",
+      "sha256": "22a11ddea40118d69f10d49f09c54194115966ae1ded75d88cc945ab67613aa0"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "approach review snapshot 10:30 2026-11-02; recompute from jobs/done for a fresh number",
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:14:23+00:00 @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Training took about 260 of the 575 thread-hours the job runner booked from 10-30 to the 11-02 snapshot (jobs/done, threads x (ended - started)), while no net trained in that time beat the 10-29 net at run level.",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Where the project stands",
+          "sha256": "22a11ddea40118d69f10d49f09c54194115966ae1ded75d88cc945ab67613aa0"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:14:23+00:00 @ fc9cdd8",
+      "until": "2026-11-10T07:03:42+00:00 @ f97b79c",
+      "retired": "a 10-30 to 11-02 snapshot; the standing rules are owner/machine-time and decision/training-stops"
+    }
+  ],
+  "seal": "78aabb118083c3137dcff21575ff51290f286224071da343b4d831f69adf19ee"
+}

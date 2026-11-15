@@ -1,0 +1,22 @@
+{
+  "key": "cause/unseen-cards-encoding",
+  "rev": 1,
+  "value": "The nine non-Demon-Form unseen cards cost the effects-input 10-29 net nothing vs the heuristic (search plays them in the engine); an id-only net pays: effects minus ids +3.02 (0.54) HP on held-out decks without Demon Form, +5.16 (0.85) on Demon Form decks (five 5k twins). The encoding carries transfer to unseen cards.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/big-picture-2026-11-09.md",
+      "anchor": "Key claims and skeptic verdicts",
+      "sha256": "5c1b1248ed546d8cbd2731871419afe4b5b244ce9c1c36a0a020cad9b30d238d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:27:59Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "94d8ed9dd7f5431bbbf7059c1b5816f6b5cfcfcd36b055237011aa15f9fb1e00"
+}

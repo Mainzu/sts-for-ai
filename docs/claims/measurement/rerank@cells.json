@@ -1,0 +1,85 @@
+{
+  "key": "measurement/rerank@cells",
+  "rev": 1,
+  "value": "One turn deep @hpb0.01 on cell decks, sequences 0-499, against the 10-29 net (0.634 clears, 24.54 end-HP): burst8 s1 +0.82 HP (se 0.55), lean -0.51, data40k -0.80, data80k -1.86, lean-thr -1.98, cover21 -2.70 (se ~0.5); no newer net beats it, and tight2 order doesn't track gauntlet order (data80k best on tight2, fourth here).",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Re-rank of newer nets on the gauntlet (Q1; b37i; read 10:20 2026-11-02)",
+      "sha256": "61e98ea8a591da49a6a57da857e6b1dffd718a2bbb8d22c4f99cfe221b2a6502"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01.json",
+      "sha256": "5f09012adeffb8c5b718928048b7950077787540398f0bfb9e456e3b10345c1f"
+    },
+    {
+      "path": "results/gauntlet/rerank-2026-11-01-burst8-s1-d4b65b6-hpb0.01.json",
+      "sha256": "9084e2c2fb02a01e55930a86d7dbbe81c8f1fa3a8c56794274f0aedbee842e06"
+    },
+    {
+      "path": "results/gauntlet/rerank-2026-11-01-data80k-s1-r1-65e76eb-hpb0.01.json",
+      "sha256": "4a04c77ad99c8c606db996b93425b2ba107f64f4f46e6c38158cfd9d362d54c2"
+    },
+    {
+      "key": "yardstick/gauntlet",
+      "rev": 1
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:12:30+00:00 @ fc9cdd8",
+  "confirms": [],
+  "flags": [
+    {
+      "by": "4a17366f-b8aa-4d87-974e-5a037ff67155",
+      "at": "2026-11-06T15:05:56+00:00 @ 34ec7e4",
+      "reason": "review 2026-11-06: the lean, lean-thr, data40k and data80k rows are seed 1 only; pooled over three seeds data40k reads -0.16 HP and lean-thr is level with the 10-29 net (two skeptics); re-set from the ledger script when it exists"
+    }
+  ],
+  "history": [
+    {
+      "rev": 1,
+      "value": "One turn deep @hpb0.01 on cell decks, sequences 0-499, against the 10-29 net (0.634 clears, 24.54 end-HP): burst8 s1 +0.82 HP (se 0.55), lean -0.51, data40k -0.80, data80k -1.86, lean-thr -1.98, cover21 -2.70 (se ~0.5); no newer net beats it, and tight2 order doesn't track gauntlet order (data80k best on tight2, fourth here).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Re-rank of newer nets on the gauntlet (Q1; b37i; read 10:20 2026-11-02)",
+          "sha256": "61e98ea8a591da49a6a57da857e6b1dffd718a2bbb8d22c4f99cfe221b2a6502"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01.json",
+          "sha256": "5f09012adeffb8c5b718928048b7950077787540398f0bfb9e456e3b10345c1f"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-burst8-s1-d4b65b6-hpb0.01.json",
+          "sha256": "9084e2c2fb02a01e55930a86d7dbbe81c8f1fa3a8c56794274f0aedbee842e06"
+        },
+        {
+          "path": "results/gauntlet/rerank-2026-11-01-data80k-s1-r1-65e76eb-hpb0.01.json",
+          "sha256": "4a04c77ad99c8c606db996b93425b2ba107f64f4f46e6c38158cfd9d362d54c2"
+        },
+        {
+          "key": "yardstick/gauntlet",
+          "rev": 1
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:12:30+00:00 @ fc9cdd8",
+      "until": "2026-11-06T22:56:23+00:00 @ c3f8745",
+      "retired": "replaced by measurement/ledger@cells (ledger.py pools every recipe over seeds and books, as the review's flag asked)"
+    }
+  ],
+  "seal": "f98549e77d0d39721da720baad6dbe2ddc486b06a0a073ee37d44585ea095972"
+}

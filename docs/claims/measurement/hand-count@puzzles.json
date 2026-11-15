@@ -1,0 +1,50 @@
+{
+  "key": "measurement/hand-count@puzzles",
+  "rev": 2,
+  "value": "Product decision on 448 exact puzzles (horizon>=1), 5 sample seeds: regret 0.0063 (0.0015) at 4 hands, 0.0027 (0.0009) at 16, paired -0.0036 (0.0012); horizon 1 -0.0045, 2+ -0.0016. Adaptive rule (re-search <25k nodes) = 16 everywhere here (98% of trees small).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/hands-where-small.md",
+      "anchor": "Step 1: puzzle screen (results/hands/puzzle-screen.json)",
+      "sha256": "e05e25fc568f95499307ab36a9a0a931b6edff0b24a15fa7523faff34dd023d9"
+    },
+    {
+      "path": "results/hands/puzzle-screen.json",
+      "sha256": "8e7368cab32dc03d109ff9a8fe191a22340749c4b2948bb883821e764adc70b9"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:25+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Product decision (one-turn search, two-turn with K sampled hands, one-turn pick where the tree cut) on the 448 deeper exact puzzles (horizon >= 1), 5 sample seeds, puzzle as unit: regret 0.0063 (0.0015) at 4 hands, 0.0027 (0.0009) at 16, paired -0.0036 (0.0012, 3.1 se); train -0.0042 (0.0016), held-out -0.0029 (0.0017); horizon 1 -0.0045 (0.0016, 313 puzzles), horizon 2+ -0.0016 (0.0012, 135). 74% of the 4-hand regret sits on puzzles right on some seed. The adaptive rule (re-search under 25,000 nodes) equals 16 everywhere here: 98% of puzzle trees are small. The review's 0.0089 / 0.0030 / 0.0059 (0.0016) is not reproduced at 4 hands (a third lower here); its script isn't on disk.",
+      "sources": [
+        {
+          "path": "docs/research/hands-where-small.md",
+          "anchor": "Step 1: puzzle screen (results/hands/puzzle-screen.json)",
+          "sha256": "e05e25fc568f95499307ab36a9a0a931b6edff0b24a15fa7523faff34dd023d9"
+        },
+        {
+          "path": "results/hands/puzzle-screen.json",
+          "sha256": "8e7368cab32dc03d109ff9a8fe191a22340749c4b2948bb883821e764adc70b9"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "6229fb7c-c43e-4af3-b45f-85763681b439",
+      "at": "2026-11-06T23:17:16+00:00 @ 5e8c9c2",
+      "until": "2026-11-13T02:30:25+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "9e5b43883f6af1bbc5d8d3c18305f2e14bb9a4e8f6afa0a586628f55ee60f0e5"
+}

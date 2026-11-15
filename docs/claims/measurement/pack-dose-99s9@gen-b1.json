@@ -1,0 +1,86 @@
+{
+  "key": "measurement/pack-dose-99s9@gen-b1",
+  "rev": 3,
+  "value": "gen-b1 at 99 games/mechanic, share 0.9 (2 nets, @tsl1, 675 elite fights x4 vs zero-shot 10-29): TurnEnd-Frail x Lagavulin -0.16 (0.28) (share 0.5: +3.01); Nob cut +12.18 (0.59) of +13.29; OppCard-Vulnerable x Sentries -4.31 (0.50); parents -0.12 (0.14). Guard: s1 pass, s2 fail (OppCard-Vulnerable x Lagavulin +2.97). Dominates share 0.5 on every row.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After pack-dose 99s9: pack chains train 99 games per mechanic at share 0.9 (on the owner's behalf, 2026-11-10)",
+      "sha256": "dafb516ad49dffe2ab6f4a94d4cdcaf76bf41baba72d6142fd3a66ced4b0c1ca"
+    },
+    {
+      "path": "results/families/gen-b1-dose99s9.md",
+      "sha256": "e97815919a8c29e8ed12d8f7c65427d9a67c55b10ec137c4966c47e301e906c7"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:40+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Gen batch 1's pack chain at 99 games per mechanic and replay share 0.9 (arm g99-sh9, two nets, @tsl1 on the bench's elites, 675 fights x 4 seeds, pooled per start, against the zero-shot 10-29 net, HP lost per elite fight): TurnEnd-Frail x Lagavulin -0.16 (0.28) (g99 at share 0.5: +3.01 (0.39)); AttackLoss-Damage x Gremlin Nob cut +12.18 (se over nets 0.59) of +13.29 (g99: +11.50); OppCard-Vulnerable x Sentries -4.31 (0.50) HP, wins +0.106; OppCard-PlainDamage x Sentries cut +5.13 of +7.36, Sentries parent -0.04 (0.21); parent over all -0.12 (0.14). Guard: net s1 passes (mean cut +1.64), net s2 fails on OppCard-Vulnerable x Lagavulin +2.97 (0.57) (pooled +0.78 (0.42)); g99 at 0.5 also failed one net of two (+4.86 on TurnEnd-Frail x Lagavulin). Dominates g99 at share 0.5 on every named row.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After pack-dose 99s9: pack chains train 99 games per mechanic at share 0.9 (on the owner's behalf, 2026-11-10)",
+          "sha256": "dafb516ad49dffe2ab6f4a94d4cdcaf76bf41baba72d6142fd3a66ced4b0c1ca"
+        },
+        {
+          "path": "results/families/gen-b1-dose99s9.md",
+          "sha256": "e97815919a8c29e8ed12d8f7c65427d9a67c55b10ec137c4966c47e301e906c7"
+        },
+        {
+          "path": "jobs/done/0738-family.json",
+          "sha256": "b207fda9c0a309c1957e3fc57d95c217f1a8dfb900ea4bb9ca6866b21aa380a5"
+        }
+      ],
+      "owner": false,
+      "by": "2edc559b-edfc-489b-a2d9-c1df70ab65a0",
+      "at": "2026-11-09T21:21:00+00:00 @ 2123f4d",
+      "until": "2026-11-11T05:36:16+00:00 @ a84d752"
+    },
+    {
+      "rev": 2,
+      "value": "Gen batch 1's pack chain at 99 games per mechanic and replay share 0.9 (arm g99-sh9, two nets, @tsl1 on the bench's elites, 675 fights x 4 seeds, pooled per start, against the zero-shot 10-29 net, HP lost per elite fight): TurnEnd-Frail x Lagavulin -0.16 (0.28) (g99 at share 0.5: +3.01 (0.39)); AttackLoss-Damage x Gremlin Nob cut +12.18 (se over nets 0.59) of +13.29 (g99: +11.50); OppCard-Vulnerable x Sentries -4.31 (0.50) HP, wins +0.106; OppCard-PlainDamage x Sentries cut +5.13 of +7.36, Sentries parent -0.04 (0.21); parent over all -0.12 (0.14). Guard: net s1 passes (mean cut +1.64), net s2 fails on OppCard-Vulnerable x Lagavulin +2.97 (0.57) (pooled +0.78 (0.42)); g99 at 0.5 also failed one net of two (+4.86 on TurnEnd-Frail x Lagavulin). Dominates g99 at share 0.5 on every named row. At 33 games per mechanic, same share (arm g33-sh9, two nets): TurnEnd-Frail x Lagavulin +0.54 (0.33), AttackLoss-Damage x Nob cut +4.24 (1.92) of +13.29, OppCard-Vulnerable x Sentries +7.06 (0.81) HP, wins -0.213, guard fails on both nets: the single-mechanic 33-game quote does not carry to eight mechanics in one burst.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After pack-dose 99s9: pack chains train 99 games per mechanic at share 0.9 (on the owner's behalf, 2026-11-10)",
+          "sha256": "dafb516ad49dffe2ab6f4a94d4cdcaf76bf41baba72d6142fd3a66ced4b0c1ca"
+        },
+        {
+          "path": "results/families/gen-b1-dose99s9.md",
+          "sha256": "e97815919a8c29e8ed12d8f7c65427d9a67c55b10ec137c4966c47e301e906c7"
+        },
+        {
+          "path": "jobs/done/0738-family.json",
+          "sha256": "b207fda9c0a309c1957e3fc57d95c217f1a8dfb900ea4bb9ca6866b21aa380a5"
+        },
+        {
+          "path": "docs/research/family-transfer-probes.md",
+          "anchor": "Pack-dose-33 probe (0697-0701): the pack chain at 33 games per mechanic and share 0.9",
+          "sha256": "25820c3086b43ac90d7d3446a787ccb060e5ec535156479e925e02970ccd796d"
+        },
+        {
+          "path": "results/families/gen-b1-dose33.md",
+          "sha256": "b563359dfe0f03d6fff94169308ee6aa350bef795cdfa2d256cfd0907e181c64"
+        },
+        {
+          "path": "jobs/done/0701-family.json",
+          "sha256": "387b9a770bdb1b8b0573c50ce39b0a4fa8d23c394278dea6b941036566a57060"
+        }
+      ],
+      "owner": false,
+      "by": "c33c26e2-be6a-40e4-ba5d-4a83e10c1caf",
+      "at": "2026-11-11T05:36:16+00:00 @ a84d752",
+      "until": "2026-11-13T02:30:40+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "22fbce97210d7387b9284bea8092de28582c61349e9916afa71d1144440352c0"
+}

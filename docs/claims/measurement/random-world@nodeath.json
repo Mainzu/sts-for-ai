@@ -1,0 +1,66 @@
+{
+  "key": "measurement/random-world@nodeath",
+  "rev": 2,
+  "value": "No-death random worlds (40 worlds of 21 generated enemy mechanics, k 2/4/8, official elites, 50 starts x 4, 10-29 net @hpb0.01 one turn), HP lost bounded start HP..150: net cost beyond heuristic +5.5/+6.5/+5.4-10.2 vs summed singles +6.5-7.0/+12.8-13.9/+25.5-27.4, g = cost - 1.5S at -10 to -37 se: less than additive. Uncapped reads aren't a play measure. k 8 turn-limit 0.46 vs 0.35.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/random-world-bench.md",
+      "anchor": "Step 4: worlds in no-death mode (jobs 0739-0740, 2026-11-09)",
+      "sha256": "1d469ac2d9b74df98c8a67f9d9b888ec29826b0719365eaeeb42ff15efb4c666"
+    },
+    {
+      "path": "results/mutate/rw-nodeath.json",
+      "sha256": "07cd2254cf2dc489022228dbd87ade3e8fb0b5361dd3288e3abdd5392a49afd3"
+    },
+    {
+      "path": "scripts/analysis/rwb_nodeath_caps.py",
+      "sha256": "0dc11cd3cfa7584c3f437e632d4ad8cb8ed04eb04c4d868ed3b89c4574fc5615"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:23+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Random-world worlds in no-death mode (40 main worlds of 21 generated enemy mechanics + 10 side of 24, k 2/4/8, official Act 1 elites, 50 shared starts x 4 seeds, heuristic and the 10-29 net @hpb0.01 one turn deep): with HP lost bounded per game (start HP .. 150) the net's cost beyond the heuristic is +5.5 / +6.5 / +5.4-10.2 HP at k 2/4/8 against summed singles +6.5-7.0 / +12.8-13.9 / +25.5-27.4: g = cost - 1.5 S at -10 to -37 se on the main pool at every k and bound (side -1.4 to -14): additive, less than additive. Uncapped no-death HP lost is unbounded (k 8 raw net loss 2932, 46% turn-limit games) and reads go; not a play measure. At k 8 the net reaches the turn limit more often than the heuristic (0.46 vs 0.35).",
+      "sources": [
+        {
+          "path": "docs/research/random-world-bench.md",
+          "anchor": "Step 4: worlds in no-death mode (jobs 0739-0740, 2026-11-09)",
+          "sha256": "1d469ac2d9b74df98c8a67f9d9b888ec29826b0719365eaeeb42ff15efb4c666"
+        },
+        {
+          "path": "results/mutate/rw-nodeath.json",
+          "sha256": "07cd2254cf2dc489022228dbd87ade3e8fb0b5361dd3288e3abdd5392a49afd3"
+        },
+        {
+          "path": "results/mutate/rw-nodeath-table.md",
+          "sha256": "bb35e2790a379e9c608990f1c2c9aba4cb964218248152c1529a3384da512f60"
+        },
+        {
+          "path": "jobs/done/0739-random-world.json",
+          "sha256": "d2aa41baf0b2bf14aa23f3c5d425c71fa5142fd8825607461fd47af94d0e887c"
+        },
+        {
+          "path": "jobs/done/0740-random-world.json",
+          "sha256": "0cbd877bdd5fe4c9f11f7af3634a6385187da64d53293080872f063fbc4a0195"
+        },
+        {
+          "path": "scripts/analysis/rwb_nodeath_caps.py",
+          "sha256": "0dc11cd3cfa7584c3f437e632d4ad8cb8ed04eb04c4d868ed3b89c4574fc5615"
+        }
+      ],
+      "owner": false,
+      "by": "01e9251d-5ba1-4792-bcee-09fcce0effe3",
+      "at": "2026-11-09T14:59:18+00:00 @ 62dd911",
+      "until": "2026-11-13T02:31:23+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "3b802dd10bbaedb3a633e04d6ba823f0632f7145487bb0c243f6b17f7784646e"
+}

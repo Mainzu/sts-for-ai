@@ -1,0 +1,135 @@
+{
+  "key": "measurement/genpack-yardstick@18-seeds",
+  "rev": 3,
+  "value": "decision/goal1-yardstick novelty cost (end HP, 675 starts x2, @tsl1 one turn), pooled sharp2/thorns2/ritual2/weakhit1: pns1 +4.03 (0.28), 10-29 +3.41 (0.25), wide s1 +0.92 (0.19), 18-mechanic genpack s1/101/201 +0.96/+2.27/+2.01 (0.22-0.23; seed sd ~0.7). Pool gives most of the cut; wide's edge over genpack unshown until its s101/s201. Verdict between.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/genpack-yardstick.md",
+      "anchor": "The 18-mechanic nets on the yardstick (jobs 0939-0941, navigator, 2026-11-12)",
+      "sha256": "3a563f4cfe04081d5bf33a0638c0a2f74d859f756b89b1824215cb77e918bb52"
+    },
+    {
+      "path": "docs/research/genpack-yardstick.md",
+      "anchor": "Read (navigator, 2026-11-12)",
+      "sha256": "bffd92b32b4fa85069da68687a76ef45ed723d5725c14fb369ae39ef12d37795"
+    },
+    {
+      "path": "results/mutate/yard-wide-tsl1.json",
+      "sha256": "33dcd90b55aa6d806ca2af3be0d9251c875234e873c8ef356bd9b0882a098409"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:24+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Owner's yardstick (as measurement/genpack-yardstick@wide-s1, 675 elite starts x 2 seeds @tsl1, same pin and heuristic games) for the three 18-mechanic generated-pack nets: pooled novelty cost over sharp2, thorns2, ritual2, weakhit1 +0.96 (0.22) / +2.27 (0.23) / +2.01 (0.23) HP for seeds 1 / 101 / 201 (mean 1.75, seed sd about 0.7) against pack-net-scratch s1 +4.03 (0.28) and the wide net s1 +0.92 (0.19): the 18-mechanic pool gives most of the cut; seed 1 is good for both recipes, so the wide grid's yardstick edge is unshown until its seeds 101/201; thorns2 spreads 2.45 / 6.28 / 4.62 over the seeds (the wide net's +4.20 inside it); ritual2 -0.74 / -1.02 / -0.33, repaired as in pns1 (-0.22) and the wide net (-1.07), against the 10-29 net's +1.68 (0.35). Probe verdict between.",
+      "sources": [
+        {
+          "path": "docs/research/genpack-yardstick.md",
+          "anchor": "The 18-mechanic nets on the yardstick (jobs 0939-0941, navigator, 2026-11-12)",
+          "sha256": "3a563f4cfe04081d5bf33a0638c0a2f74d859f756b89b1824215cb77e918bb52"
+        },
+        {
+          "path": "results/mutate/yard-gp1-tsl1.json",
+          "sha256": "97d47dbbbbeb839f45257ba1729f34a8da54db07a36a70cc3d277dd0f4b55a26"
+        },
+        {
+          "path": "results/mutate/yard-gp101-tsl1.json",
+          "sha256": "39ca5a151af5cdba41ec11585e6c1cccbd8afb7599dc31f465e1124042e05f57"
+        },
+        {
+          "path": "results/mutate/yard-gp201-tsl1.json",
+          "sha256": "bc01ee58bc041b14d41c6f38924c525d082d5d870ecb55011efb13ce12a6b733"
+        },
+        {
+          "path": "results/mutate/yard-pns1-tsl1.json",
+          "sha256": "897e8133e6022a6b5a42116bb1c3a4d1d479ea470a0d0a00482dcdfb17a06c03"
+        },
+        {
+          "path": "jobs/done/0939-mutate-monsters.json",
+          "sha256": "c12d6c38429bc7eac6ddcbb4b9d65f94372338c194b0b611f4b0df64b3a0e160"
+        },
+        {
+          "path": "jobs/done/0940-mutate-monsters.json",
+          "sha256": "5c252318c4cdb0a33770d0826ff96cb33bc45fa0b1d76d24ca9f67d947dffd93"
+        },
+        {
+          "path": "jobs/done/0941-mutate-monsters.json",
+          "sha256": "60238eb7a0a3628cd7e609576d39aa140dac84ad7fea868732aab2099505c8d3"
+        },
+        {
+          "key": "measurement/genpack-yardstick@wide-s1",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "48a915f7-e4fb-4f66-b701-0667be478b80",
+      "at": "2026-11-12T15:59:34+00:00 @ 0ee4d27",
+      "until": "2026-11-12T16:01:15+00:00 @ 0ee4d27"
+    },
+    {
+      "rev": 2,
+      "value": "Owner's yardstick (decision/goal1-yardstick: stage A modifiers on official elites, 675 starts x 2 seeds, @tsl1 one turn deep, one pin and identical heuristic games; novelty cost = the net's edge over the heuristic on the parent minus on the modifier, end HP), pooled over sharp2, thorns2, ritual2, weakhit1: pack-net-scratch s1 +4.03 (0.28), the 10-29 net +3.41 (0.25), the wide net s1 +0.92 (0.19) (wins +0.003 against pns1's +0.058; sharp2 -0.28, thorns2 +4.20, parent edge -0.72 (0.27)), the 18-mechanic generated-pack nets +0.96 (0.22) / +2.27 (0.23) / +2.01 (0.23) for seeds 1 / 101 / 201 (mean 1.75, seed sd about 0.7): the 18-mechanic pool gives most of the cut; seed 1 is good for both recipes, so the wide grid's yardstick edge is unshown until its seeds 101/201 (per row it leads on sharp2 and metal3); thorns2 spreads 2.45 / 6.28 / 4.62 over the 18-mechanic seeds, the wide net's +4.20 inside it; ritual2 -0.74 / -1.02 / -0.33, repaired as in pns1 (-0.22) and the wide net (-1.07), against the 10-29 net's +1.68 (0.35); str2 and hp1.25 level for all. 18-seed probe verdict between; the wide s1 read a go (one seed).",
+      "sources": [
+        {
+          "path": "docs/research/genpack-yardstick.md",
+          "anchor": "The 18-mechanic nets on the yardstick (jobs 0939-0941, navigator, 2026-11-12)",
+          "sha256": "3a563f4cfe04081d5bf33a0638c0a2f74d859f756b89b1824215cb77e918bb52"
+        },
+        {
+          "path": "docs/research/genpack-yardstick.md",
+          "anchor": "Read (navigator, 2026-11-12)",
+          "sha256": "bffd92b32b4fa85069da68687a76ef45ed723d5725c14fb369ae39ef12d37795"
+        },
+        {
+          "path": "results/mutate/yard-wide-tsl1.json",
+          "sha256": "33dcd90b55aa6d806ca2af3be0d9251c875234e873c8ef356bd9b0882a098409"
+        },
+        {
+          "path": "results/mutate/yard-n1029-tsl1.json",
+          "sha256": "4929b896034bd39636560cfe36da2b0a7abcbad280714d3cdaed61e4afb4f926"
+        },
+        {
+          "path": "results/mutate/yard-gp1-tsl1.json",
+          "sha256": "97d47dbbbbeb839f45257ba1729f34a8da54db07a36a70cc3d277dd0f4b55a26"
+        },
+        {
+          "path": "results/mutate/yard-gp101-tsl1.json",
+          "sha256": "39ca5a151af5cdba41ec11585e6c1cccbd8afb7599dc31f465e1124042e05f57"
+        },
+        {
+          "path": "results/mutate/yard-gp201-tsl1.json",
+          "sha256": "bc01ee58bc041b14d41c6f38924c525d082d5d870ecb55011efb13ce12a6b733"
+        },
+        {
+          "path": "results/mutate/yard-pns1-tsl1.json",
+          "sha256": "897e8133e6022a6b5a42116bb1c3a4d1d479ea470a0d0a00482dcdfb17a06c03"
+        },
+        {
+          "path": "jobs/done/0939-mutate-monsters.json",
+          "sha256": "c12d6c38429bc7eac6ddcbb4b9d65f94372338c194b0b611f4b0df64b3a0e160"
+        },
+        {
+          "path": "jobs/done/0940-mutate-monsters.json",
+          "sha256": "5c252318c4cdb0a33770d0826ff96cb33bc45fa0b1d76d24ca9f67d947dffd93"
+        },
+        {
+          "path": "jobs/done/0941-mutate-monsters.json",
+          "sha256": "60238eb7a0a3628cd7e609576d39aa140dac84ad7fea868732aab2099505c8d3"
+        }
+      ],
+      "owner": false,
+      "by": "48a915f7-e4fb-4f66-b701-0667be478b80",
+      "at": "2026-11-12T16:01:15+00:00 @ 0ee4d27",
+      "until": "2026-11-13T02:30:24+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "a5657d5e16abf5b9366b8ed51056988e3229257bc7f0517eca1211ed1ac4a106"
+}

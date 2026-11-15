@@ -1,0 +1,12 @@
+{
+ "role": "navigator",
+ "pid": 222,
+ "model": "claude-fable-5-1",
+ "started": "2026-11-03T09:00:00+00:00",
+ "log": "x",
+ "why": [
+  "direction:abc"
+ ],
+ "ended": "2026-11-03T09:40:00+00:00",
+ "outcome": "ok"
+}

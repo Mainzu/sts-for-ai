@@ -1,0 +1,15 @@
+{
+ "id": "0005-gauntlet",
+ "cmd": [
+  "python",
+  "g.py"
+ ],
+ "threads": 3,
+ "estimate_min": 30.0,
+ "lane": "delta",
+ "added": "2026-11-03T06:00:00+00:00",
+ "started": "2026-11-03T06:20:00+00:00",
+ "ended": "2026-11-03T06:55:00+00:00",
+ "status": "ok",
+ "exit_code": 0
+}

@@ -1,0 +1,32 @@
+{
+  "key": "decision/depth-family-closed",
+  "rev": 1,
+  "value": "The depth family (three-turn search, rollout leaves, two-turn search inside the choosers) is closed on the dev machine, not paused: depth-headroom's two reads found no headroom over the two-turn product on elites (cause/depth-saturated); search budget goes to the run layer once it has content to choose between.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane depth-headroom closed (2026-11-04)",
+      "sha256": "490d1701979b2d6a1091bd6c943b8743eeeb9554efa86636a175f45170c1ac6b"
+    },
+    {
+      "key": "cause/depth-saturated",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "38f068ab-8b7e-4981-8bbe-695e64cca72a",
+  "at": "2026-11-04T14:25:53Z @ 57f3098",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:14Z @ 3123201a",
+      "note": "fact split 2026-11-13: cause/depth-saturated reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "122c7d259090c1f330f86dc6181d3af847037164f9e0a22b7e5c712695de1dc3"
+}

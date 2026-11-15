@@ -1,0 +1,32 @@
+{
+  "key": "cause/novelty-generated-parent",
+  "rev": 1,
+  "value": "Generated enemy costs are punish-an-action: AttackLoss-Damage +5.60 (0.35), OppCard-PlainDamage +1.76, AttackLoss-Strength +1.20 HP; turn-trigger damage free, TurnStart-Strength +0.48 (0.12). Each sits on one parent (AttackLoss-Damage x Nob +12.8), so the adapted column ranks by the worst parent.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/gen-enemies@table24",
+      "rev": 3
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After generated-enemies batch 1: three probe reads before step 4; all-content-net is the ready exploration charter (on the owner's behalf, 2026-11-07)",
+      "sha256": "938f460bd0036c0a2449342f6ed44934880449f57d9dcf8310b89eb0d576c695"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:27:57Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:03Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/gen-enemies@table24 reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "016931cad1bdb1b6f8478457849544d81550860da209aed485eab8dd34b34487"
+}

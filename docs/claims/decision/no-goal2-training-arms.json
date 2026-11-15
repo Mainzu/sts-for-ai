@@ -1,0 +1,137 @@
+{
+  "key": "decision/no-goal2-training-arms",
+  "rev": 4,
+  "value": "Training arms re-processing what the net has (label variants, curriculum, distillation, hand-made columns, ensembles, more one-turn rounds, product bursts) and more same-kind data are stopped as goal-2 levers (~18 arms: proxies 0-0.02, headline 0). Training on new content isn't covered.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/approach-review-2026-11-02.md",
+      "anchor": "Stop or pause",
+      "sha256": "f8fad2ee653f87f858fa73d5392004e0adf2238488ba7bdc9f42e81a2480fa2f"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Next re-ranked from the approach review (owner away, 2026-11-02)",
+      "sha256": "f15c7c1650e61c31caf73e006c3d7c085e2e513df33b2ee6fe63a89486f8fc52"
+    },
+    {
+      "key": "decision/training-stops",
+      "rev": 1
+    },
+    {
+      "key": "measurement/no-goal2-data-size-curve",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:29Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Training-recipe arms (label variants, curriculum, data size, coverage, ensembles, bursts for the product, more one-turn self-play rounds) are stopped as goal-2 levers: twelve-plus arms moved proxies by 0-0.02 and run level not at all.",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Stop or pause",
+          "sha256": "f8fad2ee653f87f858fa73d5392004e0adf2238488ba7bdc9f42e81a2480fa2f"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Next re-ranked from the approach review (owner away, 2026-11-02)",
+          "sha256": "f15c7c1650e61c31caf73e006c3d7c085e2e513df33b2ee6fe63a89486f8fc52"
+        },
+        {
+          "key": "decision/training-stops",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:28Z @ fc9cdd8",
+      "until": "2026-11-06T15:05:55Z @ 34ec7e4"
+    },
+    {
+      "rev": 2,
+      "value": "Training-recipe arms that re-process what the net already has (label variants, curriculum, distillation, hand-made columns, ensembles, more one-turn self-play rounds, bursts for the product) are stopped as goal-2 levers: about eighteen arms moved proxies by 0-0.02 and the headline not at all. Data size is not one of them in kind: on the one-turn cell gauntlet 5k, 20k and 40k games read -3.30, -1.45 and -0.16 HP against the 10-29 net over both books (about 3 se a step with the training seed as the unit; review 2026-11-06, two skeptics alike), so the curve rises and ends level with the product net, not above it; 80k is unresolved (one seed read about 1 HP below its 40k twin, inside the seed spread; the second seed's read is job 0299-0300). No data arm beats the product net, and more games of the same kind is not something new to learn (the owner's training rule), so no data arm runs either; a training on new content (decision/training-stops; backlog all-content-net) is not covered by this stop.",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Stop or pause",
+          "sha256": "f8fad2ee653f87f858fa73d5392004e0adf2238488ba7bdc9f42e81a2480fa2f"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Next re-ranked from the approach review (owner away, 2026-11-02)",
+          "sha256": "f15c7c1650e61c31caf73e006c3d7c085e2e513df33b2ee6fe63a89486f8fc52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the big-picture review of 2026-11-06: code first, the mechanic as goal 1's sample unit, two stored conclusions re-set, probes without lanes (on the owner's behalf, 2026-11-06)",
+          "sha256": "096065a46774079ceb207bb68cfa4dfed4d24ca8580a5ba2438a3b885da0fb30"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-06.md",
+          "anchor": "Key claims and skeptic verdicts",
+          "sha256": "c59114d491930272819530fccaeefa81decc6681260fde6952cb6e52ee4edbd7"
+        },
+        {
+          "key": "decision/training-stops",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "4a17366f-b8aa-4d87-974e-5a037ff67155",
+      "at": "2026-11-06T15:05:55Z @ 34ec7e4",
+      "until": "2026-11-06T23:02:52Z @ c526be3"
+    },
+    {
+      "rev": 3,
+      "value": "Training-recipe arms that re-process what the net already has (label variants, curriculum, distillation, hand-made columns, ensembles, more one-turn self-play rounds, bursts for the product) are stopped as goal-2 levers: about eighteen arms moved proxies by 0-0.02 and the headline not at all. Data size is not one of them in kind: on the one-turn cell gauntlet 5k, 20k and 40k games read -3.30, -1.45 and -0.16 HP against the 10-29 net over both books (about 3 se a step with the training seed as the unit; review 2026-11-06, two skeptics alike), so the curve rises and ends level with the product net, not above it; 80k games add nothing over 40k (two nets read -1.86 on one book and -0.50 on both, against 40k's -1.08, -0.37 and +0.98 over three seeds, inside the seed spread; measurement/ledger@cells). No data arm beats the product net, and more games of the same kind is not something new to learn (the owner's training rule), so no data arm runs either; a training on new content (decision/training-stops; backlog all-content-net) is not covered by this stop.",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Stop or pause",
+          "sha256": "f8fad2ee653f87f858fa73d5392004e0adf2238488ba7bdc9f42e81a2480fa2f"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Next re-ranked from the approach review (owner away, 2026-11-02)",
+          "sha256": "f15c7c1650e61c31caf73e006c3d7c085e2e513df33b2ee6fe63a89486f8fc52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the big-picture review of 2026-11-06: code first, the mechanic as goal 1's sample unit, two stored conclusions re-set, probes without lanes (on the owner's behalf, 2026-11-06)",
+          "sha256": "096065a46774079ceb207bb68cfa4dfed4d24ca8580a5ba2438a3b885da0fb30"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-06.md",
+          "anchor": "Key claims and skeptic verdicts",
+          "sha256": "c59114d491930272819530fccaeefa81decc6681260fde6952cb6e52ee4edbd7"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After turn-start-leaf: the turn-start leaf for goal-1 card reads, the product unchanged, probes on burst8 and the headline (on the owner's behalf, 2026-11-07)",
+          "sha256": "37746dbcfc72e78b90164b489edbe9c42ecf8361749837eb61e059f54524e05a"
+        },
+        {
+          "key": "decision/training-stops",
+          "rev": 1
+        },
+        {
+          "key": "measurement/ledger@cells",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "11322cec-67d1-4203-ab9e-e656f1d0a61c",
+      "at": "2026-11-06T23:02:52Z @ c526be3",
+      "until": "2026-11-13T02:29:29Z @ 3123201a"
+    }
+  ],
+  "seal": "b3d79d688db7ab2979f8d8ea05506355af2d9ac2a790c776de3c5bbba50a71a9"
+}

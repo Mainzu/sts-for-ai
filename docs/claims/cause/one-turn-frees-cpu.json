@@ -1,0 +1,68 @@
+{
+  "key": "cause/one-turn-frees-cpu",
+  "rev": 2,
+  "value": "One-turn reads cost minutes (cell gauntlet 2-3, mutate bench 3, boss replay 5, 399-game burst 1.5, headline 12-33 per 500 seq), so a lane's queue clears within the hour and lanes wait on code and specs, not CPU.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/cost@gauntlet",
+      "rev": 3
+    },
+    {
+      "key": "decision/one-turn-comparisons",
+      "rev": 1
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lanes burst-official and test-full-memory opened; what the one-turn rule does to the queue (on the owner's behalf, 2026-11-05)",
+      "sha256": "ef475c8de4198ca437f261e868aa0bfaac39f0c805feb30b6b70a27bd0d72f94"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:06Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:07Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/cost@gauntlet reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "With comparisons one turn deep (decision/one-turn-comparisons) a lane's reads cost minutes (cell gauntlet 2-3, mutate bench 3, boss replay 5, a 399-game burst 1.5, a headline read 12-33 per 500 sequences; measurement/cost@gauntlet, jobs 0184-0191): lane sequential-bursts spent 1.2 cpu-h where the two lanes before it spent 42 on two-turn reads. A lane's queued work is gone within the hour, so lanes wait on code and specs, and the CPU idles meanwhile. Planning rules: a candidate's CPU-hours hardly rank it (its code cost does); code-free probes on existing nets and files are what fills the machine meanwhile; statistical power is cheap, so one-turn reads take the wider n (three burst seeds, both books) by default; the long jobs left are the full test suite, depth questions and the product's reported two-turn score. Exits: training on new content at scale (packs after runtime-registry stage 3), or a depth question opened as a lane.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lanes burst-official and test-full-memory opened; what the one-turn rule does to the queue (on the owner's behalf, 2026-11-05)",
+          "sha256": "ef475c8de4198ca437f261e868aa0bfaac39f0c805feb30b6b70a27bd0d72f94"
+        },
+        {
+          "key": "decision/one-turn-comparisons",
+          "rev": 1
+        },
+        {
+          "key": "measurement/cost@gauntlet",
+          "rev": 2
+        },
+        {
+          "key": "measurement/portfolio-sequential-bursts",
+          "rev": 1
+        },
+        {
+          "key": "owner/machine-time",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "56c5a1d1-29a3-4ae4-b122-773b2e4caee5",
+      "at": "2026-11-05T15:45:29Z @ f89053c",
+      "until": "2026-11-13T02:29:06Z @ 3123201a"
+    }
+  ],
+  "seal": "4f712f549a0f283b74efd3adaee62d3f4ae22cac64e4e11e3528e2436ff5ee14"
+}

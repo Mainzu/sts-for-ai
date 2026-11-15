@@ -1,0 +1,29 @@
+{
+  "key": "cause/feed-max-hp",
+  "rev": 1,
+  "value": "Feed only dealt damage in the pack; the game's FeedAction raises max HP by 3 (4 upgraded) and heals as much when its hit kills a non-minion, non-half-dead target (live run 16). Fixed in 67267557: general content condition TargetDied (chosen target dead after the card/potion in play), Feed row TargetDied -> GainMaxHp; a winning kill gains before the combat-end relics. Golden and rules version unchanged. Other jar on-kill cards (Hand of Greed gold, Ritual Dagger, Sunder, Lesson Learned) are outside Act 1 combat content. The gauntlet keeps a fixed max HP between fights, so simulated runs drop the gain.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/real-game-runs.md",
+      "sha256": "72bf2a49aa3a1f4c6a14df7f5ff189e9962a6b71b508070c9ba9be2b54c30750"
+    },
+    {
+      "path": "engine/tests/kill_effects.rs",
+      "sha256": "bcc9644306ca13167a56f67fbe8a6508570c326adff36c2c9b0b2d753fc55865"
+    },
+    {
+      "path": "content/packs/act1-ironclad.json",
+      "sha256": "2d9dc918c9343a2ffafd3587dba952cc2c3a238ce50a6cc6b61c7968355981bb"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+  "at": "2026-11-14T04:43:55Z @ 0ccb0f83",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "3f993cb96bf4de1e3a884bd15b663f1825633db9e0936cfe44d9de0f0e3f73dd"
+}

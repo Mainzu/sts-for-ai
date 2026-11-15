@@ -1,0 +1,43 @@
+{
+  "key": "measurement/wide-rows-widepack@guards",
+  "rev": 1,
+  "value": "Wide-pack s1 net guards: old 24 rows held-out gain +0.88 (0.16), training -0.23 (0.15); one-turn cells end HP -0.25 (0.55); k-4 random worlds cost +3.16 -> +2.48 (paired -0.67 (0.14)); pack headline n 500 vs generated-pack s1 -0.80 (1.05) HP, clears 0.654 -> 0.642 (held-out 0.736 -> 0.652).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Step 3 read (jobs 0926, 0914-0921; headline resumed as 0945; 2026-11-12)",
+      "sha256": "be4ac525d91b88b95d1e5dac5276c17a77b7f7318628a6ba6444f8c1938f9cd3"
+    },
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Step 3 headline and verdict (job 0945; 2026-11-13)",
+      "sha256": "1a144a8c8ba2a61e8006a3fd2afa3a1026f37ea9c7461f610c5c61e23cd45563"
+    },
+    {
+      "path": "results/gauntlet/widepack40k-s1-hpb0.01-cells.json",
+      "sha256": "0084442c0ef640d309f4f17bd1c0bd25bed0ad61a68671f4f93bc8b6e2e7f1f0"
+    },
+    {
+      "path": "results/mutate/rw-nd-wp1-k4.json",
+      "sha256": "83ba61b5bbe19e1c0ab026baf2a180d20652cb288101104ea7f2383227e5da24"
+    },
+    {
+      "path": "results/gauntlet/widepack40k-s1-hpb0.01-starter-simboss-pack-act1.json",
+      "sha256": "af798bf6e4b11ae5666a4d422c6daacde93a8015b39a19fe3621440172d4114f"
+    },
+    {
+      "path": "jobs/done/0898-genpack-cut.json",
+      "sha256": "2ff9f11403e21b90291c7b6b7afeeb15dd527b0becc2154f816fe01edcd1ecab"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:57+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "a7c4ed1ef69a655c50ba0d532a3a96f621f050910eaa7010b18976a7ce0c50a9"
+}

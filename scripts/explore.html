@@ -1,0 +1,1483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sts-for-ai explorer</title>
+<link rel="stylesheet" href="/ui.css">
+<style>
+/* The explorer's additions to the dashboard's stylesheet (/ui.css, dashboard.CSS). */
+[hidden]{display:none !important}
+span.track,span.fill{display:block}
+main{max-width:1320px}
+.bar{max-width:1320px}
+.controls{max-width:1320px;margin:0 auto;padding:0 20px 10px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-size:12.5px;color:var(--ink2)}
+.controls select,.controls input,.filters input,button.btn{font:inherit;padding:3px 8px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+button.btn{cursor:pointer}button.btn:hover{border-color:var(--accent)}button.btn:disabled{opacity:.5;cursor:default}
+.chip{display:inline-flex;align-items:center;gap:4px;padding:1px 4px 1px 8px;border-radius:999px;background:var(--soft);color:var(--ink2);font-size:12px;max-width:320px}
+.chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip button{border:0;background:none;color:var(--mute);cursor:pointer;padding:0 4px;font:inherit}.chip button:hover{color:var(--bad-ink)}
+#error{color:var(--bad-ink);font-size:12.5px}
+[title]:not(a):not(button):not(tr):not(.cell):not(.clr):not(.cardt):not(.foe):not(input):not(select):not(option):not(.score):not(.dec):not(.kv):not(.dot):not(.dots){text-decoration:underline dotted var(--mute);text-underline-offset:3px;cursor:help}
+th [title]{text-decoration:none}
+th button.sort{border:0;background:none;padding:0;font:inherit;color:inherit;cursor:pointer}
+th button.sort:hover,th button.sort.on{color:var(--accent)}
+tbody tr.click{cursor:pointer}tbody tr.click:hover td{background:var(--soft)}
+tr.sel td{background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.crumbs{display:flex;gap:6px;align-items:baseline;flex-wrap:wrap;font-size:13px;color:var(--mute);margin:0 0 12px}
+.crumbs a{max-width:420px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;vertical-align:bottom}
+.trunc{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;min-width:0}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.muted{color:var(--mute)}
+/* file list */
+.fgroup{margin-bottom:16px}
+.fgroup h2{min-width:0}.fgroup h2 .trunc{text-transform:none;letter-spacing:0;font-size:14px;color:var(--ink);font-weight:600}
+.clr{display:flex;align-items:center;gap:8px;min-width:150px}.clr .track{height:8px}.clr .num{width:46px;text-align:right;font-size:12.5px}
+.fill.g{background:var(--good)}
+/* floor strip */
+.fstrip{display:flex;gap:3px;align-items:flex-end}
+.cell{position:relative;width:19px;height:26px;border-radius:3px;background:var(--track);overflow:hidden;flex:none}
+.cell.elite{box-shadow:inset 0 0 0 1.5px var(--warn)}.cell.boss{width:30px;box-shadow:inset 0 0 0 1.5px var(--serious)}
+.cell .hpf{position:absolute;left:0;right:0;bottom:0;background:var(--good);opacity:.85}
+.cell.lost{background:var(--bad)}.cell.lost::after{content:"\00d7";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:700}
+.cell.none{background:transparent;box-shadow:inset 0 0 0 1px var(--line)}
+.cell.flag::before{content:"";position:absolute;top:1px;right:1px;width:5px;height:5px;border-radius:50%;background:var(--warn);z-index:1}
+/* run view */
+.floors{display:flex;flex-direction:column}
+.floor{display:grid;grid-template-columns:44px 230px 1fr auto;gap:12px;align-items:center;padding:10px 6px;border-top:1px solid var(--line);border-radius:6px}
+.floor:first-child{border-top:0}
+.floor:hover{background:var(--soft)}
+.floor .fk{font-weight:650;color:var(--ink2)}
+.floor .enc{font-weight:600;min-width:0}
+.hpbar{position:relative;height:10px;border-radius:5px;background:var(--track);overflow:hidden;min-width:140px}
+.hpbar .lost{position:absolute;top:0;bottom:0;background:var(--bad-bg);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--bad) 40%,transparent)}
+.hpbar .left{position:absolute;top:0;bottom:0;left:0;background:var(--good)}
+.hpbar.dead .left{background:var(--bad)}
+.hpline{display:flex;align-items:center;gap:8px}.hpline .num{font-size:12.5px;color:var(--ink2);width:76px}
+.events{display:flex;flex-direction:column;gap:4px;margin-top:6px;font-size:12.5px;color:var(--ink2)}
+.ev2{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.ev2 .k{color:var(--mute);width:58px}
+.pill.took{background:var(--good-bg);color:var(--good-ink);font-weight:600}
+.pill.mine{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.escores{display:flex;flex-direction:column;gap:3px;margin:4px 0 2px 64px;min-width:260px;max-width:420px}
+/* state view */
+.fight{display:grid;grid-template-columns:250px minmax(0,1fr);gap:16px;align-items:start}
+.decs{max-height:calc(100vh - 220px);overflow:auto;position:sticky;top:110px;padding:12px 10px}
+@media (max-width:900px){.fight{grid-template-columns:minmax(0,1fr)}.floor{grid-template-columns:36px minmax(0,1fr) auto}.floor>:nth-child(3){grid-column:2;grid-row:2}.floor>.chev{grid-column:3;grid-row:1}
+  header.top{position:static}.decs{position:static;max-height:240px}.controls{gap:8px 14px}}
+.decs .tn{font-size:11.5px;font-weight:600;color:var(--mute);text-transform:uppercase;letter-spacing:.05em;margin:10px 0 3px}
+.decs .tn:first-child{margin-top:0}
+.dec{display:flex;gap:8px;padding:3px 6px;border-radius:5px;cursor:pointer;font-size:13px;align-items:baseline}
+.dec:hover{background:var(--soft)}.dec.on{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--ink)}
+.dec .n{color:var(--mute);width:22px;text-align:right;font-variant-numeric:tabular-nums;flex:none}
+.dec .a{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dec.end{cursor:default;color:var(--ink2)}.dec.end:hover{background:none}
+.banner{border-radius:8px;padding:10px 14px;margin:0 0 12px;font-size:13px}
+.banner.warn{background:var(--warn-bg);color:var(--warn-ink)}.banner.bad{background:var(--bad-bg);color:var(--bad-ink)}
+.banner.ok{background:var(--good-bg);color:var(--good-ink)}
+.board{display:flex;flex-direction:column;gap:14px}
+.foes{display:flex;gap:10px;flex-wrap:wrap}
+.foe{flex:1 1 190px;max-width:300px;border-radius:9px;padding:9px 11px;background:var(--soft);box-shadow:inset 0 0 0 1px var(--ring);min-width:0}
+.foe .nm{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.foe .nm b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.foe .slot{color:var(--mute);font-size:11.5px;flex:none}
+.hp2{display:flex;align-items:center;gap:8px;margin:6px 0}
+.hp2 .track{height:9px}.hp2 .num{font-size:12.5px;color:var(--ink2);white-space:nowrap;min-width:7ch;font-variant-numeric:tabular-nums}
+/* Amendment 7: a bar's width never follows its neighbours (block, powers, digits); only its fill moves */
+/* Amendment 8: a bar fills its line; what changes (block, energy, powers) sits on the next line */
+.fill.hpm{background:var(--bad)}.fill.hpp{background:var(--good)}
+.tags{display:flex;gap:4px;flex-wrap:wrap}
+.pill.intent{background:var(--bad-bg);color:var(--bad-ink);font-weight:600}
+.pill.blk{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);font-weight:600}
+.pill.pow{font-size:11.5px}
+.me{display:flex;gap:16px;align-items:center;flex-wrap:wrap;border-radius:9px;padding:9px 11px;background:var(--soft);box-shadow:inset 0 0 0 1px var(--ring)}
+.me .hp2{flex:1 1 auto;margin:0}.me .me2{flex:0 0 100%;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.energy{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--warn);color:#2b1d00;font-weight:700}
+.hand{display:flex;gap:8px;flex-wrap:wrap;padding-top:6px}
+.cardt{position:relative;width:92px;height:116px;border-radius:9px;background:var(--soft);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 18%,transparent),var(--shadow);padding:22px 8px 8px;display:flex;flex-direction:column;justify-content:space-between;font-size:12.5px}
+.cardt .cost{position:absolute;top:-7px;left:-7px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-size:12px}
+.cardt .cnt{position:absolute;top:5px;right:7px;color:var(--mute);font-size:11.5px;font-weight:600}
+.cardt .cn{font-weight:600;line-height:1.25;word-break:break-word}
+.cardt.up .cn{color:var(--good-ink)}
+.cardt .ty{color:var(--mute);font-size:11px}
+.piles{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pilelist{font-size:12.5px;color:var(--ink2);margin-top:6px}
+.boardtop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.boardtop .facts{margin-top:0}
+.opts td{vertical-align:middle}.opts td:first-child{white-space:nowrap}
+.opts tr.rec td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
+.score{display:flex;align-items:center;gap:6px;min-width:110px}
+.score .track{height:6px;min-width:36px}
+.score .num{font-size:12.5px;width:46px;text-align:right}
+.score .mk{width:12px;color:var(--accent);font-weight:700;flex:none}
+.score.best .num{color:var(--ink);font-weight:600}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:sp 0.8s linear infinite;vertical-align:-2px;margin-right:6px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.note{font-size:12px;color:var(--mute);margin-top:8px}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:16px;align-items:start}
+@media (max-width:1000px){.split{grid-template-columns:minmax(0,1fr)}}
+.trail{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.trail button.on{border-color:var(--accent);color:var(--accent)}
+.bad-t{color:var(--bad-ink);font-weight:600}.good-t{color:var(--good-ink)}
+.pick-o{font:inherit;font-size:12px;padding:1px 8px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink2);cursor:pointer;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pick-o:hover{border-color:var(--accent);color:var(--ink)}
+.pick-o.took{background:var(--good-bg);color:var(--good-ink);border-color:transparent;font-weight:600;cursor:default}
+.pick-o.mine{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent);border-color:transparent;font-weight:600;cursor:default}
+.pick-o.rec{border-style:dashed;border-color:var(--mute)}
+button.btn.sm{font-size:12px;padding:1px 7px}
+a.btn{display:inline-block;padding:3px 9px;border-radius:6px;border:1px solid var(--line);color:var(--ink);text-decoration:none;white-space:nowrap;font-size:12.5px}
+a.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.banner.mineb{background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--ink)}
+.floor.owner{box-shadow:inset 3px 0 0 var(--accent)}
+.cell.mine{outline:2px solid var(--accent);outline-offset:1px}
+.trail button.minet{border-style:dashed}
+.floor.click{cursor:pointer}
+.floor .chev{color:var(--mute);font-size:20px;line-height:1;padding:0 4px}
+.floor.click:hover .chev{color:var(--accent)}
+.floor .pend{font-size:12.5px;color:var(--ink2)}
+.hist{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.histctl{display:flex;gap:6px;align-items:center;margin-bottom:4px}
+.histctl b{font-size:12.5px;margin-right:4px}
+.hist ol,.histd ol{margin:4px 0 0;padding-left:22px;font-size:12.5px;color:var(--ink2)}
+.hist li.same,.histd li.same{color:var(--mute)}
+.linectl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0 8px}
+.linectl .grp{display:inline-flex;gap:4px}
+.linectl .grp+.grp{padding-left:10px;border-left:1px solid var(--line)}
+.histd{font-size:12.5px;color:var(--ink2)}
+.histd summary{cursor:pointer}
+.boardhead{display:flex;justify-content:space-between;align-items:center;margin:12px 0 8px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{font:inherit;font-size:12px;padding:1px 9px;border:0;background:var(--card);color:var(--ink2);cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button.on{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);font-weight:600}
+.hero{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.netbox summary{cursor:pointer;list-style:none}.netbox summary::-webkit-details-marker{display:none}
+.netbox summary h2{display:inline;margin:0}.netbox summary h2::before{content:"\25B8  ";color:var(--mute)}
+.netbox[open] summary h2::before{content:"\25BE  "}
+.ngroup{margin:10px 0 4px}.ngroup .nk{font-size:11.5px;font-weight:600;color:var(--mute);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.nrow{display:flex;flex-wrap:wrap;gap:3px;align-items:center;margin:3px 0}
+.kv{display:inline-flex;gap:5px;align-items:baseline;padding:1px 6px;border-radius:5px;background:var(--soft);font-size:12px;margin:1px;max-width:260px}
+.kv span{color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.kv b{font-weight:600;font-variant-numeric:tabular-nums}
+.dots{display:inline-flex;flex-wrap:wrap;gap:2px;width:72px;flex:none;vertical-align:middle}
+.dot{width:7px;height:7px;border-radius:2px;display:block;background:var(--bad)}
+.dot.w{background:color-mix(in srgb,var(--good) calc(var(--f,1)*100%),var(--good-bg))}
+.dot:hover{outline:2px solid var(--accent);outline-offset:0}
+.wcell{display:flex;align-items:center;gap:6px;min-width:114px}
+#muttable th,#bosstable th{white-space:nowrap}.wcell .num{width:34px;text-align:right;font-size:12px;color:var(--ink2)}
+/* group-by: a header row per group; its rows follow (one mechanism for every list table) */
+tr.ghead>th{background:var(--soft);color:var(--ink);font-size:14px;font-weight:700;text-align:left;padding:9px 10px;border-top:2px solid var(--line);box-shadow:inset 3px 0 0 var(--accent,#6aa9ff);scroll-margin-top:12px;transition:background .4s}
+tr.ghead.flash>th{background:color-mix(in srgb,var(--accent,#6aa9ff) 25%,var(--soft))}
+tr.ghead>th .gw{color:var(--mute);font-weight:500}
+tr.ghead>th .gn{color:var(--mute);font-weight:400;margin-left:8px;font-size:12.5px}
+tr.gjump>td{padding:6px 4px 10px;border-bottom:1px solid var(--line);background:var(--card,var(--page))}
+/* Amendment 5: column headers (and a grouped table's jump bar) stay under the top bar; tables scroll with the page */
+.tablewrap{overflow:visible}
+thead th{position:sticky;top:var(--topbar,0px);z-index:3;background:var(--card,var(--page))}
+tr.gjump>td{position:sticky;top:calc(var(--topbar,0px) + var(--thead,0px));z-index:3}
+tr.gjump .gjw{color:var(--mute);font-size:12px;margin-right:8px}
+tr.gjump .gj{margin:2px 4px 2px 0;padding:2px 8px;max-width:260px;display:inline-flex;gap:6px;align-items:center}
+tr.gjump .gj .gn{color:var(--mute);font-size:11.5px}
+tr.ghead>th .gc{color:var(--mute);font-weight:400;font-style:italic;margin-left:6px}
+.colcell{font-weight:600;white-space:nowrap}.colcell.par{color:var(--mute);font-weight:500}
+/* hover card: a description too long for a tooltip (position:fixed, so it never moves the layout) */
+[data-hc]{cursor:help}
+[data-hc]:not(.cardt):not(.pill):not(.foe):not(b){text-decoration:underline dotted var(--mute);text-underline-offset:3px}
+.foe b[data-hc]{text-decoration:underline dotted var(--mute);text-underline-offset:3px}
+[data-hc]:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+#hc{position:fixed;z-index:50;max-width:380px;min-width:180px;max-height:66vh;overflow:hidden;display:flex;flex-direction:column;background:var(--card);color:var(--ink);border-radius:9px;box-shadow:0 0 0 1px var(--line),0 8px 24px rgba(0,0,0,.18);font-size:12.5px;line-height:1.4;text-align:left;white-space:normal;font-weight:400;cursor:auto}
+#hc[hidden]{display:none}
+#hc .hcb{padding:9px 12px 10px;overflow:hidden;min-height:0;flex:1 1 auto}
+#hc .hcmore{flex:none;border:0;border-top:1px solid var(--line);background:var(--card);color:var(--accent);font:inherit;font-weight:600;padding:6px 12px;text-align:left;cursor:pointer}
+#hc .hcmore:hover{background:rgba(127,127,127,.08)}
+#hc .hh,#hcm .hh{font-weight:650;margin-bottom:4px;color:var(--ink)}
+#hc .hl,#hcm .hl{color:var(--ink2);margin:2px 0;overflow-wrap:anywhere}
+#hc .hl.hs,#hcm .hl.hs{color:var(--mute);font-size:11.5px;margin-top:6px}
+#hc hr.hd,#hcm hr.hd{border:0;border-top:1px solid var(--line);margin:7px 0 4px}
+#hc .hx,#hcm .hx{color:var(--mute);margin-top:6px;border-top:1px solid var(--line);padding-top:5px}
+/* the whole description when a hover card can't hold it: a modal, closed by Esc, its button or a click outside */
+#hcmask{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;padding:16px}
+#hcmask[hidden]{display:none}
+#hcm{background:var(--card);color:var(--ink);border-radius:10px;box-shadow:0 0 0 1px var(--line),0 12px 32px rgba(0,0,0,.3);max-width:560px;width:100%;max-height:calc(100vh - 32px);display:flex;flex-direction:column;font-size:13px;line-height:1.45}
+#hcm .hcmhead{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line)}
+#hcm .hcmhead .hh{flex:1;margin:0}
+#hcm .hcmbody{padding:10px 14px 14px;overflow:auto}
+.cdesc{font-size:12.5px;color:var(--ink2);max-width:520px;min-width:230px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="#gauntlet">sts-for-ai explorer</a>
+    <nav id="nav">
+      <a href="#gauntlet" data-sec="gauntlet">Gauntlet</a>
+      <a href="#mutations" data-sec="mutations">Mutations</a>
+      <a href="#boss" data-sec="boss">Boss replays</a>
+      <a href="#content" data-sec="content">Content</a>
+      <a href="#puzzles" data-sec="puzzles">Puzzles</a>
+      <a href="http://127.0.0.1:8766" title="The dashboard: roles, jobs and lanes">Dashboard</a>
+    </nav>
+    <span class="stamp" id="stamp">loading…</span>
+  </div>
+  <div class="controls">
+    <label><span title="A solved-position database in db/. Only one holding rows of this build's rules version can be opened; run positions, row ids and exact values of other states need it. Opening reads every row's hash (minutes on a big file).">Database</span>
+      <select id="db"><option value="">none</option></select></label>
+    <button class="btn" id="reopen" hidden title="Take a fresh snapshot of the open database">Reopen</button>
+    <span><span title="Players whose one-turn search scores and picks show beside the heuristic's on every view: a run id or runs/&lt;id&gt;/model.pt, optionally with search settings such as @hpb0.01 or @tsl1">Compare with</span>
+      heuristic <span id="chips"></span>
+      <input id="addnet" size="30" list="nets" placeholder="add a net (type to search)"><datalist id="nets"></datalist>
+      <button class="btn" id="addbtn">Add</button></span>
+    <span id="dbnote" class="muted"></span>
+    <span id="error"></span>
+  </div>
+</header>
+<main id="main"></main>
+<div id="hc" hidden role="tooltip"><div class="hcb"></div><button class="hcmore" type="button" hidden>show all</button></div>
+<div id="hcmask" hidden><div id="hcm" role="dialog" aria-modal="true"><div class="hcmhead"><div class="hh"></div><button class="btn sm" type="button" id="hcmclose" title="Close (Esc)">close</button></div><div class="hcmbody"></div></div></div>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const MAX_HP = 80;  // gauntlet.MAX_HP: every gauntlet sequence starts at, and heals up to, 80
+const E = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmt = (x, d = 3) => x == null ? "–" : Number(x).toFixed(d);
+let status = null, nets = [], players = [], dbs = [];
+
+// Plain-words explanations, shown as tooltips on headers and fields.
+const VALUE = "Search value: a win scores about 2 − HP lost / 100, a loss 0, so 0.01 is about 1 HP (a player's @ settings add their own HP price).";
+const TIP = {
+  file: "A gauntlet result file in results/gauntlet/. Click to list its sequences.",
+  tags: "The settings the file was played with: search depth, card rewards, start deck, packs and other choices.",
+  n: "Sequences the file holds (each an 11-fight Act 1 chain with HP carried over).",
+  clears: "Share of the file's sequences that beat the boss.",
+  protocol: "The paired protocol's verdict against the control the file was read against, if any.",
+  seq: "Sequence number: the same number is the same deck cell, fights and seeds in every file.",
+  half: "Which half the sequence's deck comes from: train, or held_out (cards kept out of the nets' training).",
+  cell: "The deck cell the sequence drew (cell decks; with the starter deck it still picks the half).",
+  boss: "The sequence's boss fight (floor 11). Hover a name for its monsters.",
+  result: "Cleared: beat the boss. Otherwise the floor the run died on.",
+  endhp: "HP left after the boss when cleared, else 0.",
+  strip: "The 11 floors in order: each cell fills with the HP left after the fight (of 80); red × = died there; amber outline = elite, orange = boss; a dot = this build replays it differently. Hover for the floor.",
+  floorhp: "HP going in, and what was left after the fight (green); the pale red part is HP lost in the fight.",
+  option: "The cards played (→ target). Options whose actions lead to the same result count once.",
+  kind: "deterministic: nothing random before the next decision. chance: a few random results, all listed. divergent: too many to list (a draw, say).",
+  pscore: p => `${p}'s own search score for this option at this decision: what it chose from (one turn deep, or two turns for a two-turn player). ● marks its pick. ` + VALUE,
+  oscore: p => `${p}'s one-turn search score for this option, for comparison; ● marks its pick. ` + VALUE,
+  two: "The two-turn search's score for this option (the product's depth), from the search the player ran at this decision. " + VALUE,
+  exact: "This option's exact value under perfect play, from the open solved database. " + VALUE,
+  played: "The action the run actually played here.",
+  energy: "Energy left this turn.",
+  block: "Block: absorbs damage until the start of the owner's next turn.",
+  draw: "Draw pile: shown as its contents sorted by name, never in order. The net sees the same (plus any card known to be on top). Click to list it.",
+  discard: "Cards played or discarded since the draw pile was last shuffled; they come back when it runs out. Click to list them.",
+  exhaust: "Exhausted cards: gone for the rest of this fight. Click to list them.",
+  fidelity: "The replay on this build compared with the file: win and end HP of the fight, the offer and the card taken.",
+  yourline: "Your line: from here on the run or fight follows a choice you made, not the file's; the file's player still plays and scores everything you didn't choose.",
+  reroll: "Play the same option again with the next random seed: another outcome of its random part (a draw, a monster's move).",
+};
+
+// ---------- descriptions: a tooltip says what its label doesn't, long ones in a hover card ----------
+// DESC: /api/describe, every card, monster, move, power and encounter in plain words ({head, lines}),
+// written by the server from the content data. HC holds the descriptions on the page by index.
+let DESC = { cards: {}, monsters: {}, powers: {}, encounters: {}, relics: {}, moves: {} };
+const HC = [];
+const bare = n => String(n || "").replace(/^gen:/, "");
+function descOf(kind, name) { return (DESC[kind] || {})[bare(name)] || null; }
+// The attribute for a content description (encounter, monster, move, power, card): always a hover
+// card (data-hc, focusable), however short, so a kind always shows the same way (Amendment 2).
+// `extra` lines go below the description (state, not content). Other tooltips are plain titles.
+function tipAttr(d, extra = []) {
+  if (!d && !extra.length) return "";
+  const head = d ? d.head : "";
+  HC.push({ head, lines: d ? d.lines : [], extra });
+  return ` data-hc="${HC.length - 1}" tabindex="0"`;
+}
+function encTip(enc) { return tipAttr(descOf("encounters", enc)); }
+// A description's lines as HTML: "---" (the server's DIVIDER) is a rule, a line ending in ":" a sub-heading.
+function hcLines(d) {
+  return d.lines.map(l => l === "---" ? '<hr class="hd">' : `<div class="hl${l.endsWith(":") ? " hs" : ""}">${E(l)}</div>`).join("") +
+    (d.extra && d.extra.length ? `<div class="hx">${d.extra.map(E).join("<br>")}</div>` : "");
+}
+let hcEl = null, hcTimer = null;
+const HC_GRACE = 200;  // ms to cross the gap from an element to its card before the card closes
+function showHc(el) {
+  const d = HC[+el.dataset.hc], box = $("hc");
+  if (!d) return;
+  clearTimeout(hcTimer);
+  if (hcEl === el && !box.hidden) return;
+  hcEl = el;
+  const body = box.querySelector(".hcb"), more = box.querySelector(".hcmore");
+  body.innerHTML = (d.head ? `<div class="hh">${E(d.head)}</div>` : "") + hcLines(d);
+  more.hidden = true;
+  box.hidden = false;
+  more.hidden = body.scrollHeight <= body.clientHeight + 1;
+  const r = el.getBoundingClientRect(), w = box.offsetWidth, h = box.offsetHeight;
+  let x = r.left, y = r.bottom + 6;
+  if (x + w > innerWidth - 8) x = Math.max(8, innerWidth - 8 - w);
+  if (y + h > innerHeight - 8) y = Math.max(8, r.top - 6 - h);
+  box.style.left = x + "px"; box.style.top = y + "px";
+}
+function hideHc() { clearTimeout(hcTimer); $("hc").hidden = true; hcEl = null; }
+function hideHcSoon() { clearTimeout(hcTimer); hcTimer = setTimeout(hideHc, HC_GRACE); }
+// The card stays open while the pointer is on its element or on the card itself (so its text can be
+// selected); leaving both closes it after HC_GRACE.
+document.addEventListener("mouseover", e => {
+  if (e.target.closest("#hc")) { clearTimeout(hcTimer); return; }
+  const el = e.target.closest("[data-hc]");
+  if (el) showHc(el); else if (!$("hc").hidden) hideHcSoon();
+});
+document.addEventListener("focusin", e => {
+  if (e.target.closest("#hc, #hcm")) return;
+  const el = e.target.closest("[data-hc]"); if (el) showHc(el);
+});
+document.addEventListener("focusout", e => {
+  const to = e.relatedTarget;
+  if (!(to && to.closest && to.closest("#hc"))) hideHcSoon();
+});
+document.addEventListener("scroll", e => { if (!(e.target.closest && e.target.closest("#hc, #hcm"))) hideHc(); }, true);
+function openHcModal() {
+  const d = hcEl && HC[+hcEl.dataset.hc];
+  if (!d) return;
+  $("hcm").querySelector(".hh").textContent = d.head || "";
+  $("hcm").querySelector(".hcmbody").innerHTML = hcLines(d);
+  hideHc();
+  $("hcmask").hidden = false;
+  $("hcmclose").focus();
+}
+function closeHcModal() { $("hcmask").hidden = true; }
+$("hc").querySelector(".hcmore").onclick = openHcModal;
+$("hcmclose").onclick = closeHcModal;
+$("hcmask").addEventListener("mousedown", e => { if (e.target === $("hcmask")) closeHcModal(); });
+document.addEventListener("keydown", e => {
+  if (e.key !== "Escape") return;
+  if (!$("hcmask").hidden) closeHcModal(); else hideHc();
+});
+
+// ---------- api ----------
+async function api(path, params = {}) {
+  const q = new URLSearchParams(Object.entries(params).filter(([, v]) => v !== "" && v != null));
+  const r = await fetch(path + (q.toString() ? "?" + q : ""));
+  const body = await r.json();
+  if (!r.ok) throw new Error(body.error || r.statusText);
+  return body;
+}
+function showError(e) { $("error").textContent = e ? String(e.message || e) : ""; }
+function withParam() { return players.join(","); }
+
+// ---------- URL: ?db=&with= keep the pickers; the hash is the view ----------
+function keepUrl() {
+  const q = new URLSearchParams(location.search);  // keeps the owner's line (c, cs)
+  if ($("db").value) q.set("db", $("db").value); else q.delete("db");
+  if (players.length) q.set("with", withParam()); else q.delete("with");
+  history.replaceState(null, "", (q.toString() ? "?" + q : location.pathname) + location.hash);
+  lastSearch = location.search;
+}
+function short(p) {
+  // runs/<id>/model.pt@hpb0.01 -> <id>@hpb0.01 (the full string stays in the tooltip)
+  const m = /^runs\/([^/]+)\/model\.pt(.*)$/.exec(p || "");
+  return m ? m[1] + m[2] : (p || "");
+}
+// Long player names keep their end (the run's hash and @ settings tell nets apart); the full name is in the tooltip.
+const tail = (s, n = 30) => s.length > n ? "…" + s.slice(s.length - n + 1) : s;
+
+// ---------- top bar ----------
+async function loadStatus() {
+  status = await api("/api/status");
+  $("stamp").innerHTML = `<span title="This explorer's own copy of sts, by the first 12 hex of the module's sha256; replays run on it">sts build ${E(status.build)}</span> · <span title="Rules version of this build (golden games' hash)">rules ${E((status.rules || "").slice(0, 8))}</span>`;
+  const note = status.db ? (status.ready ? `${status.db}: ${status.rows} rows` : (status.error || `${status.db}: opening… (reads every row's hash)`)) : status.db_note;
+  $("dbnote").textContent = note || "";
+  $("reopen").hidden = !(status.db && status.ready);
+  if (status.db && !status.ready && !status.error) setTimeout(() => loadStatus().then(() => { if (route().sec === "puzzles") render(); }), 3000);
+}
+function drawChips() {
+  $("chips").innerHTML = players.map((p, k) => `<span class="chip" title="${E(p)}"><span>${E(tail(short(p)))}</span><button data-k="${k}" title="Stop comparing with this net">×</button></span>`).join(" ");
+}
+async function loadPickers() {
+  dbs = (await api("/api/dbs")).dbs;
+  for (const d of dbs) {
+    const o = new Option(`${d.name} (${(d.bytes / 1e6).toFixed(0)} MB${d.current ? "" : ", stale"})`, d.path);
+    o.disabled = !d.current; o.title = d.why || "";
+    $("db").add(o);
+  }
+  nets = (await api("/api/nets")).nets;
+  for (const n of nets) $("nets").append(new Option(n.tag ? `${n.tag}: ${n.id}` : n.id, n.player));
+  const url = new URLSearchParams(location.search);
+  players = (url.get("with") || "").split(",").map(s => s.trim()).filter(s => s && s !== "heuristic");
+  drawChips();
+  const want = url.get("db");
+  if (want && dbs.some(d => d.path === want && d.current)) { $("db").value = want; await api("/api/open_db", { path: want }); }
+  else if (status.db) $("db").value = status.db;
+}
+$("db").onchange = async () => {
+  showError();
+  try { if ($("db").value) await api("/api/open_db", { path: $("db").value }); else await api("/api/close_db"); }
+  catch (e) { showError(e); }
+  keepUrl(); await loadStatus(); render();
+};
+$("reopen").onclick = async () => { try { await api("/api/reopen"); await loadStatus(); } catch (e) { showError(e); } };
+$("addbtn").onclick = () => {
+  const v = $("addnet").value.trim();
+  if (v && v !== "heuristic" && !players.includes(v)) { players.push(v); drawChips(); keepUrl(); render(); }
+  $("addnet").value = "";
+};
+$("addnet").onkeydown = e => { if (e.key === "Enter") $("addbtn").click(); };
+$("chips").onclick = e => {
+  const b = e.target.closest("button[data-k]"); if (!b) return;
+  players.splice(+b.dataset.k, 1); drawChips(); keepUrl(); render();
+};
+
+// ---------- routing ----------
+function route() {
+  const parts = location.hash.replace(/^#/, "").split("/").map(decodeURIComponent);
+  return { sec: parts[0] || "gauntlet", args: parts.slice(1) };
+}
+function go(...parts) { location.hash = parts.map(encodeURIComponent).join("/"); }
+window.addEventListener("hashchange", () => render());
+function setNav(sec) { for (const a of document.querySelectorAll("#nav a[data-sec]")) a.classList.toggle("on", a.dataset.sec === sec); }
+function loading(text) { $("main").innerHTML = `<div class="card"><span class="spin"></span>${E(text)}</div>`; }
+
+let renderSeq = 0;
+async function render() {
+  const r = route(), mine = ++renderSeq;
+  HC.length = 0; hideHc();
+  setNav(r.sec === "fight" ? (/"kind":"mutate"/.test(r.args[0] || "") ? "mutations" : "boss") : r.sec);
+  showError();
+  try {
+    if (r.sec === "gauntlet") {
+      if (r.args.length >= 3) await floorView(r.args[0], +r.args[1], +r.args[2], r.args[3], mine);
+      else if (r.args.length === 2) await runView(r.args[0], +r.args[1], mine);
+      else if (r.args.length === 1) await seqView(r.args[0], mine);
+      else await fileView(mine);
+    } else if (r.sec === "mutations") {
+      if (r.args.length) await mutFileView(r.args[0], mine);
+      else await testFiles("mutate", "Mutated monsters and cards", "mutations", "The gauntlet's elite and boss fights replayed with the enemies or a deck card mutated (mutate_monsters.py, mutate_cards.py, the generated-enemy batches). Open a file, then a seed dot to replay that fight.", mine);
+    } else if (r.sec === "boss") {
+      if (r.args.length) await bossFileView(r.args[0], mine);
+      else await testFiles("boss_replay", "Boss replays", "boss", "Boss fights rebuilt from a gauntlet file's sequences and replayed at set entry HP (boss_replay.py). Open a file, then a seed dot to replay that fight.", mine);
+    } else if (r.sec === "fight") await cellView(r.args[0], r.args[1], mine);
+    else if (r.sec === "content") await contentView(mine);
+    else if (r.sec === "puzzles") await puzzleView(mine);
+  } catch (e) {
+    if (mine === renderSeq) $("main").innerHTML = `<div class="banner bad">${E(e.message || e)}</div>`;
+  }
+}
+
+// ---------- shared pieces ----------
+function sortHead(label, key, tip, st) {
+  const on = st.sort === key;
+  return `<th><button class="sort${on ? " on" : ""}" data-sort="${E(key)}" title="${E(tip)}\nClick to sort; again to reverse.">${E(label)}${on ? (st.desc ? " ▼" : " ▲") : ""}</button></th>`;
+}
+function onSort(container, st, redraw, textKeys = []) {
+  container.addEventListener("click", e => {
+    const b = e.target.closest("button[data-sort]"); if (!b) return;
+    e.stopPropagation();
+    const key = b.dataset.sort;
+    if (st.sort === key) st.desc = !st.desc; else { st.sort = key; st.desc = !textKeys.includes(key); }
+    st.page = 0; redraw();
+  });
+}
+function pager(out, st, redraw) {
+  const div = document.createElement("div");
+  div.className = "pager";
+  div.innerHTML = `<button class="btn" data-p="-1" ${out.page > 0 ? "" : "disabled"}>‹ prev</button>
+    <span class="muted">page ${out.page + 1} of ${Math.max(1, out.pages)} · ${out.total} rows</span>
+    <button class="btn" data-p="1" ${out.page + 1 < out.pages ? "" : "disabled"}>next ›</button>`;
+  div.onclick = e => { const b = e.target.closest("button[data-p]"); if (!b || b.disabled) return; st.page += +b.dataset.p; redraw(); };
+  div._jump = p => { st.page = p; redraw(); };
+  return div;
+}
+// The shared group-by (Amendment 3): a "Group by" select over a table's categorical columns, and table rows
+// with a header row wherever the server's `_group` changes (rows come sorted inside their groups).
+function groupSel(id, opts, val, tip = "Rows grouped under a header per value of this column; sorting and filters work inside each group") {
+  return `<label><span title="${E(tip)}">Group by</span> <select id="${id}">${opts.map(([v, t]) => `<option value="${E(v)}"${String(val) === String(v) ? " selected" : ""}>${E(t)}</option>`).join("")}</select></label>`;
+}
+// Amendment 4: each header says what it groups ("cost: 0"); a jump bar on top lists every group and scrolls
+// to one, turning the page first (the pager's _jump) when it starts on another page.
+let pendingGroup = null;
+// Amendment 5: sticky offsets. --topbar is the top bar's height while it sticks (it doesn't on narrow
+// windows); each table's --thead is its header row's height, for the jump bar under it.
+function topbarHeight() {
+  const bar = document.querySelector("header.top");
+  return bar && getComputedStyle(bar).position === "sticky" ? bar.getBoundingClientRect().height : 0;
+}
+function stickyOffsets() {
+  document.documentElement.style.setProperty("--topbar", topbarHeight() + "px");
+  for (const t of document.querySelectorAll("table")) if (t.tHead) t.style.setProperty("--thead", t.tHead.offsetHeight + "px");
+}
+addEventListener("resize", stickyOffsets);
+let stickyT = 0;
+new MutationObserver(() => { clearTimeout(stickyT); stickyT = setTimeout(stickyOffsets, 0); }).observe(document.documentElement, { childList: true, subtree: true });
+function groupedRows(out, ncols, rowHtml, what) {
+  const groups = out.groups || [];
+  if (!out.by || !groups.length) return out.rows.map(rowHtml).join("");
+  const n = Object.fromEntries(groups.map(g => [g.label, g.n]));
+  const onPage = {};
+  for (const r of out.rows) onPage[r._group] = (onPage[r._group] || 0) + 1;
+  const rowsTxt = k => `${k} row${k === 1 ? "" : "s"}`;
+  const jump = groups.length > 24
+    ? `<label class="muted">Jump to <select class="gjsel"><option value="">${groups.length} groups…</option>${groups.map(g => `<option value="${E(g.label)}" data-page="${g.page ?? 0}">${E(String(g.label))} · ${g.n}</option>`).join("")}</select></label>`
+    : groups.map(g => `<button class="btn gj" data-g="${E(g.label)}" data-page="${g.page ?? 0}"><span class="trunc">${E(String(g.label))}</span><span class="gn">${g.n}</span></button>`).join("");
+  let last = null, html = `<tr class="gjump"><td colspan="${ncols}"><span class="gjw">${E(what)}</span>${jump}</td></tr>`;
+  out.rows.forEach((r, j) => {
+    if (r._group !== last) {
+      const cont = j === 0 && out.page > 0 && n[r._group] > onPage[r._group];
+      html += `<tr class="ghead" data-g="${E(r._group)}"><th colspan="${ncols}"><span class="gw">${E(what)}:</span> ${E(String(r._group))}<span class="gn">${n[r._group] != null ? rowsTxt(n[r._group]) : ""}</span>${cont ? '<span class="gc">continued</span>' : ""}</th></tr>`;
+      last = r._group;
+    }
+    html += rowHtml(r, j);
+  });
+  if (pendingGroup != null) { const g = pendingGroup; pendingGroup = null; setTimeout(() => scrollToGroup(document, g), 0); }
+  return html;
+}
+function scrollToGroup(root, g) {
+  const h = [...root.querySelectorAll("tr.ghead")].find(tr => tr.dataset.g === g);
+  if (h) {  // below the sticky top bar, column headers and jump bar
+    const t = h.closest("table"), jb = t && t.querySelector("tr.gjump");
+    const over = topbarHeight() + (t && t.tHead ? t.tHead.offsetHeight : 0) + (jb ? jb.offsetHeight : 0);
+    window.scrollTo(0, window.scrollY + h.getBoundingClientRect().top - over - 4); h.classList.add("flash"); setTimeout(() => h.classList.remove("flash"), 1200); }
+  return !!h;
+}
+function jumpToGroup(from, g, page) {
+  const card = from.closest(".card") || document;
+  if (scrollToGroup(card, g)) return;
+  const pg = card.querySelector(".pager");
+  if (pg && pg._jump) { pendingGroup = g; pg._jump(+page); }
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("tr.gjump button.gj");
+  if (b) { e.stopPropagation(); jumpToGroup(b, b.dataset.g, b.dataset.page); }
+}, true);
+document.addEventListener("change", e => {
+  const s = e.target.closest("tr.gjump select.gjsel");
+  if (s && s.value) { const o = s.selectedOptions[0]; jumpToGroup(s, s.value, o.dataset.page); s.value = ""; }
+}, true);
+function meterBar(frac, cls = "") {
+  return `<span class="track"><span class="fill ${cls}" style="width:${Math.max(0, Math.min(1, frac)) * 100}%"></span></span>`;
+}
+function crumbs(items) {
+  // [label, href, tip]: a tip of "@enc:<id>" is that encounter's hover card; a label long enough to be cut
+  // keeps its full text as the title; otherwise no tooltip.
+  const t = (label, tip) => tip && tip.startsWith("@enc:") ? encTip(tip.slice(5))
+    : (tip && tip !== label) || String(label).length > 40 ? ` title="${E(tip || label)}"` : "";
+  return `<div class="crumbs">${items.map(([label, href, tip]) => href ? `<a href="${href}"${t(label, tip)}>${E(label)}</a>` : `<span class="trunc"${t(label, tip)}>${E(label)}</span>`).join("<span>/</span>")}</div>`;
+}
+const H = (...p) => "#" + p.map(encodeURIComponent).join("/");
+
+// ---------- gauntlet: files ----------
+const fileState = { q: "" };
+async function fileView(mine) {
+  if (!$("main").querySelector("#fq")) loading("Reading results/gauntlet/…");
+  const out = await api("/api/files", { kind: "gauntlet", q: fileState.q });
+  if (mine !== renderSeq) return;
+  const groups = out.groups.map(g => `<section class="card fgroup"><h2 title="${E(g.player)}"><span class="trunc">${E(short(g.player))}</span><span class="age">${g.files.length} file${g.files.length === 1 ? "" : "s"}</span></h2>
+    <table><thead><tr><th><span title="${E(TIP.file)}">file</span></th><th><span title="${E(TIP.tags)}">settings</span></th><th><span title="${E(TIP.n)}">sequences</span></th><th><span title="${E(TIP.clears)}">clears</span></th><th><span title="${E(TIP.protocol)}">protocol</span></th></tr></thead><tbody>
+    ${g.files.map(f => `<tr class="click" data-file="${E(f.file)}">
+      <td style="max-width:360px"><span class="trunc">${E(f.file)}</span>${f.refused ? `<div class="pill warn" title="${E(f.refused)}">lists only: ${E(f.refused).slice(0, 60)}</div>` : ""}</td>
+      <td><div class="tags">${f.tags.map(t => `<span class="pill">${E(t)}</span>`).join("")}</div></td>
+      <td class="num">${f.n}</td>
+      <td><div class="clr" title="${f.clears == null ? "no sequences" : (f.clears * 100).toFixed(1) + "% of " + f.n + " sequences cleared"}">${meterBar(f.clears || 0, "g")}<span class="num">${f.clears == null ? "–" : (f.clears * 100).toFixed(1) + "%"}</span></div></td>
+      <td>${f.protocol ? `<span class="pill ${f.protocol === "pass" ? "good" : f.protocol === "fail" ? "bad" : ""}">${E(f.protocol)}</span>` : ""}</td></tr>`).join("")}
+    </tbody></table></section>`).join("");
+  $("main").innerHTML = `<h1>Gauntlet runs</h1>
+    <div class="filters"><label>Filter <input id="fq" size="34" placeholder="file name, player or setting" value="${E(fileState.q)}"></label>
+    <span class="muted">${out.groups.reduce((a, g) => a + g.files.length, 0)} files</span></div>${groups || '<div class="empty">No files match.</div>'}`;
+  const fq = $("fq");
+  fq.oninput = () => { fileState.q = fq.value; clearTimeout(fq.t); fq.t = setTimeout(async () => { await fileView(++renderSeq); const n = $("fq"); n.focus(); n.setSelectionRange(n.value.length, n.value.length); }, 250); };
+  $("main").onclick = e => { const tr = e.target.closest("tr[data-file]"); if (tr) go("gauntlet", tr.dataset.file); };
+}
+
+// ---------- gauntlet: sequences ----------
+const seqStates = {};
+function stripCells(strip, flags = {}, mineFlags = {}) {
+  const cells = [];
+  for (let k = 0; k < 11; k++) {
+    const f = strip.find(x => x.k === k);
+    if (!f) { cells.push(`<span class="cell none" title="Floor ${k + 1}: not reached"></span>`); continue; }
+    const tip = `Floor ${k + 1} · ${f.kind} · ${f.encounter}\nHP ${f.hp_start} → ${f.won ? f.hp_end : "died"}` +
+      (f.took ? `\ntook ${f.took}` : (f.took === null && f.won && f.kind !== "boss" ? "\nskipped the card" : "")) +
+      (f.rest ? `\nrest: ${f.rest}` : "") + (f.removed ? `\nremoved ${f.removed}` : "") + (f.path ? `\npath: ${f.path}` : "") +
+      (flags[k] ? "\nthis build replays it differently" : "") + (mineFlags[k] ? "\nyour line" : "");
+    const cls = ["cell", f.kind === "elite" ? "elite" : "", f.kind === "boss" ? "boss" : "", f.won ? "" : "lost", flags[k] ? "flag" : "", mineFlags[k] ? "mine" : ""].join(" ");
+    cells.push(`<span class="${cls}" title="${E(tip)}">${f.won ? `<span class="hpf" style="height:${100 * f.hp_end / MAX_HP}%"></span>` : ""}</span>`);
+  }
+  return `<span class="fstrip">${cells.join("")}</span>`;
+}
+async function seqView(file, mine) {
+  const st = seqStates[file] = seqStates[file] || { half: "", cleared: "", died: "", encounter: "", card: "", sort: "", desc: false, page: 0, by: "" };
+  if (!$("main").querySelector("#seqtable")) loading("Reading " + file + "…");
+  const out = await api("/api/sequences", { file, half: st.half, cleared: st.cleared, died: st.died, encounter: st.encounter, card: st.card, sort: st.sort, desc: st.desc ? 1 : 0, page: st.page, by: st.by });
+  if (mine !== renderSeq) return;
+  const rows = groupedRows(out, 7, r => `<tr class="click" data-i="${r.i}">
+    <td class="num">${r.i}</td><td>${E(r.half)}</td><td class="num">${r.cell ?? "–"}</td><td><span${encTip(r.boss)}>${E(r.boss)}</span></td>
+    <td>${r.cleared ? '<span class="pill good">cleared</span>' : `<span class="pill bad">died on ${r.died + 1}</span>`}</td>
+    <td class="num">${r.end_hp}</td><td>${stripCells(r.strip)}</td></tr>`, { half: "set", boss: "boss", result: "result" }[st.by] || st.by);
+  const sel = (id, label, tip, opts, val) => `<label><span title="${E(tip)}">${label}</span> <select id="${id}">${opts.map(([v, t]) => `<option value="${v}"${String(val) === String(v) ? " selected" : ""}>${t}</option>`).join("")}</select></label>`;
+  $("main").innerHTML = crumbs([["Gauntlet", "#gauntlet"], [file, null, file]]) +
+    `<div class="card"><h1 style="margin:0 0 6px" class="trunc"${file.length > 60 ? ` title="${E(file)}"` : ""}>${E(file)}</h1>
+      <div class="tags" style="margin-bottom:6px">${out.tags.map(t => `<span class="pill">${E(t)}</span>`).join("")}</div>
+      <div class="muted" title="${E(out.settings.player)}">player <b style="color:var(--ink)">${E(short(out.settings.player))}</b></div>
+      ${out.refused ? `<div class="banner warn" style="margin-top:10px">Replays are off for this file: ${E(out.refused)}</div>` : ""}</div>
+    <div class="card"><div class="filters">
+      ${sel("f-half", "Set", TIP.half, [["", "all"], ["train", "train"], ["held_out", "held_out"]], st.half)}
+      ${sel("f-cleared", "Cleared", TIP.result, [["", "either"], ["1", "yes"], ["0", "no"]], st.cleared)}
+      ${sel("f-died", "Died on floor", "Only runs that died on this floor", [["", "any"], ...Array.from({ length: 11 }, (_, k) => [k, k + 1])], st.died)}
+      <label><span title="Only sequences that fought this encounter (e.g. gremlin_nob)">Encounter</span> <input id="f-enc" size="14" value="${E(st.encounter)}"></label>
+      <label><span title="Only sequences whose final deck held this card (e.g. Inflame)">Card in deck</span> <input id="f-card" size="14" value="${E(st.card)}"></label>
+      ${groupSel("f-by", [["", "nothing"], ["half", "set"], ["boss", "boss"], ["result", "result"]], st.by)}
+    </div>
+    <div class="tablewrap"><table id="seqtable"><thead><tr>
+      ${sortHead("seq", "i", TIP.seq, st)}${sortHead("set", "half", TIP.half, st)}${sortHead("cell", "cell", TIP.cell, st)}${sortHead("boss", "boss", TIP.boss, st)}
+      ${sortHead("result", "died", TIP.result, st)}${sortHead("end HP", "end_hp", TIP.endhp, st)}<th><span title="${E(TIP.strip)}">floors</span></th>
+    </tr></thead><tbody>${rows || '<tr><td colspan="7" class="empty">No sequences match.</td></tr>'}</tbody></table></div><div id="pg"></div></div>`;
+  const redraw = () => seqView(file, ++renderSeq);
+  onSort($("seqtable"), st, redraw, ["i", "half", "boss"]);
+  $("pg").replaceWith(pager(out, st, redraw));
+  for (const [id, key] of [["f-half", "half"], ["f-cleared", "cleared"], ["f-died", "died"], ["f-by", "by"]]) $(id).onchange = () => { st[key] = $(id).value; st.page = 0; redraw(); };
+  for (const [id, key] of [["f-enc", "encounter"], ["f-card", "card"]]) $(id).onchange = () => { st[key] = $(id).value.trim(); st.page = 0; redraw(); };
+  $("seqtable").querySelector("tbody").onclick = e => { const tr = e.target.closest("tr[data-i]"); if (tr) go("gauntlet", file, tr.dataset.i); };
+}
+
+// ---------- the owner's history: one ordered list in the URL (?c=&cs=scope); every change is one URL ----------
+// Scope: "file|i" for a gauntlet sequence, "cell|<fight json>" for a mutate or boss-replay cell.
+// Entries, oldest first:
+//   a pick at a run event  {k, e, j, pick}
+//   a fight's trail        {t: floor k (or "cell"), from: decision n, steps: [[option, seed, asPlayed 1|0]],
+//                           end: {won, hp, same} when its last step finished the fight}
+// The server gets the picks and, from each trail whose end differs from the recorded one, the fight's result
+// {k, won, hp}; afterstates (not these entries) decide where the line differs from the file's.
+// Undo removes the last change (a trail's last step, or the last entry); Reset removes all; the browser's
+// back button steps back too, since each change pushes a URL.
+const seqScope = (file, i) => `${file}|${i}`;
+function getHist(scope) {
+  const q = new URLSearchParams(location.search);
+  if (q.get("cs") !== scope) return [];
+  try { return JSON.parse(q.get("c") || "[]"); } catch (e) { return []; }
+}
+function setHist(scope, arr) {
+  const q = new URLSearchParams(location.search);
+  if (arr.length) { q.set("c", JSON.stringify(arr)); q.set("cs", scope); } else { q.delete("c"); q.delete("cs"); }
+  const url = (q.toString() ? "?" + q : location.pathname) + location.hash;
+  if (url !== location.search + location.hash) history.pushState(null, "", url);
+  lastSearch = location.search;
+}
+const getChoices = (file, i) => getHist(seqScope(file, i));
+// What the server reads: picks as they are, and a trail's fight result where it differs from the record's.
+function serverChoices(arr) {
+  const out = [];
+  for (const x of arr) {
+    if ("e" in x) out.push(x);
+    else if ("won" in x) out.push(x);  // an older URL's fight result
+    else if (typeof x.t === "number" && x.end && !x.end.same) out.push({ k: x.t, won: x.end.won, hp: x.end.won ? x.end.hp : 0 });
+  }
+  return out;
+}
+const choiceParam = arr => { const s = serverChoices(arr); return s.length ? JSON.stringify(s) : ""; };
+// A pick replaces any earlier pick of the same event, and drops what came after it in the run
+// (later picks, and the trails of the fights it changes); the new entry goes last.
+function withPick(arr, c) {
+  const before = c.e === "rest" || c.e === "path";  // decided before floor k's fight
+  return [...arr.filter(x => {
+    if ("e" in x) return x.k < c.k || (x.k === c.k && !(x.e === c.e && (x.j || 0) === (c.j || 0)));
+    const k = "t" in x ? x.t : x.k;
+    return typeof k !== "number" || k < c.k || (k === c.k && !before);
+  }), c];
+}
+function undoHist(arr) {
+  if (!arr.length) return arr;
+  const last = arr[arr.length - 1];
+  if ("t" in last && last.steps.length > 1) return [...arr.slice(0, -1), { ...last, steps: last.steps.slice(0, -1), end: null }];
+  return arr.slice(0, -1);
+}
+// one line per entry for the "your changes" list; `changed` from the server's history where it has one
+function histLabel(x) {
+  if ("e" in x) return `floor ${x.k + 1}: ${optLabel(x.e, x.pick)}`;
+  if ("won" in x) return `floor ${x.k + 1}: fight ${x.won ? "won with " + x.hp + " HP" : "lost"}`;
+  const where = typeof x.t === "number" ? `floor ${x.t + 1}` : "this fight";
+  const n = x.steps.length;
+  return `${where}: ${n} step${n === 1 ? "" : "s"} from decision ${x.from + 1}` +
+    (x.end ? (x.end.won ? `, won with ${x.end.hp} HP` : ", lost") : "");
+}
+function histUnchanged(x, serverHist) {
+  if ("t" in x) {
+    const last = x.steps[x.steps.length - 1];
+    if (x.end) return !!x.end.same;
+    return !!(last && last[2]);
+  }
+  const h = (serverHist || []).find(s => s.k === x.k && ("e" in x ? s.e === x.e && (s.j || 0) === (x.j || 0) : !("e" in s)));
+  return h ? h.changed === false : false;
+}
+function historyBox(scope, serverHist) {
+  const arr = getHist(scope);
+  const items = arr.map(x => {
+    const same = histUnchanged(x, serverHist);
+    return `<li class="${same ? "same" : ""}" title="${E(same ? "This change ended in the same state as the file's run, so the run is still the file's from here" : "This change left the file's line")}">${E(histLabel(x))}${same ? ' <span class="pill">same state as the file</span>' : ""}</li>`;
+  }).join("");
+  return `<div class="hist"><div class="histctl"><b>Your changes</b>
+      <button class="btn sm" data-hist="undo" ${arr.length ? "" : "disabled"} title="Remove your last change (the browser's back button does the same)">undo</button>
+      <button class="btn sm" data-hist="reset" ${arr.length ? "" : "disabled"} title="Remove all your changes and show the file's recorded run">reset</button></div>
+    ${arr.length ? `<ol>${items}</ol>` : '<div class="muted" style="font-size:12.5px">none: this is the file\'s recorded run</div>'}</div>`;
+}
+function bindHistory(root, scope) {
+  root.querySelectorAll("button[data-hist]").forEach(b => b.onclick = e => {
+    e.stopPropagation();
+    setHist(scope, b.dataset.hist === "undo" ? undoHist(getHist(scope)) : []);
+    ft.key = null;
+    render();
+  });
+}
+// the browser's back and forward: re-render when the history (the query) changed; a hash change renders itself
+var lastSearch = location.search;
+window.addEventListener("popstate", () => { if (location.search !== lastSearch) { lastSearch = location.search; render(); } });
+
+// ---------- gauntlet: one run ----------
+function hpBar(start, end, won) {
+  const left = won ? end : 0;
+  const lo = Math.min(start, left), hi = Math.max(start, left);
+  return `<div class="hpline" title="${E(TIP.floorhp)}"><span class="hpbar${won ? "" : " dead"}">
+    <span class="lost" style="left:${100 * lo / MAX_HP}%;width:${100 * (hi - lo) / MAX_HP}%"></span>
+    <span class="left" style="width:${100 * left / MAX_HP}%"></span></span>
+    <span class="num">${start} → ${won ? end : "died"}</span></div>`;
+}
+const EV_LABEL = { offer: "card", extra: "extra card", rest: "rest", removal: "removal", path: "path" };
+const EV_TIP = {
+  offer: "The card offer after the fight: click a card (or skip) to take it instead; the run then follows your pick and the file's player plays the next floors.",
+  extra: "An elite's extra card offer (mini-run): click to pick differently.",
+  rest: "The rest site before the boss: heal 30% of max HP, or upgrade a card. Click to choose differently.",
+  removal: "The card removal after the first elite: keep every card, or remove one. Click to choose differently.",
+  path: "Fight the elite, or a hard hallway instead. Click to choose differently.",
+};
+function optLabel(kind, o) {
+  if (kind === "offer" || kind === "extra") return o == null ? "skip" : o;
+  if (kind === "rest") return o === "heal" ? "heal" : "upgrade " + o;
+  if (kind === "removal") return o == null ? "keep all" : "remove " + o;
+  if (kind === "path") return o === "hallway" ? "hallway" : "elite";
+  return String(o);
+}
+function eventLine(ev, idx) {
+  const opts = ev.options || [...(ev.offer || []), null];
+  const by = { row: "as the file recorded", owner: "your pick", file: "picked by the file's chooser on your line" }[ev.by] || "";
+  const body = opts.map((o, j) => {
+    const chosen = o === ev.chosen || (o == null && ev.chosen == null);
+    const rec = ev.by !== "row" && ev.recorded !== undefined && ev.recorded !== null && o === ev.recorded;
+    const cls = ["pick-o", chosen ? (ev.by === "owner" ? "mine" : "took") : "", rec ? "rec" : ""].join(" ");
+    const tip = chosen ? `chosen: ${by}` : (rec ? "the file's choice here" : "click to pick this instead");
+    return `<button class="${cls}" data-ev="${idx}" data-o="${j}" title="${E(tip)}">${E(optLabel(ev.kind, o))}</button>`;
+  }).join("");
+  const scoreBtn = ev.e != null ? `<button class="btn sm" data-score="${ev.e}" title="Score this choice with the run's own chooser (the sim chooser plays fights: a second or more)">scores</button>` : "";
+  return `<div class="ev2"><span class="k" title="${E(EV_TIP[ev.kind] || "")}">${E(EV_LABEL[ev.kind] || ev.kind)}</span>${body}${scoreBtn}</div>` +
+    (ev.e != null ? `<div class="escores" id="es-${ev.e}" hidden></div>` : "");
+}
+function eventScores(out) {
+  const s = out.scored || {};
+  const opts = s.options || [], sc = s.scores || [];
+  const fin = sc.filter(x => x != null), lo = Math.min(...fin), hi = Math.max(...fin);
+  const rows = opts.map((o, j) => {
+    const v = sc[j], pick = (o == null ? null : o) === (s.pick == null ? null : s.pick);
+    return `<div class="score${pick ? " best" : ""}"${pick ? ' title="The chooser\'s pick"' : ""}><span class="mk">${pick ? "●" : ""}</span>
+      <span style="width:130px" class="trunc">${E(optLabel(out.kind, o))}</span>${v == null ? '<span class="muted">rule</span>' : meterBar(hi > lo ? 0.04 + 0.96 * (v - lo) / (hi - lo) : 1)}<span class="num">${fmt(v)}</span></div>`;
+  }).join("");
+  const warn = out.pick_matches === false ? `<div class="bad-t">This build's chooser picks ${E(optLabel(out.kind, s.pick))}; the file chose ${E(optLabel(out.kind, out.recorded))}.</div>` : "";
+  const note = out.note ? `<div class="note">${E(out.note)}</div>` : "";
+  return (rows || '<span class="muted">This setting makes no scored choice here.</span>') + warn + note +
+    `<div class="note">The run's chooser's score per choice (its own scale; ● its pick).</div>`;
+}
+function runStrip(floors) {
+  return stripCells(floors.filter(f => f.result).map(f => ({
+    k: f.k, kind: f.kind, encounter: f.row ? f.row.encounter : (f.encounter || ""), hp_start: f.start.hp,
+    hp_end: f.result.hp_end, won: f.result.won, took: (f.events.find(e => e.kind === "offer") || {}).chosen,
+  })), Object.fromEntries(floors.filter(f => f.fidelity && !f.fidelity.matches).map(f => [f.k, true])),
+  Object.fromEntries(floors.filter(f => f.line === "owner").map(f => [f.k, true])));
+}
+async function runView(file, i, mine) {
+  loading(`Reading sequence ${i}…`);
+  const choices = getChoices(file, i);
+  const out = await api("/api/run", { file, i, choices: choiceParam(choices) });
+  if (mine !== renderSeq) return;
+  const allEvents = [];
+  const floors = out.floors.map(f => {
+    const row = f.row || {};
+    const res = f.result;
+    const fid = f.fidelity;
+    const flag = fid && !fid.matches ? `<span class="pill warn" title="${E(TIP.fidelity)}">replays differently</span>` : (fid ? `<span class="pill good" title="${E(TIP.fidelity)}">replay matches</span>` : "");
+    const lineTag = f.line === "owner" ? `<span class="pill mine" title="${E(TIP.yourline)}">your line</span>` : "";
+    const enc = row.encounter || f.encounter || (f.start && f.start.encounter) || "";
+    const evs = f.events.map(ev => { allEvents.push({ ...ev, k: f.k }); return eventLine(ev, allEvents.length - 1); }).join("");
+    const pending = !res;
+    const goTip = pending ? "Click to play this floor with the file's player (two-turn floors take about 8 s)" : "Click to open this fight turn by turn";
+    return `<div class="floor click${f.line === "owner" ? " owner" : ""}" data-k="${f.k}" title="${E(goTip)}">
+      <span class="fk">${f.k + 1}</span>
+      <div style="min-width:0"><div class="enc trunc"><span${encTip(enc)}>${E(enc)}</span></div><div class="tags"><span class="pill ${f.kind === "elite" ? "warn" : f.kind === "boss" ? "serious" : ""}">${E(f.kind)}</span>${lineTag}${flag}${f.source === "owner" ? '<span class="pill mine" title="You played this fight yourself; its end HP carries on">your fight</span>' : ""}</div></div>
+      <div style="min-width:0">${pending ? `<div class="pend"><span class="pill mine">play this floor</span> starts with ${f.start.hp} HP, ${f.start.deck.length} cards</div>` : hpBar(f.start.hp, res.hp_end, res.won)}
+        ${evs ? `<div class="events">${evs}</div>` : ""}</div>
+      <span class="chev" aria-hidden="true">›</span></div>`;
+  }).join("");
+  const last = out.floors[out.floors.length - 1];
+  const ended = last && last.result && !last.result.won;
+  const cleared = last && last.k === 10 && last.result && last.result.won;
+  const status = out.pending != null ? `your line continues at floor ${out.pending + 1}` : (cleared ? "cleared" : (ended ? `died on floor ${last.k + 1}` : "?"));
+  const owner = out.floors.some(f => f.line === "owner");
+  const mineBanner = owner ? `<div class="banner mineb"><b>Your line.</b> Where your changes leave the run in a different state from the file's (HP or deck), the file's player plays on from there; floors on your line are played when you open them. As soon as the state equals the file's again, the run is the file's again.</div>` : "";
+  $("main").innerHTML = crumbs([["Gauntlet", "#gauntlet"], [file, H("gauntlet", file), file], [`sequence ${i}`]]) + mineBanner +
+    `<div class="card"><div class="hero"><div class="badge ${cleared ? "good" : out.pending != null ? "" : "bad"}">${cleared ? "✓" : out.pending != null ? "…" : "×"}</div>
+      <div style="min-width:0"><div class="title">Sequence ${i} · ${E(status)}</div>
+      <div class="sub">${E(out.half)} half · cell ${E(out.cell)} · ${E(out.character)}</div></div>
+      <div style="margin-left:auto">${runStrip(out.floors)}</div></div>
+      <div class="sub-h">start deck</div><div class="tags">${out.start_deck.map(c => `<span class="pill">${E(c)}</span>`).join("")}</div>
+      ${out.refused ? `<div class="banner warn" style="margin-top:10px">Replays are off for this file: ${E(out.refused)}</div>` : ""}
+      ${historyBox(seqScope(file, i), out.history)}</div>
+    <div class="card"><h2>Floors <span class="age">click a floor to open its fight · click a choice to take it instead</span></h2><div class="floors">${floors}</div></div>`;
+  bindHistory($("main"), seqScope(file, i));
+  $("main").onclick = async e => {
+    const b = e.target.closest("button[data-score]");
+    if (b) {
+      const box = $("es-" + b.dataset.score);
+      if (!box.hidden) { box.hidden = true; return; }
+      box.hidden = false; box.innerHTML = '<span class="spin"></span>scoring…';
+      try { box.innerHTML = eventScores(await api("/api/event", { file, i, e: b.dataset.score })); }
+      catch (err) { box.innerHTML = `<span class="bad-t">${E(err.message)}</span>`; }
+      return;
+    }
+    const p = e.target.closest("button[data-ev]");
+    if (p) {
+      const ev = allEvents[+p.dataset.ev], opts = ev.options || [...(ev.offer || []), null];
+      const pick = opts[+p.dataset.o];
+      if (pick === ev.chosen || (pick == null && ev.chosen == null)) return;
+      setHist(seqScope(file, i), withPick(choices, { k: ev.k, e: ev.kind, j: ev.j || 0, pick: pick === undefined ? null : pick }));
+      render();
+      return;
+    }
+    if (e.target.closest("button, a, .escores")) return;
+    const fl = e.target.closest(".floor[data-k]");
+    if (fl) go("gauntlet", file, i, fl.dataset.k);
+  };
+}
+
+// ---------- gauntlet: one floor's fight ----------
+function actionText(a, bd) {
+  // "Bash@0" -> "Bash → Gremlin Nob"; "Potion:1@0" -> "Use Fire Potion → Jaw Worm"
+  const pm = /^Potion:(\d+)(?:@(\d+))?$/.exec(a || "");
+  if (pm) {
+    const name = ((bd && bd.player && bd.player.potions) || [])[+pm[1]];
+    const use = `Use ${name ? bare(name) : "potion " + pm[1]}`;
+    if (pm[2] === undefined) return use;
+    const mon = (bd && bd.monsters || []).find(x => x.slot === +pm[2]);
+    return `${use} → ${mon ? mon.name : "slot " + pm[2]}`;
+  }
+  const m = /^(.*)@(\d+)$/.exec(a || "");
+  if (!m) return a === "End" ? "End turn" : a;
+  const mon = (bd && bd.monsters || []).find(x => x.slot === +m[2]);
+  return `${m[1]} → ${mon ? mon.name : "slot " + m[2]}`;
+}
+function boardHtml(bd, text) {
+  if (!bd) return `<pre>${E(text || "")}</pre>`;
+  const pw = ps => ps.map(p => `<span class="pill pow"${tipAttr(p.desc || descOf("powers", p.name), [`${p.amount} stack${p.amount === 1 ? "" : "s"} now.`])}>${E(p.name)} ${p.amount}</span>`).join("");
+  const foes = bd.monsters.map(m => {
+    const it = m.intent;
+    let intent = '<span class="pill" title="It has no move chosen yet">no intent</span>';
+    if (it) {
+      const unsure = it.known ? [] : ["Not certain yet: the next move is still to be rolled."];
+      const moveDesc = it.desc || ((DESC.moves || {})[bare(m.name)] || {})[it.name];
+      const shown = it.per_hit != null && it.hits > 1 ? `${it.per_hit} × ${it.hits}` : `${it.damage}`;
+      const dmgTip = (it.per_hit != null && it.hits > 1 ? `${it.damage} damage in total, ${it.hits} hits of ${it.per_hit}` : `${it.damage} damage`) +
+        " to you, before your block absorbs any; Strength, Weak and your Vulnerable are already counted." + (it.why ? " " + it.why : "");
+      const moveTip = tipAttr(moveDesc, it.damage > 0 ? [dmgTip, ...unsure] : unsure);
+      intent = it.damage > 0
+        ? `<span class="pill intent"${moveTip}>⚔ ${shown}${it.known ? "" : " ?"}</span><span class="pill"${moveTip}>${E(it.name)}</span>`
+        : `<span class="pill"${moveTip}>${E(it.name)}${it.known ? "" : " ?"}</span>`;
+    }
+    return `<div class="foe"><div class="nm"><b${tipAttr(m.desc || descOf("monsters", m.name))}>${E(m.name)}</b><span class="slot">slot ${m.slot}</span></div>
+      <div class="hp2">${meterBar(m.hp / m.max_hp, "hpm")}<span class="num">${m.hp}/${m.max_hp}</span></div>
+      <div class="tags">${m.block ? `<span class="pill blk" title="${E(TIP.block)}">◆ ${m.block}</span>` : ""}${intent}${pw(m.powers)}</div></div>`;
+  }).join("");
+  const p = bd.player;
+  const hand = bd.hand.map(c => `<div class="cardt${c.upgraded ? " up" : ""}"${tipAttr(c.desc || descOf("cards", c.name), [
+      ...(c.count > 1 ? [`${c.count} copies in your hand.`] : []),
+      ...((c.desc || descOf("cards", c.name)) ? [] : [`Costs ${c.x_cost ? "X (all your energy)" : c.cost}.`])])}>
+      <span class="cost">${c.x_cost ? "X" : c.cost}</span>${c.count > 1 ? `<span class="cnt">×${c.count}</span>` : ""}<span class="cn">${E(c.name)}</span></div>`).join("");
+  const pile = (name, x) => `<button class="btn" data-pile="${name}" title="${E(TIP[name])}">${name[0].toUpperCase() + name.slice(1)} ${x.count}</button>`;
+  const status2 = bd.over ? `<span class="pill ${bd.won ? "good" : "bad"}">${bd.won ? "won" : "lost"}</span>` : "";
+  return `<div class="board">
+    <div class="foes">${foes || '<div class="empty">No monsters left.</div>'}</div>
+    <div class="me"><b>You</b><div class="hp2">${meterBar(p.hp / p.max_hp, "hpp")}<span class="num">${p.hp}/${p.max_hp}</span></div>
+      <div class="me2"><span class="energy" title="${E(TIP.energy)}">${p.energy}</span>${p.block ? `<span class="pill blk" title="${E(TIP.block)}">◆ ${p.block}</span>` : ""}<div class="tags">${pw(p.powers)}${(p.potions || []).map(q => `<span class="pill"${tipAttr((bd.describe && bd.describe.potions || {})[q], ["A held potion."])}>${E(bare(q))}</span>`).join("")}</div>${status2}</div></div>
+    <div><div class="sub-h" style="margin-top:0">hand</div><div class="hand">${hand || '<span class="empty">empty</span>'}</div></div>
+    <div class="piles">${pile("draw", bd.piles.draw)}${pile("discard", bd.piles.discard)}${pile("exhaust", bd.piles.exhaust)}
+      ${bd.pending ? `<span class="pill warn" title="The state is paused at a random event">${E(bd.pending)}</span>` : ""}</div>
+    <div class="pilelist" id="pilelist" hidden></div></div>`;
+}
+function bindPiles(root, bd) {
+  root.querySelectorAll("button[data-pile]").forEach(b => b.onclick = () => {
+    const box = root.querySelector("#pilelist"), name = b.dataset.pile, x = bd.piles[name];
+    if (!box.hidden && box.dataset.on === name) { box.hidden = true; return; }
+    box.hidden = false; box.dataset.on = name;
+    const cardSpan = c => `<span${tipAttr((bd.describe && bd.describe.cards || {})[c] || descOf("cards", c))}>${E(c)}</span>`;
+    const top = name === "draw" && x.known_top && x.known_top.length ? ` <b>Known on top:</b> ${x.known_top.map(c => cardSpan(Array.isArray(c) ? c[0] : c)).join(", ")}.` : "";
+    box.innerHTML = `<b>${E(name)}</b> (${x.count}${name === "draw" ? ", sorted by name, not in order" : ""}): ` +
+      (x.cards.length ? x.cards.map(([c, n]) => `${cardSpan(c)}${n > 1 ? " ×" + n : ""}`).join(", ") : "empty") + top;
+  });
+}
+function scoreCell(v, lo, hi, pick, tip) {
+  if (v == null) return `<td><span class="muted">–</span></td>`;
+  const f = hi > lo ? 0.04 + 0.96 * (v - lo) / (hi - lo) : 1;
+  return `<td><div class="score${pick ? " best" : ""}" title="${E(tip + "\n" + fmt(v, 4) + (hi > v ? `; ${fmt(hi - v, 3)} below the best (about ${Math.round((hi - v) * 100)} HP)` : "; the best"))}"><span class="mk">${pick ? "●" : ""}</span>${meterBar(f)}<span class="num">${fmt(v)}</span></div></td>`;
+}
+function optionsTable(v) {
+  const pl = v.player, opts = v.options || [];
+  if (!opts.length) return v.over ? '<div class="empty">Combat over.</div>' : '<div class="empty">No decision here.</div>';
+  const others = v.players || [];
+  const range = arr => { const f = arr.filter(x => x != null); return [Math.min(...f), Math.max(...f)]; };
+  const cols = [];
+  if (pl && pl.one) cols.push({ head: tail(short(pl.name), 23), sub: pl.depth === 2 ? "its one-turn score" : "the run's player", tip: TIP.pscore(short(pl.name)) + (pl.depth === 2 ? " This column is its one-turn score; the next is the two-turn one it played by." : ""), vals: pl.one, pick: pl.depth === 2 ? null : pl.pick });
+  if (pl && pl.two) cols.push({ head: tail(short(pl.name), 23), sub: "its two-turn score (played by)", tip: TIP.two, vals: pl.two, pick: pl.pick });
+  for (const o of others) cols.push({ head: o === "heuristic" ? o : tail(short(o), 23), sub: pl ? "one turn, to compare" : "one-turn search", tip: TIP.oscore(short(o)), vals: opts.map(x => x.scores ? x.scores[o] : null), pick: opts.findIndex(x => (x.picked_by || []).includes(o)) });
+  const exact = opts.some(o => o.value != null);
+  const ranges = cols.map(c => range(c.vals));
+  const exr = exact ? range(opts.map(o => o.value)) : null;
+  const rows = opts.map((o, k) => {
+    const rec = pl && pl.recorded === k;
+    return `<tr class="${rec ? "rec" : ""}" data-option="${k}"><td>${E(o.actions.map(a => actionText(a, v.board_data)).join(" / "))}${rec ? ` <span class="pill mine" title="${E(TIP.played)}">played</span>` : ""}</td>
+      <td class="muted">${E(o.kind)}</td>
+      ${cols.map((c, j) => scoreCell(c.vals[k], ranges[j][0], ranges[j][1], c.pick === k, c.head)).join("")}
+      ${exact ? scoreCell(o.value, exr[0], exr[1], false, "exact value" + (o.bounded ? " (an upper bound only: skipped by solver bounds)" : "")) : ""}</tr>`;
+  }).join("");
+  return `<div class="tablewrap"><table class="opts"><thead><tr><th><span title="${E(TIP.option)}">option</span></th><th><span title="${E(TIP.kind)}">outcome</span></th>
+    ${cols.map(c => `<th style="max-width:170px"><span class="trunc" title="${E(c.tip)}">${E(c.head)}</span><span class="trunc" style="font-weight:400">${E(c.sub)}</span></th>`).join("")}${exact ? `<th><span title="${E(TIP.exact)}">exact value</span></th>` : ""}</tr></thead>
+    <tbody>${rows}</tbody></table></div>
+    <div class="note">● each player's pick · <span class="pill mine">played</span> what the run played · bars run from this decision's worst option (left) to its best (full). ${E(VALUE)}</div>`;
+}
+// ---------- the net's inputs ----------
+const fmtv = v => Number.isInteger(v) ? String(v) : Number(v).toFixed(3);
+function kvs(names, vals) {
+  const nz = vals.map((v, j) => [names[j] || `#${j}`, v]).filter(([, v]) => v !== 0);
+  return nz.length ? nz.map(([n, v]) => `<span class="kv"${String(n).length > 30 ? ` title="${E(n)}"` : ""}><span>${E(n)}</span><b>${E(fmtv(v))}</b></span>`).join("")
+    : '<span class="muted">all zero</span>';
+}
+function netPanel(net, playerName) {
+  if (!net) return "";
+  const head = `<summary><h2>What the player gets <span class="age">${net.kind === "heuristic" ? "the heuristic's parts" : "the net's input rows for this state, as its own features encode them"}</span></h2></summary>`;
+  if (net.kind === "heuristic")
+    return `<details class="card netbox">${head}<div class="ngroup">${net.parts.map(([n, v]) => `<span class="kv"${String(n).length > 30 ? ` title="${E(n)}"` : ""}><span>${E(n)}</span><b>${fmt(v)}</b></span>`).join("")}</div></details>`;
+  const c = net.columns;
+  const grp = (title, tip, body) => `<div class="ngroup"><div class="nk" title="${E(tip)}">${E(title)}</div>${body}</div>`;
+  const st = net.static != null ? `<div class="facts" style="margin:0 0 8px"><span title="The net's own value of this position, before any search (${E(VALUE)})">static value <b>${fmt(net.static, 4)}</b></span></div>` : "";
+  const mons = net.monsters.map(m => grp(`monster slot ${m.slot}`, "This monster's input row (columns named by the net's layout)", kvs(c.monster, m.values))).join("");
+  const cards = net.cards.map(x => `<div class="nrow"><span class="pill" title="Pile and copies this card row stands for">${E(x.pile)} × ${fmtv(x.count)}</span>${kvs(c.card, x.values)}</div>`).join("");
+  const rows = net.rows.map(x => `<div class="nrow"><span class="pill" title="The card row (index into the card rows above) and the entity this effect row belongs to">card ${x.card} · entity ${x.entity}</span>${kvs(c.row, x.values)}</div>`).join("");
+  return `<details class="card netbox">${head}${st}<div class="note" style="margin:0 0 6px">Only non-zero columns are shown; hover a value for its column. Card rows carry no card name: the net sees each card by its effects.</div>
+    ${grp("player", "The player's input row", kvs(c.player, net.player))}${mons}
+    ${grp(`cards (${net.cards.length} rows)`, "One row per distinct card in each pile, with its copy count", cards || '<span class="muted">none</span>')}
+    ${net.rows.length ? grp(`effect rows (${net.rows.length})`, "Effect rows: triggered effects of cards and powers", rows) : ""}</details>`;
+}
+
+// ---------- a fight: a gauntlet floor, or a mutate / boss-replay cell ----------
+// ctx: {file, i, k, choices} for a floor, {fight} (a JSON string) for a cell.
+let fightCache = { key: null, out: null };
+let ft = { key: null, base: null, trail: [], at: 0 };
+let boardText = false;  // the board panel's view: drawn board, or the engine's render() text
+const ctxParams = ctx => ctx.fight ? { fight: ctx.fight } : { file: ctx.file, i: ctx.i, k: ctx.k, choices: ctx.choices };
+const fightScope = ctx => ctx.fight ? "cell|" + ctx.fight : seqScope(ctx.file, ctx.i);
+const fightT = ctx => ctx.fight ? "cell" : +ctx.k;
+const trailOf = ctx => getHist(fightScope(ctx)).find(x => "t" in x && x.t === fightT(ctx)) || null;
+// one trail element: the view of a state along the line, and the step that reached it
+function trailItem(parent, v, option, seed) {
+  const asPlayed = v.line === "as played";
+  return { label: actionText(parent.view.options[option].actions[0], parent.view.board_data) + (v.kind && v.kind !== "deterministic" ? ` (seed ${seed})` : ""),
+    view: v, n: v.at != null ? v.at : parent.n + 1, hex: v.hex || null, handle: v.handle || null,
+    mine: !asPlayed, line: v.line, option, seed, kind: v.kind };
+}
+async function stepApi(ctx, parent, option, seed) {
+  const p = { ...ctxParams(ctx), option, seed, with: withParam() };
+  if (parent.hex) { p.hex = parent.hex; p.n = parent.n + 1; }
+  else { p.n = parent.handle.n; p.steps = JSON.stringify(parent.handle.steps); }
+  return api("/api/step", p);
+}
+async function fightPage(ctx, n, crumbItems, mine) {
+  const key = JSON.stringify(ctx);
+  if (fightCache.key !== key) {
+    $("main").innerHTML = crumbs(crumbItems) + `<div class="card"><span class="spin"></span>${ctx.fight ? "Replaying this cell with the file's player…" : "Replaying the floor with the file's own player…"} one-turn fights take under a second, two-turn fights about 8 s (cached after the first time).</div>`;
+    const out = ctx.fight ? await api("/api/fight", { fight: ctx.fight }) : await api("/api/floor", ctxParams(ctx));
+    if (mine !== renderSeq) return;
+    fightCache = { key, out };
+  }
+  const out = fightCache.out, decs = out.decisions;
+  const at = Math.max(0, Math.min(decs.length - 1, n == null || n === "" ? 0 : +n));
+  const base = key + "|" + at + "|" + withParam();
+  const entry = trailOf(ctx);
+  const steps = entry && entry.from === at ? entry.steps : [];
+  const tkey = base + "|" + JSON.stringify(steps.map(s => [s[0], s[1]]));
+  if (ft.key !== tkey) {
+    const have = ft.base === base ? ft.trail.slice(1).map(t => [t.option, t.seed]) : null;
+    if (have && steps.length <= have.length && steps.every((s, j) => s[0] === have[j][0] && s[1] === have[j][1])) {
+      ft.trail = ft.trail.slice(0, steps.length + 1);  // an undo: the trail is a prefix of the one shown
+    } else {
+      const v = await api("/api/view", { ...ctxParams(ctx), n: at, with: withParam() });
+      if (mine !== renderSeq) return;
+      const trail = [{ label: `decision ${at + 1}`, view: v, n: at, hex: decs[at] ? decs[at].hex : null, handle: v.handle || null, mine: false, line: "as played" }];
+      for (const [option, seed] of steps) {  // the owner's steps from the URL, played again
+        $("main").innerHTML = crumbs(crumbItems) + `<div class="card"><span class="spin"></span>Restoring your line: step ${trail.length} of ${steps.length}…</div>`;
+        const parent = trail[trail.length - 1];
+        trail.push(trailItem(parent, await stepApi(ctx, parent, option, seed), option, seed));
+        if (mine !== renderSeq) return;
+      }
+      ft.trail = trail;
+    }
+    ft.key = tkey; ft.base = base; ft.at = ft.trail.length - 1;
+  }
+  let list = "", turn = null;
+  for (const d of decs) {
+    if (d.turn !== turn) { turn = d.turn; list += `<div class="tn">Turn ${turn}</div>`; }
+    list += `<div class="dec${d.n === at ? " on" : ""}" data-n="${d.n}"><span class="n">${d.n + 1}</span><span class="a">${E(actionText(d.action, d.board_data))}</span></div>`;
+  }
+  const rep = out.replay || {};
+  list += `<div class="tn">End</div><div class="dec end"><span class="n"></span><span class="a">${rep.won ? `won, ${rep.hp_end} HP left` : "lost"}</span></div>`;
+  const fid = out.fidelity;
+  const fw = x => x.won ? `won${x.hp_end != null ? ", " + x.hp_end + " HP" : ""}` : "lost";
+  const banner = fid ? (fid.matches ? "" : `<div class="banner warn" title="${E(TIP.fidelity)}"><b>This build plays this fight differently.</b> File: ${fw(fid.file)}; replay: ${fw(fid.replay)}.${fid.cause ? " Likely cause: " + E(fid.cause) + "." : ""} The replay is shown.</div>`)
+    : (out.line === "owner" ? `<div class="banner mineb"><b>Your line:</b> this floor starts from a state your earlier changes made (HP or deck), so the file has nothing to compare it with.</div>` : "");
+  const spec = out.spec || {};
+  const startFacts = ctx.fight ? `<span>${out.depth === 2 ? "two turns deep" : "one turn deep"}</span>`
+    : `<span title="The fight's start: HP and deck size">start ${spec.hp} HP · ${(spec.deck || []).length} cards</span><span title="How deep the file's player searched each decision">${out.depth === 2 ? "two turns deep" : "one turn deep"}</span>`;
+  const enc = spec.encounter || (out.fight && out.fight.encounter);
+  const crumbFull = enc && !ctx.fight ? [...crumbItems.slice(0, -1), [`${crumbItems[crumbItems.length - 1][0]} · ${enc}`, null, "@enc:" + enc]] : crumbItems;
+  $("main").innerHTML = crumbs(crumbFull) + banner +
+    `<div class="fight"><div class="card decs" id="declist"><div class="sub-h" style="margin:0 0 6px" title="The actions the file's player played in this fight. Click one to open that decision as played.">as played</div>${list}</div>
+     <div><div class="card">
+        <div class="boardtop"><h2 style="margin:0" id="dhead"></h2><div class="facts">${startFacts}</div></div>
+        <div class="linectl" id="linectl"></div>
+        <div class="trail" id="trail"></div>
+        <div id="endbox"></div>
+        <div class="boardhead"><span class="sub-h" style="margin:0">board</span>
+          <span class="seg" id="boardview"><button class="${boardText ? "" : "on"}" data-view="board">board</button><button class="${boardText ? "on" : ""}" data-view="text" title="The engine's render() text of the same state">text</button></span></div>
+        <div id="boardbox"></div></div>
+      <div class="card" id="optbox"></div><div id="netbox"></div></div></div>`;
+  $("declist").onclick = e => { const d = e.target.closest(".dec[data-n]"); if (d) goN(ctx, +d.dataset.n); };
+  const sel = $("declist").querySelector(".dec.on"); if (sel) sel.scrollIntoView({ block: "nearest" });
+  drawFight(ctx, out);
+}
+function goN(ctx, n) {
+  const r = route();
+  const args = r.sec === "fight" ? ["fight", r.args[0], n] : ["gauntlet", r.args[0], r.args[1], r.args[2], n];
+  go(...args);
+}
+function drawFight(ctx, out) {
+  const cur = ft.trail[ft.at], v = cur.view;
+  const scope = fightScope(ctx), hist = getHist(scope);
+  $("trail").innerHTML = ft.trail.length > 1 ? ft.trail.map((t, j) => `<button class="btn sm${j === ft.at ? " on" : ""}${t.mine ? " minet" : ""}" data-at="${j}" title="${E(t.mine ? "your line: a state the run never reached" : "as played: the same state as the run's")}">${j ? "→ " : ""}${E(t.label)}</button>`).join("") : "";
+  const turnNo = v.board_data ? v.board_data.turn : "?";
+  const lineTag = cur.mine ? `<span class="pill mine" title="${E(TIP.yourline)}">your line</span>` : `<span class="pill" title="The same state the file's player reached in the run">as played</span>`;
+  let lastPlayed = ft.at;
+  while (lastPlayed > 0 && ft.trail[lastPlayed].mine) lastPlayed -= 1;
+  $("dhead").innerHTML = `${!cur.mine ? `Decision ${Math.min(cur.n, out.decisions.length - 1) + 1} of ${out.decisions.length}` : `${ft.at - lastPlayed} step${ft.at - lastPlayed > 1 ? "s" : ""} past decision ${ft.trail[lastPlayed].n + 1}`} · turn ${E(turnNo)} ${lineTag}`;
+  const rerollable = ft.at > 0 && cur.kind && cur.kind !== "deterministic";
+  const changes = hist.length ? `<details class="histd"><summary title="Every change you made to this ${ctx.fight ? "fight" : "run"}, oldest first">your changes (${hist.length})</summary><ol>${hist.map(x => {
+    const same = histUnchanged(x, null);
+    return `<li class="${same ? "same" : ""}">${E(histLabel(x))}${same ? ' <span class="pill">same state as the file</span>' : ""}</li>`;
+  }).join("")}</ol></details>` : "";
+  $("linectl").innerHTML = `<span class="grp"><button class="btn sm" id="back" ${ft.at > 0 ? "" : "disabled"} title="Show the previous state along this line (your steps stay)">back</button>` +
+    (rerollable ? `<button class="btn sm" id="reroll" title="${E(TIP.reroll)}">reroll outcome</button>` : "") + `</span>` +
+    `<span class="grp"><button class="btn sm" data-hist="undo" ${hist.length ? "" : "disabled"} title="Remove your last change (the browser's back button does the same)">undo</button>` +
+    `<button class="btn sm" data-hist="reset" ${hist.length ? "" : "disabled"} title="Remove all your changes and show the file's recorded ${ctx.fight ? "fight" : "run"}">reset</button></span>${changes}`;
+  bindHistory($("linectl"), scope);
+  const drawBoard = () => {
+    $("boardbox").innerHTML = boardText ? `<pre>${E(v.board)}</pre>` : boardHtml(v.board_data, v.board);
+    if (!boardText && v.board_data) bindPiles($("boardbox"), v.board_data);
+    $("boardview").querySelectorAll("button").forEach(b => b.classList.toggle("on", (b.dataset.view === "text") === boardText));
+  };
+  drawBoard();
+  $("boardview").onclick = e => { const b = e.target.closest("button[data-view]"); if (b) { boardText = b.dataset.view === "text"; drawBoard(); } };
+  // end of the fight on this line
+  const end = v.end || (v.over && v.board_data ? { won: v.board_data.won, hp_end: v.board_data.won ? v.board_data.player.hp : 0 } : null);
+  if (end) {
+    const rep = out.replay || {};
+    const same = !!end.won === !!rep.won && (!end.won || end.hp_end === rep.hp_end);
+    const carry = ctx.fight ? "" : same ? " The run stays on the file's line."
+      : ` This result carries into the run: the next floors start from it. <a href="${H("gauntlet", ctx.file, ctx.i)}">see the run →</a>`;
+    $("endbox").innerHTML = `<div class="banner ${end.won ? "ok" : "bad"}" style="margin-top:10px"><b>Fight over: ${end.won ? `won with ${end.hp_end} HP` : "lost"}.</b> The run: ${rep.won ? `won with ${rep.hp_end} HP` : "lost"}${same ? " (the same)" : ""}.${carry}</div>`;
+  } else $("endbox").innerHTML = "";
+  const pl = v.player || {};
+  const src = pl.line ? "following its two-turn line: no new search here" : pl.source === "record" ? "scores from its own search during the run" : "scores computed now with the file's settings";
+  const lineNote = pl.line ? `<div class="banner mineb" style="margin:0 0 10px">The player made no search here: it was playing the rest of the line its two-turn search chose at an earlier decision (step line). Its scores for this decision are that search's. <button class="btn sm" id="rescore" title="Run the player's two-turn search on this state now (seconds) to see what it would score here">score it now</button></div>` : "";
+  $("optbox").innerHTML = `<h2>Options <span class="age">player ${E(tail(short(pl.name || ""), 40))} · ${E(src)}</span></h2>` + lineNote + optionsTable(v) +
+    (v.options && v.options.length ? `<div class="note">Click an option to play it; the player keeps scoring the new line.</div>` : "");
+  if ($("rescore")) $("rescore").onclick = async () => {
+    $("rescore").disabled = true; $("rescore").innerHTML = '<span class="spin"></span>scoring…';
+    try {
+      const p = { ...ctxParams(ctx), n: cur.n, fresh: 1, with: withParam() };
+      if (cur.hex) p.hex = cur.hex;
+      const nv = await api("/api/view", p);
+      cur.view = { ...nv, player: { ...nv.player, line: false, source: "now" } };
+      drawFight(ctx, out);
+    } catch (e) { showError(e); }
+  };
+  $("optbox").querySelectorAll("tr[data-option]").forEach(tr => { tr.classList.add("click"); tr.title = "Play this option"; tr.onclick = () => fstep(ctx, out, +tr.dataset.option, 0, false); });
+  $("netbox").innerHTML = netPanel(v.net, pl.name);
+  $("trail").onclick = e => { const b = e.target.closest("button[data-at]"); if (b) { ft.at = +b.dataset.at; drawFight(ctx, out); } };
+  if (rerollable) $("reroll").onclick = () => fstep(ctx, out, cur.option, (cur.seed || 0) + 1, true);
+  if (ft.at > 0) $("back").onclick = () => { ft.at -= 1; drawFight(ctx, out); };
+}
+// the fight's result the server reads from a trail entry (null: none, or the same as the record's)
+const trailResult = x => x && x.end && !x.end.same ? JSON.stringify([x.end.won, x.end.won ? x.end.hp : 0]) : null;
+async function fstep(ctx, out, option, seed, reroll) {
+  showError();
+  const parentAt = reroll ? ft.at - 1 : ft.at, parent = ft.trail[parentAt];
+  $("optbox").insertAdjacentHTML("afterbegin", '<div class="note"><span class="spin"></span>playing it and scoring the next decision…</div>');
+  try {
+    const v = await stepApi(ctx, parent, option, seed);
+    ft.trail = [...ft.trail.slice(0, parentAt + 1), trailItem(parent, v, option, seed)];
+    ft.at = ft.trail.length - 1;
+    // the history: this fight's trail, moved last; its end decides whether the run's line changes
+    const scope = fightScope(ctx), t = fightT(ctx);
+    const steps = ft.trail.slice(1).map(x => [x.option, x.seed, x.mine ? 0 : 1]);
+    const entry = { t, from: ft.trail[0].n, steps,
+      end: v.end ? { won: !!v.end.won, hp: v.end.won ? v.end.hp_end : 0, same: v.end.as_recorded !== false } : null };
+    let hist = getHist(scope);
+    const old = hist.find(x => "t" in x && x.t === t) || null;
+    hist = hist.filter(x => x !== old);
+    if (typeof t === "number" && trailResult(old) !== trailResult(entry))
+      hist = hist.filter(x => !("t" in x) || typeof x.t !== "number" || x.t <= t);  // later fights start elsewhere now
+    setHist(scope, [...hist, entry]);
+    ft.key = ft.base + "|" + JSON.stringify(steps.map(s => [s[0], s[1]]));
+    drawFight(ctx, out);
+  } catch (e) { showError(e); drawFight(ctx, out); }
+}
+// floor k's fight depends only on the changes before it: picks before floor k, its own rest and path, earlier fights
+function floorChoices(arr, k) {
+  return serverChoices(arr).filter(x => x.k < k || (x.k === k && (x.e === "rest" || x.e === "path")));
+}
+async function floorView(file, i, k, n, mine) {
+  const hist = getChoices(file, i), mineFl = floorChoices(hist, k);
+  const items = [["Gauntlet", "#gauntlet"], [file, H("gauntlet", file), file], [`sequence ${i}${hist.length ? " (your changes)" : ""}`, H("gauntlet", file, i)], [`floor ${k + 1}`]];
+  await fightPage({ file, i, k, choices: mineFl.length ? JSON.stringify(mineFl) : "" }, n, items, mine);
+}
+async function cellView(fightJson, n, mine) {
+  const f = JSON.parse(fightJson);
+  const sec = f.kind === "mutate" ? ["Mutations", "#mutations"] : ["Boss replays", "#boss"];
+  const what = f.kind === "mutate" ? `sequence ${f.i} · floor ${+f.floor + 1} · ${f.mod || "parent"}${f.card ? " (" + f.card + ")" : ""} · ${short(f.player)} · seed ${+f.seed + 1}`
+    : `sequence ${f.i} · HP ${f.hp} · seed ${+f.seed + 1}`;
+  await fightPage({ fight: fightJson }, n, [sec, [f.file, H(f.kind === "mutate" ? "mutations" : "boss", f.file), f.file], [what]], mine);
+}
+
+// ---------- seed dots: one per seed, green won (fill by HP), red lost; click opens that fight ----------
+function seedDots(seeds, href, hpMax = MAX_HP) {
+  return `<span class="dots">${seeds.map(([w, h], j) => `<a class="dot ${w ? "w" : "l"}" href="${href(j)}" title="seed ${j + 1}: ${w ? `won, ${h} HP left` : "lost"}. Click to replay this fight."${w ? ` style="--f:${Math.max(0.15, Math.min(1, h / hpMax))}"` : ""}></a>`).join("")}</span>`;
+}
+function winCell(cell, href) {
+  if (!cell) return `<td class="muted">–</td>`;
+  return `<td><div class="wcell"><span class="num" title="Wins over the seeds; mean end HP ${fmt(cell.hp, 1)} (0 on a loss)">${cell.wins == null ? "–" : Math.round(cell.wins * 100) + "%"}</span>${seedDots(cell.seeds, href)}</div></td>`;
+}
+
+// ---------- mutations ----------
+const testFileBy = {};
+async function testFiles(kind, title, sec, blurb, mine) {
+  loading("Reading results…");
+  const out = await api("/api/files", { kind });
+  if (mine !== renderSeq) return;
+  const by = testFileBy[sec] || "";
+  const files = by ? [...out.files].sort((a, b) => String(a.kind).localeCompare(String(b.kind))) : out.files;
+  const counts = {};
+  for (const f of files) counts[f.kind] = (counts[f.kind] || 0) + 1;
+  const shown = { by: by || null, page: 0, rows: files.map(f => ({ ...f, _group: f.kind })),
+    groups: Object.entries(counts).map(([k, n]) => ({ key: k, label: k, n })) };
+  const rows = groupedRows(shown, 8, f => `<tr class="click" data-file="${E(f.file)}"><td style="max-width:340px"><span class="trunc">${E(f.file)}</span></td>
+    <td><span class="pill">${E(f.kind)}</span></td><td style="max-width:280px"><span class="trunc"${(f.source || "").length > 40 ? ` title="${E(f.source)}"` : ""}>${E(f.source)}</span></td>
+    <td class="num">${f.n}</td><td><div class="tags">${(f.players || (f.player ? [short(f.player)] : [])).map(p => `<span class="pill" title="${E(p)}">${E(tail(p, 28))}</span>`).join("")}</div></td>
+    <td class="num">${f.mods ? f.mods.length + " modifiers" : (f.hp ? "HP " + (Array.isArray(f.hp) ? f.hp.join(", ") : f.hp) : "")}</td><td class="num">${f.seeds ?? ""}</td>
+    <td>${f.refused ? `<span class="pill warn" title="${E(f.refused)}">lists only</span>` : ""}</td></tr>`, "kind");
+  $("main").innerHTML = `<h1>${E(title)}</h1><p class="muted" style="margin:-6px 0 14px">${E(blurb)}</p><div class="card"><div class="filters">${groupSel("t-by", [["", "nothing"], ["kind", "kind"]], by)}</div><div class="tablewrap"><table><thead><tr><th>file</th><th><span title="mutated monsters, mutated cards, or a boss replay">kind</span></th><th><span title="The gauntlet file its fights come from">from</span></th><th><span title="Starts (mutations) or boss rows in the file">rows</span></th><th><span title="The players whose results the file holds">players</span></th><th><span title="Modifiers (mutations) or entry HP levels (boss replays)">columns</span></th><th><span title="Seeds per cell">seeds</span></th><th></th></tr></thead>
+    <tbody>${rows || '<tr><td colspan="8" class="empty">No files.</td></tr>'}</tbody></table></div></div>`;
+  $("t-by").onchange = () => { testFileBy[sec] = $("t-by").value; testFiles(kind, title, sec, blurb, ++renderSeq); };
+  $("main").onclick = e => { const tr = e.target.closest("tr[data-file]"); if (tr) go(sec, tr.dataset.file); };
+}
+const mutStates = {};
+async function mutFileView(file, mine) {
+  const st = mutStates[file] = mutStates[file] || { mod: "", player: "", etype: "", encounter: "", sort: "", desc: false, page: 0, by: "parent" };
+  if (!$("main").querySelector("#muttable")) loading("Reading " + file + "…");
+  const out = await api("/api/mutate", { file, mod: st.mod, player: st.player, etype: st.etype, encounter: st.encounter, sort: st.sort, desc: st.desc ? 1 : 0, page: st.page, by: st.by });
+  if (mine !== renderSeq) return;
+  const cards = out.kind === "cards";
+  const allPlayers = st.allPlayers = st.allPlayers || [...new Set(out.rows.flatMap(r => Object.keys(r.cells)))].sort();
+  const plist = st.player ? [st.player] : allPlayers;
+  const cols = out.columns;
+  const href = (r, p) => j => H("fight", JSON.stringify({ kind: "mutate", file, i: r.i, floor: r.floor, ...(cards ? { card: r.card } : {}), mod: r.column, player: p, seed: j }));
+  const colTip = c => c === "parent" ? "The fight unmutated (mutated cards: the card's pack copy, same numbers)" : c === "official" ? "The official card itself" : `Modifier ${c}: ${cards ? "the card swapped for this variant" : "the enemies patched"}`;
+  const colCell = r => `<td class="colcell${r.column === "parent" || r.column === "official" ? " par" : ""}" title="${E(colTip(r.column))}">${E(r.column)}</td>`;
+  const byParent = st.by === "parent";
+  const startCells = r => `<td class="num">${r.i}</td><td class="num">${r.floor + 1}</td><td><span${encTip(r.encounter)}>${E(r.encounter)}</span></td><td>${E(r.encounter_type)}</td><td class="num">${r.hp}</td>${cards ? `<td>${E(r.card)}</td>` : ""}`;
+  const flat = st.by === "none";  // Amendment 6: one row per (start, modifier)
+  const ncols = (byParent ? 1 : 5 + (cards ? 1 : 0) + (flat ? 1 : 0)) + plist.length;
+  const rows = groupedRows(out, ncols, r => `<tr>${byParent ? colCell(r) : startCells(r) + (flat ? colCell(r) : "")}
+    ${plist.map(p => winCell(r.cells[p], href(r, p))).join("")}</tr>`, byParent ? "start" : "modifier");
+  const sel = (id, label, tip, opts, val) => `<label><span title="${E(tip)}">${label}</span> <select id="${id}">${opts.map(([v, t]) => `<option value="${E(v)}"${String(val) === String(v) ? " selected" : ""}>${E(t)}</option>`).join("")}</select></label>`;
+  const etTip = "elite or boss: the kind of fight the start comes from";
+  const playerHeads = plist.map(p => sortHead(p, `wins:${p}`, `${p}: wins over the seeds (sort by them) and one dot per seed; click a dot to replay that fight`, st)).join("");
+  const head = byParent
+    ? `${sortHead("modifier", "column", "The parent, the official card (mutated cards) or a modifier; each group is one start (sequence, floor, encounter, encounter type, entry HP)", st)}`
+    : `${sortHead("seq", "i", TIP.seq, st)}${sortHead("floor", "floor", "Floor of the gauntlet sequence the start comes from", st)}${sortHead("encounter", "encounter", "The fight this start comes from. Hover a name for its monsters.", st)}${sortHead("encounter type", "encounter_type", etTip, st)}${sortHead("HP", "hp", "Entry HP of the start", st)}${cards ? "<th><span title=\"The deck's card that the mutations swap\">card</span></th>" : ""}${flat ? sortHead("modifier", "column", "The parent, the official card (mutated cards) or a modifier", st) : ""}`;
+  $("main").innerHTML = crumbs([["Mutations", "#mutations"], [file, null, file]]) +
+    `<div class="card"><h1 style="margin:0 0 6px" class="trunc"${file.length > 60 ? ` title="${E(file)}"` : ""}>${E(file)}</h1><div class="muted">mutated ${E(out.kind)} · from <span title="${E(out.settings.product || "")}">${E(out.settings.product || "?")}</span> · ${E(out.settings.seeds ?? "")} seeds per cell · ${cols.length - (cards ? 2 : 1)} modifiers</div></div>
+    <div class="card"><div class="filters">
+      ${groupSel("m-by", [["none", "nothing"], ["parent", "start (parent first)"], ["modifier", "modifier"]], st.by, "Nothing: one row per start and modifier. By start: each start's parent, then its modifiers. By modifier: each modifier's starts.")}
+      ${sel("m-player", "Player", "Whose results show (the file's players: heuristic, one = the net one turn deep, two = two turns deep, ...)", [["", "all"], ...allPlayers.map(p => [p, p])], st.player)}
+      ${sel("m-mod", "Modifier", "Only starts that hold this modifier, with their parent", [["", "any"], ...cols.filter(c => c !== "parent" && c !== "official").map(c => [c, c])], st.mod)}
+      ${sel("m-etype", "Encounter type", etTip, [["", "both"], ["elite", "elite"], ["boss", "boss"]], st.etype)}
+      <label><span title="Only this encounter (e.g. gremlin_nob)">Encounter</span> <input id="m-enc" size="14" value="${E(st.encounter)}"></label>
+      <span class="muted">dots: one per seed, green won (darker = more HP left), red lost; click one to replay it</span></div>
+    <div class="tablewrap"><table id="muttable"><thead><tr>${head}${playerHeads}</tr></thead><tbody>${rows || `<tr><td colspan="${ncols}" class="empty">No starts match.</td></tr>`}</tbody></table></div><div id="mpg"></div></div>`;
+  const redraw = () => mutFileView(file, ++renderSeq);
+  onSort($("muttable"), st, redraw, ["i", "encounter", "encounter_type", "column"]);
+  $("mpg").replaceWith(pager(out, st, redraw));
+  for (const [id, key] of [["m-player", "player"], ["m-mod", "mod"], ["m-etype", "etype"]]) $(id).onchange = () => { st[key] = $(id).value; st.page = 0; redraw(); };
+  $("m-by").onchange = () => { st.by = $("m-by").value; st.sort = ""; st.page = 0; redraw(); };
+  $("m-enc").onchange = () => { st.encounter = $("m-enc").value.trim(); st.page = 0; redraw(); };
+}
+
+// ---------- boss replays ----------
+const bossStates = {};
+async function bossFileView(file, mine) {
+  const st = bossStates[file] = bossStates[file] || { boss: "", half: "", sort: "", desc: false, page: 0, by: "sequence" };
+  if (!$("main").querySelector("#bosstable")) loading("Reading " + file + "…");
+  const out = await api("/api/boss_replay", { file, boss: st.boss, half: st.half, sort: st.sort, desc: st.desc ? 1 : 0, page: st.page, by: st.by });
+  if (mine !== renderSeq) return;
+  const byHp = st.by === "hp";
+  const levels = byHp ? [] : [...new Set(out.rows.flatMap(r => Object.keys(r.won)))].sort((a, b) => (a === "arrival" ? -1 : b === "arrival" ? 1 : +a - +b));
+  const href = (r, hp) => j => H("fight", JSON.stringify({ kind: "boss_replay", file, i: r.i, hp, seed: j }));
+  const dots = (ws, ends, r, h) => seedDots(ws.map((w, j) => [!!w, ends ? ends[j] : (w ? MAX_HP : 0)]), href(r, h));
+  const ncols = 7 + (byHp ? 1 : levels.length);
+  const rows = groupedRows(out, ncols, r => `<tr><td class="num">${r.i}</td><td>${E(r.half)}</td><td><span${encTip(r.boss)}>${E(r.boss)}</span></td>
+    <td><span title="${E(r.deck.join(", "))}">${r.deck_size} cards</span></td>
+    <td class="num">${r.hp_obs}</td><td>${r.won_obs ? '<span class="pill good">won</span>' : '<span class="pill bad">lost</span>'}</td>
+    <td class="num">${r.wins == null ? "–" : Math.round(r.wins * 100) + "%"}</td>
+    ${byHp ? `<td>${dots(r.won, r.hp_end, r, r.level)}</td>`
+      : levels.map(h => r.won[h] ? `<td>${dots(r.won[h], h === "arrival" ? r.hp_end : null, r, h)}</td>` : '<td class="muted">–</td>').join("")}</tr>`, "entry HP");
+  const sel = (id, label, tip, opts, val) => `<label><span title="${E(tip)}">${label}</span> <select id="${id}">${opts.map(([v, t]) => `<option value="${E(v)}"${String(val) === String(v) ? " selected" : ""}>${E(t)}</option>`).join("")}</select></label>`;
+  $("main").innerHTML = crumbs([["Boss replays", "#boss"], [file, null, file]]) +
+    `<div class="card"><h1 style="margin:0 0 6px" class="trunc"${file.length > 60 ? ` title="${E(file)}"` : ""}>${E(file)}</h1><div class="muted">from <span title="${E(out.settings.file || "")}">${E(out.settings.file || "?")}</span> · player <span title="${E(out.settings.player || "")}">${E(short(out.settings.player || ""))}</span> · ${E(out.settings.seeds)} seeds${out.skipped ? ` · ${out.skipped} sequences died before the boss (not in the file)` : ""}</div></div>
+    <div class="card"><div class="filters">
+      ${sel("b-boss", "Boss", "Only this boss", [["", "any"], ["slime_boss", "slime_boss"], ["hexaghost", "hexaghost"], ["the_guardian", "the_guardian"]], st.boss)}
+      ${groupSel("b-by", [["sequence", "nothing"], ["hp", "entry HP"]], st.by, "Nothing: one row per sequence, a column per entry HP. By entry HP: a group per HP level, a row per sequence.")}
+      ${sel("b-half", "Set", TIP.half, [["", "all"], ["train", "train"], ["held_out", "held_out"]], st.half)}
+      <span class="muted">dots: one per seed at that entry HP, green won, red lost; click one to replay it</span></div>
+    <div class="tablewrap"><table id="bosstable"><thead><tr>${sortHead("seq", "i", TIP.seq, st)}${sortHead("set", "half", TIP.half, st)}${sortHead("boss", "boss", TIP.boss, st)}<th><span title="The deck the sequence brought to the boss (hover for the cards)">deck</span></th>
+      ${sortHead("arrival HP", "hp_obs", "The HP the gauntlet run reached the boss with", st)}<th><span title="Whether the gauntlet run itself beat the boss">in the run</span></th>${sortHead("wins", "wins", byHp ? "Share of this HP level's replays won" : "Share of every replay of this boss fight won", st)}
+      ${byHp ? `<th><span title="One dot per seed at this group's entry HP: green won, red lost; click one to replay it">seeds</span></th>` : ""}${levels.map(h => `<th><span title="${E(h === "arrival" ? "Replays at the run's own arrival HP" : `Replays entering the boss with ${h} HP`)}">${E(h === "arrival" ? "at arrival HP" : "HP " + h)}</span></th>`).join("")}</tr></thead>
+      <tbody>${rows || `<tr><td colspan="${ncols}" class="empty">No rows match.</td></tr>`}</tbody></table></div><div id="bpg"></div></div>`;
+  const redraw = () => bossFileView(file, ++renderSeq);
+  onSort($("bosstable"), st, redraw, ["i", "half", "boss"]);
+  $("bpg").replaceWith(pager(out, st, redraw));
+  $("b-by").onchange = () => { st.by = $("b-by").value; st.sort = ""; st.page = 0; redraw(); };
+  for (const [id, key] of [["b-boss", "boss"], ["b-half", "half"]]) $(id).onchange = () => { st[key] = $(id).value; st.page = 0; redraw(); };
+}
+
+// ---------- content ----------
+const contentState = { kind: "cards", source: "", q: "", file: "", by: "", sort: "", desc: false };
+// the columns each content kind can be grouped by (the server's CONTENT_GROUPS)
+const CONTENT_GROUPS = {
+  cards: [["source", "source"], ["type", "type"], ["class", "class"], ["cost", "cost"]],
+  monsters: [["source", "source"]],
+  powers: [["source", "source"], ["debuff", "buff or debuff"]],
+  encounters: [["source", "source"], ["type", "type"]],
+  relics: [["source", "source"], ["rarity", "rarity"]],
+};
+const SRC_TIP = "official: content/*.json; pack:…: content/packs/; mutated-cards and generated-enemies: the packs the mutation tests build";
+// each kind's column tooltips (only what the header doesn't say)
+const CONTENT_TIPS = {
+  cards: { name: "Hover a name for the whole card", cost: "Energy to play it. Sorts numbers first, then X, then Unplayable",
+    type: "Attack, Skill, Power or Status", class: "The character whose card pool holds it (none on most pack cards)",
+    keywords: "Exhaust, Ethereal, Retain, Innate", source: SRC_TIP, text: "What it does, from its content data; click a row for the raw entry" },
+  monsters: { name: "Hover a name for its moves and how it picks them", hp: "Rolled per fight within this range; sorts by the low end",
+    moves: "Hover a move for what it does; sorts by how many", start_powers: "Powers it has from the first turn", source: SRC_TIP },
+  powers: { name: "Hover a name for what it does", debuff: "Debuffs harm their owner", source: SRC_TIP,
+    text: "What it does, from its content data; click a row for the raw entry" },
+  encounters: { name: "Hover a name for its monsters", type: "Hallway, elite or boss fight",
+    monsters: "The monsters it starts with; \"A or B\" rolls one of them per fight", source: SRC_TIP },
+  relics: { name: "Hover a name for what it does", rarity: "Where the game offers it; sorts starter, common, uncommon, rare, boss, shop, event",
+    powers: "Powers the player starts each fight with", fights: "The fight kinds it acts in", source: SRC_TIP,
+    text: "What it does, from its content data; click a row for the raw entry" },
+};
+const CONTENT_TEXT_KEYS = ["name", "cost", "type", "class", "keywords", "source", "text", "moves", "start_powers", "debuff", "monsters", "rarity", "powers", "fights"];
+let gauntletNames = null;
+function linksCell(kind, e, file) {
+  if (!file || kind === "powers" || kind === "relics") return "";
+  if (kind === "cards") {
+    const nd = (e.decks || []).length, nt = (e.took || []).length;
+    if (!nd && !nt) return `<td class="muted">–</td>`;
+    return `<td><a href="#" data-cardlink="${E(e.source === "official" ? e.id : "gen:" + e.id)}" title="Open the file's sequences whose final deck held this card">${nd} decks</a>${nt ? ` <span class="muted" title="Sequences that took it from an offer">· taken in ${nt}</span>` : ""}</td>`;
+  }
+  const fl = e.floors || [];
+  if (!fl.length) return `<td class="muted">–</td>`;
+  const what = kind === "encounters" ? "Floors that fought this encounter" : "Floors whose fight started with this monster";
+  return `<td><span title="${what}">${fl.length} floors</span> ${fl.slice(0, 6).map(x => `<a href="${H("gauntlet", file, x.i)}" title="sequence ${x.i}, floor ${x.k + 1} (${E(x.encounter)})">${x.i}:${x.k + 1}</a>`).join(" ")}${fl.length > 6 ? " …" : ""}</td>`;
+}
+// One cell of a content table: what the server's `cols` holds, drawn per column.
+function contentCell(kind, key, e) {
+  const v = e.cols[key];
+  if (key === "name") return `<td><b${tipAttr(e.desc)}>${E(v)}</b></td>`;
+  if (key === "source") return `<td><span class="pill">${E(v)}</span></td>`;
+  if (key === "text") return `<td class="cdesc">${E(v.length > 150 ? v.slice(0, 149) + "…" : v)}</td>`;
+  if (key === "cost") return `<td class="num">${E(v)}</td>`;
+  if (key === "keywords" || key === "start_powers" || key === "powers" || key === "fights") return `<td>${v.length ? `<div class="tags">${v.map(x => `<span class="pill">${E(x)}</span>`).join("")}</div>` : '<span class="muted">–</span>'}</td>`;
+  if (key === "moves") return `<td>${v.map(m => `<span${tipAttr(((DESC.moves || {})[e.id] || {})[m])}>${E(m)}</span>`).join(", ") || '<span class="muted">–</span>'}</td>`;
+  if (key === "monsters") return `<td>${E(v.join(", "))}</td>`;
+  return `<td>${v == null || v === "" ? '<span class="muted">–</span>' : E(v)}</td>`;
+}
+async function contentView(mine) {
+  if (!$("main").querySelector("#cq")) loading("Reading content…");
+  const st = contentState;
+  if (!gauntletNames) gauntletNames = (await api("/api/files", { kind: "gauntlet" })).groups.flatMap(g => g.files.map(f => f.file)).sort();
+  const out = await api("/api/content", { kind: st.kind, source: st.source, q: st.q, file: st.file, by: st.by,
+    sort: st.sort, desc: st.sort ? (st.desc ? 1 : 0) : "" });
+  if (mine !== renderSeq) return;
+  const linked = st.file && st.kind !== "powers" && st.kind !== "relics";
+  const cols = out.columns, ncol = cols.length + (linked ? 1 : 0);
+  const glabel = st.by === "debuff" ? (k => k === "debuff" ? "debuffs" : k === "buff" ? "buffs" : k) : (k => k);
+  const shown = { by: out.by, page: 0, rows: out.entries.slice(0, 300).map(e => ({ ...e, _group: e._group == null ? e._group : glabel(e._group) })),
+    groups: (out.groups || []).map(g => ({ ...g, label: glabel(g.label) })) };
+  const tips = CONTENT_TIPS[st.kind];
+  const rows = groupedRows(shown, ncol, (e, j) => `<tr class="click" data-j="${j}">${cols.map(c => contentCell(st.kind, c.key, e)).join("")}${linksCell(st.kind, e, st.file)}</tr>
+    <tr hidden id="cj-${j}"><td colspan="${ncol}"><pre>${E(JSON.stringify(e.data, null, 1))}</pre></td></tr>`, (CONTENT_GROUPS[st.kind].find(([v]) => v === st.by) || [])[1]);
+  $("main").innerHTML = `<h1>Content</h1><div class="card"><div class="filters">
+    <label>Kind <select id="ck">${["cards", "monsters", "powers", "encounters", "relics"].map(k => `<option${k === st.kind ? " selected" : ""}>${k}</option>`).join("")}</select></label>
+    <label><span title="${E(SRC_TIP)}">Source</span> <select id="cs"><option value="">all</option>${out.sources.map(s => `<option${s === st.source ? " selected" : ""}>${E(s)}</option>`).join("")}</select></label>
+    <label><span title="Part of the id, any case">Name</span> <input id="cq" size="18" value="${E(st.q)}"></label>
+    ${groupSel("cby", [["", "nothing"], ...CONTENT_GROUPS[st.kind]], st.by)}
+    <label><span title="A gauntlet file: each card links to the sequences whose deck held it, each monster and encounter to the floors that fought it">Links into</span> <select id="cf" style="max-width:300px"><option value="">no file</option>${gauntletNames.map(f => `<option${f === st.file ? " selected" : ""}>${E(f)}</option>`).join("")}</select></label>
+    <span class="muted">${out.total} entries${out.total > 300 ? ", first 300 shown" : ""} · click a row for its numbers</span></div>
+    <div class="tablewrap"><table><thead id="cth"><tr>${cols.map(c => sortHead(c.label, c.key, tips[c.key] || "", st)).join("")}${linked ? `<th><span title="Where it appears in ${E(st.file)}">in the file</span></th>` : ""}</tr></thead><tbody id="ctb">${rows}</tbody></table></div></div>`;
+  const redraw = () => contentView(++renderSeq);
+  onSort($("cth"), st, redraw, CONTENT_TEXT_KEYS);
+  $("ck").onchange = () => { st.kind = $("ck").value; st.source = ""; st.by = ""; st.sort = ""; st.desc = false; redraw(); };
+  $("cby").onchange = () => { st.by = $("cby").value; redraw(); };
+  $("cs").onchange = () => { st.source = $("cs").value; redraw(); };
+  $("cq").onchange = () => { st.q = $("cq").value.trim(); redraw(); };
+  $("cf").onchange = () => { st.file = $("cf").value; redraw(); };
+  $("ctb").onclick = e => {
+    const a = e.target.closest("a[data-cardlink]");
+    if (a) {
+      e.preventDefault();
+      const s = seqStates[st.file] = seqStates[st.file] || { half: "", cleared: "", died: "", encounter: "", card: "", sort: "", desc: false, page: 0, by: "" };
+      s.card = a.dataset.cardlink; s.page = 0; go("gauntlet", st.file); return;
+    }
+    if (e.target.closest("a")) return;
+    const tr = e.target.closest("tr[data-j]"); if (tr) { const x = $("cj-" + tr.dataset.j); x.hidden = !x.hidden; }
+  };
+}
+
+// ---------- puzzles (the solved-state views) ----------
+const pz = { tab: "puzzles", by: "", half: "", horizon: "", contested: "", dull: "", wrong: "", source: "", sorts: { puzzles: { sort: "", desc: false, page: 0 }, positions: { sort: "", desc: false, page: 0 } }, trail: [], at: -1 };
+const PTIP = {
+  puzzle: "Puzzle number in data/bench/puzzles.json (both sets together). Click a row to open it.",
+  toend: "Turns to end: how many more turns the game went on after this decision, as it was played (0 = its last turn).",
+  gap: "Exact value of the best option minus the second best; 'tied' = every option has the same value; 'only End worse' = every card play is a best one and only ending the turn loses (both dull). " + VALUE,
+  options: "Distinct choices at this decision.", hp: "HP the game started with; the bench sets it per fight so the fight is close.",
+  regret: p => `Exact value lost by ${p}'s pick: best option minus the picked one (0 = a best option). ` + VALUE,
+  row: "Order in which the run recorded the position.", game: "Game number in the run's dataset.", decision: "Decision number within that game.",
+  source: "Where the value came from: puzzle (the bench file's exact values), database (a stored solve), solved now (the Solve button), terminal (combat over), or unsolved.",
+  turnsleft: "Most turns the combat can still last under perfect play (0 = it ends this turn).", cost: "Search nodes the solver expanded to solve this position.",
+  seed: "Random seed that picked this outcome; Reroll tries the next one.",
+};
+async function puzzleView(mine) {
+  const dbOk = status.ready;
+  if (!dbOk && pz.tab === "positions") pz.tab = "puzzles";
+  const st = pz.sorts[pz.tab];
+  let listHtml = "", out;
+  const evs = ["heuristic", ...players];
+  if (pz.tab === "puzzles") {
+    out = await api("/api/puzzles", { half: pz.half, horizon: pz.horizon, contested: pz.contested, wrong: pz.wrong, dull: pz.dull, sort: st.sort, desc: st.desc ? 1 : 0, page: st.page, by: pz.by, with: withParam() });
+    const names = Object.keys((out.rows[0] || {}).regret || {}).length ? Object.keys(out.rows[0].regret) : evs;
+    listHtml = `<thead><tr>${sortHead("puzzle", "id", PTIP.puzzle, st)}${sortHead("set", "half", TIP.half, st)}${sortHead("turns to end", "horizon", PTIP.toend, st)}${sortHead("best − 2nd", "gap", PTIP.gap, st)}${sortHead("options", "options", PTIP.options, st)}${sortHead("encounter", "encounter", "The fight the puzzle's game was in. Hover a name for its monsters.", st)}${sortHead("start HP", "hp", PTIP.hp, st)}${names.map(e => sortHead(tail(short(e), 24) + " regret", "regret:" + e, PTIP.regret(short(e)), st)).join("")}</tr></thead><tbody>` +
+      groupedRows(out, 7 + names.length, r => `<tr class="click" data-puzzle="${r.id}"><td class="num">${r.id}</td><td>${E(r.half)}</td><td class="num">${r.horizon}</td><td class="num">${fmt(r.gap)}${r.tied ? ' <span class="muted">tied</span>' : (r.dull ? ' <span class="muted">only End worse</span>' : "")}</td><td class="num">${r.options}</td><td><span${encTip(r.encounter)}>${E(r.encounter)}</span></td><td class="num">${r.hp}</td>` +
+        names.map(e => `<td class="num ${r.regret[e] > 1e-9 ? "bad-t" : ""}">${fmt(r.regret[e])}</td>`).join("") + `</tr>`, { half: "set", encounter: "encounter" }[pz.by] || pz.by) + "</tbody>";
+  } else {
+    const src = pz.source || (status.sources || [])[0];
+    if (!src) listHtml = "<tbody><tr><td class='empty'>No positions in this database.</td></tr></tbody>";
+    else {
+      out = await api("/api/positions", { source: src, sort: st.sort, desc: st.desc ? 1 : 0, page: st.page });
+      listHtml = `<thead><tr>${sortHead("row", "n", PTIP.row, st)}${sortHead("game", "spec", PTIP.game, st)}${sortHead("decision", "step", PTIP.decision, st)}${sortHead("turns to end", "horizon", PTIP.toend, st)}${sortHead("best − 2nd", "gap", PTIP.gap, st)}</tr></thead><tbody>` +
+        out.rows.map(r => `<tr class="click" data-hex="${r.hex}" data-n="${r.n}"><td class="num">${r.n}</td><td>${r.spec}</td><td>${r.step}</td><td>${r.horizon}</td><td>${fmt(r.gap)}</td></tr>`).join("") + "</tbody>";
+    }
+  }
+  if (mine !== renderSeq) return;
+  const sel = (id, label, tip, opts, val) => `<label><span title="${E(tip)}">${label}</span> <select id="${id}">${opts.map(([v, t]) => `<option value="${E(v)}"${String(val) === String(v) ? " selected" : ""}>${E(t)}</option>`).join("")}</select></label>`;
+  $("main").innerHTML = `<h1>Bench puzzles and solved positions</h1>
+    <div class="banner warn">The puzzles' exact values were solved under rules ${E(status.puzzle_rules || "?")}; this build's rules are ${E(status.rules)}. All 2,000 replay with the same options today.${dbOk ? "" : " " + E(status.db_note || "")}</div>
+    <div class="split"><div class="card">
+      <div class="filters"><button class="btn${pz.tab === "puzzles" ? " on" : ""}" data-tab="puzzles">Bench puzzles</button>
+        ${dbOk ? `<button class="btn${pz.tab === "positions" ? " on" : ""}" data-tab="positions">Run positions</button><span>Row id <input id="rowid" size="9"> <button class="btn" id="openrow">Open</button></span>` : ""}</div>
+      ${pz.tab === "puzzles" ? `<div class="filters">
+        ${sel("p-half", "Set", TIP.half, [["", "all"], ...status.halves.map(h => [h, h])], pz.half)}
+        ${sel("p-hor", "Turns to end", PTIP.toend, [["", "all"], ...status.horizons.map(h => [h, h])], pz.horizon)}
+        ${sel("p-con", "Contested", "Contested: the best option beats the second best by at least 0.05 (about 5 HP)", [["", "either"], ["1", "yes"], ["0", "no"]], pz.contested)}
+        ${sel("p-dull", "Dull", "Dull: every option except End turn is a best one. The curriculum skips these.", [["", "show"], ["0", "hide"], ["1", "only"]], pz.dull)}
+        ${sel("p-wrong", "Wrong picks of", "Only puzzles where this player's pick is worse than the best option", [["", "anyone (all puzzles)"], ...evs.map(e => [e, short(e)])], pz.wrong)}
+        ${groupSel("p-by", [["", "nothing"], ["half", "set"], ["encounter", "encounter"]], pz.by)}</div>`
+      : `<div class="filters">${sel("p-src", "Run", "The registry run (or the bench) whose games these positions came from", (status.sources || []).map(s => [s, s]), pz.source)}</div>`}
+      <div class="tablewrap"><table id="plist">${listHtml}</table></div><div id="ppg"></div></div>
+      <div class="card" id="pstate"><div class="empty">Pick a puzzle${dbOk ? ", a position or a row" : ""}.</div></div></div>`;
+  const redraw = () => puzzleView(++renderSeq);
+  if (out) $("ppg").replaceWith(pager(out, st, redraw));
+  onSort($("plist"), st, redraw, ["id", "n", "half", "encounter", "spec"]);
+  for (const [id, key] of [["p-half", "half"], ["p-hor", "horizon"], ["p-con", "contested"], ["p-dull", "dull"], ["p-wrong", "wrong"], ["p-by", "by"], ["p-src", "source"]])
+    if ($(id)) $(id).onchange = () => { pz[key] = $(id).value; st.page = 0; redraw(); };
+  $("main").querySelectorAll("button[data-tab]").forEach(b => b.onclick = () => { pz.tab = b.dataset.tab; redraw(); });
+  if ($("openrow")) $("openrow").onclick = () => openState({ id: $("rowid").value }, "row " + $("rowid").value);
+  $("plist").querySelector("tbody").onclick = e => {
+    const tr = e.target.closest("tr.click"); if (!tr) return;
+    $("plist").querySelectorAll("tr.sel").forEach(x => x.classList.remove("sel")); tr.classList.add("sel");
+    if (tr.dataset.puzzle != null) openState({ puzzle: tr.dataset.puzzle }, "puzzle " + tr.dataset.puzzle);
+    else openState({ hex: tr.dataset.hex }, "position " + tr.dataset.n);
+  };
+  if (pz.trail.length) drawState();
+}
+async function openState(params, label) {
+  showError();
+  try { pz.trail = [{ label, view: await api("/api/state", { ...params, with: withParam() }) }]; pz.at = 0; drawState(); } catch (e) { showError(e); }
+}
+async function pstep(k, seed) {
+  const cur = pz.trail[pz.at].view;
+  try {
+    const v = await api("/api/step", { hex: cur.hex, option: k, seed, with: withParam() });
+    pz.trail = pz.trail.slice(0, pz.at + 1);
+    pz.trail.push({ label: actionText(cur.options[k].actions[0], cur.board_data) + (v.kind !== "deterministic" ? ` (seed ${seed})` : ""), view: v });
+    pz.at = pz.trail.length - 1; drawState();
+  } catch (e) { showError(e); }
+}
+async function preroll() {
+  const v = pz.trail[pz.at].view, parent = pz.trail[pz.at - 1].view;
+  try {
+    const nv = await api("/api/step", { hex: parent.hex, option: v.option, seed: v.seed + 1, with: withParam() });
+    pz.trail[pz.at] = { label: actionText(parent.options[v.option].actions[0], parent.board_data) + ` (seed ${nv.seed})`, view: nv };
+    pz.trail = pz.trail.slice(0, pz.at + 1); drawState();
+  } catch (e) { showError(e); }
+}
+async function psolve() {
+  $("solve").disabled = true; $("solve").textContent = "solving…";
+  try { const v = await api("/api/solve", { hex: pz.trail[pz.at].view.hex, with: withParam() }); pz.trail[pz.at].view = { ...pz.trail[pz.at].view, ...v }; drawState(); }
+  catch (e) { showError(e); }
+}
+function drawState() {
+  const box = $("pstate"); if (!box) return;
+  const v = pz.trail[pz.at].view;
+  const meta = [`<span title="${E(VALUE)}">exact value</span> <b>${fmt(v.value, 4)}</b>`, `<span title="${E(PTIP.source)}">from</span> ${E(v.source)}`];
+  if (v.horizon != null) meta.push(`<span title="${E(PTIP.toend)}">turns to end</span> ${v.horizon}`);
+  if (v.turns_left != null) meta.push(`<span title="${E(PTIP.turnsleft)}">turns left</span> ${v.turns_left}`);
+  if (v.cost != null) meta.push(`<span title="${E(PTIP.cost)}">solve cost</span> ${v.cost}`);
+  if (v.kind) meta.push(`<span title="${E(TIP.kind)}">${E(v.kind)}</span>${v.prob != null ? `, chance ${fmt(v.prob, 4)}` : ""} · <span title="${E(PTIP.seed)}">seed</span> ${v.seed}`);
+  if (v.nodes != null) meta.push(`${v.nodes} nodes`);
+  const rerollable = pz.at > 0 && v.kind && v.kind !== "deterministic";
+  const unsolved = v.options.length && v.options[0].value == null;
+  box.innerHTML = `<div class="trail">${pz.trail.map((t, j) => `<button class="btn${j === pz.at ? " on" : ""}" data-at="${j}">${j ? "→ " : ""}${E(t.label)}</button>`).join("")}</div>
+    <div class="facts" style="margin:0 0 10px">${meta.join(" · ")}</div>
+    <div class="filters">${rerollable ? '<button class="btn" id="reroll">Reroll outcome</button>' : ""}${unsolved ? '<button class="btn" id="solve">Solve</button>' : ""}${pz.at > 0 ? '<button class="btn" id="back">Back</button>' : ""}</div>
+    <div id="pboard">${boardHtml(v.board_data, v.board)}</div>
+    <div style="margin-top:14px">${optionsTable(v)}</div><div class="note">Click an option to play it and see the next decision.</div>`;
+  if (v.board_data) bindPiles($("pboard"), v.board_data);
+  box.querySelector(".trail").onclick = e => { const b = e.target.closest("button[data-at]"); if (b) { pz.at = +b.dataset.at; drawState(); } };
+  box.querySelectorAll("tr[data-option]").forEach(tr => { tr.classList.add("click"); tr.title = "Play this option"; tr.onclick = () => pstep(+tr.dataset.option, 0); });
+  if (rerollable) $("reroll").onclick = preroll;
+  if (unsolved) $("solve").onclick = psolve;
+  if (pz.at > 0) $("back").onclick = () => { pz.at -= 1; drawState(); };
+}
+
+loadStatus().then(loadPickers).then(loadStatus).then(async () => { DESC = await api("/api/describe"); }).then(render).catch(showError);
+</script>
+</body>
+</html>

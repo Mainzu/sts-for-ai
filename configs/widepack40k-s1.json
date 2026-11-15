@@ -1,0 +1,51 @@
+{
+ "bosses": [
+  "slime_boss",
+  "hexaghost",
+  "the_guardian"
+ ],
+ "branch_gap": 0.05,
+ "d0_sample": {
+  "later": 0.16666666666666666,
+  "round0": 0.5
+ },
+ "deck_pool": "all",
+ "exact_cap": 50000,
+ "exact_share": 0.2,
+ "labels": "curriculum",
+ "min_puzzles": 50,
+ "mode": "effects",
+ "n_late": 1048,
+ "n_round": 1048,
+ "n_train": 40000,
+ "n_val": 1000,
+ "name": "widepack40k-s1",
+ "packs": [
+  "content/packs/act1-ironclad.json",
+  "content/packs/act1-monsters.json",
+  "content/packs/gen-enemies-wide.json"
+ ],
+ "regret_max": 0.01,
+ "round0_seed": 0,
+ "round_seed": 1000,
+ "rounds": {
+  "every": 1,
+  "min": null,
+  "n": 1,
+  "temperature": 0.0
+ },
+ "search": {
+  "limit": 16
+ },
+ "seed": 1,
+ "setups": "varied",
+ "solve_games": 0,
+ "solve_games0": 0,
+ "solve_threads": 6,
+ "switches": {
+  "branches": true
+ },
+ "train_seed": 1001,
+ "val_seed": 2,
+ "w_near": 0.8
+}

@@ -1,0 +1,54 @@
+{
+  "key": "measurement/mutated-cards@stage-a",
+  "rev": 2,
+  "value": "Card modifiers one turn (cards-a.json, 200 starts x16 seeds, elite+boss), win novelty vs heuristic, plain / @tsl1: bash-c1-d5 +0.001/-0.001; inflame-turn1 -0.043/-0.018; df-c2-s1 +0.039/+0.009; metal-c2-a5 -0.021/-0.021; metal-c0-a2, combust level. Pooled 6 power pairs @tsl1 -0.006 (0.005). Cost sits on bosses; @tsl1 passes 2 se only inflame-turn1, metal-c2-a5.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Card modifiers, first table (step 3): Inflame-as-a-tick and the dearer, stronger Metallicize cost the net beyond the heuristic on both leaves; cheaper, weaker Demon Form reads as a gain on the plain leaf (its parent's blind spot); the plain control and Combust are level (yardstick-cards step 3; 0407; read 07:20 2026-11-07, lanes bd39556c)",
+      "sha256": "8f1c8adea2484e433ea7c57d6f6c63e3c438df3dd70cf34318905659686482a0"
+    },
+    {
+      "path": "results/mutate/cards-a.json",
+      "sha256": "a7d36555756d30a72576c21492795c8dad422d841289bec48ed4787544deea87"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:36+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Card modifiers one turn deep (results/mutate/cards-a.json, 0407: pack variants of official cards against a pack copy, 200 starts per parent x 16 seeds, product-file elite and boss fights at cell entry HP), novelty = net's win change from the parent minus the heuristic's, paired by start, all fights (se): plain control bash-c1-d5 +0.001 (0.006) one / -0.001 (0.006) tsl; inflame-turn1 -0.043 (0.008) one, -0.018 (0.005) tsl; df-c2-s1 +0.039 (0.009) one, +0.009 (0.004) tsl (the parent's own blind spot: the plain net cannot see the Strength it loses, only the cheaper cost); metal-c0-a2 -0.009 (0.004) / -0.006 (0.004); metal-c2-a5 -0.021 (0.007) / -0.021 (0.006); combust-d8-l2 -0.004 / -0.005, combust-c0-d3 +0.006 / +0.005 (0.004). Bosses carry the effects (inflame-turn1 one -0.108 (0.022), metal-c2-a5 tsl -0.058 (0.015)). Pooled over six power pairs (se over pairs): one -0.005 (0.011), tsl -0.006 (0.005) wins. Copy minus official at most -0.007 (0.004) on all fights. The cost is value that recurs past the leaf (a rate shown once), which tsl repairs only for the first tick; with tsl two modifiers pass 2 se: inflame-turn1 and metal-c2-a5.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Card modifiers, first table (step 3): Inflame-as-a-tick and the dearer, stronger Metallicize cost the net beyond the heuristic on both leaves; cheaper, weaker Demon Form reads as a gain on the plain leaf (its parent's blind spot); the plain control and Combust are level (yardstick-cards step 3; 0407; read 07:20 2026-11-07, lanes bd39556c)",
+          "sha256": "8f1c8adea2484e433ea7c57d6f6c63e3c438df3dd70cf34318905659686482a0"
+        },
+        {
+          "path": "results/mutate/cards-a.json",
+          "sha256": "a7d36555756d30a72576c21492795c8dad422d841289bec48ed4787544deea87"
+        },
+        {
+          "path": "jobs/done/0407-mutate-cards.json",
+          "sha256": "59adff6d26c448a1f681e553e197111a11850df104fff5112a85f566cdb156fb"
+        },
+        {
+          "key": "decision/turn-start-leaf-reads",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "bd39556c-36d6-4855-945a-605815323f69",
+      "at": "2026-11-07T00:16:11+00:00 @ e77bf10",
+      "until": "2026-11-13T02:30:36+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "69ac2cd277de0aeaafbaaa9a139eb38dd9b967d4896f3e3f5a4140895d1f77dc"
+}

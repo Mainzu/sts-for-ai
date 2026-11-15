@@ -1,0 +1,57 @@
+{
+  "key": "measurement/portfolio-adaptation-curve",
+  "rev": 1,
+  "value": "predicted rated even (p ~0.4) that the largest burst halves SharpHide 2's and its pair's one-turn novelty cost with retention within 1.5 HP, ~5 cpu-h (cap 8); actual go at every size (cut 1.17x/1.06x at 99 games, 1.66x/1.27x at 399, 1.65x/1.34x at 1602; retention within 0.6 se; Ritual 2 unrepaired, 0.15-0.46x), 1.8 cpu-h: the burst recipe was under-rated and the CPU over-estimated",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane adaptation-curve closed (2026-11-04)",
+      "sha256": "35948c5c9342924dc8b97c49ee43e339c30a01af436eb9d2a65423a020014c75"
+    },
+    {
+      "key": "measurement/adaptation-curve",
+      "rev": 6
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "0abb1a96-a184-451e-87ad-b17eeedec484",
+  "at": "2026-11-04T16:01:06+00:00 @ 24a7e00",
+  "confirms": [
+    {
+      "by": "d324392d-c74c-40b3-8e96-6301e0fb4db6",
+      "at": "2026-11-04T17:38:56+00:00 @ 4fde4c3",
+      "note": "measurement/adaptation-curve rev 2 adds training seed 2 at 99 games (cut 1.12x, retention -0.31 HP) and leaves the seed-1 numbers this fact quotes unchanged; prediction and actual still hold"
+    },
+    {
+      "by": "0f7d764f-d468-460d-aa28-8d3e45552a89",
+      "at": "2026-11-08T16:00:15+00:00 @ 00bae76",
+      "note": "checked against measurement/adaptation-curve rev 3 (share qualifier added from few-game-recipe@gfr-33): the cuts this fact cites were measured at share 0.5 and stand as measured; only the small-set games-to-adapt quote is open, re-measured by lane/share-curve"
+    },
+    {
+      "by": "9dac2594-61af-4f50-ba8b-c66fd10cfd0a",
+      "at": "2026-11-09T11:38:16+00:00 @ a816116",
+      "note": "checked 2026-11-09 after measurement/adaptation-curve rev 4: that change only adds the share-0.9 quote (33 games, measurement/share-curve@retention) beside the unchanged share-0.5 values this fact cites; nothing here changes"
+    },
+    {
+      "by": "129b8d9d-a225-49d7-abbc-06f8d5f99e19",
+      "at": "2026-11-09T15:28:44+00:00 @ 99df525",
+      "note": "re-checked 2026-11-09 after measurement/adaptation-curve's and decision/burst-share's re-set (share-quote-widen read): this fact's text does not depend on the changed sentence (the quote now covers four mechanics and qualifies the parent on OppCard-PlainDamage); where it quotes 33 games at share 0.9 on the two debuff mechanics or on cards, that narrower claim still holds"
+    },
+    {
+      "by": "2edc559b-edfc-489b-a2d9-c1df70ab65a0",
+      "at": "2026-11-09T21:22:28+00:00 @ af53c25",
+      "note": "cascade from decision/burst-share rev 3, which only added the pack-chain clause (g99 at share 0.9, measurement/pack-dose-99s9@gen-b1); this fact's numbers and claims do not depend on that clause, re-read 2026-11-10"
+    },
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:21+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/adaptation-curve reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "d771a9176410c634514e65a01e91373a587bcd4f9e2fa43be32607eac086f10a"
+}

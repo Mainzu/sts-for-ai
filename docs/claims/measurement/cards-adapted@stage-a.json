@@ -1,0 +1,90 @@
+{
+  "key": "measurement/cards-adapted@stage-a",
+  "rev": 2,
+  "value": "Card modifiers' adapted column one turn (three 400-game bursts/modifier, share 0.5): inflame-turn1 plain leaf +0.024 (0.006) wins vs -0.043 cost (56%, the first tick), @tsl1 +0.001 vs -0.018; metal-c2-a5 plain +0.009 vs -0.021, @tsl1 +0.002: no @tsl1 cost closed.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Cards adapted column (step 3, second table): no burst closes a cost on the turn-start leaf; on the plain leaf inflame-turn1's bursts win back 56% of its win cost and metal-c2-a5's nothing on all fights; all six bursts cost the parent copy and the official card 0.4-2.4 HP per elite fight (yardstick-cards step 3, leftover; 0409-0421; read 13:50 2026-11-07, navigator c2b85df5)",
+      "sha256": "f0ca7ef0d3e2ff735ec35d0defddb33cc9846e2aa5460d03a66f319a148b6113"
+    },
+    {
+      "path": "results/mutate/cards-a.json",
+      "sha256": "a7d36555756d30a72576c21492795c8dad422d841289bec48ed4787544deea87"
+    },
+    {
+      "path": "results/mutate/cards-adapt-inflame-turn1-s3.json",
+      "sha256": "5937e1c9879d69d529ff0eebdf6833fea6db86fe12868a472536d467f5fa3abe"
+    },
+    {
+      "path": "results/mutate/cards-adapt-metal-c2-a5-s3.json",
+      "sha256": "d38a58d9f4d243fe3646d7fe135bd48bcb9512d31f564d6deedc737326f354eb"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:59+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Card modifiers' adapted column one turn deep (0409-0421; three 400-game bursts per modifier from the 10-29 net on decks holding the variant, replay share 0.5; read on results/mutate/cards-a.json's starts and seeds, pooled per start; gain = bursts minus zero-shot, wins (se) / HP lost): inflame-turn1 plain leaf variant +0.024 (0.006) / -1.23 (0.23) against a -0.043 cost (56% of it, the first tick), @tsl1 +0.001 (0.003) against -0.018 (none); metal-c2-a5 plain +0.009 (0.005) against -0.021, @tsl1 +0.002 (0.005) against -0.021 (none on all fights; at the bosses -1.74 (0.45) HP on both leaves, wins +0.021 (0.012) @tsl1, a lead). Retention: every burst loses HP on the parent copy and the official card, at the elites: parent copy per elite fight one leaf inflame +0.76 (0.17), metal +1.79 (0.35), per seed +0.36 to +2.38, wins level; all fights inflame +0.53 (0.15), metal +1.07 (0.28). No @tsl1 cost is closed, so yardstick-cards' reopen condition on the adapted column does not hold.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Cards adapted column (step 3, second table): no burst closes a cost on the turn-start leaf; on the plain leaf inflame-turn1's bursts win back 56% of its win cost and metal-c2-a5's nothing on all fights; all six bursts cost the parent copy and the official card 0.4-2.4 HP per elite fight (yardstick-cards step 3, leftover; 0409-0421; read 13:50 2026-11-07, navigator c2b85df5)",
+          "sha256": "f0ca7ef0d3e2ff735ec35d0defddb33cc9846e2aa5460d03a66f319a148b6113"
+        },
+        {
+          "path": "results/mutate/cards-a.json",
+          "sha256": "a7d36555756d30a72576c21492795c8dad422d841289bec48ed4787544deea87"
+        },
+        {
+          "path": "results/mutate/cards-adapt-inflame-turn1-s1.json",
+          "sha256": "65821f68448a40ff7abea1ed29fce4db81b9083a0c17e13ea229deecadd2a959"
+        },
+        {
+          "path": "results/mutate/cards-adapt-inflame-turn1-s2.json",
+          "sha256": "2ccc2ea65ddc3cd4f850703e1a028aea24745b74684d77c001b3abf7797ca71b"
+        },
+        {
+          "path": "results/mutate/cards-adapt-inflame-turn1-s3.json",
+          "sha256": "5937e1c9879d69d529ff0eebdf6833fea6db86fe12868a472536d467f5fa3abe"
+        },
+        {
+          "path": "results/mutate/cards-adapt-metal-c2-a5-s1.json",
+          "sha256": "7d3507a5f7076e3069705112547cfc6be223d81908b349f7e79b7ae8cb61c6b6"
+        },
+        {
+          "path": "results/mutate/cards-adapt-metal-c2-a5-s2.json",
+          "sha256": "eaba6841bdf6b3d7f85a2b62a97dab117c88ff633688a8fe6f07aadb7d5c6d6d"
+        },
+        {
+          "path": "results/mutate/cards-adapt-metal-c2-a5-s3.json",
+          "sha256": "d38a58d9f4d243fe3646d7fe135bd48bcb9512d31f564d6deedc737326f354eb"
+        },
+        {
+          "path": "jobs/done/0421-mutate-cards.json",
+          "sha256": "4d2a17db710b7f382a7e50a79157e08bee44e0cb3d290784c009b66a8dd11685"
+        },
+        {
+          "key": "measurement/mutated-cards@stage-a",
+          "rev": 1
+        },
+        {
+          "key": "decision/burst-adapted-column",
+          "rev": 10
+        }
+      ],
+      "owner": false,
+      "by": "c2b85df5-2011-4b4f-a5f1-6d69bec34ea8",
+      "at": "2026-11-07T06:45:11+00:00 @ a35376e",
+      "until": "2026-11-13T02:29:59+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "5cc25a6cedb322874af916782b7ea53cf573543a1bf7a2a3389dbdfddbf4bf68"
+}

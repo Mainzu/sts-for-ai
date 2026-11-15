@@ -1,0 +1,22 @@
+{
+  "key": "measurement/portfolio-blind-row-kinds",
+  "rev": 1,
+  "value": "predicted even that it finds a blind element beyond RoundEnd, ~3 thread-h; actual never started (one lane), 0.0 cpu-h; reopen if: a second lane slot opens (backlog 72, audit entries 9 and 14)",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane blind-row-kinds closed (2026-11-15)",
+      "sha256": "713b1158396aba7fb1ad6b14991cb5cd75cd8f50fad6613816ec175ff6e3ffd8"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "4bc3ecb5-964f-411c-bde5-fc1d62dd74ae",
+  "at": "2026-11-14T17:02:45+00:00 @ edec6a77",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "e55087ef845942e994e4156ddd90fd66489fa8ba7f8246e37a52d080fc1409a5"
+}

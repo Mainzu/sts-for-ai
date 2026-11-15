@@ -1,0 +1,26 @@
+{
+  "key": "measurement/act1-cards-both-lose@zero-shot",
+  "rev": 1,
+  "value": "Lead reads (net minus heuristic) hide Act 1 pack cards bad for both players: net wins with Burning Pact -0.21, Exhume -0.17, Berserk -0.094 (heuristic -0.160) on tight2 held-out cells.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/act1-cards-zero-shot-2026-11-07.md",
+      "anchor": "Read (2026-11-07, jobs 0428-0431)",
+      "sha256": "629b7612e0f92df3aeccb9b8a2a02bf142ea0f5934f8caf884e9d5298a1ec43f"
+    },
+    {
+      "path": "results/pack_cards/act1/table.json",
+      "sha256": "bf3c5b872fc8b36cb7e0174335252c8ec6d09e98621386d475ba0e82143e183d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:22+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "979ff47a2faaf0975b3c0ad0872509a2d9a8aae7da08bfd6931b3abc4faaed4e"
+}

@@ -1,0 +1,38 @@
+{
+  "key": "decision/curriculum-modifiers",
+  "rev": 2,
+  "value": "Curriculum modifiers: player-growth-exposure and fickle-enemy are backlog candidates; sleeping-enemy waits for block M2; run modifiers (Spire-wide Ritual, Slow Start, Fickle Opposition) parked until a chooser horizon holds elites or Act 1 run content exists; ascension-levels after Act 1 monsters are data.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Curriculum modifiers reviewed: player growth exposure and Fickle queued, sleeping enemies wait for M2, run modifiers parked (owner, 2026-11-08)",
+      "sha256": "1adf28b2298c9a3cdd438e2aac85a47448e051147a0f67a54ff4d0fa1f45a45f"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:25Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Owner's curriculum modifiers (2026-11-08): player-growth-exposure (Ritual 0-2 forced on the player in bursts, gate count first) and fickle-enemy (fixed-cycle first) are queued backlog candidates; sleeping-enemy waits for block M2; the run modifiers (Spire-wide Ritual, Slow Start, Fickle Opposition) are parked until a chooser's horizon holds the elites or Act 1's run content is in the engine; ascension-levels is a candidate after act1-content's monsters are data.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Curriculum modifiers reviewed: player growth exposure and Fickle queued, sleeping enemies wait for M2, run modifiers parked (owner, 2026-11-08)",
+          "sha256": "1adf28b2298c9a3cdd438e2aac85a47448e051147a0f67a54ff4d0fa1f45a45f"
+        }
+      ],
+      "owner": false,
+      "by": "68b4279c-4f4e-49bb-bc2f-c1a5a63b6510",
+      "at": "2026-11-08T15:07:36Z @ f287cb1",
+      "until": "2026-11-13T02:29:25Z @ 3123201a"
+    }
+  ],
+  "seal": "9aaa85bcd69169730b0a6ccbf5e03e08d80743471124fae29017e864c626b4bc"
+}

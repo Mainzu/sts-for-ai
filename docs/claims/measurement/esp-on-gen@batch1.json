@@ -1,0 +1,58 @@
+{
+  "key": "measurement/esp-on-gen@batch1",
+  "rev": 2,
+  "value": "10-29 net @esp0.04@tsl1 on gen b1 (675 elite x4): AttackLoss-Damage x Nob cost +13.29 (0.90) -> -0.06 (0.38), wins 0.698->0.942 (the cost was the HP price feeding Enrage); AttackLoss-Strength worse on every parent (Nob +2.29->+21.81, wins -0.11 to -0.25): a flat enemy-Strength price stops attacking when Strength comes from hits.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/gen-adapted-column.md",
+      "anchor": "Step 2's target: probe 0472 read (2026-11-08)",
+      "sha256": "7eebac9fc0473e72f888c6456d4e4eb05a0919d5b9faba72af1197adb2f8f158"
+    },
+    {
+      "path": "results/mutate/gen-b1-esp0.04.json",
+      "sha256": "23f62452b4e729701024b56dce0e5e7bbc82c5c14ee54691bb69682551c783b6"
+    },
+    {
+      "path": "jobs/done/0472-mutate-monsters.json",
+      "sha256": "c0c71324a9c5933a7e8fd489a908a25256fe1b694e72e461c90b0c42b69a7ea4"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:13+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The 10-29 net @esp0.04@tsl1 on gen batch 1 (675 elite starts x 4 seeds, paired with the zero-shot bench's first 4 seeds; cost = (net - heuristic)(mechanic) - (same)(ladder control), HP lost per elite fight): AttackLoss-Damage x Nob +13.29 (0.90) -> -0.06 (0.38), wins 0.698 -> 0.942 (the cost was the HP price feeding Enrage, not novelty); AttackLoss-Strength worse on every parent, Nob +2.29 -> +21.81, Lagavulin +1.89 -> +17.76, Sentries -2.82 -> +13.40 (wins down 0.11-0.25: a flat enemy-Strength price stops the net attacking when Strength comes from hits); Nob parent net HP lost +1.74 (0.24); other mechanics within 1 HP.",
+      "sources": [
+        {
+          "path": "docs/research/gen-adapted-column.md",
+          "anchor": "Step 2's target: probe 0472 read (2026-11-08)",
+          "sha256": "7eebac9fc0473e72f888c6456d4e4eb05a0919d5b9faba72af1197adb2f8f158"
+        },
+        {
+          "path": "results/mutate/gen-b1-esp0.04.json",
+          "sha256": "23f62452b4e729701024b56dce0e5e7bbc82c5c14ee54691bb69682551c783b6"
+        },
+        {
+          "path": "jobs/done/0472-mutate-monsters.json",
+          "sha256": "c0c71324a9c5933a7e8fd489a908a25256fe1b694e72e461c90b0c42b69a7ea4"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        }
+      ],
+      "owner": false,
+      "by": "dd5bc811-55f4-48b1-8958-4d74f71be58a",
+      "at": "2026-11-07T17:14:19+00:00 @ 65bf32c",
+      "until": "2026-11-13T02:30:13+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "0467423ddd86a6b266d0e0348a16154383937714b717a0d7d20e983e8debe39b"
+}

@@ -1,0 +1,57 @@
+{
+  "key": "measurement/chooser-vs-fighter@headline",
+  "rev": 1,
+  "value": "Crossed arms one turn deep on the headline, 0-249: with the net fighting, the heuristic's choices cost -0.120 clears (se 0.031); with the heuristic fighting, the net's choices gain +0.064 (se 0.037). The chooser holds ~0.09 of the net's 0.156 lead, the fighter ~0.06, and on held-out cards nearly all of it is the chooser.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Crossed chooser arms: the chooser holds most of the one-turn headline lead, and nearly all of it on held-out cards (approach review cheap read 10; b39d3; read 19:20 2026-11-02, manager 2b40a321)",
+      "sha256": "e3d7f75953e91fa7c3e1e9662f60e9b4dddc171c556ccf04824c566793cc8c35"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-ch-heuristic-starter-simboss.json",
+      "sha256": "d33aae00143e3d997fc18718e76d644dbfc1f16d55ad1540a28b07500eec3b8a"
+    },
+    {
+      "path": "results/gauntlet/heuristic-ch-net1029-hpb0.01-starter-simboss.json",
+      "sha256": "51d3042b9592fc44ed6a4fa19e7d4e4a5d2e65535c57299f68f5a390cddc1545"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+      "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+    },
+    {
+      "path": "results/gauntlet/heuristic-starter-simboss.json",
+      "sha256": "637234efef7369804343720ad6fe5bf31f5106f6313c730eb619c3e1daea0cd6"
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:13:06+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:57:55+00:00 @ a875850",
+      "note": "yardstick/headline-setting rev 2 changed only which depth judges a change (one turn; the two-turn product is the reported score); the setting's flags this fact relies on (--start starter --rewards sim --sim-boss, 500 sequences) are unchanged"
+    },
+    {
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:38:01+00:00 @ 80d6c86",
+      "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "512c5874d3b1ba3b7ef140cdc542df47c38f80eb972095bc9c3dd3692470012a"
+}

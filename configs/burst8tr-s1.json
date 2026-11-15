@@ -1,0 +1,22 @@
+{
+ "content": {
+  "cards": [
+   "gc1_006",
+   "gc1_012",
+   "gc1_027",
+   "gc1_031",
+   "gc1_040",
+   "gc1_046",
+   "gc1_073",
+   "gc1_074"
+  ],
+  "pack": "data/bench/gen_powers_pack.json"
+ },
+ "game_seed": 31,
+ "games": 4000,
+ "n_val": 300,
+ "name": "burst8tr-s1",
+ "player": "net",
+ "pool": 10000,
+ "seed": 1
+}

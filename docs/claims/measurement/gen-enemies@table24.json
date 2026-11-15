@@ -1,0 +1,98 @@
+{
+  "key": "measurement/gen-enemies@table24",
+  "rev": 3,
+  "value": "Generated-enemies bench, 24 mechanics (675 elite x16, one turn @hpb0.01@tsl1, net-heuristic minus stat-ladder control, HP/elite fight): mean +1.28 (0.38) over 21 (17 beyond 2 se), excluding 3 heuristic collapses (OppCard-Weak/-Vulnerable, AttackLoss-Vulnerable); by trigger card played +1.62, attack HP loss +2.98, turn start/end +0.39/+0.53; Weak costliest effect +3.38.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Batch 2 read: the 24-mechanic table (job 0470, results/mutate/gen-enemies-b1.json)",
+      "sha256": "afb450e9ecdad97d23d5eb861e8b083a82528682965901d8cbb2ae36eab560ae"
+    },
+    {
+      "path": "results/mutate/gen-enemies-b1.json",
+      "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+    },
+    {
+      "path": "jobs/done/0470-mutate-monsters.json",
+      "sha256": "aafcfd66c48c52a992342e2af33d5e37773dd931ec2b346acd6ad75a9ac98507"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:19+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Generated enemies bench, all 24 pack mechanics (675 official Act 1 elite starts x 16 seeds, one turn deep @hpb0.01@tsl1, net minus heuristic minus the same on a stat-only ladder control, HP lost per elite fight): mean +0.32 (0.65) over 24, 20 beyond 2 se; without the three where the heuristic collapses (OppCard-Weak, OppCard-Vulnerable, AttackLoss-Vulnerable; heuristic wins 0.69-0.76) mean +1.28 (0.38) over 21, 17 beyond 2 se. By trigger: monster turn start +0.39, turn end +0.53, card played +1.62, attack HP loss +2.98; by effect Weak +3.38 costliest, the monster-turn damage triggers zero against control. Costliest by worst parent: AttackLoss-Damage x Nob +12.80 (0.73), OppCard-Weak x Lagavulin +7.19 (0.54), AttackLoss-Weak x Lagavulin +6.29 / Sentries +6.00 (the one costly mechanic on more than one parent), OppCard-PlainDamage x Sentries +4.58, OppCard-Damage x Sentries +4.45. TurnStart-X and TurnEnd-X read alike (about 19 distinct mechanics).",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Batch 2 read: the 24-mechanic table (job 0470, results/mutate/gen-enemies-b1.json)",
+          "sha256": "afb450e9ecdad97d23d5eb861e8b083a82528682965901d8cbb2ae36eab560ae"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        },
+        {
+          "path": "jobs/done/0470-mutate-monsters.json",
+          "sha256": "aafcfd66c48c52a992342e2af33d5e37773dd931ec2b346acd6ad75a9ac98507"
+        },
+        {
+          "path": "jobs/done/0469-mutate-monsters.json",
+          "sha256": "522933383e668da56b5377cfd0ced7a3dd49f84b0ce15747a53d73f80599bae5"
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "ff4c73d2-3bed-4ee6-ba6e-cf0c50506dd8",
+      "at": "2026-11-07T16:17:16+00:00 @ bf50a10",
+      "until": "2026-11-11T09:03:50+00:00 @ 20449c5"
+    },
+    {
+      "rev": 2,
+      "value": "Generated enemies bench, all 24 pack mechanics (675 official Act 1 elite starts x 16 seeds, one turn deep @hpb0.01@tsl1, net minus heuristic minus the same on a stat-only ladder control, HP lost per elite fight): mean +0.32 (0.65) over 24, 20 beyond 2 se; without the three where the heuristic collapses (OppCard-Weak, OppCard-Vulnerable, AttackLoss-Vulnerable; heuristic wins 0.69-0.76) mean +1.28 (0.38) over 21, 17 beyond 2 se. By trigger: monster turn start +0.39, turn end +0.53, card played +1.62, attack HP loss +2.98; by effect Weak +3.38 costliest, the monster-turn damage triggers zero against control. Costliest by worst parent: AttackLoss-Damage x Nob +12.80 (0.73), OppCard-Weak x Lagavulin +7.19 (0.54), AttackLoss-Weak x Lagavulin +6.29 / Sentries +6.00 (the one costly mechanic on more than one parent), OppCard-PlainDamage x Sentries +4.58, OppCard-Damage x Sentries +4.45. TurnStart-X and TurnEnd-X read alike (about 19 distinct mechanics). Batch 1 alone (its 8 mechanics, job 0469): mean +0.01 (1.51), 6 of 8 beyond 2 se, OppCard-Vulnerable -9.55 (0.53, heuristic collapse); AttackLoss-Damage x Gremlin Nob net deaths 1077 of 3664 vs heuristic 204; the turn-trigger damage mechanics predicted +1 read zero, so the horizon mechanism did not predict these costs.",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Batch 2 read: the 24-mechanic table (job 0470, results/mutate/gen-enemies-b1.json)",
+          "sha256": "afb450e9ecdad97d23d5eb861e8b083a82528682965901d8cbb2ae36eab560ae"
+        },
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Batch 1 read (job 0469, results/mutate/gen-enemies-b1.json)",
+          "sha256": "6f761f429a81587dcf778717def5b497979dec81485e4227ed77e67af950b219"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        },
+        {
+          "path": "jobs/done/0470-mutate-monsters.json",
+          "sha256": "aafcfd66c48c52a992342e2af33d5e37773dd931ec2b346acd6ad75a9ac98507"
+        },
+        {
+          "path": "jobs/done/0469-mutate-monsters.json",
+          "sha256": "522933383e668da56b5377cfd0ced7a3dd49f84b0ce15747a53d73f80599bae5"
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "28d7f02a-1a47-43ea-adce-5092da27c957",
+      "at": "2026-11-11T09:03:50+00:00 @ 20449c5",
+      "until": "2026-11-13T02:30:19+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "e0655527c0e60b5b8b02fd6155284d8bfd1d7f0719df2faacc49c292a18f0996"
+}

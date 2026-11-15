@@ -1,0 +1,22 @@
+{
+  "key": "measurement/seed-sd-tight2@ladder",
+  "rev": 1,
+  "value": "Training-seed sd on tight2: 0.010 train / 0.013 held-out (16 arm-and-round groups, 66-67 runs, 47 df); shared round-0 ~0.009/0.009, fresh round 0 0.012/0.018. MDE = 2.8 x sd x sqrt(2/seeds): ~0.02-0.03 at 3 unpaired seeds; paired arms sharing data see ~0.01.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/big-picture-2026-10-31b.md",
+      "anchor": "Manager's reading (what changes)",
+      "sha256": "80035ee6e9445077abaaed4cb8b79c99fd26e30ce247dca7b51ac7c7e7586f30"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:51+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "f530f0636ae66ecf114dac3b5b1071cc69a969b5f703d27c8d199898e840eb0e"
+}

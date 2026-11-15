@@ -1,0 +1,16 @@
+{
+ "content": {
+  "pack": "data/bench/mutated_cards_pack.json",
+  "cards": [
+   "inflame-turn1"
+  ]
+ },
+ "game_seed": 61,
+ "games": 33,
+ "n_val": 150,
+ "name": "cs9-inflame-turn1-s3",
+ "player": "net",
+ "pool": 10000,
+ "seed": 3,
+ "share": 0.9
+}

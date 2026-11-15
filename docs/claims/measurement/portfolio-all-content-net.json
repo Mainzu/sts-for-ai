@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-all-content-net",
+  "rev": 2,
+  "value": "predicted long shot headline / even Guardian +0.03 wins, ~21 cpu-h; actual closed at cap (31.6): 2/3 seeds pass per-boss bar (Guardian +0.048/+0.050, Hexaghost +0.093/+0.054 vs twins), mostly held-out cards (DF first tick); headline not read; reopen if the go is wanted (s201 ~10 cpu-h + headline 3.5), new untrained content, or a learn <4 cpu-h/seed.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane all-content-net closed (2026-11-08)",
+      "sha256": "09bb75761840cfb9dc232830cbac439edad54d87b49e7c43f90d0b18de3c8953"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:48+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted a long shot that it moves the headline, even that the Guardian gains 0.03 wins one turn deep, about 21 cpu-h for three seeds; actual closed at the 30 cpu-h cap after 31.6: two of three seeds read, both pass the per-boss bar (Guardian +0.048 / +0.050, Hexaghost +0.093 / +0.054 against twins), gain mostly held-out cards (Demon Form's first tick +0.28, Metallicize +0.06 against the 10-29 net) with +0.02-0.03 on train decks; outside Demon Form against the 10-29 net Guardian +0.035 (0.007), Hexaghost +0.017; headline not read; reopen if: the go is wanted (seed 201 at mem_gb 6.5, 10 cpu-h, plus the one-turn headline 0585, 3.5 cpu-h), new content lands that no net trained on from scratch, or a learn gets under 4 cpu-h a seed",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane all-content-net closed (2026-11-08)",
+          "sha256": "09bb75761840cfb9dc232830cbac439edad54d87b49e7c43f90d0b18de3c8953"
+        }
+      ],
+      "owner": false,
+      "by": "eda5a964-10e9-4dbc-9772-27ee36c8c96a",
+      "at": "2026-11-08T14:17:36+00:00 @ 5c32e9b",
+      "until": "2026-11-13T02:30:48+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "a78e3cedcbb4596d620b8a4982b14db42aee8941e05aeb529cbe7b366036b328"
+}

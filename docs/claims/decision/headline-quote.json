@@ -1,0 +1,178 @@
+{
+  "key": "decision/headline-quote",
+  "rev": 5,
+  "value": "Product headline quoted as 0.78-0.81 clears: 0.834 on 0-499 (the tuning book; the product with @tsl1@lcb1 reads 0.832 there, level), 0.780 on 500-999, 0.807 over both. Curated setting stays the ruler; protocol unchanged.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After the big-picture review of 2026-11-09: act1-content puts relics and potions before the one-card blocks; queue-throughput opens; a random-world bench is the next exploration (on the owner's behalf, 2026-11-09)",
+      "sha256": "ee9b5a5a731c985cbce859ca24a33ed2e74d6de58cc73a95b33430c8d1305c4d"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Product read 0986: `@tsl1@lcb1` two turns deep is level; the product gains both flags and the chooser (on the owner's behalf, 2026-11-13)",
+      "sha256": "531b472107a5bfc62f349958aff89e773997c8235683a54723a04538f399fa2b"
+    },
+    {
+      "key": "yardstick/headline-control",
+      "rev": 4
+    },
+    {
+      "key": "measurement/headline@confirm-book",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+  "at": "2026-11-13T09:46:19Z @ 67cbe2e3",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The product's headline is quoted as 0.78-0.81 clears: 0.834 on sequences 0-499 (the book its search settings were chosen on; yardstick/headline-control), 0.780 on 500-999 (measurement/headline@confirm-book), 0.807 over both. The control file and the protocol do not change.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the big-picture review of 2026-11-06: code first, the mechanic as goal 1's sample unit, two stored conclusions re-set, probes without lanes (on the owner's behalf, 2026-11-06)",
+          "sha256": "096065a46774079ceb207bb68cfa4dfed4d24ca8580a5ba2438a3b885da0fb30"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-06.md",
+          "anchor": "Key claims and skeptic verdicts",
+          "sha256": "c59114d491930272819530fccaeefa81decc6681260fde6952cb6e52ee4edbd7"
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        },
+        {
+          "key": "measurement/headline@confirm-book",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "4a17366f-b8aa-4d87-974e-5a037ff67155",
+      "at": "2026-11-06T15:05:55Z @ 34ec7e4",
+      "until": "2026-11-09T09:24:19Z @ 2a5a55d"
+    },
+    {
+      "rev": 2,
+      "value": "The product's headline is quoted as 0.78-0.81 clears: 0.834 on sequences 0-499 (the book its search settings were chosen on; yardstick/headline-control), 0.780 on 500-999 (measurement/headline@confirm-book), 0.807 over both. Beside it, the level with real Act 1 content: 0.684 with the pack cards in the offers (measurement/act1-cards@pack-offers) and -0.080 with the pack hallway monsters on 0-249 (measurement/act1-monsters@product). The curated setting stays the ruler: real content lowers the level but leaves the order of players unchanged (the product's lead over the one-turn net +0.008 (0.033) with pack cards, +0.148 on pack and control with pack monsters). The control file and the protocol do not change.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the big-picture review of 2026-11-09: act1-content puts relics and potions before the one-card blocks; queue-throughput opens; a random-world bench is the next exploration (on the owner's behalf, 2026-11-09)",
+          "sha256": "ee9b5a5a731c985cbce859ca24a33ed2e74d6de58cc73a95b33430c8d1305c4d"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-09.md",
+          "anchor": "Navigator's reading",
+          "sha256": "24ea22d616e4d10a0047c3ad2ef4caf28224a9f59ac94fa1ddbac92463b1f645"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the big-picture review of 2026-11-06: code first, the mechanic as goal 1's sample unit, two stored conclusions re-set, probes without lanes (on the owner's behalf, 2026-11-06)",
+          "sha256": "096065a46774079ceb207bb68cfa4dfed4d24ca8580a5ba2438a3b885da0fb30"
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        },
+        {
+          "key": "measurement/headline@confirm-book",
+          "rev": 2
+        },
+        {
+          "key": "measurement/act1-cards@pack-offers",
+          "rev": 2
+        },
+        {
+          "key": "measurement/act1-monsters@product",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "1e53d6ed-baa0-4367-8ee3-26d3d9d38c35",
+      "at": "2026-11-09T09:24:19Z @ 2a5a55d",
+      "until": "2026-11-10T12:11:19Z @ 9748e5c"
+    },
+    {
+      "rev": 3,
+      "value": "The product's headline is quoted as 0.78-0.81 clears: 0.834 on sequences 0-499 (the book its search settings were chosen on; yardstick/headline-control), 0.780 on 500-999 (measurement/headline@confirm-book), 0.807 over both. Beside it, the level with real Act 1 content: 0.684 with the 27 pack cards in the offers (measurement/act1-cards@pack-offers), 0.636 with the 31-card pack on 0-249 against 0.836 curated on the same sequences (measurement/pack-net-scratch@two-turn) and -0.080 with the pack hallway monsters on 0-249 (measurement/act1-monsters@product). The curated setting stays the ruler: real content lowers the level but leaves the order of players unchanged (the product's lead over the one-turn net +0.008 (0.033) with pack cards, +0.148 on pack and control with pack monsters). The control file and the protocol do not change.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the big-picture review of 2026-11-09: act1-content puts relics and potions before the one-card blocks; queue-throughput opens; a random-world bench is the next exploration (on the owner's behalf, 2026-11-09)",
+          "sha256": "ee9b5a5a731c985cbce859ca24a33ed2e74d6de58cc73a95b33430c8d1305c4d"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-09.md",
+          "anchor": "Navigator's reading",
+          "sha256": "24ea22d616e4d10a0047c3ad2ef4caf28224a9f59ac94fa1ddbac92463b1f645"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the big-picture review of 2026-11-06: code first, the mechanic as goal 1's sample unit, two stored conclusions re-set, probes without lanes (on the owner's behalf, 2026-11-06)",
+          "sha256": "096065a46774079ceb207bb68cfa4dfed4d24ca8580a5ba2438a3b885da0fb30"
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        },
+        {
+          "key": "measurement/headline@confirm-book",
+          "rev": 2
+        },
+        {
+          "key": "measurement/act1-cards@pack-offers",
+          "rev": 2
+        },
+        {
+          "key": "measurement/act1-monsters@product",
+          "rev": 1
+        },
+        {
+          "key": "measurement/pack-net-scratch@two-turn",
+          "rev": 2
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Probe pns-two-turn read: the pack net's gain grows two turns deep; seeds 101 and 201 queued (on the owner's behalf, 2026-11-10)",
+          "sha256": "ab8bc8eb4ba3a61f832cefa3ea34140019b88de936354d8b5e282c86f65bbcf3"
+        }
+      ],
+      "owner": false,
+      "by": "62b7a521-3221-4c6f-8916-214850efc667",
+      "at": "2026-11-10T12:11:19Z @ 9748e5c",
+      "until": "2026-11-13T02:29:27Z @ 3123201a"
+    },
+    {
+      "rev": 4,
+      "value": "Product headline quoted as 0.78-0.81 clears: 0.834 on 0-499 (the tuning book), 0.780 on 500-999, 0.807 over both. Curated setting stays the ruler; control file and protocol unchanged.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the big-picture review of 2026-11-09: act1-content puts relics and potions before the one-card blocks; queue-throughput opens; a random-world bench is the next exploration (on the owner's behalf, 2026-11-09)",
+          "sha256": "ee9b5a5a731c985cbce859ca24a33ed2e74d6de58cc73a95b33430c8d1305c4d"
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        },
+        {
+          "key": "measurement/headline@confirm-book",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:29:27Z @ 3123201a",
+      "until": "2026-11-13T09:46:19Z @ 67cbe2e3"
+    }
+  ],
+  "seal": "45bacb9ee9c4c34328ebf1c709734340ed119109978abe606f2cf045cb66de82"
+}

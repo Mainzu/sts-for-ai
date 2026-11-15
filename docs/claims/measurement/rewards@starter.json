@@ -1,0 +1,49 @@
+{
+  "key": "measurement/rewards@starter",
+  "rev": 1,
+  "value": "Card rewards from the starter deck (10-29 net @hpb0.01, one turn, 500 sequences): skip 0.000, random 0.364, sim 0.548 (+0.184 clears over random, se 0.027, both halves), sim-boss 0.695 at n 200 (+0.155 over sim, se 0.042, protocol pass at n 162; 0.680 at 500). On cell decks sim adds only +0.048 over random.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Card rewards: deck choice is a goal-2 lever as big as depth (0059l7r3b361-b365; read 06:30 2026-11-02, manager 75ea2a19)",
+      "sha256": "3f70920ff8d247b972477bc30a19173b96e2ca2dc56e613c10e3875be454b9df"
+    },
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Sim chooser with a boss horizon passes: +0.155 clears (0059l7r3b37c; read 06:40 2026-11-02, manager 75ea2a19)",
+      "sha256": "7d17626172e194cb895c6c33b0a9b5d7ffa0b7a9c0c79d12127ce6e966c17807"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-sim.json",
+      "sha256": "5a72d6112447f51111aeeba6cdc2d19790d7b94db222b161506c5fa4a839b343"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+      "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+    },
+    {
+      "key": "yardstick/gauntlet",
+      "rev": 1
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:13:04+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:38:07+00:00 @ 80d6c86",
+      "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "f9d4f33962c148bbaf78abb3cbd8da499d725e65dcaf549bd721921791a834c7"
+}

@@ -1,0 +1,89 @@
+{
+  "key": "measurement/genpack-transfer@three-seeds",
+  "rev": 2,
+  "value": "Generated-pack nets s1/101/201 @tsl1 vs pack-net-scratch at the same seeds, gen bench 24 rows (675 elite x8): held-out (unseen trigger x effect pairings) novelty cost +5.33 (0.19) -> +1.28 (0.11) HP, cut 0.76 (0.02; seed spread 0.04); residual mostly OppCard-PlainDamage +3.00, TurnEnd-Weak +2.00. One turn deep.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Seed-201 read and the pooled verdict (jobs 0885, 0886, 0887; controls 0828, 0768, 0829)",
+      "sha256": "a03b70bf48d3735adf8eca28d3e553576bb0c80a971d49d43f8a73890d9630f9"
+    },
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Seed-101 read (jobs 0851, 0852, 0853; controls 0826, 0769, 0827)",
+      "sha256": "432e91690a827991bfd81440282ce470b782bc30608c6dedb6d77d75108d1d2b"
+    },
+    {
+      "path": "results/mutate/gen-gp201-tsl1-all24.json",
+      "sha256": "19a90208b029a1b7b8ebd33f08558767954f48de7360d8be00d0cc5f6afc779e"
+    },
+    {
+      "path": "results/mutate/gen-pns201-tsl1-all24.json",
+      "sha256": "3f03c2f144e561bd2d1711294f3a417e4168040b8978d25a99357e4c58c72325"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:22+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Generated-pack nets seeds 1/101/201 (runs/2026-11-10-genpack40k-s1-r1-acf5102, runs/2026-11-11-genpack40k-s101-r1-065b3ff, runs/2026-11-11-genpack40k-s201-r1-a97ea94 @tsl1) against pack-net-scratch at the same seeds on the generated bench's 24 rows (675 official elite starts x 8 seeds): held-out pooled novelty cost +5.33 (0.19) -> +1.28 (0.11) HP, cut 0.76 (starts se 0.02, seed spread 0.04; per seed 0.81, 0.68, 0.78); per held-out mechanic pooled 0.50 (TurnEnd-Weak) to 0.84 (OppCard-Damage), AttackLoss-Weak 1.30; residual cost mostly OppCard-PlainDamage +3.00 and TurnEnd-Weak +2.00; training rows cut 1.29; held-out cost 2.93 (0.14) HP under the 10-29 net's. One-turn cells @hpb0.01 pooled paired end HP +0.52 (0.30) over 1500; post-C6 31-card pack headline @hpb0.01 pooled +0.41 (0.63). Held-out = unseen pairings of seen triggers and effects; one turn deep. Supersedes measurement/genpack-transfer@seed1 as the result.",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Seed-201 read and the pooled verdict (jobs 0885, 0886, 0887; controls 0828, 0768, 0829)",
+          "sha256": "a03b70bf48d3735adf8eca28d3e553576bb0c80a971d49d43f8a73890d9630f9"
+        },
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Seed-101 read (jobs 0851, 0852, 0853; controls 0826, 0769, 0827)",
+          "sha256": "432e91690a827991bfd81440282ce470b782bc30608c6dedb6d77d75108d1d2b"
+        },
+        {
+          "path": "results/mutate/gen-gp201-tsl1-all24.json",
+          "sha256": "19a90208b029a1b7b8ebd33f08558767954f48de7360d8be00d0cc5f6afc779e"
+        },
+        {
+          "path": "results/mutate/gen-pns201-tsl1-all24.json",
+          "sha256": "3f03c2f144e561bd2d1711294f3a417e4168040b8978d25a99357e4c58c72325"
+        },
+        {
+          "path": "results/gauntlet/genpack40k-s201-hpb0.01-cells.json",
+          "sha256": "61c18c8e6f75b033c321dcc2df46440926f62eec651a2deec6393cbf2f675277"
+        },
+        {
+          "path": "results/gauntlet/genpack40k-s201-hpb0.01-starter-simboss-pack-act1c6.json",
+          "sha256": "3c305505a68b284ae79636e6c752fba3d3d40e2b8f754fdbf3f333fda111d82d"
+        },
+        {
+          "path": "jobs/done/0885-mutate-monsters.json",
+          "sha256": "d2faca08c6104f6985db5199c6784a245cbf6eac64185ab6d532dc23a630bb9c"
+        },
+        {
+          "path": "jobs/done/0886-gauntlet.json",
+          "sha256": "cab808fdcd4971e66c3527a788b6f69f22ed8d5da5d6272a093141df6fbf1c10"
+        },
+        {
+          "path": "jobs/done/0887-gauntlet.json",
+          "sha256": "4c3201ade52983636cb17e34c46f55e707f998b47c5d83066d627e1dc3488662"
+        },
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Seed-1 read (jobs 0809, 0810; 0811 refused)",
+          "sha256": "e35efa6e99431e9c75bc54234f9e60cf3df0735eee1ee5e9aea46686ff8e7b89"
+        }
+      ],
+      "owner": false,
+      "by": "a0badfba-52e6-4c27-aea0-774b750a3382",
+      "at": "2026-11-11T08:13:19+00:00 @ 79cf1fd",
+      "until": "2026-11-13T02:30:22+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "f476c583dea36242398c7959283b1e07046145d163de720d52afa914322add45"
+}

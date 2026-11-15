@@ -1,0 +1,14 @@
+[build-system]
+requires = ["maturin>=1.9,<2"]
+build-backend = "maturin"
+
+[project]
+name = "sts"
+version = "0.1.0"
+description = "Slay the Spire 1 combat engine built for search and learning"
+requires-python = ">=3.12"
+dependencies = ["numpy"]
+
+[tool.maturin]
+module-name = "sts"
+features = ["pyo3/extension-module"]

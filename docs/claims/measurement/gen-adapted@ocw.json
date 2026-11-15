@@ -1,0 +1,85 @@
+{
+  "key": "measurement/gen-adapted@ocw",
+  "rev": 3,
+  "value": "99-game bursts on GE-OppCard-Weak x Lagavulin @tsl1: net teacher cut +4.13 (0.53) = 0.56 of +7.36; heuristic +4.83 (0.45) = 0.66; both pass, teachers level; trained parent Lagavulin ~+0.8 HP/fight; the cut carries to Sentries and Nob with the mechanic.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/gen-adapted-column.md",
+      "anchor": "Step 3 read: family gac-ocw table (job 0519, 2026-11-08)",
+      "sha256": "beb5eaf6d1dd8e0b904d5cb562ac13fe06feed8291945fb5175ba531c2980fea"
+    },
+    {
+      "path": "results/families/gac-ocw.md",
+      "sha256": "a661d58b60f44771139b67478e91de16bbe715dd663c1d8df69f1c0d3679f367"
+    },
+    {
+      "path": "jobs/done/0519-family.json",
+      "sha256": "0fe1dfb1f0ff4521016bf124bd4f1f9fab7f4ae3973a54e5cf166be5fd3735ac"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:19+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "99-game bursts on GE-OppCard-Weak x Lagavulin, one turn @hpb0.01@tsl1, read on the 0472 starts x 4 seeds: net teacher cut +4.13 (se nets 0.53), 0.56 of the +7.36 cost; heuristic +4.83 (0.45), 0.66; both pass the half-cost rule, teachers level; the trained parent Lagavulin loses ~0.8 HP per fight in both arms (wins flat), untrained parents hold, and the cut carries to Sentries and Nob with the mechanic (Sentries 39.3 to 32.4-37.1 HP lost)",
+      "sources": [
+        {
+          "path": "docs/research/gen-adapted-column.md",
+          "anchor": "Step 3 read: family gac-ocw table (job 0519, 2026-11-08)",
+          "sha256": "541e5a41e34aeadafa697acedd31be5e571daf55cc1bc0aadd00c03bfc2e056e"
+        },
+        {
+          "path": "results/families/gac-ocw.md",
+          "sha256": "a661d58b60f44771139b67478e91de16bbe715dd663c1d8df69f1c0d3679f367"
+        },
+        {
+          "path": "jobs/done/0519-family.json",
+          "sha256": "0fe1dfb1f0ff4521016bf124bd4f1f9fab7f4ae3973a54e5cf166be5fd3735ac"
+        },
+        {
+          "key": "measurement/gen-adapted@alw-g99",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "71bd303c-1f59-45cf-8b2f-211d03b8fa6d",
+      "at": "2026-11-07T22:52:17+00:00 @ 9637bc1",
+      "until": "2026-11-07T23:09:17+00:00 @ c2dbb41"
+    },
+    {
+      "rev": 2,
+      "value": "99-game bursts on GE-OppCard-Weak x Lagavulin, one turn @hpb0.01@tsl1, read on the 0472 starts x 4 seeds: net teacher cut +4.13 (se nets 0.53), 0.56 of the +7.36 cost; heuristic +4.83 (0.45), 0.66; both pass the half-cost rule, teachers level; the trained parent Lagavulin loses ~0.8 HP per fight in both arms (wins flat), the untrained Sentries parent holds, and the cut carries to Sentries and Nob with the mechanic (Sentries 39.8 to 31.3-36.6 HP lost with the net teacher, 33.3-36.5 with the heuristic)",
+      "sources": [
+        {
+          "path": "docs/research/gen-adapted-column.md",
+          "anchor": "Step 3 read: family gac-ocw table (job 0519, 2026-11-08)",
+          "sha256": "beb5eaf6d1dd8e0b904d5cb562ac13fe06feed8291945fb5175ba531c2980fea"
+        },
+        {
+          "path": "results/families/gac-ocw.md",
+          "sha256": "a661d58b60f44771139b67478e91de16bbe715dd663c1d8df69f1c0d3679f367"
+        },
+        {
+          "path": "jobs/done/0519-family.json",
+          "sha256": "0fe1dfb1f0ff4521016bf124bd4f1f9fab7f4ae3973a54e5cf166be5fd3735ac"
+        },
+        {
+          "key": "measurement/gen-adapted@alw-g99",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "71bd303c-1f59-45cf-8b2f-211d03b8fa6d",
+      "at": "2026-11-07T23:09:17+00:00 @ c2dbb41",
+      "until": "2026-11-13T02:30:19+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "ba1fe4e4306b082b863bef22c7834ff66f6f214889554a6f65cb3b9160a41d04"
+}

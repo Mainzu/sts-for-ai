@@ -1,0 +1,29 @@
+{
+ "content": {
+  "encounters": [
+   "gremlin_nob",
+   "lagavulin",
+   "three_sentries"
+  ],
+  "mutated": [
+   "GE-TurnStart-Strength",
+   "GE-TurnStart-Damage",
+   "GE-TurnEnd-Frail",
+   "GE-TurnEnd-Damage",
+   "GE-OppCard-Vulnerable",
+   "GE-OppCard-PlainDamage",
+   "GE-AttackLoss-Strength",
+   "GE-AttackLoss-Damage"
+  ],
+  "net_settings": "@hpb0.01@tsl1",
+  "skip": 1000,
+  "val_fights": 40
+ },
+ "game_seed": 71,
+ "games": 50,
+ "n_val": 300,
+ "name": "pjb-net-g50x8-s2",
+ "player": "net",
+ "pool": 10000,
+ "seed": 2
+}

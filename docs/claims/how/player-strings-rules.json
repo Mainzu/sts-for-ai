@@ -1,0 +1,57 @@
+{
+  "key": "how/player-strings-rules",
+  "rev": 2,
+  "value": "Player-string rules: each @setting at most once; @hpe excludes @hpb; @pd1 needs @pl<k>; @sn1/@xh1 must agree with the net's meta keys (stsnet.encoder_flags refuses otherwise), so they read only on a net trained with them, against its twin without; --two-turn is a gauntlet.py flag, not a suffix. README's 'Read @sn1/@xh1 against a plain control with --vary price' is out of date.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "scripts/bench.py",
+      "sha256": "4775f6a625b25046800f7d57fca6dd24adc9df99311c9557e8847ff8b74139cf"
+    },
+    {
+      "path": "scripts/stsnet.py",
+      "sha256": "7dce02fe6c4bcf9a5359306f476bcce12231854bb83385bc3c785a034ec6a6da"
+    },
+    {
+      "path": "docs/research/engine-audit.md",
+      "anchor": "1. Encoder value flags aren't in the net's meta; shown numbers use their own arithmetic",
+      "sha256": "3ec8cb53327fb342e934c264f6d4602e162942ce18302f5068d266e820d9f001"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e491f0494fd8fdc2f68ffc1820fcfdb46cd0dc1a6d3bb24b714fd8f194691b3a"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "navigator 2026-11-13: re-set after engine audit 1 (flag)",
+  "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+  "at": "2026-11-13T13:43:47Z @ d240a173",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Player-string rules: each @setting at most once; @hpe excludes @hpb; @pd1 needs @pl<k>; @sn1/@xh1 reads need --vary price against a plain control; --two-turn is a gauntlet.py flag, not a suffix.",
+      "sources": [
+        {
+          "path": "scripts/bench.py",
+          "sha256": "978dd781bcdc1e3f3a7183ae9fa515edbae1a2af1a6c2fb57e1230c26214ee78"
+        },
+        {
+          "path": "docs/specs/shown-card-numbers.md",
+          "sha256": "788de46df973d93d546ede54122badcbd7f67330e4068ae6b797f43abf1c7e69"
+        },
+        {
+          "path": "docs/specs/recurring-debuff-leaf.md",
+          "sha256": "170b8c6383c68427d1d4a4c61b3475ce94cf6a623ac31d4a1cd98aa25adf747c"
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:28:06Z @ 3123201a",
+      "until": "2026-11-13T13:43:47Z @ d240a173"
+    }
+  ],
+  "seal": "3570fd1ee1eeffdfb3f668f7e3166c02dc7d2f097b7494d0f631c8dd1d16e162"
+}

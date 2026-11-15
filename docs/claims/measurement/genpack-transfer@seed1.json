@@ -1,0 +1,138 @@
+{
+  "key": "measurement/genpack-transfer@seed1",
+  "rev": 2,
+  "value": "Generated-pack net seed 1 (runs/2026-11-10-genpack40k-s1-r1-acf5102 @tsl1) against pack-net-scratch seed 1 on the generated bench's 24 rows (675 official elite starts x 8 seeds, heuristic play identical): held-out pooled novelty cost +5.17 (0.21) -> +0.98 (0.13) HP, cut 0.81 (0.02); per held-out row 0.59-0.86 (AttackLoss-Weak 1.50, TurnEnd-Frail 0.06, base cost ~0); training rows pooled cut 1.62 (0.08); held-out cost 3.22 (0.16) HP under the 10-29 net's; parents 0.48 (0.14) HP better. One-turn cells @hpb0.01 paired end HP +0.40 (0.52) vs pack-net-scratch seed 1, clears 0.682 vs 0.648. Post-C6 31-card pack headline @hpb0.01 (sequences 0-499): paired end HP +0.17 (1.13), clears 0.656 vs 0.606 (+0.050 (0.028)). Held-out = unseen pairings of seen triggers and effects on the same base monsters. Single seed: a go, still a lead until seeds 101/201 pool.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Seed-1 read (jobs 0809, 0810; 0811 refused)",
+      "sha256": "e35efa6e99431e9c75bc54234f9e60cf3df0735eee1ee5e9aea46686ff8e7b89"
+    },
+    {
+      "path": "results/mutate/gen-gp1-tsl1-all24.json",
+      "sha256": "2cf37c382eba1a2a3235a8cd796038016404b629168ee7e1aac30dcef200735c"
+    },
+    {
+      "path": "results/mutate/gen-pns1-tsl1-all24.json",
+      "sha256": "4d4af80b12a8efa726f0c2d8a2de3e44ad97e0fbe1013035689a9c3889e90e96"
+    },
+    {
+      "path": "results/gauntlet/genpack40k-s1-hpb0.01-cells.json",
+      "sha256": "ef887fd242c10c43f8a99fe82284aef45de11cfb97935925d6954d9a705cb281"
+    },
+    {
+      "path": "results/gauntlet/genpack40k-s1-hpb0.01-starter-simboss-pack-act1c6.json",
+      "sha256": "c27c5f978515fd7214bf272c8f1ba24affffecc882c08ccdf7d1b55d76cf46e8"
+    },
+    {
+      "path": "results/gauntlet/packnet40k-s1-hpb0.01-starter-simboss-pack-act1c6.json",
+      "sha256": "cd8088794082815c9ccd11d1385b37d13073ad3df7e18b39bb059f4ffc1a9a9a"
+    },
+    {
+      "path": "jobs/done/0809-mutate-monsters.json",
+      "sha256": "75bf72c0128a4c0f63e1773ae1b1fdb5e0f687d261e746dd11fe0312dc26b081"
+    },
+    {
+      "path": "jobs/done/0810-gauntlet.json",
+      "sha256": "04ae435593fde3853fdaf5398c2811a292c3ceecb9aef67ecff261e57ef91fe2"
+    },
+    {
+      "path": "jobs/done/0816-gauntlet.json",
+      "sha256": "3114c8497ee69bf67db1b7a27d6189b2c5098aca62d2435c35a5d47ee69f0759"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "67272285-462e-4fdc-b9d5-90df42c72234",
+  "at": "2026-11-10T14:25:29+00:00 @ e54c5ba",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Generated-pack net seed 1 (runs/2026-11-10-genpack40k-s1-r1-acf5102 @tsl1) against pack-net-scratch seed 1 on the generated bench's 24 rows (675 official elite starts x 8 seeds, heuristic play identical): held-out pooled novelty cost +5.17 (0.21) -> +0.98 (0.13) HP, cut 0.81 (0.02); per held-out row 0.59-0.86 (AttackLoss-Weak 1.50, TurnEnd-Frail 0.06, base cost ~0); training rows pooled cut 1.62 (0.08); held-out cost 3.22 (0.16) HP under the 10-29 net's; parents 0.48 (0.14) HP better. One-turn cells @hpb0.01 paired end HP +0.40 (0.52) vs pack-net-scratch seed 1, clears 0.682 vs 0.648. Held-out = unseen pairings of seen triggers and effects on the same base monsters. Single seed: a lead; the pack headline is pending (0814-0816).",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Seed-1 read (jobs 0809, 0810; 0811 refused)",
+          "sha256": "5e463068953e5f02c5bf4929caf27fbdba3168a9006ed002e7757f3a73a7c748"
+        },
+        {
+          "path": "results/mutate/gen-gp1-tsl1-all24.json",
+          "sha256": "2cf37c382eba1a2a3235a8cd796038016404b629168ee7e1aac30dcef200735c"
+        },
+        {
+          "path": "results/mutate/gen-pns1-tsl1-all24.json",
+          "sha256": "4d4af80b12a8efa726f0c2d8a2de3e44ad97e0fbe1013035689a9c3889e90e96"
+        },
+        {
+          "path": "results/gauntlet/genpack40k-s1-hpb0.01-cells.json",
+          "sha256": "ef887fd242c10c43f8a99fe82284aef45de11cfb97935925d6954d9a705cb281"
+        },
+        {
+          "path": "jobs/done/0809-mutate-monsters.json",
+          "sha256": "75bf72c0128a4c0f63e1773ae1b1fdb5e0f687d261e746dd11fe0312dc26b081"
+        },
+        {
+          "path": "jobs/done/0810-gauntlet.json",
+          "sha256": "04ae435593fde3853fdaf5398c2811a292c3ceecb9aef67ecff261e57ef91fe2"
+        }
+      ],
+      "owner": false,
+      "by": "be3192c8-a212-4e5b-9244-c4585eb7f0e9",
+      "at": "2026-11-10T11:43:10+00:00 @ ed467ac",
+      "until": "2026-11-10T14:25:29+00:00 @ e54c5ba"
+    },
+    {
+      "rev": 2,
+      "value": "Generated-pack net seed 1 (runs/2026-11-10-genpack40k-s1-r1-acf5102 @tsl1) against pack-net-scratch seed 1 on the generated bench's 24 rows (675 official elite starts x 8 seeds, heuristic play identical): held-out pooled novelty cost +5.17 (0.21) -> +0.98 (0.13) HP, cut 0.81 (0.02); per held-out row 0.59-0.86 (AttackLoss-Weak 1.50, TurnEnd-Frail 0.06, base cost ~0); training rows pooled cut 1.62 (0.08); held-out cost 3.22 (0.16) HP under the 10-29 net's; parents 0.48 (0.14) HP better. One-turn cells @hpb0.01 paired end HP +0.40 (0.52) vs pack-net-scratch seed 1, clears 0.682 vs 0.648. Post-C6 31-card pack headline @hpb0.01 (sequences 0-499): paired end HP +0.17 (1.13), clears 0.656 vs 0.606 (+0.050 (0.028)). Held-out = unseen pairings of seen triggers and effects on the same base monsters. Single seed: a go, still a lead until seeds 101/201 pool.",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Seed-1 read (jobs 0809, 0810; 0811 refused)",
+          "sha256": "e35efa6e99431e9c75bc54234f9e60cf3df0735eee1ee5e9aea46686ff8e7b89"
+        },
+        {
+          "path": "results/mutate/gen-gp1-tsl1-all24.json",
+          "sha256": "2cf37c382eba1a2a3235a8cd796038016404b629168ee7e1aac30dcef200735c"
+        },
+        {
+          "path": "results/mutate/gen-pns1-tsl1-all24.json",
+          "sha256": "4d4af80b12a8efa726f0c2d8a2de3e44ad97e0fbe1013035689a9c3889e90e96"
+        },
+        {
+          "path": "results/gauntlet/genpack40k-s1-hpb0.01-cells.json",
+          "sha256": "ef887fd242c10c43f8a99fe82284aef45de11cfb97935925d6954d9a705cb281"
+        },
+        {
+          "path": "results/gauntlet/genpack40k-s1-hpb0.01-starter-simboss-pack-act1c6.json",
+          "sha256": "c27c5f978515fd7214bf272c8f1ba24affffecc882c08ccdf7d1b55d76cf46e8"
+        },
+        {
+          "path": "results/gauntlet/packnet40k-s1-hpb0.01-starter-simboss-pack-act1c6.json",
+          "sha256": "cd8088794082815c9ccd11d1385b37d13073ad3df7e18b39bb059f4ffc1a9a9a"
+        },
+        {
+          "path": "jobs/done/0809-mutate-monsters.json",
+          "sha256": "75bf72c0128a4c0f63e1773ae1b1fdb5e0f687d261e746dd11fe0312dc26b081"
+        },
+        {
+          "path": "jobs/done/0810-gauntlet.json",
+          "sha256": "04ae435593fde3853fdaf5398c2811a292c3ceecb9aef67ecff261e57ef91fe2"
+        },
+        {
+          "path": "jobs/done/0816-gauntlet.json",
+          "sha256": "3114c8497ee69bf67db1b7a27d6189b2c5098aca62d2435c35a5d47ee69f0759"
+        }
+      ],
+      "owner": false,
+      "by": "67272285-462e-4fdc-b9d5-90df42c72234",
+      "at": "2026-11-10T14:25:29+00:00 @ e54c5ba",
+      "until": "2026-11-12T12:36:30+00:00 @ c570745",
+      "retired": "superseded by measurement/genpack-transfer@three-seeds (its pooled read over seeds 1/101/201, which names seed 1's numbers); the seed-1 numbers stay in docs/research/generated-enemies.md#Seed-1 read"
+    }
+  ],
+  "seal": "ff2a090e59ecda5456a5fc3203f9aa64b9d6f0ab0bcd310ed39c427de21f826d"
+}

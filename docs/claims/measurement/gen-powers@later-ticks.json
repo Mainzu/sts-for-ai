@@ -1,0 +1,66 @@
+{
+  "key": "measurement/gen-powers@later-ticks",
+  "rev": 2,
+  "value": "Nets that learned later ticks from games, @tsl1 one turn on gen_powers12c3 (elite+boss) minus 10-29 @tsl1: generated recurring powers (34 cells) +0.049 to +0.078 wins (all-content 40k +0.076 (0.028), fslt +0.078 (0.018), genpack +0.060 (0.026)); other generated powers +-0.02. This closes the 10-29 net's gap to the heuristic there (-0.049 / -0.072).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/big-picture-2026-11-11.md",
+      "anchor": "This run's probes (navigator, 2026-11-11)",
+      "sha256": "5b1e9098668cd123bc8b730a9d9a02e017f034674713ea9b2d2c968fed7f04cf"
+    },
+    {
+      "path": "jobs/done/0893-gen-powers-read.json",
+      "sha256": "f6cd9593ffb10e873f7d10189d5d77307c77d964e7f4e48c3eebcf6e3e07e28f"
+    },
+    {
+      "path": "results/gen_powers/arms/gen_powers12c3/net1029-ctrl1111-tsl1.json",
+      "sha256": "8480f65abdfa84a3175c808bda3dbcca225a3d27a09c35529f02d4fcaafb09a7"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:20+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Nets that learned a power's later ticks from games, @tsl1 one turn deep on data/bench/gen_powers12c3.json (elite and boss fights, mean over cells, se over cells, wins), minus the 10-29 net @tsl1 (re-run at today's pin, 0893, identical to the 2026-11-07 file on all 7,824 fights): generated recurring powers (OwnerTurnStart/OwnerTurnEnd, 34 cells, no game held them) all-content twins 40k s1+s101 +0.076 (0.028), 20k s1 +0.069 (0.035), 5k s1 +0.049 (0.025), fslt 5k bursts s1-s3 +0.078 (0.018), generated-pack nets s1/s101/s201 +0.060 (0.026) (per net +0.03 to +0.09); other generated powers -0.022 to +0.021; Metallicize originals +0.060 to +0.071 except 5k (-0.004); Demon Form originals -0.021 to +0.029. Against the 10-29 net @tsl1 minus the heuristic there (OwnerTurnStart -0.049 (0.040), OwnerTurnEnd -0.072 (0.052)): the later-ticks value learned on official powers carries through the effect inputs to unseen recurring powers and closes that gap.",
+      "sources": [
+        {
+          "path": "docs/research/big-picture-2026-11-11.md",
+          "anchor": "This run's probes (navigator, 2026-11-11)",
+          "sha256": "5b1e9098668cd123bc8b730a9d9a02e017f034674713ea9b2d2c968fed7f04cf"
+        },
+        {
+          "path": "jobs/done/0890-gen-powers-read.json",
+          "sha256": "f1a602a5500a7760f6917fe2f8685b47ed1946130f89d652220da50268d363d7"
+        },
+        {
+          "path": "jobs/done/0891-gen-powers-read.json",
+          "sha256": "e8a87ac0a84f842d309104d85fcc079130bfd3f06aa3c2f00b288c8b5f39b1b2"
+        },
+        {
+          "path": "jobs/done/0893-gen-powers-read.json",
+          "sha256": "f6cd9593ffb10e873f7d10189d5d77307c77d964e7f4e48c3eebcf6e3e07e28f"
+        },
+        {
+          "path": "results/gen_powers/arms/gen_powers12c3/net1029-ctrl1111-tsl1.json",
+          "sha256": "8480f65abdfa84a3175c808bda3dbcca225a3d27a09c35529f02d4fcaafb09a7"
+        },
+        {
+          "path": "results/gen_powers/depth/heuristic-elite_boss.json",
+          "sha256": "5d1edb706bbf107a111c5415ece5c00063196583d6c588a10e2cfb8131d51c0d"
+        }
+      ],
+      "owner": false,
+      "by": "b7755c1b-c846-428e-b225-17f45923e96d",
+      "at": "2026-11-11T08:57:36+00:00 @ 20449c5",
+      "until": "2026-11-13T02:30:20+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "4f91516f6ecabb31cbc202f5225c7185c231a4943f06a4623afe90abb451d6cf"
+}

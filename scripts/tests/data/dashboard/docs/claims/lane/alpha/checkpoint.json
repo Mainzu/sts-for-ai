@@ -1,0 +1,7 @@
+{
+ "key": "lane/alpha/checkpoint",
+ "rev": 1,
+ "value": "passed: probe read",
+ "status": "active",
+ "at": "2026-11-03T09:10:00+00:00 @ abc1234"
+}

@@ -1,0 +1,63 @@
+{
+  "key": "cause/depth-saturated",
+  "rev": 2,
+  "value": "The two-turn product is depth-saturated on headline elites: rollout leaf +0.67 (0.31) HP lost on 498 floor-9 elites, three turns -0.75 (0.81) on 48, both under the 1.5 bar ('decisive-fight' gains were outcome selection); two turns deep the learned leaf carries +9.3 HP over the heuristic leaf.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/rollout-leaf@elites",
+      "rev": 2
+    },
+    {
+      "key": "measurement/three-turn@elites",
+      "rev": 1
+    },
+    {
+      "key": "measurement/depth-anchor@headline",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:00Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:32:55Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/rollout-leaf@elites, measurement/depth-anchor@headline reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "On the dev machine the two-turn product sits where more search depth stops paying on the headline's elites: a rollout leaf is +0.67 HP lost (se 0.31, worse) on all 498 floor-9 elites and three turns -0.75 (se 0.81) on 48, both under the 1.5 HP bar, while the two 'decisive-fight' gains (-1.54 and -2.82) were selection on the outcome (the non-decisive halves lost +2.69 and +1.00); two turns deep the learned leaf carries the edge (+9.3 HP over the heuristic leaf), so what a horizon-complete leaf could add two turns deep is bounded by what a third turn sees.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane depth-headroom closed (2026-11-04)",
+          "sha256": "490d1701979b2d6a1091bd6c943b8743eeeb9554efa86636a175f45170c1ac6b"
+        },
+        {
+          "key": "measurement/rollout-leaf@elites",
+          "rev": 1
+        },
+        {
+          "key": "measurement/three-turn@elites",
+          "rev": 1
+        },
+        {
+          "key": "measurement/depth-anchor@headline",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "38f068ab-8b7e-4981-8bbe-695e64cca72a",
+      "at": "2026-11-04T14:25:52Z @ 57f3098",
+      "until": "2026-11-13T02:29:00Z @ 3123201a"
+    }
+  ],
+  "seal": "180ea3874f0e55dad6e87f340728a32ab34e35c6213851bc37494811365a115b"
+}

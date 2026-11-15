@@ -1,0 +1,32 @@
+{
+  "key": "measurement/effects-vs-ids@gen-bench",
+  "rev": 1,
+  "value": "Effects encoding minus card-id encoding (s1 twins on the same 5k games), elite + boss cells of gen_powers12c3: one turn deep +0.166 (se 0.031) on original cards and +0.059 (0.018) on generated ones; two turns deep +0.076 (0.018) and +0.017 (0.012). Search takes over most of the encoding's edge on unseen cards.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Effects vs ids on the generated bench, two turns deep (Q6, second half; b39c1 / b39c2; read 18:20 2026-11-02, manager 2b40a321)",
+      "sha256": "7802d9d3e4f003579d29a4c5404b31f7fd2137132993f9340e94b41a5169cd04"
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:14:03+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:38:02+00:00 @ 80d6c86",
+      "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "c0555e534264122bf060ac6e38e1d6510c61e5de1f89abfc57b2bdb7a28cd386"
+}

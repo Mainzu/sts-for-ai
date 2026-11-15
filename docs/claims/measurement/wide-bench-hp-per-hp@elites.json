@@ -1,0 +1,26 @@
+{
+  "key": "measurement/wide-bench-hp-per-hp@elites",
+  "rev": 1,
+  "value": "Wide bench elites, 10-29 net one turn: HP lost beyond the heuristic per HP of the heuristic's own extra loss, str2 0.03, hp1.25 0.16, ritual2 0.22, sharp2 0.40.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Wide read: at 325 boss starts x 32 seeds the one-turn net has no boss edge over the heuristic (+0.01, se 0.12) and no boss cost on any stat change; stage A's boss cost was seed luck in its parent edge. On elites stat changes cost nothing by odds ratio, Ritual 2 and SharpHide do (difficulty-shift lane step 1; 0143; read 07:40 2026-11-05, lanes cd29f3fd)",
+      "sha256": "be87ef8c48bcc96227f276efbb8aa38e4127e6a2df1461565760ed9fb297f589"
+    },
+    {
+      "path": "results/mutate/wide.json",
+      "sha256": "4f6e24581d4e67c5cd99123ae87b6eba25c1594fb50a14f0ea9f27fc96ecf670"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:56+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "41295fd604b827de88be44d657685b040774dba2f3cc822eccf778957717d337"
+}

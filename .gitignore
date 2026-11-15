@@ -1,0 +1,28 @@
+/target
+__pycache__/
+*.pyd
+.venv/
+
+/data/*
+!/data/bench/
+/models/
+/results/
+/datasets/
+/cache/
+/runs/*
+# runs/index.csv stays local: registry.py appends to it, nothing reads it, run folders hold the same data
+!/runs/sweep-*.md
+logs/
+/db/
+/jobs/
+
+/scripts/analysis/out/
+/.claude/kb-stats/
+
+# Published data (see README): the two nets and the result files the showcase quotes
+!/runs/2026-10-29-seed-check-r2-s1-1a789b2/
+!/runs/2026-11-10-packnet40k-s201-r1-91c8ae0/
+!/results/
+/results/*
+!/results/gauntlet/
+!/results/boss_replay/

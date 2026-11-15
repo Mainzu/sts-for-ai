@@ -1,0 +1,761 @@
+{
+  "key": "cause/novelty-is-horizon",
+  "rev": 13,
+  "value": "The net's cost on changed enemies is the mechanic's: one turn deep on elites punish-attacking and growth powers cost (odds ratio vs parent sharp2 -1.18 (0.20), ritual2 -0.65 (0.21); HP beyond heuristic +6.3, +2.3), plain stat changes don't (str2 +0.29 (0.14), hp1.25 +0.03 (0.17)).",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/wide-bench@one-turn",
+      "rev": 2
+    },
+    {
+      "key": "yardstick/novelty-read",
+      "rev": 5
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:06Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:04Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/wide-bench@one-turn, yardstick/novelty-read reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The one-turn net's cost on unseen turn-start effects (turn-start powers on cards, SharpHide on new enemies) is a horizon problem, not a training gap: two-turn search repairs most of it (turn-start swap cost 0.260 one turn -> 0.120 two turns; mutated-monster novelty within +-0.025 two turns deep), so no training burst on mutated monsters.",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "The patterns behind the record",
+          "sha256": "16de4c3c7820337ce8999ae598c89f0472ecea8c15e5da9370798defb26d5f14"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Mutated monsters, stage A, two turns deep: depth removes the net's SharpHide cost, so the enemies rung is a horizon problem, not a training gap (L4; 0059l8b4; read 22:30 2026-11-02, manager 19428521)",
+          "sha256": "7fa9643a0dca4bbe6b3eaa56a10c18fb9c34539c8499db7db36125ec049a11db"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:10:36Z @ fc9cdd8",
+      "until": "2026-11-04T16:01:07Z @ 24a7e00"
+    },
+    {
+      "rev": 2,
+      "value": "The one-turn net's cost on an unseen turn-start power on a new enemy splits by where the power's payoff lies. Inside the search horizon (SharpHide: damage reflected on this turn's attacks) it is both a horizon and a training gap: two-turn search repairs it (novelty +0.005 to -0.014 at 200 x 4) and so does fine-tuning on about 100 games against it (cut 1.17x at 99 games, 1.65x at 1602, retention within 0.6 se). Past the horizon (Ritual 2: Strength growing every turn, costing most on bosses) neither repairs it: two turns deep -0.036 (0.012), 1602 games cut only 0.38x. Turn-start powers on cards (the swap cost 0.260 one turn -> 0.120 two turns) stay a horizon reading. What would repair a past-horizon payoff is an input the net can read (the net half of new-mechanics-workflow), not depth on the dev machine (cause/depth-saturated) and not more games.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adaptation-curve closed (2026-11-04)",
+          "sha256": "35948c5c9342924dc8b97c49ee43e339c30a01af436eb9d2a65423a020014c75"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Adaptation curve filled: 99 games repair SharpHide's one-turn cost on elites, 399 reach the plateau; Ritual 2 stays unrepaired at every size; retention holds (adaptation-curve lane; 0119-0124; read 22:45 2026-11-04, lanes 7d67038d)",
+          "sha256": "f85ffe42f8c89a7baa8ccb7ffbd947e78b8a8eb9873d9f58bce363f6b8e9754d"
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 1
+        },
+        {
+          "key": "measurement/mutated-monsters@stage-a",
+          "rev": 2
+        },
+        {
+          "key": "cause/depth-saturated",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "0abb1a96-a184-451e-87ad-b17eeedec484",
+      "at": "2026-11-04T16:01:07Z @ 24a7e00",
+      "until": "2026-11-04T16:23:18Z @ 232a58e"
+    },
+    {
+      "rev": 3,
+      "value": "The one-turn net's cost on an unseen turn-start power on a new enemy splits by where the power's payoff lies. Inside the search horizon (SharpHide: damage reflected on this turn's attacks) it is both a horizon and a training gap: two-turn search repairs it (novelty +0.005 to -0.014 at 200 x 4) and so does fine-tuning on about 100 games against it (cut 1.17x at 99 games, 1.65x at 1602, retention within 0.6 se). Past the horizon (Ritual 2: Strength growing every turn, costing most on bosses) neither repairs it: two turns deep -0.036 (0.012), 1602 games cut only 0.38x. Turn-start powers on cards (the swap cost 0.260 one turn -> 0.120 two turns) stay a horizon reading. What would repair a past-horizon payoff is an input the net can read (the net half of new-mechanics-workflow), not depth on the dev machine (cause/depth-saturated) and not more games. Such an input exists already: the encoder's off-by-default rate columns (docs/specs/rate-features.md: per entity, Strength per turn and Strength x rounds left, from hook_rates, so any power built from known atoms gets them without code), which on official content gained +0.12 to +0.20 on every seed on held-out boss fights whose deck held Demon Form (the same kind of payoff) and were closed only on goal 2's held-out bar; the product net has them off and they have never been read on the mutated bench (lane adaptation step 4).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adaptation-curve closed (2026-11-04)",
+          "sha256": "35948c5c9342924dc8b97c49ee43e339c30a01af436eb9d2a65423a020014c75"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adaptation extended: step 4, rate-column twins on Ritual 2 (on the owner's behalf, 2026-11-04)",
+          "sha256": "74147eed60b2f490eed1138a1de0a2cadc8b70e7f6ee02152e17b9363d0a01a6"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Rate features: lean-rates vs lean-thr (jobs 0049b-d, 0052a1/a2, 0054z3; read 12:10 2026-10-31 by manager run 7328b322)",
+          "sha256": "b2f49716ddd857e548a9b41593871fc54133a3539db5794177dc795a2e56a586"
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 1
+        },
+        {
+          "key": "measurement/mutated-monsters@stage-a",
+          "rev": 2
+        },
+        {
+          "key": "cause/depth-saturated",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "d324392d-c74c-40b3-8e96-6301e0fb4db6",
+      "at": "2026-11-04T16:23:18Z @ 232a58e",
+      "until": "2026-11-04T17:02:01Z @ 5967164"
+    },
+    {
+      "rev": 4,
+      "value": "The one-turn net's cost on an unseen turn-start power on a new enemy splits by where the power's payoff lies. Inside the search horizon (SharpHide: damage reflected on this turn's attacks) it is both a horizon and a training gap: two-turn search repairs it (novelty +0.005 to -0.014 at 200 x 4) and so does fine-tuning on about 100 games against it (cut 1.17x at 99 games, 1.65x at 1602, retention within 0.6 se). Past the horizon (Ritual 2: Strength growing every turn, costing most on bosses) neither repairs it: two turns deep -0.036 (0.012), 1602 games cut only 0.38x. Turn-start powers on cards (the swap cost 0.260 one turn -> 0.120 two turns) stay a horizon reading. What would repair a past-horizon payoff is an input the net can read (the net half of new-mechanics-workflow), not depth on the dev machine (cause/depth-saturated) and not more games. Such an input exists already: the encoder's off-by-default rate columns (docs/specs/rate-features.md: per entity, Strength per turn and Strength x rounds left, from hook_rates, so any power built from known atoms gets them without code), which on official content gained +0.12 to +0.20 on every seed on held-out boss fights whose deck held Demon Form (the same kind of payoff) (+0.10 to +0.20 per seed over their twins) and failed the spec's adoption rule (held-out bosses +0.022 against a 0.06 bar, train bosses -0.027 against -0.015), most likely because of a side effect: about -0.1 on Guardian fights without Demon Form (train -0.108, held-out -0.091; about 1.8 and 3 se across the 3 seeds, on a split chosen after the read, with a decision-diff mechanism: different attack timing around Mode Shift); the product net has them off and they have never been read on the mutated bench (lane adaptation step 4).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adaptation-curve closed (2026-11-04)",
+          "sha256": "35948c5c9342924dc8b97c49ee43e339c30a01af436eb9d2a65423a020014c75"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adaptation extended: step 4, rate-column twins on Ritual 2 (on the owner's behalf, 2026-11-04)",
+          "sha256": "74147eed60b2f490eed1138a1de0a2cadc8b70e7f6ee02152e17b9363d0a01a6"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Rate features: lean-rates vs lean-thr (jobs 0049b-d, 0052a1/a2, 0054z3; read 12:10 2026-10-31 by manager run 7328b322)",
+          "sha256": "b2f49716ddd857e548a9b41593871fc54133a3539db5794177dc795a2e56a586"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Where the Guardian cost comes from (decision diff; job 0054z5, read 12:25 by a fork of manager run 7328b322)",
+          "sha256": "c513a9816de41af4cda4dc4a6aa2f6fcfde005ea2508789e55dfed7978b137ed"
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 1
+        },
+        {
+          "key": "measurement/mutated-monsters@stage-a",
+          "rev": 2
+        },
+        {
+          "key": "cause/depth-saturated",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "77ebb15f-c0f2-4582-9abf-02e2214ff046",
+      "at": "2026-11-04T17:02:01Z @ 5967164",
+      "until": "2026-11-04T22:14:32Z @ 99b1561"
+    },
+    {
+      "rev": 5,
+      "value": "The one-turn net's cost on changed enemies (the key's name is historical: only the elite half is a horizon reading). Elites, powers that punish attacking (SharpHide, Thorns, WeakOnHit): a cost inside the search horizon (sharp2 -0.082 and thorns2 -0.075 win, +5.5 HP lost beyond the heuristic), repaired by two-turn search (+0.085, +0.076) and by about 100 games against SharpHide (measurement/adaptation-curve), the repair carrying to Thorns and WeakOnHit, which it never trained on (measurement/adaptation-transfer). Bosses: the cost follows the boss's shifted numbers, not growth past the horizon. By the start-stratified odds ratio against the heuristic (parent edge +0.42 (0.27) one turn deep, +0.97 (0.24) two turns) a static +2 Strength is -0.64 (0.24) below the parent and Ritual 2 -0.82 (0.31) one turn deep, -0.53 (0.30) and -0.73 (0.38) two turns deep, hp0.8 -0.61 (0.32) and -0.84 (0.47), while sharp2 and thorns2 cost nothing there; depth, 1602 games against Ritual 2 (cut 0.38x) and the rate columns (measurement/rate-columns@ritual2) do not repair it. 66 boss starts, 2-3 se: a lead; part of the win-rate column on bosses is the scale (yardstick/novelty-read). Specific to growth: only ritual2 on elites, +2.42 (0.52) HP lost against +0.41 (0.18) for str2. Not separated yet: a new mechanic from a fight more dangerous than training's range (SharpHide, seen on the Guardian, costs as much on elites as unseen Thorns; the net is below the heuristic on every contested elite variant). Exits (lane difficulty-shift): the wide boss read shows no odds-ratio cost, then the boss half was the scale; or a burst on plain stat changes repairs the reactive powers, then the unit of novelty is danger, not the mechanic.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Stage A re-read: the boss cost follows shifted numbers, not growth, and how a novelty cost is read (on the owner's behalf, 2026-11-05)",
+          "sha256": "f63c7066d5d986a9803a94a333fccecba701b9fa0383e29f88786010cee52543"
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/adaptation-transfer",
+          "rev": 2
+        },
+        {
+          "key": "measurement/rate-columns@ritual2",
+          "rev": 2
+        },
+        {
+          "key": "measurement/mutated-monsters@stage-a",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "1ef7f60b-ed9a-4889-af70-64f5334e6905",
+      "at": "2026-11-04T22:14:32Z @ 99b1561",
+      "until": "2026-11-05T00:47:56Z @ 22b5d9b"
+    },
+    {
+      "rev": 6,
+      "value": "The net's cost on changed enemies is a cost of the mechanic, inside the search horizon; the key's name is historical. Elites, one turn deep: powers that punish attacking and growth cost (wide bench odds ratio below the parent: sharp2 -1.18 (0.20), ritual2 -0.65 (0.21); HP lost beyond the heuristic +6.3 and +2.3), plain stat changes do not (str2 +0.29 (0.14), hp1.25 +0.03 (0.17)), and practice on harder numbers does not teach the answer (a 400-game stat burst gains nothing on sharp2 or thorns2 and costs -0.032 clears on official cells, measurement/stat-burst@one-turn). The repairs: two-turn search (sharp2 +0.085, thorns2 +0.076 win), or about 100 games against one power of the family (measurement/adaptation-curve), carrying to Thorns and WeakOnHit (measurement/adaptation-transfer); Ritual 2 on elites stays unrepaired by games (cut 0.38x at 1602) and by the rate columns (measurement/rate-columns@ritual2). Bosses, one turn deep: no cost on any stat change or on Ritual 2 at 325 starts x 32 seeds, and no edge over the heuristic to lose (+0.01 (0.12)); stage A's boss rows were one lucky parent draw (measurement/wide-bench@one-turn). Open: the product's two boss rows two turns deep (ritual2 -0.036 (0.012), hp0.8 -0.030 (0.010)), read against one parent draw of 4 seeds on 66 starts; lane boss-cost-two-turn decides. Exits: that lane's go (a product cost on shifted bosses is real) or stop (the monsters rung costs the product nothing); a mechanic that 100 games of its own family do not repair.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane difficulty-shift closed (2026-11-05)",
+          "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+        },
+        {
+          "key": "measurement/wide-bench@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/adaptation-transfer",
+          "rev": 2
+        },
+        {
+          "key": "measurement/rate-columns@ritual2",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "ff666280-ee25-4103-8011-de5b45cf8e3c",
+      "at": "2026-11-05T00:47:56Z @ 22b5d9b",
+      "until": "2026-11-05T07:26:36Z @ c272a75"
+    },
+    {
+      "rev": 7,
+      "value": "The net's cost on changed enemies is a cost of the mechanic, inside the search horizon; the key's name is historical. Elites, one turn deep: powers that punish attacking and growth cost (wide bench odds ratio below the parent: sharp2 -1.18 (0.20), ritual2 -0.65 (0.21); HP lost beyond the heuristic +6.3 and +2.3), plain stat changes do not (str2 +0.29 (0.14), hp1.25 +0.03 (0.17)), and practice on harder numbers does not teach the answer (a 400-game stat burst gains nothing on sharp2 or thorns2 and costs -0.032 clears on official cells, measurement/stat-burst@one-turn). The repairs one turn deep: two-turn search (sharp2 +0.085, thorns2 +0.076 win), or about 100 games against one power of the family (measurement/adaptation-curve), carrying to Thorns and WeakOnHit (measurement/adaptation-transfer); Ritual 2 on elites stays unrepaired by games (cut 0.38x at 1602) and by the rate columns (measurement/rate-columns@ritual2). Bosses: no cost beyond the heuristic on any stat change or on Ritual 2, one turn deep at 325 starts x 32 seeds (and no edge to lose, +0.01 (0.12); measurement/wide-bench@one-turn) or two turns deep on 259 fresh starts (parent edge +0.075 (0.013); ritual2 -0.017 (0.016); hp0.8 -0.038 (0.016), a ceiling squeeze; measurement/boss-cost@two-turn); stage A's boss rows were one parent draw. Two turns deep the product pays nothing beyond the heuristic on any stage A or stage B modifier. Open: beyond the heuristic is beyond another unadapted player (yardstick/novelty-read rule e): on Three Sentries with SharpHide 2 the product falls -0.279, level with the heuristic's -0.262, and no adapted net was played two turns deep. Exits: lane adapted-two-turn's go (the product pays a zero-shot cost the heuristic column hides) or stop (two-turn search plays in-horizon mechanics at the adapted level); a mechanic that 100 games of its own family do not repair.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "3df5b299a54b7341b8f5aece00ba55484f6291bc2dd7bd2594337e4cb90a9f00"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane difficulty-shift closed (2026-11-05)",
+          "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane boss-cost-two-turn closed (2026-11-05)",
+          "sha256": "1b7086a7e58a6227844cdd56474a154a02c81d4d1f9baabd3264c94c432a48fc"
+        },
+        {
+          "key": "measurement/wide-bench@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/boss-cost@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/adaptation-transfer",
+          "rev": 2
+        },
+        {
+          "key": "measurement/rate-columns@ritual2",
+          "rev": 2
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "7341b88a-0947-4f2b-9d60-594698d8eaa7",
+      "at": "2026-11-05T07:26:36Z @ c272a75",
+      "until": "2026-11-05T12:26:58Z @ 035810b"
+    },
+    {
+      "rev": 8,
+      "value": "The net's cost on changed enemies is a cost of the mechanic, and search depth repairs most of it, not all; the key's name is historical. Elites, one turn deep: powers that punish attacking and growth cost (wide bench odds ratio below the parent: sharp2 -1.18 (0.20), ritual2 -0.65 (0.21); HP lost beyond the heuristic +6.3 and +2.3), plain stat changes do not (str2 +0.29 (0.14), hp1.25 +0.03 (0.17)), and practice on harder numbers does not teach the answer (a 400-game stat burst gains nothing on sharp2 or thorns2, measurement/stat-burst@one-turn, and costs Hexaghost wins, measurement/burst-bosses@replay). The repairs one turn deep: two-turn search (sharp2 +0.085, thorns2 +0.076 win), or about 100 games against one power of the family (measurement/adaptation-curve), carrying to Thorns and WeakOnHit (measurement/adaptation-transfer). Two turns deep a cost stays on every reactive power: the product loses about 2 HP per elite fight beyond the heuristic with wins level (measurement/reactive-cost@fresh-elites), and a 399-game SharpHide burst played at the same depth wins +0.025 (0.008) more on sharp2 and +0.013 (0.006) on thorns2 and gets back about 1.1 HP, at 0.60 (0.23) HP on unchanged elites (measurement/adapted-two@elites; one burst seed); Lagavulin carries the gain, Three Sentries goes the other way. Ritual 2 on elites stays unrepaired by games (cut 0.38x at 1602) and by the rate columns (measurement/rate-columns@ritual2). Bosses: no cost beyond the heuristic on any stat change or on Ritual 2, one turn deep (measurement/wide-bench@one-turn) or two (measurement/boss-cost@two-turn); no adapted player was read on bosses. Exits: a second burst seed two turns deep that loses the gain; a mechanic that 100 games of its own family do not repair; a burst without the parent cost (backlog burst-recipe).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "64e5d7322445698604f5a58975f2058c2e8ebf0152f463504e0e7c7511e88081"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane difficulty-shift closed (2026-11-05)",
+          "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane boss-cost-two-turn closed (2026-11-05)",
+          "sha256": "1b7086a7e58a6227844cdd56474a154a02c81d4d1f9baabd3264c94c432a48fc"
+        },
+        {
+          "key": "measurement/wide-bench@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/boss-cost@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/adaptation-transfer",
+          "rev": 2
+        },
+        {
+          "key": "measurement/rate-columns@ritual2",
+          "rev": 2
+        },
+        {
+          "key": "measurement/reactive-cost@fresh-elites",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 2
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "2ef20aae-4e81-4598-8ce8-557bca9d73a3",
+      "at": "2026-11-05T12:26:58Z @ 035810b",
+      "until": "2026-11-05T15:45:29Z @ f89053c"
+    },
+    {
+      "rev": 9,
+      "value": "The net's cost on changed enemies is a cost of the mechanic, and search depth repairs most of it, not all; the key's name is historical. Elites, one turn deep: powers that punish attacking and growth cost (wide bench odds ratio below the parent: sharp2 -1.18 (0.20), ritual2 -0.65 (0.21); HP lost beyond the heuristic +6.3 and +2.3), plain stat changes do not (str2 +0.29 (0.14), hp1.25 +0.03 (0.17)), and practice on harder numbers does not teach the answer (a 400-game stat burst gains nothing on sharp2 or thorns2, measurement/stat-burst@one-turn, and costs Hexaghost wins, measurement/burst-bosses@replay). The repairs one turn deep: two-turn search (sharp2 +0.085, thorns2 +0.076 win), or about 100 games against one power of the family (measurement/adaptation-curve), carrying to Thorns and WeakOnHit (measurement/adaptation-transfer). Two turns deep a cost stays on every reactive power: the product loses about 2 HP per elite fight beyond the heuristic with wins level (measurement/reactive-cost@fresh-elites), and a 399-game SharpHide burst played at the same depth wins more on two burst seeds (sharp2 +0.021 (0.009), thorns2 +0.014 (0.008) on fresh starts) while its HP gain does not replicate (seed 1 about 1.1 HP fewer lost, seed 2 0.3 to 0.5 more) and it loses 1.21 (0.30) HP per unchanged elite fight (measurement/adapted-two@elites); Lagavulin carries the gain on both seeds, Three Sentries goes the other way. Ritual 2 on elites stays unrepaired by games (cut 0.38x at 1602) and by the rate columns (measurement/rate-columns@ritual2). Bosses: no cost beyond the heuristic on any stat change or on Ritual 2, one turn deep (measurement/wide-bench@one-turn) or two (measurement/boss-cost@two-turn); no adapted player was read on bosses. Exits: a mechanic that 100 games of its own family do not repair; a third burst seed two turns deep that loses the win gain.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "64e5d7322445698604f5a58975f2058c2e8ebf0152f463504e0e7c7511e88081"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane difficulty-shift closed (2026-11-05)",
+          "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane boss-cost-two-turn closed (2026-11-05)",
+          "sha256": "1b7086a7e58a6227844cdd56474a154a02c81d4d1f9baabd3264c94c432a48fc"
+        },
+        {
+          "key": "measurement/wide-bench@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/boss-cost@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/adaptation-transfer",
+          "rev": 2
+        },
+        {
+          "key": "measurement/rate-columns@ritual2",
+          "rev": 2
+        },
+        {
+          "key": "measurement/reactive-cost@fresh-elites",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "56c5a1d1-29a3-4ae4-b122-773b2e4caee5",
+      "at": "2026-11-05T15:45:29Z @ f89053c",
+      "until": "2026-11-07T13:29:18Z @ ffaf51e"
+    },
+    {
+      "rev": 10,
+      "value": "The net's cost on changed enemies is a cost of the mechanic, and search depth repairs most of it, not all; the key's name is historical. Elites, one turn deep: powers that punish attacking and growth cost (wide bench odds ratio below the parent: sharp2 -1.18 (0.20), ritual2 -0.65 (0.21); HP lost beyond the heuristic +6.3 and +2.3), plain stat changes do not (str2 +0.29 (0.14), hp1.25 +0.03 (0.17)), and practice on harder numbers does not teach the answer (a 400-game stat burst gains nothing on sharp2 or thorns2, measurement/stat-burst@one-turn, and costs Hexaghost wins, measurement/burst-bosses@replay). The repairs one turn deep: two-turn search (sharp2 +0.085, thorns2 +0.076 win), or about 100 games against one power of the family (measurement/adaptation-curve), carrying to Thorns and WeakOnHit (measurement/adaptation-transfer). Two turns deep a cost stays on every reactive power: the product loses about 2 HP per elite fight beyond the heuristic with wins level (measurement/reactive-cost@fresh-elites), and a 399-game SharpHide burst played at the same depth wins more on two burst seeds (sharp2 +0.021 (0.009), thorns2 +0.014 (0.008) on fresh starts) while its HP gain does not replicate (seed 1 about 1.1 HP fewer lost, seed 2 0.3 to 0.5 more) and it loses 1.21 (0.30) HP per unchanged elite fight (measurement/adapted-two@elites); Lagavulin carries the gain on both seeds, Three Sentries goes the other way. Ritual 2 on elites stays unrepaired by games (cut 0.38x at 1602) and by the rate columns (measurement/rate-columns@ritual2). Bosses: no cost beyond the heuristic on any stat change or on Ritual 2, one turn deep (measurement/wide-bench@one-turn) or two (measurement/boss-cost@two-turn); no adapted player was read on bosses. Generated pack enemies (one pack power on an official elite, measurement/gen-enemies@batch1) cost in the same family and widen it: in-turn punishments of an action cost (AttackLoss-Damage, Thorns-like, +5.60 (0.35) HP; OppCard-PlainDamage, damage per card played, +1.76; AttackLoss-Strength, Strength when hit, +1.20), turn-trigger damage costs nothing, generated growth (TurnStart-Strength) only +0.48 (0.12); each cost sits on one parent (AttackLoss-Damage x Gremlin Nob +12.8 HP, under 2 elsewhere), so a mechanic's mean over elites understates it and the adapted column ranks by the worst parent. Exits: a mechanic that 100 games of its own family do not repair; a third burst seed two turns deep that loses the win gain.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "64e5d7322445698604f5a58975f2058c2e8ebf0152f463504e0e7c7511e88081"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane difficulty-shift closed (2026-11-05)",
+          "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane boss-cost-two-turn closed (2026-11-05)",
+          "sha256": "1b7086a7e58a6227844cdd56474a154a02c81d4d1f9baabd3264c94c432a48fc"
+        },
+        {
+          "key": "measurement/wide-bench@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/boss-cost@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-transfer",
+          "rev": 2
+        },
+        {
+          "key": "measurement/rate-columns@ritual2",
+          "rev": 2
+        },
+        {
+          "key": "measurement/reactive-cost@fresh-elites",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 4
+        },
+        {
+          "key": "measurement/gen-enemies@batch1",
+          "rev": 1
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After generated-enemies batch 1: three probe reads before step 4; all-content-net is the ready exploration charter (on the owner's behalf, 2026-11-07)",
+          "sha256": "938f460bd0036c0a2449342f6ed44934880449f57d9dcf8310b89eb0d576c695"
+        }
+      ],
+      "owner": false,
+      "by": "24375f99-3cb3-4ef9-b28f-f6df271d6129",
+      "at": "2026-11-07T13:29:18Z @ ffaf51e",
+      "until": "2026-11-09T11:37:22Z @ a816116"
+    },
+    {
+      "rev": 11,
+      "value": "The net's cost on changed enemies is a cost of the mechanic, and search depth repairs most of it, not all; the key's name is historical. Elites, one turn deep: powers that punish attacking and growth cost (wide bench odds ratio below the parent: sharp2 -1.18 (0.20), ritual2 -0.65 (0.21); HP lost beyond the heuristic +6.3 and +2.3), plain stat changes do not (str2 +0.29 (0.14), hp1.25 +0.03 (0.17)), and practice on harder numbers does not teach the answer (a 400-game stat burst gains nothing on sharp2 or thorns2, measurement/stat-burst@one-turn, and costs Hexaghost wins, measurement/burst-bosses@replay). The repairs one turn deep: two-turn search (sharp2 +0.085, thorns2 +0.076 win), or about 100 games against one power of the family at replay share 0.5, 33 at share 0.9 (measurement/adaptation-curve, measurement/share-curve@retention), carrying to Thorns and WeakOnHit (measurement/adaptation-transfer). Two turns deep a cost stays on every reactive power: the product loses about 2 HP per elite fight beyond the heuristic with wins level (measurement/reactive-cost@fresh-elites), and a 399-game SharpHide burst played at the same depth wins more on two burst seeds (sharp2 +0.021 (0.009), thorns2 +0.014 (0.008) on fresh starts) while its HP gain does not replicate (seed 1 about 1.1 HP fewer lost, seed 2 0.3 to 0.5 more) and it loses 1.21 (0.30) HP per unchanged elite fight (measurement/adapted-two@elites); Lagavulin carries the gain on both seeds, Three Sentries goes the other way. Ritual 2 on elites stays unrepaired by games (cut 0.38x at 1602) and by the rate columns (measurement/rate-columns@ritual2). Bosses: no cost beyond the heuristic on any stat change or on Ritual 2, one turn deep (measurement/wide-bench@one-turn) or two (measurement/boss-cost@two-turn); no adapted player was read on bosses. Generated pack enemies (one pack power on an official elite, measurement/gen-enemies@batch1) cost in the same family and widen it: in-turn punishments of an action cost (AttackLoss-Damage, Thorns-like, +5.60 (0.35) HP; OppCard-PlainDamage, damage per card played, +1.76; AttackLoss-Strength, Strength when hit, +1.20), turn-trigger damage costs nothing, generated growth (TurnStart-Strength) only +0.48 (0.12); each cost sits on one parent (AttackLoss-Damage x Gremlin Nob +12.8 HP, under 2 elsewhere), so a mechanic's mean over elites understates it and the adapted column ranks by the worst parent. Exits: a mechanic that 33 games at share 0.9 (or 100 at 0.5) of its own family do not repair; a third burst seed two turns deep that loses the win gain.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "64e5d7322445698604f5a58975f2058c2e8ebf0152f463504e0e7c7511e88081"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane difficulty-shift closed (2026-11-05)",
+          "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane boss-cost-two-turn closed (2026-11-05)",
+          "sha256": "1b7086a7e58a6227844cdd56474a154a02c81d4d1f9baabd3264c94c432a48fc"
+        },
+        {
+          "key": "measurement/wide-bench@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/boss-cost@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 5
+        },
+        {
+          "key": "measurement/adaptation-transfer",
+          "rev": 2
+        },
+        {
+          "key": "measurement/rate-columns@ritual2",
+          "rev": 2
+        },
+        {
+          "key": "measurement/reactive-cost@fresh-elites",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 4
+        },
+        {
+          "key": "measurement/gen-enemies@table24",
+          "rev": 2
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After generated-enemies batch 1: three probe reads before step 4; all-content-net is the ready exploration charter (on the owner's behalf, 2026-11-07)",
+          "sha256": "938f460bd0036c0a2449342f6ed44934880449f57d9dcf8310b89eb0d576c695"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After share-curve's close: few-game bursts set replay share 0.9; two probes queued on main (on the owner's behalf, 2026-11-09)",
+          "sha256": "b627d2ea6b669d3cadf504195dd397ff950ff1f8ddcd50f790276324139efd90"
+        },
+        {
+          "key": "measurement/share-curve@retention",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "9dac2594-61af-4f50-ba8b-c66fd10cfd0a",
+      "at": "2026-11-09T11:37:22Z @ a816116",
+      "until": "2026-11-12T16:00:06Z @ 0ee4d27"
+    },
+    {
+      "rev": 12,
+      "value": "The net's cost on changed enemies is a cost of the mechanic, and search depth repairs most of it, not all; the key's name is historical. Elites, one turn deep: powers that punish attacking and growth cost (wide bench odds ratio below the parent: sharp2 -1.18 (0.20), ritual2 -0.65 (0.21); HP lost beyond the heuristic +6.3 and +2.3), plain stat changes do not (str2 +0.29 (0.14), hp1.25 +0.03 (0.17)), and practice on harder numbers does not teach the answer (a 400-game stat burst gains nothing on sharp2 or thorns2, measurement/stat-burst@one-turn, and costs Hexaghost wins, measurement/burst-bosses@replay). The repairs one turn deep: two-turn search (sharp2 +0.085, thorns2 +0.076 win), or about 100 games against one power of the family at replay share 0.5, 33 at share 0.9 (measurement/adaptation-curve, measurement/share-curve@retention), carrying to Thorns and WeakOnHit (measurement/adaptation-transfer). Two turns deep a cost stays on every reactive power: the product loses about 2 HP per elite fight beyond the heuristic with wins level (measurement/reactive-cost@fresh-elites), and a 399-game SharpHide burst played at the same depth wins more on two burst seeds (sharp2 +0.021 (0.009), thorns2 +0.014 (0.008) on fresh starts) while its HP gain does not replicate (seed 1 about 1.1 HP fewer lost, seed 2 0.3 to 0.5 more) and it loses 1.21 (0.30) HP per unchanged elite fight (measurement/adapted-two@elites); Lagavulin carries the gain on both seeds, Three Sentries goes the other way. Ritual 2 on elites stayed unrepaired on the 10-29 net by games (cut 0.38x at 1602) and by the rate columns (measurement/rate-columns@ritual2), but every 40k from-scratch net reads it level or ahead (pack-net-scratch s1 -0.22, the generated-pack nets -0.33 to -1.07 HP against the 10-29 net's +1.68 on the yardstick, measurement/genpack-yardstick@18-seeds). Bosses: no cost beyond the heuristic on any stat change or on Ritual 2, one turn deep (measurement/wide-bench@one-turn) or two (measurement/boss-cost@two-turn); no adapted player was read on bosses. Generated pack enemies (one pack power on an official elite, measurement/gen-enemies@batch1) cost in the same family and widen it: in-turn punishments of an action cost (AttackLoss-Damage, Thorns-like, +5.60 (0.35) HP; OppCard-PlainDamage, damage per card played, +1.76; AttackLoss-Strength, Strength when hit, +1.20), turn-trigger damage costs nothing, generated growth (TurnStart-Strength) only +0.48 (0.12); each cost sits on one parent (AttackLoss-Damage x Gremlin Nob +12.8 HP, under 2 elsewhere), so a mechanic's mean over elites understates it and the adapted column ranks by the worst parent. Exits: a mechanic that 33 games at share 0.9 (or 100 at 0.5) of its own family do not repair; a third burst seed two turns deep that loses the win gain.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After boss-cost-two-turn: the heuristic is not the zero of a novelty cost; lane adapted-two-turn opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "64e5d7322445698604f5a58975f2058c2e8ebf0152f463504e0e7c7511e88081"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+          "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane difficulty-shift closed (2026-11-05)",
+          "sha256": "d6a853a0ad6ac8f429c895aa03fa2ee496efc9cbf23e3e4becfbf13ba654e19d"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane boss-cost-two-turn closed (2026-11-05)",
+          "sha256": "1b7086a7e58a6227844cdd56474a154a02c81d4d1f9baabd3264c94c432a48fc"
+        },
+        {
+          "key": "measurement/wide-bench@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/boss-cost@two-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 5
+        },
+        {
+          "key": "measurement/adaptation-transfer",
+          "rev": 2
+        },
+        {
+          "key": "measurement/rate-columns@ritual2",
+          "rev": 2
+        },
+        {
+          "key": "measurement/reactive-cost@fresh-elites",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 4
+        },
+        {
+          "key": "measurement/gen-enemies@table24",
+          "rev": 2
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After generated-enemies batch 1: three probe reads before step 4; all-content-net is the ready exploration charter (on the owner's behalf, 2026-11-07)",
+          "sha256": "938f460bd0036c0a2449342f6ed44934880449f57d9dcf8310b89eb0d576c695"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After share-curve's close: few-game bursts set replay share 0.9; two probes queued on main (on the owner's behalf, 2026-11-09)",
+          "sha256": "b627d2ea6b669d3cadf504195dd397ff950ff1f8ddcd50f790276324139efd90"
+        },
+        {
+          "key": "measurement/share-curve@retention",
+          "rev": 1
+        },
+        {
+          "key": "measurement/genpack-yardstick@18-seeds",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "48a915f7-e4fb-4f66-b701-0667be478b80",
+      "at": "2026-11-12T16:00:06Z @ 0ee4d27",
+      "until": "2026-11-13T02:29:06Z @ 3123201a"
+    }
+  ],
+  "seal": "41024084225b52e94aeec8019738ca820115bd12c793c43c567e5fe47b140c53"
+}

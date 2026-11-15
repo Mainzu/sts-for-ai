@@ -1,0 +1,53 @@
+{
+  "key": "decision/engine-next-landed",
+  "rev": 1,
+  "value": "engine-next (rules-engine series plus its pre-landing slice) landed on main at c3f81f4 on 2026-11-03 00:20: cargo tests green, series_check PASS, sts swapped from the branch wheel, impact none; the rules version over the golden games is unchanged, the solvedb fingerprint changed; new nets get the wider default layout (rows 131, cards 82), row kinds opt-in.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "engine-next landed (owner's OK of 2026-11-02; landed 00:20 2026-11-03, owner away)",
+      "sha256": "9d616df213ff9b87d133f1fad4460f4ef3cf8cabe70518c85e44509d1bb142e0"
+    },
+    {
+      "path": "docs/archive/engine-next.md",
+      "sha256": "c32bba8460d69a69922f38e0bcbfa713bafe17830a82d01c2c28183a25f3974b"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "source moved to docs/archive/ (finished series)",
+  "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
+  "at": "2026-11-02T17:23:55Z @ c3f81f4",
+  "confirms": [
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:59:19Z @ 2e013b2",
+      "note": "source moved to docs/archive/ (finished series)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "engine-next (rules-engine series plus its pre-landing slice) landed on main at c3f81f4 on 2026-11-03 00:20: cargo tests green, series_check PASS, sts swapped from the branch wheel, impact none; the rules version over the golden games is unchanged, the solvedb fingerprint changed; new nets get the wider default layout (rows 131, cards 82), row kinds opt-in.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "engine-next landed (owner's OK of 2026-11-02; landed 00:20 2026-11-03, owner away)",
+          "sha256": "9d616df213ff9b87d133f1fad4460f4ef3cf8cabe70518c85e44509d1bb142e0"
+        },
+        {
+          "path": "docs/archive/engine-next.md",
+          "sha256": "c32bba8460d69a69922f38e0bcbfa713bafe17830a82d01c2c28183a25f3974b"
+        }
+      ],
+      "owner": false,
+      "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
+      "at": "2026-11-02T17:23:55Z @ c3f81f4",
+      "until": "2026-11-11T11:18:31Z @ 44634f5",
+      "retired": "spent: a landing record of 2026-11-03; the layout it names is in code and git history (c3f81f4); retired for the STATUS cap"
+    }
+  ],
+  "seal": "0d2da12f14a1a0ac21923dc0aa3d3cf37403052e7b1e11bf534d93513cfb3dd6"
+}

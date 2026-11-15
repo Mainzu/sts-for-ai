@@ -1,0 +1,131 @@
+{
+  "key": "measurement/level-defaults@headline",
+  "rev": 2,
+  "value": "Level-rule reads vs the old one-turn control (@hpb0.01), headline n 500: @tsl1 (plain trial fights) +0.56 (0.19) HP, clears +0.016; @lcb1 +0.15 (0.45), +0.020, yardstick rows within 0.05 HP; both (0972) +0.76 (0.47), 0.716 vs 0.680 clears (+0.036, 0.013); @hpe0.01 one turn -1.74 (0.75), -0.020 (fail). Cells, both: +1.56 (0.33) HP.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Combined one-turn control `@tsl1@lcb1` read; the controls move to it; the product read with both flags queued (on the owner's behalf, 2026-11-13)",
+      "sha256": "d042173e1fb5f565faacd5f2e5eb3d50d9dbf3cf571d540ce95efade20901b56"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Level-defaults read: `@tsl1` and `@lcb1` pass, `@hpe` one turn deep fails; the one-turn controls move (on the owner's behalf, 2026-11-13)",
+      "sha256": "93c0eef8f5b4f77d6058a88b608fb09dcd5283673f90801ff744fc2de7d3f939"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-tsl1-plaintrial-starter-simboss.json",
+      "sha256": "198c3d3ced733481382f4de1ce87c16761f4b69696c0c8e07b9caf184512c3c2"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-lcb1-starter-simboss.json",
+      "sha256": "7165543490bed72ca4017409a7cbae17a8739d831a832a413744e0993ad1a2a1"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-starter-simboss.json",
+      "sha256": "258b9a4c7ba7aa6d82205d9da15b635e54388805d8c9a7930d872ae0e6941dea"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-tsl1-lcb1-starter-simboss.json",
+      "sha256": "65b22e4b473fcbe2d4a84a1ef6a9577ade9e8dfa8642e0d949bc6f0f921e26d6"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-tsl1-lcb1.json",
+      "sha256": "8727ec9bab0aeb350465737b1c76600451770004e445769d6b61e22a767ba5cd"
+    },
+    {
+      "path": "results/mutate/yard-n1029-tsl1-lcb1.json",
+      "sha256": "ee0d99e409786a856be4f26ae6761f4ca05d3dc9c0aa316f477b9715b863fa7d"
+    },
+    {
+      "path": "jobs/done/0966-gauntlet.json",
+      "sha256": "5c3d1dcc68ef80dd8ff476e9df2c91912d11f67d08a45ecab39ed87979536bbd"
+    },
+    {
+      "path": "jobs/done/0967-gauntlet.json",
+      "sha256": "0ff0f15278e6b943a6ad9594993d5b25c8fcc27817634d3b605ba49139888a0b"
+    },
+    {
+      "path": "jobs/done/0969-mutate-monsters.json",
+      "sha256": "28344e5f22e4a954deb496e4a8e3b53ce2fa5cac4f2f1fe24a89f539b2f117b7"
+    },
+    {
+      "path": "jobs/done/0970-gauntlet.json",
+      "sha256": "ccb526f1c2ad675fec55a872d94e3dbc684c1e1f2c16557bfbb4291c582c3ff6"
+    },
+    {
+      "path": "jobs/done/0972-gauntlet.json",
+      "sha256": "0303a16d15feed323bbc5f4b3160d7fe05bc9aa70e7360a9c2e9bfdec7f30a59"
+    },
+    {
+      "path": "jobs/done/0973-gauntlet.json",
+      "sha256": "6b2c0cc4e7350bd456955234788f45c46c4222f0e07fc1a8057137d744527cdd"
+    },
+    {
+      "key": "decision/level-pass",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+  "at": "2026-11-13T04:29:52+00:00 @ 28c50af5",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Level-rule reads vs the one-turn control, headline n 500: @tsl1 (plain trial fights) +0.56 (0.19) HP, clears +0.016, gain all held out; @lcb1 +0.15 (0.45) HP, clears +0.020, yardstick rows within 0.05 HP; @hpe0.01 one turn -1.74 (0.75) HP, clears -0.020 (fail). Pass, pass, fail under decision/level-pass.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Level-defaults read: `@tsl1` and `@lcb1` pass, `@hpe` one turn deep fails; the one-turn controls move (on the owner's behalf, 2026-11-13)",
+          "sha256": "93c0eef8f5b4f77d6058a88b608fb09dcd5283673f90801ff744fc2de7d3f939"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-tsl1-plaintrial-starter-simboss.json",
+          "sha256": "198c3d3ced733481382f4de1ce87c16761f4b69696c0c8e07b9caf184512c3c2"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpb0.01-lcb1-starter-simboss.json",
+          "sha256": "7165543490bed72ca4017409a7cbae17a8739d831a832a413744e0993ad1a2a1"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-starter-simboss.json",
+          "sha256": "258b9a4c7ba7aa6d82205d9da15b635e54388805d8c9a7930d872ae0e6941dea"
+        },
+        {
+          "path": "results/mutate/yard-n1029-tsl1-lcb1.json",
+          "sha256": "ee0d99e409786a856be4f26ae6761f4ca05d3dc9c0aa316f477b9715b863fa7d"
+        },
+        {
+          "path": "jobs/done/0966-gauntlet.json",
+          "sha256": "5c3d1dcc68ef80dd8ff476e9df2c91912d11f67d08a45ecab39ed87979536bbd"
+        },
+        {
+          "path": "jobs/done/0967-gauntlet.json",
+          "sha256": "0ff0f15278e6b943a6ad9594993d5b25c8fcc27817634d3b605ba49139888a0b"
+        },
+        {
+          "path": "jobs/done/0969-mutate-monsters.json",
+          "sha256": "28344e5f22e4a954deb496e4a8e3b53ce2fa5cac4f2f1fe24a89f539b2f117b7"
+        },
+        {
+          "path": "jobs/done/0970-gauntlet.json",
+          "sha256": "ccb526f1c2ad675fec55a872d94e3dbc684c1e1f2c16557bfbb4291c582c3ff6"
+        },
+        {
+          "key": "decision/level-pass",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+      "at": "2026-11-13T03:48:57+00:00 @ 8aad300e",
+      "until": "2026-11-13T04:29:52+00:00 @ 28c50af5"
+    }
+  ],
+  "seal": "339e6d3b1ad68bc1b3acb1242a42702bd6624c33154ce20e22ffa2094d9b707b"
+}

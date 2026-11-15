@@ -1,0 +1,22 @@
+{
+  "key": "decision/registry-first-content-identity",
+  "rev": 1,
+  "value": "Content identity: strings name content; numbers exist only in a running engine in pack order; every net, dataset, game, result and solved value records its content pack by a hash that recovers the exact pack.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Runtime registry first: Act 1 enters as content files (owner, 2026-11-04)",
+      "sha256": "319d76e822054c9b0eb3dc8d8eedee41be833cc64734a70e9b83493cba5db228"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:21Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "bf5dfa1151b58a0077c904ccbc47e290a7ad3c5c1b3dbb4675cad5f7ae2d56b2"
+}

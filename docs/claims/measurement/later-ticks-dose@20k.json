@@ -1,0 +1,123 @@
+{
+  "key": "measurement/later-ticks-dose@20k",
+  "rev": 3,
+  "value": "All-content from-scratch minus data twins (no deck_pool), s1, @hpb0.01@tsl1, cells 0-999: 5k DF decks +7.34 (1.35), other held-out clears -0.061 (0.021); 20k DF +2.82 (1.04), train +1.08, other +1.29. Twins' DF unseen-card loss vs 10-29: -6.8/-2.2/-0.8 at 5k/20k/40k. 5k nets 3.5-5 HP below 10-29.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/from-scratch-later-ticks.md",
+      "anchor": "Step 2, 20k dose (0830-0831 against 0807-0808): go, curve filled (read 2026-11-10 23:50, lanes 72a6bada)",
+      "sha256": "66b25405df137ee69f775d7bde6773fd8d4bcc589e4d107c223042b7cddb560d"
+    },
+    {
+      "path": "docs/research/from-scratch-later-ticks.md",
+      "anchor": "Step 2, 5k dose (0823-0824 against 0805-0806): go (read 2026-11-10 21:50, lanes 92715df6)",
+      "sha256": "d693360bdb424aa86ee0701e5349c56cc4b451a139147c5f772b2eae655b80d7"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:29+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "allcontent20k-s1 r1 minus its twin data20k-s1 r1 @hpb0.01@tsl1, cell books 0-999, paired by sequence (HP, se): Demon Form decks +2.82 (1.04), train +1.08 (0.51), other held-out +1.29 (0.72) with clears +0.028 (0.016); go at 20k by the step-2 rule (one seed). About 1 HP of it is general strength (the arm leads its twin everywhere). Dose curve on Demon Form decks minus own train, vs the 10-29 net: twin -6.8 / -2.2 / -0.8 at 5k / 20k / 40k (the unseen-card loss shrinks smoothly), arm +1.2 / -0.5 / +2.7 (later-ticks value, within noise below 40k).",
+      "sources": [
+        {
+          "path": "docs/research/from-scratch-later-ticks.md",
+          "anchor": "Step 2, 20k dose (0830-0831 against 0807-0808): go, curve filled (read 2026-11-10 23:50, lanes 72a6bada)",
+          "sha256": "66b25405df137ee69f775d7bde6773fd8d4bcc589e4d107c223042b7cddb560d"
+        },
+        {
+          "path": "scripts/analysis/cards_by_half.py",
+          "sha256": "c0a20d0e7b96a024e40f5f2502484ee2454f3b379e4b972fe3ce8010e6ef7d14"
+        },
+        {
+          "path": "jobs/done/0830-gauntlet.json",
+          "sha256": "3d7bab07067ef16121debb6079d5a8d5dbdb4a0f68daccb2da5e53f6fd2aab44"
+        },
+        {
+          "path": "jobs/done/0831-gauntlet.json",
+          "sha256": "f7353b7ee408fc47c6228677b58c881302b40262b4a068799bf31e59acd1dadc"
+        },
+        {
+          "path": "jobs/done/0807-gauntlet.json",
+          "sha256": "677b0950ef5d39f5e477ac1760b1e0481d217a05692bbc34ae10fe8a3fe136ed"
+        },
+        {
+          "path": "jobs/done/0808-gauntlet.json",
+          "sha256": "24efeb246726cf9284a4ff84bf83925cd3d00ea49d25b8375b39303eada80412"
+        },
+        {
+          "key": "measurement/later-ticks-dose@5k",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "72a6bada-13fb-466e-b2c7-4e8f6eed1a94",
+      "at": "2026-11-10T16:47:52+00:00 @ 3f6f810",
+      "until": "2026-11-11T05:35:09+00:00 @ a84d752"
+    },
+    {
+      "rev": 2,
+      "value": "Dose curve, all-content from-scratch arms minus their data-curve twins (same configs without deck_pool all) @hpb0.01@tsl1, cell books 0-999, paired by sequence (HP, se), seed 1: at 5k (allcontent5k-s1 minus data5k-s1) Demon Form decks +7.34 (1.35), train -0.68 (0.51), other held-out -1.06 (0.76) with clears -0.061 (0.021); at 20k (allcontent20k-s1 minus data20k-s1) Demon Form decks +2.82 (1.04), train +1.08 (0.51), other held-out +1.29 (0.72) with clears +0.028 (0.016), about 1 HP of it general strength; both go by the step-2 rule (one seed each). Demon Form decks minus own train, against the 10-29 net: twin -6.8 / -2.2 / -0.8 at 5k / 20k / 40k (the unseen-card loss shrinks smoothly; at 5k most of the gap is the weak twin's unseen-card loss), arm +1.2 / -0.5 / +2.7 (later-ticks value, within noise below 40k). The 5k nets sit 3.5-5 HP below the 10-29 net.",
+      "sources": [
+        {
+          "path": "docs/research/from-scratch-later-ticks.md",
+          "anchor": "Step 2, 20k dose (0830-0831 against 0807-0808): go, curve filled (read 2026-11-10 23:50, lanes 72a6bada)",
+          "sha256": "66b25405df137ee69f775d7bde6773fd8d4bcc589e4d107c223042b7cddb560d"
+        },
+        {
+          "path": "docs/research/from-scratch-later-ticks.md",
+          "anchor": "Step 2, 5k dose (0823-0824 against 0805-0806): go (read 2026-11-10 21:50, lanes 92715df6)",
+          "sha256": "d693360bdb424aa86ee0701e5349c56cc4b451a139147c5f772b2eae655b80d7"
+        },
+        {
+          "path": "scripts/analysis/cards_by_half.py",
+          "sha256": "c0a20d0e7b96a024e40f5f2502484ee2454f3b379e4b972fe3ce8010e6ef7d14"
+        },
+        {
+          "path": "jobs/done/0830-gauntlet.json",
+          "sha256": "3d7bab07067ef16121debb6079d5a8d5dbdb4a0f68daccb2da5e53f6fd2aab44"
+        },
+        {
+          "path": "jobs/done/0831-gauntlet.json",
+          "sha256": "f7353b7ee408fc47c6228677b58c881302b40262b4a068799bf31e59acd1dadc"
+        },
+        {
+          "path": "jobs/done/0807-gauntlet.json",
+          "sha256": "677b0950ef5d39f5e477ac1760b1e0481d217a05692bbc34ae10fe8a3fe136ed"
+        },
+        {
+          "path": "jobs/done/0808-gauntlet.json",
+          "sha256": "24efeb246726cf9284a4ff84bf83925cd3d00ea49d25b8375b39303eada80412"
+        },
+        {
+          "path": "jobs/done/0823-gauntlet.json",
+          "sha256": "d2e7d0e42041e2939a1e31d50e9c3ff11631bc7e0fdaf4cbcbb2d23bb0baa951"
+        },
+        {
+          "path": "jobs/done/0824-gauntlet.json",
+          "sha256": "e9659ba4576ba5654e6143ca3426d4dcbe96fac2115eeb213c05b7b2cde1a349"
+        },
+        {
+          "path": "jobs/done/0805-gauntlet.json",
+          "sha256": "4ee3eedbeb3bfc727db49db657eebdb2a5e5bc4189d706463ff580d8f4bb0673"
+        },
+        {
+          "path": "jobs/done/0806-gauntlet.json",
+          "sha256": "d94bace0fbb44af6d4976c1cf687244e77c61536f9a43e36ade9adba54ba059a"
+        }
+      ],
+      "owner": false,
+      "by": "c33c26e2-be6a-40e4-ba5d-4a83e10c1caf",
+      "at": "2026-11-11T05:35:09+00:00 @ a84d752",
+      "until": "2026-11-13T02:30:29+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "44d0f1a54f3cbad36d44ac8ff15571ec99ffa7cd35e64ade72e4d46a05e21912"
+}

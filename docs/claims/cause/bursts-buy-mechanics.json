@@ -1,0 +1,133 @@
+{
+  "key": "cause/bursts-buy-mechanics",
+  "rev": 3,
+  "value": "A fine-tune burst buys back a mechanic the net misreads inside the search horizon: punish-an-action powers (sharp2 +0.054..+0.084 wins at 100-400 games, share 0.5; as far at 33 games share 0.9 on two generated debuffs), carrying to Thorns and WeakOnHit.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/adaptation-curve",
+      "rev": 6
+    },
+    {
+      "key": "measurement/adaptation-transfer",
+      "rev": 3
+    },
+    {
+      "key": "measurement/share-curve@retention",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:58Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:31Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/adaptation-curve, measurement/adaptation-transfer, measurement/share-curve@retention reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A fine-tune burst of one-turn games buys back a mechanic the net misreads inside the search horizon, and nothing a read can see elsewhere. It works on powers that punish an action (sharp2 +0.054 to +0.084 wins at about 100-400 games, carrying to Thorns and WeakOnHit; measurement/adaptation-curve, measurement/adaptation-transfer) and survives two-turn search at about a third (measurement/adapted-two@elites). It does not work on plain numbers (measurement/stat-burst@one-turn), on growth past the horizon (Ritual 2, measurement/rate-columns@ritual2), or on whole official bosses the net never trained on: the Guardian gains about +0.026 over bursts on other content and Hexaghost nothing at 400 or 1600 games (measurement/unseen-boss-burst@replay), although the second turn of search wins +0.083 more Hexaghost fights on the same decks (measurement/depth-by-boss@replay), so there is play to learn that outcome labels at the student's own depth do not carry (cause/teacher-equals-student). Planning rules: an enemy made of familiar parts has no cost a burst can recover, so goal 1's benches spend their fights on unseen mechanics; a boss burst is no goal-2 candidate. Exits: inputs that show the state deciding a boss (its move schedule, HP-scaled attacks, Burn rows), or a boss read where a burst beats the bursts on other content by 0.05 or more one turn deep.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After unseen-boss-burst: games do not buy play on a whole unseen boss; lane sequential-bursts opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "7a8bb85497437bd2162545d23f140ee7e1b4fc31c5ee9d622933caa5fa7167bf"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Boss replays re-read by boss: on the same decks at the same entry HP the second turn of search wins +0.083 (0.024) more Hexaghost fights, +0.054 (0.026) Guardian, +0.017 (0.016) Slime Boss; decks differ by 0.2-0.3 in win rate at fixed HP on both unseen bosses; Guardian games add about +0.026 over bursts on other content (navigator re-read, 0 CPU; 20:50 2026-11-05, navigator e63fdaaa)",
+          "sha256": "d3c2a41680aeedba3cabc987c74d6cec2b304075066939a5fd3ddaf851bb2c2b"
+        },
+        {
+          "key": "measurement/unseen-boss-burst@replay",
+          "rev": 1
+        },
+        {
+          "key": "measurement/depth-by-boss@replay",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-transfer",
+          "rev": 2
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "cause/teacher-equals-student",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "e63fdaaa-91f4-4e3b-b7d3-22c1f840fbed",
+      "at": "2026-11-05T13:54:35Z @ 53d26c9",
+      "until": "2026-11-09T11:38:12Z @ a816116"
+    },
+    {
+      "rev": 2,
+      "value": "A fine-tune burst of one-turn games buys back a mechanic the net misreads inside the search horizon, and nothing a read can see elsewhere. It works on powers that punish an action (sharp2 +0.054 to +0.084 wins at about 100-400 games at replay share 0.5, as far at 33 games at share 0.9 on two generated debuff mechanics (measurement/share-curve@retention), carrying to Thorns and WeakOnHit; measurement/adaptation-curve, measurement/adaptation-transfer) and survives two-turn search at about a third (measurement/adapted-two@elites). It does not work on plain numbers (measurement/stat-burst@one-turn), on growth past the horizon (Ritual 2, measurement/rate-columns@ritual2), or on whole official bosses the net never trained on: the Guardian gains about +0.026 over bursts on other content and Hexaghost nothing at 400 or 1600 games (measurement/unseen-boss-burst@replay), although the second turn of search wins +0.083 more Hexaghost fights on the same decks (measurement/depth-by-boss@replay), so there is play to learn that outcome labels at the student's own depth do not carry (cause/teacher-equals-student). Planning rules: an enemy made of familiar parts has no cost a burst can recover, so goal 1's benches spend their fights on unseen mechanics; a boss burst is no goal-2 candidate. Exits: inputs that show the state deciding a boss (its move schedule, HP-scaled attacks, Burn rows), or a boss read where a burst beats the bursts on other content by 0.05 or more one turn deep.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After unseen-boss-burst: games do not buy play on a whole unseen boss; lane sequential-bursts opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "7a8bb85497437bd2162545d23f140ee7e1b4fc31c5ee9d622933caa5fa7167bf"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Boss replays re-read by boss: on the same decks at the same entry HP the second turn of search wins +0.083 (0.024) more Hexaghost fights, +0.054 (0.026) Guardian, +0.017 (0.016) Slime Boss; decks differ by 0.2-0.3 in win rate at fixed HP on both unseen bosses; Guardian games add about +0.026 over bursts on other content (navigator re-read, 0 CPU; 20:50 2026-11-05, navigator e63fdaaa)",
+          "sha256": "d3c2a41680aeedba3cabc987c74d6cec2b304075066939a5fd3ddaf851bb2c2b"
+        },
+        {
+          "key": "measurement/unseen-boss-burst@replay",
+          "rev": 1
+        },
+        {
+          "key": "measurement/depth-by-boss@replay",
+          "rev": 1
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 5
+        },
+        {
+          "key": "measurement/adaptation-transfer",
+          "rev": 2
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "cause/teacher-equals-student",
+          "rev": 2
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After share-curve's close: few-game bursts set replay share 0.9; two probes queued on main (on the owner's behalf, 2026-11-09)",
+          "sha256": "b627d2ea6b669d3cadf504195dd397ff950ff1f8ddcd50f790276324139efd90"
+        },
+        {
+          "key": "measurement/share-curve@retention",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "9dac2594-61af-4f50-ba8b-c66fd10cfd0a",
+      "at": "2026-11-09T11:38:12Z @ a816116",
+      "until": "2026-11-13T02:28:58Z @ 3123201a"
+    }
+  ],
+  "seal": "a580f1910e45e748d57616bf358b2d1734566b4f62e89d1d611951bf562e3214"
+}

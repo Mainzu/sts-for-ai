@@ -1,0 +1,9 @@
+{"type": "system", "subtype": "hook_started", "hook_name": "SessionStart:startup", "session_id": "S2"}
+{"type": "system", "subtype": "init", "session_id": "S2", "model": "m"}
+{"type": "assistant", "message": {"role": "assistant", "content": [{"type": "text", "text": "Reading <script>alert(2)</script> the rules."}]}, "session_id": "S"}
+{"type": "assistant", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Read", "input": {"file_path": "docs/operating.md"}}]}, "session_id": "S"}
+{"type": "user", "message": {"role": "user", "content": [{"type": "tool_result", "tool_use_id": "t1", "content": [{"type": "text", "text": "# Operating rules"}]}]}, "session_id": "S"}
+{"type": "assistant", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t2", "name": "Bash", "input": {"command": "kb get lane/alpha"}}]}, "session_id": "S"}
+{"type": "user", "message": {"role": "user", "content": [{"type": "tool_result", "tool_use_id": "t2", "content": "lane/alpha: goal", "is_error": false}]}, "session_id": "S"}
+{"type": "assistant", "message": {"role": "assistant", "content": [{"type": "text", "text": "Done."}]}, "session_id": "S"}
+{"type": "result", "subtype": "success", "is_error": false, "result": "Run complete.", "session_id": "S2"}

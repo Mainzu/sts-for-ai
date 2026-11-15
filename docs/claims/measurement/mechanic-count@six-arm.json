@@ -1,0 +1,66 @@
+{
+  "key": "measurement/mechanic-count@six-arm",
+  "rev": 2,
+  "value": "6-mechanic genpack net s1 (runs/2026-11-12-genpack6-40k-s1-r1-2d5163e@tsl1), covering the 6 held-out pairs' atoms: cut 0.88 (0.02) vs pns1 (+5.17 -> +0.60 HP beyond parent, 675 elite starts); 18-mechanic s1 0.81 (0.02), wide 0.98 (0.03). Transfer rides on atoms, not count; covered-atom pairings 0.85; training the pairing ~+1.6 HP. One seed.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/generated-enemies.md",
+      "anchor": "Mechanic count (lane mechanic-count-curve; read by the navigator, jobs 0905, 0906)",
+      "sha256": "03800f3a386de0d047b73d6867f6c39a82ff8c5d2a40917557843771ee631414"
+    },
+    {
+      "path": "results/mutate/gen-gp6-1-tsl1-all24.json",
+      "sha256": "e3793f0a512eaf3692d71b73851e58c6bca16078f55212e97137da2fdedaf8b5"
+    },
+    {
+      "path": "jobs/done/0906-genpack-cut.json",
+      "sha256": "f131c7d76d163a1c80c4e6517fd7004323d211eeb8ebf1183bfb37909bcf3751"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:35+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A from-scratch net on a 6-mechanic generated pack holding every trigger and effect of the 6 held-out pairs (runs/2026-11-12-genpack6-40k-s1-r1-2d5163e@tsl1, seed 1) cuts their zero-shot cost 0.88 (0.02) against pack-net-scratch s1 (+5.17 -> +0.60 HP beyond parent, 675 official elite starts), against the 18-mechanic net's 0.81 (0.02) on seed 1 and the wide net's 0.98 (0.03): the transfer rides on the atoms, not the count; the 12 pairings of covered atoms neither split trained cut 0.85; training the pairing itself is worth about 1.6 HP more. What every recipe leaves: OppCard-PlainDamage on Three Sentries and a TurnEnd-Frail leak on Gremlin Nob and Lagavulin, about 0.1-0.6 HP pooled. One seed: a lead (stop rule go, 0.6 at 2 se).",
+      "sources": [
+        {
+          "path": "docs/research/generated-enemies.md",
+          "anchor": "Mechanic count (lane mechanic-count-curve; read by the navigator, jobs 0905, 0906)",
+          "sha256": "03800f3a386de0d047b73d6867f6c39a82ff8c5d2a40917557843771ee631414"
+        },
+        {
+          "path": "results/mutate/gen-gp6-1-tsl1-all24.json",
+          "sha256": "e3793f0a512eaf3692d71b73851e58c6bca16078f55212e97137da2fdedaf8b5"
+        },
+        {
+          "path": "results/mutate/gen-pns1-tsl1-all24.json",
+          "sha256": "4d4af80b12a8efa726f0c2d8a2de3e44ad97e0fbe1013035689a9c3889e90e96"
+        },
+        {
+          "path": "results/mutate/gen-wp1-tsl1-all24.json",
+          "sha256": "95c467839edfd0e31f81729b59cd726e1164dc8815c69cc7ec775c91007b09f2"
+        },
+        {
+          "path": "jobs/done/0905-mutate-monsters.json",
+          "sha256": "f14d21af0a07a32fb9cd2b9613a49cdb55c11f16e03d2f4040f7d3751c0cb9bd"
+        },
+        {
+          "path": "jobs/done/0906-genpack-cut.json",
+          "sha256": "f131c7d76d163a1c80c4e6517fd7004323d211eeb8ebf1183bfb37909bcf3751"
+        }
+      ],
+      "owner": false,
+      "by": "48a915f7-e4fb-4f66-b701-0667be478b80",
+      "at": "2026-11-12T15:13:35+00:00 @ 9b55119",
+      "until": "2026-11-13T02:30:35+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "12a937b32f88ae67a479599151eaca89c35cda2cb97cb8902db93e817ee999bf"
+}

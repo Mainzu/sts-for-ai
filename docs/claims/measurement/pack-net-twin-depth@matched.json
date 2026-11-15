@@ -1,0 +1,26 @@
+{
+  "key": "measurement/pack-net-twin-depth@matched",
+  "rev": 1,
+  "value": "Twin vs 10-29 one turn @hpb0.01 --match (0855-0857): outside DF -0.40 (0.62) (s101 -0.92); gain grows +1.38 (0.76) with depth (1.8 se, stop). DF decks +11.49 (2.50) one turn, two/one ratio 0.56.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pns-probes.md",
+      "anchor": "twin-depth-paired (0855-0857 with 0854): stop at 1.8 se; Demon Form splits by tick as predicted",
+      "sha256": "7a618309861f0bbdb4ad88043ceebf299af9f88cb13172889df0ad9e7a164dd7"
+    },
+    {
+      "path": "results/gauntlet/pmatch-net1029-hpb0.01-starter-simboss.json",
+      "sha256": "3951dc506bab070fdd2ba35dd3b563b36dc7842b3c3b6e79ff9ce41a1549488d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:47+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "b2fbfe0677edfea1017fd42fde2caacc0cd74e98fa39fde3708c970107fb2218"
+}

@@ -1,0 +1,14 @@
+{
+ "config": {
+  "name": "pin-score",
+  "sample_seed": 5,
+  "search": {
+   "limit": 16
+  }
+ },
+ "engine_commit": "49d55af3d07a6b00fc3b52eab15890e4626c1c9a+dirty",
+ "games_sha256": "88aa1f5e14d2efdf2b6cd01b88b5802ed7356e05274c5a437f22b0c7e2d250a0",
+ "n_games": 6,
+ "parent_model": null,
+ "rules_version": "e47bcfcdb6b2777a"
+}

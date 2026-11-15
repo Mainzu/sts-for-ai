@@ -1,0 +1,38 @@
+{
+  "key": "decision/one-turn-comparisons",
+  "rev": 1,
+  "value": "Every comparison (nets, leaf changes, bursts, run-layer changes, goal-1 bench and adapted columns) plays one turn deep against the one-turn controls, unless the question is about search depth or needs it; the product (two-turn) stays the reported headline score, an augment, not the ruler a change is judged on. The two-turn column in goal 1's yardstick was not the owner's.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+      "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+    },
+    {
+      "path": "docs/direction.md",
+      "anchor": "Search depth in experiments",
+      "sha256": "daaea678fdef297d68d875a69ece98ee2e327ff3bb049753cadd0b528788f36c"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "direction heading renamed (no date in instruction files)",
+  "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+  "at": "2026-11-05T14:25:53Z @ ccff0a5",
+  "confirms": [
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:26:16Z @ ccff0a5",
+      "note": "direction heading renamed (no date in instruction files)"
+    },
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T15:24:47Z @ 1e8f127",
+      "note": "direction section lost only its line on goal 1's yardstick; the rule stated in this fact is unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "6dcd6b363f15076f23ebd01a94a2f97b70fc31de2d7e5a5637a8c4c4c6efbde8"
+}

@@ -1,0 +1,54 @@
+{
+  "key": "how/ascension",
+  "rev": 2,
+  "value": "A fight's ascension level (0-20): CombatState.ascension and each Monster.ascension (hashes/encodes/prints as before at 0; codec section 18). Monster rows' \"ascension\": [{from, changes}] resolve at load, one def per row; Monster::def() reads its level. Python: Combat/versus/from_view ascension=, sts.run_start, run spec key, gauntlet --ascension. Act 1 rows: engine/tests/ascension.rs.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/specs/ascension.md",
+      "anchor": "As built",
+      "sha256": "3eacb6cbbc0e9f93a5681c5503239763aa6edc9ba6314ca775cc8bc520d0b644"
+    },
+    {
+      "path": "engine/src/monsters.rs",
+      "sha256": "5e082a4ad73fe2d5132d850eec97c934b716f13254c9bcd129234be7c78af162"
+    },
+    {
+      "path": "engine/tests/ascension.rs",
+      "sha256": "26246ffc7c97d5cbef64ed602a26fdb6b73625963b9160b55a72645c86ee16fe"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+  "at": "2026-11-14T06:14:12Z @ 90665f89",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A fight's ascension level (0-20, docs/specs/ascension.md): CombatState.ascension and each Monster.ascension (monsters::Ascension, hashes/encodes/prints as before at 0; codec section 18). Monster rows' \"ascension\": [{from, changes}] resolve at load to one def per row; Monster::def() reads its level. Python: Combat/versus/from_view ascension=, sts.run_start, run spec key, gauntlet --ascension. All Act 1 rows: engine/tests/ascension.rs.",
+      "sources": [
+        {
+          "path": "docs/specs/ascension.md",
+          "anchor": "As built",
+          "sha256": "3eacb6cbbc0e9f93a5681c5503239763aa6edc9ba6314ca775cc8bc520d0b644"
+        },
+        {
+          "path": "engine/src/monsters.rs",
+          "sha256": "5e082a4ad73fe2d5132d850eec97c934b716f13254c9bcd129234be7c78af162"
+        },
+        {
+          "path": "engine/tests/ascension.rs",
+          "sha256": "26246ffc7c97d5cbef64ed602a26fdb6b73625963b9160b55a72645c86ee16fe"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T06:14:02Z @ 90665f89",
+      "until": "2026-11-14T06:14:12Z @ 90665f89"
+    }
+  ],
+  "seal": "b575949870adab10c00b1aff05182d765545f25986c546919f740c287966f834"
+}

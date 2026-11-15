@@ -1,0 +1,128 @@
+{
+  "key": "cause/lagavulin-wake-metallicize",
+  "rev": 4,
+  "value": "Lagavulin's wake (third sleep turn, or early on HP damage) takes 8 Metallicize off, as the game's changeState(\"OPEN\") ReducePowerAction(8); the engine cleared it, wrong only for a burning elite with +4 Metallicize (live run 40: game kept 4). Fixed in e48f16f9: Metallicize lacks can_go_negative, so its negative Apply floors at 0 (how/power-can-go-negative); EliteBuff (elite_buff on Combat specs).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "engine/src/monsters.rs",
+      "sha256": "9012bd7562ae04faaf61cd95f17a95bb9c56e4aee708aa5fe8f51898a9ec17a9"
+    },
+    {
+      "path": "engine/tests/monsters_act1.rs",
+      "sha256": "8d93354d6fc01a1aa97167cf100c1ef1765a0d767560fe2ee8595bfc827aa4cd"
+    },
+    {
+      "path": "docs/research/real-game-runs.md",
+      "anchor": "Bugs the live runs found",
+      "sha256": "f31c86cb87ddef8b8f59e8d8036e9450d68eeada5e34e03004e788d4e5d7ef2c"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
+      "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
+    },
+    {
+      "key": "how/power-can-go-negative",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+  "at": "2026-11-14T12:52:15Z @ 1232e778",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Lagavulin's wake (third sleep turn, or early on HP damage) takes 8 Metallicize off, as the game's Lagavulin.changeState(\"OPEN\") ReducePowerAction(8); the engine cleared it, wrong only for the map's burning elite with +4 Metallicize (live run 40: game kept 4). Fixed in e48f16f9: a negative Apply of an official non-negative power acts as ReducePowerAction; EliteBuff (elite_buff on Combat/sts.run specs); cover game cover-lagavulin-burning.",
+      "sources": [
+        {
+          "path": "engine/src/monsters.rs",
+          "sha256": "4aff5dc9d54b46818e7596e640b3e6d80cd14a49e967ce7e4a3c2017784680fa"
+        },
+        {
+          "path": "engine/tests/monsters_act1.rs",
+          "sha256": "8d93354d6fc01a1aa97167cf100c1ef1765a0d767560fe2ee8595bfc827aa4cd"
+        },
+        {
+          "path": "docs/research/real-game-runs.md",
+          "anchor": "Bugs the live runs found",
+          "sha256": "5283c58e229534c2b5400e38ba2925e957882869e169033caf2c363abab88228"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
+          "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T11:17:04Z @ 88b189c1",
+      "until": "2026-11-14T11:17:21Z @ 88b189c1"
+    },
+    {
+      "rev": 2,
+      "value": "Lagavulin's wake (third sleep turn, or early on HP damage) takes 8 Metallicize off, as the game's changeState(\"OPEN\") ReducePowerAction(8); the engine cleared it, wrong only for a burning elite with +4 Metallicize (live run 40: game kept 4). Fixed in e48f16f9: a negative Apply of an official non-negative power acts as ReducePowerAction; EliteBuff (elite_buff on Combat/sts.run specs).",
+      "sources": [
+        {
+          "path": "engine/src/monsters.rs",
+          "sha256": "4aff5dc9d54b46818e7596e640b3e6d80cd14a49e967ce7e4a3c2017784680fa"
+        },
+        {
+          "path": "engine/tests/monsters_act1.rs",
+          "sha256": "8d93354d6fc01a1aa97167cf100c1ef1765a0d767560fe2ee8595bfc827aa4cd"
+        },
+        {
+          "path": "docs/research/real-game-runs.md",
+          "anchor": "Bugs the live runs found",
+          "sha256": "5283c58e229534c2b5400e38ba2925e957882869e169033caf2c363abab88228"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
+          "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T11:17:21Z @ 88b189c1",
+      "until": "2026-11-14T12:51:45Z @ 1232e778"
+    },
+    {
+      "rev": 3,
+      "value": "Lagavulin's wake (third sleep turn, or early on HP damage) takes 8 Metallicize off, as the game's changeState(\"OPEN\") ReducePowerAction(8); the engine cleared it, wrong only for a burning elite with +4 Metallicize (live run 40: game kept 4). Fixed in e48f16f9: a negative Apply of a power without can_go_negative acts as ReducePowerAction (how/power-can-go-negative); EliteBuff (elite_buff on Combat/sts.run specs).",
+      "sources": [
+        {
+          "path": "engine/src/monsters.rs",
+          "sha256": "9012bd7562ae04faaf61cd95f17a95bb9c56e4aee708aa5fe8f51898a9ec17a9"
+        },
+        {
+          "path": "engine/tests/monsters_act1.rs",
+          "sha256": "8d93354d6fc01a1aa97167cf100c1ef1765a0d767560fe2ee8595bfc827aa4cd"
+        },
+        {
+          "path": "docs/research/real-game-runs.md",
+          "anchor": "Bugs the live runs found",
+          "sha256": "f31c86cb87ddef8b8f59e8d8036e9450d68eeada5e34e03004e788d4e5d7ef2c"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Rules version moves for Lagavulin's wake (on the owner's behalf, 2026-11-14)",
+          "sha256": "59a313ecc9f38178edb4e2bca9cbf6e2fea09eba6bbed121af3c0c8dd306a361"
+        },
+        {
+          "key": "how/power-can-go-negative",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "f6e10b87-1d1b-44d8-bfc6-2fe2e07b23fc",
+      "at": "2026-11-14T12:51:45Z @ 1232e778",
+      "until": "2026-11-14T12:52:15Z @ 1232e778"
+    }
+  ],
+  "seal": "ab1f3166f41097f41695509851c1c453f3aa08a3c9090fd7e7c5591e3a0b9c87"
+}

@@ -1,0 +1,48 @@
+{
+  "key": "measurement/portfolio-turn-start-leaf",
+  "rev": 2,
+  "value": "pred even; go: @tsl1 Demon Form decks +7.54 (1.10) HP, +0.149 clears one turn, train -0.02, other held-out +0.04, generated OwnerTurnStart +0.243 wins (measurement/turn-start-leaf@cells); 0.71 cpu-h. Reopen: hooks @tsl1 leaves out (draws, random targets, exhausts, hand-reading) costing >0.1 wins vs heuristic on the generated bench, or the two-turn product showing the cost on turn 2's tick.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane turn-start-leaf closed (2026-11-07)",
+      "sha256": "925648b30abd7b209b1c79252b5c02862b8b3d289e8ea785471ae98dab78f0d6"
+    },
+    {
+      "key": "measurement/turn-start-leaf@cells",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:17+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:24+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/turn-start-leaf@cells reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even (Demon Form decks gain >= 3 HP at 2 se with train within 1 HP), 0.5 cpu-h; actual go, Demon Form decks +7.54 (1.10) HP and +0.149 clears one turn deep, train -0.02, other held-out +0.04, generated OwnerTurnStart powers +0.243 wins on elites and bosses; 0.71 cpu-h; reopen if: turn-start hooks the flag leaves out (draws, random targets, exhausts, hand-reading effects) cost more than 0.1 wins against the heuristic on the generated bench's elites and bosses with tsl1 on, or the two-turn product with tsl1 shows the same leaf-horizon cost on the second turn's tick",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane turn-start-leaf closed (2026-11-07)",
+          "sha256": "925648b30abd7b209b1c79252b5c02862b8b3d289e8ea785471ae98dab78f0d6"
+        }
+      ],
+      "owner": false,
+      "by": "ec49b43c-2792-4636-a6c5-2cf99e927caa",
+      "at": "2026-11-06T22:45:25+00:00 @ fa20fcc",
+      "until": "2026-11-13T02:31:17+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "bc089f0a34efde2809c316b75e38fb890272865ba2bb42f9d4650665b0be05f1"
+}

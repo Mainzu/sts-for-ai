@@ -1,0 +1,27 @@
+{
+  "key": "measurement/portfolio-sparse-state",
+  "rev": 1,
+  "value": "predicted likely to pass (search 1 thread at least +5%), about 2 cpu-h of a 3 cpu-h cap; actual go: search 1 thread +17.6%, 16 threads +35.5%, random combats +13.3%, state 1,292 -> 744 bytes, landed; 0.0 queued cpu-h, about 2 thread-hours by hand; reopen if: a pile needs over 40 distinct ids, a creature over 12 powers, or card ids pass 256",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane sparse-state closed (2026-11-06)",
+      "sha256": "39d61e0d074197c073be3e763ee2c8620ad66426cfd7621b421537143f4e1b8e"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane sparse-state opened (on the owner's behalf, 2026-11-06)",
+      "sha256": "3ec0b9d26f2e64a325e591ae673760c7be29833aa0e63ee72469f6c5f2614bbd"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "1939d3ae-aea6-413d-9ca4-7c43d9d98f32",
+  "at": "2026-11-06T16:58:41+00:00 @ b95945d",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "0b9b45ff54602e5e35db785a01e58b024e63d0a0572466985e8504bb19525ec3"
+}

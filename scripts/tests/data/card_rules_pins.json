@@ -1,0 +1,363 @@
+{
+ "coverage": {
+  "clash": 93,
+  "corruption_held": 20,
+  "entangled": 4,
+  "states": 162
+ },
+ "default": {
+  "effects/card_count": {
+   "dtype": "float32",
+   "sha256": "fce12ab31c198302088a4542ae0fe8ce377085f9996dad0ee42f1965fd3c0820",
+   "shape": [
+    1642
+   ]
+  },
+  "effects/card_pile": {
+   "dtype": "int64",
+   "sha256": "cf4ee402cef624e8da0c740314f7414cb5c1a4da986693e1c35cbd7c7f32e7f4",
+   "shape": [
+    1642
+   ]
+  },
+  "effects/card_state": {
+   "dtype": "int64",
+   "sha256": "287b0efcfd14253f5fa6ab61a668519387fc81bc74feddf826563e2e3ea0c375",
+   "shape": [
+    1642
+   ]
+  },
+  "effects/cards": {
+   "dtype": "float32",
+   "sha256": "05b7fede54868b01a15498d2b49351963fb21bf1cb07a841cb2157ca9b356a0c",
+   "shape": [
+    1642,
+    100
+   ]
+  },
+  "effects/heuristic": {
+   "dtype": "float32",
+   "sha256": "e157ce011d8fd5e04c14e19a13d43dc0f20fa5885704f3e4677a4bc5ba6a8f68",
+   "shape": [
+    162
+   ]
+  },
+  "effects/heuristic_hp_loss": {
+   "dtype": "float32",
+   "sha256": "8658319ade5add5f5d39fda88ca7a7e7c2d8ba22054f18b7a7e6411bf18f55d0",
+   "shape": [
+    162
+   ]
+  },
+  "effects/hp": {
+   "dtype": "float32",
+   "sha256": "169daeaf14843e5352335bcc633df99eea58986cdb2d25973ff2505a9b890f5f",
+   "shape": [
+    162
+   ]
+  },
+  "effects/max_hp": {
+   "dtype": "float32",
+   "sha256": "8520b4975164c5c1d501f3cb665e30d3425abdef857737fcf34993b50e26ecfa",
+   "shape": [
+    162
+   ]
+  },
+  "effects/monsters": {
+   "dtype": "float32",
+   "sha256": "d745fa9b8591e0aad90107cc8482e6769e6f47fd795ae2c60a736197be02f2fd",
+   "shape": [
+    162,
+    5,
+    101
+   ]
+  },
+  "effects/player": {
+   "dtype": "float32",
+   "sha256": "817c134496ba30cb209fbd314f631691d851752ce929a79a1c4a713fb42b9823",
+   "shape": [
+    162,
+    35
+   ]
+  },
+  "effects/row_card": {
+   "dtype": "int64",
+   "sha256": "c57537928c75043b86a816b818a4d59ec75dc2e1b8834607daf9b4bf8eaad3d1",
+   "shape": [
+    1676
+   ]
+  },
+  "effects/row_entity": {
+   "dtype": "int64",
+   "sha256": "5e6db1f55f54d0fcb8eda8851d89f962359e11d86fe67945c871b379079db0f2",
+   "shape": [
+    1676
+   ]
+  },
+  "effects/row_state": {
+   "dtype": "int64",
+   "sha256": "f59a3b9c5c7e166c880345f13a79cf88ca8eeba317dad0f2c2f34c1bb69c6228",
+   "shape": [
+    1676
+   ]
+  },
+  "effects/rows": {
+   "dtype": "float32",
+   "sha256": "5fe108dfd37f6b557a2c41134f36ffc592728d8a75e1ea673f8804bdb570f1b0",
+   "shape": [
+    1676,
+    315
+   ]
+  },
+  "effects/start_hp": {
+   "dtype": "float32",
+   "sha256": "0986269e932c73cf00cbf74338ecaed04ae62b93a19e290ebcf024bc1ab19331",
+   "shape": [
+    162
+   ]
+  },
+  "effects/win_heal": {
+   "dtype": "float32",
+   "sha256": "5be46e8ab3a36648c86c2dc4c047d1c05036c3d06f65006f54c61041ec33281e",
+   "shape": [
+    162
+   ]
+  },
+  "ids/card_count": {
+   "dtype": "float32",
+   "sha256": "fce12ab31c198302088a4542ae0fe8ce377085f9996dad0ee42f1965fd3c0820",
+   "shape": [
+    1642
+   ]
+  },
+  "ids/card_pile": {
+   "dtype": "int64",
+   "sha256": "cf4ee402cef624e8da0c740314f7414cb5c1a4da986693e1c35cbd7c7f32e7f4",
+   "shape": [
+    1642
+   ]
+  },
+  "ids/card_state": {
+   "dtype": "int64",
+   "sha256": "287b0efcfd14253f5fa6ab61a668519387fc81bc74feddf826563e2e3ea0c375",
+   "shape": [
+    1642
+   ]
+  },
+  "ids/cards": {
+   "dtype": "float32",
+   "sha256": "9ed59801c991c07ccd39e84e55b6412ea45558c2cb1c25f28f6679c8b2edbb5a",
+   "shape": [
+    1642,
+    131
+   ]
+  },
+  "ids/heuristic": {
+   "dtype": "float32",
+   "sha256": "e157ce011d8fd5e04c14e19a13d43dc0f20fa5885704f3e4677a4bc5ba6a8f68",
+   "shape": [
+    162
+   ]
+  },
+  "ids/heuristic_hp_loss": {
+   "dtype": "float32",
+   "sha256": "8658319ade5add5f5d39fda88ca7a7e7c2d8ba22054f18b7a7e6411bf18f55d0",
+   "shape": [
+    162
+   ]
+  },
+  "ids/hp": {
+   "dtype": "float32",
+   "sha256": "169daeaf14843e5352335bcc633df99eea58986cdb2d25973ff2505a9b890f5f",
+   "shape": [
+    162
+   ]
+  },
+  "ids/max_hp": {
+   "dtype": "float32",
+   "sha256": "8520b4975164c5c1d501f3cb665e30d3425abdef857737fcf34993b50e26ecfa",
+   "shape": [
+    162
+   ]
+  },
+  "ids/monsters": {
+   "dtype": "float32",
+   "sha256": "93dfa07cf902e06ee6808d788319e538caa57f3f48a9a33e2c4cd032fb7015d0",
+   "shape": [
+    162,
+    5,
+    189
+   ]
+  },
+  "ids/player": {
+   "dtype": "float32",
+   "sha256": "c84e2e01d5bc1fde78bdf884a30707bac82f571e3ad3c6e15e97c41551932da1",
+   "shape": [
+    162,
+    57
+   ]
+  },
+  "ids/row_card": {
+   "dtype": "int64",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "shape": [
+    0
+   ]
+  },
+  "ids/row_entity": {
+   "dtype": "int64",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "shape": [
+    0
+   ]
+  },
+  "ids/row_state": {
+   "dtype": "int64",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "shape": [
+    0
+   ]
+  },
+  "ids/rows": {
+   "dtype": "float32",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "shape": [
+    0,
+    381
+   ]
+  },
+  "ids/start_hp": {
+   "dtype": "float32",
+   "sha256": "0986269e932c73cf00cbf74338ecaed04ae62b93a19e290ebcf024bc1ab19331",
+   "shape": [
+    162
+   ]
+  },
+  "ids/win_heal": {
+   "dtype": "float32",
+   "sha256": "5be46e8ab3a36648c86c2dc4c047d1c05036c3d06f65006f54c61041ec33281e",
+   "shape": [
+    162
+   ]
+  }
+ },
+ "product": {
+  "card_count": {
+   "dtype": "float32",
+   "sha256": "fce12ab31c198302088a4542ae0fe8ce377085f9996dad0ee42f1965fd3c0820",
+   "shape": [
+    1642
+   ]
+  },
+  "card_pile": {
+   "dtype": "int64",
+   "sha256": "cf4ee402cef624e8da0c740314f7414cb5c1a4da986693e1c35cbd7c7f32e7f4",
+   "shape": [
+    1642
+   ]
+  },
+  "card_state": {
+   "dtype": "int64",
+   "sha256": "287b0efcfd14253f5fa6ab61a668519387fc81bc74feddf826563e2e3ea0c375",
+   "shape": [
+    1642
+   ]
+  },
+  "cards": {
+   "dtype": "float32",
+   "sha256": "39d4b69cb8306b4847c0e75071e0f17fb41ac5f6dff43d58e168970eac99be0c",
+   "shape": [
+    1642,
+    59
+   ]
+  },
+  "heuristic": {
+   "dtype": "float32",
+   "sha256": "e157ce011d8fd5e04c14e19a13d43dc0f20fa5885704f3e4677a4bc5ba6a8f68",
+   "shape": [
+    162
+   ]
+  },
+  "heuristic_hp_loss": {
+   "dtype": "float32",
+   "sha256": "8658319ade5add5f5d39fda88ca7a7e7c2d8ba22054f18b7a7e6411bf18f55d0",
+   "shape": [
+    162
+   ]
+  },
+  "hp": {
+   "dtype": "float32",
+   "sha256": "169daeaf14843e5352335bcc633df99eea58986cdb2d25973ff2505a9b890f5f",
+   "shape": [
+    162
+   ]
+  },
+  "max_hp": {
+   "dtype": "float32",
+   "sha256": "8520b4975164c5c1d501f3cb665e30d3425abdef857737fcf34993b50e26ecfa",
+   "shape": [
+    162
+   ]
+  },
+  "monsters": {
+   "dtype": "float32",
+   "sha256": "77dbe538fe5b57ade28d7758bd8e807448e336572e2480f119b7137f9e779435",
+   "shape": [
+    162,
+    5,
+    62
+   ]
+  },
+  "player": {
+   "dtype": "float32",
+   "sha256": "e4ce96c6de106bb0469e8abd1e1fa59b780e914c2f5e077c21d9a54bafdac43a",
+   "shape": [
+    162,
+    22
+   ]
+  },
+  "row_card": {
+   "dtype": "int64",
+   "sha256": "c57537928c75043b86a816b818a4d59ec75dc2e1b8834607daf9b4bf8eaad3d1",
+   "shape": [
+    1676
+   ]
+  },
+  "row_entity": {
+   "dtype": "int64",
+   "sha256": "5e6db1f55f54d0fcb8eda8851d89f962359e11d86fe67945c871b379079db0f2",
+   "shape": [
+    1676
+   ]
+  },
+  "row_state": {
+   "dtype": "int64",
+   "sha256": "f59a3b9c5c7e166c880345f13a79cf88ca8eeba317dad0f2c2f34c1bb69c6228",
+   "shape": [
+    1676
+   ]
+  },
+  "rows": {
+   "dtype": "float32",
+   "sha256": "7ab8989aa9cb485620cce66b9bec92e2c82f54ae986988b9e2d029eee161c6bc",
+   "shape": [
+    1676,
+    88
+   ]
+  },
+  "start_hp": {
+   "dtype": "float32",
+   "sha256": "0986269e932c73cf00cbf74338ecaed04ae62b93a19e290ebcf024bc1ab19331",
+   "shape": [
+    162
+   ]
+  },
+  "win_heal": {
+   "dtype": "float32",
+   "sha256": "5be46e8ab3a36648c86c2dc4c047d1c05036c3d06f65006f54c61041ec33281e",
+   "shape": [
+    162
+   ]
+  }
+ }
+}

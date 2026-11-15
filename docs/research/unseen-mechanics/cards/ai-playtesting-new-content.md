@@ -1,0 +1,79 @@
+### Winning Isn't Everything: Enhancing Game Development with Intelligent Agents (2019)
+- **Link:** https://arxiv.org/abs/1903.10545 (full text: https://arxiv.org/html/1903.10545) · **Venue:** arXiv preprint (EA; parts shown at AIIDE 2018, NeurIPS 2018 and AAAI 2019 workshops; v5 April 2020) · **Cited by:** not checked · **Read:** full text
+- **Problem:** Train agents for game development, not just to win: human-like "skill" and "style" for automated playtesting and NPCs.
+- **Method:** Four case studies, each with a different method: A* with a weighted heuristic plus an evolution strategy (The Sims Mobile career balancing); DQN and Rainbow (resource-management game); imitation learning with a Markov ensemble and a DNN distilled from it (open-world shooter NPC styles); DQN, PPO and Rainbow (2v2 team-sports sim STS2).
+- **Assumes:** Case 1 is single-player, deterministic, real-time and fully observable with a known transition model, so planning replaces learning. Case 2 is stochastic and multiplayer, with rewards +1 goal, -1 invalid action, 0 valid, -0.1 "do nothing". Case 3 needs designer demonstrations and heuristic fallback rules. Case 4 has discrete actions and a rule-based opponent.
+- **Claims:** No headline numbers in case 1, only qualitative agreement with the ES and A* results. Case 3 is compared with OpenAI's 1v1 Dota 2 bot (about 5 minutes of experience per day on one local CPU, against about 300 years for OpenAI). Case 4 reports a DQN agent with a rule-based teammate scoring at 54%, against 20% for the rule-based teammate and 13% and 13% for the opponents. No human-vs-agent comparison is reported; designers gave qualitative feedback only.
+- **Evaluation:** The Sims Mobile (case 1), a proprietary resource-management game (case 2), a proprietary open-world shooter (case 3), and the STS2 team-sports simulator (case 4). Most are confidential.
+- **Code:** https://github.com/electronicarts/interactive_training (supports two OpenAI classic-control environments, per the paper). STS2 is promised but no link is given. License not checked.
+- **Fit:** partial. It runs on CPU and is clear about where designers gave feedback instead of measurements, but the deep RL cases are heavy and the custom content was confidential. Its failure modes (invalid-action loops, PPO collapsing to a passive policy, reward shaping hard to tune) are useful for a generalisation check.
+
+### Exploring Gameplay With AI Agents (2018)
+- **Link:** https://arxiv.org/abs/1811.06962 (full text: https://arxiv.org/html/1811.06962) · **Venue:** arXiv preprint (cs.AI) · **Cited by:** not checked · **Read:** full text
+- **Problem:** Playtesting is subjective, expensive and incomplete; agents should explore the game space and answer designers' tuning questions.
+- **Method:** The core mechanics of The Sims Mobile were re-implemented as a separate simulator that reads the game's JSON tuning files. A* search plays it, with a hand-written heuristic per experiment (relationship XP, career XP and levels, objects). A* is capped at 2,000 nodes per action, about one second per decision.
+- **Assumes:** Parameters are in standard data files. Only the mechanics a question needs are modelled. Experiment goals map onto heuristic rewards. Shortest-path optimality is the target, so human-like suboptimal play is excluded. The heuristic must be rewritten for each experiment.
+- **Claims:** Averages over 1,000 runs. Friendship and Rivalry events took about 3 to 4 appointments; the second Romantic event took 13. Barista needed under a third of the other careers' actions. Build B needed 82 vs 381 total actions for Barista and 327 vs 1,643 for Culinary. A* had zero variance over 2,000 simulations, against a game-client Softmax agent that needed many runs. The agent exploited a tuning error by fast-forwarding a Barista event to timeout, which exposed the bug. No human comparison; only a simulator-vs-client-agent comparison.
+- **Evaluation:** The Sims Mobile pre-release development builds, using the JSON tuning data. Reproducible as a test only with those builds.
+- **Code:** none found.
+- **Fit:** good for the "custom content from data files" constraint: the simulator reads tuning data, so new content is just new data. Partial on CPU (A* with a node cap is cheap). Breaks on "validated against humans": there is no human baseline. The tuning-error exploit is a concrete failure mode to test for.
+
+### Demonstrating the Feasibility of Automatic Game Balancing (2016)
+- **Link:** https://arxiv.org/abs/1603.03795 (full text: https://arxiv.org/html/1603.03795v1) · **Venue:** arXiv preprint (cs.HC); OpenAlex lists GECCO 2016 · **Cited by:** 51 (OpenAlex) · **Read:** full text
+- **Problem:** Can card-game balance be automated for Top Trumps, where human playtests are too costly to tell decks apart?
+- **Method:** SMS-EMOA (multi-objective EA) evolves 32-card, 4-category decks against a simulation-based fitness (win rate of one agent against another, tricks lost, balance term) and a simulation-free surrogate (hypervolume plus standard deviation of category means). A single-objective (mu+1)-EA with the Cardona et al. measure is the baseline.
+- **Assumes:** Decks have K=32 unique cards and L=4 categories, values in [1,10]. Two agents play: p4 knows all values, p0 knows only the range and assumes uniform. Games end after each card is played once. Simulation uses 2,000 games per deck; each optimiser setting ran 100 times, with populations of 10 and 100.
+- **Claims:** A 100-player x 10-game human test gives confidence intervals too wide to separate solutions (the paper's example). Most purchased published decks sit at the Pareto front's extremes with low p4 win rates; their average fD is about -24.12 against an optimum of -31; the motorcycle deck reaches fD -30.4375 and p4 win rate about 0.8. The multi-objective surrogate beats fD (test statistic 1 against critical value 0.23, p=0). The simulation-based and surrogate attainment functions differ significantly (p=0).
+- **Evaluation:** Top Trumps only, compared against 8 purchased decks. No human comparison; human surveys are future work.
+- **Code:** The authors use the R emoa package and an SMS-EMOA implementation (github.com/olafmersmann/emoa). Their own simulation code is "to be made accessible after publication", with no link confirmed.
+- **Fit:** partial. The card-level fitness loop fits a designer testing new card values, and CPU-only. But the agents are fixed simple players, and nothing shows the balance result matches human play. Failure modes: fD collapses to one deck; the surrogate misses excitement; convergence stop times vary from 3,727 to 23,737 evaluations with no clear link to quality.
+
+### Mapping Hearthstone Deck Spaces through MAP-Elites with Sliding Boundaries (2019)
+- **Link:** https://arxiv.org/abs/1904.10656 (full text: https://arxiv.org/html/1904.10656) · **Venue:** arXiv preprint · **Cited by:** not checked · **Read:** full text
+- **Problem:** The Hearthstone deck space is huge (about 1.42e35 decks per class); find many strong decks with different strategic profiles, not one optimal deck, to check balance.
+- **Method:** MAP-Elites with Sliding Boundaries (MESB): grid cell boundaries sit at percentile marks of the observed population, remapped every 100 individuals, and the grid grows linearly from 2x2 to 20x20. The behaviour vector is the average mana cost of the 30 cards and its variance. Mutation swaps k cards (P(k=1)=1/2). Fitness is the summed hero health difference over 200 games.
+- **Assumes:** Play is by SabberStone's built-in aggro or control AI, fixed; only the deck is evolved. Card pool is basic and classic sets. Three classes and two strategies.
+- **Claims:** Each class-by-strategy combination ran 10,000 evaluations with 200 games each on a 500-CPU-node cluster. Sunwalker was in 99% of control paladin decks; after a nerf, its presence fell to 28.8%. Aggro hunter decks lost head-to-head to all others despite looking strong on the map. Exact winrates are only in a figure. No human comparison; the paper lists it as future work.
+- **Evaluation:** Hearthstone via SabberStone. Validation against starter decks, evolving against elites, and a nerf-and-buff balancing run.
+- **Code:** EvoSabber (https://github.com/tehqin/EvoSabber) and SabberStone (https://github.com/HearthSim/SabberStone). License not checked.
+- **Fit:** partial. It shows a designer nerf and buff being tested as a before-and-after comparison, which fits custom content. It breaks on CPU cost (500 cluster nodes) and on the fixed play AI. Failure mode to note: a behaviour descriptor (mana curve) can hide differences that matter in play, and the play AI's style biases which decks look strong.
+
+### Automated Playtesting with Procedural Personas through MCTS with Evolved Heuristics (2018)
+- **Link:** https://arxiv.org/abs/1802.06881 (full text: https://arxiv.org/html/1802.06881) · **Venue:** arXiv preprint; later IEEE Transactions on Games 11(4), 352-362 (2019) · **Cited by:** 125 (OpenAlex, TG record) · **Read:** full text
+- **Problem:** Designers often lack human playtesters, so they need synthetic players to predict how different player types interact with level content.
+- **Method:** Four "procedural personas" (Runner, Monster Killer, Treasure Collector, Completionist), each an MCTS agent driven by a utility function. UCB1 selection is replaced by a tree policy evolved with genetic programming. Rollouts use 10 random moves before backpropagation.
+- **Assumes:** Deterministic, turn-based, simulable game. The game exposes metrics (steps, distance to exit, monsters slain) that combine into utilities. A designer writes the persona utility functions. Fitness was evolved on six maps.
+- **Claims:** 50 playthroughs per map over 11 maps, 95% CI. Win rate evolved vs baseline UCB1 MCTS: Runner 100% ±0% vs 10% ±3%; Monster Killer 73% ±4% vs 12% ±3%; Treasure Collector 54% ±4% vs 9% ±2%; Completionist 100% ±0% vs 13% ±0%. Average time Runner 3.2 s vs 277 s. Treasure Collector failed to finish in 46% of trials; win rate correlated with path length (r = -0.62). No human comparison; the paper says validation only shows the behaviour matches designers' intent.
+- **Evaluation:** MiniDungeons 2 (grid roguelike), 11 maps.
+- **Code:** none found in the paper.
+- **Fit:** good on CPU and on designer-defined metrics (a new card or enemy is a new metric or utility term). Partial on "validated against humans": none was done. Failure modes: persona behaviour is map-sensitive, and the Completionist interacted with fewer objects than its stated goal implies, so a persona can drift from its intent.
+
+### LLMs May Not Be Human-Level Players, But They Can Be Testers: Measuring Game Difficulty with LLM Agents (2024)
+- **Link:** https://arxiv.org/abs/2410.02829 (full text: https://arxiv.org/html/2410.02829v1) · **Venue:** arXiv preprint (Oct 2024); Crossref lists DOI 10.1145/3748634 (ACM, venue unconfirmed) · **Cited by:** not checked · **Read:** full text
+- **Problem:** Can LLM agents measure relative game difficulty for developers, even though they are weaker players than humans?
+- **Method:** Game state is turned into text; the LLM gets the rules and optional strategies, and outputs an action. Prompt variants: zero-shot, chain-of-thought, chain-of-thought with expert strategies (Wordle), and zero-shot or CoT (Slay the Spire). GPT-3.5 Turbo and GPT-4; no fine-tuning. Difficulty is the agent's average guesses (Wordle) or remaining HP (Slay the Spire).
+- **Assumes:** The game can be represented as text, and it has public human play data. The Slay the Spire agent is fixed to Ironclad with a representative deck, driven through the CommunicationMod and BasicMod mods. A stronger deck was needed because LLM agents won under 5% against bosses with an average deck; the reported setup reaches a 65% average win rate.
+- **Claims:** Slay the Spire, Act 1, correlation of agent remaining HP with human boss win rate: GPT-4 CoT r = .871 (p<.001); rule-based expert AI r = .742; GPT-4 ZS r = .657; Random r = .231 (p=.075). Act 2: GPT-4 CoT r = .710; rule-based expert AI r = .482. Wordle (529 puzzles): GPT-4 CoT+ r = .624 vs guesses; Wordle Solver r = .075 (not significant). Human average is 3.97 guesses; GPT-4 CoT+ 5.12. LLMs are weaker than humans on both games, but the difficulty ranking still correlates.
+- **Evaluation:** Wordle (529 puzzles, March to August 2024, 20 trials per puzzle, 12-guess cap); Slay the Spire, Acts 1 and 2, 20 trials per agent per boss. Human baselines: WordleBot data (over 600,000 plays) and developer-released Slay the Spire data (over 75 million runs).
+- **Code:** none for the paper's framework. Third-party tools it uses: wordle-solver (github.com/jason-chao/wordle-solver) and spirecomm (github.com/ForgottenArbiter/spirecomm).
+- **Fit:** partial. It is the one card here that validates agent difficulty against human win rates on a Slay the Spire boss set, which is the closest match to our validation question. It breaks the CPU-only constraint (GPT-3.5 and GPT-4 API calls), so only the method of checking against human data carries over. Failure modes: LLMs lose to the average human; zero-shot GPT-3.5 did worse than random in Act 2; the metric measures relative difficulty only; the framework has no cumulative effects across fights.
+
+### Evaluating Competitive Game Balance with Restricted Play (2012)
+- **Link:** https://ojs.aaai.org/index.php/AIIDE/article/view/12513 (DOI 10.1609/aiide.v8i1.12513) · **Venue:** AIIDE 2012 (Proceedings of the AAAI Conference on AI and Interactive Digital Entertainment, vol. 8 no. 1, pp. 26-31) · **Cited by:** 73 (OpenAlex) · **Read:** abstract only (the page has no full text)
+- **Problem:** Balance is tested by many tweaks and long playtests; there is no mathematical formulation of balance that unifies its forms.
+- **Method:** Deliberately restricted agents play against standard agents. A tool computes balance measures across a large family of games.
+- **Assumes:** Not stated on the abstract page.
+- **Claims:** None with numbers on the page. The tool is applied to an educational card game to show designers can iterate on balance quickly.
+- **Evaluation:** An educational card game, not named on the page.
+- **Code:** none found.
+- **Fit:** partial. The idea of restricted agents as a balance probe fits testing a new card by limiting what the agent may use. The full paper would be needed to judge the method; no human comparison is reported on the abstract page.
+
+### Game Balancing in Dominion: An Approach to Identifying Problematic Game Elements (2022)
+- **Link:** https://ojs.aaai.org/index.php/AAAI/article/view/21552 (DOI 10.1609/aaai.v36i11.21552) · **Venue:** AAAI 2022, EAAI Symposium full papers, pp. 12744-12750 · **Cited by:** 0 (OpenAlex) · **Read:** abstract only (full paper not available on the page)
+- **Problem:** Dominion's card configuration shapes player experience; find elements that cut the number of viable strategies so designers can review them.
+- **Method:** Statistical credit assignment: each episode's outcome is credited to the game elements in it, the interactions and dependencies between elements are learned, and the elements to review are recommended. Keywords list Bayesian belief networks.
+- **Assumes:** Outcomes can be attributed to individual elements, and their interactions can be learned from gameplay data. Not stated explicitly on the abstract page.
+- **Claims:** None with numbers in the abstract.
+- **Evaluation:** Dominion; the setup is not described on the page.
+- **Code:** none found.
+- **Fit:** partial. It targets flagging card elements that narrow viable strategies, which fits new-card review, but it needs many logged games and a way to attribute outcomes to new elements. Nothing on human validation is available from the abstract.

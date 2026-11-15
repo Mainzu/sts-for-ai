@@ -1,0 +1,7 @@
+[package]
+name = "sts-engine"
+version = "0.1.0"
+edition = "2021"
+description = "Slay the Spire 1 combat engine built for search and learning"
+
+[dependencies]

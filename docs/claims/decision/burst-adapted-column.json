@@ -1,0 +1,723 @@
+{
+  "key": "decision/burst-adapted-column",
+  "rev": 11,
+  "value": "Goal 1's adapted column: a ~400-game burst on the new mechanic, 3 seeds pooled per start, read one turn deep vs the zero-shot net on the same starts and seeds (wins, HP lost), parent row as retention, boss replay beside the cell gauntlet.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "yardstick/novelty-read",
+      "rev": 5
+    },
+    {
+      "key": "yardstick/twin-reads",
+      "rev": 2
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+      "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+    },
+    {
+      "key": "measurement/burst-bosses@replay",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:21Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:34Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/burst-bosses@replay reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "A burst of about 400 games against a new mechanic is the adapted column of goal 1's yardstick (yardstick/novelty-read rule e), read at the product's depth against the product on the same starts and seeds, wins and HP lost, with the parent row as retention and the boss replay beside the cell gauntlet (measurement/burst-bosses@replay); one training seed is a lead. It is not shipped as a product step: on reactive powers it gains +0.025 wins and about 1.1 HP per elite fight and costs 0.60 HP on unchanged elites (measurement/adapted-two@elites), so it pays only where most fights carry the mechanic; the form it would ship in is a net named by a content pack, decided when packs exist (runtime-registry stage 4). No burst against Ritual 2 (games do not repair it, cut 0.38x at 1602) or on plain stat changes (repairs nothing, costs -0.054 Hexaghost wins). Replaces decision/no-mutated-monster-burst, which read the product's cost beyond the heuristic only.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 2
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2ef20aae-4e81-4598-8ce8-557bca9d73a3",
+      "at": "2026-11-05T12:26:34Z @ 035810b",
+      "until": "2026-11-05T14:57:37Z @ a875850"
+    },
+    {
+      "rev": 2,
+      "value": "A burst of about 400 games against a new mechanic is the adapted column of goal 1's yardstick (yardstick/novelty-read rule e), read one turn deep against the zero-shot net on the same starts and seeds, wins and HP lost, with the parent row as retention and the boss replay beside the cell gauntlet (measurement/burst-bosses@replay); one training seed is a lead. It is not shipped as a product step: on reactive powers two turns deep it gains +0.025 wins and about 1.1 HP per elite fight and costs 0.60 HP on unchanged elites (measurement/adapted-two@elites), so it pays only where most fights carry the mechanic; the form it would ship in is a net named by a content pack, decided when packs exist (runtime-registry stage 4). No burst against Ritual 2 (games do not repair it, cut 0.38x at 1602) or on plain stat changes (repairs nothing, costs -0.054 Hexaghost wins). Replaces decision/no-mutated-monster-burst, which read the product's cost beyond the heuristic only.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+          "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 2
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:57:37Z @ a875850",
+      "until": "2026-11-05T15:45:29Z @ f89053c"
+    },
+    {
+      "rev": 3,
+      "value": "A burst of about 400 games against a new mechanic is the adapted column of goal 1's yardstick (yardstick/novelty-read rule e), read one turn deep against the zero-shot net on the same starts and seeds, wins and HP lost, with the parent row as retention and the boss replay beside the cell gauntlet (measurement/burst-bosses@replay). An adapted column trains three burst seeds, pooled per start (yardstick/twin-reads): on two seeds two turns deep the win gain replicated (sharp2 +0.021 (0.009), thorns2 +0.014 (0.008)) and the HP gain did not (measurement/adapted-two@elites). It is not shipped as a product step: one turn deep the burst is level on official content, but two turns deep it loses 1.21 (0.30) HP per unchanged elite fight on two seeds, so it pays only where most fights carry the mechanic; the form it would ship in is a net named by a content pack, decided when packs exist (runtime-registry stage 4). No rehearsal of the parent fights in the burst (backlog burst-recipe, withdrawn): one turn deep there is no parent cost for it to remove. No burst against Ritual 2 (games do not repair it, cut 0.38x at 1602) or on plain stat changes (repairs nothing, costs -0.054 Hexaghost wins). Whether a burst's retention read on cell sequences 0-499 flatters it (its training fights come from those sequences) is lane/burst-official's first step. Replaces decision/no-mutated-monster-burst.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lanes burst-official and test-full-memory opened; what the one-turn rule does to the queue (on the owner's behalf, 2026-11-05)",
+          "sha256": "659d9c682afb236832552976113f08ec81421053661f94b95a5805a0a0c8b045"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+          "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "56c5a1d1-29a3-4ae4-b122-773b2e4caee5",
+      "at": "2026-11-05T15:45:29Z @ f89053c",
+      "until": "2026-11-05T16:24:35Z @ 4547efa"
+    },
+    {
+      "rev": 4,
+      "value": "A burst of about 400 games against a new mechanic is the adapted column of goal 1's yardstick (yardstick/novelty-read rule e), read one turn deep against the zero-shot net on the same starts and seeds, wins and HP lost, with the parent row as retention and the boss replay beside the cell gauntlet (measurement/burst-bosses@replay). An adapted column trains three burst seeds, pooled per start (yardstick/twin-reads), and its retention is read over the same three: on two seeds two turns deep the win gain replicated (sharp2 +0.021 (0.009), thorns2 +0.014 (0.008)) and the HP gain did not (measurement/adapted-two@elites), and one burst's effect on official content one turn deep is a training-seed draw of about +-1.5 HP (five burst nets on cell sequences 500-999: +2.27, +0.75, +0.49, +0.11, -1.56; measurement/burst-official@held-out). Retention reads on cell sequences 0-499 stand: the bursts train on fights of those sequences, and their gains there are within 0.4 HP of their gains on the held-out book. A burst is not shipped as a product step: one turn deep the recipe is level on official content on average, and two turns deep it loses 1.21 (0.30) HP per unchanged elite fight on two seeds, so it pays only where most fights carry the mechanic; the form it would ship in is a net named by a content pack, decided when packs exist (runtime-registry stage 4). No rehearsal of the parent fights in the burst (backlog burst-recipe, withdrawn): one turn deep there is no parent cost for it to remove. No burst against Ritual 2 (games do not repair it, cut 0.38x at 1602) or on plain stat changes (repairs nothing, costs -0.054 Hexaghost wins). Replaces decision/no-mutated-monster-burst.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+          "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-official@held-out",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "56c5a1d1-29a3-4ae4-b122-773b2e4caee5",
+      "at": "2026-11-05T16:24:35Z @ 4547efa",
+      "until": "2026-11-06T01:23:58Z @ aa30d72"
+    },
+    {
+      "rev": 5,
+      "value": "A burst of about 400 games against a new mechanic is the adapted column of goal 1's yardstick (yardstick/novelty-read rule e), read one turn deep against the zero-shot net on the same starts and seeds, wins and HP lost, with the parent row as retention and the boss replay beside the cell gauntlet (measurement/burst-bosses@replay). An adapted column trains three burst seeds, pooled per start (yardstick/twin-reads), and its retention is read over the same three: on two seeds two turns deep the win gain replicated (sharp2 +0.021 (0.009), thorns2 +0.014 (0.008)) and the HP gain did not (measurement/adapted-two@elites). A burst's effect on official content one turn deep depends on its content as well as its training seed (paired end-HP on the cell gauntlet against the 10-29 net): bursts whose games are official bosses or pattern-modified official fights all read positive, +0.38 to +2.36 over seven nets and ten reads (Guardian and Hexaghost games +1.59, +1.18, +0.78, +0.42; stage B +1.14 and +0.75; stage B then SharpHide +0.38 and +0.49; SharpHide then stage B +2.36 and +2.27), with seed twins 0.4 HP apart; bursts on SharpHide or on stat shifts read level or below (+0.11, -1.56, -0.85), SharpHide's seed twins 1.7 HP apart (measurement/burst-official@held-out, measurement/unseen-boss-burst@replay, measurement/stat-burst@one-turn); one or two seeds per content, a lead. Retention reads on cell sequences 0-499 stand: the bursts train on fights of those sequences, and their gains there are within 0.4 HP of their gains on the held-out book. A burst is not shipped as a product step: a burst against a power that punishes attacking is level or below on official content one turn deep and loses 1.21 (0.30) HP per unchanged elite fight two turns deep on two seeds, and the best burst net on official content gains +1.08 HP and no clears two turns deep (decision/crossed-player-lead); it pays only where most fights carry the mechanic, and the form it would ship in is a net named by a content pack, decided when packs exist (runtime-registry stage 4). A burst on a pack's content must be able to see it (how/burst-inputs). No rehearsal of the parent fights in the burst (backlog burst-recipe, withdrawn): one turn deep there is no parent cost for it to remove. No burst against Ritual 2 (games do not repair it, cut 0.38x at 1602) or on plain stat changes (repairs nothing, costs -0.054 Hexaghost wins). Replaces decision/no-mutated-monster-burst.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+          "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-official@held-out",
+          "rev": 1
+        },
+        {
+          "key": "measurement/unseen-boss-burst@replay",
+          "rev": 1
+        },
+        {
+          "key": "decision/crossed-player-lead",
+          "rev": 1
+        },
+        {
+          "key": "how/burst-inputs",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "d348e064-834e-4cae-be51-056e6d1678db",
+      "at": "2026-11-06T01:23:58Z @ aa30d72",
+      "until": "2026-11-07T06:47:32Z @ 25d1bfe"
+    },
+    {
+      "rev": 6,
+      "value": "A burst of about 400 games against a new mechanic is the adapted column of goal 1's yardstick (yardstick/novelty-read rule e), read one turn deep against the zero-shot net on the same starts and seeds, wins and HP lost, with the parent row as retention and the boss replay beside the cell gauntlet (measurement/burst-bosses@replay). An adapted column trains three burst seeds, pooled per start (yardstick/twin-reads), and its retention is read over the same three: on two seeds two turns deep the win gain replicated (sharp2 +0.021 (0.009), thorns2 +0.014 (0.008)) and the HP gain did not (measurement/adapted-two@elites). A burst's effect on official content one turn deep depends on its content as well as its training seed (paired end-HP on the cell gauntlet against the 10-29 net): bursts whose games are official bosses or pattern-modified official fights all read positive, +0.38 to +2.36 over seven nets and ten reads (Guardian and Hexaghost games +1.59, +1.18, +0.78, +0.42; stage B +1.14 and +0.75; stage B then SharpHide +0.38 and +0.49; SharpHide then stage B +2.36 and +2.27), with seed twins 0.4 HP apart; bursts on SharpHide or on stat shifts read level or below (+0.11, -1.56, -0.85), SharpHide's seed twins 1.7 HP apart (measurement/burst-official@held-out, measurement/unseen-boss-burst@replay, measurement/stat-burst@one-turn); one or two seeds per content, a lead. Retention reads on cell sequences 0-499 stand: the bursts train on fights of those sequences, and their gains there are within 0.4 HP of their gains on the held-out book. A burst is not shipped as a product step: a burst against a power that punishes attacking is level or below on official content one turn deep and loses 1.21 (0.30) HP per unchanged elite fight two turns deep on two seeds, and the best burst net on official content gains +1.08 HP and no clears two turns deep (decision/crossed-player-lead); it pays only where most fights carry the mechanic, and the form it would ship in is a net named by a content pack, decided when packs exist (runtime-registry stage 4). A burst on a pack's content must be able to see it (how/burst-inputs). Card bursts cost unchanged play one turn deep: all six 400-game card-modifier bursts lose 0.4-2.4 HP per elite fight on the parent copy and the official card, wins level, with the 0.5 replay share in each (measurement/cards-adapted@stage-a), where monster bursts were level on their parents; rehearsing the read's own decks (the parent copy in the burst's decks) is under probe (decisions \"After the cards adapted column\"). No burst against Ritual 2 (games do not repair it, cut 0.38x at 1602) or on plain stat changes (repairs nothing, costs -0.054 Hexaghost wins). Replaces decision/no-mutated-monster-burst.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the cards adapted column: yardstick-cards stays closed; a copy-rehearsal probe queued; burst-adapted-column re-set (on the owner's behalf, 2026-11-07)",
+          "sha256": "420cfbcd2affac5fd334eb4c14c5704bf74fd4136e64360c33f4646348d9fb73"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+          "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-official@held-out",
+          "rev": 1
+        },
+        {
+          "key": "measurement/unseen-boss-burst@replay",
+          "rev": 1
+        },
+        {
+          "key": "decision/crossed-player-lead",
+          "rev": 1
+        },
+        {
+          "key": "how/burst-inputs",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "c2b85df5-2011-4b4f-a5f1-6d69bec34ea8",
+      "at": "2026-11-07T06:47:32Z @ 25d1bfe",
+      "until": "2026-11-07T07:23:12Z @ 036d219"
+    },
+    {
+      "rev": 7,
+      "value": "A burst of about 400 games against a new mechanic is the adapted column of goal 1's yardstick (yardstick/novelty-read rule e), read one turn deep against the zero-shot net on the same starts and seeds, wins and HP lost, with the parent row as retention and the boss replay beside the cell gauntlet (measurement/burst-bosses@replay). An adapted column trains three burst seeds, pooled per start (yardstick/twin-reads), and its retention is read over the same three: on two seeds two turns deep the win gain replicated (sharp2 +0.021 (0.009), thorns2 +0.014 (0.008)) and the HP gain did not (measurement/adapted-two@elites). A burst's effect on official content one turn deep depends on its content as well as its training seed (paired end-HP on the cell gauntlet against the 10-29 net): bursts whose games are official bosses or pattern-modified official fights all read positive, +0.38 to +2.36 over seven nets and ten reads (Guardian and Hexaghost games +1.59, +1.18, +0.78, +0.42; stage B +1.14 and +0.75; stage B then SharpHide +0.38 and +0.49; SharpHide then stage B +2.36 and +2.27), with seed twins 0.4 HP apart; bursts on SharpHide or on stat shifts read level or below (+0.11, -1.56, -0.85), SharpHide's seed twins 1.7 HP apart (measurement/burst-official@held-out, measurement/unseen-boss-burst@replay, measurement/stat-burst@one-turn); one or two seeds per content, a lead. Retention reads on cell sequences 0-499 stand: the bursts train on fights of those sequences, and their gains there are within 0.4 HP of their gains on the held-out book. A burst is not shipped as a product step: a burst against a power that punishes attacking is level or below on official content one turn deep and loses 1.21 (0.30) HP per unchanged elite fight two turns deep on two seeds, and the best burst net on official content gains +1.08 HP and no clears two turns deep (decision/crossed-player-lead); it pays only where most fights carry the mechanic, and the form it would ship in is a net named by a content pack, decided when packs exist (runtime-registry stage 4). A burst on a pack's content must be able to see it (how/burst-inputs). Card bursts cost unchanged play one turn deep: all six 400-game card-modifier bursts lose 0.4-2.4 HP per elite fight on the parent copy and the official card, wins level, with the 0.5 replay share in each (measurement/cards-adapted@stage-a), where monster bursts were level on their parents; putting the parent copy in the burst's decks raises that cost (metal +2.61 against +1.43 HP per elite fight, one seed; measurement/copy-rehearsal@stage-a), so it is not missing rehearsal, and since a card burst repairs nothing @tsl1 its retention is not pursued (decisions \"Copy-rehearsal stopped\"). No burst against Ritual 2 (games do not repair it, cut 0.38x at 1602) or on plain stat changes (repairs nothing, costs -0.054 Hexaghost wins). Replaces decision/no-mutated-monster-burst.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Copy-rehearsal stopped: card bursts' elite cost is not missing rehearsal; no follow-up on card-burst retention (on the owner's behalf, 2026-11-07)",
+          "sha256": "29d8aee75b8fc882e1fadcb7d943ee0311499b09055a6d281f14391f204ed393"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the cards adapted column: yardstick-cards stays closed; a copy-rehearsal probe queued; burst-adapted-column re-set (on the owner's behalf, 2026-11-07)",
+          "sha256": "420cfbcd2affac5fd334eb4c14c5704bf74fd4136e64360c33f4646348d9fb73"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+          "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-official@held-out",
+          "rev": 1
+        },
+        {
+          "key": "measurement/unseen-boss-burst@replay",
+          "rev": 1
+        },
+        {
+          "key": "decision/crossed-player-lead",
+          "rev": 1
+        },
+        {
+          "key": "how/burst-inputs",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "c2b85df5-2011-4b4f-a5f1-6d69bec34ea8",
+      "at": "2026-11-07T07:23:12Z @ 036d219",
+      "until": "2026-11-07T20:02:28Z @ ce9f8af"
+    },
+    {
+      "rev": 8,
+      "value": "A burst of about 400 games against a new mechanic is the adapted column of goal 1's yardstick (yardstick/novelty-read rule e), read one turn deep against the zero-shot net on the same starts and seeds, wins and HP lost, with the parent row as retention and the boss replay beside the cell gauntlet (measurement/burst-bosses@replay). An adapted column trains three burst seeds, pooled per start (yardstick/twin-reads), and its retention is read over the same three: on two seeds two turns deep the win gain replicated (sharp2 +0.021 (0.009), thorns2 +0.014 (0.008)) and the HP gain did not (measurement/adapted-two@elites). A burst's effect on official content one turn deep depends on its content as well as its training seed (paired end-HP on the cell gauntlet against the 10-29 net): bursts whose games are official bosses or pattern-modified official fights all read positive, +0.38 to +2.36 over seven nets and ten reads (Guardian and Hexaghost games +1.59, +1.18, +0.78, +0.42; stage B +1.14 and +0.75; stage B then SharpHide +0.38 and +0.49; SharpHide then stage B +2.36 and +2.27), with seed twins 0.4 HP apart; bursts on SharpHide or on stat shifts read level or below (+0.11, -1.56, -0.85), SharpHide's seed twins 1.7 HP apart (measurement/burst-official@held-out, measurement/unseen-boss-burst@replay, measurement/stat-burst@one-turn); one or two seeds per content, a lead. Retention reads on cell sequences 0-499 stand: the bursts train on fights of those sequences, and their gains there are within 0.4 HP of their gains on the held-out book. A burst is not shipped as a product step: a burst against a power that punishes attacking is level or below on official content one turn deep and loses 1.21 (0.30) HP per unchanged elite fight two turns deep on two seeds, and the best burst net on official content gains +1.08 HP and no clears two turns deep (decision/crossed-player-lead); it pays only where most fights carry the mechanic, and the form it would ship in is a net named by a content pack, decided when packs exist (runtime-registry stage 4). A burst on a pack's content must be able to see it (how/burst-inputs). Card bursts cost unchanged play one turn deep: all six 400-game card-modifier bursts lose 0.4-2.4 HP per elite fight on the parent copy and the official card, wins level, with the 0.5 replay share in each (measurement/cards-adapted@stage-a), where monster bursts were level on their parents; putting the parent copy in the burst's decks raises that cost (metal +2.61 against +1.43 HP per elite fight, one seed; measurement/copy-rehearsal@stage-a), so it is not missing rehearsal, and since a card burst repairs nothing @tsl1 its retention is not pursued (decisions \"Copy-rehearsal stopped\"). No burst against Ritual 2 (games do not repair it, cut 0.38x at 1602) or on plain stat changes (repairs nothing, costs -0.054 Hexaghost wins). A pack's net reads retention on every generated mechanic of the bench, per parent, beside the official parents: two bursts on different punish-an-action mechanics (399 SharpHide games, 99 AttackLoss-Weak games) both lose the zero-shot net's OppCard-Vulnerable x Sentries edge (wins 0.765 to 0.42-0.63) while the parents hold (measurement/bench-retention@gen-b1, measurement/family-transfer@gen-b1). Replaces decision/no-mutated-monster-burst.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the bench-retention probes: a pack's net reads retention on the whole bench, per parent; a joint-burst probe queued (on the owner's behalf, 2026-11-08)",
+          "sha256": "85d11377dfac93b56a584be67e10faea63e9b73025fae8bd5c917ede3502affa"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Copy-rehearsal stopped: card bursts' elite cost is not missing rehearsal; no follow-up on card-burst retention (on the owner's behalf, 2026-11-07)",
+          "sha256": "29d8aee75b8fc882e1fadcb7d943ee0311499b09055a6d281f14391f204ed393"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the cards adapted column: yardstick-cards stays closed; a copy-rehearsal probe queued; burst-adapted-column re-set (on the owner's behalf, 2026-11-07)",
+          "sha256": "420cfbcd2affac5fd334eb4c14c5704bf74fd4136e64360c33f4646348d9fb73"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+          "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-official@held-out",
+          "rev": 1
+        },
+        {
+          "key": "measurement/unseen-boss-burst@replay",
+          "rev": 1
+        },
+        {
+          "key": "decision/crossed-player-lead",
+          "rev": 1
+        },
+        {
+          "key": "how/burst-inputs",
+          "rev": 1
+        },
+        {
+          "key": "measurement/bench-retention@gen-b1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/family-transfer@gen-b1",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "f2ae0272-e0e7-48dc-b46c-2c2e39980db5",
+      "at": "2026-11-07T20:02:28Z @ ce9f8af",
+      "until": "2026-11-07T21:16:13Z @ 13c2f6e"
+    },
+    {
+      "rev": 9,
+      "value": "",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the pack-joint-burst probe: a pack's net is one joint burst; pack-adapt-pipeline gets a ready charter (on the owner's behalf, 2026-11-08)",
+          "sha256": "f7ae48061db680c2b10c39d1a8a81d799e32f884d73b0c98dce7f36fab168339"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the bench-retention probes: a pack's net reads retention on the whole bench, per parent; a joint-burst probe queued (on the owner's behalf, 2026-11-08)",
+          "sha256": "85d11377dfac93b56a584be67e10faea63e9b73025fae8bd5c917ede3502affa"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Copy-rehearsal stopped: card bursts' elite cost is not missing rehearsal; no follow-up on card-burst retention (on the owner's behalf, 2026-11-07)",
+          "sha256": "29d8aee75b8fc882e1fadcb7d943ee0311499b09055a6d281f14391f204ed393"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the cards adapted column: yardstick-cards stays closed; a copy-rehearsal probe queued; burst-adapted-column re-set (on the owner's behalf, 2026-11-07)",
+          "sha256": "420cfbcd2affac5fd334eb4c14c5704bf74fd4136e64360c33f4646348d9fb73"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+          "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 2
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-official@held-out",
+          "rev": 1
+        },
+        {
+          "key": "measurement/unseen-boss-burst@replay",
+          "rev": 1
+        },
+        {
+          "key": "decision/crossed-player-lead",
+          "rev": 1
+        },
+        {
+          "key": "how/burst-inputs",
+          "rev": 1
+        },
+        {
+          "key": "measurement/bench-retention@gen-b1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/family-transfer@gen-b1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/pack-joint-burst@gen-b1",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "37fe1356-fecd-4e50-90ad-560e323abb7c",
+      "at": "2026-11-07T21:16:13Z @ 13c2f6e",
+      "until": "2026-11-07T21:16:26Z @ 13c2f6e"
+    },
+    {
+      "rev": 10,
+      "value": "A burst of about 400 games against a new mechanic is the adapted column of goal 1's yardstick (yardstick/novelty-read rule e), read one turn deep against the zero-shot net on the same starts and seeds, wins and HP lost, with the parent row as retention and the boss replay beside the cell gauntlet (measurement/burst-bosses@replay). An adapted column trains three burst seeds, pooled per start (yardstick/twin-reads), and its retention is read over the same three: on two seeds two turns deep the win gain replicated (sharp2 +0.021 (0.009), thorns2 +0.014 (0.008)) and the HP gain did not (measurement/adapted-two@elites). A burst's effect on official content one turn deep depends on its content as well as its training seed (paired end-HP on the cell gauntlet against the 10-29 net): bursts whose games are official bosses or pattern-modified official fights all read positive, +0.38 to +2.36 over seven nets and ten reads (Guardian and Hexaghost games +1.59, +1.18, +0.78, +0.42; stage B +1.14 and +0.75; stage B then SharpHide +0.38 and +0.49; SharpHide then stage B +2.36 and +2.27), with seed twins 0.4 HP apart; bursts on SharpHide or on stat shifts read level or below (+0.11, -1.56, -0.85), SharpHide's seed twins 1.7 HP apart (measurement/burst-official@held-out, measurement/unseen-boss-burst@replay, measurement/stat-burst@one-turn); one or two seeds per content, a lead. Retention reads on cell sequences 0-499 stand: the bursts train on fights of those sequences, and their gains there are within 0.4 HP of their gains on the held-out book. A burst is not shipped as a product step: a burst against a power that punishes attacking is level or below on official content one turn deep and loses 1.21 (0.30) HP per unchanged elite fight two turns deep on two seeds, and the best burst net on official content gains +1.08 HP and no clears two turns deep (decision/crossed-player-lead); it pays only where most fights carry the mechanic, and the form it would ship in is a net named by a content pack, decided when packs exist (runtime-registry stage 4). A burst on a pack's content must be able to see it (how/burst-inputs). Card bursts cost unchanged play one turn deep: all six 400-game card-modifier bursts lose 0.4-2.4 HP per elite fight on the parent copy and the official card, wins level, with the 0.5 replay share in each (measurement/cards-adapted@stage-a), where monster bursts were level on their parents; putting the parent copy in the burst's decks raises that cost (metal +2.61 against +1.43 HP per elite fight, one seed; measurement/copy-rehearsal@stage-a), so it is not missing rehearsal, and since a card burst repairs nothing @tsl1 its retention is not pursued (decisions \"Copy-rehearsal stopped\"). No burst against Ritual 2 (games do not repair it, cut 0.38x at 1602) or on plain stat changes (repairs nothing, costs -0.054 Hexaghost wins). A pack's net reads retention on every generated mechanic of the bench, per parent, beside the official parents: two bursts on different punish-an-action mechanics (399 SharpHide games, 99 AttackLoss-Weak games) both lose the zero-shot net's OppCard-Vulnerable x Sentries edge (wins 0.765 to 0.42-0.63) while the parents hold (measurement/bench-retention@gen-b1, measurement/family-transfer@gen-b1). A pack's net is one joint burst over the pack's mechanics, and a net that fails the per-parent guard does not ship (the zero-shot net stays for the pack): with each mechanic's own games in one 400-game burst the OppCard-Vulnerable x Sentries edge holds (wins 0.787 against 0.765 zero-shot) and the Nob cost falls 0.47, while a smaller leak opens on Lagavulin (parent +1.67 HP, TurnEnd-Frail +3.25; measurement/pack-joint-burst@gen-b1). Replaces decision/no-mutated-monster-burst.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the pack-joint-burst probe: a pack's net is one joint burst; pack-adapt-pipeline gets a ready charter (on the owner's behalf, 2026-11-08)",
+          "sha256": "f7ae48061db680c2b10c39d1a8a81d799e32f884d73b0c98dce7f36fab168339"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the bench-retention probes: a pack's net reads retention on the whole bench, per parent; a joint-burst probe queued (on the owner's behalf, 2026-11-08)",
+          "sha256": "85d11377dfac93b56a584be67e10faea63e9b73025fae8bd5c917ede3502affa"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Copy-rehearsal stopped: card bursts' elite cost is not missing rehearsal; no follow-up on card-burst retention (on the owner's behalf, 2026-11-07)",
+          "sha256": "29d8aee75b8fc882e1fadcb7d943ee0311499b09055a6d281f14391f204ed393"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the cards adapted column: yardstick-cards stays closed; a copy-rehearsal probe queued; burst-adapted-column re-set (on the owner's behalf, 2026-11-07)",
+          "sha256": "420cfbcd2affac5fd334eb4c14c5704bf74fd4136e64360c33f4646348d9fb73"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+          "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the one-turn direction: yardstick-cards re-set, burst-recipe withdrawn, value-chooser ranked (on the owner's behalf, 2026-11-05)",
+          "sha256": "dbca4bb8f4fc98a437f882a94235352d58c0baf555cdfd9119d255ac768da8f8"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane adapted-two-turn closed (2026-11-05)",
+          "sha256": "f47895e2f5733bcd8dd6a0d49705bd56c4ca7ce6986d93a8cf8f989dc4ec0484"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Comparisons play one turn deep; two-turn search is the product's augment (owner, 2026-11-05)",
+          "sha256": "e1db1a66fa469a4249d3e4f5d37018440590a9bb1d962f648ef5deb1dd30bc2f"
+        },
+        {
+          "key": "measurement/adapted-two@elites",
+          "rev": 3
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "measurement/adaptation-curve",
+          "rev": 5
+        },
+        {
+          "key": "measurement/stat-burst@one-turn",
+          "rev": 1
+        },
+        {
+          "key": "measurement/burst-official@held-out",
+          "rev": 1
+        },
+        {
+          "key": "measurement/unseen-boss-burst@replay",
+          "rev": 1
+        },
+        {
+          "key": "decision/crossed-player-lead",
+          "rev": 2
+        },
+        {
+          "key": "how/burst-inputs",
+          "rev": 1
+        },
+        {
+          "key": "measurement/bench-retention@gen-b1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/family-transfer@gen-b1",
+          "rev": 1
+        },
+        {
+          "key": "measurement/pack-joint-burst@gen-b1",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "37fe1356-fecd-4e50-90ad-560e323abb7c",
+      "at": "2026-11-07T21:16:26Z @ 13c2f6e",
+      "until": "2026-11-13T02:29:21Z @ 3123201a"
+    }
+  ],
+  "seal": "afc8b170eb786b262f85cb8df466bcea2cc32fc588a6bc8d7276101031f66052"
+}

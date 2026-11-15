@@ -1,0 +1,25 @@
+{
+  "key": "measurement/cost-threads@gauntlet",
+  "rev": 1,
+  "value": "Product two-turn, headline seq 0-99: 3 threads 74.9 min (2.25 thread-min/seq, 3.31 GB), 8 threads 44.9 min (0.60x wall, 3.59 thread-min/seq = 1.6x, 7.76 GB): 63% parallel efficiency 3->8; rows identical.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "jobs/done/0095-gauntlet.json",
+      "sha256": "ac26b86cccc983a4120fa3cba3a9deec2f320189e699737d53dc6295bfffc5bc"
+    },
+    {
+      "path": "jobs/done/0096-gauntlet.json",
+      "sha256": "6ad62a5c9f616f12e8a51bd4aec3fd6ba145061fbb7ceb596afecd1740ecf795"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:36+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "06abf9079b14f1a3cc00168f9291dbbd7c7779f8942a52cc897306e32f57cdff"
+}

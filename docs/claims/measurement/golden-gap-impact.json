@@ -1,0 +1,52 @@
+{
+  "key": "measurement/golden-gap-impact",
+  "rev": 2,
+  "value": "New golden games for cause/rules-changes-outside-golden would stale no data today: all 286 datasets (4.48M games) and 526 runs are 7042d1d6a6149ba0, already refused on main; none at e47bcfcdb6b2777a. The solved DB (5.3M states, fingerprint 39bfc65e) keys on rule files, not golden. Gauntlet results record no version; snapshots run their own engine. See docs/research/golden-gap-impact-2026-11-14.md",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/golden-gap-impact-2026-11-14.md",
+      "sha256": "04cf6f321d582a871e8daa351cad7dfdb39091db10c9f3e4e7ee2286ae85e112"
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 4
+    },
+    {
+      "key": "cause/rules-changes-outside-golden",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "counts 2026-11-14 at 2899ba05: manifest/run.json loops, read-only sqlite counts, jobs.py pins",
+  "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+  "at": "2026-11-14T07:29:47+00:00 @ 287af073",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "New golden games for cause/rules-changes-outside-golden would stale no data today: all 286 datasets (4.48M games) and 526 runs are 7042d1d6a6149ba0, already refused on main; none at e47bcfcdb6b2777a. The solved DB (5.3M states, fingerprint 39bfc65e) keys on rule files, not golden. Gauntlet results record no version; snapshots run their own engine. Detail: docs/research/golden-gap-impact-2026-11-14.md",
+      "sources": [
+        {
+          "path": "docs/research/golden-gap-impact-2026-11-14.md",
+          "sha256": "04cf6f321d582a871e8daa351cad7dfdb39091db10c9f3e4e7ee2286ae85e112"
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 4
+        },
+        {
+          "key": "cause/rules-changes-outside-golden",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T07:29:25+00:00 @ 287af073",
+      "until": "2026-11-14T07:29:47+00:00 @ 287af073"
+    }
+  ],
+  "seal": "c216e9811433f2376b739a0a0a9ba0532b903e17debd99b10c4743afb3a109d0"
+}

@@ -1,0 +1,36 @@
+{
+  "key": "measurement/portfolio-depth-headroom",
+  "rev": 1,
+  "value": "predicted p ~0.3 that deeper search recovers 1.5 HP or more per decisive fight, ~7.5 CPU-h (cap 12); actual: no go on both arms (rollout leaf +0.67 HP lost, se 0.31, on all 498 floor-9 elites; three turns -0.75, se 0.81, on 48; both decisive-half gains were regression to the mean), the depth family closed; 8.8 cpu-h used",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane depth-headroom closed (2026-11-04)",
+      "sha256": "490d1701979b2d6a1091bd6c943b8743eeeb9554efa86636a175f45170c1ac6b"
+    },
+    {
+      "key": "measurement/rollout-leaf@elites",
+      "rev": 2
+    },
+    {
+      "key": "measurement/three-turn@elites",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "38f068ab-8b7e-4981-8bbe-695e64cca72a",
+  "at": "2026-11-04T14:25:52+00:00 @ 57f3098",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:22+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/rollout-leaf@elites reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "220396c5538cc6f915a908a4acd20cc49a38bf72e976ed591edb789eb5d96a11"
+}

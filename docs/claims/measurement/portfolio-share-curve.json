@@ -1,0 +1,52 @@
+{
+  "key": "measurement/portfolio-share-curve",
+  "rev": 2,
+  "value": "pred likely/even/long shot, all held; go: g33 sh0.9 cuts 1.24 and 0.61 of the two mechanics' costs, parents spared, retention held (measurement/share-curve@retention), g11 sh0.9 passes at the edge; 9.85 of 12 cpu-h. Reopen: the quote challenged on a 3rd mechanic kind (player card/power, past-horizon payoff like Ritual 2) or two turns deep, or the 11-game number mattering for a pack dose.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane share-curve closed (2026-11-09)",
+      "sha256": "6a3e23f628d9942e006c3cbbe6dc3f9b9af5e4e59d14812b0357b0fac655c0b6"
+    },
+    {
+      "key": "measurement/share-curve@retention",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:14+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:24+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/share-curve@retention reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted likely (a 33-game recipe arm beats OppCard-Weak's 33-game default by 2 se), even (it reaches half that cost or the 99-game cut), a long shot (11 games pass on both); about 6.5 thread-h; actual go: g33 sh0.9 at 1.24 and 0.61 of the two mechanics' costs, parents spared, retention held, 11 games at share 0.9 pass at the edge; all three predictions held; 9.85 cpu-h of a 12 cap; reopen if: the quote is challenged on a third kind of mechanic (a player-held card or power, a payoff past the one-turn horizon such as Ritual 2) or two turns deep, or the 11-game number matters for a pack dose (a share above 0.9 or a second epoch at 11 games)",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane share-curve closed (2026-11-09)",
+          "sha256": "6a3e23f628d9942e006c3cbbe6dc3f9b9af5e4e59d14812b0357b0fac655c0b6"
+        },
+        {
+          "key": "measurement/share-curve@retention",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "fe02d2dc-9024-4b2e-b27c-382b67b6cb89",
+      "at": "2026-11-09T11:25:35+00:00 @ e4ff163",
+      "until": "2026-11-13T02:31:14+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "5adbc22c328f23a133bf09f43da5b522587c7c8e4d30b91625faf39fd49e6521"
+}

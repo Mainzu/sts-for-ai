@@ -1,0 +1,74 @@
+{
+  "key": "measurement/bench-retention@gen-b1",
+  "rev": 2,
+  "value": "Two 99-game AttackLoss-Weak bursts @tsl1 on gen b1's 8 other mechanics (elites 675x4) vs zero-shot: both lose OppCard-Vulnerable x Sentries (wins 0.765->0.581/0.626, +6.04 (0.70) HP), as the SharpHide bursts did; other mechanics -0.35 to -4.56 HP; parents -0.47 (0.15); AttackLoss-Damage x Nob +13.29->+6.88/+4.89 with no Nob fights trained.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/family-transfer-probes.md",
+      "anchor": "Bench-retention probes (0546, 0547): a 99-game AttackLoss-Weak burst on the eight other mechanics",
+      "sha256": "482e52b127c6b9fd57c4a59fbdccc0780963dc6b2dadc77eb2173bcd8298a901"
+    },
+    {
+      "path": "results/mutate/gen-b1-gacalw-g99-s1.json",
+      "sha256": "87ba4c3fa4fe3927fae68161c7eba3ed6e9f802ee126b95838cbc44a98539434"
+    },
+    {
+      "path": "results/mutate/gen-enemies-b1.json",
+      "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+    },
+    {
+      "key": "measurement/family-transfer-interference@gen-b1",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:49+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Two 99-game AttackLoss-Weak bursts (gen-adapted-column net-g99 seeds 1-2) @tsl1 on gen batch 1's eight other mechanics, elites, 675 fights x 4 seeds, against the zero-shot 10-29 net on the same starts and seeds, seeds pooled per start: OppCard-Vulnerable net HP lost +1.23 (0.31), wins -0.049 on all elites, on Sentries +6.04 (0.70) HP, wins 0.765 to 0.581 / 0.626 (heuristic 0.501), both seeds, the same spot the 399-game SharpHide bursts lost (measurement/family-transfer@gen-b1); every other mechanic -0.35 to -4.56 HP, parents -0.47 (0.15), the stat ladder -1 to -2.6 HP, so the column's control-subtracted cost moves under about 0.5 HP outside the punish-an-action family; AttackLoss-Damage x Nob cost +13.29 to +6.88 / +4.89 with no Nob fights in the burst, OppCard-PlainDamage x Sentries +5.39 to +4.04 / +3.40.",
+      "sources": [
+        {
+          "path": "docs/research/family-transfer-probes.md",
+          "anchor": "Bench-retention probes (0546, 0547): a 99-game AttackLoss-Weak burst on the eight other mechanics",
+          "sha256": "482e52b127c6b9fd57c4a59fbdccc0780963dc6b2dadc77eb2173bcd8298a901"
+        },
+        {
+          "path": "results/mutate/gen-b1-gacalw-g99-s1.json",
+          "sha256": "87ba4c3fa4fe3927fae68161c7eba3ed6e9f802ee126b95838cbc44a98539434"
+        },
+        {
+          "path": "results/mutate/gen-b1-gacalw-g99-s2.json",
+          "sha256": "3c4955b720a2e40886542755f0175961a76c708fdfdb6b12aa42be9f7037370c"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        },
+        {
+          "path": "jobs/done/0546-mutate-monsters.json",
+          "sha256": "091611ee16b116bab9b40b5a9a382704142d81de911fe4533ba54e1f5912b655"
+        },
+        {
+          "path": "jobs/done/0547-mutate-monsters.json",
+          "sha256": "65a1fd2c29d21b87351e8c4e487dead8b3426f40242af3427285d0a90d4d5e30"
+        },
+        {
+          "key": "measurement/family-transfer@gen-b1",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "f2ae0272-e0e7-48dc-b46c-2c2e39980db5",
+      "at": "2026-11-07T20:02:13+00:00 @ ce9f8af",
+      "until": "2026-11-13T02:29:49+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "9808f46eb9526399ded9963e2deb9e4e72c825240a2bf7e3e1cccf2a136bcd23"
+}

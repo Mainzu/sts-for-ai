@@ -1,0 +1,42 @@
+{
+  "key": "how/run-registry",
+  "rev": 1,
+  "value": "learn.py self-plays into datasets/<id>/ (manifest with engine commit and rules version), caches encodings in cache/, and writes an immutable runs/<date>-<config>-<hash>/ (config, commit, dataset ids, model.pt, curves, bench results) plus a line in runs/index.csv; a dataset from another rules version is refused (scripts/registry.py).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "README.md",
+      "anchor": "Learned play: training runs and the registry",
+      "sha256": "c03754871c950032cd66f1693bf801412cce9fb99ab70e66ae392b8de2844a8c"
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:11:25Z @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T00:34:27Z @ da67084",
+      "note": "README.md#Learned play re-read 00:50 UTC 2026-11-03: datasets/<id> with manifest, cache/, immutable runs/<date>-<config>-<hash>, runs/index.csv, other rules refused, all as stated; the section's change is the survive score config note"
+    },
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:59:45Z @ 2e013b2",
+      "note": "README Learned play section trimmed (sweep subsection shortened, amendment history and a survive-arm result dropped); the registry paragraph this fact restates is unchanged"
+    },
+    {
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:37:59Z @ 80d6c86",
+      "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "f55b3c2c9b80c77d9a8cfecea76f131506bb5bb90d217580b170a70682b31201"
+}

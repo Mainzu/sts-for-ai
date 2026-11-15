@@ -1,0 +1,11 @@
+{
+ "name": "hp-loss",
+ "mode": "effects",
+ "n_train": 10000,
+ "n_val": 1000,
+ "train_seed": 1,
+ "val_seed": 2,
+ "search": {"limit": 16},
+ "seed": 0,
+ "switches": {"hp_loss": true}
+}

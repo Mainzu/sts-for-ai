@@ -1,0 +1,38 @@
+{
+ "player": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@tsl1@lcb1",
+ "flags": "--two-turn --line-seed --step-line --chooser runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01@lcb1",
+ "since": "2026-11-13",
+ "decision": "Product read 0986: `@tsl1@lcb1` two turns deep is level; the product gains both flags and the chooser (on the owner's behalf, 2026-11-13)",
+ "headline_control": "results/gauntlet/net1029-hpe0.01-tsl1-lcb1-two-line-step-starter-simboss.json",
+ "one_turn_control": "results/gauntlet/net1029-hpb0.01-tsl1-lcb1-starter-simboss.json",
+ "previous": [
+  {
+   "player": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01",
+   "flags": "--two-turn --line-seed --step-line",
+   "since": "2026-11-03",
+   "decision": "Line step is the two-turn play mode (owner away, 2026-11-03)",
+   "until": "2026-11-13"
+  },
+  {
+   "player": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01",
+   "flags": "--two-turn",
+   "since": "2026-11-02",
+   "decision": "Product net: the 10-29 net (owner away, 2026-11-02)",
+   "until": "2026-11-03"
+  },
+  {
+   "player": "runs/2026-11-01-burst8hp2-s1-9f89b6f/model.pt@hpe0.01",
+   "flags": "--two-turn",
+   "since": "2026-11-02",
+   "decision": "Two-turn @hpe is the product player (owner away, 2026-11-02)",
+   "until": "2026-11-02"
+  },
+  {
+   "player": "runs/2026-11-01-burst8hp2-s1-9f89b6f/model.pt@hpb0.01",
+   "flags": "",
+   "since": "2026-11-01",
+   "decision": "HP bonus promoted (owner away, 2026-11-01)",
+   "until": "2026-11-02"
+  }
+ ]
+}

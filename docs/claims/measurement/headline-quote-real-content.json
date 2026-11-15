@@ -1,0 +1,40 @@
+{
+  "key": "measurement/headline-quote-real-content",
+  "rev": 1,
+  "value": "Real Act 1 content lowers the product's level, not the player order: 0.684 clears with 27 pack cards offered; 0.636 vs 0.836 curated with the 31-card pack (0-249); -0.080 with pack hallway monsters. Product lead over one-turn: +0.008 (0.033) with pack cards, +0.148 with pack monsters.",
+  "status": "active",
+  "sources": [
+    {
+      "key": "measurement/act1-monsters@product",
+      "rev": 2
+    },
+    {
+      "key": "measurement/pack-net-scratch@two-turn",
+      "rev": 3
+    },
+    {
+      "key": "measurement/act1-cards@pack-offers",
+      "rev": 3
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Probe pns-two-turn read: the pack net's gain grows two turns deep; seeds 101 and 201 queued (on the owner's behalf, 2026-11-10)",
+      "sha256": "ab8bc8eb4ba3a61f832cefa3ea34140019b88de936354d8b5e282c86f65bbcf3"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:19+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:19+00:00 @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/act1-monsters@product, measurement/pack-net-scratch@two-turn, measurement/act1-cards@pack-offers reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "3675139984f66be798605f14d06325148cdc49de984ed26fb1d5b86f5dd091ac"
+}

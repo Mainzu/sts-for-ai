@@ -1,0 +1,101 @@
+{
+  "key": "measurement/line-step@headline",
+  "rev": 3,
+  "value": "--line-seed --step-line vs plain two-turn, product @hpe0.01, headline 0-499: end HP +0.41 (0.58), clears 0.834 vs 0.804 (+0.030, 0.017); wall 69.5 min (3 threads/250) vs 127-128 min (2 threads). Level: pass.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Line step on the headline setting, all 500 sequences: level; the stepped file is the headline control, 0.834 clears (cheap-depth lane; 0066; read 13:05 2026-11-03, lanes f1fb0f59)",
+      "sha256": "74409743784def91b15ddf8803930ebb115b8f446282a03e1f27333c2fad3b49"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json",
+      "sha256": "18cd9996abd64a927459287bf456a4b974f7956884d4d9f5fb551745bb1162ed"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:33+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Stepped committed-line player (--line-seed --step-line) vs plain two-turn, product net @hpe0.01, headline setting, sequences 0-249 at fixed n: end-HP +0.04 (se 0.80), clears 0.836 vs 0.852 (-0.016, se 0.020; held-out -0.032, all Hexaghost deaths 14 vs 9), HP at boss 64.7 vs 65.2; wall 69.5 min at 3 threads vs 127-128 min at 2 threads per 250 (mixed depth 75 min at 3). Cells 0-49: row-identical to the stage-1 line-seed file (544 floors). Verdict: level, pass.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Line step on the headline setting, fixed n 250: level with plain two-turn play at about half the wall time; the stepped player is the two-turn play mode from now (line-step.md step 4; 0064 + 0065; read 07:45 2026-11-03, manager 691c5c04)",
+          "sha256": "5234c199d571dd05bb6a8d5aa75201a9e30abace201308678c7b84ec17343f2d"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json",
+          "sha256": "46dbaf2a93344168e646042dc860399bbf1014d5e2e004cece735d154b748098"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-line-step-a.json",
+          "sha256": "400a5939ea7df6bdba28aab035ad8ce5cc6bdcf6061808c129a0c3d1304bc1aa"
+        },
+        {
+          "path": "jobs/done/0065-gauntlet.json",
+          "sha256": "5e07ed024a6830dd2f4c21045fcea73420b0517a7ed58f9f9f3d55fc4f419a6f"
+        },
+        {
+          "path": "jobs/done/0064-gauntlet.json",
+          "sha256": "5c8ca78489a4036619c578de5675fe7ac6bb4ba6bb93a345205ccba30877d6b4"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/cost-savers",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T00:34:22+00:00 @ da67084",
+      "until": "2026-11-03T05:41:43+00:00 @ b47437a"
+    },
+    {
+      "rev": 2,
+      "value": "Stepped committed-line player (--line-seed --step-line) vs plain two-turn, product net @hpe0.01, headline setting, sequences 0-499 at fixed n: end-HP +0.41 (se 0.58), clears 0.834 vs 0.804 (+0.030, se 0.017; by half -0.016 and +0.076, the swing in the plain control's 250-499 half), HP at boss 64.1 vs 64.3, Hexaghost deaths 29 vs 29; wall 69.5 min at 3 threads per 250 alone vs 127-128 min at 2 threads plain. Cells 0-49: row-identical to the stage-1 line-seed file. Verdict: level, pass.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Line step on the headline setting, all 500 sequences: level; the stepped file is the headline control, 0.834 clears (cheap-depth lane; 0066; read 13:05 2026-11-03, lanes f1fb0f59)",
+          "sha256": "74409743784def91b15ddf8803930ebb115b8f446282a03e1f27333c2fad3b49"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json",
+          "sha256": "18cd9996abd64a927459287bf456a4b974f7956884d4d9f5fb551745bb1162ed"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-starter-simboss.json",
+          "sha256": "6a788adf75486e786c2d055cfcab9e47732f9ab63695ed072eb6702e6acbf05b"
+        },
+        {
+          "path": "jobs/done/0066-gauntlet.json",
+          "sha256": "d7274ebfec66469995c175353e82f216b3cf8b4b0b7ccf58e80d3f8cfad7d6ea"
+        },
+        {
+          "path": "jobs/done/0065-gauntlet.json",
+          "sha256": "5e07ed024a6830dd2f4c21045fcea73420b0517a7ed58f9f9f3d55fc4f419a6f"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "f1fb0f59-8b60-4c54-a39e-129739c75134",
+      "at": "2026-11-03T05:41:43+00:00 @ b47437a",
+      "until": "2026-11-13T02:30:33+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "040e96ade15618d82c841ccc1d4b0eb89438bc0967f84d8b220fd4d97dcb4bda"
+}

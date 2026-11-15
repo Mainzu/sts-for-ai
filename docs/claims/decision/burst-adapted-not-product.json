@@ -1,0 +1,32 @@
+{
+  "key": "decision/burst-adapted-not-product",
+  "rev": 1,
+  "value": "A burst is not a product step: it pays only where most fights carry its mechanic; best burst net on official content +1.08 HP, no clears two turns deep; anti-attack burst -1.21 (0.30) HP per unchanged elite two turns deep. Ships, if ever, as a net named by a content pack.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After adapted-two-turn: a burst is the adapted column, not yet a product step; lane unseen-boss-burst opened (on the owner's behalf, 2026-11-05)",
+      "sha256": "bceb5d951bd22aa1657d5f28297deeb1e73af1084184d180914482d35eb52a52"
+    },
+    {
+      "key": "decision/crossed-player-lead",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:11Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:35Z @ 3123201a",
+      "note": "fact split 2026-11-13: decision/crossed-player-lead reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "0e04e0980c6f388a31eb6107436c18e30e2e372c21f2378ffcccc5ab9319295d"
+}

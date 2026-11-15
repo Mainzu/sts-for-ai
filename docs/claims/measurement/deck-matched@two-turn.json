@@ -1,0 +1,74 @@
+{
+  "key": "measurement/deck-matched@two-turn",
+  "rev": 2,
+  "value": "Deck-matched read two-turn (heuristic leaf, --match the product file, seq 500-749): paired sd 13.53 vs unmatched 17.25 (1.27x, under the 1.4x bar), means equal (-8.99 vs -9.32 HP), wall time 0.48x.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Deck-matched reads two turns deep: paired end-HP sd 17.3 -> 13.5 (1.27x), under the 1.4x bar; matched reads stay a one-turn screen tool, but the read took 0.48x the wall time (cheaper-reads lane; 0107 with 0090; read 21:30 2026-11-04, lanes 1aba741f)",
+      "sha256": "1a1a165db907c9c397370ae26de9c7a9a3338bc7163fa5c43fd91bce2bce8749"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-500.json",
+      "sha256": "2a31bbfc413754b45e4638038b96d3fa086b5b79e71e368bda3f99e504104fa2"
+    },
+    {
+      "path": "jobs/done/0107-gauntlet.json",
+      "sha256": "ac1effc6cd08e34264231d95df3c9df6f3bffc156b15a369a5478b5a1e76ee76"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:08+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Deck-matched read two turns deep (gauntlet.py play heuristic --two-turn --line-seed --step-line --match the product's 500-749 file), headline setting, sequences 500-749, fixed n 250, against the product: end-HP -8.99 (se 0.86), paired sd 13.53, corr 0.81, clears -0.152 (se 0.026), 26 min at 3 threads; the unmatched read with the product as chooser (0090): -9.32 (se 1.09), sd 17.25, corr 0.69, clears -0.200 (se 0.031), 54 min; sd 1.27x lower (variance 1.63x), means equal, wall time 0.48x (the chooser's sim fights skipped); 2422 of 2429 card floors matched.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Deck-matched reads two turns deep: paired end-HP sd 17.3 -> 13.5 (1.27x), under the 1.4x bar; matched reads stay a one-turn screen tool, but the read took 0.48x the wall time (cheaper-reads lane; 0107 with 0090; read 21:30 2026-11-04, lanes 1aba741f)",
+          "sha256": "1a1a165db907c9c397370ae26de9c7a9a3338bc7163fa5c43fd91bce2bce8749"
+        },
+        {
+          "path": "results/gauntlet/match-heuristic-two-line-step-net1029-starter-simboss-500.json",
+          "sha256": "ce875e49e2fb2fe8be253c2f5a782814de5171b1ece7bb415ea242ed1f0323c0"
+        },
+        {
+          "path": "results/gauntlet/heuristic-two-line-step-ch-net1029-starter-simboss-500.json",
+          "sha256": "76a7bf3055076ea6a9765ab87ee610c7d8ee667472591bb2e15439c3b722d1ee"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-500.json",
+          "sha256": "2a31bbfc413754b45e4638038b96d3fa086b5b79e71e368bda3f99e504104fa2"
+        },
+        {
+          "path": "jobs/done/0107-gauntlet.json",
+          "sha256": "ac1effc6cd08e34264231d95df3c9df6f3bffc156b15a369a5478b5a1e76ee76"
+        },
+        {
+          "path": "jobs/done/0090-gauntlet.json",
+          "sha256": "0ed35d5f1c6523780940a12dd4a2227702aef1e86b5a41dc901d02b062fcdcc1"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/headline-setting",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "1aba741f-cb73-4746-91c0-26ca852ecaed",
+      "at": "2026-11-04T14:24:35+00:00 @ 2ee0f61",
+      "until": "2026-11-13T02:30:08+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "612cc6d318c6804a77baa1b78eca0da2ca332df993a189886c2418fd2d4b9e6b"
+}

@@ -1,0 +1,55 @@
+{
+  "key": "measurement/random-world-sizing@step1",
+  "rev": 1,
+  "value": "Random-world bench sizing (gen-enemies-b1, 675 elite starts x 16 seeds, net @hpb0.01@tsl1 one turn deep, novelty = net HP-lost change minus the heuristic's, no ladder control): single-item cost mean +2.32 HP, sd between items 1.77 over 21 mechanics (+1.58, sd 2.76 over all 24); one item on 50 starts x 4 seeds has se about 0.73. Charter's literal read (k worlds vs 1.5 x k x the k=1 worlds' mean) puts additive only 0.7-2.4 se from the line at 20-40 worlds; the paired read (each world against the sum of its own items' singles, same starts and seeds) 5.3/7.9/11.5 se at k 2/4/8 with 20 worlds on 21 items. Saturation: summed single raw costs exceed start HP on 12%/37%/77% of starts at k 2/4/8. Pilot about 0.6 thread-h.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/random-world-bench.md",
+      "anchor": "Step 1: sizing from the generated-enemies table (no CPU, 2026-11-09)",
+      "sha256": "a143dc2a2cf47be5df90e21c55039e125b06e953eef2fe8abfc71f2ddc2e6dc6"
+    },
+    {
+      "path": "results/mutate/gen-enemies-b1.json",
+      "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+    },
+    {
+      "path": "scripts/analysis/rwb_sizing.py",
+      "sha256": "d7face1a8fa98188e43b137d0dce286b4456da86040ba5627520f10e4467b672"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "57656885-7553-4d98-98f2-33534ea8fa0c",
+  "at": "2026-11-09T12:03:42+00:00 @ 863dfae",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Random-world bench sizing (gen-enemies-b1, 675 elite starts x 16 seeds, net @hpb0.01@tsl1 one turn deep, novelty = net HP-lost change minus the heuristic's, no ladder control): single-item cost mean +2.32 HP, sd between items 1.77 over 21 mechanics (+1.58, sd 2.76 over all 24); one item on 50 starts x 4 seeds has se about 0.73. Charter's literal read (k worlds vs 1.5 x k x the k=1 worlds' mean) puts additive only 0.7-2.4 se from the line at 20-40 worlds; the paired read (each world against the sum of its own items' singles, same starts and seeds) 5.3/7.9/11.5 se at k 2/4/8 with 20 worlds on 21 items. Saturation: summed single raw costs exceed start HP on 12%/37%/77% of starts at k 2/4/8. Pilot about 0.6 thread-h.",
+      "sources": [
+        {
+          "path": "docs/research/random-world-bench.md",
+          "anchor": "Step 1: sizing from the generated-enemies table (no CPU, 2026-11-09)",
+          "sha256": "a143dc2a2cf47be5df90e21c55039e125b06e953eef2fe8abfc71f2ddc2e6dc6"
+        },
+        {
+          "path": "results/mutate/gen-enemies-b1.json",
+          "sha256": "59dc314dd252e68689038f0d7c1f451c02ef8d5dcbbb2284ed2c27c465bf9c24"
+        },
+        {
+          "path": "scripts/analysis/rwb_sizing.py",
+          "sha256": "d7face1a8fa98188e43b137d0dce286b4456da86040ba5627520f10e4467b672"
+        }
+      ],
+      "owner": false,
+      "by": "57656885-7553-4d98-98f2-33534ea8fa0c",
+      "at": "2026-11-09T12:03:42+00:00 @ 863dfae",
+      "until": "2026-11-10T07:03:40+00:00 @ f97b79c",
+      "retired": "merged into measurement/portfolio-random-world-bench"
+    }
+  ],
+  "seal": "7dbc87974e2df3ece2f71f7ac8312aa02d92785c5c06b0e0ffd8eb266ab11dca"
+}

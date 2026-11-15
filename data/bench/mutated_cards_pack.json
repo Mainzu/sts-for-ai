@@ -1,0 +1,209 @@
+{
+ "version": 1,
+ "powers": [],
+ "cards": [
+  {
+   "id": "Bash~copy",
+   "cost": 2,
+   "type": "Attack",
+   "effects": [
+    {
+     "Damage": {
+      "amount": 8,
+      "hits": 1,
+      "target": "Opponent"
+     }
+    },
+    {
+     "Apply": {
+      "power": "Vulnerable",
+      "amount": 2,
+      "target": "Opponent"
+     }
+    }
+   ]
+  },
+  {
+   "id": "bash-c1-d5",
+   "cost": 1,
+   "type": "Attack",
+   "effects": [
+    {
+     "Damage": {
+      "amount": 5,
+      "hits": 1,
+      "target": "Opponent"
+     }
+    },
+    {
+     "Apply": {
+      "power": "Vulnerable",
+      "amount": 2,
+      "target": "Opponent"
+     }
+    }
+   ]
+  },
+  {
+   "id": "Inflame~copy",
+   "cost": 1,
+   "type": "Power",
+   "effects": [
+    {
+     "Apply": {
+      "power": "Strength",
+      "amount": 2,
+      "target": "Me"
+     }
+    }
+   ]
+  },
+  {
+   "id": "inflame-turn1",
+   "cost": 1,
+   "type": "Power",
+   "effects": [
+    {
+     "Apply": {
+      "power": "DemonForm",
+      "amount": 1,
+      "target": "Me"
+     }
+    }
+   ]
+  },
+  {
+   "id": "DemonForm~copy",
+   "cost": 3,
+   "type": "Power",
+   "effects": [
+    {
+     "Apply": {
+      "power": "DemonForm",
+      "amount": 2,
+      "target": "Me"
+     }
+    }
+   ]
+  },
+  {
+   "id": "df-c2-s1",
+   "cost": 2,
+   "type": "Power",
+   "effects": [
+    {
+     "Apply": {
+      "power": "DemonForm",
+      "amount": 1,
+      "target": "Me"
+     }
+    }
+   ]
+  },
+  {
+   "id": "Metallicize~copy",
+   "cost": 1,
+   "type": "Power",
+   "effects": [
+    {
+     "Apply": {
+      "power": "Metallicize",
+      "amount": 3,
+      "target": "Me"
+     }
+    }
+   ]
+  },
+  {
+   "id": "metal-c0-a2",
+   "cost": 0,
+   "type": "Power",
+   "effects": [
+    {
+     "Apply": {
+      "power": "Metallicize",
+      "amount": 2,
+      "target": "Me"
+     }
+    }
+   ]
+  },
+  {
+   "id": "metal-c2-a5",
+   "cost": 2,
+   "type": "Power",
+   "effects": [
+    {
+     "Apply": {
+      "power": "Metallicize",
+      "amount": 5,
+      "target": "Me"
+     }
+    }
+   ]
+  },
+  {
+   "id": "Combust~copy",
+   "cost": 1,
+   "type": "Power",
+   "effects": [
+    {
+     "Apply": {
+      "power": "Combust",
+      "amount": 1,
+      "target": "Me"
+     }
+    },
+    {
+     "Apply": {
+      "power": "CombustDamage",
+      "amount": 5,
+      "target": "Me"
+     }
+    }
+   ]
+  },
+  {
+   "id": "combust-d8-l2",
+   "cost": 1,
+   "type": "Power",
+   "effects": [
+    {
+     "Apply": {
+      "power": "Combust",
+      "amount": 2,
+      "target": "Me"
+     }
+    },
+    {
+     "Apply": {
+      "power": "CombustDamage",
+      "amount": 8,
+      "target": "Me"
+     }
+    }
+   ]
+  },
+  {
+   "id": "combust-c0-d3",
+   "cost": 0,
+   "type": "Power",
+   "effects": [
+    {
+     "Apply": {
+      "power": "Combust",
+      "amount": 1,
+      "target": "Me"
+     }
+    },
+    {
+     "Apply": {
+      "power": "CombustDamage",
+      "amount": 3,
+      "target": "Me"
+     }
+    }
+   ]
+  }
+ ]
+}

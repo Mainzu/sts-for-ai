@@ -1,0 +1,32 @@
+{
+  "key": "decision/no-path-rule",
+  "rev": 1,
+  "value": "The headline setting keeps no path rule: skipping elites is worth up to +14 HP and the HP-40 rule +1.53 HP, but with no elite payoff on this gauntlet any path rule would bias the yardstick; --elites skip|hp stay as flags and path choice stays on the run-layer list.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Elite-skip read: path choice is real, the headline keeps no path rule (owner away, 2026-11-02)",
+      "sha256": "e62cfa2a58f924abaddf62d2b7be483cb6e8e1fe45c88beb517e0228bd7d6b36"
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:11:32Z @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:57:54Z @ a875850",
+      "note": "yardstick/headline-setting rev 2 changed only which depth judges a change (one turn; the two-turn product is the reported score); the setting's flags this fact relies on (--start starter --rewards sim --sim-boss, 500 sequences) are unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "c41d492ab024f60b9c921a29ef2be0fdbc7152e033daa00cfb61b653bff561ac"
+}

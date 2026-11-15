@@ -1,0 +1,79 @@
+{
+  "key": "measurement/net1029-vs-burst8hp2@two-turn-cells",
+  "rev": 1,
+  "value": "Two turns deep @hpe0.01 on cell decks, fresh sequences 500-749 (pre-registered confirmation): the 10-29 net clears 0.724 vs burst8hp2's 0.672 (+0.052, se 0.021) and ends +3.01 HP (se 0.74, z 4.1), both card halves; the gain is elite deaths before the boss (13 vs 26), boss deaths level.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "10-29 net two turns deep: confirmed on 500-749, product net changes (b38a/b; read 10:20 2026-11-02, manager 14d5db36)",
+      "sha256": "a36c43efb511ad04522410d6b8a7093d0f7d8437cc0978df1bbaf621ed40003d"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-two-c.json",
+      "sha256": "9fe4b3d201d3f723a4c9685158789737c79f16175f8dd439af917b0d8a1cfcd8"
+    },
+    {
+      "path": "results/gauntlet/champion-hpe0.01-two-c.json",
+      "sha256": "f8136ded461922482dbd86c31d27d20ff7cf15bba1feb68e5e4f7ba736fdb8d4"
+    },
+    {
+      "key": "yardstick/gauntlet",
+      "rev": 1
+    },
+    {
+      "key": "yardstick/books",
+      "rev": 1
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:12:10+00:00 @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Two turns deep @hpe0.01 on cell decks, fresh sequences 500-749 (pre-registered confirmation): the 10-29 net clears 0.724 vs burst8hp2's 0.672 (+0.052, se 0.021) and ends +3.01 HP (se 0.74, z 4.1), both card halves; the gain is elite deaths before the boss (13 vs 26), boss deaths level.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "10-29 net two turns deep: confirmed on 500-749, product net changes (b38a/b; read 10:20 2026-11-02, manager 14d5db36)",
+          "sha256": "a36c43efb511ad04522410d6b8a7093d0f7d8437cc0978df1bbaf621ed40003d"
+        },
+        {
+          "path": "results/gauntlet/net1029-hpe0.01-two-c.json",
+          "sha256": "9fe4b3d201d3f723a4c9685158789737c79f16175f8dd439af917b0d8a1cfcd8"
+        },
+        {
+          "path": "results/gauntlet/champion-hpe0.01-two-c.json",
+          "sha256": "f8136ded461922482dbd86c31d27d20ff7cf15bba1feb68e5e4f7ba736fdb8d4"
+        },
+        {
+          "key": "yardstick/gauntlet",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/books",
+          "rev": 1
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:12:10+00:00 @ fc9cdd8",
+      "until": "2026-11-10T07:03:42+00:00 @ f97b79c",
+      "retired": "superseded by decision/crossed-player-lead and product/net"
+    }
+  ],
+  "seal": "a8f1be9668cd65cc0c18435f1d55e6d3f396ce00d07424ed417b1463d21c19b5"
+}

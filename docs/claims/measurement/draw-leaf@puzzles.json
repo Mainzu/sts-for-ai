@@ -1,0 +1,50 @@
+{
+  "key": "measurement/draw-leaf@puzzles",
+  "rev": 1,
+  "value": "Sampled-draw leaf (@dl<k>), product net @hpb0.01 one turn, 448 exact puzzles of horizon >= 1: regret plain 0.0174, @dl1 0.0173, @dl2 0.0185, @dl4 0.0182 (gains +0.0002 to -0.0010, se 0.0011-0.0017), time 3.2-4.3x plain; fails the screen (bar: -0.01 regret at <= 1.5x). Two-turn cut the same set's regret to about a third, so its gain is the second turn's play, not seeing the hand.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Sampled-draw leaf screen: fails both bars, no regret gain at 3-4x the cost; the leaf stops here (cheap-depth lane; draw-leaf.md step 3; run 14:20 2026-11-03, lanes f1fb0f59)",
+      "sha256": "9334300f06b15d553479714fb7c1deb1ca24fcb4988fb3aac9b9a1be30a92eaa"
+    },
+    {
+      "path": "results/probes/draw_leaf_screen.json",
+      "sha256": "2766ddc3b8663eae8f6f5b96e7da4abd6bbeba53832566c9ac03eee94f5b8f74"
+    },
+    {
+      "path": "docs/specs/draw-leaf.md",
+      "sha256": "07402db3533e0232675cf3c18a80aa66739f98815b71bd893300176c658d4ea0"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f1fb0f59-8b60-4c54-a39e-129739c75134",
+  "at": "2026-11-03T05:58:48+00:00 @ 3872195",
+  "confirms": [
+    {
+      "by": "a5cb4157-4f5b-4229-8f32-e0392c96548e",
+      "at": "2026-11-03T06:47:48+00:00 @ 7fcf10e",
+      "note": "the only change to docs/specs/draw-leaf.md since the fact was set is its status line (3acdcf8: 'built through step 3; the screen failed'); the numbers come from results/probes/draw_leaf_screen.json, unchanged"
+    },
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:41:44+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    },
+    {
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:24:21+00:00 @ c4fb1faf",
+      "note": "draw-leaf.md changed only its Status line (8b0ba903)"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "c1e427c137fd96c7409944c5a0e9812e91671a47b924c1eb5c9ea9fe8adc7409"
+}

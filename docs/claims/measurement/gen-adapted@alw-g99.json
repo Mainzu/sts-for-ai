@@ -1,0 +1,70 @@
+{
+  "key": "measurement/gen-adapted@alw-g99",
+  "rev": 2,
+  "value": "99-game bursts on GE-AttackLoss-Weak (3 seeds/teacher) @tsl1 one turn vs zero-shot (cost +6.03 (0.48)): net teacher cut +6.36 (0.22 over nets) = 1.05 of cost; heuristic +3.36 (0.72) = 0.56; parents held (-0.38 / -0.32); both pass the half-cost 2-se rule.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/gen-adapted-column.md",
+      "anchor": "Step 2 read: family gac-alw table (job 0493, 2026-11-08)",
+      "sha256": "13df1dc0ba474d8ed70e23fd2733d692cafbef0f7d7fcf5d3125f5a796605c37"
+    },
+    {
+      "path": "results/families/gac-alw.json",
+      "sha256": "79e45d72f328b8394851dc35e2bba8a472863fb8c5c961b56ce3f552d5614c0f"
+    },
+    {
+      "path": "jobs/done/0493-family.json",
+      "sha256": "85351c1292fafc67ed146ec0bdf68779fa3b9a9382378c54840f8d8b68b73ea9"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:16+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Adapted column on generated enemies, first row: 99-game bursts on GE-AttackLoss-Weak (Lagavulin and Sentries) from the 10-29 net, three training seeds on one game set per teacher, read one turn deep @tsl1 on the bench's first 1000 starts x 4 seeds (446 Lagavulin+Sentries starts) against the zero-shot net; cut in cost beyond c-hp1.25-str1, HP lost per elite fight, mean (se starts / se nets), zero-shot cost +6.03 (0.48): net teacher (@hpb0.01@tsl1) +6.36 (0.25 / 0.22), 1.05 of the cost, per net +6.75 +6.35 +5.97, wins on the mechanic 0.84/0.81 to 0.93; heuristic teacher +3.36 (0.19 / 0.72), 0.56, per net +1.97 +3.72 +4.40; parent rows -0.38 / -0.32 HP (held); both pass the half-cost, 2-se rule. First look at 33 games (net teacher, seed 1): +1.14 (0.26), 0.19 of the cost.",
+      "sources": [
+        {
+          "path": "docs/research/gen-adapted-column.md",
+          "anchor": "Step 2 read: family gac-alw table (job 0493, 2026-11-08)",
+          "sha256": "13df1dc0ba474d8ed70e23fd2733d692cafbef0f7d7fcf5d3125f5a796605c37"
+        },
+        {
+          "path": "results/families/gac-alw.json",
+          "sha256": "79e45d72f328b8394851dc35e2bba8a472863fb8c5c961b56ce3f552d5614c0f"
+        },
+        {
+          "path": "results/families/gac-alw.md",
+          "sha256": "667c611bc91ae736113195d916ef4105d889cdc5955a7a4eb662e07d15bcac8b"
+        },
+        {
+          "path": "jobs/done/0493-family.json",
+          "sha256": "85351c1292fafc67ed146ec0bdf68779fa3b9a9382378c54840f8d8b68b73ea9"
+        },
+        {
+          "path": "jobs/done/0484-family.json",
+          "sha256": "90935aa32733b8fc752a4aaf77aa8065d1bb47ef4ae1811063690ea4f91c6acf"
+        },
+        {
+          "path": "jobs/done/0490-family.json",
+          "sha256": "0372bfa0999cbabb630aadd0042861865a784c4a1fb3ffa757e7f81ef7d1c3d6"
+        },
+        {
+          "path": "jobs/done/0495-family.json",
+          "sha256": "5e1f9ea14a355d8e42685e02e332a1ebcde1246c9cee15ee407ad263bca12e5b"
+        }
+      ],
+      "owner": false,
+      "by": "daa16a79-f788-4c98-9a78-e5ef65598f26",
+      "at": "2026-11-07T20:10:17+00:00 @ 8445965",
+      "until": "2026-11-13T02:30:16+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "82dd959830f353a1bacefda7f7f92fc49330c7bfa660615ba361780465054d92"
+}

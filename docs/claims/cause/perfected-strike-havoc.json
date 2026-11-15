@@ -1,0 +1,47 @@
+{
+  "key": "cause/perfected-strike-havoc",
+  "rev": 1,
+  "value": "Perfected Strike played by Havoc (or a Double Tap copy) is in limbo in the game, so it doesn't count itself; played from the hand it does. The engine always counts the card in play (CombatState::tagged_count), predicting 21 damage where the game dealt 18 (live run 2026-11-14, The Guardian). Fix needs an InPlay flag (codec) and a rules-version change; not done.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/real-game-runs.md",
+      "anchor": "Bugs the live runs found",
+      "sha256": "a689ba3d3a39f2e9ecda92eadd948de1aedc3dcda19608637603dbeee9735f93"
+    },
+    {
+      "path": "engine/src/state.rs",
+      "sha256": "f7d959197893bd39e5e5fd1b03b304419cecc61b2c0a860f439f6c3944d0b5c3"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "12ae5317-5033-4622-ad4c-f74f4df39f7e",
+  "at": "2026-11-13T23:35:21Z @ baa3df76",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Perfected Strike played by Havoc (or a Double Tap copy) is in limbo in the game, so it doesn't count itself; played from the hand it does. The engine always counts the card in play (CombatState::tagged_count), predicting 21 damage where the game dealt 18 (live run 2026-11-14, The Guardian). Fix needs an InPlay flag (codec) and a rules-version change; not done.",
+      "sources": [
+        {
+          "path": "docs/research/real-game-runs.md",
+          "anchor": "Bugs the live runs found",
+          "sha256": "a689ba3d3a39f2e9ecda92eadd948de1aedc3dcda19608637603dbeee9735f93"
+        },
+        {
+          "path": "engine/src/state.rs",
+          "sha256": "f7d959197893bd39e5e5fd1b03b304419cecc61b2c0a860f439f6c3944d0b5c3"
+        }
+      ],
+      "owner": false,
+      "by": "12ae5317-5033-4622-ad4c-f74f4df39f7e",
+      "at": "2026-11-13T23:35:21Z @ baa3df76",
+      "until": "2026-11-14T00:12:08Z @ 6f6a6438",
+      "retired": "fixed by 6f6a6438 (InPlay.queued; tagged_count skips queued and copied cards)"
+    }
+  ],
+  "seal": "f46c14859a62bf47a8d13161ac9476471296bea3783532e6f86b8ff586f048cb"
+}

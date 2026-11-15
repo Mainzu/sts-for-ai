@@ -1,0 +1,106 @@
+{
+  "key": "yardstick/read-floors",
+  "rev": 3,
+  "value": "Detection floors (~2.5 se at n 500): headline one turn between nets, own picks: paired end-HP sd 20-24 -> ~2.5 HP or 0.07 clears; deck-matched sd 10.6-15 -> ~1.0-1.3 HP; cell decks ~1.0 HP; recipe questions add training-seed sd 0.65-0.7 HP.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/big-picture-2026-11-10.md",
+      "anchor": "Navigator's reading",
+      "sha256": "0cff042b3e296a09e159b241af03d70ea43a13b55611b9f2839e621f133d07f5"
+    },
+    {
+      "key": "cause/headline-pairing-weak",
+      "rev": 2
+    },
+    {
+      "key": "measurement/seed-sd@gauntlet",
+      "rev": 4
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:19Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:25Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/seed-sd@gauntlet reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Detection floors for reads (about 2.5 se at n 500, recomputed by the 2026-11-10 review's skeptics from results/gauntlet/*.json): headline one turn deep between nets on own picks paired end-HP sd 20-24 HP, floor about 2.5 HP or 0.07 clears; deck-matched sd 10.6-15, floor about 1.0-1.3 HP; cell decks about 1.0 HP; training-seed sd 0.65-0.7 HP on top for any recipe question (a single-seed pair's se about 1.1 HP). Transfer: a cell gain reaches the headline at about 0.5x, a one-turn gain the two-turn product at 0.2-0.46x (cause/leaf-gain-third). A navigator charter or probe states its predicted effect on its ruler beside this floor and does not open below it.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the big-picture review of 2026-11-10: read floors for charters; counterfactual pricing, product-depth worlds and wider generators ranked; 0780 cancelled; generated-pack-scratch's reroute written in advance (on the owner's behalf, 2026-11-10)",
+          "sha256": "04d4d7f9352e4975a4c7f8e97179294d67f74eddd5419f0bf6216353b2b11a37"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-10.md",
+          "anchor": "Navigator's reading",
+          "sha256": "0cff042b3e296a09e159b241af03d70ea43a13b55611b9f2839e621f133d07f5"
+        },
+        {
+          "key": "cause/headline-pairing-weak",
+          "rev": 1
+        },
+        {
+          "key": "measurement/seed-sd@gauntlet",
+          "rev": 2
+        },
+        {
+          "key": "cause/leaf-gain-third",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "f25bbf58-85c9-46a1-a2a0-053ec482e8a0",
+      "at": "2026-11-10T10:14:22Z @ d5b23ef",
+      "until": "2026-11-10T16:53:36Z @ 5e367c8"
+    },
+    {
+      "rev": 2,
+      "value": "Detection floors for reads (about 2.5 se at n 500, recomputed by the 2026-11-10 review's skeptics from results/gauntlet/*.json): headline one turn deep between nets on own picks paired end-HP sd 20-24 HP, floor about 2.5 HP or 0.07 clears; deck-matched sd 10.6-15, floor about 1.0-1.3 HP; cell decks about 1.0 HP; training-seed sd 0.65-0.7 HP on top for any recipe question (a single-seed pair's se about 1.1 HP). Transfer: a cell gain reaches the headline at about 0.5x; a one-turn gain reaches the two-turn product at 0.2-0.46x against in-horizon threats and about 1x on content whose payoff lands past both horizons (cause/leaf-gain-third). A navigator charter or probe states its predicted effect on its ruler beside this floor and does not open below it.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After the big-picture review of 2026-11-10: read floors for charters; counterfactual pricing, product-depth worlds and wider generators ranked; 0780 cancelled; generated-pack-scratch's reroute written in advance (on the owner's behalf, 2026-11-10)",
+          "sha256": "04d4d7f9352e4975a4c7f8e97179294d67f74eddd5419f0bf6216353b2b11a37"
+        },
+        {
+          "path": "docs/research/big-picture-2026-11-10.md",
+          "anchor": "Navigator's reading",
+          "sha256": "0cff042b3e296a09e159b241af03d70ea43a13b55611b9f2839e621f133d07f5"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "pns-two-turn-seeds read: past-horizon content gains carry whole; cause/leaf-gain-third re-set; twin-two-turn-matched queued (on the owner's behalf, 2026-11-10)",
+          "sha256": "30cf80f6929023e8b1db34255a3c2e9369385ced13d7aa1f20f5a1554f1c371e"
+        },
+        {
+          "key": "cause/headline-pairing-weak",
+          "rev": 1
+        },
+        {
+          "key": "measurement/seed-sd@gauntlet",
+          "rev": 3
+        },
+        {
+          "key": "cause/leaf-gain-third",
+          "rev": 6
+        }
+      ],
+      "owner": false,
+      "by": "76244db9-7a36-4d59-9a82-257f8498490b",
+      "at": "2026-11-10T16:53:36Z @ 5e367c8",
+      "until": "2026-11-13T02:29:19Z @ 3123201a"
+    }
+  ],
+  "seal": "ecaca0f2259b67bdbfe4952a8407238cd8d3dcdee2d824c7f5d7171e364c4a16"
+}

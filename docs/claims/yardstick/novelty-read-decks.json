@@ -1,0 +1,32 @@
+{
+  "key": "yardstick/novelty-read-decks",
+  "rev": 1,
+  "value": "The mutate bench plays each sequence's cell deck at the product file's entry HP (bias_audit.fights), so bench win rates aren't headline rates (bosses two turns 0.716 bench vs 0.909 product file) and a card modifier reaches only starts whose cell deck holds the card.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "scripts/analysis/bias_audit.py",
+      "sha256": "2be5a2ab1036805a18a9d5c57b5e686fef4b86e499f60de551f69cfdef54caaa"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After difficulty-shift: one shared parent, the bench's decks, the held-out headline, and where bosses kill (on the owner's behalf, 2026-11-05)",
+      "sha256": "15e45366db277c2248bce49d2be52442199c712a30779e3f82eb83fec4b89e1e"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:09Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:43:15Z @ d240a173",
+      "note": "navigator 2026-11-13: bias_audit.py diff since 3123201a removes the codec byte walker (with_monster_power replaces it) and reads PLAY_TURN_LIMIT from sts; fights() still plays cell decks at the product file's entry HP"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "6644a7ab62748f9475a43664ce4da1c121b9f132c23104ea989dfbb40aaabb3d"
+}

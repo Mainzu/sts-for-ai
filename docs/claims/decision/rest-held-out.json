@@ -1,0 +1,37 @@
+{
+  "key": "decision/rest-held-out",
+  "rev": 1,
+  "value": "The gauntlet's rest site never upgrades held-out check9 or proving cards (upgradable() requires the + in sts.deck_card_names()); an accident of the rest-site spec, fixed only with the headline change after Act 1 (decision/headline-pool-after-act1), controls built once then; until then the rule stays so headline reads stay comparable.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Rest-site upgrades of held-out cards wait for the headline change after Act 1 (owner, 2026-11-10)",
+      "sha256": "f57200db1d6dc6ab912c969d9d7bd8a518f7ce9c16c4770bda0aa9028b09e629"
+    },
+    {
+      "path": "scripts/gauntlet.py",
+      "sha256": "467b6f22c066a4a78f8019ed186148284ee0f5a59db9b36d35259864fa98e688"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "5c05598a-e481-4462-8671-1b83efbc36a8",
+  "at": "2026-11-10T06:13:37Z @ 8243021",
+  "confirms": [
+    {
+      "by": "dbbf57b7-c9db-43bc-b118-76df16e56eb8",
+      "at": "2026-11-12T01:15:52Z @ 4c2b9a0",
+      "note": "scripts/gauntlet.py changed only by 45c445b (resolve_player: a glob in the net path resolved to its one match before play); reads, settings and pairing unchanged"
+    },
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:43:11Z @ d240a173",
+      "note": "navigator 2026-11-13: scripts/gauntlet.py diff since 3123201a is only RUST_MIN_STACK 64 MB; rest-site upgradable() unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "0180671194f3cf706b68e829944f2ab357c90a7cf1803118be3370ef80efdb03"
+}

@@ -1,0 +1,49 @@
+{
+  "key": "decision/no-registry-stages",
+  "rev": 1,
+  "value": "Runtime-registry stages 3-5 and entity-shape are stopped until a bench or content needs them (adopted from the review's stop list).",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/approach-review-2026-11-02.md",
+      "anchor": "Stop or pause",
+      "sha256": "f8fad2ee653f87f858fa73d5392004e0adf2238488ba7bdc9f42e81a2480fa2f"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Next re-ranked from the approach review (owner away, 2026-11-02)",
+      "sha256": "f15c7c1650e61c31caf73e006c3d7c085e2e513df33b2ee6fe63a89486f8fc52"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:11:31Z @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Runtime-registry stages 3-5 and entity-shape are stopped until a bench or content needs them (adopted from the review's stop list).",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Stop or pause",
+          "sha256": "f8fad2ee653f87f858fa73d5392004e0adf2238488ba7bdc9f42e81a2480fa2f"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Next re-ranked from the approach review (owner away, 2026-11-02)",
+          "sha256": "f15c7c1650e61c31caf73e006c3d7c085e2e513df33b2ee6fe63a89486f8fc52"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:31Z @ fc9cdd8",
+      "until": "2026-11-04T12:58:18Z @ 8fc9083",
+      "retired": "superseded by the owner's decision of 2026-11-04 (decision/registry-first): runtime-registry stages 2-5 are now the first development item; lane/runtime-registry opened"
+    }
+  ],
+  "seal": "8de6755f807564ca1c1b90e66d0919aa47649a65886a6c150d4b4908c3b6f99f"
+}

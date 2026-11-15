@@ -1,0 +1,74 @@
+{
+  "key": "owner/open/approach-review",
+  "rev": 3,
+  "value": "Nothing from the approach review's Decisions for the owner stays open: (1), (2), (5), (6), (7) were decided by the navigator's first defaults, (3) and (4) earlier, and level 2 of the arena ladder was dropped by the owner (no StS1 install).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Navigator's first defaults (on the owner's behalf, 2026-11-03)",
+      "sha256": "99ae6081cf923509353550c2ed1894855c6a3e762c8547071e90966717351583"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "No StS1 install; content parity from the wiki and sts_lightspeed (owner, 2026-11-04)",
+      "sha256": "794ca0885d442d7ad1f8893756440c56d70ce3416dad7eca68f39771f53720e7"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "ea89a8f4-8c59-4b7d-bec0-35b31ed878d6",
+  "at": "2026-11-04T12:45:20Z @ fe27ec2",
+  "confirms": [
+    {
+      "by": "62b7a521-3221-4c6f-8916-214850efc667",
+      "at": "2026-11-10T12:13:28Z @ 4f63f69",
+      "note": "the changed heading now points to 'Parity source: the game's own code (owner, 2026-11-10)', which keeps level 2 of the arena ladder dropped; nothing reopens"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Still open from the approach review's Decisions for the owner: (1) what goal 1 means (new bundles of known atoms vs new atoms as data), (2) which simulator and arena carry goal 2 and what dominant means, (5) and (6) role arrangements, (7) archive db/, drop the solver from training (wait for the lean twins 0063), and whether boss end-HP enters the headline's unit. Answered: (3) landing after the survival arms, (4) survival arms run as queued.",
+      "sources": [
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Decisions for the owner",
+          "sha256": "63bd96728031eacfd8574aab1b9683b875800419371b28b860e86542c17f3fe1"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Next re-ranked from the approach review (owner away, 2026-11-02)",
+          "sha256": "f15c7c1650e61c31caf73e006c3d7c085e2e513df33b2ee6fe63a89486f8fc52"
+        }
+      ],
+      "owner": true,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:42Z @ fc9cdd8",
+      "until": "2026-11-03T06:47:11Z @ 57e0bea"
+    },
+    {
+      "rev": 2,
+      "value": "Nothing from the approach review's Decisions for the owner stays open except level 2 of the arena ladder (the owner's StS1 install); (1), (2), (5), (6), (7) were decided by the navigator's first defaults, (3) and (4) earlier.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Navigator's first defaults (on the owner's behalf, 2026-11-03)",
+          "sha256": "99ae6081cf923509353550c2ed1894855c6a3e762c8547071e90966717351583"
+        },
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Decisions for the owner",
+          "sha256": "63bd96728031eacfd8574aab1b9683b875800419371b28b860e86542c17f3fe1"
+        }
+      ],
+      "owner": false,
+      "by": "a5cb4157-4f5b-4229-8f32-e0392c96548e",
+      "at": "2026-11-03T06:47:11Z @ 57e0bea",
+      "until": "2026-11-04T12:45:20Z @ fe27ec2"
+    }
+  ],
+  "seal": "b1fc0663c12e70591e7cb918f6884c18a666711f1b9cfc423a9b3f68f7e139a2"
+}

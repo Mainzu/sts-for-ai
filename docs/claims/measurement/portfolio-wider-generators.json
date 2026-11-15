@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-wider-generators",
+  "rev": 2,
+  "value": "pred even/long shot; go (1 seed): unseen pairings cut 0.84 (0.09), whole trigger Attacked 0.51, whole effect Wound 0.95; official cells -0.25 and pack headline -0.80 (1.05) HP within the bars; 46.7 cpu-h. Reopen: 65's seeds 101/201 losing on the pack headline's held-out half at 2 se pooled, or column-zeroing putting Attacked's remaining 0.52 HP in its name column.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane wider-generators closed (2026-11-13)",
+      "sha256": "fcb7415e4f30437047d6c11bcd3a4a9c9870b104e81494afc9f045cfe5ff41a7"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:19+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted even on the held-out-pair cut 0.4+ at 2 se, a long shot on halving a whole held-out trigger or effect, about 26 thread-h (cap 40, raised to 48); actual go on one seed: unseen pairings cut 0.84 (0.09), whole trigger Attacked 0.51, whole effect Wound 0.95, official cells -0.25 and pack headline -0.80 (1.05) HP within the bars, 46.7 cpu-h; reopen if: 65's seeds 101 and 201 lose on the pack headline's held-out half at 2 se pooled, or column-zeroing puts the whole trigger's remaining 0.52 HP in its name column",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane wider-generators closed (2026-11-13)",
+          "sha256": "fcb7415e4f30437047d6c11bcd3a4a9c9870b104e81494afc9f045cfe5ff41a7"
+        }
+      ],
+      "owner": false,
+      "by": "33695b98-4ae0-4b2f-9501-30e79c24e02c",
+      "at": "2026-11-12T18:38:02+00:00 @ c1bdd6b",
+      "until": "2026-11-13T02:31:19+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "33072c9f057e509e352c1ac0bdf0765647ff62373928465b8751fe8af50dfffb"
+}

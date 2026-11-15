@@ -1,0 +1,26 @@
+{
+  "key": "measurement/pack-dose-33s9@gen-b1",
+  "rev": 1,
+  "value": "gen-b1 at 33 games/mechanic, share 0.9 (2 nets): TurnEnd-Frail x Lagavulin +0.54 (0.33), AttackLoss-Damage x Nob cut +4.24 (1.92) of +13.29, OppCard-Vulnerable x Sentries +7.06 (0.81) HP, wins -0.213; guard fails both: single-mechanic 33-game quote doesn't carry to 8 mechanics in one burst.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/family-transfer-probes.md",
+      "anchor": "Pack-dose-33 probe (0697-0701): the pack chain at 33 games per mechanic and share 0.9",
+      "sha256": "25820c3086b43ac90d7d3446a787ccb060e5ec535156479e925e02970ccd796d"
+    },
+    {
+      "path": "results/families/gen-b1-dose33.md",
+      "sha256": "b563359dfe0f03d6fff94169308ee6aa350bef795cdfa2d256cfd0907e181c64"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:44+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "df4c380173726807749addd1e4b2479426367231bbf133bf7b75cbedd5fb7026"
+}

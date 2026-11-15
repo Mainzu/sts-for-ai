@@ -1,0 +1,101 @@
+{
+  "key": "measurement/act1-monsters@rerank",
+  "rev": 3,
+  "value": "act1-monsters' hallways in the hard floors, one turn: heuristic clears 0.534->0.478 (-0.056, se 0.021), 10-29 net 0.680->0.632 (-0.048, 0.020); net cost minus heuristic's +0.008 (0.028): unseen monsters cost the net nothing extra.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/act1-inventory.md",
+      "anchor": "G2 re-rank, one-turn net read (0599)",
+      "sha256": "652b69732ba8132d5881495f45702794207e31068d8665c9fe9f0c1e889ae6ce"
+    },
+    {
+      "path": "docs/research/act1-inventory.md",
+      "anchor": "G2 re-rank, heuristic read (0598)",
+      "sha256": "7a8f8d8e0224069eee4284744ea3590264f95ae714acec37c8786bbf2d61e2d4"
+    },
+    {
+      "key": "yardstick/one-turn-controls",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:41+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+      "at": "2026-11-13T04:30:07+00:00 @ 28c50af5",
+      "note": "the fact was read against the old one-turn control files (net1029-hpb0.01-starter-simboss.json / net1029-hpb0.01.json), which are unchanged; only the yardstick pointer moved (decisions 'Combined one-turn control ... read', 2026-11-13)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "heuristic (0598): act1-monsters' hallways in the hard floors cut clears 0.534 -> 0.478 (-0.056, se 0.021; train -0.052, held-out -0.060), end HP -2.43; unswapped sequences identical to control; new encounters at the hard end of the pool (Thugs 8.7 HP lost, 4.2% deaths; Gremlin Gang 7.4, 3.8%); one-turn net (0599) and product (0600) pending",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "G2 re-rank, heuristic read (0598)",
+          "sha256": "7a8f8d8e0224069eee4284744ea3590264f95ae714acec37c8786bbf2d61e2d4"
+        },
+        {
+          "path": "results/gauntlet/g2-heuristic-starter-simboss-pack-monsters.json",
+          "sha256": "860370e9cda7b8f92bcc6ce4085032870202bace452a2cd189dd2af8f597822a"
+        },
+        {
+          "path": "jobs/done/0598-gauntlet.json",
+          "sha256": "6219c3d71168ac43015b98beae83273a3c2c111c7844750ddaf48374c97caf47"
+        }
+      ],
+      "owner": false,
+      "by": "6ba53308-4b55-4378-87cb-35e287ba16d8",
+      "at": "2026-11-08T10:22:42+00:00 @ 48303a7",
+      "until": "2026-11-08T11:58:51+00:00 @ d3b0a44"
+    },
+    {
+      "rev": 2,
+      "value": "heuristic (0598): act1-monsters' hallways in the hard floors cut clears 0.534 -> 0.478 (-0.056, se 0.021), end HP -2.43; one-turn net (0599): 0.680 -> 0.632 (-0.048, se 0.020; train -0.040, held-out -0.056), end HP -2.90; the net's cost minus the heuristic's +0.008 clears (se 0.028), so unseen monsters cost the net no extra; the net leads the heuristic on the pack by +0.154 clears (se 0.027); unswapped sequences identical to control in both; new encounters at the hard end of the hallway pool (net: Thugs 8.5 HP, 2.5% deaths; Gremlin Gang 6.4, 1.9%); product (0600) pending",
+      "sources": [
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "G2 re-rank, one-turn net read (0599)",
+          "sha256": "652b69732ba8132d5881495f45702794207e31068d8665c9fe9f0c1e889ae6ce"
+        },
+        {
+          "path": "docs/research/act1-inventory.md",
+          "anchor": "G2 re-rank, heuristic read (0598)",
+          "sha256": "7a8f8d8e0224069eee4284744ea3590264f95ae714acec37c8786bbf2d61e2d4"
+        },
+        {
+          "path": "results/gauntlet/g2-net1029-hpb0.01-starter-simboss-pack-monsters.json",
+          "sha256": "fe915ac2d1d5f99477f9879ace45c1cbd93e3cf54501eff672fd530d0fcb765f"
+        },
+        {
+          "path": "results/gauntlet/g2-heuristic-starter-simboss-pack-monsters.json",
+          "sha256": "860370e9cda7b8f92bcc6ce4085032870202bace452a2cd189dd2af8f597822a"
+        },
+        {
+          "path": "jobs/done/0599-gauntlet.json",
+          "sha256": "fcab89baf244a59914641ef7dbfee000fe10281c8cc9239cfd27fcbdf4929ef3"
+        },
+        {
+          "path": "jobs/done/0598-gauntlet.json",
+          "sha256": "6219c3d71168ac43015b98beae83273a3c2c111c7844750ddaf48374c97caf47"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "59cca8a9-9ea6-402d-8807-738ac90a86dd",
+      "at": "2026-11-08T11:58:51+00:00 @ d3b0a44",
+      "until": "2026-11-13T02:29:41+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "dd2f037dca9a3c60fad8e2eb866885212577b1cfb730defee123ac1771eb6524"
+}

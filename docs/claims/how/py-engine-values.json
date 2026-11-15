@@ -1,0 +1,78 @@
+{
+  "key": "how/py-engine-values",
+  "rev": 3,
+  "value": "Python reads engine values, never copies: labels' combat-end heal is the result's healed (the HP the win gave: CombatWon hooks like Meat on the Bone plus Combat.win_heal, capped; old results fall back to win_heal); edits use Combat.with_monster_hp / with_monster_power / with_player_hp (no codec byte walkers); sts.MAX_MONSTERS, sts.PLAY_TURN_LIMIT; results carry stalled (hp_end 0, a loss).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "py/src/lib.rs",
+      "sha256": "ba1da33b09583bf36224ed7b181184a53d2ff9cdc0463e8071cd8cc40b2525a8"
+    },
+    {
+      "path": "scripts/selfplay.py",
+      "sha256": "efcb746aa30251fb182584d36f89914a70e2ee59faabcc262df9a67f4462dbf6"
+    },
+    {
+      "path": "engine/src/runner.rs",
+      "sha256": "990484a6957782c4959df152f497474d9ac08c5b152300ff208ceed8d4225830"
+    },
+    {
+      "path": "scripts/analysis/mutate_monsters.py",
+      "sha256": "c866440feccc5b5c8f43793596cdb65212625ecb73c1c49ddc3ad05250ae5f87"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+  "at": "2026-11-13T12:20:53Z @ c070cc5c",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Python reads engine values, never copies: labels' end-of-combat heal is the state's Combat.win_heal (relics included; Meat on the Bone's conditional CombatWon heal and mid-fight WinHeal aren't in it); monster edits use Combat.with_monster_hp / with_monster_power (no codec byte walkers); sts.MAX_MONSTERS, sts.PLAY_TURN_LIMIT; run/play_on results carry stalled (a stalled loss's hp_end is the HP left).",
+      "sources": [
+        {
+          "path": "py/src/lib.rs",
+          "sha256": "c78d789ba5e0bcf02ae71887ff0b03c824e7703e77f16d8c1c5215d0c02f0e1a"
+        },
+        {
+          "path": "scripts/selfplay.py",
+          "sha256": "be7b3a51c277462c78498231bbf8075f6b7786bf5f7f9f882e94c7987c164eb6"
+        },
+        {
+          "path": "scripts/analysis/mutate_monsters.py",
+          "sha256": "c866440feccc5b5c8f43793596cdb65212625ecb73c1c49ddc3ad05250ae5f87"
+        }
+      ],
+      "owner": false,
+      "by": "ab436e83-4597-480b-bddf-7ef762d6224b",
+      "at": "2026-11-13T11:36:43Z @ 2b07c253",
+      "until": "2026-11-13T11:36:50Z @ 2b07c253"
+    },
+    {
+      "rev": 2,
+      "value": "Python reads engine values, never copies: labels' combat-end heal is the state's Combat.win_heal (relics included; not Meat on the Bone's conditional CombatWon heal or mid-fight WinHeal); monster edits use Combat.with_monster_hp / with_monster_power (no codec byte walkers); sts.MAX_MONSTERS, sts.PLAY_TURN_LIMIT; run/play_on results carry stalled (a stalled loss's hp_end is the HP left).",
+      "sources": [
+        {
+          "path": "py/src/lib.rs",
+          "sha256": "c78d789ba5e0bcf02ae71887ff0b03c824e7703e77f16d8c1c5215d0c02f0e1a"
+        },
+        {
+          "path": "scripts/selfplay.py",
+          "sha256": "be7b3a51c277462c78498231bbf8075f6b7786bf5f7f9f882e94c7987c164eb6"
+        },
+        {
+          "path": "scripts/analysis/mutate_monsters.py",
+          "sha256": "c866440feccc5b5c8f43793596cdb65212625ecb73c1c49ddc3ad05250ae5f87"
+        }
+      ],
+      "owner": false,
+      "by": "ab436e83-4597-480b-bddf-7ef762d6224b",
+      "at": "2026-11-13T11:36:50Z @ 2b07c253",
+      "until": "2026-11-13T12:20:53Z @ c070cc5c"
+    }
+  ],
+  "seal": "fd04e2546a2118ea5b9cefc55500749d0f0c10e353bde3a2a89934cff00b501b"
+}

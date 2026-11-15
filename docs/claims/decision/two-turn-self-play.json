@@ -1,0 +1,132 @@
+{
+  "key": "decision/two-turn-self-play",
+  "rev": 5,
+  "value": "Two-turn self-play round (0067-0071) failed on both seeds one turn deep; the outcome-label training family is closed on the dev machine; training needs unseen inputs or new content (decision/training-stops).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane two-turn-round closed (2026-11-03)",
+      "sha256": "cf20693d957c124a7e89f127c6b3a4195be23ac352996beda5f35c77e08fda93"
+    },
+    {
+      "key": "measurement/two-turn-round@cells",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:33Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:17Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/two-turn-round@cells reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "One two-turn self-play round is kept (owner): a few thousand games on elite and boss cells from the two-turn product, outcome labels, a burst fine-tune of the 10-29 net on 2 seeds, read --against the 10-29 net one turn deep and confirmed two turns deep; only after the line-seed read and the engine-next landing. A null closes the outcome-label family.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Two-turn self-play round: kept, small and targeted (owner, 2026-11-02)",
+          "sha256": "0680489d4ea95536abe307ce3016f346dd16ba4183c22244f840dc618c587097"
+        },
+        {
+          "key": "product/net",
+          "rev": 3
+        },
+        {
+          "key": "context/engine-next",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:24Z @ fc9cdd8",
+      "until": "2026-11-02T17:25:56Z @ 7f0a742"
+    },
+    {
+      "rev": 2,
+      "value": "One two-turn self-play round is kept (owner): a few thousand games on elite and boss cells from the two-turn product, outcome labels, a burst fine-tune of the 10-29 net on 2 seeds, read --against the 10-29 net one turn deep and confirmed two turns deep. Its two preconditions (the line-seed read, the engine-next landing) are met as of 2026-11-03; it needs a spec. A null closes the outcome-label family.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Two-turn self-play round: kept, small and targeted (owner, 2026-11-02)",
+          "sha256": "0680489d4ea95536abe307ce3016f346dd16ba4183c22244f840dc618c587097"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "context/engine-next",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
+      "at": "2026-11-02T17:25:56Z @ 7f0a742",
+      "until": "2026-11-03T01:28:23Z @ f41b94c"
+    },
+    {
+      "rev": 3,
+      "value": "One two-turn self-play round is kept (owner) and built 2026-11-03 (spec two-turn-round, folded): 3000 elite+boss games on varied training decks at HP 40-100% from the stepped two-turn product @hpe0.01 (the parent's encounter set, no Hexaghost/Guardian), outcome labels, a burst fine-tune of the 10-29 net on seeds 1 and 101 plus a one-turn control arm on the same specs; each arm read one turn deep @hpb0.01 --against results/gauntlet/net1029-hpb0.01.json by the protocol, a pass confirmed two turns deep against the line-seed cell file with --vary step_line. Jobs 0067-0071 (lane train). A null on both seeds closes the outcome-label family.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Two-turn self-play round: kept, small and targeted (owner, 2026-11-02)",
+          "sha256": "0680489d4ea95536abe307ce3016f346dd16ba4183c22244f840dc618c587097"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Two-turn round spec confirmed (owner away, 2026-11-03)",
+          "sha256": "febe41916489c2b685f058a881b93d826c9eaaaa60af2beedd1de0d67ae6b2a7"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Two-turn round built (owner away, 2026-11-03)",
+          "sha256": "4af2374da03093839c85842ba4841770caa42ae33108c63b3b1b8cac3e38dfd4"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T01:28:23Z @ f41b94c",
+      "until": "2026-11-03T08:19:17Z @ e4270c2"
+    },
+    {
+      "rev": 4,
+      "value": "The one two-turn self-play round (owner, 2026-11-02) ran as jobs 0067-0071 and failed the protocol on both seeds one turn deep (measurement/two-turn-round@cells); no two-turn confirmation, no second round. The outcome-label training family (one-turn or two-turn teacher, burst fine-tunes of the 10-29 net) is closed on the dev machine; a training job needs inputs the net cannot see today or new content (decision/training-stops).",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane two-turn-round closed (2026-11-03)",
+          "sha256": "cf20693d957c124a7e89f127c6b3a4195be23ac352996beda5f35c77e08fda93"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Two-turn self-play round: kept, small and targeted (owner, 2026-11-02)",
+          "sha256": "0680489d4ea95536abe307ce3016f346dd16ba4183c22244f840dc618c587097"
+        },
+        {
+          "key": "measurement/two-turn-round@cells",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "ae18f220-87fd-49ea-bfb7-7764da2b8ce9",
+      "at": "2026-11-03T08:19:17Z @ e4270c2",
+      "until": "2026-11-13T02:29:33Z @ 3123201a"
+    }
+  ],
+  "seal": "ef9c4f659ea57a32c6e29bede4d3aeba69fa13e51d297089639d9cc5d985c8ad"
+}

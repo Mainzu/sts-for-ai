@@ -1,0 +1,45 @@
+{
+  "key": "measurement/run-value-slope",
+  "rev": 1,
+  "value": "Step 0 of the fitted run value: on the one-turn headline file the slope of P(clear | HP at the floor) at 45 HP is 4.8-8.4x its slope at 75 HP on floors 6-8 (gate 3x; 23.6x on floor 9) and 1.0x on floor 5, so the HP price is steep along HP and flat along floors: floors 6-8 pass, floor 5 fails.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Run value along HP: step 0 of the fitted run value (approach review A3; offline, 14:15 2026-11-02, manager 837a5e68)",
+      "sha256": "2e2d36c1c0a878806abc505e5b0f44dcb6c699e45294210235cd2ee1aee206e2"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpb0.01-starter-simboss.json",
+      "sha256": "76dda51daa2756ac083aad17d12d6d5cd7c64cd0ddeffb6e9f7d4774b82e75f7"
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    },
+    {
+      "key": "context/rules-version",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:14:06+00:00 @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:57:58+00:00 @ a875850",
+      "note": "yardstick/headline-setting rev 2 changed only which depth judges a change (one turn; the two-turn product is the reported score); the setting's flags this fact relies on (--start starter --rewards sim --sim-boss, 500 sequences) are unchanged"
+    },
+    {
+      "by": "39fb4ff3-e1df-4f1e-b66c-88f96f031b5b",
+      "at": "2026-11-10T15:38:09+00:00 @ 80d6c86",
+      "note": "context/rules-version was only reworded (SAME_RULES); registry.rules_version() still gives 7042d1d6a6149ba0"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "ba00460299206e6b5a18b9dba37afb06f9173e59e91f5940da0a3649a281a6ea"
+}

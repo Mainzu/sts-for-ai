@@ -1,0 +1,26 @@
+{
+  "key": "decision/one-turn-cpu-planning",
+  "rev": 1,
+  "value": "A candidate's cpu-h hardly ranks it (its code cost does); code-free probes on existing nets and files fill idle CPU; one-turn reads take the wider n by default (three burst seeds, both books).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lanes burst-official and test-full-memory opened; what the one-turn rule does to the queue (on the owner's behalf, 2026-11-05)",
+      "sha256": "ef475c8de4198ca437f261e868aa0bfaac39f0c805feb30b6b70a27bd0d72f94"
+    },
+    {
+      "key": "owner/machine-time",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:27:58Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "ddda4688d5e72c407b742592b2be88580359b3c8be04937a79e4abe85faa8fdf"
+}

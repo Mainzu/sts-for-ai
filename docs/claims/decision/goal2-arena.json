@@ -1,0 +1,120 @@
+{
+  "key": "decision/goal2-arena",
+  "rev": 5,
+  "value": "Goal 2's rulers run on this engine. Arena level 0: our gauntlet vs an outside fixed chooser; level 1: headless Act-1 setting with map, relics, potions, Ascension; level 2: the real game through the bridge. 'Dominant' defined once level 1 has relics, potions, map and the missing Ironclad cards.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Navigator's first defaults (on the owner's behalf, 2026-11-03)",
+      "sha256": "99ae6081cf923509353550c2ed1894855c6a3e762c8547071e90966717351583"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Parity source and arena after the install: the game's jar first, the real game is arena level 2 (on the owner's behalf, 2026-11-13)",
+      "sha256": "11828ce0f35147a66f7f356124b9c0a96d6440b1420c923f00e38a3527de0cb8"
+    },
+    {
+      "key": "decision/parity-source",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+  "at": "2026-11-13T09:46:18Z @ 67cbe2e3",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Goal 2 runs on this engine only (play and training). Arena ladder: level 0 our gauntlet against an outside-designed fixed chooser; level 1 a stated headless Act-1 setting on our engine with a map, common relics, potions and Ascension knobs (parity caveat); level 2 the real game through a mod bridge, waits for the owner's StS1 install. A half-day level-0 parity harness (sts_lightspeed, parity only) is allowed. 'Dominant' is written down once level 1 has relics, potions, a map and the ~40 missing Ironclad cards; no number in the field's unit is claimed before.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Navigator's first defaults (on the owner's behalf, 2026-11-03)",
+          "sha256": "99ae6081cf923509353550c2ed1894855c6a3e762c8547071e90966717351583"
+        }
+      ],
+      "owner": false,
+      "by": "a5cb4157-4f5b-4229-8f32-e0392c96548e",
+      "at": "2026-11-03T06:47:09Z @ 57e0bea",
+      "until": "2026-11-04T12:45:19Z @ fe27ec2"
+    },
+    {
+      "rev": 2,
+      "value": "Goal 2 runs on this engine only (play and training). Arena ladder: level 0 our gauntlet against an outside-designed fixed chooser; level 1 a stated headless Act-1 setting on our engine with a map, common relics, potions and Ascension knobs (parity from the wiki and sts_lightspeed). No level 2: the real game is not installed (decision/parity-source). A half-day level-0 parity harness (sts_lightspeed, parity only) is allowed. 'Dominant' is written down once level 1 has relics, potions, a map and the ~40 missing Ironclad cards; no number in the field's unit is claimed before.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Navigator's first defaults (on the owner's behalf, 2026-11-03)",
+          "sha256": "99ae6081cf923509353550c2ed1894855c6a3e762c8547071e90966717351583"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "No StS1 install; content parity from the wiki and sts_lightspeed (owner, 2026-11-04)",
+          "sha256": "6e29aabe243c873657e19831cc8c9ca5a9388090ab6eb3594adcfd4dff4449f8"
+        }
+      ],
+      "owner": false,
+      "by": "ea89a8f4-8c59-4b7d-bec0-35b31ed878d6",
+      "at": "2026-11-04T12:45:19Z @ fe27ec2",
+      "until": "2026-11-10T12:12:39Z @ 4f63f69"
+    },
+    {
+      "rev": 3,
+      "value": "Goal 2 runs on this engine only (play and training). Arena ladder: level 0 our gauntlet against an outside-designed fixed chooser; level 1 a stated headless Act-1 setting on our engine with a map, common relics, potions and Ascension knobs (parity from the real game's own code in decompiled copies; sts_lightspeed and the wiki are leads only, decision/parity-source). No level 2: the real game is not installed (decision/parity-source). A half-day level-0 parity harness (sts_lightspeed, parity only) is allowed. 'Dominant' is written down once level 1 has relics, potions, a map and the ~40 missing Ironclad cards; no number in the field's unit is claimed before.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Navigator's first defaults (on the owner's behalf, 2026-11-03)",
+          "sha256": "99ae6081cf923509353550c2ed1894855c6a3e762c8547071e90966717351583"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "No StS1 install; content parity from the wiki and sts_lightspeed (owner, 2026-11-04)",
+          "sha256": "794ca0885d442d7ad1f8893756440c56d70ce3416dad7eca68f39771f53720e7"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Parity source: the game's own code (owner, 2026-11-10)",
+          "sha256": "0d24736db594f9f8d0b2207240255b0aa5cc323b86dec52de3e909837d48edb8"
+        },
+        {
+          "key": "decision/parity-source",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "62b7a521-3221-4c6f-8916-214850efc667",
+      "at": "2026-11-10T12:12:39Z @ 4f63f69",
+      "until": "2026-11-13T02:29:26Z @ 3123201a"
+    },
+    {
+      "rev": 4,
+      "value": "Goal 2 runs on this engine only. Arena level 0: our gauntlet vs an outside fixed chooser; level 1: headless Act-1 setting with map, relics, potions, Ascension. No level 2 (no install). 'Dominant' defined once level 1 has relics, potions, map and the missing Ironclad cards.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Navigator's first defaults (on the owner's behalf, 2026-11-03)",
+          "sha256": "99ae6081cf923509353550c2ed1894855c6a3e762c8547071e90966717351583"
+        },
+        {
+          "path": "docs/decisions.md",
+          "anchor": "No StS1 install; content parity from the wiki and sts_lightspeed (owner, 2026-11-04)",
+          "sha256": "794ca0885d442d7ad1f8893756440c56d70ce3416dad7eca68f39771f53720e7"
+        },
+        {
+          "key": "decision/parity-source",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:29:26Z @ 3123201a",
+      "until": "2026-11-13T09:46:18Z @ 67cbe2e3"
+    }
+  ],
+  "seal": "974f4776d5190e01f6ee3a8d5c27aee541befea778b1c66b76ee1ea6587737ac"
+}

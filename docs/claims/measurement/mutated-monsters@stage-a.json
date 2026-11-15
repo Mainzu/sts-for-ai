@@ -1,0 +1,134 @@
+{
+  "key": "measurement/mutated-monsters@stage-a",
+  "rev": 4,
+  "value": "Stage A state-patch modifiers, 200 starts: one-turn win novelty small on stat changes (-0.01 to -0.02), large on unseen powers (SharpHide 2 -0.048, its pair -0.062, Thorns 2 -0.053, Ritual 2 -0.038; se ~0.01-0.015). Two-turn product (x4 seeds): SharpHide/Thorns repaired (+0.053 to +0.077), all within +-0.015 except ritual2 -0.036 (0.012), hp0.8 -0.030 (0.010), both bosses.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Mutated monsters, stage A, two turns deep at 200 x 4: the SharpHide repair holds, every verdict holds, and one stack is harder than its parts (goal1-yardstick; 0083; read 17:45 2026-11-04, lanes 15483a05)",
+      "sha256": "f9a3343c714a58274e4d8ebf26208af9be7e1f617b6eae3d231e1c8c427135d2"
+    },
+    {
+      "path": "results/mutate/a.json",
+      "sha256": "d0fde96ac23dc06bd70014d98c0cf953ce4413c5c9c986dd53bcc0549648b14d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:37+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Mutated monsters stage A (state-patch modifiers on official elite and boss fights): one turn deep the net's novelty cost (its drop beyond the heuristic's) is small on stat changes (-0.01 to -0.02) and large on an unseen power on a new enemy (SharpHide 2 -0.048, its pair -0.062, Ritual 2 -0.038, se ~0.01); two turns deep it is within +-0.025 on every modifier (repair +0.04 to +0.06 on the power modifiers): a horizon problem, not a training gap. Two-turn subset: 40 starts x 4 seeds.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Mutated monsters, stage A, one turn deep: stat changes cost the net little, an unseen power on a new enemy costs it a lot (L4; b39l8b3; read 19:55 2026-11-02, manager 2b40a321)",
+          "sha256": "7e32e74c89627dd0f9b8254709991c6513142df0e7894d03fdc7dabd6173430a"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Mutated monsters, stage A, two turns deep: depth removes the net's SharpHide cost, so the enemies rung is a horizon problem, not a training gap (L4; 0059l8b4; read 22:30 2026-11-02, manager 19428521)",
+          "sha256": "7fa9643a0dca4bbe6b3eaa56a10c18fb9c34539c8499db7db36125ec049a11db"
+        },
+        {
+          "path": "results/mutate/a-40x4-backup.json",
+          "sha256": "46e08aa5710a503f2ce34abe7413fd58a267794ebc37ddb741060af8058b02c3"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:14:01+00:00 @ fc9cdd8",
+      "until": "2026-11-04T10:39:35+00:00 @ cf6ab23"
+    },
+    {
+      "rev": 2,
+      "value": "Mutated monsters stage A (state-patch modifiers on official elite and boss fights, 200 starts): one turn deep the net's novelty cost (its drop beyond the heuristic's) is small on stat changes (-0.01 to -0.02) and large on an unseen power on a new enemy (SharpHide 2 -0.048, its pair -0.062, Ritual 2 -0.038, se ~0.01-0.015); two turns deep (200 starts x 4 seeds, se <= 0.02 except ritual2 0.023) every verdict of the 40x4 table holds, the SharpHide cost is repaired (repair +0.053 to +0.077 at 3.5-5 se, novelty +0.005 to -0.014), and the novelty cost is within +-0.015 except ritual2 -0.036 (0.012) and hp0.8 -0.030 (0.010), both from bosses where the two-turn edge over the heuristic compresses as win rates leave the middle (a lead, not a result). The one stack (metal4-hp0.85+sharp2-hp0.9) is harder than the sum of its parts: interaction -0.022 (0.009) heuristic, -0.034 (0.015) two turns.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Mutated monsters, stage A, two turns deep at 200 x 4: the SharpHide repair holds, every verdict holds, and one stack is harder than its parts (goal1-yardstick; 0083; read 17:45 2026-11-04, lanes 15483a05)",
+          "sha256": "f9a3343c714a58274e4d8ebf26208af9be7e1f617b6eae3d231e1c8c427135d2"
+        },
+        {
+          "path": "results/mutate/a.json",
+          "sha256": "65885d5101852c870178956c4576320d3bad9039cd672f15bfd93ab23739db1b"
+        },
+        {
+          "path": "results/mutate/a-40x4-backup.json",
+          "sha256": "46e08aa5710a503f2ce34abe7413fd58a267794ebc37ddb741060af8058b02c3"
+        },
+        {
+          "path": "jobs/done/0083-mutate-monsters.json",
+          "sha256": "767d70ea240dd6f0f9abf31fa85d1aebc57935f92b60b9f7687afa34f73f0f5a"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "15483a05-4cd9-423a-8c56-1986d77068ab",
+      "at": "2026-11-04T10:39:35+00:00 @ cf6ab23",
+      "until": "2026-11-04T21:38:03+00:00 @ 13459b0"
+    },
+    {
+      "rev": 3,
+      "value": "Mutated monsters stage A (state-patch modifiers on official elite and boss fights, 200 starts): one turn deep the net's novelty cost (its drop beyond the heuristic's) is small on stat changes (-0.01 to -0.02) and large on an unseen power on a new enemy (SharpHide 2 -0.048, its pair -0.062, Thorns 2 -0.053, Ritual 2 -0.038, se ~0.01-0.015); two turns deep (200 starts x 4 seeds, se <= 0.02 except ritual2 0.023) every verdict of the 40x4 table holds, the SharpHide and Thorns costs are repaired (repair +0.053 to +0.077 at 3.5-5 se, novelty +0.005 to -0.014), and the novelty cost is within +-0.015 except ritual2 -0.036 (0.012) and hp0.8 -0.030 (0.010), both from bosses where the two-turn edge over the heuristic compresses as win rates leave the middle (a lead, not a result). Stacks: measurement/mutated-stacking@stage-a.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Mutated monsters, stage A, two turns deep at 200 x 4: the SharpHide repair holds, every verdict holds, and one stack is harder than its parts (goal1-yardstick; 0083; read 17:45 2026-11-04, lanes 15483a05)",
+          "sha256": "f9a3343c714a58274e4d8ebf26208af9be7e1f617b6eae3d231e1c8c427135d2"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Stacking check: 2 of 7 stacks are harder than the sum of their parts beyond 2 se (heuristic), 1 of 6 two turns deep; the sum is close but not the distance axis; the two owner pairs both read harder (goal1-yardstick; 0092; read 04:45 2026-11-05, lanes cf60f1ff)",
+          "sha256": "106bb1145e9ec05fbf77ffd530ed4fac59a3019e549218b8d4ff423e889db50a"
+        },
+        {
+          "path": "results/mutate/a.json",
+          "sha256": "d0fde96ac23dc06bd70014d98c0cf953ce4413c5c9c986dd53bcc0549648b14d"
+        },
+        {
+          "path": "jobs/done/0083-mutate-monsters.json",
+          "sha256": "767d70ea240dd6f0f9abf31fa85d1aebc57935f92b60b9f7687afa34f73f0f5a"
+        },
+        {
+          "path": "jobs/done/0092-mutate-monsters.json",
+          "sha256": "1069513a8ae1447de1cdc2eacdc7dd5974b5e4bfee05655fb8b37174f59c0129"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "context/rules-version",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "cf60f1ff-dbde-46db-b8f7-f3bf17ea2965",
+      "at": "2026-11-04T21:38:03+00:00 @ 13459b0",
+      "until": "2026-11-13T02:30:37+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "238a4321bc14e013a48c2b58e81a061d723eb0698d44511c0d5f08d018f9c662"
+}

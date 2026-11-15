@@ -1,0 +1,570 @@
+{
+ "settings": {
+  "player": "heuristic",
+  "two_turn": false,
+  "shape": [
+   "easy",
+   "easy",
+   "easy",
+   "hard",
+   "hard",
+   "elite",
+   "hard",
+   "hard",
+   "elite",
+   "hard",
+   "boss"
+  ],
+  "rest": 0.3,
+  "seed": 20261101,
+  "rewards": "sim",
+  "rest_choice": "sim",
+  "remove": "strike"
+ },
+ "sequences": [
+  {
+   "i": 0,
+   "half": "train",
+   "cell": 339,
+   "floors": [
+    {
+     "encounter": "two_louse",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Body Slam",
+      "Cleave",
+      "Heavy Blade"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "small_slimes",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Pummel",
+      "Hemokinesis",
+      "Perfected Strike"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "jaw_worm",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Combust",
+      "Bloodletting",
+      "Body Slam"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "two_fungi_beasts",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Flex",
+      "Wild Strike",
+      "Sword Boomerang"
+     ],
+     "took": "Flex"
+    },
+    {
+     "encounter": "three_louse",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Inflame",
+      "Flex",
+      "Wild Strike"
+     ],
+     "took": "Inflame"
+    },
+    {
+     "encounter": "gremlin_nob",
+     "hp_start": 80,
+     "hp_end": 69,
+     "won": true,
+     "offer": [
+      "Perfected Strike",
+      "Spot Weakness",
+      "Clothesline"
+     ],
+     "took": "Perfected Strike",
+     "removed": "Strike"
+    },
+    {
+     "encounter": "looter",
+     "hp_start": 69,
+     "hp_end": 70,
+     "won": true,
+     "offer": [
+      "Heavy Blade",
+      "Brutality",
+      "Bloodletting"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "lots_of_slimes",
+     "hp_start": 70,
+     "hp_end": 54,
+     "won": true,
+     "offer": [
+      "Clash",
+      "Pummel",
+      "Bloodletting"
+     ],
+     "took": "Clash"
+    },
+    {
+     "encounter": "lagavulin",
+     "hp_start": 54,
+     "hp_end": 35,
+     "won": true,
+     "offer": [
+      "Combust",
+      "Wild Strike",
+      "Spot Weakness"
+     ],
+     "took": "Wild Strike"
+    },
+    {
+     "encounter": "looter",
+     "hp_start": 35,
+     "hp_end": 41,
+     "won": true,
+     "offer": [
+      "Rupture",
+      "Shrug It Off",
+      "Hemokinesis"
+     ],
+     "took": "Shrug It Off"
+    },
+    {
+     "encounter": "slime_boss",
+     "hp_start": 65,
+     "hp_end": 31,
+     "won": true,
+     "rest": "heal"
+    }
+   ],
+   "cleared": true
+  },
+  {
+   "i": 1,
+   "half": "held_out",
+   "cell": 107,
+   "floors": [
+    {
+     "encounter": "cultist",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Rage",
+      "Brutality",
+      "Twin Strike"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "small_slimes",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Metallicize",
+      "Uppercut",
+      "Heavy Blade"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "cultist",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Perfected Strike",
+      "Inflame",
+      "Anger"
+     ],
+     "took": "Anger"
+    },
+    {
+     "encounter": "lots_of_slimes",
+     "hp_start": 80,
+     "hp_end": 71,
+     "won": true,
+     "offer": [
+      "Wild Strike",
+      "Flex",
+      "Shrug It Off"
+     ],
+     "took": "Wild Strike"
+    },
+    {
+     "encounter": "exordium_thugs",
+     "hp_start": 71,
+     "hp_end": 77,
+     "won": true,
+     "offer": [
+      "Uppercut",
+      "Heavy Blade",
+      "Spot Weakness"
+     ],
+     "took": "Heavy Blade"
+    },
+    {
+     "encounter": "three_sentries",
+     "hp_start": 77,
+     "hp_end": 63,
+     "won": true,
+     "offer": [
+      "Carnage",
+      "Thunderclap",
+      "Wild Strike"
+     ],
+     "took": "Wild Strike",
+     "removed": "Strike"
+    },
+    {
+     "encounter": "two_fungi_beasts",
+     "hp_start": 63,
+     "hp_end": 62,
+     "won": true,
+     "offer": [
+      "Body Slam",
+      "Dropkick",
+      "Rupture"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "lots_of_slimes",
+     "hp_start": 62,
+     "hp_end": 57,
+     "won": true,
+     "offer": [
+      "Flex",
+      "Thunderclap",
+      "Rage"
+     ],
+     "took": "Thunderclap"
+    },
+    {
+     "encounter": "lagavulin",
+     "hp_start": 57,
+     "hp_end": 38,
+     "won": true,
+     "offer": [
+      "Rage",
+      "Thunderclap",
+      "Body Slam"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "two_fungi_beasts",
+     "hp_start": 38,
+     "hp_end": 31,
+     "won": true,
+     "offer": [
+      "Rupture",
+      "Pommel Strike",
+      "FTL"
+     ],
+     "took": "FTL"
+    },
+    {
+     "encounter": "hexaghost",
+     "hp_start": 55,
+     "hp_end": 10,
+     "won": true,
+     "rest": "heal"
+    }
+   ],
+   "cleared": true
+  },
+  {
+   "i": 2,
+   "half": "train",
+   "cell": 432,
+   "floors": [
+    {
+     "encounter": "cultist",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Body Slam",
+      "Hemokinesis",
+      "Pummel"
+     ],
+     "took": "Hemokinesis"
+    },
+    {
+     "encounter": "two_louse",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Wild Strike",
+      "Perfected Strike",
+      "Flex"
+     ],
+     "took": "Flex"
+    },
+    {
+     "encounter": "cultist",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Bloodletting",
+      "Clothesline",
+      "Hemokinesis"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "two_fungi_beasts",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Perfected Strike",
+      "Wild Strike",
+      "Carnage"
+     ],
+     "took": "Perfected Strike"
+    },
+    {
+     "encounter": "large_slime",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Anger",
+      "Cleave",
+      "Pummel"
+     ],
+     "took": "Anger"
+    },
+    {
+     "encounter": "lagavulin",
+     "hp_start": 80,
+     "hp_end": 75,
+     "won": true,
+     "offer": [
+      "Combust",
+      "Rupture",
+      "Hemokinesis"
+     ],
+     "took": null,
+     "removed": "Strike"
+    },
+    {
+     "encounter": "three_louse",
+     "hp_start": 75,
+     "hp_end": 77,
+     "won": true,
+     "offer": [
+      "Brutality",
+      "Carnage",
+      "Dropkick"
+     ],
+     "took": "Brutality"
+    },
+    {
+     "encounter": "looter",
+     "hp_start": 77,
+     "hp_end": 78,
+     "won": true,
+     "offer": [
+      "Dropkick",
+      "Body Slam",
+      "Brutality"
+     ],
+     "took": "Body Slam"
+    },
+    {
+     "encounter": "gremlin_nob",
+     "hp_start": 78,
+     "hp_end": 79,
+     "won": true,
+     "offer": [
+      "Anger",
+      "Wild Strike",
+      "Hemokinesis"
+     ],
+     "took": "Wild Strike"
+    },
+    {
+     "encounter": "large_slime",
+     "hp_start": 79,
+     "hp_end": 67,
+     "won": true,
+     "offer": [
+      "Anger",
+      "Rupture",
+      "Cleave"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "the_guardian",
+     "hp_start": 80,
+     "hp_end": 36,
+     "won": true,
+     "rest": "heal"
+    }
+   ],
+   "cleared": true
+  },
+  {
+   "i": 3,
+   "half": "held_out",
+   "cell": 202,
+   "floors": [
+    {
+     "encounter": "small_slimes",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Body Slam",
+      "Thunderclap",
+      "Hemokinesis"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "jaw_worm",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Thunderclap",
+      "Demon Form",
+      "Uppercut"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "two_louse",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Metallicize",
+      "Thunderclap",
+      "Demon Form"
+     ],
+     "took": "Metallicize"
+    },
+    {
+     "encounter": "looter",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Sword Boomerang",
+      "Perfected Strike",
+      "Twin Strike"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "three_louse",
+     "hp_start": 80,
+     "hp_end": 80,
+     "won": true,
+     "offer": [
+      "Clash",
+      "Body Slam",
+      "Uppercut"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "gremlin_nob",
+     "hp_start": 80,
+     "hp_end": 71,
+     "won": true,
+     "offer": [
+      "Rupture",
+      "Brutality",
+      "Carnage"
+     ],
+     "took": "Rupture",
+     "removed": "Strike"
+    },
+    {
+     "encounter": "exordium_wildlife",
+     "hp_start": 71,
+     "hp_end": 77,
+     "won": true,
+     "offer": [
+      "Sword Boomerang",
+      "FTL",
+      "Iron Wave"
+     ],
+     "took": null
+    },
+    {
+     "encounter": "lots_of_slimes",
+     "hp_start": 77,
+     "hp_end": 72,
+     "won": true,
+     "offer": [
+      "Thunderclap",
+      "Clothesline",
+      "Anger"
+     ],
+     "took": "Clothesline"
+    },
+    {
+     "encounter": "lagavulin",
+     "hp_start": 72,
+     "hp_end": 66,
+     "won": true,
+     "offer": [
+      "Thunderclap",
+      "Go for the Eyes",
+      "Dropkick"
+     ],
+     "took": "Go for the Eyes"
+    },
+    {
+     "encounter": "three_louse",
+     "hp_start": 66,
+     "hp_end": 70,
+     "won": true,
+     "offer": [
+      "Sword Boomerang",
+      "Go for the Eyes",
+      "Shrug It Off"
+     ],
+     "took": "Shrug It Off"
+    },
+    {
+     "encounter": "hexaghost",
+     "hp_start": 80,
+     "hp_end": 56,
+     "won": true,
+     "rest": "heal"
+    }
+   ],
+   "cleared": true
+  }
+ ]
+}

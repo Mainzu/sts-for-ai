@@ -1,0 +1,32 @@
+{
+  "key": "how/real-game-bridge",
+  "rev": 1,
+  "value": "scripts/real_game.py launch <player> starts StS1 with only basemod and CommunicationMod (backups first); CommunicationMod runs real_game.py play, which plays fights with the product's policy and records results/real-game/<stamp>/ (status.txt, fights.jsonl with predicted/matched counts). Needs Combat.from_view in main's sts (65ef0fb2 or later); game ids: content/game_ids.json.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "README.md",
+      "anchor": "Real-game bridge",
+      "sha256": "d9e504ae1ea3af7f31536dac31ce33172099377871a62e7ad9a38a4c46b2af3c"
+    },
+    {
+      "path": "docs/specs/real-game-bridge.md",
+      "sha256": "96a856fef53a113661d96d93650759b4323b9286db5f95626d49696521734414"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "6aa4a9da-7898-44db-8044-db1c5ead72f0",
+  "at": "2026-11-13T11:33:25Z @ 65ef0fb2",
+  "confirms": [
+    {
+      "by": "7d56156e-4917-4739-9261-9dd0f9274997",
+      "at": "2026-11-13T13:24:19Z @ c4fb1faf",
+      "note": "real-game-bridge.md changed only its Status line, as-built notes kept (8b0ba903); launch/play flow unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "bb2ee61de3c66f7e3942496cda215b8d3fe53eb88445dd8d6ca126b65dc0d491"
+}

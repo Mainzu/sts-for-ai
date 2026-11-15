@@ -1,0 +1,38 @@
+{
+  "key": "measurement/sequential-bursts-retention@cells",
+  "rev": 1,
+  "value": "Sequential-burst nets' retention: one-turn cells 0-499 paired end-HP SharpHide->stage B +2.36 (0.46) (protocol pass), stage B->SharpHide +0.38 (0.55), clears +0.028/+0.010; boss replay +0.014 (0.004) / +0.032 (0.005) wins, no boss worse. Single-seed leads.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Sequential bursts, one turn deep: two 399-game bursts in a row keep the first's gain (SharpHide then stage B keeps 0.74 of the sharp2 gain, +0.059 (0.013); stage B then SharpHide keeps all of it, +0.080 (0.014)), and both nets play official content as well as or better than the parent; one training seed per order, so a lead (sequential-bursts lane step 1; 0184-0191; read 21:40 2026-11-05, lanes 1b8f9222)",
+      "sha256": "8c0d530f7ee3724bd590ab679c6db0b9e1a086dc285bf1183f7c8a9e19efce74"
+    },
+    {
+      "path": "results/gauntlet/seq-sharp-then-stageb-s1-hpb0.01.json",
+      "sha256": "85e696635100e0cf47206ddb4ec2dffa3a15116c3b8f94bb06d1229c380b8668"
+    },
+    {
+      "path": "results/gauntlet/seq-stageb-then-sharp-s1-hpb0.01.json",
+      "sha256": "7ca8450143e6bd716f088c6d50eadd075cdb455d65e49aee0f3f56010211227b"
+    },
+    {
+      "path": "results/boss_replay/seq-sharp-then-stageb-s1.json",
+      "sha256": "7eaa8fd07a073d8e5bdea653a3f2e0e22bf69b5efefad51d858b6cc140de2bb8"
+    },
+    {
+      "path": "results/boss_replay/seq-stageb-then-sharp-s1.json",
+      "sha256": "fa85368b89368229b9be84c56a47e77efea6eb7f0ff0a0db39a5e871afad04f0"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:52+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "04d62f646c583c7ea1212487ac3f48f5984753e320a9202583e8c4f0800eea9e"
+}

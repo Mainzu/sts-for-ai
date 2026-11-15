@@ -1,0 +1,77 @@
+{
+ "name": "gfr-33",
+ "lane": "few-game-recipe",
+ "about": "few-game-recipe step 1 (lane/few-game-recipe): gac-alw33's 33-game bursts with two recipes through finetune.py's keys, lr at a third of train.LR (lr3) and share 0.8 at the default lr (sh8), for the net and heuristic teachers, three seeds; same reads and table as gac-alw33, compared by hand with gac-alw33's default arms (results/families/gac-alw33.json)",
+ "parent": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt",
+ "arms": {
+  "net-lr3": [
+   "configs/gfr-net-lr3-s1.json",
+   "configs/gfr-net-lr3-s2.json",
+   "configs/gfr-net-lr3-s3.json"
+  ],
+  "net-sh8": [
+   "configs/gfr-net-sh8-s1.json",
+   "configs/gfr-net-sh8-s2.json",
+   "configs/gfr-net-sh8-s3.json"
+  ],
+  "heur-lr3": [
+   "configs/gfr-heur-lr3-s1.json",
+   "configs/gfr-heur-lr3-s2.json",
+   "configs/gfr-heur-lr3-s3.json"
+  ],
+  "heur-sh8": [
+   "configs/gfr-heur-sh8-s1.json",
+   "configs/gfr-heur-sh8-s2.json",
+   "configs/gfr-heur-sh8-s3.json"
+  ]
+ },
+ "burst": {
+  "threads": 4,
+  "mem_gb": 1.5,
+  "estimate_min": 1
+ },
+ "reads": {
+  "gen": {
+   "cmd": [
+    "scripts/analysis/mutate_monsters.py",
+    "play",
+    "--starts",
+    "1000",
+    "--groups",
+    "elite",
+    "--seeds",
+    "4",
+    "--players",
+    "one",
+    "--net",
+    "{net}@tsl1",
+    "--mods",
+    "GE-AttackLoss-Weak,c-hp1.25-str1",
+    "--threads",
+    "3",
+    "--out",
+    "results/mutate/gac-{run}.json"
+   ],
+   "threads": 3,
+   "mem_gb": 1.5,
+   "estimate_min": 7
+  }
+ },
+ "table": {
+  "kind": "gen",
+  "book": "gen",
+  "base": "results/mutate/gen-enemies-b1.json",
+  "mechanic": "GE-AttackLoss-Weak",
+  "control": "c-hp1.25-str1",
+  "seeds": 4,
+  "encounters": [
+   "lagavulin",
+   "three_sentries"
+  ],
+  "min_starts": 400,
+  "rule": {
+   "share": 0.5,
+   "min_se": 2.0
+  }
+ }
+}

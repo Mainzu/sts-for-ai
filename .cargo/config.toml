@@ -1,0 +1,6 @@
+# Build for this machine's CPU (AVX2 on the dev machine): the net's layers vectorise
+# wider. Rust never reorders float maths, so results are bit-identical; the
+# built module only runs on CPUs like the one that built it (we always build
+# from source, Colab included).
+[build]
+rustflags = ["-C", "target-cpu=native"]

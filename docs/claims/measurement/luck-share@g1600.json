@@ -1,0 +1,54 @@
+{
+  "key": "measurement/luck-share@g1600",
+  "rev": 2,
+  "value": "Luck correction of one-turn labels on 3200 ycards-net-g1600 games: noise_share 0.011 (0.102) on DF decks, 0.162 (0.063) others, 0.128 (0.048) overall. Label noise 0.071 of 0.364 label variance; net residual 0.147 is twice the noise.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/luck-corrected-labels.md",
+      "anchor": "Step 1a read (2026-11-11, job 0894)",
+      "sha256": "ff34e4d8a0bf4895a7c9935ce1f845a3892e8fcc3469bc99505781f2e700c9f0"
+    },
+    {
+      "path": "results/luck/luck-share-g1600.json",
+      "sha256": "18c4bef34a525c9a57d92cf7b25e36c30951d65e003d010b84eaa76e3764ddc8"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:34+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Luck correction of one-turn training labels (per decision, V(outcome drawn) - mean V over outcomes, V the unpriced 10-29 net on the post-event state) on 3200 games of the ycards-net-g1600 recipe (10-29 net @hpb0.01, held-out decks, seed 51): noise_share (removed variance over replayed label noise, 1200 rows x8) 0.011 (se 0.102) on Demon Form decks, 0.162 (0.063) on the others, 0.128 (0.048) overall; elite 0.115, boss 0.132. Label noise is a fifth of label variance (0.071 of 0.364); the net's residual (0.147, Demon Form 0.165) is twice the noise.",
+      "sources": [
+        {
+          "path": "docs/research/luck-corrected-labels.md",
+          "anchor": "Step 1a read (2026-11-11, job 0894)",
+          "sha256": "ff34e4d8a0bf4895a7c9935ce1f845a3892e8fcc3469bc99505781f2e700c9f0"
+        },
+        {
+          "path": "results/luck/luck-share-g1600.json",
+          "sha256": "18c4bef34a525c9a57d92cf7b25e36c30951d65e003d010b84eaa76e3764ddc8"
+        },
+        {
+          "path": "jobs/done/0894-luck-share.json",
+          "sha256": "ed5f5155a166de0df6d231c2ece1994960bb36db96013e479a16db1b58b44584"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "28d7f02a-1a47-43ea-adce-5092da27c957",
+      "at": "2026-11-11T09:01:40+00:00 @ 20449c5",
+      "until": "2026-11-13T02:30:34+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "f4f978190680a8d34f455af638c125a9cfc8df018b7b5b6c39a24e763203527d"
+}

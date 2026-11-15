@@ -1,0 +1,22 @@
+{
+  "key": "measurement/pile-prices-pummel@pairs",
+  "rev": 1,
+  "value": "Pummel draw/discard -> exhaust on 200 turn-start positions: net -0.6 HP vs -2.2 (0.7) played out (~1/4 of its worth); no slope with player Strength (0.00 vs ~-2 per point); bosses -3.7 vs -13.0.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/pile-prices-2026-11-09.md",
+      "anchor": "Exhausting Pummel: the net prices it at a quarter of its worth",
+      "sha256": "f31d28b067fc4a8a1ea58639f01c6dd1aa95a1087c7ec813c2100872d58c886a"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:48+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "a485c292c64254e7c6ddd54254a11f661d836d352285373a160e4e080cd3a19a"
+}

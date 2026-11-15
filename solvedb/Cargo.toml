@@ -1,0 +1,9 @@
+[package]
+name = "solvedb"
+version = "0.1.0"
+edition = "2021"
+description = "Permanent database of exactly solved combat states"
+
+[dependencies]
+rusqlite = { version = "0.41.0", features = ["bundled"] }
+sts-engine = { path = "../engine" }

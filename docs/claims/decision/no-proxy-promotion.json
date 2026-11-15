@@ -1,0 +1,42 @@
+{
+  "key": "decision/no-proxy-promotion",
+  "rev": 1,
+  "value": "Nothing is promoted or closed for goal 2 on tight2, run-HP or the ladder; product candidates are read on the headline setting --against the 10-29 net file, and tight2 and ladder standings from 10-29 to 11-02 do not rank nets for the product.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/approach-review-2026-11-02.md",
+      "anchor": "Stop or pause",
+      "sha256": "f8fad2ee653f87f858fa73d5392004e0adf2238488ba7bdc9f42e81a2480fa2f"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Next re-ranked from the approach review (owner away, 2026-11-02)",
+      "sha256": "f15c7c1650e61c31caf73e006c3d7c085e2e513df33b2ee6fe63a89486f8fc52"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Headline re-rank: the 10-29 net is the product net, the headline setting is the final ruler (owner away, 2026-11-02)",
+      "sha256": "5fb53628e38af4cc15051b3be295f08e4b7a87003153f8a5b08afdb8e1db7b38"
+    },
+    {
+      "key": "yardstick/headline-setting",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:11:29Z @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "eded4f9f-1997-4ed1-80a2-ad63b72ffef3",
+      "at": "2026-11-05T14:57:55Z @ a875850",
+      "note": "yardstick/headline-setting rev 2 changed only which depth judges a change (one turn; the two-turn product is the reported score); the setting's flags this fact relies on (--start starter --rewards sim --sim-boss, 500 sequences) are unchanged"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "5d6f5c586524f26e22e3b5d6b5cb0935922165e9ed6623f66ebe19b43cf4e10e"
+}

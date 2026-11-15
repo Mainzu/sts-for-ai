@@ -1,0 +1,80 @@
+{
+  "key": "measurement/deck-matched@one-turn",
+  "rev": 2,
+  "value": "Deck-matched reads (--match the control's picks), one turn headline seq 0-249: paired end-HP sd 20.6 -> 13.4 / 10.1 (variance 2.4x / 4.2x lower), means within 1 se; ~99% card floors matched; 1.5-2.5 min per 250 seq at 2 threads.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Deck-matched reads one turn deep: paired end-HP sd 20.6 -> 13.4 and 10.1, the mean kept; go (cheaper-reads lane; 0099-0100; read 14:45 2026-11-04, lanes bc9c6ab7)",
+      "sha256": "4f0982671771f3b3f80dfd91a78e9cf3d059c6ac8318cad165b5ab62dda719a5"
+    },
+    {
+      "path": "results/gauntlet/match-burst8hp2-s1-hpb0.01-starter-simboss.json",
+      "sha256": "90756b5ae034b0eb1faf2aaa95d3546ea08903448cd7db795f9c3d3fa4b23826"
+    },
+    {
+      "path": "results/gauntlet/match-net1029-s101-hpb0.01-starter-simboss.json",
+      "sha256": "3c3956a8bd699788642cb067ece1038f72966275e4c1a853f446ee0d210b2363"
+    },
+    {
+      "key": "yardstick/one-turn-controls",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:07+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+      "at": "2026-11-13T04:30:10+00:00 @ 28c50af5",
+      "note": "the fact was read against the old one-turn control files (net1029-hpb0.01-starter-simboss.json / net1029-hpb0.01.json), which are unchanged; only the yardstick pointer moved (decisions 'Combined one-turn control ... read', 2026-11-13)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Deck-matched reads (gauntlet.py play --match the control's picks), one turn deep on the headline setting, sequences 0-249, fixed n, against the one-turn control: burst8hp2-s1 paired end-HP -5.36 (sd 13.4, unmatched -5.64 sd 20.6), net1029-s101 -0.17 (sd 10.1, unmatched -1.42 sd 20.6); variance 2.4x and 4.2x lower, means kept within 1 se; ~99% of card floors matched; 1.5-2.5 min per 250 sequences at 2 threads (no chooser fights).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Deck-matched reads one turn deep: paired end-HP sd 20.6 -> 13.4 and 10.1, the mean kept; go (cheaper-reads lane; 0099-0100; read 14:45 2026-11-04, lanes bc9c6ab7)",
+          "sha256": "4f0982671771f3b3f80dfd91a78e9cf3d059c6ac8318cad165b5ab62dda719a5"
+        },
+        {
+          "path": "results/gauntlet/match-burst8hp2-s1-hpb0.01-starter-simboss.json",
+          "sha256": "90756b5ae034b0eb1faf2aaa95d3546ea08903448cd7db795f9c3d3fa4b23826"
+        },
+        {
+          "path": "results/gauntlet/match-net1029-s101-hpb0.01-starter-simboss.json",
+          "sha256": "3c3956a8bd699788642cb067ece1038f72966275e4c1a853f446ee0d210b2363"
+        },
+        {
+          "path": "jobs/done/0099-gauntlet.json",
+          "sha256": "3f879a2f9c35c5139cc9f6bd3be520b1b707b70ada9343a48e74b6517abbb920"
+        },
+        {
+          "path": "jobs/done/0100-gauntlet.json",
+          "sha256": "7bc8a195e3bcd8b0ec0318752afd9d11cd063df98fefbccfbdb5fc1cc2647fad"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/headline-setting",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "bc9c6ab7-4de3-45b9-b300-826135be8473",
+      "at": "2026-11-04T07:41:40+00:00 @ 41d21df",
+      "until": "2026-11-13T02:30:07+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "7ee57f66fafc1de738617703e009dfa27f90cfd4d2c61f00e86eee2bc67a2d76"
+}

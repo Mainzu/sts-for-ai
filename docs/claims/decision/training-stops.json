@@ -1,0 +1,37 @@
+{
+  "key": "decision/training-stops",
+  "rev": 1,
+  "value": "A training job gets CPU only for something new to learn (a stronger teacher, inputs the net cannot see today, new content), judged on the gauntlet protocol; it stops at the plateau: after each round play the one-turn cell gauntlet (500 sequences) --against the net from two rounds back with --d1 4 (three back with --d1 6 for cheap bursts); a pass trains another round, a fail stops.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Training: when it runs and when it stops (owner, 2026-11-02)",
+      "sha256": "a0cd1d3322bd319e3b04a96daaf25e6871cd833c2ed661cb4cc3df3fff8daed1"
+    },
+    {
+      "key": "yardstick/protocol",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": "unpinned for the STATUS cap (docs/decisions.md, lane shown-card-numbers as built); value checked unchanged against docs/operating.md",
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:11:23Z @ fc9cdd8",
+  "confirms": [
+    {
+      "by": "afbe1ebb-305c-4ac9-b359-8583079e6ffd",
+      "at": "2026-11-09T19:36:49Z @ 5506948",
+      "note": "unpinned by lane worker: STATUS cap (the rule is in docs/operating.md's owner section); re-pin with --pin"
+    },
+    {
+      "by": "afbe1ebb-305c-4ac9-b359-8583079e6ffd",
+      "at": "2026-11-09T19:37:13Z @ 5506948",
+      "note": "unpinned for the STATUS cap (docs/decisions.md, lane shown-card-numbers as built); value checked unchanged against docs/operating.md"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "bee43df5f5742b1361961f8fa0426ce8a56d8fcc6aa694aa926393d6cb2738a3"
+}

@@ -1,0 +1,84 @@
+{
+  "key": "decision/line-seed-stage2",
+  "rev": 2,
+  "value": "Line seed passed (+0.60 HP, +0.024 clears vs plain two-turn on cells 0-249), so stage 2 (export the first tree's principal line from search.rs and step it) gets a spec now that engine-next has landed (2026-11-03); read on the headline setting at fixed n 250 against the two-turn headline file; docs/specs/line-seed.md stays until stage 2 is built.",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Line seed passes: stage 2 (export the principal line) is justified after the landing (owner away, 2026-11-02)",
+      "sha256": "b9cc14970fbf438ee55224d94f4df46ec5a104fbf3b8e59b8233a8726deba707"
+    },
+    {
+      "key": "context/engine-next",
+      "rev": 2
+    },
+    {
+      "key": "yardstick/cost-savers",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
+  "at": "2026-11-02T17:25:54Z @ 7f0a742",
+  "confirms": [
+    {
+      "by": "691c5c04-b88f-4dac-93f3-2e3585d043b3",
+      "at": "2026-11-03T00:37:05Z @ da67084",
+      "note": "re-checked 01:00 UTC 2026-11-03: product/net rev 4 changed only the play flags (--line-seed --step-line; same net, same price) and yardstick/cost-savers rev 2 only added the line-step verdict; the fact's content is unaffected"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Line seed passed (+0.60 HP, +0.024 clears vs plain two-turn on cells 0-249), so stage 2 (export the first tree's principal line from search.rs) gets a spec once engine-next has landed, read on the headline setting at fixed n 250 against the two-turn headline file; docs/specs/line-seed.md stays until then.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Line seed passes: stage 2 (export the principal line) is justified after the landing (owner away, 2026-11-02)",
+          "sha256": "b9cc14970fbf438ee55224d94f4df46ec5a104fbf3b8e59b8233a8726deba707"
+        },
+        {
+          "key": "context/engine-next",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/cost-savers",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:11:34Z @ fc9cdd8",
+      "until": "2026-11-02T17:25:54Z @ 7f0a742"
+    },
+    {
+      "rev": 2,
+      "value": "Line seed passed (+0.60 HP, +0.024 clears vs plain two-turn on cells 0-249), so stage 2 (export the first tree's principal line from search.rs and step it) gets a spec now that engine-next has landed (2026-11-03); read on the headline setting at fixed n 250 against the two-turn headline file; docs/specs/line-seed.md stays until stage 2 is built.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Line seed passes: stage 2 (export the principal line) is justified after the landing (owner away, 2026-11-02)",
+          "sha256": "b9cc14970fbf438ee55224d94f4df46ec5a104fbf3b8e59b8233a8726deba707"
+        },
+        {
+          "key": "context/engine-next",
+          "rev": 2
+        },
+        {
+          "key": "yardstick/cost-savers",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "f62576a7-f55d-4c0c-9d2c-15d53cf558fb",
+      "at": "2026-11-02T17:25:54Z @ 7f0a742",
+      "until": "2026-11-05T14:59:46Z @ 2e013b2",
+      "retired": "stage 2 was built and adopted as line step, the two-turn play mode (decision/line-step-play-mode); docs/specs/line-seed.md is gone"
+    }
+  ],
+  "seal": "bf9cc3dd614faf42adf8bda241aede759794f977248790ca21eac252f136d691"
+}

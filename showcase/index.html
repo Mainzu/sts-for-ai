@@ -1,0 +1,1132 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>sts-for-ai</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kreon:wght@400;600;700&family=Fira+Sans:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a 1140px frame; prose in a ~66ch column on the left, charts break out to the full frame.
+   Every number carries a setting tag (mono pill) naming the test it was measured on. */
+:root {
+  --bg: #eceff3; --bg-2: #e2e6ec; --surface: #f9fafb; --surface-2: #f2f4f7;
+  --ink: #141820; --ink-2: #444d5c; --muted: #6c7585; --line: #d4d9e1; --line-2: #bcc3ce;
+  --accent: #b5311e; --accent-ink: #ffffff; --accent-wash: rgba(181,49,30,.08);
+  --gold: #8c6511; --gold-wash: rgba(140,101,17,.10);
+  --prod: #c23a26; --net: #2a78d6; --heur: #98a0ac; --heur-ink: #6c7585;
+  --slime: #1baf7a; --guardian: #a5622c; --hexa: #6250d6; --pooled: #8a919c;
+  --cell-all: #cdd3dc; --cell-none: #2b313b;
+  --shadow: 0 1px 2px rgba(20,24,32,.06), 0 8px 24px rgba(20,24,32,.06);
+  --f-display: "Kreon", "Rockwell", Georgia, serif;
+  --f-body: "Fira Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --frame: 1140px; --col: 66ch;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e1116; --bg-2: #131720; --surface: #171b23; --surface-2: #1c212a;
+  --ink: #eceef2; --ink-2: #b5bcc8; --muted: #858d9b; --line: #272d37; --line-2: #39414d;
+  --accent: #e5573e; --accent-ink: #160806; --accent-wash: rgba(229,87,62,.11);
+  --gold: #d9a441; --gold-wash: rgba(217,164,65,.10);
+  --prod: #e5573e; --net: #3987e5; --heur: #6f7683; --heur-ink: #9aa2af;
+  --slime: #199e70; --guardian: #c07a43; --hexa: #9085e9; --pooled: #7a818c;
+  --cell-all: #3a414d; --cell-none: #0b0d11;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 28px rgba(0,0,0,.25);
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #0e1116; --bg-2: #131720; --surface: #171b23; --surface-2: #1c212a;
+  --ink: #eceef2; --ink-2: #b5bcc8; --muted: #858d9b; --line: #272d37; --line-2: #39414d;
+  --accent: #e5573e; --accent-ink: #160806; --accent-wash: rgba(229,87,62,.11);
+  --gold: #d9a441; --gold-wash: rgba(217,164,65,.10);
+  --prod: #e5573e; --net: #3987e5; --heur: #6f7683; --heur-ink: #9aa2af;
+  --slime: #199e70; --guardian: #c07a43; --hexa: #9085e9; --pooled: #7a818c;
+  --cell-all: #3a414d; --cell-none: #0b0d11;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 28px rgba(0,0,0,.25);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.nav a:focus-visible, .seg button:focus-visible, .chart :focus-visible { outline-offset: -2px; }
+svg [tabindex]:focus-visible { outline: none; stroke: var(--accent); stroke-width: 2px; }
+h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 700; line-height: 1.12; text-wrap: balance; margin: 0; letter-spacing: -0.005em; }
+p { margin: 0; }
+.wrap { max-width: var(--frame); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.prose { max-width: var(--col); display: grid; gap: 14px; }
+.prose p, .prose li { color: var(--ink-2); }
+.prose strong { color: var(--ink); }
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* top bar */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; gap: 20px; height: 52px; }
+.brand { font-family: var(--f-display); font-weight: 700; font-size: 19px; color: var(--ink); text-decoration: none; white-space: nowrap; display: flex; gap: 8px; align-items: center; }
+.brand svg { color: var(--accent); }
+.nav { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; min-width: 0; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a { color: var(--ink-2); text-decoration: none; font-size: 14px; padding: 6px 9px; border-radius: 6px; white-space: nowrap; }
+.nav a:hover { background: var(--bg-2); color: var(--ink); }
+
+/* sections */
+section { padding-block: 72px; border-top: 1px solid var(--line); }
+section.hero { border-top: 0; padding-block: 48px 56px; }
+.sec-head { display: grid; gap: 10px; margin-bottom: 28px; max-width: var(--col); }
+.sec-head h2 { font-size: clamp(30px, 4.2vw, 44px); }
+.sec-head .kicker { font-family: var(--f-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.sec-head p { color: var(--ink-2); font-size: 18px; }
+
+/* setting tags */
+.tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--f-mono); font-size: 11.5px; line-height: 1.3; font-weight: 500; letter-spacing: 0; color: var(--gold); background: var(--gold-wash); border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent); border-radius: 999px; padding: 2px 9px 2px 7px; vertical-align: 2px; white-space: nowrap; cursor: help; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.tag::before { content: ""; width: 9px; height: 9px; flex: none; border: 1.5px solid currentColor; border-radius: 2px; border-top: 0; border-right: 0; transform: translateY(-1px); background: linear-gradient(currentColor, currentColor) 2px 100% / 1px 4px no-repeat, linear-gradient(currentColor, currentColor) 5px 100% / 1px 3px no-repeat; }
+.tag:hover, .tag:focus-visible { background: color-mix(in srgb, var(--gold) 18%, transparent); }
+
+/* hero */
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px; align-items: end; }
+.hero h1 { font-size: clamp(40px, 6.4vw, 76px); line-height: 1.02; margin-top: 14px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero .lede { margin-top: 18px; font-size: 19px; color: var(--ink-2); max-width: 56ch; }
+.big { display: grid; gap: 6px; padding: 22px 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+.big .fig { font-family: var(--f-body); font-weight: 700; font-size: clamp(46px, 5.6vw, 76px); white-space: nowrap; line-height: 1; letter-spacing: -0.02em; color: var(--ink); }
+.big .fig small { font-size: .42em; color: var(--muted); font-weight: 400; letter-spacing: 0; margin-left: 6px; }
+.big .what { font-size: 16px; color: var(--ink-2); }
+.big .split { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--line); }
+.big .split div { display: grid; gap: 2px; }
+.big .split b { font-size: 22px; font-variant-numeric: tabular-nums; }
+.big .split span { font-size: 12.5px; color: var(--muted); line-height: 1.35; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 26px; }
+.facts div { display: grid; gap: 0; }
+.facts b { font-size: 26px; font-weight: 700; }
+.facts span { font-size: 13px; color: var(--muted); }
+
+/* panels */
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; box-shadow: var(--shadow); min-width: 0; }
+.panel-head { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
+.panel-head h3, .panel-head h4 { font-size: 20px; }
+.panel-note { font-size: 14px; color: var(--muted); }
+.chart { width: 100%; overflow-x: auto; }
+.chart svg { display: block; width: 100%; height: auto; min-width: 480px; }
+.chart.narrow svg { min-width: 300px; }
+svg text { font-family: var(--f-body); fill: var(--ink-2); }
+svg .axis text, svg text.axis { fill: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+svg .grid line { stroke: var(--line); stroke-width: 1; }
+svg .base { stroke: var(--line-2); stroke-width: 1; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--ink-2); margin-top: 8px; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.legend i.line { height: 3px; border-radius: 2px; vertical-align: 3px; width: 16px; }
+.seg { display: inline-flex; border: 1px solid var(--line-2); border-radius: 8px; overflow: hidden; }
+.seg button { font: inherit; font-size: 13px; padding: 5px 12px; border: 0; background: transparent; color: var(--ink-2); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+
+/* the test */
+.test-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.rules { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.rules li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; color: var(--ink-2); }
+.rules li svg { margin-top: 2px; }
+.pool { font-size: 14px; color: var(--muted); line-height: 1.55; }
+.pool b { color: var(--ink-2); font-weight: 700; }
+.content-rows { display: grid; gap: 4px; }
+.crow { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 6px 18px; align-items: center; padding: 10px 0; border-top: 1px solid var(--line); }
+
+/* how it plays */
+.how-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; }
+.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; counter-reset: step; }
+.steps li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px 18px; display: grid; gap: 6px; align-content: start; counter-increment: step; cursor: default; transition: border-color .15s, background .15s; }
+.steps li h4 { font-size: 18px; display: flex; gap: 10px; align-items: baseline; }
+.steps li h4::before { content: counter(step); font-family: var(--f-mono); font-size: 12px; font-weight: 500; color: var(--accent); border: 1px solid currentColor; border-radius: 50%; width: 22px; height: 22px; display: inline-grid; place-items: center; flex: none; transform: translateY(-2px); }
+.steps li p { font-size: 15px; color: var(--ink-2); }
+.steps li.on { border-color: var(--accent); background: var(--accent-wash); }
+.tree { min-width: 760px; }
+.tree .node rect, .tree .node path.box { fill: var(--surface-2); stroke: var(--line-2); stroke-width: 1; }
+.tree .node.lit rect, .tree .node.lit path.box { stroke: var(--accent); fill: var(--accent-wash); stroke-width: 1.5; }
+.tree .edge { stroke: var(--line-2); stroke-width: 1.4; fill: none; }
+.tree .edge.lit { stroke: var(--accent); stroke-width: 2; }
+.tree text { font-size: 12px; }
+.tree text.h { font-family: var(--f-display); font-weight: 700; font-size: 14px; fill: var(--ink); }
+.tree text.m { font-family: var(--f-mono); font-size: 11px; fill: var(--muted); }
+.tree text.v { font-family: var(--f-mono); font-size: 11.5px; font-weight: 500; fill: var(--gold); }
+.tree .stage text { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .08em; fill: var(--muted); }
+
+/* findings */
+.findings { display: grid; gap: 28px; }
+.finding { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 28px; align-items: start; padding-top: 28px; border-top: 1px dashed var(--line); }
+.finding:first-child { border-top: 0; padding-top: 0; }
+.finding .claim { display: grid; gap: 12px; }
+.finding .claim h3 { font-size: clamp(24px, 3vw, 30px); }
+.finding .claim .n { font-family: var(--f-mono); font-size: 12px; color: var(--accent); letter-spacing: .1em; }
+.finding .claim p { color: var(--ink-2); font-size: 16px; }
+.fine { font-size: 13.5px !important; color: var(--muted) !important; border-left: 2px solid var(--line-2); padding-left: 10px; }
+.vs { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.vs .t { background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; display: grid; gap: 4px; align-content: start; }
+.vs .t .k { font-size: 13px; color: var(--muted); }
+.vs .t .v { font-size: 30px; font-weight: 700; line-height: 1.1; }
+.vs .t .v small { font-size: 14px; font-weight: 400; color: var(--muted); }
+.vs .t.hl { border-color: color-mix(in srgb, var(--accent) 50%, transparent); background: var(--accent-wash); }
+
+/* timeline */
+.periods { display: grid; gap: 14px; margin-top: 22px; }
+.period { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 22px; }
+.period .when { display: grid; gap: 4px; align-content: start; }
+.period .when b { font-family: var(--f-mono); font-size: 13px; font-weight: 500; color: var(--ink); }
+.period .when span { font-size: 13px; color: var(--muted); }
+.period .when .pn { font-family: var(--f-display); font-size: 34px; color: var(--accent); line-height: 1; }
+.period h3 { font-size: 22px; margin-bottom: 8px; }
+.period .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; }
+.period h5 { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; font-weight: 500; }
+.period ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; color: var(--ink-2); }
+.period .ruler { margin-top: 12px; font-size: 14px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.period .ruler b { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+.period .moment { margin-top: 12px; padding: 10px 14px; border-radius: 8px; background: var(--surface-2); font-size: 14.5px; color: var(--ink-2); }
+.period .moment b { color: var(--ink); }
+details.more summary { cursor: pointer; color: var(--accent); font-size: 14px; margin-top: 10px; }
+.coverage { display: grid; grid-template-columns: 110px repeat(4, minmax(0, 1fr)); gap: 6px 10px; align-items: center; font-size: 13px; }
+.coverage .h { font-family: var(--f-mono); font-size: 11px; color: var(--muted); }
+.meter { height: 8px; border-radius: 4px; background: var(--bg-2); overflow: hidden; position: relative; }
+.meter span { position: absolute; inset: 0 auto 0 0; background: var(--ink-2); border-radius: 4px; }
+.meter.full span { background: var(--accent); }
+.cov-cell { display: grid; gap: 3px; }
+.cov-cell em { font-style: normal; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* crew */
+.crew-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.role { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 6px; align-content: start; }
+.role h4 { font-size: 19px; }
+.role .who { font-family: var(--f-mono); font-size: 11.5px; color: var(--gold); }
+.role p { font-size: 14.5px; color: var(--ink-2); }
+.stores { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.store { border: 1px dashed var(--line-2); border-radius: 8px; padding: 10px 12px; display: grid; gap: 2px; }
+.store b { font-size: 22px; }
+.store span { font-size: 12.5px; color: var(--muted); line-height: 1.35; }
+.ledger { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; margin-top: 22px; }
+.ledger h4 { font-size: 18px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.ledger ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; color: var(--ink-2); font-size: 15px; }
+
+/* real game */
+.bridge { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.bridge .b { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 4px; align-content: start; }
+.bridge .b h4 { font-size: 17px; }
+.bridge .b p { font-size: 14.5px; color: var(--ink-2); }
+.runs { display: grid; gap: 14px; margin-top: 18px; }
+.run { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 20px; display: grid; gap: 10px; }
+.run-head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; justify-content: space-between; }
+.run-head h4 { font-size: 20px; }
+.pill { font-family: var(--f-mono); font-size: 11.5px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--ink-2); white-space: nowrap; }
+.pill.win { border-color: color-mix(in srgb, var(--slime) 60%, transparent); color: var(--ink); background: color-mix(in srgb, var(--slime) 14%, transparent); }
+.pill.loss { border-color: var(--prod); background: var(--prod); color: var(--accent-ink); }
+.pill.live { border-color: color-mix(in srgb, var(--accent) 60%, transparent); background: var(--accent-wash); color: var(--ink); }
+.run p { font-size: 15px; color: var(--ink-2); max-width: 80ch; }
+.stats-row { display: flex; flex-wrap: wrap; gap: 8px 26px; }
+.stats-row div { display: grid; }
+.stats-row b { font-size: 22px; }
+.stats-row span { font-size: 12.5px; color: var(--muted); }
+
+footer { border-top: 1px solid var(--line); padding-block: 48px 64px; }
+.glossary { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 28px; margin-top: 18px; }
+.glossary div { font-size: 14.5px; color: var(--ink-2); }
+.glossary b { color: var(--ink); display: block; font-family: var(--f-display); font-size: 16px; }
+.sources { font-size: 13.5px; color: var(--muted); margin-top: 22px; max-width: 90ch; }
+.sources code { font-family: var(--f-mono); font-size: 12px; }
+
+
+/* history */
+:root { --ok: #1a8f3a; --bad: #c8372d; --meh: #c98a00; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ok: #3fb45f; --bad: #e5574a; --meh: #e0a526; } }
+:root[data-theme="dark"] { --ok: #3fb45f; --bad: #e5574a; --meh: #e0a526; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.chip { font: inherit; font-size: 12.5px; display: inline-flex; gap: 6px; align-items: center; padding: 3px 10px 3px 7px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+.chip[aria-pressed="false"] { opacity: .45; text-decoration: line-through; }
+svg.obadge, .chart svg.obadge { flex: none; vertical-align: -2px; display: inline-block; width: 14px; height: 14px; min-width: 0; }
+.verdict-grid .chart svg { min-width: 0; }
+.period p.work { font-size: 15px; color: var(--ink-2); margin: 0 0 12px; padding: 10px 14px; border-left: 3px solid var(--gold); background: var(--gold-wash); border-radius: 0 6px 6px 0; }
+.period p.work b { color: var(--ink); }
+.tried-list { margin-top: 14px; border-top: 1px dashed var(--line); padding-top: 12px; }
+.tried-sum { margin-top: 14px; border-top: 1px dashed var(--line); padding-top: 10px; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: 14px; color: var(--ink-2); }
+.tried-sum a { font-weight: 500; }
+.stretch-group { margin-top: 30px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 22px; }
+.stretch-group h3 { font-size: 22px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.stretch-group h3 .pn { font-family: var(--f-display); color: var(--accent); }
+.stretch-group h3 small { font-family: var(--f-mono); font-size: 12px; color: var(--muted); font-weight: 400; }
+.nav a.tab-link { border: 1px solid var(--line-2); }
+.nav a.tab-link[aria-current="page"] { background: var(--ink); color: var(--bg); }
+.tried-head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: 14px; margin-bottom: 4px; }
+.tried-head b { color: var(--ink); font-family: var(--f-display); font-size: 16px; }
+.tried-count { display: inline-flex; gap: 5px; align-items: center; font-size: 13px; color: var(--muted); }
+.tried-list h5 { margin: 12px 0 6px; }
+ul.tried { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); gap: 8px 22px; }
+ul.tried li { display: grid; grid-template-columns: 16px minmax(0, 1fr); gap: 8px; font-size: 14.5px; line-height: 1.5; color: var(--ink-2); border-radius: 6px; padding: 2px 4px; transition: background .3s; }
+ul.tried li .obadge { margin-top: 4px; }
+ul.tried li b { color: var(--ink); }
+ul.tried li .tmeta { color: var(--muted); font-size: 12.5px; }
+ul.tried li.flash { background: var(--accent-wash); outline: 2px solid var(--accent); }
+ol.method { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; border-left: 2px solid var(--line-2); margin-left: 52px; }
+ol.method li { display: grid; grid-template-columns: 60px minmax(0, 1fr); gap: 14px; margin-left: -60px; padding: 8px 0; font-size: 15.5px; color: var(--ink-2); position: relative; }
+ol.method li::after { content: ""; position: absolute; left: 51px; top: 15px; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); border: 2px solid var(--bg); }
+ol.method .mdate { font-family: var(--f-mono); font-size: 12px; color: var(--gold); text-align: right; padding-top: 3px; padding-right: 14px; }
+ol.method li > div { padding-left: 14px; max-width: 80ch; }
+ol.method b { color: var(--ink); }
+.verdict-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
+h3.sub { font-size: 26px; margin: 34px 0 18px; }
+@media (max-width: 1000px) { .verdict-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* tooltip */
+.zoom-row { display: flex; justify-content: flex-end; margin-top: 8px; }
+.zoom-btn { display: inline-flex; align-items: center; gap: 6px; font: 500 12.5px/1 var(--f-body); color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; cursor: pointer; }
+.zoom-btn:hover { color: var(--ink); border-color: var(--line-2); }
+.zoom-btn svg { width: 13px; height: 13px; }
+#zoom { width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; border: 0; background: var(--bg); color: var(--ink); overflow: auto; padding: 14px max(16px, 2vw) 24px; }
+#zoom::backdrop { background: var(--bg); }
+#zoom .zoom-bar { position: sticky; top: 0; z-index: 1; display: flex; justify-content: flex-end; margin-bottom: 8px; }
+#zoom-body > * { margin: 0 auto; }
+#zoom .zoom-row { display: none; }
+details.runs-fold { margin-top: 14px; }
+details.runs-fold > summary { cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--ink-2); border: 1px solid var(--line-2); border-radius: 8px; padding: 7px 12px; list-style: none; }
+details.runs-fold > summary::-webkit-details-marker { display: none; }
+details.runs-fold > summary::before { content: "▸"; color: var(--muted); }
+details.runs-fold[open] > summary::before { content: "▾"; }
+details.runs-fold[open] > summary { margin-bottom: 12px; }
+.stat-jump { margin-bottom: 8px; }
+.stat-jump a.chip { text-decoration: none; }
+.stat-sec { margin-top: 34px; scroll-margin-top: 70px; }
+.stat-sec > h3 { font-size: 24px; margin-bottom: 14px; }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 14px; }
+.panel.stat h4 { font-size: 18px; margin-bottom: 8px; }
+.panel.stat .tag { margin-bottom: 10px; }
+.stat-claim { color: var(--ink-2); font-size: 15.5px; line-height: 1.55; margin-bottom: 12px; }
+.sbars { margin-top: 10px; }
+.sbars-head { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.sbar { display: grid; grid-template-columns: minmax(0, 38%) 1fr auto; column-gap: 10px; align-items: center; padding: 3px 0; font-size: 13.5px; }
+.sbar-label { color: var(--ink); overflow-wrap: anywhere; }
+.sbar-track { position: relative; height: 12px; background: var(--bg-2); border-radius: 3px; }
+.sbar-track i { position: absolute; top: 0; bottom: 0; background: var(--prod); border-radius: 3px; }
+.sbar-track i.base { background: var(--pooled); }
+.sbar-track i.neg { background: var(--net); }
+.sbar-track b.zero { position: absolute; top: -3px; bottom: -3px; width: 1px; background: var(--ink-2); }
+.sbar-val { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink); text-align: right; min-width: 4ch; }
+.sbar-note { grid-column: 2 / 4; font-size: 12px; color: var(--muted); line-height: 1.35; margin-top: 1px; }
+.sunit { font-size: 12px; color: var(--muted); margin-top: 8px; font-style: italic; }
+.stat-sec > h3 small { display: block; font-family: var(--f-body); font-size: 13px; font-weight: 400; color: var(--muted); margin-top: 4px; }
+h5.stat-part { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 18px 0 10px; }
+.schart svg { display: block; width: 100%; height: auto; margin-top: 8px; }
+.schart .sgrid { stroke: var(--line); stroke-width: 1; }
+.schart .saxis { font-size: 11.5px; fill: var(--muted); }
+.schart .slab { font-size: 12px; fill: var(--ink-2); font-weight: 500; }
+.sbig { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-top: 6px; }
+.sbig b { display: block; font-family: var(--f-display); font-size: 30px; line-height: 1.1; color: var(--ink); }
+.sbig span { display: block; font-size: 13px; color: var(--ink-2); }
+.sbig small { display: block; font-size: 12px; color: var(--muted); }
+.stally { display: flex; height: 22px; border-radius: 4px; overflow: hidden; gap: 2px; margin-top: 8px; }
+.stally i { display: block; height: 100%; min-width: 2px; }
+.sheat-wrap { overflow-x: auto; margin-top: 8px; }
+.sheat { border-collapse: separate; border-spacing: 2px; font-size: 11.5px; }
+.sheat th { color: var(--muted); font-weight: 500; padding: 0 4px; text-align: right; white-space: nowrap; }
+.sheat td { width: 22px; height: 18px; border-radius: 3px; border: 1px solid var(--line); }
+ol.stime { list-style: none; margin: 8px 0 0; padding: 0; font-size: 13.5px; }
+ol.stime li { display: grid; grid-template-columns: 8.5em 1fr auto; gap: 10px; padding: 4px 0; border-top: 1px solid var(--line); }
+ol.stime .sdate { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+ol.stime b { font-family: var(--f-mono); font-size: 12.5px; color: var(--ink); }
+details.stat-more { margin-top: 10px; font-size: 13px; color: var(--muted); }
+details.stat-more summary { cursor: pointer; color: var(--ink-2); }
+details.stat-more p { margin-top: 6px; line-height: 1.5; }
+#tip { position: fixed; z-index: 50; pointer-events: none; max-width: min(340px, calc(100vw - 24px)); background: var(--ink); color: var(--bg); border-radius: 8px; padding: 9px 12px; font-size: 13px; line-height: 1.45; box-shadow: 0 8px 28px rgba(0,0,0,.25); opacity: 0; transform: translateY(4px); transition: opacity .12s, transform .12s; }
+#tip.on { opacity: 1; transform: none; }
+#tip .tv { font-size: 16px; font-weight: 700; display: block; }
+#tip .tk { color: color-mix(in srgb, var(--bg) 70%, transparent); }
+#tip code { font-family: var(--f-mono); font-size: 11.5px; word-break: break-word; }
+#tip .row { display: flex; gap: 8px; align-items: center; }
+#tip .row i { width: 12px; height: 3px; border-radius: 2px; display: inline-block; }
+
+@media (max-width: 900px) {
+  .hero-grid, .test-grid, .finding, .ledger { grid-template-columns: minmax(0, 1fr); }
+  .crew-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bridge { grid-template-columns: minmax(0, 1fr); }
+  .period { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .period .when { grid-template-columns: auto auto auto; align-items: baseline; gap: 4px 14px; justify-content: start; }
+  .period .cols { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  section { padding-block: 52px; }
+  .crew-grid { grid-template-columns: minmax(0, 1fr); }
+  .big .split { grid-template-columns: minmax(0, 1fr); }
+  .coverage { grid-template-columns: 70px repeat(4, minmax(0, 1fr)); gap: 6px; }
+  .top .brand span { display: none; }
+  .tag { white-space: normal; text-overflow: clip; }
+  .crow { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <mask id="m-monster" maskContentUnits="objectBoundingBox"><image href="rooms/monster.png" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid meet"/></mask>
+    <mask id="m-elite" maskContentUnits="objectBoundingBox"><image href="rooms/elite.png" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid meet"/></mask>
+    <mask id="m-rest" maskContentUnits="objectBoundingBox"><image href="rooms/rest.png" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid meet"/></mask>
+    <mask id="m-boss-slime" maskContentUnits="objectBoundingBox"><image href="rooms/boss-slime.png" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid meet"/></mask>
+    <mask id="m-boss-guardian" maskContentUnits="objectBoundingBox"><image href="rooms/boss-guardian.png" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid meet"/></mask>
+    <mask id="m-boss-hexaghost" maskContentUnits="objectBoundingBox"><image href="rooms/boss-hexaghost.png" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid meet"/></mask>
+    <symbol id="i-monster" viewBox="-10 -10 20 20"><rect x="-10" y="-10" width="20" height="20" fill="currentColor" mask="url(#m-monster)"/></symbol>
+    <symbol id="i-easy" viewBox="-10 -10 20 20"><rect x="-7.5" y="-7.5" width="15" height="15" fill="currentColor" opacity=".75" mask="url(#m-monster)"/></symbol>
+    <symbol id="i-elite" viewBox="-10 -10 20 20"><rect x="-10" y="-10" width="20" height="20" fill="currentColor" mask="url(#m-elite)"/></symbol>
+    <symbol id="i-rest" viewBox="-10 -10 20 20"><rect x="-10" y="-10" width="20" height="20" fill="currentColor" mask="url(#m-rest)"/></symbol>
+    <symbol id="i-boss-slime" viewBox="-10 -10 20 20"><rect x="-10" y="-10" width="20" height="20" fill="currentColor" mask="url(#m-boss-slime)"/></symbol>
+    <symbol id="i-boss-guardian" viewBox="-10 -10 20 20"><rect x="-10" y="-10" width="20" height="20" fill="currentColor" mask="url(#m-boss-guardian)"/></symbol>
+    <symbol id="i-boss-hexaghost" viewBox="-10 -10 20 20"><rect x="-10" y="-10" width="20" height="20" fill="currentColor" mask="url(#m-boss-hexaghost)"/></symbol>
+    <symbol id="i-boss" viewBox="-30 -10 60 20"><rect x="-30" y="-10" width="20" height="20" fill="currentColor" mask="url(#m-boss-slime)"/><rect x="-10" y="-10" width="20" height="20" fill="currentColor" mask="url(#m-boss-hexaghost)"/><rect x="10" y="-10" width="20" height="20" fill="currentColor" mask="url(#m-boss-guardian)"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg width="20" height="20" viewBox="-10 -10 20 20" aria-hidden="true"><use href="#i-boss"/></svg>sts-for-ai</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#story">The story</a>
+      <a href="#crew">Behind the scenes</a>
+      <a href="#verdict">Did it work?</a>
+      <a href="#results">Results</a>
+      <a href="#how">How it plays</a>
+      <a href="#real">Real game</a>
+      <a href="#next">What's next</a>
+      <a href="#everything" class="tab-link">All tried</a>
+      <a href="#stats" class="tab-link">Statistics</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Slay the Spire · Ironclad · Act 1 · Ascension 0</div>
+        <h1>An Ironclad that thinks <em>two turns ahead</em></h1>
+        <p class="lede">sts-for-ai is a home-built Slay the Spire combat engine and an AI that plays it. One hobbyist started it on 23 October; for most of the 23 days since, AI roles they set up ran the research, with the owner steering from time to time. This page is its history: everything that was tried, how the work was done, and how well that worked. Today it beats the Act 1 boss in about four runs of five on our test, and it is playing the real game.</p>
+      </div>
+      <div class="big" aria-label="Headline result">
+        <div class="eyebrow">Share of runs that beat the Act 1 boss</div>
+        <div class="fig">0.78<span style="color:var(--muted);font-weight:400">–</span>0.81</div>
+        <div class="what">The AI searching two turns deep, on our 11-fight Act 1 test, over 1,000 seeded runs. <span class="tag" tabindex="0" data-tip="Headline test: gauntlet.py play &lt;product&gt; --two-turn --line-seed --step-line --start starter --rewards sim --sim-boss. Product = the 10-29 net with the end-HP price @hpe0.01. Read 2026-11-03 (runs 0–499) and 2026-11-05 (runs 500–999).">headline · 2 turns · 1,000 runs · 11-05</span></div>
+        <div class="split">
+          <div><b>0.834</b><span>runs 0–499, the book its settings were tuned on</span></div>
+          <div><b>0.780</b><span>runs 500–999, held back for checking (se 0.019)</span></div>
+          <div><b>0.807</b><span>both books together</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div><b class="num">23</b><span>days, 23 Oct to 14 Nov 2026</span></div>
+      <div><b class="num">2,576</b><span>commits so far</span></div>
+      <div><b class="num">499</b><span>recorded decisions</span></div>
+      <div><a href="#everything" style="text-decoration:none;color:inherit;display:grid"><b class="num" id="hero-tried" style="color:var(--accent)">318</b><span>things tried, each with a line</span></a></div>
+      <div><b class="num">~58</b><span>research lanes run by AI roles</span></div>
+      <div><b class="num">1</b><span>owner, who set it up to keep running while they were away</span></div>
+      <div><a href="#real" style="text-decoration:none;color:inherit;display:grid"><b class="num" id="hero-real" style="color:var(--accent)">2 of 2</b><span>Act 1 bosses beaten in the real game today at Ascension 0 (run rules 1), of those reached</span></a></div>
+      <div hidden><a href="#real" style="text-decoration:none;color:inherit;display:grid"><b class="num" id="hero-real-a20" style="color:var(--accent)">1 of 1</b><span>Act 1 bosses beaten at Ascension 20 (run rules 5, fight guard 1), of those reached</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section id="story">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">The story</div>
+      <h2>23 days, everything tried</h2>
+      <p>Each mark below is one thing the project tried: an experiment, a change to the search, a training recipe, a test, a tool. Lanes (the AI roles' short research projects) are drawn from the day they opened to the day they closed. Hover a mark for what it was and what came of it; click it to open its line in the <a href="#everything">full list of everything tried</a>.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>Everything tried, by day</h3><div class="chips" id="tried-filters"></div></div>
+      <div class="chart" id="tried-timeline"></div>
+    </div>
+    <div class="panel" style="margin-top:14px">
+      <div class="panel-head"><h3>Commits per day</h3><span class="panel-note">Bands are the eight stretches below. Hover a day.</span></div>
+      <div class="chart" id="commits"></div>
+      <div class="legend"><span><i style="background:var(--heur)"></i>Owner at the desk</span><span><i style="background:var(--prod)"></i>Owner away, AI roles running the day-to-day</span><span><i style="background:var(--gold);border-radius:50%;width:8px;height:8px"></i>Event (hover the day)</span></div>
+    </div>
+    <p class="panel-note" style="margin-top:14px;max-width:86ch">Each stretch below is told in its own terms. The test that mattered changed along the way, so each one names its own ruler, and its numbers belong to that ruler only.</p>
+
+    <div class="periods" id="periods">
+
+      <article class="period">
+        <div class="when"><span class="pn">1</span><b>23–24 Oct</b><span>61 commits</span></div>
+        <div>
+          <h3>The engine and the first question</h3>
+          <p class="work"><b>How the work was done.</b> The owner and Claude worked side by side in a spec-first loop: the owner confirms a spec, Claude builds it step by step against checks a program can run, and every design call goes into a decisions log. That log kept growing for the whole project and holds 499 entries today.</p>
+          <div class="cols">
+            <div><h5>Built</h5><ul>
+              <li>A combat engine in Rust: Ironclad, Act 1, Ascension 0. 24 cards, the hallway monsters, Gremlin Nob, Lagavulin, three Sentries, Slime Boss with its split.</li>
+              <li>Two twin nets trained on 30,000 games: one reads cards by what they do, one by their names.</li>
+              <li>The Silent as a second character, to test transfer.</li>
+            </ul></div>
+            <div><h5>Learned</h5><ul>
+              <li>On decks with five held-out cards (Twin Strike, Iron Wave, Thunderclap, Pommel Strike, Uppercut), the "what it does" net predicted fight outcomes with 50% less error. <span class="tag" tabindex="0" data-tip="Check 6: value-prediction error on games with held-out cards, effects net vs ids net, both trained on the same 30,000 games; bar 20%. Commit 39de9ebf, 2026-10-23.">prediction error · 10-23</span></li>
+              <li>Nets trained only on Ironclad predicted Silent fights with 27% less error than the names net. <span class="tag" tabindex="0" data-tip="Check 8: Silent tier-A decks, MSE 0.0753 vs 0.1034, bar 20%. Commit 647225dd, 2026-10-24.">prediction error · Silent · 10-24</span></li>
+              <li>Valuing an unseen power card missed its bar (18.3% against 20%). Demon Form was the hardest.</li>
+            </ul></div>
+          </div>
+          <div class="ruler"><b>Ruler</b> How far a net's predicted fight score is from the real one, on cards it never trained on.</div>
+          <div class="moment"><b>Moment:</b> Hemokinesis deals 15, not 16, with Rupture in play. The game works out the card's damage before Rupture's Strength lands, and the engine copies that.</div>
+          <div class="tried-sum" data-from="10-23" data-to="10-24" data-n="1"></div>
+        </div>
+      </article>
+
+      <article class="period">
+        <div class="when"><span class="pn">2</span><b>25–28 Oct</b><span>110 commits</span></div>
+        <div>
+          <h3>Self-play, with the owner at the desk</h3>
+          <p class="work"><b>How the work was done.</b> Still at the desk. Training ran as overnight sweeps of many recipe variants, some on Google Colab to borrow extra machines, and the days went to reading what the night had produced.</p>
+          <div class="cols">
+            <div><h5>Built</h5><ul>
+              <li>A self-play loop with overnight sweeps of many training recipes.</li>
+              <li>The net rewritten in Rust so search can call it fast.</li>
+              <li>An exact solver that finds provably best play near the end of a fight, and a puzzle bench from it.</li>
+              <li>A design for a general rules engine, so new mechanics can come in as data.</li>
+            </ul></div>
+            <div><h5>Learned</h5><ul>
+              <li>Ten rounds of self-play stayed below the hand-written player: 0.475 / 0.445 wins against its 0.528 / 0.496 (training cards / held-out cards). <span class="tag" tabindex="0" data-tip="Tight fights v1, 2 seeds, 1,079 games per group per round, 10 rounds. learned-play-results.md 'Amendment 3 sweep and why rounds don't improve', 2026-10-26.">tight fights v1 · 10-26</span></li>
+              <li>The curriculum night reached the hand-written player, not past it: 0.50–0.52 against 0.512. <span class="tag" tabindex="0" data-tip="Tight fights v1, 2 seeds, 10 rounds; the pass bar needed a lead of about 0.085, the best round led by 0.035. 'Curriculum night (2026-10-28)'.">tight fights v1 · 10-28</span></li>
+            </ul></div>
+          </div>
+          <div class="ruler"><b>Ruler</b> Tight fights: fights started at the HP where the hand-written player wins about half the time, so small differences in play show.</div>
+          <div class="moment"><b>Moment:</b> One position's draw outcomes kept the exact solver busy for hours in the middle of the night.</div>
+          <div class="tried-sum" data-from="10-25" data-to="10-28" data-n="2"></div>
+        </div>
+      </article>
+
+      <article class="period">
+        <div class="when"><span class="pn">3</span><b>29–31 Oct</b><span>219 commits</span></div>
+        <div>
+          <h3>Claude runs the lab day to day</h3>
+          <p class="work"><b>How the work was done.</b> On the evening of 29 October the owner stepped away, as planned, and handed the day-to-day to one Claude session acting as manager, keeping its state in a manager file and deciding on the owner's behalf. On the 30th it got a job queue so experiments ran unattended. The same day, looking for faster progress, the owner asked for the first big-picture review: several analyst agents read all the data and skeptic agents checked their claims.</p>
+          <div class="cols">
+            <div><h5>Built</h5><ul>
+              <li>From the evening of 29 October the owner was away, and a Claude session they set up ran experiments from a job queue around the clock.</li>
+              <li>Hexaghost and The Guardian (Mode Shift, Sharp Hide, Burn), so all three Act 1 bosses were in.</li>
+              <li>A new close-fights test (1,226 fights), a champion ladder for promoting nets, and daily big-picture reviews by several analyst agents.</li>
+              <li>Two-turn search, fixed twice before it worked.</li>
+            </ul></div>
+            <div><h5>Learned</h5><ul>
+              <li>The night's "passes" were luck. Retrained with three seeds, their held-out leads were +0.006, +0.003, −0.004, −0.003. <span class="tag" tabindex="0" data-tip="Seed check: the four 10-28 rounds retrained at three seeds, tight2 train and held-out halves. 'Seed check: do the night's gate passes hold up?', 2026-10-29.">tight2 · 3 seeds · 10-29</span></li>
+              <li>The first champion, the 29 October net, beat the hand-written player by +0.037 over 1,150 paired fights, and by +0.132 on boss fights. It is still the product's net. <span class="tag" tabindex="0" data-tip="Champion ladder test 0001: fresh stratified fights, one turn deep; train +0.064, held-out +0.011; boss +0.132, elite +0.068, hallway +0.020. 2026-10-30.">ladder · 1 turn · 10-30</span></li>
+              <li>Two turns beat one once fixed: +0.056 wins (se 0.014) on 1,328 elite and boss fights. <span class="tag" tabindex="0" data-tip="Node cap 400,000, heuristic leaves, 4 sampled draws; two-turn minus one-turn win rate on train elite+boss fights of tight2; held-out +0.016 (0.015). depth-pilot-2026-10-30.md.">tight2 elites+bosses · 10-31</span></li>
+            </ul></div>
+          </div>
+          <div class="ruler"><b>Ruler</b> tight2 (1,226 close fights) for training recipes; the champion ladder for promoting a net.</div>
+          <div class="moment"><b>Moment:</b> The nets refused to play Demon Form. In 156 held-out boss fights the hand-written player played it at 41% of first chances, the nets at 6.5%. Against Hexaghost that meant 0.54 wins for the hand-written player and 0.07 to 0.11 for the nets.</div>
+          <div class="tried-sum" data-from="10-29" data-to="10-31" data-n="3"></div>
+        </div>
+      </article>
+
+      <article class="period">
+        <div class="when"><span class="pn">4</span><b>1–2 Nov</b><span>236 commits</span></div>
+        <div>
+          <h3>From single fights to an Act</h3>
+          <p class="work"><b>How the work was done.</b> The manager ran read after read against the new gauntlet. On 2 November the owner was back at the desk for a day: an approach review by 99 read-only agents that they had asked for, the rules-engine series they asked for, built overnight on a branch, a training rule (train only when there is something new to learn), and the groundwork for the next way of working: a lanes runner, a fact store and a product registry.</p>
+          <div class="cols">
+            <div><h5>Built</h5><ul>
+              <li>An HP price in the search, with no retraining.</li>
+              <li>The 11-fight gauntlet, then card rewards picked by trial fights, then trial fights against the boss too.</li>
+              <li>Probes for the campfire, card removal and skipping elites.</li>
+              <li>Overnight, on a branch: Body Slam, Heavy Blade, Perfected Strike and Whirlwind's X cost, picks inside a card (Survivor, Burst, Hologram), monster move patterns as data.</li>
+            </ul></div>
+            <div><h5>Learned</h5><ul>
+              <li>The nets lost about twice the hand-written player's HP per fight; the HP price saved 2.75 HP per fight. <span class="tag" tabindex="0" data-tip="Run-HP fights (fights at run-like start HP), champion with and without @hpb0.01. Decisions 'HP bonus promoted', 2026-11-01.">run-HP fights · 11-01</span></li>
+              <li>From the starter deck: skipping every reward clears 0.000, random picks 0.364, trial-fight picks 0.548. <span class="tag" tabindex="0" data-tip="Starter deck, 10-29 net @hpb0.01 one turn deep, 500 sequences, before sim-boss. 'Card rewards: deck choice is a goal-2 lever as big as depth', 2026-11-02.">starter · 1 turn · 500 runs · 11-02</span></li>
+              <li>Looking at the boss when picking: 0.695 against 0.540. <span class="tag" tabindex="0" data-tip="Sim-boss vs plain sim, 10-29 net @hpb0.01 one turn deep, protocol stop at 162 of 200 sequences; boss deaths 44 vs 69. 2026-11-02.">sim-boss · 1 turn · 162 runs · 11-02</span></li>
+              <li>The first headline: 0.804 clears two turns deep, +0.124 over one turn. <span class="tag" tabindex="0" data-tip="Headline setting, 10-29 net @hpe0.01 two turns deep (plain two-turn, before line step), runs 0–499; +0.124 (0.022) over one turn (0.680), +0.270 over the heuristic (0.534). 2026-11-02.">headline · 2 turns · runs 0–499 · 11-02</span></li>
+            </ul></div>
+          </div>
+          <div class="ruler"><b>Ruler</b> The gauntlet: clears over 500 runs, paired run by run. First on fixed decks, from 2 November on the headline setting (starter deck, trial-fight picks with the boss in view).</div>
+          <div class="moment"><b>Moment:</b> Gremlin Nob against the HP price. Pricing HP made the net block more, and every Skill feeds Nob Strength. Skills per Nob fight: hand-written 1.32, net 1.68, net with the price 2.28, with a heavy price 4.13. Wins fell from 0.994 to 0.833. And with the boss in view, the card picker started drafting scaling: Spot Weakness 86 times where it had taken it almost never.</div>
+          <div class="tried-sum" data-from="11-01" data-to="11-02" data-n="4"></div>
+        </div>
+      </article>
+
+      <article class="period">
+        <div class="when"><span class="pn">5</span><b>3–5 Nov</b><span>340 commits</span></div>
+        <div>
+          <h3>The AI roles take over</h3>
+          <p class="work"><b>How the work was done.</b> On 3 November the single manager became scheduled roles: a steward that keeps the machine healthy and writes a daily digest, a navigator that ranks ideas and opens lanes, and lane workers that each run one lane, a short project with a question, a CPU-hour cap and an end date. The first four lanes opened that morning. On the 5th the owner chose one turn deep for every comparison, because a two-turn game costs about 100 one-turn games.</p>
+          <div class="cols">
+            <div><h5>Built</h5><ul>
+              <li>Three scheduled AI roles: a steward, a navigator and lane workers (see "Who ran it").</li>
+              <li>Line step: the same two-turn decisions at 70% of the time.</li>
+              <li>A goal-1 test: official monsters with changes like Sharp Hide 2, Ritual 2 or more HP.</li>
+              <li>The owner's design call: Act 1 goes in as content files, not code, so new content needs no engine change.</li>
+            </ul></div>
+            <div><h5>Learned</h5><ul>
+              <li>The headline as quoted today: 0.834 on runs 0–499, 0.780 on held-back runs 500–999. <span class="tag" tabindex="0" data-tip="Product (10-29 net @hpe0.01, two turns, line step), headline setting. Runs 0–499 read 2026-11-03; 500–999 read 2026-11-05 (se 0.019); both books 0.807.">headline · 2 turns · 11-03/05</span></li>
+              <li>Training on the two-turn player's games lost HP: −1.37 and −1.02 on two seeds. <span class="tag" tabindex="0" data-tip="Two-turn self-play round: 10-29 net fine-tuned on 3,000 two-turn product games, one turn deep @hpb0.01 on the cell gauntlet, n 150 (se 0.83 / 0.70). 2026-11-03.">cell gauntlet · 1 turn · n 150 · 11-03</span></li>
+              <li>Changes kept their sign two turns deep at about a third of their size, and a two-turn game costs about 100 one-turn games. From 5 November every comparison plays one turn deep.</li>
+            </ul></div>
+          </div>
+          <div class="ruler"><b>Ruler</b> The headline two turns deep, then (from 5 November) one turn deep against the one-turn control at 0.680.</div>
+          <div class="moment"><b>Moment:</b> Skipping elites kept winning, because the engine had no relics for an elite to drop.</div>
+          <div class="tried-sum" data-from="11-03" data-to="11-05" data-n="5"></div>
+        </div>
+      </article>
+
+      <article class="period">
+        <div class="when"><span class="pn">6</span><b>6–9 Nov</b><span>763 commits</span></div>
+        <div>
+          <h3>Real Act 1 goes in</h3>
+          <p class="work"><b>How the work was done.</b> The busiest stretch: 763 commits and up to 8 lanes opened in a day. On 9 November the owner started working on Act 1 content directly in their own sessions, since the lane process was slow for that kind of work.</p>
+          <div class="cols">
+            <div><h5>Built</h5><ul>
+              <li>The seven missing monsters as data: Blue and Red Slaver, Fat, Sneaky, Mad and Shield Gremlins, Gremlin Wizard.</li>
+              <li>Ironclad cards block by block: 31 of the 40 missing by 9 November.</li>
+              <li>A smaller game state (1,292 to 744 bytes): search 17.6% faster, identical games.</li>
+              <li>A test of 24 made-up monster mechanics on official elites.</li>
+              <li>From 9 November the owner worked on Act 1 content directly, alongside the lanes.</li>
+            </ul></div>
+            <div><h5>Learned</h5><ul>
+              <li>Of ten real cards the nets never saw, only Demon Form cost them: −4.26 HP on decks with it, +5.28 without. <span class="tag" tabindex="0" data-tip="Product recipe (three seeds) minus heuristic, one turn deep, held-out card half of both headline books. Decisions 'After yardstick-cards step 1', 2026-11-06.">headline · 1 turn · held-out cards · 11-06</span></li>
+              <li>Real cards in the offers: 0.834 to 0.684 for the product, and the order of players holds. <span class="tag" tabindex="0" data-tip="27 act1-ironclad pack cards in both halves' offers, each player vs its own control, headline, n 500. Read 2026-11-07.">pack offers · 500 runs · 11-07</span></li>
+              <li>Made-up mechanics cost the net 1.28 HP per elite fight on average; "deals damage when attacked" on Gremlin Nob cost 12.80. <span class="tag" tabindex="0" data-tip="Generated-enemies bench, 24 mechanics, 675 elite starts x 16, one turn deep @hpb0.01@tsl1, net minus heuristic against a stat-matched control; mean over 21 mechanics. 2026-11-07.">generated elites · 1 turn · 11-07</span></li>
+            </ul></div>
+          </div>
+          <div class="ruler"><b>Ruler</b> One turn deep against the one-turn control; goal 1 in HP per elite fight against the hand-written player.</div>
+          <div class="moment"><b>Moment:</b> The real Exordium Thugs are meaner. They cost 3.28 HP more than the engine's old stand-in, because the real encounter can hold a Blue or Red Slaver.</div>
+          <div class="tried-sum" data-from="11-06" data-to="11-09" data-n="6"></div>
+        </div>
+      </article>
+
+      <article class="period">
+        <div class="when"><span class="pn">7</span><b>10–12 Nov</b><span>431 commits</span></div>
+        <div>
+          <h3>New nets for new content; relics and potions</h3>
+          <p class="work"><b>How the work was done.</b> Lanes kept opening and closing within a day, mostly on unseen content. The big-picture reviews started to say that the product had not moved since 3 November. Beside the lanes the owner built relics and potions in their own sessions and set the plan for the last two days.</p>
+          <div class="cols">
+            <div><h5>Built</h5><ul>
+              <li>Nets trained from scratch on games with the new Act 1 cards, then with 18 made-up monster mechanics, then with a grid of 100 made-up mechanics.</li>
+              <li>Relics as their own thing in the engine, with hooks and counters: 0 to 52 by the night of 12 November. Potions: 0 to 25.</li>
+              <li>The game's own code became the authority for every value.</li>
+            </ul></div>
+            <div><h5>Learned</h5><ul>
+              <li>From-scratch nets gained on the new-card test, +3.33 HP one turn deep, and the gain carried whole to two turns: +4.57 HP, +0.097 clears. <span class="tag" tabindex="0" data-tip="Three seeds, 31-card pack in the offers. One turn: n 500, runs 0–499, se 0.83. Two turns (product flags) vs the product: runs 0–249, +4.57 (1.19) HP, +0.097 (0.030) clears. 2026-11-10/11.">pack offers · 3 seeds · 11-10/11</span></li>
+              <li>On official content their gain was Demon Form again: +17.7 to +20.2 HP where both players took it, −2.14 HP on the 345 runs where nobody did. <span class="tag" tabindex="0" data-tip="Three pack nets one turn deep on the plain headline: +0.78 (0.89) HP overall, a fail against the +1.5 HP bar. 2026-11-10.">headline · 1 turn · 11-10</span></li>
+              <li>Training on made-up mechanics removed 0.76 of the cost of mechanics never seen. <span class="tag" tabindex="0" data-tip="Generated-pack nets, 3 seeds, 675 official elite starts x 8, one turn deep; 6 held-out mechanics +5.33 → +1.28 HP per elite fight. 2026-11-11.">generated elites · 3 seeds · 11-11</span></li>
+            </ul></div>
+          </div>
+          <div class="ruler"><b>Ruler</b> One turn deep; content gains on the pack-offers headline against its own control; goal 1 as the share of an unseen mechanic's cost a net removes.</div>
+          <div class="moment"><b>Moment:</b> The relic count climbed by the hour: 23 on 10 November, 40 at lunchtime on the 12th, 52 by 11 pm.</div>
+          <div class="tried-sum" data-from="11-10" data-to="11-12" data-n="7"></div>
+        </div>
+      </article>
+
+      <article class="period">
+        <div class="when"><span class="pn">8</span><b>13–14 Nov</b><span>416 commits so far</span></div>
+        <div>
+          <h3>The product changes; the real game</h3>
+          <p class="work"><b>How the work was done.</b> The owner changed the pass rule to 'level and more general is a pass', and installed the game. On the 14th Claude sessions played the real game through the bridge and fixed what it found, fixed Act 1 engine rules, and wrote this page.</p>
+          <div class="cols">
+            <div><h5>Built</h5><ul>
+              <li>The owner added a pass rule: a change that is more correct or more general passes when it reads level, without a gain.</li>
+              <li>The first product change since 3 November: turn-start powers and leftover block priced, with a matching card picker.</li>
+              <li>The game installed; its code read straight from the jar (Paper Phrog lives inside Vulnerable: ×1.75 instead of ×1.5 on monsters).</li>
+              <li>The bridge to the real game, tested offline on the 13th; whole runs from the morning of the 14th.</li>
+              <li>Engine work on the 14th: Ascension 20 for every Act 1 monster, built from the game's code; the last four Ironclad cards, so all 75 load; and a new rules version (f59b662a) whose recorded test games cover the fixes the live runs found.</li>
+            </ul></div>
+            <div><h5>Learned</h5><ul>
+              <li>Pricing turn-start powers one turn deep: +0.56 HP, 0.696 clears, and Demon Form back to 0.19 of offers. <span class="tag" tabindex="0" data-tip="10-29 net @hpb0.01@tsl1, plain trial fights, headline runs 0–499, n 500, against the one-turn control (0.680). 2026-11-13.">headline · 1 turn · 500 runs · 11-13</span></li>
+              <li>The product with both prices: 0.832 against 0.834, level, adopted. <span class="tag" tabindex="0" data-tip="Product @hpe0.01@tsl1@lcb1 with chooser @hpe0.01@lcb1, two turns deep, headline runs 0–499, end HP +0.08 (0.51). Job 0986, 2026-11-13. New controls: 0.832 two turns, 0.716 one turn.">headline · 2 turns · 500 runs · 11-13</span></li>
+            </ul></div>
+          </div>
+          <div class="ruler"><b>Ruler</b> The headline again, re-based on 13 November: 0.832 two turns, 0.716 one turn <span class="tag" tabindex="0" data-tip="One-turn control: the 10-29 net @hpb0.01@tsl1@lcb1 one turn deep, card picks by trial fights @hpb0.01@lcb1, headline setting, runs 0–499, 0.716 clears. File results/gauntlet/net1029-hpb0.01-tsl1-lcb1-starter-simboss.json. Two-turn control: the product with both prices, 0.832 (job 0986), 2026-11-13.">one-turn control · 1 turn · 500 runs · 11-13</span>. The real game is outside every ruler.</div>
+          <div class="moment"><b>Moment:</b> The first product change in ten days was a tie, on purpose. It prices things more correctly, which matters once relics that act at turn start come in.</div>
+          <div class="tried-sum" data-from="11-13" data-to="11-14" data-n="8"></div>
+        </div>
+      </article>
+    </div>
+
+
+    <div class="panel" style="margin-top:22px">
+      <div class="panel-head"><h3>Act 1 content in the engine</h3><span class="panel-note">Counts, not results: what loads and plays.</span></div>
+      <div class="coverage" id="coverage"></div>
+      <p class="panel-note" style="margin-top:10px">At the end of 14 November every Act 1 monster, encounter, Ironclad card and potion loads. Still missing: 59 relics, 45 of which act outside fights (Astrolabe, Pandora's Box, Golden Idol and friends). The relic total counts every relic an Act 1 run can meet, including boss, shop and event relics. The gauntlet itself still has no relics or potions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEHIND THE SCENES ============ -->
+<section id="crew">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Behind the scenes</div>
+      <h2>How the work was done</h2>
+      <p>A one-person hobby project, set up so the research could keep going while its owner was away. The way of working changed almost as often as the tests did. Here is how it grew, step by step.</p>
+    </div>
+    <ol class="method" id="method">
+      <li><span class="mdate">23 Oct</span><div><b>Spec first.</b> The owner writes what they want, Claude writes a spec, the owner confirms it, and Claude builds it in steps that each end in a check a program can run. Every design call goes into a decisions log.</div></li>
+      <li><span class="mdate">25 Oct</span><div><b>Overnight sweeps.</b> Training recipes run in batches at night, some on Google Colab; the morning is for reading results.</div></li>
+      <li><span class="mdate">29 Oct</span><div><b>A manager for the time away.</b> One Claude session keeps a manager file with its state and decides on the owner's behalf, with standing instructions from the owner: decide, record why and the alternatives, prefer what can be undone, and keep work moving without waiting on the owner.</div></li>
+      <li><span class="mdate">30 Oct</span><div><b>A job queue and big-picture reviews.</b> Experiments go into a queue that runs them unattended. After the owner asked for faster progress and more data analysis, a saved review workflow was set up to run about once a day and after any major result: several analyst agents read all the data through different lenses, a synthesis follows, and skeptic agents check the key claims. 13 such reviews ran.</div></li>
+      <li><span class="mdate">2 Nov</span><div><b>A fact store, a product registry, a training rule.</b> Facts go into a store of sealed claims that cite their source files and turn "suspect" when a source changes; the best player lives in one registry file; training runs only when the net has something new to learn.</div></li>
+      <li><span class="mdate">3 Nov</span><div><b>Roles and lanes.</b> The manager is split into scheduled roles (below). Research runs in lanes: short projects with a question, a predicted chance of success, a CPU-hour cap, an end date and a written "reopen if". A dashboard shows the machine, the queue and every session.</div></li>
+      <li><span class="mdate">5 Nov</span><div><b>One turn deep for comparisons.</b> The owner's choice: every change is judged one turn deep, where a read costs minutes; the two-turn product is the reported score, not the ruler.</div></li>
+      <li><span class="mdate">7 Nov</span><div><b>Reads without a session.</b> A family of queued jobs can run from one session to its verdict, so a lane needs no worker checking in between jobs.</div></li>
+      <li><span class="mdate">9 Nov</span><div><b>The owner works on Act 1 content directly.</b> A lane spent about 3.5 hours of spec, review and speed checks on two cards, so the owner moved Act 1 content into their own sessions.</div></li>
+      <li><span class="mdate">13 Nov</span><div><b>Curator, "level is a pass".</b> A daily curator role keeps the fact store current. A change that is more correct or more general passes when it reads level, without a gain.</div></li>
+    </ol>
+    <div class="crew-grid" style="margin-top:22px">
+      <div class="role"><span class="who">Haiku</span><h4>Steward</h4><p>Checks the machine's health first and fixes what is red. Writes the daily digest. Never plans or picks research.</p></div>
+      <div class="role"><span class="who">Opus</span><h4>Navigator</h4><p>Reads results, writes big-picture reviews, ranks the backlog and opens lanes. Never edits code.</p></div>
+      <div class="role"><span class="who">Opus · up to two at once</span><h4>Lane workers</h4><p>Each works one lane: writes its spec and code, queues its runs, reads the results and closes the lane with a verdict.</p></div>
+      <div class="role"><span class="who">Sonnet</span><h4>Curator</h4><p>Keeps the fact store current: re-checks facts that went stale, merges duplicates, shortens long ones.</p></div>
+    </div>
+    <div class="stores">
+      <div class="store"><b class="num">1,091</b><span>queued jobs finished; every result names its job</span></div>
+      <div class="store"><b class="num">499</b><span>decision entries; 80 are the owner's own (55 of them signed after leaving), 338 were made on the owner's behalf, the rest are lane records and build notes</span></div>
+      <div class="store"><b class="num">426</b><span>active facts on 14 Nov, each citing its files (636 stored, 210 retired); a rules change on 13 Nov flagged 31 stale, and the real-game day left 48 suspect</span></div>
+      <div class="store"><b class="num">58</b><span>lanes opened from 3 to 13 November; 55 closed with a written verdict</span></div>
+      <div class="store"><b class="num">13</b><span>big-picture reviews, from 30 October on</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VERDICT ============ -->
+<section id="verdict">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Did the AI-run research work?</div>
+      <h2>Fast and honest at trying things; slow to move the headline</h2>
+      <p>Every lane wrote down, before it ran, how likely it thought success was and how much CPU it would need. Those records make it possible to grade the setup.</p>
+    </div>
+    <div class="facts" style="margin-top:0">
+      <div><b class="num">55</b><span>lanes closed in 11 days</span></div>
+      <div><b class="num">32</b><span>of them closed the day they opened</span></div>
+      <div><b class="num">25</b><span>worked or built what they set out to (23 + 2)</span></div>
+      <div><b class="num">21</b><span>didn't work, each with a "reopen if"</span></div>
+      <div><b class="num">~30%</b><span>of the machine's thread-hours used by queued work</span></div>
+    </div>
+    <div class="verdict-grid">
+      <div class="panel">
+        <div class="panel-head"><h4>Were its odds honest?</h4><span class="panel-note">Lane outcomes by the chance each gave itself beforehand</span></div>
+        <div class="chart narrow" id="calibration"></div>
+        <p class="panel-note" style="margin-top:8px">Yes. None of the ten long shots worked, about half of the even bets did, and most of the likely ones did.</p>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h4>Were its CPU estimates right?</h4><span class="panel-note">35 lanes that gave an estimate</span></div>
+        <div class="chart narrow" id="cpu-scatter"></div>
+        <p class="panel-note" style="margin-top:8px">Most came within a factor of three either way. Seven used under a third of their estimate, mostly lanes that stopped early; the big training lanes ran 1.5 to 2.7 times over.</p>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h4>Was the machine busy?</h4><span class="panel-note">Thread-hours of queued work per day, by the day each job ended</span></div>
+        <div class="chart narrow" id="machine-use"></div>
+        <p class="panel-note" style="margin-top:8px">No. The rules said machine time was the bottleneck, but queued work filled about 30% of the dev machine's threads. The rest went idle while lanes wrote specs and code, waited for review, or waited for memory.</p>
+      </div>
+    </div>
+    <div class="ledger">
+      <div class="panel">
+        <h4>What worked</h4>
+        <ul>
+          <li><strong>Speed of trying.</strong> 55 lanes closed in 11 days, most within a day, each with a question, a cap, a prediction and a written verdict.</li>
+          <li><strong>Honest records.</strong> Failures were written up as carefully as wins, with what would justify reopening them. This page's "everything tried" list exists because of that.</li>
+          <li><strong>It caught its own mistakes.</strong> The night of 28 October's passes were shown to be seed luck the next day; a boss cost on the mutated-monster test turned out to rest on one lucky control and was withdrawn by a read five times larger.</li>
+          <li><strong>Goal 1 moved.</strong> The owner weighted unseen content at 0.8 of development. On it the lanes went from "new mechanics cost the net" to nets that remove about three quarters of the cost of mechanics they never saw.</li>
+          <li><strong>Engine work landed fast:</strong> content as data files, a smaller game state, all 25 Act 1 monsters and all 75 Ironclad cards by 14 November.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>What didn't</h4>
+        <ul>
+          <li><strong>The headline didn't move.</strong> The product stayed the same from 3 to 13 November; about 865 of 1,550 booked thread-hours ran after 3 November without a change to it. Every gain on the Act 1 test came from search and card picks, and most gains found one turn deep shrank to about a third of their size two turns deep.</li>
+          <li><strong>The machine sat idle.</strong> About 70% of its thread-hours went unused, while the rules called machine time the bottleneck.</li>
+          <li><strong>Tests reversed each other.</strong> The recipe that ranked first on one test ranked fourth on the gauntlet; each ruler left out a part of what matters, so rulers kept changing.</li>
+          <li><strong>Coordination cost.</strong> A lane needed hours of process for two cards, so the owner did that work in their own sessions.</li>
+          <li><strong>Facts go stale.</strong> One rules change on 13 November flagged 31 stored facts for re-checking.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section id="results">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Results in brief</div>
+      <h2>Where it stands, and six things it found</h2>
+      <p>The headline number comes from one fixed test, the gauntlet: Act 1 boiled down to its fights. Here is the test, where the AI's runs end on it, and the findings players argue about, each with the measurement behind it.</p>
+    </div>
+    <div class="test-grid">
+      <ul class="rules">
+        <li><svg width="22" height="22" viewBox="-10 -10 20 20" style="color:var(--accent)" aria-hidden="true"><use href="#i-boss"/></svg><span><strong>Starter deck, 80 HP.</strong> Five Strikes, four Defends, Bash. Burning Blood heals 6 after every won fight. No other relics, no potions.</span></li>
+        <li><svg width="22" height="22" viewBox="-10 -10 20 20" style="color:var(--ink-2)" aria-hidden="true"><use href="#i-easy"/></svg><span><strong>Eleven fights in a row.</strong> Three easy hallways, two hard ones, an elite, two hard, an elite, one hard, then a campfire that heals 30% (24 HP), then the boss.</span></li>
+        <li><svg width="22" height="22" viewBox="-10 -10 20 20" style="color:var(--gold)" aria-hidden="true"><use href="#i-elite"/></svg><span><strong>Three card offers after each win.</strong> The AI tries each card (and skipping) in 8 short trial fights against the next floor's monsters and 8 against the boss, then takes the best.</span></li>
+        <li><svg width="22" height="22" viewBox="-10 -10 20 20" style="color:var(--ink-2)" aria-hidden="true"><use href="#i-rest"/></svg><span><strong>One loss ends the run.</strong> Every player plays the same seeded runs, so two players can be compared run by run.</span></li>
+        <li><svg width="22" height="22" viewBox="-10 -10 20 20" style="color:var(--muted)" aria-hidden="true"><use href="#i-monster"/></svg><span><strong>Not in it:</strong> events, shops, gold, the map, relics beyond Burning Blood, potions. Half the runs offer cards the AI's net never trained on.</span></li>
+      </ul>
+      <div class="prose">
+        <p class="pool"><b>Easy:</b> Cultist, Jaw Worm, two Louses, small slimes. <b>Hard:</b> Looter, Large Slime, Lots of Slimes, three Louses, two Fungi Beasts, Exordium Thugs, Exordium Wildlife. <b>Elites:</b> Gremlin Nob, Lagavulin, three Sentries. <b>Bosses:</b> Slime Boss, The Guardian, Hexaghost.</p>
+        <p class="pool"><b>Cards offered (31):</b> Anger, Bloodletting, Body Slam, Brutality, Carnage, Clash, Cleave, Clothesline, Combust, Demon Form, Dropkick, Flex, FTL, Go for the Eyes, Heavy Blade, Hemokinesis, Inflame, Iron Wave, Metallicize, Perfected Strike, Pommel Strike, Pummel, Rage, Rupture, Shrug It Off, Spot Weakness, Sword Boomerang, Thunderclap, Twin Strike, Uppercut, Wild Strike.</p>
+        <p><strong>Why every number here wears a tag.</strong> In 23 days the project changed its rules, its tests and the players it compared against many times. A number only means something next to the test it came from. So every number on this page sits beside a tag like <span class="tag" tabindex="0" data-tip="Hover or tap any tag like this one for the full setting: which test, which player, how deep it searched, which runs and when.">headline · 2 turns · runs 0–499</span>, and numbers with different tags are never drawn on one axis.</p>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:30px">
+      <div class="panel-head">
+        <h3>Curated content against real Act 1 content</h3>
+        <span class="panel-note">Each row is its own read. Compare within a row, not across rows.</span>
+      </div>
+      <p class="panel-note" style="max-width:80ch">The gauntlet started with a hand-picked set of cards and monsters. Later the real Act 1 Ironclad cards and hallway monsters were added as content files. Each row shows the three players on their usual test (faint dot) and with the real content added (solid dot), on the same runs.</p>
+      <div class="chart" id="content-rows"></div>
+      <div class="legend"><span><i style="background:var(--heur)"></i>Hand-written player, one turn deep</span><span><i style="background:var(--net)"></i>Net, one turn deep</span><span><i style="background:var(--prod)"></i>Net, two turns deep (the product)</span></div>
+      <p class="panel-note" style="margin-top:10px;max-width:80ch">The real cards drop everyone, mostly because the offers get diluted: about half as many of the familiar cards show up, and the net never trained on the new ones. The order never changes. On a separate 500-run read the real hallways cost the net no more than they cost the hand-written player: clears fell 0.048 for the net and 0.056 for the hand-written player, one turn deep (net minus hand-written +0.008, se 0.028). The 250-run row above is a smaller sample.</p>
+    </div>
+    <div class="panel" style="margin-top:22px">
+      <div class="panel-head">
+        <h3>Where 500 runs end</h3>
+        <span class="tag" tabindex="0" data-tip="The product (10-29 net, @hpe0.01, two turns deep, line step) on the headline setting, runs 0–499, recorded 2026-11-03. File results/gauntlet/net1029-hpe0.01-two-line-step-starter-simboss-a.json.">headline · 2 turns · runs 0–499 · 11-03</span>
+      </div>
+      <p class="panel-note">Top: average HP entering each fight, for the runs still alive. Bottom: how many runs died there. Hover a floor for the details.</p>
+      <div class="chart" id="hero-strip"></div>
+    </div>
+
+    <h3 class="sub">Six findings</h3>
+    <div class="findings">
+
+      <article class="finding">
+        <div class="claim">
+          <div class="n">FINDING 1</div>
+          <h3>HP at the boss is worth most where that boss's cliff is</h3>
+          <p>We replayed 474 real boss fights from the headline runs, changing only the HP the player walked in with. The result is cause, not correlation: it explains 87% of the slope you see in normal runs.</p>
+          <p><strong>Slime Boss</strong> is almost safe from 50 HP (0.92). <strong>The Guardian</strong> is a cliff: 0.07 at 30 HP, 0.49 at 50, 0.88 at 70. <strong>Hexaghost</strong> climbs slowly and is still only 0.90 at 80.</p>
+          <p class="fine">Boss replays play the net one turn deep, 4 seeds at each of six HP levels, 11,376 fights. The death counts come from the product two turns deep over 1,000 runs.</p>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h4>Chance to beat the boss, by HP walking in</h4><span class="tag" tabindex="0" data-tip="scripts/analysis/boss_replay.py on the 474 boss-reaching decks of results/gauntlet/net1029-hpe0.01-two-starter-simboss.json; the 10-29 net @hpb0.01 one turn deep; entry HP 30–80; 4 seeds each; 11,376 fights. Read 2026-11-02.">boss replays · 1 turn · 474 decks · 11-02</span></div>
+          <div class="chart" id="boss-curve"></div>
+          <div class="legend"><span><i class="line" style="background:var(--slime)"></i>Slime Boss</span><span><i class="line" style="background:var(--guardian)"></i>The Guardian</span><span><i class="line" style="background:var(--hexa)"></i>Hexaghost</span><span><i class="line" style="background:var(--pooled)"></i>All three</span></div>
+          <div class="panel-head" style="margin-top:18px"><h4>Boss wins per arrival, the product</h4><span class="tag" tabindex="0" data-tip="Product two turns deep, headline setting, runs 0–999 (both books), files ...-two-line-step-starter-simboss-a.json and -500.json. Read 2026-11-05.">headline · 2 turns · 1,000 runs · 11-05</span></div>
+          <div class="chart narrow" id="boss-bars"></div>
+        </div>
+      </article>
+
+      <article class="finding">
+        <div class="claim">
+          <div class="n">FINDING 2</div>
+          <h3>An elite costs more than it pays, when it pays no relic</h3>
+          <p>The two elites take 17.3 and 13.8 HP per won fight. Hard hallway fights take 0.5 to 3.6, easy ones about nothing. That HP is what the boss is missing.</p>
+          <p>Swap every elite for a hard hallway fight and the run ends with 14.0 more HP, and clears go from 0.720 to 0.920. Even with an extra card offer after each elite and a mid-act heal, skipping still clears more (+0.054, about 4 standard errors).</p>
+          <p class="fine">In this test an elite pays one card offer and no relic. That makes skipping the ceiling of a path choice here, not advice for real runs. The real-game controller paths "monsters first, elites last" for the same reason.</p>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h4>HP change per won fight, by floor</h4><span class="tag" tabindex="0" data-tip="Product two turns deep, headline setting, runs 0–499; mean HP change in fights it won (end HP after Burning Blood minus start HP; negative is HP lost). File ...-two-line-step-starter-simboss-a.json.">headline · 2 turns · runs 0–499 · 11-03</span></div>
+          <div class="chart" id="hp-loss"></div>
+          <div class="vs" style="margin-top:14px">
+            <div class="t"><span class="k">Fight every elite</span><span class="v">0.720 <small>clears</small></span><span class="k">end HP 22.3</span></div>
+            <div class="t hl"><span class="k">Skip every elite</span><span class="v">0.920 <small>clears</small></span><span class="k">end HP 36.3 (+14.0, se 2.3)</span></div>
+            <div class="t"><span class="k">With extra offers and a heal</span><span class="v">+0.054 <small>clears</small></span><span class="k">0.954 skipping vs 0.900 fighting</span></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><span class="tag" tabindex="0" data-tip="--elites skip against the one-turn control, 10-29 net @hpb0.01 one turn deep, headline setting, runs 0–49 (protocol pass at n 50). Read 2026-11-02.">headline · 1 turn · 50 runs · 11-02</span><span class="tag" tabindex="0" data-tip="Mini-run: headline + --elite-offers 2 --mid-rest 5, 10-29 net @hpb0.01 one turn deep, runs 0–499; skip every elite vs fight (job 0088). Boss deaths 22 vs 40. Read 2026-11-04.">mini-run · 1 turn · 500 runs · 11-04</span></div>
+        </div>
+      </article>
+
+      <article class="finding">
+        <div class="claim">
+          <div class="n">FINDING 3</div>
+          <h3>At the last campfire, just rest</h3>
+          <p>The test's one campfire sits right before the boss. A careful chooser played 64 boss fights for resting and for each possible upgrade, and upgraded only when it was clearly better. It upgraded in 2 runs of 50 and gained nothing: −0.10 HP, the same 0.720 clears.</p>
+          <p class="fine">The heal is 24 HP at 80 max HP, right before the boss, and the boss curve above says those 24 HP are worth a lot. A campfire earlier in the act, with more fights left to use an upgrade, could come out differently.</p>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h4>Rest or smith before the boss</h4><span class="tag" tabindex="0" data-tip="--rest sim --rest-fights 64 --rest-margin 2 against the one-turn control (always rest), 10-29 net @hpb0.01 one turn deep, headline setting; protocol fail at n 50. Read 2026-11-04. The 16-fight chooser: 2026-11-02.">headline · 1 turn · 50 runs · 11-04</span></div>
+          <div class="chart narrow" id="rest-tally"></div>
+          <div class="vs" style="margin-top:12px">
+            <div class="t"><span class="k">Always rest</span><span class="v">0.720 <small>clears</small></span><span class="k">end HP 22.3</span></div>
+            <div class="t"><span class="k">Careful choice (64 fights)</span><span class="v">0.720 <small>clears</small></span><span class="k">end HP 22.2 (−0.10, se 0.10)</span></div>
+            <div class="t"><span class="k">Quick choice (16 fights)</span><span class="v">−1.22 <small>HP</small></span><span class="k">protocol fail at 50 runs</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="finding">
+        <div class="claim">
+          <div class="n">FINDING 4</div>
+          <h3>The run you draw decides more than the player</h3>
+          <p>Each square is one of the 500 runs. 200 of them are cleared by every player, even the hand-written one. 36 are lost by all three. The players only differ on the rest.</p>
+          <p>Between two good players the effect is stronger. The product before and after it began pricing turn-start powers and leftover block ends the same way on 465 of 500 runs; the comparison rides on 35 runs, split 18 to 17.</p>
+          <p class="fine">This is why every comparison here pairs players run by run on the same seeds, and why small changes need hundreds of runs before they show.</p>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h4>500 runs, who clears each</h4><div class="seg" role="group" aria-label="Compare"><button type="button" id="w-three" aria-pressed="true">Three players</button><button type="button" id="w-two" aria-pressed="false">Two products</button></div></div>
+          <div class="chart narrow" id="waffle"></div>
+          <div class="legend" id="waffle-legend"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><span class="tag" tabindex="0" data-tip="Runs 0–499 on the headline setting: heuristic one turn (0.534), 10-29 net @hpb0.01 one turn (0.680), product two turns (0.834), recorded 2026-11-02/03. The 11-13 product adds @tsl1@lcb1 and a matching chooser (0.832, job 0986).">headline · runs 0–499 · 11-03 and 11-13</span></div>
+        </div>
+      </article>
+
+      <article class="finding">
+        <div class="claim">
+          <div class="n">FINDING 5</div>
+          <h3>Thinking deeper beat training harder</h3>
+          <p>Same net, same 500 runs: one turn deep it clears 0.680, two turns deep 0.834 (+0.154, se 0.023). Most of the saved runs are at the second elite and the boss.</p>
+          <p>Training did not keep up. Self-play stopped improving after one round. 80,000 training games did no better than 40,000. A round trained on the two-turn player's own games played 1.0 to 1.4 HP worse. Every gain on the Act 1 test since 29 October came from how the AI searches and picks cards: the HP price, two turns, trial-fight card picks, looking at the boss when picking.</p>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h4>Where each player's runs end</h4><span class="tag" tabindex="0" data-tip="Headline setting, runs 0–499. Heuristic one turn deep (heuristic-starter-simboss.json, 0.534), 10-29 net @hpb0.01 one turn deep (0.680), product two turns deep (0.834). Floors 1–5 had no deaths for any player.">headline · runs 0–499 · 11-02/03</span></div>
+          <div class="chart" id="deaths"></div>
+          <div class="legend"><span><i style="background:var(--heur)"></i>Hand-written, one turn · 0.534 clears</span><span><i style="background:var(--net)"></i>Net, one turn · 0.680</span><span><i style="background:var(--prod)"></i>Net, two turns · 0.834</span></div>
+        </div>
+      </article>
+
+      <article class="finding">
+        <div class="claim">
+          <div class="n">FINDING 6</div>
+          <h3>New numbers are free. New mechanics cost.</h3>
+          <p>The project's first goal is an AI that copes with content it has never seen, like a mod. To measure that, official elites were given changes and the net was compared with the hand-written player on them. Bigger numbers cost the net almost nothing extra. A mechanic it never trained against does: Sharp Hide 2 (you take damage for every Attack you play) costs it 6.3 HP per elite fight more than it costs the hand-written player.</p>
+          <p><strong>Demon Form, the villain of the project.</strong> Of ten real cards the nets never trained on, only Demon Form cost them: −4.26 HP against the hand-written player on decks that held it. Its Strength arrives at the start of next turn, just past where a one-turn search looks. Scoring the position after turn-start effects fixed it with no training at all, and is now part of the product.</p>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h4>The net's HP change per elite fight, against the hand-written player</h4><span class="tag" tabindex="0" data-tip="Wide mutated bench (results/mutate/wide.json, job 0143): 675 elite starts x 32 seeds, heuristic and the 10-29 net one turn deep. HP change against the heuristic (negative: the net loses more), modified minus the official elite, se over starts. Read 2026-11-05.">mutated elites · 1 turn · 675 starts × 32 · 11-05</span></div>
+          <p class="panel-note">On top of what the change does to the hand-written player; negative means the net loses more HP. Bars show ±2 standard errors.</p>
+          <div class="chart" id="novelty"></div>
+          <div class="legend"><span><i style="background:var(--heur)"></i>Number changes</span><span><i style="background:var(--prod)"></i>New mechanic on that elite</span></div>
+          <div class="panel-head" style="margin-top:16px"><h4>Demon Form decks, net against hand-written</h4><span class="tag" tabindex="0" data-tip="10-29 net @hpb0.01 one turn deep minus heuristic on held-out Demon Form decks, cell gauntlet both books; plain leaf vs @tsl1 (score the position after the player's turn-start hooks). Read 2026-11-07.">cell gauntlet · 1 turn · 11-07</span></div>
+          <div class="vs">
+            <div class="t"><span class="k">Plain score</span><span class="v">−4.12 <small>HP</small></span><span class="k">per run, against hand-written</span></div>
+            <div class="t hl"><span class="k">Score after turn start</span><span class="v">+3.43 <small>HP</small></span><span class="k">no new training</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT PLAYS ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">How it plays</div>
+      <h2>It never picks a card. It picks where to end up.</h2>
+      <p>The engine lists everything you could do, works out exactly where each choice leads, and a scoring function picks the best place to be. Hover a step to see where it sits in the search.</p>
+    </div>
+    <div class="how-grid">
+      <div class="panel" style="padding:14px 14px 8px">
+        <div class="chart" id="tree"></div>
+      </div>
+      <ol class="steps" id="steps">
+        <li data-step="1"><h4>Options</h4><p>Every legal play: each card on each target, each potion, End turn. Copies merge, so three Strikes against two monsters are two options, not six.</p></li>
+        <li data-step="2"><h4>Where each one leads</h4><p>The engine plays each option on a copy of the fight. A power the AI has never heard of still shows its effect in the result: more block, more damage, less monster HP.</p></li>
+        <li data-step="3"><h4>Chance is out in the open</h4><p>Draws and monster move rolls are chance points. The draw pile is a bag with no hidden order, so the AI can't peek. It lists every outcome with its odds, or samples a few.</p></li>
+        <li data-step="4"><h4>One turn deep</h4><p>After End turn the monsters' shown attacks land, and the search stops just before the next draw. That paused position gets a score.</p></li>
+        <li data-step="5"><h4>Two turns deep</h4><p>The product doesn't stop there. It samples 4 possible next hands and monster rolls and searches the next turn too, up to 400,000 positions per decision.</p></li>
+        <li data-step="6"><h4>The score</h4><p>A small net (about 190,000 weights) guesses how the fight will end: a loss is 0, a win is 2 minus HP lost / 100, and each HP kept earns a little extra. It reads every card as what it does, not its name, so a new card built from familiar parts already means something.</p></li>
+        <li data-step="7"><h4>Commit to the line</h4><p>The product plays the whole line its first search found, up to the next draw or random event, and only then searches again. Same decisions in 526 of 526 test decisions, at 70% of the search time.</p></li>
+        <li data-step="8"><h4>Picking cards</h4><p>No draft table. For each offer it plays 8 trial fights against the next floor and 8 against the boss with each option in the deck, and keeps the deck that scored best.</p></li>
+      </ol>
+      <p class="panel-note" style="max-width:80ch">The net learned from games it played itself: first from searches scored by a hand-written formula, then from searches with its own previous version. It is the net trained on 29 October, and it is still the product's net today.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REAL GAME ============ -->
+<section id="real">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">The real game · 14 November</div>
+      <h2>Sitting down at the real Spire</h2>
+      <p>The engine is a copy of the game. Today the AI plays the game itself, on the dev machine, through a mod.</p>
+    </div>
+    <div class="panel" style="margin-bottom:18px;border-color:color-mix(in srgb, var(--accent) 45%, transparent);background:var(--accent-wash)">
+      <div class="eyebrow" style="color:var(--accent)">End of 14 November · Ascension 20</div>
+      <p style="font-family:var(--f-display);font-size:22px;font-weight:700;margin-top:6px;color:var(--ink)">At Ascension 20, with the last run rules and the fight guard, it beat the Act 1 boss in 18 of 33 runs.</p>
+      <p style="color:var(--ink-2);margin-top:6px;max-width:80ch">That is 55%, about 9 points either way <span class="tag" tabindex="0" data-tip="Ascension 20, run rules 5 (rules 4, and elites last again), fight guard 1 (a winning move the search passed is taken), runs 58-90, the pack net s201 two turns deep. Write-up c54a8fff.">A20 · run rules 5 · fight guard 1 · 33 runs</span>. By boss: Slime Boss 10 of 11, The Guardian 7 of 8, Hexaghost 1 of 9. Hexaghost is the wall: its turn-9 Inferno lands past the two-turn search, and the net has never trained on A20 numbers. 3,777 of 3,782 chance-free steps matched the game (steps with chance aren't compared). At Ascension 0 the same player beat the Act 1 boss in 22 of 27 runs, which is why training moves to A20 next (below, under What's next). The day's settings changed between runs, so each keeps its own table below and none are pooled.</p>
+    </div>
+    <div class="bridge">
+      <div class="b"><h4>Read the screen</h4><p>CommunicationMod hands a program the game's state. The controller turns it into an engine fight: HP, energy, powers, relics, every pile, each monster's intent and move history. The draw pile is sorted first, because a player can't see its order.</p></div>
+      <div class="b"><h4>Think and play</h4><p>The product's search, two turns deep, with the net trained from scratch on games that include the real Act 1 cards, since real rewards offer them. Each move goes back as a game command, and the controller checks the game's next state against what the engine predicted. It compares only when every one of the engine's samples agrees, so the match rates cover chance-free steps. A step with chance in it (a draw, a random target, a rolled monster move, so most monster turns) isn't compared: in run 83 the game showed a Mad Gremlin at 21 HP with 7 block where the engine had 17 HP and 11 block, and that fight still counted 202 of 202. Checking those steps against what the game showed is backlog 86.</p></div>
+      <div class="b"><h4>Everything outside fights</h4><p>Since 06:02 the controller plays whole runs: Neow, the map (monsters first, elites last), rewards, card picks by trial fights, campfires (rest under 60% HP, 75% before the boss), and walks past shops. A fight with an unknown monster falls back to a simple rule. From run 22 on, a run stops when Act 2 starts, on purpose: the engine doesn't model Act 2, so the loop relaunches the game for the next run. Those endings are not deaths. The run layer's rules changed during the day (versions 2 to 5, from run 35), and from run 58 the fight guard takes a winning move the search passed; each setting keeps its own table below.</p></div>
+    </div>
+    <p class="panel-note" style="margin-top:14px;max-width:86ch">Why that net: on the test with the real Act 1 cards in the offers, it cleared 0.752 two turns deep against the product's 0.636 on the same runs. <span class="tag" tabindex="0" data-tip="Pack net seed 201 (runs/2026-11-10-packnet40k-s201-r1-91c8ae0, @hpe0.01, two turns deep, line step) vs the product on the headline setting with the 31-card Act 1 pack in the offers, runs 0–249 (jobs 0820 vs 0777). Read 2026-11-10. The real-game controller runs it as launched: real_game.py launch .../model.pt@hpe0.01 --runs 4.">pack offers · 2 turns · runs 0–249 · 11-10</span></p>
+    <div class="panel" style="margin-top:18px">
+      <div class="panel-head"><h3>Ascension 0, run rules 1: fights before rest sites at any HP</h3><span class="panel-note" id="real-stamp"></span></div>
+      <div class="stats-row" id="real-summary"></div>
+    </div>
+    <div class="runs" id="runs"></div>
+    <p class="panel-note" style="margin-top:12px" id="real-note"></p>
+    <div class="panel" style="margin-top:18px">
+      <div class="panel-head"><h3>What the live runs caught</h3><span class="panel-note">Real games find what offline tests can't.</span></div>
+      <ul class="prose" style="padding-left:18px;margin:0;max-width:none;gap:10px">
+        <li><strong>The Guardian's shift at the end of a turn.</strong> When Combust's end-of-turn damage breaks Mode Shift, the game queues the Guardian's 20 block behind the monsters' turn start, so the block lasts into your next turn. The engine added it at once and lost it with the turn. Found in run 8's boss fight, fixed in the engine the same morning.</li>
+        <li><strong>Perfected Strike played by Havoc.</strong> Played from your hand, Perfected Strike counts itself as a Strike. Played by Havoc it is in limbo and doesn't. The engine always counted it and predicted 21 damage where the game dealt 18. Fixed in the engine: it counts the card only when it was played from the hand.</li>
+        <li><strong>Regeneration heals first.</strong> The game puts Regeneration's heal at the top of its queue, so at the end of a turn it heals before Combust takes its HP. The engine did it the other way round, and near max HP the two disagreed by one point (game 84, engine 85). Fixed in the engine today: Regeneration and Orichalcum now act first at the end of a turn.</li>
+        <li><strong>Blood for Blood after Sharp Hide.</strong> The Guardian's Sharp Hide hit for 3 as Blood for Blood+ was played. In the game the card is in limbo while that lands, so its own cost doesn't drop; the engine thought it was 1 cheaper, the play was refused, and the fallback rule lost run 16's boss fight from 75 HP. The controller now reads the cost the game shows, and the engine's rule for a card in limbo is queued for a fix.</li>
+        <li><strong>Liquid Memories after Rampage.</strong> The AI played Rampage, then drank Liquid Memories within the same second to take it back at cost 0. The card was still flying to the discard pile, and landing reset its cost, so the game refused the play. The controller now trusts a "free" mark only when the game shows the card at cost 0, and remembers which free copies it played.</li>
+        <li><strong>Skill Potion's free card.</strong> A Skill Potion gave Seeing Red at cost 0 for the turn. The card isn't in the deck list, so the controller had no base cost to compare. Cards made in a fight that the game shows at cost 0 are now marked free.</li>
+        <li><strong>Snecko Oil.</strong> The potion rolls every card's cost for the fight. The controller copied the engine's own roll instead of the game's, so the plan asked for a 0-cost Strike the game didn't have. Cards now carry the cost the game shows.</li>
+        <li><strong>Rampage forgot its damage in a shuffle.</strong> Rampage gains 5 damage each time it is played. The mark followed the pile, not the card, so a reshuffle dropped it and the engine predicted 8 damage where the game dealt 13. The mark now follows the game's own card id.</li>
+        <li><strong>Havoc into Armaments.</strong> Havoc played the top card, Armaments, and the game opened its pick, which the engine's plan (built on a different random top card) had no answer for. The controller now takes the sampled outcome that matches the game's cards.</li>
+        <li><strong>The rules version moved.</strong> The day's engine rule fixes changed the rules version to f59b662a, with five new recorded test games that pin each fix down.</li>
+        <li><strong>Runic Dome.</strong> It hides every enemy intent, and without intents the controller can't rebuild a fight. The map rules now skip it as a boss relic.</li>
+      </ul>
+      <p class="panel-note" style="margin-top:10px">From the bridge's own write-up of today's runs, <code style="font-family:var(--f-mono);font-size:12px">docs/research/real-game-runs.md</code>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEXT ============ -->
+<section id="next">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">What's next</div>
+      <h2>What the live runs added: a decision and nine backlog entries</h2>
+      <p>Each backlog entry says what it would change, how likely it is to work, what it costs, and the cheapest probe that would kill it fast.</p>
+    </div>
+    <div class="bridge">
+      <div class="b"><h4>Decided · Ascension 20 becomes the training default</h4><p>The owner chose A20 for training from here on. At A0 the real game is too easy for the fighter (22 of the 24 Act 1 bosses it reached, in 27 runs); at A20 it wins about half, so that is where play has room to grow. Training, labels and fine-tunes will play A20; A0 and A20 data are never pooled; the main test moves to A20 once A20 baselines exist. First the training scripts need an ascension setting and the datasets need to record it.</p></div>
+      <div class="b"><h4>82 · Never pass an immediate win</h4><p>Once a fight has cost a lot of HP, the search can score carrying on above killing the last monster: run 56 left a Blue Slaver at 6 HP from turn 7 to turn 18. Cap an unfinished position's score at the best finish its HP allows. The bridge's fight guard covers it live meanwhile. Rated likely.</p></div>
+      <div class="b"><h4>83 · Price each fight for this deck</h4><p>The map prices every hallway fight at 15 HP and every elite at 40, for any deck, so a weak deck walks into Lagavulin. Use the fight net, plus a few trial fights for close calls, to price each fight for the deck and HP at hand: a separate run layer that uses the fighter as a tool. Rated even; under half a CPU-hour to test.</p></div>
+      <div class="b"><h4>84 · Search the promising moves first</h4><p>The owner's idea. When a two-turn search hits its node cap, the moves cut are whichever come last in hand order. Expand them in the order the one-turn search ranks them, and prune chance outcomes that can't change the choice. Rated even for better play, likely for speed.</p></div>
+      <div class="b"><h4>85 · Break stalls</h4><p>Run 83 fought four gremlins for 84 turns: within two turns, killing the Shield Gremlin that kept re-blocking its ally never looked worth it. Make progress visible to the score, or as a stopgap hand a fight past about 30 turns to the fallback. Rated likely.</p></div>
+      <div class="b"><h4>86 · Check the chance steps too</h4><p>Today's match rates skip any step with chance in it. Once the game shows a draw or a roll, replay the engine with that outcome forced and compare the rest, as its own count. Rated likely to surface monster-turn differences the count hides now.</p></div>
+      <div class="b"><h4>87 · Work out card rewards early</h4><p>Low priority, the owner's idea. The game's card reward is fixed by its seed before the fight starts, so the bridge could compute the pick while the game animates. A cache only: the fight never reads it. About 5% of a run's time to save.</p></div>
+      <div class="b"><h4>79 · Answer every pick from the game</h4><p>When a random card opens a pick (Havoc into Armaments, Warcry, Distilled Chaos), the bridge answers from the closest of the engine's 32 predicted samples, because the engine can't rebuild a fight paused at a pick. Teach it to, and every pick comes from the game's own state. Rated likely; engine work, no CPU.</p></div>
+      <div class="b"><h4>80 · Ascension 20 for the net</h4><p>The net has never trained at A20, and its first A20 Slime Boss losses arrived with 49 to 64 HP and lost up to 33 HP in a single monster turn. First size the gap with the test run at A20; then A20 in training or in the card picker's trial fights; and a run layer that weighs HP, plus gold, which the bot never spends. Rated even.</p></div>
+      <div class="b"><h4>81 · Show the net the whole schedule</h4><p>The owner's idea. The net sees each monster's intent on show and nothing after it, so a threat past the search horizon, like Hexaghost's turn-9 Inferno, is invisible. Give it the schedule ahead: turns until the biggest hit, its damage, Strength gained before it, the place in the cycle. Rated even; about 3 CPU-hours to test.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ EVERYTHING TRIED (its own view) ============ -->
+<div id="stats" hidden>
+  <section style="border-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Statistics</div>
+        <h2>23 days in numbers, period by period</h2>
+        <p>Behind the scenes (nets trained, practice fights, the job queue, the code, the writing) and on the table (what it picks, plays and thinks hardest about in the real game). The same eight stretches as the story, plus a section across the whole project. Every number names its setting, and each was recomputed by a second, independent script before it went here. <a href="#story">Back to the highlights</a></p>
+      </div>
+      <div class="panel" style="margin-bottom:18px;border-color:color-mix(in srgb, var(--accent) 45%, transparent);background:var(--accent-wash)">
+        <div class="eyebrow" style="color:var(--accent)">What the records point at</div>
+        <p style="font-family:var(--f-display);font-size:20px;font-weight:700;margin-top:6px;color:var(--ink)">It doesn't always take the kill, and some fights stall.</p>
+        <p style="color:var(--ink-2);margin-top:6px;max-width:80ch">Three of the longest fights below are stalls, not hard fights. In A20 run 83 a Shield Gremlin on 4 HP kept re-blocking a Mad Gremlin for 84 turns, because striking the shielded one scored a hair higher (1.51 against 1.49). In A0 run 18 an Acid Slime sat on 4 HP for about 23 turns, because every option, killing it included, scored the same. In A20 run 56 a Blue Slaver sat on 6 HP for turns 7 to 18 while the fight cost 70 HP, because carrying on scored above the kill. Two backlog entries take this on (<a href="#next">What's next</a>): 82, never pass an immediate win, and 85, make progress count so a fight can't stall. Meanwhile the bridge's fight guard takes a winning move the search passes, from run 58 on.</p>
+      </div>
+      <div id="stat-groups"></div>
+      <p style="margin-top:28px"><a href="#story">Back to the highlights</a></p>
+    </div>
+  </section>
+</div>
+<div id="everything" hidden>
+  <section style="border-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Everything tried</div>
+        <h2>Every experiment, change and tool, one line each</h2>
+        <p>In order, stretch by stretch, whether it worked or not. Lanes (the AI roles' short research projects) say how likely they rated themselves before they ran. <a href="#story">Back to the highlights</a></p>
+      </div>
+      <div class="chips" id="list-filters"></div>
+      <div id="tried-groups"></div>
+      <p style="margin-top:28px"><a href="#story">Back to the highlights</a></p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p class="fine" style="margin-bottom:8px">Map icons from Slay the Spire, by Mega Crit.</p>
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:6px">
+      <div class="kicker">Reading the numbers</div>
+      <h2 style="font-size:28px">A short glossary</h2>
+    </div>
+    <div class="glossary">
+      <div><b>Clears</b>The share of runs that beat the Act 1 boss. 0.834 means 417 of 500.</div>
+      <div><b>End HP</b>HP left after the boss, 0 for a run that died. Used for paired comparisons.</div>
+      <div><b>se</b>Standard error, the noise range of a number. A difference under about 2 se may be luck.</div>
+      <div><b>One turn / two turns deep</b>How far the search looks: to the end of this turn, or through the next one with 4 sampled hands.</div>
+      <div><b>Runs 0–499 / 500–999</b>Two fixed books of seeded runs. Settings were tuned on the first; the second checks them.</div>
+      <div><b>The product</b>The best player the project makes: the 29 October net, two turns deep, with the HP price and line step.</div>
+      <div><b>Hand-written player</b>A formula that scores positions from card and intent numbers. The baseline every net is compared with.</div>
+      <div><b>Goal 1 and goal 2</b>Goal 1: play well on content the AI has never seen. Goal 2: be as strong at Slay the Spire as Stockfish is at chess.</div>
+    </div>
+    <p class="sources">Written by hand on 14 November 2026 from the project's own records: <code>git log</code>, <code>docs/decisions.md</code>, <code>docs/digest/</code>, <code>docs/research/</code>, the fact store in <code>docs/claims/</code>, and result files under <code>results/</code>. Every number was checked against its file. The chart data comes from <code>showcase/extract.py</code>, which reads finished result files and nothing else. A plain-text edition of this page for language models, with every chart as a table: <a href="llms.md">llms.md</a> (the page) and <a href="llms-full.md">llms-full.md</a> (adds every real-game fight, the full list of everything tried and the statistics data).</p>
+  </div>
+</footer>
+
+<div id="tip" role="tooltip"></div>
+<script src="data.js"></script>
+<script src="tried.js"></script>
+<script src="history.js"></script>
+<script src="stats-data.js"></script>
+<script src="stats.js"></script>
+<script src="app.js"></script>
+<script src="story.js"></script>
+<dialog id="zoom" aria-label="Enlarged chart"><div class="zoom-bar"><button type="button" class="zoom-btn" id="zoom-close">Close (Esc)</button></div><div id="zoom-body"></div></dialog>
+<script>
+/* Enlarge: moves a chart's whole panel into a full-window view (hover and filters keep working), and back on close. */
+(function () {
+  var box = document.getElementById("zoom"), body = document.getElementById("zoom-body"), closeBtn = document.getElementById("zoom-close");
+  var moved = null, spot = null, opener = null, tip = document.getElementById("tip");
+  var ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9.5 2.5h4v4M13.5 2.5 9 7M6.5 13.5h-4v-4M2.5 13.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  function open(target, btn) {
+    if (moved) close();
+    var r = target.getBoundingClientRect();
+    spot = document.createComment("zoom");
+    target.parentNode.insertBefore(spot, target);
+    body.appendChild(target);
+    moved = target; opener = btn;
+    box.appendChild(tip);
+    box.showModal();
+    // scale the panel as one picture, so text, tiles and chart keep their proportions
+    var cs = getComputedStyle(box);
+    var aw = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    var ah = box.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom) - box.querySelector(".zoom-bar").offsetHeight - 8;
+    // a narrow panel first gets room to lay out (up to 600px), then the whole thing scales
+    var w = Math.max(r.width, Math.min(600, aw));
+    target.style.width = w + "px";
+    // charts drawn at their designed size (one unit, one pixel), so their labels scale with the panel's text
+    Array.prototype.forEach.call(target.querySelectorAll(".chart svg"), function (svg) {
+      var vb = svg.viewBox && svg.viewBox.baseVal;
+      if (vb && vb.width) { svg.style.maxWidth = vb.width + "px"; svg.style.marginLeft = svg.style.marginRight = "auto"; }
+    });
+    var wf = aw / w, hf = ah / target.offsetHeight;
+    var z = Math.max(Math.min(wf, hf), Math.min(wf, 1.5));
+    // never more than double: past that the text reads as shouting
+    target.style.zoom = String(Math.max(1, Math.min(2, Math.round(z * 100) / 100)));
+    box.scrollTop = 0;
+    closeBtn.focus();
+  }
+  function close() {
+    if (!moved) return;
+    moved.style.width = ""; moved.style.zoom = "";
+    Array.prototype.forEach.call(moved.querySelectorAll(".chart svg"), function (svg) { svg.style.maxWidth = svg.style.marginLeft = svg.style.marginRight = ""; });
+    spot.parentNode.insertBefore(moved, spot);
+    spot.remove();
+    moved = null;
+    document.body.appendChild(tip);
+    if (box.open) box.close();
+    if (opener) opener.focus();
+  }
+  closeBtn.addEventListener("click", close);
+  box.addEventListener("click", function (e) { if (e.target === box || e.target === body) close(); });
+  box.addEventListener("cancel", function (e) { e.preventDefault(); close(); });
+  box.addEventListener("close", close);
+  box.addEventListener("scroll", function () { tip.classList.remove("on"); }, { passive: true });
+  window.addEventListener("hashchange", close);
+  var seen = [];
+  Array.prototype.forEach.call(document.querySelectorAll(".chart"), function (c) {
+    var target = c.closest(".panel") || c.closest("article.run");
+    if (!target || seen.indexOf(target) >= 0) return;
+    seen.push(target);
+    var row = document.createElement("div");
+    row.className = "zoom-row";
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "zoom-btn";
+    b.innerHTML = ICON + "Enlarge";
+    b.addEventListener("click", function (e) { e.stopPropagation(); open(target, b); });
+    row.appendChild(b);
+    target.appendChild(row);
+  });
+})();
+</script>

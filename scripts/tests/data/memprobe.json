@@ -1,0 +1,219 @@
+{
+ "about": "scripts/memprobe.py after curriculum Amendment 1 (2026-10-27; training from memory-mapped caches through a view): two real runs, rounds 0-2, exact examples from a copy of db/solved.sqlite (cap 50k), solve steps of 3 games on 2 threads. Peaks are commit (private bytes) in GB. Per round: `peak_gb` outside its solve step (its training and checks, then the next round's self-play: `next_n` games per group, null for the last round), `train_gb` its training phases' peak (training set, normalizer, training). `selfplay`: each net self-play call (main games, then branch games) at n games per group. `pool`: round 0's heuristic pool, played afresh here (the sweep reuses the stored one).",
+ "runs": [
+  {
+   "n0": 3000,
+   "n_round": 300,
+   "solve": 3,
+   "threads": 2,
+   "peak_commit_gb": 2.412,
+   "minutes": 94.2,
+   "rounds": [
+    {
+     "round": 0,
+     "examples": 81304,
+     "peak_gb": 2.369,
+     "solve_gb": 1.789,
+     "train_gb": 1.09,
+     "next_n": 300
+    },
+    {
+     "round": 1,
+     "examples": 113302,
+     "peak_gb": 2.003,
+     "solve_gb": 1.914,
+     "train_gb": 1.38,
+     "next_n": 300
+    },
+    {
+     "round": 2,
+     "examples": 169249,
+     "peak_gb": 1.978,
+     "solve_gb": 1.787,
+     "train_gb": 1.44,
+     "next_n": null
+    }
+   ],
+   "selfplay": [
+    {
+     "n": 300,
+     "games": 900,
+     "peak_gb": 2.37
+    },
+    {
+     "n": 300,
+     "games": 804,
+     "peak_gb": 2.27
+    },
+    {
+     "n": 300,
+     "games": 900,
+     "peak_gb": 2.0
+    },
+    {
+     "n": 300,
+     "games": 811,
+     "peak_gb": 2.0
+    }
+   ],
+   "pool": {
+    "games": 9000,
+    "selfplay_gb": 1.49,
+    "write_gb": 1.73
+   }
+  },
+  {
+   "n0": 8000,
+   "n_round": 1200,
+   "solve": 3,
+   "threads": 2,
+   "peak_commit_gb": 2.972,
+   "minutes": 27.7,
+   "rounds": [
+    {
+     "round": 0,
+     "examples": 133544,
+     "peak_gb": 2.636,
+     "solve_gb": 1.803,
+     "train_gb": 1.07,
+     "next_n": 1200
+    },
+    {
+     "round": 1,
+     "examples": 278354,
+     "peak_gb": 2.236,
+     "solve_gb": 1.894,
+     "train_gb": 1.47,
+     "next_n": 1200
+    },
+    {
+     "round": 2,
+     "examples": 502349,
+     "peak_gb": 1.984,
+     "solve_gb": 1.828,
+     "train_gb": 1.51,
+     "next_n": null
+    }
+   ],
+   "selfplay": [
+    {
+     "n": 1200,
+     "games": 3600,
+     "peak_gb": 2.51
+    },
+    {
+     "n": 1200,
+     "games": 3182,
+     "peak_gb": 2.64
+    },
+    {
+     "n": 1200,
+     "games": 3600,
+     "peak_gb": 2.24
+    },
+    {
+     "n": 1200,
+     "games": 3345,
+     "peak_gb": 2.2
+    }
+   ],
+   "pool": {
+    "games": 24000,
+    "selfplay_gb": 2.29,
+    "write_gb": 2.96
+   }
+  }
+ ],
+ "step7": {
+  "about": "scripts/memprobe.py, curriculum step 7 (2026-10-27): two real runs, rounds 0-2, exact examples from a copy of db/solved.sqlite (cap 50k), solve steps of 3 games on 2 threads; peaks are commit (private bytes) in GB",
+  "runs": [
+   {
+    "n0": 2000,
+    "n_round": 150,
+    "solve": 3,
+    "threads": 2,
+    "peak_commit_gb": 2.659,
+    "rounds": [
+     {
+      "round": 0,
+      "examples": 70916,
+      "peak_gb": 2.001,
+      "solve_gb": 1.781
+     },
+     {
+      "round": 1,
+      "examples": 82386,
+      "peak_gb": 2.291,
+      "solve_gb": 1.85
+     },
+     {
+      "round": 2,
+      "examples": 110717,
+      "peak_gb": 2.643,
+      "solve_gb": 2.022
+     }
+    ],
+    "phases_gb": {
+     "concatenate": 2.643,
+     "(other)": 2.318,
+     "training": 2.265,
+     "exact examples": 2.262,
+     "normalizer": 2.25,
+     "self-play": 2.245,
+     "tight fights": 2.025,
+     "solve step": 2.022,
+     "dataset write": 1.915,
+     "cache load": 1.901,
+     "puzzles": 1.832,
+     "cache build": 1.781,
+     "labels (ladder)": 1.687,
+     "(end)": 1.011
+    }
+   },
+   {
+    "n0": 3000,
+    "n_round": 250,
+    "solve": 3,
+    "threads": 2,
+    "peak_commit_gb": 3.071,
+    "rounds": [
+     {
+      "round": 0,
+      "examples": 81304,
+      "peak_gb": 2.137,
+      "solve_gb": 1.807
+     },
+     {
+      "round": 1,
+      "examples": 103744,
+      "peak_gb": 2.456,
+      "solve_gb": 1.896
+     },
+     {
+      "round": 2,
+      "examples": 151272,
+      "peak_gb": 3.053,
+      "solve_gb": 1.698
+     }
+    ],
+    "phases_gb": {
+     "concatenate": 3.053,
+     "training": 2.536,
+     "(other)": 2.488,
+     "normalizer": 2.453,
+     "exact examples": 2.405,
+     "cache load": 2.307,
+     "puzzles": 1.947,
+     "tight fights": 1.947,
+     "self-play": 1.914,
+     "sample (take)": 1.908,
+     "solve step": 1.896,
+     "labels (ladder)": 1.878,
+     "cache build": 1.851,
+     "dataset write": 1.775,
+     "(end)": 0.917
+    }
+   }
+  ]
+ }
+}

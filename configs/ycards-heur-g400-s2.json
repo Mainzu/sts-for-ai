@@ -1,0 +1,14 @@
+{
+ "source": {
+  "kind": "one-turn",
+  "player": "heuristic",
+  "decks": "held-out"
+ },
+ "game_seed": 51,
+ "games": 400,
+ "top": 400,
+ "n_val": 150,
+ "name": "ycards-heur-g400-s2",
+ "pool": 10000,
+ "seed": 2
+}

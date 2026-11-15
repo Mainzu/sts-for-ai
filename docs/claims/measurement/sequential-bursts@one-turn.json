@@ -1,0 +1,118 @@
+{
+  "key": "measurement/sequential-bursts@one-turn",
+  "rev": 2,
+  "value": "Two 399-game bursts in a row (1 seed per order), one turn vs the 10-29 net, mutate bench 200x8: SharpHide->stage B keeps +0.059 (0.013) of the SharpHide burst's +0.080 (0.015) sharp2 gain (0.74), stage B->SharpHide keeps +0.080 (0.014) (1.00); thorns2 kept in both. Bursts compose; retention measurement/sequential-bursts-retention@cells.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Sequential bursts, one turn deep: two 399-game bursts in a row keep the first's gain (SharpHide then stage B keeps 0.74 of the sharp2 gain, +0.059 (0.013); stage B then SharpHide keeps all of it, +0.080 (0.014)), and both nets play official content as well as or better than the parent; one training seed per order, so a lead (sequential-bursts lane step 1; 0184-0191; read 21:40 2026-11-05, lanes 1b8f9222)",
+      "sha256": "8c0d530f7ee3724bd590ab679c6db0b9e1a086dc285bf1183f7c8a9e19efce74"
+    },
+    {
+      "path": "results/adapt/seq-sharp-then-stageb-s1.json",
+      "sha256": "0df5ea030e37d5db78ed219c4387dd2683537effde965f881bfcd5611e3954f8"
+    },
+    {
+      "path": "results/adapt/seq-stageb-then-sharp-s1.json",
+      "sha256": "846ad78c15e503f30dece12bfd79c1a128402f8c4e4c43c4560164fb25bdc0a5"
+    },
+    {
+      "key": "measurement/sequential-bursts-retention@cells",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:31:27+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Two 399-game bursts in a row, one training seed per order, one turn deep against the 10-29 net (mutate bench 200 starts x 8 seeds): SharpHide then stage B keeps +0.059 (0.013) of the SharpHide burst's +0.080 (0.015) sharp2 gain (0.74; paired against that burst -0.021 (0.011)), stage B then SharpHide keeps +0.080 (0.014) (1.00, paired +0.000 (0.009)); thorns2 kept in both (+0.073, +0.067 against +0.066); weakhit1 +0.022 and +0.019 against the single bursts' +0.013 and -0.001. Retention: one-turn cell gauntlet 0-499 paired end-HP +2.36 (0.46) (protocol pass) and +0.38 (0.55) (open), clears +0.028 and +0.010; boss replay all bosses +0.014 (0.004) and +0.032 (0.005), no boss worse (B Hexaghost +0.044 (0.011)). Bursts compose (charter go); a second burst without the first's games gives back about a quarter of the first's gain; A's cell HP and B's Hexaghost gain are single-seed leads.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Sequential bursts, one turn deep: two 399-game bursts in a row keep the first's gain (SharpHide then stage B keeps 0.74 of the sharp2 gain, +0.059 (0.013); stage B then SharpHide keeps all of it, +0.080 (0.014)), and both nets play official content as well as or better than the parent; one training seed per order, so a lead (sequential-bursts lane step 1; 0184-0191; read 21:40 2026-11-05, lanes 1b8f9222)",
+          "sha256": "8c0d530f7ee3724bd590ab679c6db0b9e1a086dc285bf1183f7c8a9e19efce74"
+        },
+        {
+          "path": "results/adapt/seq-sharp-then-stageb-s1.json",
+          "sha256": "0df5ea030e37d5db78ed219c4387dd2683537effde965f881bfcd5611e3954f8"
+        },
+        {
+          "path": "results/adapt/seq-stageb-then-sharp-s1.json",
+          "sha256": "846ad78c15e503f30dece12bfd79c1a128402f8c4e4c43c4560164fb25bdc0a5"
+        },
+        {
+          "path": "results/gauntlet/seq-sharp-then-stageb-s1-hpb0.01.json",
+          "sha256": "85e696635100e0cf47206ddb4ec2dffa3a15116c3b8f94bb06d1229c380b8668"
+        },
+        {
+          "path": "results/gauntlet/seq-stageb-then-sharp-s1-hpb0.01.json",
+          "sha256": "7ca8450143e6bd716f088c6d50eadd075cdb455d65e49aee0f3f56010211227b"
+        },
+        {
+          "path": "results/boss_replay/seq-sharp-then-stageb-s1.json",
+          "sha256": "7eaa8fd07a073d8e5bdea653a3f2e0e22bf69b5efefad51d858b6cc140de2bb8"
+        },
+        {
+          "path": "results/boss_replay/seq-stageb-then-sharp-s1.json",
+          "sha256": "fa85368b89368229b9be84c56a47e77efea6eb7f0ff0a0db39a5e871afad04f0"
+        },
+        {
+          "path": "jobs/done/0184-finetune.json",
+          "sha256": "df4b3a652d169a4c361083cf517106634de6696c4be0ce2317e75e221e94a636"
+        },
+        {
+          "path": "jobs/done/0185-finetune.json",
+          "sha256": "3d06a5ca7869de1232342c928ed9e0548fbacc82ef34df9b2323ef23d31c8223"
+        },
+        {
+          "path": "jobs/done/0186-mutate-monsters.json",
+          "sha256": "6c48643cfc0ebfe6fa99d66051ed512035adeea4d03ffea0844c45d9460f7f4b"
+        },
+        {
+          "path": "jobs/done/0187-gauntlet.json",
+          "sha256": "595bc11f4e7398a6aa9be34dad9278790e7d7b762630ef508df69833d938a43c"
+        },
+        {
+          "path": "jobs/done/0188-boss-replay.json",
+          "sha256": "aea94f91a1e87a4ef40e16a8bf087f5c303dfdf050ed71837f7d755eb55a0d78"
+        },
+        {
+          "path": "jobs/done/0189-mutate-monsters.json",
+          "sha256": "72845221d5a9a4413a4168188fdd369e7e651fa8791fae878532835bd6e7c77b"
+        },
+        {
+          "path": "jobs/done/0190-gauntlet.json",
+          "sha256": "e8862f320e3d8dd5c06fddd08decbf33c5c38174c8344e70ea36b543b37de8d6"
+        },
+        {
+          "path": "jobs/done/0191-boss-replay.json",
+          "sha256": "9436ed804d444531c53900f3c856a62ae7a7b6af9fdcc8ca338c73ad81418fac"
+        },
+        {
+          "key": "measurement/adaptation-transfer",
+          "rev": 2
+        },
+        {
+          "key": "measurement/burst-bosses@replay",
+          "rev": 3
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "1b8f9222-9718-4e7d-b0d7-ff7cdd948fd2",
+      "at": "2026-11-05T14:32:52+00:00 @ 0003341",
+      "until": "2026-11-13T02:31:27+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "059cbce2a2d25eff3ec7076b74e0324a3a9709fde6571aa3bd72fa73f027d198"
+}

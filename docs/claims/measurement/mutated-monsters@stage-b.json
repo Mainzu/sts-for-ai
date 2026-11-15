@@ -1,0 +1,141 @@
+{
+  "key": "measurement/mutated-monsters@stage-b",
+  "rev": 4,
+  "value": "Stage B pattern modifiers, two-turn product 200x4: win change from parent weakhit1 -0.084 (0.014), dmg0.8 +0.046 (0.012), split -0.016 (0.008). Beyond the heuristic every modifier within 1.8 se (weakhit1 -0.012, dmg0.8 -0.018, split -0.014), level on elites, -0.03 to -0.055 on bosses (one parent draw). One turn: split -0.016 (0.007), weakhit1 -0.016 (0.011).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Stage B two turns deep, final at 200 of 200 starts: nothing beyond the heuristic at 2 se on any pattern modifier; the Thorns stack on elites is now -0.034 (0.011); the heuristic is an unadapted reference (job 0113 complete, with 0112; read 14:40 2026-11-05, navigator 7341b88a)",
+      "sha256": "eb5f940508112e9683ed046441d97c33b471c7769e903f05d690840c0854f86b"
+    },
+    {
+      "path": "results/mutate/a.json",
+      "sha256": "d0fde96ac23dc06bd70014d98c0cf953ce4413c5c9c986dd53bcc0549648b14d"
+    },
+    {
+      "key": "yardstick/novelty-read",
+      "rev": 5
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:38+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Mutated monsters stage B (pattern modifiers on official elite and boss fights; heuristic and one turn 200 x 8 from 0112, two-turn product 141 of 200 starts x 4 from 0113): win change from the parent two turns deep weakhit1 -0.082 (0.016) harder, dmg0.8 +0.044 (0.014) easier, split -0.016 (0.008) level, the pair weakhit1-dmg0.8 -0.021 (0.009) (level for heuristic -0.004 and one turn -0.003; its two-turn cost is all bosses, -0.059 (0.024), where every stage B two-turn row leans the same way: one parent draw of 4 seeds); beyond the heuristic the product's change is within 1.6 se on every stage B modifier (weakhit1 -0.006, dmg0.8 -0.020, split -0.004, pair -0.012, se 0.008-0.014), so patterns cost the product nothing measurable; one turn deep the net's novelty cost is small (split -0.016 (0.007), weakhit1 -0.016 (0.011)). Stacks two turns deep: weakhit1-dmg0.8+thorns2-hp0.9 -0.113 (0.020), interaction +0.012 (0.015); weakhit1-dmg0.8+split interaction +0.027 (0.009), all bosses (the parent draw again). Lead: stacks holding a reactive power cost the product about 0.03 beyond the heuristic on elites (this Thorns stack -0.031 (0.013); stage A metal4-hp0.85+sharp2-hp0.9 -0.030 (0.012)), about 2.5 se each of ~24 tests.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Stage B two turns deep, at 141 of 200 starts: the pattern modifiers cost the product nothing beyond the heuristic (all within 1.6 se), every two-turn se at or under 0.020; WeakOnHit is the hard one, DamageDown the easy one, split level; reactive-power stacks on elites cost about 0.03 (goal1-yardstick; 0113 partial, with 0112; read 10:30 2026-11-05, lanes 90f55716)",
+          "sha256": "1d9127da7013b88dfaf683453a94826c789a3041bd60df73454985bf5cb62675"
+        },
+        {
+          "path": "results/mutate/a.json",
+          "sha256": "bfc02e2252036b0a4d07688fc5af1ff3f5a537b76fc3050a9fd3e6f9cb6fca30"
+        },
+        {
+          "path": "jobs/done/0112-mutate-monsters.json",
+          "sha256": "c29bcbfa1cd50b963e2e5da6ff451099b81a4d68632dfe043ad737cc2a77c05e"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "90f55716-f6c6-4779-9e1a-ae9bd0d39565",
+      "at": "2026-11-05T03:14:58+00:00 @ fda6c2e",
+      "until": "2026-11-05T07:36:33+00:00 @ 70ce1d7"
+    },
+    {
+      "rev": 2,
+      "value": "Mutated monsters stage B (pattern modifiers on official elite and boss fights; heuristic and one turn 200 x 8 from 0112, two-turn product 200 x 4 from 0113, complete): win change from the parent two turns deep weakhit1 -0.084 (0.014) harder, dmg0.8 +0.046 (0.012) easier, split -0.016 (0.008) and the pair weakhit1-dmg0.8 -0.016 (0.008), both at 2.0 se (the pair is level for the heuristic -0.004 and one turn -0.003); beyond the heuristic the product's change is within 1.8 se on every stage B modifier over all fights (weakhit1 -0.012 (0.012), dmg0.8 -0.018 (0.010), split -0.014 (0.008), pair -0.013 (0.009), split stack -0.001 (0.012)), level on elites and leaning -0.03 to -0.055 on bosses for every single modifier, each under 2 se and all against one parent draw of 4 seeds on 66 starts (yardstick/novelty-read rule a; not confirmed for stage A on fresh starts, measurement/boss-cost@two-turn), so patterns cost the product nothing measurable beyond the heuristic; one turn deep the net's novelty cost is small (split -0.016 (0.007), weakhit1 -0.016 (0.011)). Stacks two turns deep: weakhit1-dmg0.8+thorns2-hp0.9 -0.110 (0.017), interaction +0.016 (0.013); weakhit1-dmg0.8+split interaction +0.024 (0.008), all on bosses (+0.064 (0.024), the parent draw again). Lead: stacks holding a reactive power cost the product about 0.03 beyond the heuristic on elites (this Thorns stack -0.034 (0.011); stage A metal4-hp0.85+sharp2-hp0.9 -0.030 (0.012)); lane adapted-two-turn step 1 re-reads both on fresh starts. HP lost beyond the heuristic on elites is not a clean column when wins fall (a loss counts the whole entry HP). Beyond the heuristic is beyond another unadapted player (rule e).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Stage B two turns deep, final at 200 of 200 starts: nothing beyond the heuristic at 2 se on any pattern modifier; the Thorns stack on elites is now -0.034 (0.011); the heuristic is an unadapted reference (job 0113 complete, with 0112; read 14:40 2026-11-05, navigator 7341b88a)",
+          "sha256": "eb5f940508112e9683ed046441d97c33b471c7769e903f05d690840c0854f86b"
+        },
+        {
+          "path": "results/mutate/a.json",
+          "sha256": "d0fde96ac23dc06bd70014d98c0cf953ce4413c5c9c986dd53bcc0549648b14d"
+        },
+        {
+          "path": "jobs/done/0112-mutate-monsters.json",
+          "sha256": "c29bcbfa1cd50b963e2e5da6ff451099b81a4d68632dfe043ad737cc2a77c05e"
+        },
+        {
+          "path": "jobs/done/0113-mutate-monsters.json",
+          "sha256": "e8430fec8ea1f0d0bd4b8fcdfca7ebbcd48ad3001c451523e8065bf4328117d4"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 3
+        }
+      ],
+      "owner": false,
+      "by": "7341b88a-0947-4f2b-9d60-594698d8eaa7",
+      "at": "2026-11-05T07:36:33+00:00 @ 70ce1d7",
+      "until": "2026-11-05T12:26:58+00:00 @ 035810b"
+    },
+    {
+      "rev": 3,
+      "value": "Mutated monsters stage B (pattern modifiers on official elite and boss fights; heuristic and one turn 200 x 8 from 0112, two-turn product 200 x 4 from 0113, complete): win change from the parent two turns deep weakhit1 -0.084 (0.014) harder, dmg0.8 +0.046 (0.012) easier, split -0.016 (0.008) and the pair weakhit1-dmg0.8 -0.016 (0.008), both at 2.0 se (the pair is level for the heuristic -0.004 and one turn -0.003); beyond the heuristic the product's win change is within 1.8 se on every stage B modifier over all fights (weakhit1 -0.012 (0.012), dmg0.8 -0.018 (0.010), split -0.014 (0.008), pair -0.013 (0.009), split stack -0.001 (0.012)), level on elites and leaning -0.03 to -0.055 on bosses for every single modifier, each under 2 se and all against one parent draw of 4 seeds on 66 starts (yardstick/novelty-read rule a; not confirmed for stage A on fresh starts, measurement/boss-cost@two-turn), so patterns cost the product no wins beyond the heuristic; one turn deep the net's novelty cost is small (split -0.016 (0.007), weakhit1 -0.016 (0.011)). Stacks two turns deep: weakhit1-dmg0.8+thorns2-hp0.9 -0.110 (0.017), interaction +0.016 (0.013); weakhit1-dmg0.8+split interaction +0.024 (0.008), all on bosses (+0.064 (0.024), the parent draw again). The lead that stacks holding a reactive power cost the product about 0.03 wins beyond the heuristic on elites failed as stated on fresh starts: the Thorns stack repeats (-0.025 (0.009)), the SharpHide stack does not (-0.000 (0.010)); what repeats is an HP cost of about 2 per elite fight on every reactive modifier, single or stacked (measurement/reactive-cost@fresh-elites). Beyond the heuristic is beyond another unadapted player (rule e); the adapted column on stage B's patterns was not read.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Stage B two turns deep, final at 200 of 200 starts: nothing beyond the heuristic at 2 se on any pattern modifier; the Thorns stack on elites is now -0.034 (0.011); the heuristic is an unadapted reference (job 0113 complete, with 0112; read 14:40 2026-11-05, navigator 7341b88a)",
+          "sha256": "eb5f940508112e9683ed046441d97c33b471c7769e903f05d690840c0854f86b"
+        },
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Fresh elite starts: the product pays about 2 HP per fight beyond the heuristic on every reactive modifier (+1.75 to +2.66, each 3.5-5 se), but not in wins; the reactive-stack win lead holds for the Thorns stack only (-0.025 (0.009)) and not for the SharpHide stack (-0.000 (0.010)) (adapted-two-turn lane step 1; 0152; read 18:40 2026-11-05, lanes 1461c7f0)",
+          "sha256": "e07b43b7300d062457a67ad7d799963eccb80375af6584cb8f17affe8e9cefa0"
+        },
+        {
+          "path": "results/mutate/a.json",
+          "sha256": "d0fde96ac23dc06bd70014d98c0cf953ce4413c5c9c986dd53bcc0549648b14d"
+        },
+        {
+          "path": "jobs/done/0112-mutate-monsters.json",
+          "sha256": "c29bcbfa1cd50b963e2e5da6ff451099b81a4d68632dfe043ad737cc2a77c05e"
+        },
+        {
+          "path": "jobs/done/0113-mutate-monsters.json",
+          "sha256": "e8430fec8ea1f0d0bd4b8fcdfca7ebbcd48ad3001c451523e8065bf4328117d4"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 4
+        },
+        {
+          "key": "measurement/reactive-cost@fresh-elites",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "2ef20aae-4e81-4598-8ce8-557bca9d73a3",
+      "at": "2026-11-05T12:26:58+00:00 @ 035810b",
+      "until": "2026-11-13T02:30:38+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "4b961001cc17df1880108fe739260963a07f3d8b10cf4d88076974edb20fb400"
+}

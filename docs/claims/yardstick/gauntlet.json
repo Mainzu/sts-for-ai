@@ -1,0 +1,26 @@
+{
+  "key": "yardstick/gauntlet",
+  "rev": 1,
+  "value": "The gauntlet is the 11-fight Act-1 chain with HP carried over (scripts/gauntlet.py play), scored per sequence by clears and end-HP (boss HP left if cleared, else 0). Cell decks = tight2's pre-built decks; the headline setting adds the starter deck and card rewards.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/approach-review-2026-11-02.md",
+      "sha256": "b624a97a18ed26dd1d3713a28c4bc1530dc86f666713da8ee58d6027aa463d1a"
+    },
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Gauntlet protocol (owner away, 2026-11-02)",
+      "sha256": "b434d937b1a60956c99f0c54a528d9c9262cf654b5885086b121f41622764532"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+  "at": "2026-11-02T16:08:58Z @ fc9cdd8",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "fad58172051f6b179d83733ea0bb5119bea7ff4c5bd7b218d640d17ee6b61b6e"
+}

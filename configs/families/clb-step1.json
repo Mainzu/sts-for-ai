@@ -1,0 +1,59 @@
+{
+ "name": "clb-step1",
+ "lane": "card-later-ticks-burst",
+ "about": "card-later-ticks-burst steps 1-2: the 400-game card bursts (configs/cadapt-*, 0409-0421: pack variant in every deck, played by the parent net, same game seeds) at the dose that taught Demon Form's later ticks, 5000 games per group, warm on the 10-29 net; reads per net: the mutated-cards book (m, read with mutate_cards.py adapted against results/mutate/cards-a.json; the lane's go/fail) and the one-turn cell gauntlet's two books (a, b; guards: train, held-out and DF strata against the 10-29 net @tsl1). The table's rule is only a guard line (held-out stratum); the lane's verdict is the adapted read (docs/research/card-later-ticks-burst.md)",
+ "parent": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt",
+ "arms": {
+  "inflame-turn1": [
+   "configs/clb-inflame-turn1-s1.json",
+   "configs/clb-inflame-turn1-s2.json",
+   "configs/clb-inflame-turn1-s3.json"
+  ],
+  "metal-c2-a5": [
+   "configs/clb-metal-c2-a5-s1.json",
+   "configs/clb-metal-c2-a5-s2.json",
+   "configs/clb-metal-c2-a5-s3.json"
+  ]
+ },
+ "burst": {
+  "threads": 4,
+  "mem_gb": 3.5,
+  "estimate_min": 25
+ },
+ "reads": {
+  "m": {
+   "cmd": ["scripts/analysis/mutate_cards.py", "play", "--net", "{net}", "--mods", "{arm}", "--players", "one,tsl",
+           "--starts", "200", "--seeds", "16", "--threads", "3", "--out", "results/mutate/cards-adapt5k-{config}.json"],
+   "threads": 3,
+   "mem_gb": 1.5,
+   "estimate_min": 8
+  },
+  "a": {
+   "cmd": ["scripts/gauntlet.py", "play", "{net}@hpb0.01@tsl1", "--sequences", "500", "--threads", "3",
+           "--out", "results/gauntlet/rerank-{run}-hpb0.01-tsl1.json"],
+   "threads": 3,
+   "mem_gb": 1.5,
+   "estimate_min": 8
+  },
+  "b": {
+   "cmd": ["scripts/gauntlet.py", "play", "{net}@hpb0.01@tsl1", "--first", "500", "--sequences", "500", "--threads", "3",
+           "--out", "results/gauntlet/rerank-{run}-hpb0.01-tsl1-b500.json"],
+   "threads": 3,
+   "mem_gb": 1.5,
+   "estimate_min": 8
+  }
+ },
+ "table": {
+  "kind": "strata",
+  "books": ["a", "b"],
+  "control": {
+   "a": "results/gauntlet/net1029-hpb0.01-tsl1.json",
+   "b": "results/gauntlet/net1029-hpb0.01-tsl1-b500.json"
+  },
+  "rule": {
+   "stratum": "held-out",
+   "min_se": 2.0,
+   "keep": {"train": {"hp": -0.9, "clears": -0.04}}
+  }
+ }
+}

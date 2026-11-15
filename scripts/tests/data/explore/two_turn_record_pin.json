@@ -1,0 +1,28 @@
+{
+ "won": true,
+ "score": 2.0,
+ "turns": 4,
+ "decisions": 14,
+ "cut": 0,
+ "override": 0,
+ "outside": 0,
+ "hp_start": 60,
+ "hp_end": 61,
+ "nodes": 10911,
+ "actions": [
+  "Strike@0",
+  "Defend",
+  "Defend",
+  "End",
+  "Inflame",
+  "Strike@0",
+  "Strike@0",
+  "End",
+  "Strike@0",
+  "Defend",
+  "Defend",
+  "End",
+  "Bash@0",
+  "Strike@0"
+ ]
+}

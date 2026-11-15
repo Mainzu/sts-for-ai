@@ -1,0 +1,40 @@
+{
+  "key": "cause/burst-adapted-content-effect",
+  "rev": 1,
+  "value": "Burst's one-turn effect on official content follows its games: official bosses or pattern-modified official fights +0.38 to +2.36 HP (7 nets, 10 reads, twins 0.4 apart); SharpHide or stat shifts +0.11 to -1.56 (twins 1.7 apart). 1-2 seeds per content: a lead.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+      "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+    },
+    {
+      "key": "measurement/unseen-boss-burst@replay",
+      "rev": 2
+    },
+    {
+      "key": "decision/crossed-player-lead",
+      "rev": 3
+    },
+    {
+      "key": "measurement/stat-burst@one-turn",
+      "rev": 2
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:28:12Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:31Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/unseen-boss-burst@replay, decision/crossed-player-lead, measurement/stat-burst@one-turn reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "e5b84400bc459f42b9016078d479d111dbc6eaa250e82fc3fa62c1b3926294f1"
+}

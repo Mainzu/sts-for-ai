@@ -1,0 +1,990 @@
+{
+ "version": 1,
+ "about": "The real game's ids (desktop-1.0.jar, game version 2022-12-18; the ID / POWER_ID / POTION_ID constants and each monster class's move byte constants) mapped to the engine's names (docs/specs/real-game-bridge.md). Engine names are as the engine's constructors and Combat.board() write them: pack cards, monsters, relics and potions carry gen:; pack powers are bare ids. Checked by scripts/tests/test_game_ids.py and python scripts/game_ids.py check.",
+ "cards": {
+  "Accuracy": "Accuracy",
+  "Anger": "Anger",
+  "Apotheosis": "gen:Apotheosis",
+  "Armaments": "gen:Armaments",
+  "AscendersBane": "gen:Ascender's Bane",
+  "Backflip": "Backflip",
+  "Barricade": "gen:Barricade",
+  "Bash": "Bash",
+  "Battle Trance": "gen:Battle Trance",
+  "Berserk": "gen:Berserk",
+  "Blade Dance": "Blade Dance",
+  "Blind": "gen:Blind",
+  "Blood for Blood": "gen:Blood for Blood",
+  "Bloodletting": "Bloodletting",
+  "Bludgeon": "gen:Bludgeon",
+  "Body Slam": "Body Slam",
+  "Bouncing Flask": "Bouncing Flask",
+  "Brutality": "Brutality",
+  "Burn": "Burn",
+  "Burning Pact": "gen:Burning Pact",
+  "Burst": "Burst",
+  "Caltrops": "Caltrops",
+  "Carnage": "Carnage",
+  "Chrysalis": "gen:Chrysalis",
+  "Clash": "Clash",
+  "Cleave": "Cleave",
+  "Cloak And Dagger": "Cloak and Dagger",
+  "Clothesline": "Clothesline",
+  "Clumsy": "gen:Clumsy",
+  "Combust": "Combust",
+  "Corruption": "gen:Corruption",
+  "CurseOfTheBell": "gen:Curse of the Bell",
+  "Dagger Spray": "Dagger Spray",
+  "Dark Embrace": "gen:Dark Embrace",
+  "Dark Shackles": "gen:Dark Shackles",
+  "Dazed": "Dazed",
+  "Deadly Poison": "Deadly Poison",
+  "Decay": "gen:Decay",
+  "Deep Breath": "gen:Deep Breath",
+  "Defend_G": "Silent Defend",
+  "Defend_R": "Defend",
+  "Deflect": "Deflect",
+  "Demon Form": "Demon Form",
+  "Disarm": "gen:Disarm",
+  "Discovery": "gen:Discovery",
+  "Double Tap": "gen:Double Tap",
+  "Doubt": "gen:Doubt",
+  "Dramatic Entrance": "gen:Dramatic Entrance",
+  "Dropkick": "Dropkick",
+  "Dual Wield": "gen:Dual Wield",
+  "Entrench": "gen:Entrench",
+  "Evolve": "gen:Evolve",
+  "Exhume": "gen:Exhume",
+  "FTL": "FTL",
+  "Feed": "gen:Feed",
+  "Feel No Pain": "gen:Feel No Pain",
+  "Fiend Fire": "gen:Fiend Fire",
+  "Finesse": "gen:Finesse",
+  "Fire Breathing": "gen:Fire Breathing",
+  "Flame Barrier": "gen:Flame Barrier",
+  "Flash of Steel": "gen:Flash of Steel",
+  "Flex": "Flex",
+  "Ghostly Armor": "gen:Ghostly Armor",
+  "Go for the Eyes": "Go for the Eyes",
+  "Good Instincts": "gen:Good Instincts",
+  "HandOfGreed": "gen:Hand of Greed",
+  "Havoc": "gen:Havoc",
+  "Headbutt": "Headbutt",
+  "Heavy Blade": "Heavy Blade",
+  "Hemokinesis": "Hemokinesis",
+  "Hologram": "Hologram",
+  "Immolate": "gen:Immolate",
+  "Impatience": "gen:Impatience",
+  "Impervious": "gen:Impervious",
+  "Infernal Blade": "gen:Infernal Blade",
+  "Inflame": "Inflame",
+  "Injury": "gen:Injury",
+  "Intimidate": "gen:Intimidate",
+  "Iron Wave": "Iron Wave",
+  "Jack Of All Trades": "gen:Jack of All Trades",
+  "Juggernaut": "gen:Juggernaut",
+  "Leg Sweep": "Leg Sweep",
+  "Limit Break": "gen:Limit Break",
+  "Madness": "gen:Madness",
+  "Magnetism": "gen:Magnetism",
+  "Master of Strategy": "gen:Master of Strategy",
+  "Metallicize": "Metallicize",
+  "Metamorphosis": "gen:Metamorphosis",
+  "Mind Blast": "gen:Mind Blast",
+  "Necronomicurse": "gen:Necronomicurse",
+  "Neutralize": "Neutralize",
+  "Normality": "gen:Normality",
+  "Offering": "gen:Offering",
+  "Pain": "gen:Pain",
+  "Panacea": "gen:Panacea",
+  "PanicButton": "gen:Panic Button",
+  "Parasite": "gen:Parasite",
+  "Perfected Strike": "Perfected Strike",
+  "Poisoned Stab": "Poisoned Stab",
+  "Pommel Strike": "Pommel Strike",
+  "Power Through": "gen:Power Through",
+  "Protect": "Protect",
+  "Pummel": "Pummel",
+  "Purity": "gen:Purity",
+  "Quick Slash": "Quick Slash",
+  "Rage": "Rage",
+  "Rampage": "Rampage",
+  "Reaper": "gen:Reaper",
+  "Reckless Charge": "gen:Reckless Charge",
+  "Regret": "gen:Regret",
+  "Rupture": "Rupture",
+  "Sadistic Nature": "gen:Sadistic Nature",
+  "Searing Blow": "gen:Searing Blow",
+  "Second Wind": "gen:Second Wind",
+  "Seeing Red": "gen:Seeing Red",
+  "Sentinel": "gen:Sentinel",
+  "Sever Soul": "gen:Sever Soul",
+  "Shame": "gen:Shame",
+  "Shiv": "Shiv",
+  "Shockwave": "gen:Shockwave",
+  "Shrug It Off": "Shrug It Off",
+  "Slice": "Slice",
+  "Slimed": "Slimed",
+  "Spot Weakness": "Spot Weakness",
+  "Strike_G": "Silent Strike",
+  "Strike_R": "Strike",
+  "Sucker Punch": "Sucker Punch",
+  "Survivor": "Survivor",
+  "Swift Strike": "gen:Swift Strike",
+  "Sword Boomerang": "Sword Boomerang",
+  "Thinking Ahead": "gen:Thinking Ahead",
+  "Thunderclap": "Thunderclap",
+  "Transmutation": "gen:Transmutation",
+  "Trip": "gen:Trip",
+  "True Grit": "gen:True Grit",
+  "Twin Strike": "Twin Strike",
+  "Uppercut": "Uppercut",
+  "Warcry": "gen:Warcry",
+  "Whirlwind": "Whirlwind",
+  "Wild Strike": "Wild Strike",
+  "Wound": "Wound",
+  "Wraith Form v2": "Wraith Form",
+  "Writhe": "gen:Writhe"
+ },
+ "monsters": {
+  "AcidSlime_L": {
+   "engine": "Acid Slime (L)",
+   "moves": {
+    "1": {
+     "game": "SLIME_TACKLE",
+     "engine": [
+      0
+     ],
+     "name": "Corrosive Spit"
+    },
+    "2": {
+     "game": "NORMAL_TACKLE",
+     "engine": [
+      1
+     ],
+     "name": "Tackle"
+    },
+    "3": {
+     "game": "SPLIT",
+     "engine": [
+      3
+     ],
+     "name": "Split"
+    },
+    "4": {
+     "game": "WEAK_LICK",
+     "engine": [
+      2
+     ],
+     "name": "Lick"
+    }
+   }
+  },
+  "AcidSlime_M": {
+   "engine": "Acid Slime (M)",
+   "moves": {
+    "1": {
+     "game": "WOUND_TACKLE",
+     "engine": [
+      0
+     ],
+     "name": "Corrosive Spit"
+    },
+    "2": {
+     "game": "NORMAL_TACKLE",
+     "engine": [
+      1
+     ],
+     "name": "Tackle"
+    },
+    "4": {
+     "game": "WEAK_LICK",
+     "engine": [
+      2
+     ],
+     "name": "Lick"
+    }
+   }
+  },
+  "AcidSlime_S": {
+   "engine": "Acid Slime (S)",
+   "moves": {
+    "1": {
+     "game": "TACKLE",
+     "engine": [
+      1
+     ],
+     "name": "Tackle"
+    },
+    "2": {
+     "game": "DEBUFF",
+     "engine": [
+      0
+     ],
+     "name": "Lick"
+    }
+   }
+  },
+  "Cultist": {
+   "engine": "Cultist",
+   "moves": {
+    "1": {
+     "game": "DARK_STRIKE",
+     "engine": [
+      1
+     ],
+     "name": "Dark Strike"
+    },
+    "3": {
+     "game": "INCANTATION",
+     "engine": [
+      0
+     ],
+     "name": "Incantation"
+    }
+   }
+  },
+  "FungiBeast": {
+   "engine": "Fungi Beast",
+   "moves": {
+    "1": {
+     "game": "BITE",
+     "engine": [
+      0
+     ],
+     "name": "Bite"
+    },
+    "2": {
+     "game": "GROW",
+     "engine": [
+      1
+     ],
+     "name": "Grow"
+    }
+   }
+  },
+  "FuzzyLouseDefensive": {
+   "engine": "Green Louse",
+   "moves": {
+    "3": {
+     "game": "BITE",
+     "engine": [
+      0
+     ],
+     "name": "Bite"
+    },
+    "4": {
+     "game": "WEAKEN",
+     "engine": [
+      1
+     ],
+     "name": "Spit Web"
+    }
+   }
+  },
+  "FuzzyLouseNormal": {
+   "engine": "Red Louse",
+   "moves": {
+    "3": {
+     "game": "BITE",
+     "engine": [
+      0
+     ],
+     "name": "Bite"
+    },
+    "4": {
+     "game": "STRENGTHEN",
+     "engine": [
+      1
+     ],
+     "name": "Grow"
+    }
+   }
+  },
+  "GremlinFat": {
+   "engine": "gen:Fat Gremlin",
+   "moves": {
+    "2": {
+     "game": "BLUNT",
+     "engine": [
+      0
+     ],
+     "name": "Smash"
+    }
+   }
+  },
+  "GremlinNob": {
+   "engine": "Gremlin Nob",
+   "moves": {
+    "1": {
+     "game": "BULL_RUSH",
+     "engine": [
+      1
+     ],
+     "name": "Bull Rush"
+    },
+    "2": {
+     "game": "SKULL_BASH",
+     "engine": [
+      2
+     ],
+     "name": "Skull Bash"
+    },
+    "3": {
+     "game": "BELLOW",
+     "engine": [
+      0
+     ],
+     "name": "Bellow"
+    }
+   }
+  },
+  "GremlinThief": {
+   "engine": "gen:Sneaky Gremlin",
+   "moves": {
+    "1": {
+     "game": "PUNCTURE",
+     "engine": [
+      0
+     ],
+     "name": "Puncture"
+    }
+   }
+  },
+  "GremlinTsundere": {
+   "engine": "gen:Shield Gremlin",
+   "moves": {
+    "1": {
+     "game": "PROTECT",
+     "engine": [
+      0
+     ],
+     "name": "Protect"
+    },
+    "2": {
+     "game": "BASH",
+     "engine": [
+      1
+     ],
+     "name": "Shield Bash"
+    }
+   }
+  },
+  "GremlinWarrior": {
+   "engine": "gen:Mad Gremlin",
+   "moves": {
+    "1": {
+     "game": "SCRATCH",
+     "engine": [
+      0
+     ],
+     "name": "Scratch"
+    }
+   }
+  },
+  "GremlinWizard": {
+   "engine": "gen:Gremlin Wizard",
+   "moves": {
+    "1": {
+     "game": "DOPE_MAGIC",
+     "engine": [
+      3
+     ],
+     "name": "Ultimate Blast"
+    },
+    "2": {
+     "game": "CHARGE",
+     "engine": [
+      0,
+      1,
+      2
+     ],
+     "name": "Charging"
+    }
+   }
+  },
+  "Hexaghost": {
+   "engine": "Hexaghost",
+   "moves": {
+    "1": {
+     "game": "DIVIDER",
+     "engine": [
+      1
+     ],
+     "name": "Divider"
+    },
+    "2": {
+     "game": "TACKLE",
+     "engine": [
+      3,
+      6,
+      10,
+      13
+     ],
+     "name": "Tackle"
+    },
+    "3": {
+     "game": "INFLAME",
+     "engine": [
+      5,
+      12
+     ],
+     "name": "Inflame"
+    },
+    "4": {
+     "game": "SEAR",
+     "engine": [
+      2,
+      4,
+      7,
+      9,
+      11,
+      14
+     ],
+     "name": "Sear"
+    },
+    "5": {
+     "game": "ACTIVATE",
+     "engine": [
+      0
+     ],
+     "name": "Activate"
+    },
+    "6": {
+     "game": "INFERNO",
+     "engine": [
+      8,
+      15
+     ],
+     "name": "Inferno"
+    }
+   }
+  },
+  "JawWorm": {
+   "engine": "Jaw Worm",
+   "moves": {
+    "1": {
+     "game": "CHOMP",
+     "engine": [
+      0
+     ],
+     "name": "Chomp"
+    },
+    "2": {
+     "game": "BELLOW",
+     "engine": [
+      2
+     ],
+     "name": "Bellow"
+    },
+    "3": {
+     "game": "THRASH",
+     "engine": [
+      1
+     ],
+     "name": "Thrash"
+    }
+   }
+  },
+  "Lagavulin": {
+   "engine": "Lagavulin",
+   "moves": {
+    "1": {
+     "game": "DEBUFF",
+     "engine": [
+      4
+     ],
+     "name": "Siphon Soul"
+    },
+    "3": {
+     "game": "STRONG_ATK",
+     "engine": [
+      3
+     ],
+     "name": "Attack"
+    },
+    "4": {
+     "game": "OPEN",
+     "engine": [
+      2
+     ],
+     "name": "Stunned"
+    },
+    "5": {
+     "game": "IDLE",
+     "engine": [
+      0,
+      1
+     ],
+     "name": "Sleep"
+    }
+   },
+   "unmapped_moves": {
+    "6": {
+     "game": "OPEN_NATURAL",
+     "why": "set only by the game's own takeTurn for a Lagavulin that starts awake (an event); a sleeping Lagavulin's third IDLE turn sets STRONG_ATK directly"
+    }
+   }
+  },
+  "Looter": {
+   "engine": "Looter",
+   "moves": {
+    "1": {
+     "game": "MUG",
+     "engine": [
+      0
+     ],
+     "name": "Mug"
+    },
+    "2": {
+     "game": "SMOKE_BOMB",
+     "engine": [
+      2
+     ],
+     "name": "Smoke Bomb"
+    },
+    "3": {
+     "game": "ESCAPE",
+     "engine": [
+      3
+     ],
+     "name": "Escape"
+    },
+    "4": {
+     "game": "LUNGE",
+     "engine": [
+      1
+     ],
+     "name": "Lunge"
+    }
+   }
+  },
+  "Sentry": {
+   "engine": "Sentry",
+   "moves": {
+    "3": {
+     "game": "BOLT",
+     "engine": [
+      0
+     ],
+     "name": "Bolt"
+    },
+    "4": {
+     "game": "BEAM",
+     "engine": [
+      1
+     ],
+     "name": "Beam"
+    }
+   }
+  },
+  "SlaverBlue": {
+   "engine": "gen:Blue Slaver",
+   "moves": {
+    "1": {
+     "game": "STAB",
+     "engine": [
+      0
+     ],
+     "name": "Stab"
+    },
+    "4": {
+     "game": "RAKE",
+     "engine": [
+      1
+     ],
+     "name": "Rake"
+    }
+   }
+  },
+  "SlaverRed": {
+   "engine": "gen:Red Slaver",
+   "moves": {
+    "1": {
+     "game": "STAB",
+     "engine": [
+      0,
+      3
+     ],
+     "name": "Stab"
+    },
+    "2": {
+     "game": "ENTANGLE",
+     "engine": [
+      2
+     ],
+     "name": "Entangle"
+    },
+    "3": {
+     "game": "SCRAPE",
+     "engine": [
+      1,
+      4
+     ],
+     "name": "Scrape"
+    }
+   }
+  },
+  "SlimeBoss": {
+   "engine": "Slime Boss",
+   "moves": {
+    "1": {
+     "game": "SLAM",
+     "engine": [
+      2
+     ],
+     "name": "Slam"
+    },
+    "2": {
+     "game": "PREP_SLAM",
+     "engine": [
+      1
+     ],
+     "name": "Preparing"
+    },
+    "3": {
+     "game": "SPLIT",
+     "engine": [
+      3
+     ],
+     "name": "Split"
+    },
+    "4": {
+     "game": "STICKY",
+     "engine": [
+      0
+     ],
+     "name": "Goop Spray"
+    }
+   }
+  },
+  "SpikeSlime_L": {
+   "engine": "Spike Slime (L)",
+   "moves": {
+    "1": {
+     "game": "FLAME_TACKLE",
+     "engine": [
+      0
+     ],
+     "name": "Flame Tackle"
+    },
+    "3": {
+     "game": "SPLIT",
+     "engine": [
+      2
+     ],
+     "name": "Split"
+    },
+    "4": {
+     "game": "FRAIL_LICK",
+     "engine": [
+      1
+     ],
+     "name": "Lick"
+    }
+   }
+  },
+  "SpikeSlime_M": {
+   "engine": "Spike Slime (M)",
+   "moves": {
+    "1": {
+     "game": "FLAME_TACKLE",
+     "engine": [
+      0
+     ],
+     "name": "Flame Tackle"
+    },
+    "4": {
+     "game": "FRAIL_LICK",
+     "engine": [
+      1
+     ],
+     "name": "Lick"
+    }
+   }
+  },
+  "SpikeSlime_S": {
+   "engine": "Spike Slime (S)",
+   "moves": {
+    "1": {
+     "game": "TACKLE",
+     "engine": [
+      0
+     ],
+     "name": "Tackle"
+    }
+   }
+  },
+  "TheGuardian": {
+   "engine": "The Guardian",
+   "moves": {
+    "1": {
+     "game": "CLOSE_UP",
+     "engine": [
+      4
+     ],
+     "name": "Close Up"
+    },
+    "2": {
+     "game": "FIERCE_BASH",
+     "engine": [
+      1
+     ],
+     "name": "Fierce Bash"
+    },
+    "3": {
+     "game": "ROLL_ATTACK",
+     "engine": [
+      5
+     ],
+     "name": "Roll Attack"
+    },
+    "4": {
+     "game": "TWIN_SLAM",
+     "engine": [
+      6
+     ],
+     "name": "Twin Slam"
+    },
+    "5": {
+     "game": "WHIRLWIND",
+     "engine": [
+      3
+     ],
+     "name": "Whirlwind"
+    },
+    "6": {
+     "game": "CHARGE_UP",
+     "engine": [
+      0
+     ],
+     "name": "Charging Up"
+    },
+    "7": {
+     "game": "VENT_STEAM",
+     "engine": [
+      2
+     ],
+     "name": "Vent Steam"
+    }
+   }
+  }
+ },
+ "powers": {
+  "Accuracy": "Accuracy",
+  "Anger": "Enrage",
+  "Angry": "Angry",
+  "Artifact": "Artifact",
+  "Berserk": "Berserk",
+  "Brutality": "Brutality",
+  "Buffer": "Buffer",
+  "Burst": "Burst",
+  "Combust": "CombustDamage",
+  "Confusion": "Confused",
+  "Barricade": "Barricade",
+  "Corruption": "Corruption",
+  "Curl Up": "CurlUp",
+  "Dark Embrace": "DarkEmbrace",
+  "Demon Form": "DemonForm",
+  "DexLoss": "LoseDexterity",
+  "Dexterity": "Dexterity",
+  "Double Tap": "DoubleTap",
+  "DuplicationPower": "Duplication",
+  "Entangled": "Entangled",
+  "Evolve": "Evolve",
+  "Feel No Pain": "FeelNoPain",
+  "Fire Breathing": "FireBreathing",
+  "Flame Barrier": "FlameBarrier",
+  "Flex": "LoseStrength",
+  "Frail": "Frail",
+  "Intangible": "Intangible",
+  "IntangiblePlayer": "Intangible",
+  "Juggernaut": "Juggernaut",
+  "Magnetism": "Magnetism",
+  "Metallicize": "Metallicize",
+  "Mode Shift": "ModeShift",
+  "Next Turn Block": "NextTurnBlock",
+  "No Draw": "NoDraw",
+  "NoBlockPower": "NoBlock",
+  "Pen Nib": "PenNib",
+  "Plated Armor": "PlatedArmor",
+  "Poison": "Poison",
+  "Rage": "Rage",
+  "Regenerate": "Regenerate",
+  "Regeneration": "Regen",
+  "Ritual": "Ritual",
+  "Rupture": "Rupture",
+  "Sadistic": "Sadistic",
+  "Shackled": "Shackled",
+  "Sharp Hide": "SharpHide",
+  "Spore Cloud": "SporeCloud",
+  "Strength": "Strength",
+  "Thorns": "Thorns",
+  "Vigor": "Vigor",
+  "Vulnerable": "Vulnerable",
+  "Weakened": "Weak",
+  "Wraith Form v2": "WraithForm"
+ },
+ "relics": {
+  "Akabeko": "gen:Akabeko",
+  "Anchor": "gen:Anchor",
+  "Ancient Tea Set": "gen:Ancient Tea Set",
+  "Art of War": "gen:Art of War",
+  "Bag of Marbles": "gen:Bag of Marbles",
+  "Bag of Preparation": "gen:Bag of Preparation",
+  "Bird Faced Urn": "gen:Bird-Faced Urn",
+  "Black Blood": "gen:Black Blood",
+  "Blood Vial": "gen:Blood Vial",
+  "Blue Candle": "gen:Blue Candle",
+  "Boot": "gen:The Boot",
+  "Brimstone": "gen:Brimstone",
+  "Bronze Scales": "gen:Bronze Scales",
+  "Burning Blood": "Burning Blood",
+  "Calipers": "gen:Calipers",
+  "CaptainsWheel": "gen:Captain's Wheel",
+  "Centennial Puzzle": "gen:Centennial Puzzle",
+  "Champion Belt": "gen:Champion Belt",
+  "Charon's Ashes": "gen:Charon's Ashes",
+  "Chemical X": "gen:Chemical X",
+  "ClockworkSouvenir": "gen:Clockwork Souvenir",
+  "Dead Branch": "gen:Dead Branch",
+  "Du-Vu Doll": "gen:Du-Vu Doll",
+  "FossilizedHelix": "gen:Fossilized Helix",
+  "Gambling Chip": "gen:Gambling Chip",
+  "Ginger": "gen:Ginger",
+  "Gremlin Horn": "gen:Gremlin Horn",
+  "GremlinMask": "gen:Gremlin Visage",
+  "Happy Flower": "gen:Happy Flower",
+  "HandDrill": "gen:Hand Drill",
+  "HornCleat": "gen:Horn Cleat",
+  "Ice Cream": "gen:Ice Cream",
+  "Incense Burner": "gen:Incense Burner",
+  "InkBottle": "gen:Ink Bottle",
+  "Kunai": "gen:Kunai",
+  "Lantern": "gen:Lantern",
+  "Letter Opener": "gen:Letter Opener",
+  "Lizard Tail": "gen:Lizard Tail",
+  "Magic Flower": "gen:Magic Flower",
+  "Mark of Pain": "gen:Mark of Pain",
+  "Meat on the Bone": "gen:Meat on the Bone",
+  "Medical Kit": "gen:Medical Kit",
+  "Mercury Hourglass": "gen:Mercury Hourglass",
+  "Mummified Hand": "gen:Mummified Hand",
+  "NeowsBlessing": "gen:Neow's Lament",
+  "Nunchaku": "gen:Nunchaku",
+  "Odd Mushroom": "gen:Odd Mushroom",
+  "Oddly Smooth Stone": "gen:Oddly Smooth Stone",
+  "OrangePellets": "gen:Orange Pellets",
+  "Orichalcum": "gen:Orichalcum",
+  "Ornamental Fan": "gen:Ornamental Fan",
+  "Pantograph": "gen:Pantograph",
+  "Paper Frog": "gen:Paper Phrog",
+  "Pen Nib": "gen:Pen Nib",
+  "Philosopher's Stone": "gen:Philosopher's Stone",
+  "Pocketwatch": "gen:Pocketwatch",
+  "Potion Belt": "gen:Potion Belt",
+  "PreservedInsect": "gen:Preserved Insect",
+  "Red Skull": "gen:Red Skull",
+  "Runic Cube": "gen:Runic Cube",
+  "Runic Pyramid": "gen:Runic Pyramid",
+  "SacredBark": "gen:Sacred Bark",
+  "Self Forming Clay": "gen:Self-Forming Clay",
+  "Shuriken": "gen:Shuriken",
+  "SlaversCollar": "gen:Slaver's Collar",
+  "Sling": "gen:Sling of Courage",
+  "Snecko Eye": "gen:Snecko Eye",
+  "StoneCalendar": "gen:Stone Calendar",
+  "Strange Spoon": "gen:Strange Spoon",
+  "StrikeDummy": "gen:Strike Dummy",
+  "Sundial": "gen:Sundial",
+  "TheAbacus": "gen:The Abacus",
+  "Thread and Needle": "gen:Thread and Needle",
+  "Toolbox": "gen:Toolbox",
+  "Torii": "gen:Torii",
+  "Toy Ornithopter": "gen:Toy Ornithopter",
+  "TungstenRod": "gen:Tungsten Rod",
+  "Turnip": "gen:Turnip",
+  "Unceasing Top": "gen:Unceasing Top",
+  "Vajra": "gen:Vajra",
+  "Velvet Choker": "gen:Velvet Choker",
+  "WarpedTongs": "gen:Warped Tongs"
+ },
+ "potions": {
+  "Ancient Potion": "gen:Ancient Potion",
+  "AttackPotion": "gen:Attack Potion",
+  "BlessingOfTheForge": "gen:Blessing of the Forge",
+  "Block Potion": "gen:Block Potion",
+  "BloodPotion": "gen:Blood Potion",
+  "ColorlessPotion": "gen:Colorless Potion",
+  "CultistPotion": "gen:Cultist Potion",
+  "Dexterity Potion": "gen:Dexterity Potion",
+  "DistilledChaos": "gen:Distilled Chaos",
+  "DuplicationPotion": "gen:Duplication Potion",
+  "ElixirPotion": "gen:Elixir",
+  "Energy Potion": "gen:Energy Potion",
+  "EntropicBrew": "gen:Entropic Brew",
+  "EssenceOfSteel": "gen:Essence of Steel",
+  "Explosive Potion": "gen:Explosive Potion",
+  "FairyPotion": "gen:Fairy in a Bottle",
+  "FearPotion": "gen:Fear Potion",
+  "Fire Potion": "gen:Fire Potion",
+  "Fruit Juice": "gen:Fruit Juice",
+  "GamblersBrew": "gen:Gambler's Brew",
+  "HeartOfIron": "gen:Heart of Iron",
+  "LiquidBronze": "gen:Liquid Bronze",
+  "LiquidMemories": "gen:Liquid Memories",
+  "PowerPotion": "gen:Power Potion",
+  "Regen Potion": "gen:Regen Potion",
+  "SkillPotion": "gen:Skill Potion",
+  "SmokeBomb": "gen:Smoke Bomb",
+  "SneckoOil": "gen:Snecko Oil",
+  "SpeedPotion": "gen:Speed Potion",
+  "SteroidPotion": "gen:Flex Potion",
+  "Strength Potion": "gen:Strength Potion",
+  "Swift Potion": "gen:Swift Potion",
+  "Weak Potion": "gen:Weak Potion"
+ },
+ "notes": {
+  "cards": {
+   "upgrades": "The game sends upgrades (timesUpgraded); the engine name gets one + per upgrade (gen:True Grit+ and gen:Armaments+ are their own pack cards). Only one upgrade exists in the engine: a Searing Blow upgraded twice or more has no engine name."
+  },
+  "monsters": {
+   "moves": "engine lists every engine move id (a position in the engine monster's moves) that shows as this game move; more than one where the engine walks a cycle or counts turns (Hexaghost, Lagavulin asleep, Gremlin Wizard charging, Red Slaver after Entangle). Which one is current follows from the fight's move history."
+  },
+  "powers": {
+   "Combust": "The game's Combust amount is its damage to every enemy (engine CombustDamage); its HP loss count (the field hpLoss, engine Combust) isn't in CommunicationMod's state.",
+   "IntangiblePlayer": "Wraith Form's Intangible on the player; the engine has one Intangible."
+  }
+ },
+ "game_modelled_elsewhere": {
+  "powers": {
+   "Split": "The slimes' and Slime Boss's split at half HP is in the engine's monster definition.",
+   "Thievery": "Looter's gold theft: gold isn't in a fight's state."
+  }
+ },
+ "engine_only": {
+  "powers": {
+   "Combust": "the HP-loss half of the game's Combust (one per Combust played; the game's hpLoss field, not in CommunicationMod's state); the game id Combust maps to CombustDamage",
+   "RedSkull": "the relic Red Skull's effect; the game keeps it in the relic",
+   "DamageDown": "mutated-monsters bench modifier, no game power",
+   "WeakOnHit": "mutated-monsters bench modifier, no game power",
+   "SplitHits": "mutated-monsters bench modifier, no game power",
+   "GingerWard": "the relic Ginger's effect (act1-relics pack helper)",
+   "TurnipWard": "the relic Turnip's effect (act1-relics pack helper)",
+   "StrikeDummy": "the relic Strike Dummy's effect (act1-relics pack helper)",
+   "TheBoot": "the relic The Boot's effect (act1-relics pack helper)",
+   "Torii": "the relic Torii's effect (act1-relics pack helper)",
+   "TungstenRod": "the relic Tungsten Rod's effect (act1-relics pack helper)",
+   "CalipersWard": "the relic Calipers' effect (act1-relics pack helper)",
+   "PaperPhrog": "the relic Paper Phrog's effect (act1-relics pack helper)",
+   "OddMushroom": "the relic Odd Mushroom's effect (act1-relics pack helper)",
+   "BlueCandle": "the relic Blue Candle's effect (act1-relics pack helper)",
+   "MedicalKit": "the relic Medical Kit's effect (act1-relics pack helper)"
+  },
+  "packs": {
+   "gen-enemies-six.json": "generated enemies",
+   "gen-enemies-train.json": "generated enemies",
+   "gen-enemies-wide.json": "generated enemies"
+  }
+ }
+}

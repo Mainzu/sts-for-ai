@@ -1,0 +1,22 @@
+{
+  "key": "decision/a20-default",
+  "rev": 1,
+  "value": "After the real-game day, training plays at Ascension 20 by default (owner, 2026-11-14). New datasets record their level; A0 and A20 data are never pooled silently. Goal 2's ruler moves to A20 once A20 controls exist; A0 results stay valid at A0. First come the ascension key through learn/selfplay/finetune, the level in the registry, the choosers' 75 max HP, then 80 (a)'s A20 controls.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Ascension 20 becomes the default setting after the real-game day (owner, 2026-11-14)",
+      "sha256": "c530c3b8f16bc0612afe45a9ad30dd24cf7c3af9af07b1794ee0c7923b041c38"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "6aa4a9da-7898-44db-8044-db1c5ead72f0",
+  "at": "2026-11-14T10:58:31Z @ 3fd17834",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "7dede5f4835a41256fad75f1c2dc3054f3b5f5f1d786b673105641a402c34be9"
+}

@@ -1,0 +1,38 @@
+{
+  "key": "measurement/portfolio-boss-cost-two-turn",
+  "rev": 2,
+  "value": "predicted long shot, ~9 cpu-h (cap 14); actual stop: ritual2 -0.017 (0.016), hp0.8 -0.038 (0.016) wins beyond heuristic, a ceiling squeeze the odds column doesn't confirm; 17.9 cpu-h; reopen if a modifier moves bosses toward mid win rate, generated bosses show a 2-se two-turn cost, or a product with a much larger boss edge.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Lane boss-cost-two-turn closed (2026-11-05)",
+      "sha256": "1b7086a7e58a6227844cdd56474a154a02c81d4d1f9baabd3264c94c432a48fc"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:49+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "predicted a long shot that stage A's boss cost (about -0.08 win) is real, even that a smaller one shows at 2 se, ~9 cpu-h (cap 14); actual stop: ritual2 -0.017 (0.016), hp0.8 -0.038 (0.016) win beyond the heuristic, a ceiling squeeze the odds column does not confirm (-0.38 (0.26)); parent edge +0.075 (0.013); about 17.9 cpu-h (two-turn boss games ~41 thread-s, not 20); reopen if: a modifier family that moves bosses toward mid win rate without a ceiling, or generated boss monsters (runtime-registry stage 3), shows a two-turn cost at 2 se on a first read, or a product with a much larger boss edge is promoted",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "Lane boss-cost-two-turn closed (2026-11-05)",
+          "sha256": "1b7086a7e58a6227844cdd56474a154a02c81d4d1f9baabd3264c94c432a48fc"
+        }
+      ],
+      "owner": false,
+      "by": "d9cd3df1-66d7-4ec7-b1dc-a437d5aad7ae",
+      "at": "2026-11-05T07:01:04+00:00 @ 9bd2db5",
+      "until": "2026-11-13T02:30:49+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "072cec4150308e8586225b8732e7c7771cfdd901e7399e3911cec08c09e69dfe"
+}

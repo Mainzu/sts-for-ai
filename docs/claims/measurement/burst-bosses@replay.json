@@ -1,0 +1,252 @@
+{
+  "key": "measurement/burst-bosses@replay",
+  "rev": 4,
+  "value": "Boss replay (474 headline boss fights, one turn, minus 10-29 net, paired by deck): 400-1600-game fine-tunes on other content move Guardian/Hexaghost wins -0.054 to +0.034 (SharpHide 1602 +0.034 (0.008) / +0.031 (0.010); stat 400 Hexaghost -0.054 (0.012)), 2-3x the seed spread; Slime <=0.012. One seed each: a lead.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Burst nets on the headline decks' boss fights, one turn deep: a fine-tune of 400-1600 games moves wins on the two bosses the net never trained on by -0.054 to +0.034 (the 1602-game SharpHide burst +0.034 (0.008) Guardian, +0.031 (0.010) Hexaghost; the stat burst -0.054 (0.012) Hexaghost) and on Slime Boss by at most +0.012; one training seed each, so a lead (navigator probe; 0157-0160; read 19:25 2026-11-05, navigator 2ef20aae)",
+      "sha256": "9ba305046c66e0bd1e4a321a2045b272901e7db61e93301ad865b14d134ca11a"
+    },
+    {
+      "path": "results/boss_replay/hp-sweep-sharp1602.json",
+      "sha256": "f12c34a8bd3c17497dc4137fb295ed9db49c0c091722ed445942d4724c22090a"
+    },
+    {
+      "path": "results/boss_replay/hp-sweep-stat400.json",
+      "sha256": "40dafc17901ef464cf34c3d6048b714d45df04321e6aae40f6d5632b2d77f0d9"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:52+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Burst nets replayed one turn deep on the 474 boss fights of the headline file (the product's built decks, HP 30-80 x 4 seeds, same seeds as the 10-29 net's replay), win rate minus the 10-29 net, paired by deck, se over decks: SharpHide 1602 games Guardian +0.034 (0.008), Hexaghost +0.031 (0.010), Slime Boss +0.012 (0.005), all +0.025 (0.004), the same on sequences outside its training fights (+0.033 (0.007)); SharpHide 399 games +0.001 (0.004) overall; stage B 399 games Guardian +0.032 (0.009), Hexaghost +0.009 (0.011); stat 400 games Hexaghost -0.054 (0.012), Guardian -0.003 (0.009). One training seed per net, against a training-seed sd of 0.02-0.04 on the two bosses the net never trained on (0.009 on Slime Boss), so each direction is a lead; what holds is that a few hundred games of fine-tuning move the leaf's Guardian and Hexaghost play by 0.03-0.05 either way and Slime Boss by 0.01. The replay (5 minutes, se 0.004) is a burst's retention read on bosses beside the cell gauntlet, and the one-turn screen of backlog unseen-boss-burst.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Burst nets on the headline decks' boss fights, one turn deep: a fine-tune of 400-1600 games moves wins on the two bosses the net never trained on by -0.054 to +0.034 (the 1602-game SharpHide burst +0.034 (0.008) Guardian, +0.031 (0.010) Hexaghost; the stat burst -0.054 (0.012) Hexaghost) and on Slime Boss by at most +0.012; one training seed each, so a lead (navigator probe; 0157-0160; read 19:25 2026-11-05, navigator 2ef20aae)",
+          "sha256": "26fbe70b2f1dc6403cdf758c87e66d8acd2f217f426afaefebe27c499e707d30"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-sharp1602.json",
+          "sha256": "f12c34a8bd3c17497dc4137fb295ed9db49c0c091722ed445942d4724c22090a"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-sharp399.json",
+          "sha256": "ec65734be98798296b4a6b320ddaf32e3dd2dc9adea7236c464d17d4b34401b1"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-stageb399.json",
+          "sha256": "bd4a4704b1df23ac4967fc0e74e6b2f87ffe623dd53d9f92ac97eac4d734fcdf"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-stat400.json",
+          "sha256": "40dafc17901ef464cf34c3d6048b714d45df04321e6aae40f6d5632b2d77f0d9"
+        },
+        {
+          "path": "jobs/done/0157-boss-replay.json",
+          "sha256": "bbc289c91c3214b59f6150934835f5e90b0f99f9ee45d69ea9ff2b727c7e137c"
+        },
+        {
+          "path": "jobs/done/0158-boss-replay.json",
+          "sha256": "91a76040276cc6f7f7a11f77b36aef39558f68e200b8ba0021d454269ce48bae"
+        },
+        {
+          "path": "jobs/done/0159-boss-replay.json",
+          "sha256": "4d8b70a76759ad8575fe2eaf5b750d165a685d98a31d1bbfe6d40d31f234ba4f"
+        },
+        {
+          "path": "jobs/done/0160-boss-replay.json",
+          "sha256": "85220b4f10146ae3ab567763fd29d867ee1b6443a055f8d397f7078c4e3d2d7c"
+        },
+        {
+          "key": "measurement/boss-curve",
+          "rev": 1
+        },
+        {
+          "key": "cause/boss-deaths",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "2ef20aae-4e81-4598-8ce8-557bca9d73a3",
+      "at": "2026-11-05T12:23:49+00:00 @ 32687cd",
+      "until": "2026-11-05T12:35:01+00:00 @ 4eccc7b"
+    },
+    {
+      "rev": 2,
+      "value": "Nets replayed one turn deep on the 474 boss fights of the headline file (the product's built decks, HP 30-80 x 4 seeds, same seeds as the 10-29 net's replay), win rate minus the 10-29 net, paired by deck, se over decks. Burst nets (one training seed each): SharpHide 1602 games Guardian +0.034 (0.008), Hexaghost +0.031 (0.010), Slime Boss +0.012 (0.005), all +0.025 (0.004), the same on sequences outside its training fights (+0.033 (0.007)); SharpHide 399 games +0.001 (0.004) overall; stage B 399 games Guardian +0.032 (0.009), Hexaghost +0.009 (0.011); stat 400 games Hexaghost -0.054 (0.012), Guardian -0.003 (0.009). Seed twins of the 10-29 net (same recipe): s101 Guardian +0.011, Hexaghost -0.033, Slime Boss -0.006; s201 +0.020, -0.009, -0.015; so the training-seed sd on these decks is about 0.010 on the Guardian, 0.017 on Hexaghost and 0.008 on Slime Boss, and the product's net is the worst seed on the Guardian and the best on Hexaghost. A few hundred games of fine-tuning on other content move the leaf's Guardian and Hexaghost play (never trained on) by 0.03-0.05 either way, two to three times the seed spread, and Slime Boss by 0.01; each direction is still one fine-tune seed, a lead. The replay (5 minutes, se 0.004) is a burst's retention read on bosses beside the cell gauntlet, and the one-turn screen of lane unseen-boss-burst.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Burst nets on the headline decks' boss fights, one turn deep: a fine-tune of 400-1600 games moves wins on the two bosses the net never trained on by -0.054 to +0.034 (the 1602-game SharpHide burst +0.034 (0.008) Guardian, +0.031 (0.010) Hexaghost; the stat burst -0.054 (0.012) Hexaghost) and on Slime Boss by at most +0.012; one training seed each, so a lead (navigator probe; 0157-0160; read 19:25 2026-11-05, navigator 2ef20aae)",
+          "sha256": "ac845ced47fba86c7dd4834cf20356180ae8d48d829b8c4f4e2dd211a22639a2"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-sharp1602.json",
+          "sha256": "f12c34a8bd3c17497dc4137fb295ed9db49c0c091722ed445942d4724c22090a"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-sharp399.json",
+          "sha256": "ec65734be98798296b4a6b320ddaf32e3dd2dc9adea7236c464d17d4b34401b1"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-stageb399.json",
+          "sha256": "bd4a4704b1df23ac4967fc0e74e6b2f87ffe623dd53d9f92ac97eac4d734fcdf"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-stat400.json",
+          "sha256": "40dafc17901ef464cf34c3d6048b714d45df04321e6aae40f6d5632b2d77f0d9"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-s101-hpb0.01.json",
+          "sha256": "c6a5320d99dbf566e3db92a69438ed1fadf6f04e51f9ea06c227b9efe4357c7e"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-s201-hpb0.01.json",
+          "sha256": "5231e63fa506c8b2b1fb70262d06efeb7e2be55626d3aa7eb0fd29bb8356e4d2"
+        },
+        {
+          "path": "jobs/done/0157-boss-replay.json",
+          "sha256": "bbc289c91c3214b59f6150934835f5e90b0f99f9ee45d69ea9ff2b727c7e137c"
+        },
+        {
+          "path": "jobs/done/0158-boss-replay.json",
+          "sha256": "91a76040276cc6f7f7a11f77b36aef39558f68e200b8ba0021d454269ce48bae"
+        },
+        {
+          "path": "jobs/done/0159-boss-replay.json",
+          "sha256": "4d8b70a76759ad8575fe2eaf5b750d165a685d98a31d1bbfe6d40d31f234ba4f"
+        },
+        {
+          "path": "jobs/done/0160-boss-replay.json",
+          "sha256": "85220b4f10146ae3ab567763fd29d867ee1b6443a055f8d397f7078c4e3d2d7c"
+        },
+        {
+          "path": "jobs/done/0161-boss-replay.json",
+          "sha256": "028e62e374cf9d785272f50dbcee01a206af1e205ed5d244f03eb6dc8b0ffc3c"
+        },
+        {
+          "path": "jobs/done/0162-boss-replay.json",
+          "sha256": "91405a53a29ad7a9e16491f80d36b4361c32e494be6e368c682573b9edcdcbeb"
+        },
+        {
+          "key": "measurement/boss-curve",
+          "rev": 1
+        },
+        {
+          "key": "cause/boss-deaths",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "2ef20aae-4e81-4598-8ce8-557bca9d73a3",
+      "at": "2026-11-05T12:35:01+00:00 @ 4eccc7b",
+      "until": "2026-11-05T12:46:13+00:00 @ bfe7fe6"
+    },
+    {
+      "rev": 3,
+      "value": "Nets replayed one turn deep on the 474 boss fights of the headline file (the product's built decks, HP 30-80 x 4 seeds, same seeds as the 10-29 net's replay), win rate minus the 10-29 net, paired by deck, se over decks. Burst nets (one training seed each): SharpHide 1602 games Guardian +0.034 (0.008), Hexaghost +0.031 (0.010), Slime Boss +0.012 (0.005), all +0.025 (0.004), the same on sequences outside its training fights (+0.033 (0.007)); SharpHide 399 games +0.001 (0.004) overall; stage B 399 games Guardian +0.032 (0.009), Hexaghost +0.009 (0.011); stat 400 games Hexaghost -0.054 (0.012), Guardian -0.003 (0.009). Seed twins of the 10-29 net (same recipe): s101 Guardian +0.011, Hexaghost -0.033, Slime Boss -0.006; s201 +0.020, -0.009, -0.015; so the training-seed sd on these decks is about 0.010 on the Guardian, 0.017 on Hexaghost and 0.008 on Slime Boss, and the product's net is the worst seed on the Guardian and the best on Hexaghost. A few hundred games of fine-tuning on other content move the leaf's Guardian and Hexaghost play (never trained on) by 0.03-0.05 either way, two to three times the seed spread, and Slime Boss by 0.01; each direction is still one fine-tune seed, a lead. The replay (5 minutes, se 0.004) is a burst's retention read on bosses beside the cell gauntlet, and the one-turn screen of lane unseen-boss-burst. The mean of the three seed nets as one evaluator (no HP price) minus the mean of its members: Guardian +0.007 (0.004), Hexaghost +0.009 (0.004), Slime Boss 0.000 (0.002): averaging helps only on the unseen bosses, by under a hundredth.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Burst nets on the headline decks' boss fights, one turn deep: a fine-tune of 400-1600 games moves wins on the two bosses the net never trained on by -0.054 to +0.034 (the 1602-game SharpHide burst +0.034 (0.008) Guardian, +0.031 (0.010) Hexaghost; the stat burst -0.054 (0.012) Hexaghost) and on Slime Boss by at most +0.012; one training seed each, so a lead (navigator probe; 0157-0160; read 19:25 2026-11-05, navigator 2ef20aae)",
+          "sha256": "9ba305046c66e0bd1e4a321a2045b272901e7db61e93301ad865b14d134ca11a"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-sharp1602.json",
+          "sha256": "f12c34a8bd3c17497dc4137fb295ed9db49c0c091722ed445942d4724c22090a"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-sharp399.json",
+          "sha256": "ec65734be98798296b4a6b320ddaf32e3dd2dc9adea7236c464d17d4b34401b1"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-stageb399.json",
+          "sha256": "bd4a4704b1df23ac4967fc0e74e6b2f87ffe623dd53d9f92ac97eac4d734fcdf"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-stat400.json",
+          "sha256": "40dafc17901ef464cf34c3d6048b714d45df04321e6aae40f6d5632b2d77f0d9"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-s101-hpb0.01.json",
+          "sha256": "c6a5320d99dbf566e3db92a69438ed1fadf6f04e51f9ea06c227b9efe4357c7e"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-s201-hpb0.01.json",
+          "sha256": "5231e63fa506c8b2b1fb70262d06efeb7e2be55626d3aa7eb0fd29bb8356e4d2"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-ens3-plain.json",
+          "sha256": "423c5f48949a03ddf952113f13f18096cc4775066382d019a99839dc96c7f6be"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-s1-plain.json",
+          "sha256": "558c44551638b786178ff25916f1e7d32a32a53af336b5f27badffdb3f90e7cf"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-s101-plain.json",
+          "sha256": "08c5ca489428aeef370827c8d01bacb69d517efb28716c1a43c7a25ea31b5a6f"
+        },
+        {
+          "path": "results/boss_replay/hp-sweep-s201-plain.json",
+          "sha256": "a4e5bcb7c57f43c32eeb0ed4db71980dd8e529a2e5ef30a95ebf174519e8bad4"
+        },
+        {
+          "path": "jobs/done/0157-boss-replay.json",
+          "sha256": "bbc289c91c3214b59f6150934835f5e90b0f99f9ee45d69ea9ff2b727c7e137c"
+        },
+        {
+          "path": "jobs/done/0158-boss-replay.json",
+          "sha256": "91a76040276cc6f7f7a11f77b36aef39558f68e200b8ba0021d454269ce48bae"
+        },
+        {
+          "path": "jobs/done/0159-boss-replay.json",
+          "sha256": "4d8b70a76759ad8575fe2eaf5b750d165a685d98a31d1bbfe6d40d31f234ba4f"
+        },
+        {
+          "path": "jobs/done/0160-boss-replay.json",
+          "sha256": "85220b4f10146ae3ab567763fd29d867ee1b6443a055f8d397f7078c4e3d2d7c"
+        },
+        {
+          "path": "jobs/done/0161-boss-replay.json",
+          "sha256": "028e62e374cf9d785272f50dbcee01a206af1e205ed5d244f03eb6dc8b0ffc3c"
+        },
+        {
+          "path": "jobs/done/0162-boss-replay.json",
+          "sha256": "91405a53a29ad7a9e16491f80d36b4361c32e494be6e368c682573b9edcdcbeb"
+        },
+        {
+          "path": "jobs/done/0163-boss-replay.json",
+          "sha256": "a635ed946d1db5a839b7983b8b0c4fcdb0c685f7b161e45f0a564313fb82eaca"
+        },
+        {
+          "path": "jobs/done/0166-boss-replay.json",
+          "sha256": "aac5d7db1b61b603f39fb4b255778f916cddd70d5ed1fcd9787d6149dcb67000"
+        },
+        {
+          "key": "measurement/boss-curve",
+          "rev": 1
+        },
+        {
+          "key": "cause/boss-deaths",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "2ef20aae-4e81-4598-8ce8-557bca9d73a3",
+      "at": "2026-11-05T12:46:13+00:00 @ bfe7fe6",
+      "until": "2026-11-13T02:29:52+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "9cf5d2f684a2eebabe14065f0aae2ba452870bb033313a8cd47c9fab40f7e6f6"
+}

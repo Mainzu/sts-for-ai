@@ -1,0 +1,63 @@
+{
+  "key": "measurement/act1-cards@pack-offers-29",
+  "rev": 1,
+  "value": "the 10-29 net @hpb0.01 one turn deep on the pack-offers headline with the 29-card act1-ironclad pack: clears 0.496 (248/500; plain control 0.680, the 27-card pack 0.522); against the 27-card file 105 sequences clear only with 27 cards, 92 only with 29 (inside noise); extra deaths at elites (80 vs 62); Fire Breathing taken on 154 of 267 offers, Evolve 56 of 246",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/pack-net-scratch.md",
+      "anchor": "Pack control 0745 (29 cards, pin 2d34cd3)",
+      "sha256": "5dbbbcab0480eff8fc74869e1c1b64511796995b35f3d679d37cec10d0b47fcd"
+    },
+    {
+      "path": "results/gauntlet/pns-net1029-hpb0.01-starter-simboss-pack-act1-2d34cd3.json",
+      "sha256": "5adc335bc6ee74fb4a098311d98477d00b5ac198b4b83fb18046b12e8586f302"
+    },
+    {
+      "path": "jobs/done/0745-gauntlet.json",
+      "sha256": "79623c2dae21c8d168abaa697110cb0ab585eab4c94f056fbb47bc406a9d5561"
+    },
+    {
+      "key": "yardstick/one-turn-controls",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "40a17f81-a1b8-46e7-8d57-80f7b5648f1f",
+  "at": "2026-11-09T17:18:13+00:00 @ 693c4cd",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "the 10-29 net @hpb0.01 one turn deep on the pack-offers headline with the 29-card act1-ironclad pack: clears 0.496 (248/500; plain control 0.680, the 27-card pack 0.522); against the 27-card file 105 sequences clear only with 27 cards, 92 only with 29 (inside noise); extra deaths at elites (80 vs 62); Fire Breathing taken on 154 of 267 offers, Evolve 56 of 246",
+      "sources": [
+        {
+          "path": "docs/research/pack-net-scratch.md",
+          "anchor": "Pack control 0745 (29 cards, pin 2d34cd3)",
+          "sha256": "5dbbbcab0480eff8fc74869e1c1b64511796995b35f3d679d37cec10d0b47fcd"
+        },
+        {
+          "path": "results/gauntlet/pns-net1029-hpb0.01-starter-simboss-pack-act1-2d34cd3.json",
+          "sha256": "5adc335bc6ee74fb4a098311d98477d00b5ac198b4b83fb18046b12e8586f302"
+        },
+        {
+          "path": "jobs/done/0745-gauntlet.json",
+          "sha256": "79623c2dae21c8d168abaa697110cb0ab585eab4c94f056fbb47bc406a9d5561"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "40a17f81-a1b8-46e7-8d57-80f7b5648f1f",
+      "at": "2026-11-09T17:18:13+00:00 @ 693c4cd",
+      "until": "2026-11-10T07:03:41+00:00 @ f97b79c",
+      "retired": "superseded by the 31-card pack reads (measurement/pack-net-twin@one-turn) and the 27-card measurement/act1-cards@pack-offers"
+    }
+  ],
+  "seal": "e4baeb24ac1c48426e8ec1c498b1a69a5ca30a23a31af5e72016fc0fa7f45e21"
+}

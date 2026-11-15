@@ -1,0 +1,36 @@
+{
+  "key": "cause/hpe-leaf-cap",
+  "rev": 1,
+  "value": "Likely: @hpe prices every leaf, unfinished too, at min(HP + win heal, max HP) (py/src/lib.rs add_prices), so mid-fight HP within the heal of max looks free. One turn deep (0970) its play differs from @hpb almost only in fights started at 74-80 HP (322 of 1,670 vs 26 of 538 below), +0.19 (0.05) HP lost per such fight. Exit: backlog 76's leaf fix.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "Level-defaults read: `@tsl1` and `@lcb1` pass, `@hpe` one turn deep fails; the one-turn controls move (on the owner's behalf, 2026-11-13)",
+      "sha256": "93c0eef8f5b4f77d6058a88b608fb09dcd5283673f90801ff744fc2de7d3f939"
+    },
+    {
+      "path": "results/gauntlet/net1029-hpe0.01-starter-simboss.json",
+      "sha256": "258b9a4c7ba7aa6d82205d9da15b635e54388805d8c9a7930d872ae0e6941dea"
+    },
+    {
+      "path": "py/src/lib.rs",
+      "sha256": "ba1da33b09583bf36224ed7b181184a53d2ff9cdc0463e8071cd8cc40b2525a8"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+  "at": "2026-11-13T03:49:19Z @ 8aad300e",
+  "confirms": [
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:43:10Z @ d240a173",
+      "note": "navigator 2026-11-13: py/src/lib.rs add_prices unchanged since 8aad300e (still min(HP + win_heal, max HP) on unfinished leaves); finished states are priced in engine/src/search.rs SearchConfig::finished on HP that already holds the heal (state.rs won_healed), so no double count; the lib.rs diff adds win_heal/with_player_hp/view getters only"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "1452813a6ee5d280e635566aa8e433b30c3d6dd82526a22d092eee398a3c1cc5"
+}

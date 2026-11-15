@@ -1,0 +1,66 @@
+{
+  "key": "measurement/boss-cost@two-turn",
+  "rev": 2,
+  "value": "Product two-turn on 259 wide-bench boss starts (2 seeds) vs heuristic: parent edge +0.075 (0.013) wins; beyond heuristic ritual2 -0.017 (0.016), hp0.8 -0.038 (0.016) wins but -0.38 (0.26) log odds (ceiling squeeze): no product boss cost by the go bar. Two-turn boss game ~41 thread-s.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Boss cost two turns deep, on 259 fresh boss starts: no product cost on Ritual 2 or HP x0.8 by the charter's bar; the parent edge is real (+0.075, 5.8 se); hp0.8's -0.038 on the win column (2.4 se) is a ceiling squeeze the odds column does not confirm (-0.38, 1.5 se) (boss-cost-two-turn lane; 0151 with 0143's heuristic games; read 14:10 2026-11-05, lanes d9cd3df1)",
+      "sha256": "7267e5aa582220c416243c9c61fd59874eb545777cea79dfb96b4efbab2925ff"
+    },
+    {
+      "path": "results/mutate/wide-two.json",
+      "sha256": "7456d8631a953ae2be9abd080787945b48c9dc95296838ba0efc21fa5adeacb8"
+    },
+    {
+      "path": "results/mutate/wide.json",
+      "sha256": "4f6e24581d4e67c5cd99123ae87b6eba25c1594fb50a14f0ea9f27fc96ecf670"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:50+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Two-turn product on the wide bench's 259 boss starts at positions 200-999 (2 seeds; heuristic from results/mutate/wide.json, 32 seeds): parent edge over the heuristic +0.075 (0.013) win, +1.07 (0.20) log odds; beyond the heuristic ritual2 -0.017 (0.016) win, -0.15 (0.24) odds; hp0.8 -0.038 (0.016) win, -0.38 (0.26) odds, the win figure a ceiling squeeze (slime_boss, product parent 0.87, -0.074; hexaghost, 0.65, -0.001). No product cost on shifted bosses by the go bar (2 se on both columns or 3 on one); stage A's two boss rows were one parent draw (ritual2) and the same ceiling squeeze (hp0.8). Two-turn boss games cost about 41 thread-s each.",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Boss cost two turns deep, on 259 fresh boss starts: no product cost on Ritual 2 or HP x0.8 by the charter's bar; the parent edge is real (+0.075, 5.8 se); hp0.8's -0.038 on the win column (2.4 se) is a ceiling squeeze the odds column does not confirm (-0.38, 1.5 se) (boss-cost-two-turn lane; 0151 with 0143's heuristic games; read 14:10 2026-11-05, lanes d9cd3df1)",
+          "sha256": "7267e5aa582220c416243c9c61fd59874eb545777cea79dfb96b4efbab2925ff"
+        },
+        {
+          "path": "results/mutate/wide-two.json",
+          "sha256": "7456d8631a953ae2be9abd080787945b48c9dc95296838ba0efc21fa5adeacb8"
+        },
+        {
+          "path": "results/mutate/wide.json",
+          "sha256": "4f6e24581d4e67c5cd99123ae87b6eba25c1594fb50a14f0ea9f27fc96ecf670"
+        },
+        {
+          "path": "jobs/done/0151-mutate-monsters.json",
+          "sha256": "dfd681da35e538f92f7a5936be0c5b4c20e5f20218b17bb01f1773298b1aba29"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        },
+        {
+          "key": "yardstick/novelty-read",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "d9cd3df1-66d7-4ec7-b1dc-a437d5aad7ae",
+      "at": "2026-11-05T07:00:18+00:00 @ cf78be6",
+      "until": "2026-11-13T02:29:50+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "6c0ae2e961865958453ef8f814cb51b1a94208faf5630ed40e050d1707fdab77"
+}

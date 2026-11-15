@@ -1,0 +1,22 @@
+{
+ "content": {
+  "cards": [
+   "gc1_023",
+   "gc1_064",
+   "gc1_068",
+   "gc1_088",
+   "gc1_096",
+   "gc1_112",
+   "gc1_114",
+   "gc1_121"
+  ],
+  "pack": "data/bench/gen_powers_pack.json"
+ },
+ "game_seed": 32,
+ "games": 4000,
+ "n_val": 300,
+ "name": "ratchet8tr-s1",
+ "player": "net",
+ "pool": 10000,
+ "seed": 1
+}

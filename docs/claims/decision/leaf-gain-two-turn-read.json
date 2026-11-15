@@ -1,0 +1,36 @@
+{
+  "key": "decision/leaf-gain-two-turn-read",
+  "rev": 1,
+  "value": "A leaf candidate earns a two-turn read when its one-turn gain is >=3x that read's detectable effect (in-horizon content) or >=1x (past-horizon). A change headed for the product owes its own two-turn retention read (399-game SharpHide burst: -1.21 (0.30) HP per unchanged elite fight two turns deep).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "twin-depth-paired read: stop; one-turn screens stand; leaf-gain-third gains the mixed-content case (on the owner's behalf, 2026-11-11)",
+      "sha256": "d6de64b62a41ed31f3f4afe535a587642d59ee00f3fdf7b9706e2d331a584385"
+    },
+    {
+      "key": "measurement/adapted-two@elites",
+      "rev": 4
+    },
+    {
+      "key": "owner/machine-time",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:27:49Z @ 3123201a",
+  "confirms": [
+    {
+      "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+      "at": "2026-11-13T02:33:14Z @ 3123201a",
+      "note": "fact split 2026-11-13: measurement/adapted-two@elites reworded to a shorter single claim; the claim this fact cites kept its key"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "429545bc9ac72a448415b8ba237717faab10fa2ff0e1ccaaba73e36ca17195d8"
+}

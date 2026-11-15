@@ -1,0 +1,89 @@
+{
+  "key": "measurement/cost@gauntlet",
+  "rev": 3,
+  "value": "Gauntlet job cost (jobs/done): one-turn cell 500 seq ~2 min @3 threads (~0.8 GB); one-turn headline 500 seq 12-33 min @3 (~1 GB); two-turn cell 250 seq 142-178 min @3 (4.0-4.3 GB); two-turn headline 250 seq ~128 min @2 (3.0-3.5 GB). Two-turn ~115-140x one-turn per sequence.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "jobs/done/0059l7r3b2-gauntlet.json",
+      "sha256": "9eb35cbff669b039c0ae36c18082b6bbc3600b8160129d763020a540e6ccda33"
+    },
+    {
+      "path": "docs/research/approach-review-2026-11-02.md",
+      "anchor": "Approaches to try",
+      "sha256": "935fa90dc4d0e1d854bd6eb0c01810f8a7255eb80f1eff06bde3362a5fb1a9cf"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:05+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Wall time and peak memory per gauntlet job (jobs/done, sts swap of 2026-11-01 22:05): one-turn cell 500 sequences ~2 min at 3 threads (~0.7-0.8 GB); one-turn headline 500 sequences 12-33 min at 3 threads (the sim chooser's fights; ~0.9-1.0 GB); two-turn cell 250 sequences 142-178 min at 3 threads, peak 4.0-4.3 GB; two-turn headline 250 sequences 127-128 min at 2 threads, peak 3.0-3.5 GB. Two-turn is ~115-140x one-turn per sequence.",
+      "sources": [
+        {
+          "path": "jobs/done/0059l7r3b2-gauntlet.json",
+          "sha256": "9eb35cbff669b039c0ae36c18082b6bbc3600b8160129d763020a540e6ccda33"
+        },
+        {
+          "path": "jobs/done/0059l7r3b37g-bash.json",
+          "sha256": "b3c5d2ede2de43a7081975f2a09c99372cf369691e7e628f5b721ac948820f4a"
+        },
+        {
+          "path": "jobs/done/0059l7r3b38b-gauntlet.json",
+          "sha256": "6b2de8cce2544ac51fa4b281d78ceb61e642b36cfccc629a75198cbf56b3eabe"
+        },
+        {
+          "path": "jobs/done/0059l7r3b39a-gauntlet.json",
+          "sha256": "a3d1ede045c8c58e29d934ddd6b9955142bf167020dba7a4b0b936774b23c90d"
+        },
+        {
+          "path": "jobs/done/0059l7r3b39b-gauntlet.json",
+          "sha256": "ea54561d58fae19f3b0cc2df6cfbf0e42a1c04e99e99dddd3bdc7bc6de57413c"
+        },
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Approaches to try",
+          "sha256": "935fa90dc4d0e1d854bd6eb0c01810f8a7255eb80f1eff06bde3362a5fb1a9cf"
+        }
+      ],
+      "owner": false,
+      "by": "2e8f02dd-530f-4023-98f6-4835e82492be",
+      "at": "2026-11-02T16:12:47+00:00 @ fc9cdd8",
+      "until": "2026-11-11T08:47:38+00:00 @ 2b6131f"
+    },
+    {
+      "rev": 2,
+      "value": "Wall time and peak memory per gauntlet job (jobs/done, sts swap of 2026-11-01 22:05): one-turn cell 500 sequences ~2 min at 3 threads (~0.7-0.8 GB); one-turn headline 500 sequences 12-33 min at 3 threads (the sim chooser's fights; ~0.9-1.0 GB); two-turn cell 250 sequences 142-178 min at 3 threads, peak 4.0-4.3 GB; two-turn headline 250 sequences 127-128 min at 2 threads, peak 3.0-3.5 GB. Two-turn is ~115-140x one-turn per sequence. Thread check (merged from thread-check@headline): Product two turns deep on the headline setting, sequences 0-99: 3 threads 74.9 min (2.25 thread-min/sequence, peak 3.31 GB), 8 threads 44.9 min (0.599x; 3.59 thread-min/sequence, 1.6x; peak 7.76 GB); each beside one 3-thread job; rows identical across thread counts and to the headline control's first 100. 63% parallel efficiency from 3 to 8 threads.",
+      "sources": [
+        {
+          "path": "jobs/done/0059l7r3b2-gauntlet.json",
+          "sha256": "9eb35cbff669b039c0ae36c18082b6bbc3600b8160129d763020a540e6ccda33"
+        },
+        {
+          "path": "docs/research/approach-review-2026-11-02.md",
+          "anchor": "Approaches to try",
+          "sha256": "935fa90dc4d0e1d854bd6eb0c01810f8a7255eb80f1eff06bde3362a5fb1a9cf"
+        },
+        {
+          "path": "jobs/done/0095-gauntlet.json",
+          "sha256": "ac26b86cccc983a4120fa3cba3a9deec2f320189e699737d53dc6295bfffc5bc"
+        },
+        {
+          "path": "jobs/done/0096-gauntlet.json",
+          "sha256": "6ad62a5c9f616f12e8a51bd4aec3fd6ba145061fbb7ceb596afecd1740ecf795"
+        }
+      ],
+      "owner": false,
+      "by": "b356cdbd-671d-4d56-ac5d-ca5cc9a26c08",
+      "at": "2026-11-11T08:47:38+00:00 @ 2b6131f",
+      "until": "2026-11-13T02:30:05+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "96b22882e942b5ea1cf4435c6cef56ae38946c126a1d1a1083d7139444efc5d3"
+}

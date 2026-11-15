@@ -1,0 +1,76 @@
+{
+  "key": "measurement/act1-cards@zero-shot",
+  "rev": 2,
+  "value": "22 Act 1 pack cards zero-shot, tight2 held-out elite+boss cells (167, 3 copies), 10-29 net @hpb0.01@tsl1 lead over heuristic with minus without: 19 level; in-turn exhaust skills cost Disarm -0.118 (0.032) wins, Impervious -0.122 (0.034), Intimidate -0.062 (0.029), mostly elites; Berserk +0.066 (0.033).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/act1-cards-zero-shot-2026-11-07.md",
+      "anchor": "Read (2026-11-07, jobs 0428-0431)",
+      "sha256": "629b7612e0f92df3aeccb9b8a2a02bf142ea0f5934f8caf884e9d5298a1ec43f"
+    },
+    {
+      "path": "results/pack_cards/act1/table.json",
+      "sha256": "bf3c5b872fc8b36cb7e0174335252c8ec6d09e98621386d475ba0e82143e183d"
+    },
+    {
+      "key": "product/net",
+      "rev": 5
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:39+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "c20f83a3-8b31-4bb6-b569-c2cb5f365e01",
+      "at": "2026-11-13T09:41:17+00:00 @ e24c419a",
+      "note": "only product/net / yardstick/headline-control moved (0986 promotion: @tsl1@lcb1 + chooser, decisions 'Product read 0986'); this was read with the earlier product string and its result files are unchanged; the new product reads level with it on the headline (measurement/product-level-flags@headline)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "The 22 Act 1 pack cards (content/packs/act1-ironclad.json, base versions) zero-shot on tight2 held-out elite and boss cells (167 cells, 3 fights each, three copies in place of Strikes then Defends, paired by cell with the deck without them): the 10-29 net @hpb0.01 one turn deep minus the heuristic, lead with the card minus lead without, wins, se over cells at most 0.038. With @tsl1, 19 cards level and three in-turn exhaust skills cost: Disarm -0.118 (0.032) wins, -2.16 (0.48) HP; Impervious -0.122 (0.034), -1.58 (0.63); Intimidate -0.062 (0.029), -1.08 (0.40); mostly in elite cells. Berserk, predicted to cost on the plain leaf, leads instead: +0.070 (0.032) plain, +0.066 (0.033) tsl1, +0.33 in boss cells; both players lose wins with it (net -0.094, heuristic -0.160, which plays it on 15% of held turns), and tsl1 does not change the net's Berserk wins. Status-later, unreadable-trigger and new-atom (C1) cards all level. Lead reads hide cards bad for both players (Burning Pact -0.21, Exhume -0.17 wins for the net). Why the three cost is a hypothesis (inputs outside training range: negative enemy Strength, Weak on all enemies, 30 block), not read.",
+      "sources": [
+        {
+          "path": "docs/research/act1-cards-zero-shot-2026-11-07.md",
+          "anchor": "Read (2026-11-07, jobs 0428-0431)",
+          "sha256": "629b7612e0f92df3aeccb9b8a2a02bf142ea0f5934f8caf884e9d5298a1ec43f"
+        },
+        {
+          "path": "results/pack_cards/act1/table.json",
+          "sha256": "bf3c5b872fc8b36cb7e0174335252c8ec6d09e98621386d475ba0e82143e183d"
+        },
+        {
+          "path": "jobs/done/0428-pack-cards-read.json",
+          "sha256": "96b7f3e9d568a46e80048c6bfeb3981114edb0d8f9ada88b921ddc1684865918"
+        },
+        {
+          "path": "jobs/done/0429-pack-cards-read.json",
+          "sha256": "667ba804de87dca890bf98e8158285bb9896eac0e25c39a91805952d1004a6c8"
+        },
+        {
+          "path": "jobs/done/0430-pack-cards-read.json",
+          "sha256": "773ef3e6429d43c02cb652d6561e642637e0499326a246acfa32a1d2e7a578bc"
+        },
+        {
+          "path": "jobs/done/0431-pack-cards-read.json",
+          "sha256": "b81cc9c78f012441968984a1a0bd13fcc0bc601f15e92d1d7c807264061883a0"
+        },
+        {
+          "key": "product/net",
+          "rev": 4
+        }
+      ],
+      "owner": false,
+      "by": "e8b31491-99a8-49db-9c83-5b3fdedda7aa",
+      "at": "2026-11-07T03:18:25+00:00 @ be1e993",
+      "until": "2026-11-13T02:29:39+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "2b508534a22e359fd8f9de862f912a2d19615fc0326d33625dfd81607d103350"
+}

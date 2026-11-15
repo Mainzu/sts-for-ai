@@ -1,0 +1,50 @@
+{
+  "key": "cause/headline-pairing-weak",
+  "rev": 2,
+  "value": "Headline pairing between different nets buys ~1.2x (clears corr 0.3-0.5, paired end-HP sd 20-22, decks identical in 0-3/250) vs ~4x on cell decks (corr 0.8, sd 9-11): the sim chooser diverges decks after floor 1; same-net flag variants ~2x. MDE at 500: 0.047 clears/1.6 HP same-net, 0.06-0.07/2.5 HP between nets.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/big-picture-2026-11-03.md",
+      "anchor": "Key claims and skeptic verdicts",
+      "sha256": "514e8d57723252224fddbb00168a7aab245fe7f3a3bc175b57890b4537c51d4a"
+    },
+    {
+      "key": "yardstick/protocol",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:02Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "On the headline setting (starter + sim rewards) pairing between different nets buys only ~1.2x (corr of clears 0.3-0.5, paired end-HP sd 20-22, identical decks in 0-3 of 250 sequences) against ~4x on fixed cell decks (corr 0.8, sd 9-11), because the sim chooser diverges the decks after floor 1; same-net flag variants keep ~2x. MDE at 500 sequences: 0.047 clears / 1.6 HP same-net, 0.06-0.07 / 2.5 HP between nets; the SPRT mostly ends open at the 500 cap for a true +1.0 HP.",
+      "sources": [
+        {
+          "path": "docs/research/big-picture-2026-11-03.md",
+          "anchor": "Key claims and skeptic verdicts",
+          "sha256": "514e8d57723252224fddbb00168a7aab245fe7f3a3bc175b57890b4537c51d4a"
+        },
+        {
+          "key": "yardstick/protocol",
+          "rev": 1
+        },
+        {
+          "key": "yardstick/headline-control",
+          "rev": 2
+        }
+      ],
+      "owner": false,
+      "by": "a5cb4157-4f5b-4229-8f32-e0392c96548e",
+      "at": "2026-11-03T07:35:04Z @ 77d7eeb",
+      "until": "2026-11-13T02:29:02Z @ 3123201a"
+    }
+  ],
+  "seal": "dbf4a9b4a17d3564c6cf4f6d5ca88f473cf783e3e5b14a8b1b0147c0cfd32a09"
+}

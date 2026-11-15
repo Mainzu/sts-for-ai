@@ -1,0 +1,70 @@
+{
+  "key": "measurement/genpack-reach@stacks",
+  "rev": 2,
+  "value": "Random worlds k 4 (40 worlds, 50 elite starts x4, no-death, capped at start HP), one turn @tsl1, cost beyond parent minus heuristic: genpack s1 +3.16 (0.18), pns s1 +6.16 (0.23), 10-29 +6.38 (0.20); genpack minus pns -3.01 (0.18), ratio 0.51: the cut composes, about half at the death cap.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/genpack-reach-2026-11-11.md",
+      "anchor": "Stacks (0842-0843): the cut composes, about half of the cost at the death cap",
+      "sha256": "a0f9b8788b192c402d6b23a6b2015851c9914e731133e5979f794388e16f1a52"
+    },
+    {
+      "path": "results/mutate/rw-nd-pns1-k4.json",
+      "sha256": "06a33a8f7957fef8311c11dc4b4a7221681f726bb6b45f4913b45f412001dfa6"
+    },
+    {
+      "path": "results/mutate/rw-nd-gp1-k4.json",
+      "sha256": "176ad07689a2e2a22a168f2458548d999535548083b5bd494ae3b3cd148a156d"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:30:21+00:00 @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Random worlds of 4 generated enemy mechanics (random_world.py nd-play, k 4, 40 main worlds of 21, 50 official elite starts x 4 seeds, no-death, pin 33fd633), one turn deep @tsl1, net's HP lost beyond its parent minus the heuristic's, se over worlds. Capped at start HP (a death counts whole): generated-pack net seed 1 +3.16 (0.18), pack-net-scratch seed 1 +6.16 (0.23), the 10-29 net +6.38 (0.20); genpack minus pns paired by world -3.01 (0.18), ratio 0.51; summed singles 6.16 vs 15.75 (cut 61%; worlds 49%). Caps start HP + 30 / 100 / 150: ratio 0.22 / 0.17 / -0.12, paired -5.66 (0.36) / -6.00 (0.40) / -10.29 (0.88). Uncapped (not a play measure) +47.43 vs +182.74. g = cost - 1.5 S negative for all. About 0.7 thread-h per net.",
+      "sources": [
+        {
+          "path": "docs/research/genpack-reach-2026-11-11.md",
+          "anchor": "Stacks (0842-0843): the cut composes, about half of the cost at the death cap",
+          "sha256": "a0f9b8788b192c402d6b23a6b2015851c9914e731133e5979f794388e16f1a52"
+        },
+        {
+          "path": "results/mutate/rw-nd-pns1-k4.json",
+          "sha256": "06a33a8f7957fef8311c11dc4b4a7221681f726bb6b45f4913b45f412001dfa6"
+        },
+        {
+          "path": "results/mutate/rw-nd-gp1-k4.json",
+          "sha256": "176ad07689a2e2a22a168f2458548d999535548083b5bd494ae3b3cd148a156d"
+        },
+        {
+          "path": "results/mutate/rw-nodeath.json",
+          "sha256": "07cd2254cf2dc489022228dbd87ade3e8fb0b5361dd3288e3abdd5392a49afd3"
+        },
+        {
+          "path": "jobs/done/0842-random-world.json",
+          "sha256": "b8671f4e5e8e0ab2aac389cc3b5be479e68f7d10aaac576a771f4caebfa37d99"
+        },
+        {
+          "path": "jobs/done/0843-random-world.json",
+          "sha256": "c6fcc8fcdb9b991395bb105d3d198fe2f4d35c982986ba59affd66caecfd5a9a"
+        },
+        {
+          "key": "measurement/random-world@nodeath",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "76244db9-7a36-4d59-9a82-257f8498490b",
+      "at": "2026-11-10T17:21:54+00:00 @ 9251241",
+      "until": "2026-11-13T02:30:21+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "4ce15b325463781fee9eb39460eae623c71cd6da6da60861eb034cc855dccbcc"
+}

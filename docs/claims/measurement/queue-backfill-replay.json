@@ -1,0 +1,53 @@
+{
+  "key": "measurement/queue-backfill-replay",
+  "rev": 1,
+  "value": "Backfill replay 2026-11-06..11-09 16:00: 19.8 h with no job running and a runnable job pending; a backfill rule recovers 0.0 h (consistent with the runner's refusals), 0.2 h (weaker consistency), 0.6-1.1 h (model only): under the 2 h kill-fast. The smallest pending job needed >= 4 threads in 15.6 h and >= 3.5 GB in 14.7 h; held by mem_gb reserved above peak (0565 4.0 vs 0.97, 0204 3.5 vs 2.47, 0276 5.0 vs 3.81) and 14-thread series_speed jobs (4.2 h)",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/queue-throughput.md",
+      "anchor": "Step 1: offline backfill replay (2026-11-09)",
+      "sha256": "d011a99da2bc4b08c4c189f7ee6898d57ae91232c24666dab7bda508f2c8fdef"
+    },
+    {
+      "path": "scripts/queue_replay.py",
+      "sha256": "29c3f0e00239109f9b2986b3290cbadd1b15baa84fc17a1dc73fa74a318b026b"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "64c172a1-04ba-4a3e-8b8e-c6bdfc6e543f",
+  "at": "2026-11-09T09:41:13+00:00 @ 46de388",
+  "confirms": [
+    {
+      "by": "1e53d6ed-baa0-4367-8ee3-26d3d9d38c35",
+      "at": "2026-11-09T09:57:36+00:00 @ 0aed5f6",
+      "note": "scripts/queue_replay.py unchanged since 46de388, the commit the fact's numbers came from (git log); the fact was filed in 8a14073 right after"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Backfill replay 2026-11-06..11-09 16:00: 19.8 h with no job running and a runnable job pending; a backfill rule recovers 0.0 h (consistent with the runner's refusals), 0.2 h (weaker consistency), 0.6-1.1 h (model only): under the 2 h kill-fast. The smallest pending job needed >= 4 threads in 15.6 h and >= 3.5 GB in 14.7 h; held by mem_gb reserved above peak (0565 4.0 vs 0.97, 0204 3.5 vs 2.47, 0276 5.0 vs 3.81) and 14-thread series_speed jobs (4.2 h)",
+      "sources": [
+        {
+          "path": "docs/research/queue-throughput.md",
+          "anchor": "Step 1: offline backfill replay (2026-11-09)",
+          "sha256": "d011a99da2bc4b08c4c189f7ee6898d57ae91232c24666dab7bda508f2c8fdef"
+        },
+        {
+          "path": "scripts/queue_replay.py",
+          "sha256": "29c3f0e00239109f9b2986b3290cbadd1b15baa84fc17a1dc73fa74a318b026b"
+        }
+      ],
+      "owner": false,
+      "by": "64c172a1-04ba-4a3e-8b8e-c6bdfc6e543f",
+      "at": "2026-11-09T09:41:13+00:00 @ 46de388",
+      "until": "2026-11-12T16:03:34+00:00 @ 0ee4d27",
+      "retired": "closed lane queue-throughput; its numbers stay in measurement/portfolio-queue-throughput and docs/research/queue-throughput.md#Step 1: offline backfill replay (2026-11-09) (STATUS cap)"
+    }
+  ],
+  "seal": "d304a30165019bee60db5f631f61dea3582f7d79d9ddf391c200b8e48999e9cc"
+}

@@ -1,0 +1,30 @@
+{
+  "key": "cause/ruler-shared-hp",
+  "rev": 1,
+  "value": "Recent goal-2 candidates' headline end-HP gains are almost all HP left on sequences both players clear (all-content twin two turns +1.41 = +0.09 clear flips + 1.32 shared), unlike a real effect (two turns over one +6.14 = 3.68 flips + 2.45 shared); shared HP's worth depends on the act-transition heal, unchecked (backlog 69).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/big-picture-2026-11-12.md",
+      "anchor": "Key claims and the skeptics' verdicts",
+      "sha256": "6f007c65243b7606f2eefafbe1eba953b4f590ea69291cb209ccf0c2e10714c5"
+    },
+    {
+      "path": "results/gauntlet/match-allcontent40k-s1-hpe0.01-two-line-step-starter-simboss.json",
+      "sha256": "bdf5f423aaa8eb0ac8a14b78f3c982c7270a74a5a331a3e8954b13fe6662f83a"
+    },
+    {
+      "key": "yardstick/protocol",
+      "rev": 1
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:27:59Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [],
+  "seal": "4339f025b40ad5850ac6c6c077582a6c6de070d5ad867036ab19de005b9eb435"
+}

@@ -1,0 +1,79 @@
+{
+  "key": "measurement/few-game-recipe@net-teacher",
+  "rev": 1,
+  "value": "33-game bursts, net teacher, GE-AttackLoss-Weak on lagavulin+three_sentries (zero-shot cost +6.03): share 0.8 cuts +4.77 HP (se nets 0.68; +4.24, +6.11, +3.95; 0.79 of the cost), parent change -0.41; lr train.LR/3 cuts +0.41 (0.09); default share 0.5 lr 1e-3 cuts +1.20 (0.05). The cut is not a control artifact: sh8 gains on the control too, the mechanic gain carries it on both elites. One mechanic, in-distribution encounters, one share point",
+  "status": "retired",
+  "sources": [
+    {
+      "path": "docs/research/few-game-recipe.md",
+      "anchor": "Step 1 read: net teacher, both recipes (jobs 0602-0613, 2026-11-08)",
+      "sha256": "df4b8bfb13b2ff0fa208705d247f218094e612c3381d49f0b23012b0555ae905"
+    },
+    {
+      "path": "jobs/done/0609-family.json",
+      "sha256": "dad4c32f64c38c93235a32f7df43534a50f87a31d1d4bf171629afbfdd02e1db"
+    },
+    {
+      "path": "jobs/done/0611-family.json",
+      "sha256": "bd8c19c50d6e58a07fa5748ec645b9e24823c2bfa9b45acec2d6c53dcd403cd7"
+    },
+    {
+      "path": "jobs/done/0613-family.json",
+      "sha256": "a3b59895a9e9df1202a96b8c85cbb803fa1c777955d9a519f25da9e619f23166"
+    },
+    {
+      "path": "jobs/done/0603-family.json",
+      "sha256": "fa031a9da469b291c4fefac351f6cb91e4278e08316f90f00bcbc9da20ac4619"
+    },
+    {
+      "path": "results/families/gac-alw33.json",
+      "sha256": "8bd70e870391f9530b6ec7356bf2d41e41d9a733b4c021417b4e018831c10fbe"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "7373bcc8-9186-471c-a7a8-51989104b4c2",
+  "at": "2026-11-08T15:11:56+00:00 @ fe6d86f",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "33-game bursts, net teacher, GE-AttackLoss-Weak on lagavulin+three_sentries (zero-shot cost +6.03): share 0.8 cuts +4.77 HP (se nets 0.68; +4.24, +6.11, +3.95; 0.79 of the cost), parent change -0.41; lr train.LR/3 cuts +0.41 (0.09); default share 0.5 lr 1e-3 cuts +1.20 (0.05). The cut is not a control artifact: sh8 gains on the control too, the mechanic gain carries it on both elites. One mechanic, in-distribution encounters, one share point",
+      "sources": [
+        {
+          "path": "docs/research/few-game-recipe.md",
+          "anchor": "Step 1 read: net teacher, both recipes (jobs 0602-0613, 2026-11-08)",
+          "sha256": "df4b8bfb13b2ff0fa208705d247f218094e612c3381d49f0b23012b0555ae905"
+        },
+        {
+          "path": "jobs/done/0609-family.json",
+          "sha256": "dad4c32f64c38c93235a32f7df43534a50f87a31d1d4bf171629afbfdd02e1db"
+        },
+        {
+          "path": "jobs/done/0611-family.json",
+          "sha256": "bd8c19c50d6e58a07fa5748ec645b9e24823c2bfa9b45acec2d6c53dcd403cd7"
+        },
+        {
+          "path": "jobs/done/0613-family.json",
+          "sha256": "a3b59895a9e9df1202a96b8c85cbb803fa1c777955d9a519f25da9e619f23166"
+        },
+        {
+          "path": "jobs/done/0603-family.json",
+          "sha256": "fa031a9da469b291c4fefac351f6cb91e4278e08316f90f00bcbc9da20ac4619"
+        },
+        {
+          "path": "results/families/gac-alw33.json",
+          "sha256": "8bd70e870391f9530b6ec7356bf2d41e41d9a733b4c021417b4e018831c10fbe"
+        }
+      ],
+      "owner": false,
+      "by": "7373bcc8-9186-471c-a7a8-51989104b4c2",
+      "at": "2026-11-08T15:11:56+00:00 @ fe6d86f",
+      "until": "2026-11-08T15:49:30+00:00 @ f4d6205",
+      "retired": "superseded by measurement/few-game-recipe@gfr-33 (both teachers)"
+    }
+  ],
+  "seal": "b5f658f76315c6f3cf0612d0a6df5c3228b10a13b0458eabe8ff036ebf4083bc"
+}

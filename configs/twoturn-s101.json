@@ -1,0 +1,9 @@
+{
+ "source": {"kind": "two-turn", "player": "runs/2026-10-29-seed-check-r2-s1-1a789b2/model.pt@hpe0.01"},
+ "game_seed": 41,
+ "games": 1500,
+ "n_val": 150,
+ "name": "twoturn-s101",
+ "pool": 10000,
+ "seed": 101
+}

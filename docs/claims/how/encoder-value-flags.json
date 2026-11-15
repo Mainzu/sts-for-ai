@@ -1,0 +1,50 @@
+{
+  "key": "how/encoder-value-flags",
+  "rev": 1,
+  "value": "shown_numbers / exhaust_hidden are net meta keys (missing = off): a learn.py config's shown_numbers / exhaust_hidden keys add +shown / +xhid to the feature mode and save the keys; features_for and rust_evaluator read them from the meta; a player @sn1/@xh1 that disagrees is refused (stsnet.encoder_flags). Shown damage is CombatState::shown_damage, per hit.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "scripts/stsnet.py",
+      "sha256": "7dce02fe6c4bcf9a5359306f476bcce12231854bb83385bc3c785a034ec6a6da"
+    },
+    {
+      "path": "scripts/learn.py",
+      "sha256": "a57e6d8562b010eb355119c31e87855c2265ae48a9aff1f3a0c1a383aff5aeee"
+    },
+    {
+      "path": "engine/src/state.rs",
+      "sha256": "9200c10a087b9452251f58354c1e5ef39c2635f1bab9e62a7374db793f243ba6"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "22e4a4f6-b707-443a-a95d-cb20628cc910",
+  "at": "2026-11-13T10:47:23Z @ 75d57fa6",
+  "confirms": [
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:43:15Z @ d240a173",
+      "note": "navigator 2026-11-13: stsnet.encoder_flags refuses a disagreeing @sn1/@xh1 (read at HEAD); later stsnet diff is one line (MAX_MONSTERS from sts); state.rs shown_damage unchanged by the colorless commits"
+    },
+    {
+      "by": "aaca7253-ce14-466a-b79b-6ac2c8b538f7",
+      "at": "2026-11-13T13:48:11Z @ 3e463530",
+      "note": "navigator 2026-11-13 20:50: state.rs diff in colorless step 5 adds the RandomZeroCost chance event only; shown_damage untouched"
+    },
+    {
+      "by": "eff3ca58-ddb9-4e91-b1d6-8ce7112a6c04",
+      "at": "2026-11-14T04:43:44Z @ 0ccb0f83",
+      "note": "kill-effects 795ff77c touched only check_over/condition_holds (TargetDied), Feed's pack row and an appended condition column; fact still true"
+    },
+    {
+      "by": "24a6e50e-3e7c-42ec-b831-f35d7846c20b",
+      "at": "2026-11-14T15:49:59Z @ 418de4d6",
+      "note": "navigator: stsnet.py ENCODER_FLAGS/encoder_flags (missing = off, mismatch raises), rust_evaluator and features_for read the meta, learn.py adds SHOWN/XHID and saves the keys, state.rs shown_damage per hit"
+    }
+  ],
+  "flags": [],
+  "history": [],
+  "seal": "f72a5d608dc49b71bd42bc90549ca1d8cdc14b494fc00076f783fe5d2e8f3105"
+}

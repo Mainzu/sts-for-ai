@@ -1,0 +1,46 @@
+{
+  "key": "how/burst-inputs",
+  "rev": 2,
+  "value": "A net sees the vocabulary saved with it: the 10-29 net reads 27/48 effect scalars and 8/19 triggers; a newer atom's scalar is dropped and newer triggers/conditions/cards/powers land in the one unknown slot (Burn's damage_plain_self is dropped: to it Burn is an unplayable no-effect card).",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/decisions.md",
+      "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+      "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+    },
+    {
+      "path": "scripts/finetune.py",
+      "sha256": "9c71161cbb40e56e497ba4ea81b376354c912c03c55d3b190fbc4a964e6df517"
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:11Z @ 3123201a",
+  "confirms": [],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "What a net can see is the vocabulary saved with it. The product net (10-29) reads 27 effect scalars and 8 triggers of today's 48 and 19: content using a newer atom loses that effect scalar (dropped) or lands in the one unknown slot (triggers, conditions, cards, powers); Burn's cost for being held at turn end (damage_plain_self) is among the dropped, so to the product net a Burn is an unplayable card with no effect. A monster's inputs are its HP, block, powers and the intent on show (Hexaghost's Divider damage included); the moves after the shown intent are opt-in: pattern rows (\"row_kinds\": [\"pattern\"] or \"extra_rows\": true in a finetune config; one row per possible next move with its probability and effects) and the lookahead columns, both off in every net read up to 2026-11-06, so the place in a move cycle is visible only through the combat turn count. finetune.py widens the parent to today's vocabulary for source configs and Silent content (vocab_for; the boss bursts ubb-* have all 48 scalars) and keeps the parent's vocabulary for mutated monsters and generated packs (kept_vocab): a burst on a pack mechanic built from newer atoms (static, countdown, replacement and pattern rows, picks, expression amounts, the triggers RoundEnd, OwnerAttacked, OwnerPlaysCard, OwnerAttackHit) cannot see it until that path widens too, and a bench on such content would measure blindness, not adaptation. On the monsters rung SharpHide and Ritual are fully visible to the product net; Thorns and WeakOnHit share the unknown trigger slot with known effects.",
+      "sources": [
+        {
+          "path": "docs/decisions.md",
+          "anchor": "After crossed-player: the product stays; bursts read by content; what the nets see of Hexaghost; lane pattern-rows-burst opened (on the owner's behalf, 2026-11-06)",
+          "sha256": "e098c482eb169c0df76d2aeb16d893861f4fe9248819f3e2f37d415471aec1df"
+        },
+        {
+          "path": "scripts/finetune.py",
+          "sha256": "9c71161cbb40e56e497ba4ea81b376354c912c03c55d3b190fbc4a964e6df517"
+        }
+      ],
+      "owner": false,
+      "by": "d348e064-834e-4cae-be51-056e6d1678db",
+      "at": "2026-11-06T01:23:55Z @ aa30d72",
+      "until": "2026-11-13T02:29:11Z @ 3123201a"
+    }
+  ],
+  "seal": "ad7c844555733c62249bf7f5cdb9720a63c0d84f0aa88e5277811f653622d27f"
+}

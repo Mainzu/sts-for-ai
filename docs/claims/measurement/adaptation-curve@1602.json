@@ -1,0 +1,80 @@
+{
+  "key": "measurement/adaptation-curve@1602",
+  "rev": 2,
+  "value": "1602-game SharpHide burst (534/modifier, 1 seed), one-turn novelty gain: sharp2 +0.079 (0.015) vs cost -0.048 (cut 1.65), sharp2-hp0.9 +0.084 (0.014) vs -0.062 (1.34), ritual2 +0.014 (0.008) vs -0.038 (0.38); gain on elites (Three Sentries), bosses flat; retention cells -0.13 (0.49) HP.",
+  "status": "active",
+  "sources": [
+    {
+      "path": "docs/research/learned-play-results.md",
+      "anchor": "Adaptation burst at 1602 games: SharpHide's novelty cost is more than repaired on elites, retention holds; go for 399 and 99 games (adaptation-curve lane; 0114, 0115, 0116; read 22:20 2026-11-04, lanes 7d67038d)",
+      "sha256": "205ccfb9ffd186ac17e75de46630f4af9dc9f2c59a21fbddb594f468ee5f0b01"
+    },
+    {
+      "path": "results/adapt/burst534-s1.json",
+      "sha256": "784f34dd62e63efa38f08702c085e336979f94f677a740c4da73b03da90310a2"
+    },
+    {
+      "path": "results/gauntlet/adapt534-s1-hpb0.01.json",
+      "sha256": "635452dd20de375f1e3b09b9a286b2459a1dd34de27243ce750ec6cace078dd5"
+    },
+    {
+      "key": "yardstick/one-turn-controls",
+      "rev": 3
+    }
+  ],
+  "owner": false,
+  "pinned": false,
+  "note": null,
+  "by": "f5c61d78-51c4-4b83-a8ed-04df2ff68fdc",
+  "at": "2026-11-13T02:29:44+00:00 @ 3123201a",
+  "confirms": [
+    {
+      "by": "dcb83e8f-039a-4d01-a385-77bda1b7cb62",
+      "at": "2026-11-13T04:30:08+00:00 @ 28c50af5",
+      "note": "the fact was read against the old one-turn control files (net1029-hpb0.01-starter-simboss.json / net1029-hpb0.01.json), which are unchanged; only the yardstick pointer moved (decisions 'Combined one-turn control ... read', 2026-11-13)"
+    }
+  ],
+  "flags": [],
+  "history": [
+    {
+      "rev": 1,
+      "value": "Adaptation burst, 1602 games (534 per modifier) from the 10-29 net, one seed (a lead): one-turn novelty-cost gain sharp2 +0.079 (0.015) against a base cost of -0.048 (cut 1.65), sharp2-hp0.9 +0.084 (0.014) against -0.062 (cut 1.34), ritual2 +0.014 (0.008) against -0.038 (cut 0.38); the gain is on elites (Three Sentries +0.26 against -0.21), bosses barely move; retention on the one-turn cell gauntlet 0-499: paired end-HP -0.13 (se 0.49), clears 0.644 vs 0.634; official parents +0.007 (0.006).",
+      "sources": [
+        {
+          "path": "docs/research/learned-play-results.md",
+          "anchor": "Adaptation burst at 1602 games: SharpHide's novelty cost is more than repaired on elites, retention holds; go for 399 and 99 games (adaptation-curve lane; 0114, 0115, 0116; read 22:20 2026-11-04, lanes 7d67038d)",
+          "sha256": "205ccfb9ffd186ac17e75de46630f4af9dc9f2c59a21fbddb594f468ee5f0b01"
+        },
+        {
+          "path": "results/adapt/burst534-s1.json",
+          "sha256": "784f34dd62e63efa38f08702c085e336979f94f677a740c4da73b03da90310a2"
+        },
+        {
+          "path": "results/gauntlet/adapt534-s1-hpb0.01.json",
+          "sha256": "635452dd20de375f1e3b09b9a286b2459a1dd34de27243ce750ec6cace078dd5"
+        },
+        {
+          "path": "jobs/done/0114-finetune.json",
+          "sha256": "e0cb771048bed83be7a5b5a664c51ff9398f9babe0b088068a235d2866967bdb"
+        },
+        {
+          "path": "jobs/done/0115-mutate-monsters.json",
+          "sha256": "de3c3440d194d656843007d48aa8f5b52886bea96644b6d407b65416329d5b23"
+        },
+        {
+          "path": "jobs/done/0116-gauntlet.json",
+          "sha256": "b7c444b9c1c73a255322e354da512b5398f7e9f590e567166a3bc5143dc23d25"
+        },
+        {
+          "key": "yardstick/one-turn-controls",
+          "rev": 1
+        }
+      ],
+      "owner": false,
+      "by": "7d67038d-6d81-4e0e-a8e1-60282fa7bf98",
+      "at": "2026-11-04T15:14:55+00:00 @ fc0819f",
+      "until": "2026-11-13T02:29:44+00:00 @ 3123201a"
+    }
+  ],
+  "seal": "f0370b8c01507df554b26dd034b0e588835b9b810855ab278b855ade16f9a193"
+}

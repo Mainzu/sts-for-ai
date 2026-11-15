@@ -1,0 +1,377 @@
+[
+{
+"run": 56,
+"floor": 14,
+"turn": 9,
+"group": "hallway",
+"view": {
+"turn": 9,
+"cards_played_this_turn": 0,
+"start_hp": 75,
+"player": {
+"hp": 23,
+"max_hp": 92,
+"block": 0,
+"energy": 3,
+"powers": {
+"Weak": 2
+},
+"relics": [
+[
+"gen:Ink Bottle",
+3
+],
+[
+"gen:Ancient Tea Set",
+0
+],
+[
+"gen:Lantern",
+1
+]
+],
+"potions": [],
+"just_applied": []
+},
+"hand": {
+"Defend+": 2,
+"Flex": 1,
+"Rampage{damage=18/combat}": 1,
+"Clash": 1
+},
+"draw": {
+"Twin Strike": 1
+},
+"discard": {
+"Body Slam": 1,
+"Defend": 1,
+"Clash": 1,
+"Strike": 4,
+"Bash+": 1,
+"gen:Armaments": 1,
+"Defend+": 1
+},
+"exhaust": {
+"gen:Ascender's Bane": 1,
+"Slimed": 1
+},
+"monsters": [
+{
+"name": "Spike Slime (M)",
+"hp": 0,
+"max_hp": 31,
+"block": 0,
+"powers": {
+"Vulnerable": 2
+},
+"escaped": false,
+"moves": [
+1,
+0
+],
+"rolled_damage": 0,
+"just_applied": []
+},
+{
+"name": "gen:Blue Slaver",
+"hp": 6,
+"max_hp": 51,
+"block": 0,
+"powers": {},
+"escaped": false,
+"moves": [
+0,
+1
+],
+"rolled_damage": 0,
+"just_applied": []
+}
+],
+"ascension": 20,
+"times_lost_hp": 0,
+"boss_fight": false,
+"free": {},
+"top": [],
+"top_floaters": []
+},
+"options": [
+[
+"Defend+"
+],
+[
+"Flex"
+],
+[
+"Rampage{damage=18/combat}@1"
+],
+[
+"End"
+]
+],
+"one": [
+1.4050922393798828,
+1.4050922393798828,
+1.2319999933242798,
+1.3098702430725098
+],
+"two": [
+1.272592306137085,
+1.272592306137085,
+1.2319999933242798,
+1.157312035560608
+],
+"pick": 0
+},
+{
+"run": 56,
+"floor": 14,
+"turn": 10,
+"group": "hallway",
+"view": {
+"turn": 10,
+"cards_played_this_turn": 0,
+"start_hp": 75,
+"player": {
+"hp": 23,
+"max_hp": 92,
+"block": 0,
+"energy": 3,
+"powers": {
+"Weak": 1
+},
+"relics": [
+[
+"gen:Ink Bottle",
+6
+],
+[
+"gen:Ancient Tea Set",
+0
+],
+[
+"gen:Lantern",
+1
+]
+],
+"potions": [],
+"just_applied": []
+},
+"hand": {
+"Twin Strike": 1,
+"Defend": 1,
+"Strike": 2,
+"gen:Armaments": 1
+},
+"draw": {
+"Body Slam": 1,
+"Clash": 2,
+"Rampage{damage=18/combat}": 1,
+"Flex": 1,
+"Defend+": 3,
+"Bash+": 1,
+"Strike": 2
+},
+"discard": {},
+"exhaust": {
+"gen:Ascender's Bane": 1,
+"Slimed": 1
+},
+"monsters": [
+{
+"name": "Spike Slime (M)",
+"hp": 0,
+"max_hp": 31,
+"block": 0,
+"powers": {
+"Vulnerable": 2
+},
+"escaped": false,
+"moves": [
+1,
+0
+],
+"rolled_damage": 0,
+"just_applied": []
+},
+{
+"name": "gen:Blue Slaver",
+"hp": 6,
+"max_hp": 51,
+"block": 0,
+"powers": {},
+"escaped": false,
+"moves": [
+1,
+0
+],
+"rolled_damage": 0,
+"just_applied": []
+}
+],
+"ascension": 20,
+"times_lost_hp": 0,
+"boss_fight": false,
+"free": {},
+"top": [],
+"top_floaters": []
+},
+"options": [
+[
+"Strike@1"
+],
+[
+"Defend"
+],
+[
+"Twin Strike@1"
+],
+[
+"gen:Armaments"
+],
+[
+"End"
+]
+],
+"one": [
+1.3238768577575684,
+1.3128118515014648,
+1.2319999933242798,
+1.3255932331085205,
+1.2429639101028442
+],
+"two": [
+1.3331230878829956,
+1.3236911296844482,
+1.2319999933242798,
+1.3370025157928467,
+1.258569359779358
+],
+"pick": 3
+},
+{
+"run": 52,
+"floor": 5,
+"turn": 12,
+"group": "hallway",
+"view": {
+"turn": 12,
+"cards_played_this_turn": 0,
+"start_hp": 79,
+"player": {
+"hp": 22,
+"max_hp": 82,
+"block": 0,
+"energy": 3,
+"powers": {
+"Frail": 7,
+"Weak": 7
+},
+"relics": [],
+"potions": [],
+"just_applied": []
+},
+"hand": {
+"Defend": 4,
+"Perfected Strike": 1
+},
+"draw": {
+"gen:True Grit": 1,
+"Strike": 2
+},
+"discard": {},
+"exhaust": {
+"Strike": 2,
+"gen:Ascender's Bane": 1,
+"Bash": 1
+},
+"monsters": [
+{
+"name": "gen:Fat Gremlin",
+"hp": 4,
+"max_hp": 18,
+"block": 0,
+"powers": {},
+"escaped": false,
+"moves": [
+0,
+0
+],
+"rolled_damage": 0,
+"just_applied": []
+},
+{
+"name": "gen:Sneaky Gremlin",
+"hp": 0,
+"max_hp": 11,
+"block": 0,
+"powers": {},
+"escaped": false,
+"moves": [
+0,
+null
+],
+"rolled_damage": 0,
+"just_applied": []
+},
+{
+"name": "gen:Fat Gremlin",
+"hp": 0,
+"max_hp": 16,
+"block": 0,
+"powers": {},
+"escaped": false,
+"moves": [
+0,
+0
+],
+"rolled_damage": 0,
+"just_applied": []
+},
+{
+"name": "gen:Gremlin Wizard",
+"hp": 0,
+"max_hp": 26,
+"block": 0,
+"powers": {
+"Vulnerable": 1
+},
+"escaped": false,
+"moves": [
+3,
+3
+],
+"rolled_damage": 0,
+"just_applied": []
+}
+],
+"ascension": 20,
+"times_lost_hp": 0,
+"boss_fight": false,
+"free": {},
+"top": [],
+"top_floaters": []
+},
+"options": [
+[
+"Defend"
+],
+[
+"Perfected Strike@0"
+],
+[
+"End"
+]
+],
+"one": [
+1.2557084560394287,
+1.1193170547485352,
+1.211047649383545
+],
+"two": [
+1.170863389968872,
+1.1193170547485352,
+1.1320176124572754
+],
+"pick": 0
+}
+]
